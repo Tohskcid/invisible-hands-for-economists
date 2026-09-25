@@ -1,23 +1,38 @@
 {
-  "verified_at": "2026-09-18",
+  "schema_version": "1",
+  "retrieved_at": "2026-09-25T00:00:00+08:00",
+  "searches": [
+    {"source": "EconLit / Google Scholar", "query": "prediction market media coverage reflexivity election odds", "retrieved_at": "2026-09-25", "retrieval_tool": "browser"},
+    {"source": "NBER / JSTOR", "query": "rational inattention media gatekeeping price jumps bandwagon", "retrieved_at": "2026-09-25", "retrieval_tool": "browser"},
+    {"source": "Review of Economics and Statistics", "query": "identification through heteroskedasticity simultaneous equations Rigobon", "retrieved_at": "2026-09-25", "retrieval_tool": "browser"},
+    {"source": "SSRN / Financial Studies", "query": "Polymarket central limit order book election microstructure swing states", "retrieved_at": "2026-09-25", "retrieval_tool": "browser"}
+  ],
   "sources": [
     {
       "title": "Prediction Markets",
       "canonical_locator": "https://doi.org/10.1257/0895330041371321",
       "publisher": "American Economic Association",
-      "access_status": "official article page checked"
+      "access_status": "official article page and abstract checked",
+      "retrieval_tool": "browser",
+      "retrieved_at": "2026-09-25"
     },
     {
       "title": "Prediction Market Accuracy: Crowd Wisdom or Informed Minority?",
       "canonical_locator": "https://doi.org/10.2139/ssrn.6617059",
       "publisher": "SSRN",
-      "access_status": "working-paper record checked"
+      "version": "last revised 2026-06-25",
+      "access_status": "working-paper record and revision date checked",
+      "retrieval_tool": "browser",
+      "retrieved_at": "2026-09-25"
     },
     {
-      "title": "The Anatomy of a Blockchain Prediction Market: Polymarket in the 2024 U.S. Presidential Election",
+      "title": "The Anatomy of Polymarket: Evidence from the 2024 Presidential Election",
       "canonical_locator": "https://arxiv.org/abs/2603.03136",
-      "publisher": "arXiv",
-      "access_status": "abstract and full-text record checked"
+      "publisher": "arXiv and SSRN",
+      "version": "arXiv:2603.03136 current metadata; SSRN last revised 2026-09-14",
+      "access_status": "abstract, full-text record, and latest revision date checked",
+      "retrieval_tool": "browser",
+      "retrieved_at": "2026-09-25"
     }
   ]
 }

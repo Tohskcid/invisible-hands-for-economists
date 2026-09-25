@@ -6,11 +6,13 @@ Use this reference when synthesizing literature, recording experiments, delegati
 
 For a new research question, run the pre-design gate in [topic_survey.md](topic_survey.md) before selecting a method or promising novelty. A general literature synthesis may continue below after that decision.
 
-Set the review scope from the question, mechanism, estimand or theorem, method, population/model class, and search cutoff. Search primary papers and credible working papers using concept synonyms, backward references, and forward citations. Record queries, sources searched, dates, access status, and inclusion reasons.
+Set the review scope from the question, mechanism, estimand or theorem, method, population/model class, and search cutoff. Run separate baseline and frontier lanes: search established primary papers and citation chains, then search current working-paper series, preprints, advance articles, conferences, and author repositories. Never exclude a frontier candidate because citations are low. Every query must run through a browser, API, publisher search, or bibliographic database and preserve tool evidence; model memory is not a literature source. Record queries, sources searched, dates, access status, inclusion reasons, and a refresh interval. A stale survey must be rerun before a novelty or coverage claim.
 
 Synthesize by claim rather than paper order. For each close work, capture its question, result, assumptions, design or proof method, scope, and relation to the proposed contribution. For empirical work compare estimands, assignment mechanisms, data, and external validity; for theory compare primitives, solution concepts, theorem statements, and which assumptions strengthen or relax prior results. Surface disagreements and negative results. Do not claim novelty until the nearest alternatives and their differences have been checked.
 
 Scale depth to the deliverable: a feasibility audit may use a compact map; a literature review or novelty claim requires reproducible coverage and explicit search limitations.
+
+Pause for the researcher only at claim-changing decisions: scope and contribution before design; design/data before estimation or proof search; bounded claims before drafting. Preserve each question, response, date, and whether it was accepted, revised, or blocked. Downstream work cannot infer consent from an unanswered checkpoint.
 
 For a sustained review, contradiction search, or novelty audit, use the claim/evidence records in [research_artifacts.md](research_artifacts.md). Reuse an existing local index when available. Metadata retrieval, full-text search, and contextual reranking may assist discovery, but every delivered claim still needs a verified primary-source locator. When evaluating hypothesis generation, prefer a historical literature cutoff and later-paper validation over same-run self-grading.
 

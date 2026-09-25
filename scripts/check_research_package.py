@@ -79,10 +79,13 @@ def check(root: Path, config_path: Path, scripts: Path) -> dict:
     python = sys.executable
 
     if "topic_survey" in paths:
-        checks.append(run([
+        command = [
             python, str(scripts / "check_topic_survey.py"), str(paths["topic_survey"]),
-            "--root", str(root), "--json",
-        ]))
+            "--root", str(root), "--require-approved", "--json",
+        ]
+        if "manuscript" in paths and "bibliography" in paths:
+            command.extend(["--manuscript", str(paths["manuscript"]), "--bibliography", str(paths["bibliography"])])
+        checks.append(run(command))
     if "data_provenance" in paths:
         checks.append(run([
             python, str(scripts / "check_data_provenance.py"), str(paths["data_provenance"]),

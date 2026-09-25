@@ -4,7 +4,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Skill: econ-research-lab](https://img.shields.io/badge/Skill-econ--research--lab-2ea44f.svg)](SKILL.md)
-[![Version](https://img.shields.io/badge/Version-2.17.0-orange.svg)](SKILL.md)
+[![Version](https://img.shields.io/badge/Version-2.18.0-orange.svg)](SKILL.md)
 [![Theory Proof: Lean 4](https://img.shields.io/badge/Theory%20Proof-Lean%204%20Kernel-purple.svg)](references/lean_harness.md)
 [![Replication: AEA Standard](https://img.shields.io/badge/Replication-AEA%20Standard-success.svg)](references/replication_audit.md)
 [![Architecture: PI DAG](https://img.shields.io/badge/Architecture-PI%20DAG%20%2B%20Referees-blueviolet.svg)](references/team_protocol.md)
@@ -93,7 +93,7 @@ flowchart TD
 
 ## ⚡ Capabilities
 
-- **Topic Survey Gate**: Maps the closest literature and establishes novelty before choosing an empirical method or claiming contribution.
+- **Question-to-Paper Harness**: Starts from one sentence, runs baseline and citation-count-independent frontier searches, binds selected new papers into the manuscript, decomposes their field-changing move, and pauses for scope, contribution, design/data, and claim locks.
 - **Tri-Pillar Economics Coverage**: Integrates reduced-form causal inference, formal microeconomic theory (with Lean 4 kernel verification), and dynamic structural estimation in a unified DAG.
 - **Database Cleaning Recipes**: Eliminates institutional data traps in standard empirical databases:
   - **WRDS (CRSP & Compustat)**: CCM linkage (`linktype in ('LU', 'LC')`), negative prices (bid-ask midpoint), Fama-French June fiscal lags, and Davis-Fama-French Book Equity.
@@ -113,6 +113,7 @@ flowchart TD
 | Area | Reference File | Focus |
 |---|---|---|
 | **Core Protocol** | [`references/research_protocol.md`](references/research_protocol.md) | Single accountable PI rules, state machine, and ledger logging |
+| **Breakthrough Anatomy** | [`references/breakthrough_anatomy.md`](references/breakthrough_anatomy.md) | Research-question, bottleneck, core-move, credibility, generativity, and boundary rubric |
 | **Empirical Mode** | [`references/empirical.md`](references/empirical.md) | Reduced-form causal inference, panel FE, and validity checks |
 | **Method Router** | [`references/method_router.md`](references/method_router.md) | Identification screen (DiD, IV, RDD, SDiD, DML, selection) |
 | **Estimation Code** | [`references/estimation_recipes.md`](references/estimation_recipes.md) | Stata/R/Python modern syntax and AER/QJE three-line tables |
@@ -219,6 +220,7 @@ git clone https://github.com/Tohskcid/invisible-hands-for-economists.git \
 | `check_literature_archive.py` | Check bibliography coverage, lawful access records, PDF signatures, names, and hashes |
 | `check_manuscript_coverage.py` | Bind every manuscript section and claim to code, results, exhibits, diagnostics, and appendices |
 | `check_topic_survey.py` | Validate nearest-work coverage and the pre-design contribution decision |
+| `search_literature.py` | Query current Crossref metadata and preserve raw response hashes as tool-use evidence |
 | `search_library.py` | Retrieve candidate result cards without loading the entire library |
 | `check_lean_proof.py` | Lock theorem statements and audit Lean proof terms and axioms |
 | `validate_research_manifest.py` / `audit_claims.py` | Validate provenance, proxy scope, argument DAGs, and manuscript markers |

@@ -1,6 +1,6 @@
 [project]
 name = "invisible-hands-for-economists-tools"
-version = "2.17.0"
+version = "2.18.0"
 description = "Deterministic utilities for the Invisible Hands for Economists Agent Skill"
 requires-python = ">=3.10"
 dependencies = ["numpy>=1.24", "pandas>=2.0"]

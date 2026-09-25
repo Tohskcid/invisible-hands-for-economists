@@ -9,7 +9,7 @@ description: >
 license: MIT
 metadata:
   author: Tohskcid
-  version: "2.17.0"
+  version: "2.18.0"
   compatibility: Requires Python 3.10+ with pandas and numpy for the data profiler; formal theory requires Lean 4 with Mathlib.
 ---
 
@@ -40,7 +40,7 @@ Read [research_protocol.md](references/research_protocol.md), then exactly one a
 
 Load these only when triggered:
 
-- starting a new research question: [topic_survey.md](references/topic_survey.md); classify the nearest work and contribution before method selection
+- starting a new research question, including from one sentence: [topic_survey.md](references/topic_survey.md); run separate baseline and frontier discovery lanes without citation-count exclusion, use tool-acquired freshness-checked evidence, decompose the nearest work's field-changing move, and obtain the scope and contribution locks before method selection
 - material aggregation: [data_granularity_guide.md](references/data_granularity_guide.md)
 - selecting or reviewing an empirical design or estimator: [method_router.md](references/method_router.md); route from estimand and assignment mechanism before data shape or software
 - implementing an estimator or writing empirical code: [estimation_recipes.md](references/estimation_recipes.md); use modern heterogeneity-robust (CS, SA, BJS), SDiD, Bartik, or bias-corrected syntax across Stata, R, and Python with publication-ready output

@@ -18,7 +18,7 @@ class PluginPackagingTests(unittest.TestCase):
             self.load(".claude-plugin/plugin.json"),
         ]
         self.assertEqual({manifest["name"] for manifest in manifests}, {PLUGIN_NAME})
-        self.assertEqual({manifest["version"] for manifest in manifests}, {"2.16.0"})
+        self.assertEqual({manifest["version"] for manifest in manifests}, {"2.18.0"})
 
     def test_marketplaces_publish_the_same_plugin(self):
         for path in (

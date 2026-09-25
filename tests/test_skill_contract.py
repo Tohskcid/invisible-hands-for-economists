@@ -22,8 +22,8 @@ class SkillContractTests(unittest.TestCase):
 
     def test_version_is_consistent(self):
         pyproject = (ROOT / "pyproject.toml").read_text(encoding="utf-8")
-        self.assertIn('version = "2.17.0"', pyproject)
-        self.assertIn('version: "2.17.0"', self.text)
+        self.assertIn('version = "2.18.0"', pyproject)
+        self.assertIn('version: "2.18.0"', self.text)
 
     def test_theory_requires_auditable_complete_proofs(self):
         theory = (ROOT / "references/theory.md").read_text(encoding="utf-8")
@@ -148,6 +148,14 @@ class SkillContractTests(unittest.TestCase):
         self.assertIn("starting a new research question", self.body)
         for phrase in ["before choosing", "nearest alternative", "zero verified close works", "method router"]:
             self.assertIn(phrase, survey)
+
+    def test_question_harness_requires_tools_freshness_and_researcher_locks(self):
+        survey = (ROOT / "references/topic_survey.md").read_text(encoding="utf-8")
+        anatomy = (ROOT / "references/breakthrough_anatomy.md").read_text(encoding="utf-8")
+        for phrase in ["model memory", "refresh_after_days", "scope-lock", "contribution-lock", "Claim lock", "frontier lane", "never-exclude"]:
+            self.assertIn(phrase, survey)
+        for phrase in ["Prior bottleneck", "Core move", "Generativity", "killer test"]:
+            self.assertIn(phrase, anatomy)
 
     def test_manuscript_length_is_evidence_driven(self):
         manuscript = (ROOT / "references/manuscript.md").read_text(encoding="utf-8")
