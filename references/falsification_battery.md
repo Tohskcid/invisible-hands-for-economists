@@ -17,6 +17,21 @@ Before interpreting an empirical estimate as a causal effect, construct a compet
 
 If an alternative mechanism cannot be ruled out by institutional facts or discriminating tests, the manuscript must explicitly disclose it as an unadjudicated threat to identification.
 
+### Mechanism audit hard gate
+
+When a manuscript claims that an effect operates through a particular channel, write `research/mechanism-audit.json`. It must identify the claim and preferred mechanism, state a causal chain and distinctive prediction, enumerate at least three credible alternatives, and bind each alternative to a test with opposing predictions, a pre-specified decision rule, a finding, and a SHA-256-verified artifact. A generic robustness check that predicts the same result under both mechanisms is not discriminating evidence.
+
+Use test status `distinguished` only when the recorded evidence favors the preferred prediction over that specific alternative. Otherwise use `not-distinguished`, `inconclusive`, or `blocked`, list the alternative in `unresolved_alternatives`, and set `claim_status` to `consistent-with` or `unsupported`; only an audit with no unresolved alternatives may use `mechanism-supported`. Never translate an identified treatment effect into an identified mechanism without this separate evidence.
+
+Run a fresh-context mechanism referee after the audit is frozen. Save `research/mechanism-review.json` with the audit SHA-256, `independent_context: true`, verdict, weakest link, strongest observationally equivalent explanation, assessment of the discriminating tests, and any required revision. Validate both artifacts with:
+
+```bash
+python3 scripts/check_mechanism_audit.py research/mechanism-audit.json \
+  --root . --review research/mechanism-review.json --require-pass --json
+```
+
+Failure returns a machine-readable `return_to`: malformed or unsupported specifications return to `mechanism_specification`, unresolved alternatives return to `evidence_generation`, and a stale or adverse review returns to `independent_mechanism_review`. The research controller must perform the indicated work and rerun the entire package gate; it may stop only on a pass, an explicit budget/stop condition, an irreducible block, or a researcher decision that narrows the claim.
+
 ---
 
 ## 2. The Core Falsification Battery

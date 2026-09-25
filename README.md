@@ -226,10 +226,11 @@ git clone https://github.com/Tohskcid/invisible-hands-for-economists.git \
 | `validate_research_manifest.py` / `audit_claims.py` | Validate provenance, proxy scope, argument DAGs, and manuscript markers |
 | `check_result_bindings.py` | Bind displayed manuscript numbers and a results-file hash to structured estimates |
 | `check_design_audit.py` | Enforce diagnostics selected for the declared empirical design |
+| `check_mechanism_audit.py` | Challenge claimed channels against 3+ alternatives with hash-bound discriminating tests and an independent review |
 | `check_structural_audit.py` | Enforce convergence, identification, holdout, and counterfactual diagnostics |
 | `check_real_world_audit.py` | Block real-world recommendations without applicability evidence |
 | `check_text_audit.py` | Validate LLM text-as-data annotation, inter-coder reliability, zero temperature, and prompt hashes |
-| `check_research_package.py` | Run applicable manifest, manuscript, result, empirical/structural audit, and LaTeX gates for CI |
+| `check_research_package.py` | Run applicable manifest, manuscript, result, mechanism, empirical/structural audit, and LaTeX gates for CI; return failed iteration stages |
 | `check_latex.py` | Compile safely, inspect logs, render every page, and bind visual review to the PDF hash |
 | `check_logic_review.py` | Bind a central-claim referee report to manuscript and manifest hashes |
 | `run_research_team.py` | Validate and run a bounded provider-neutral specialist task DAG |

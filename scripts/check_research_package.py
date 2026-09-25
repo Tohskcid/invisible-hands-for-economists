@@ -12,9 +12,9 @@ from pathlib import Path, PurePosixPath
 PATH_FIELDS = {
     "topic_survey", "data_provenance", "manifest", "manuscript", "bibliography",
     "literature_archive", "coverage", "results", "design_audit", "structural_audit", "logic_review",
-    "real_world_audit", "text_audit", "latex_main", "latex_visual_review",
+    "mechanism_audit", "mechanism_review", "real_world_audit", "text_audit", "latex_main", "latex_visual_review",
 }
-METADATA_FIELDS = {"claim_scope"}
+METADATA_FIELDS = {"claim_scope", "mechanism_scope"}
 ALLOWED = PATH_FIELDS | METADATA_FIELDS
 
 
@@ -75,6 +75,15 @@ def check(root: Path, config_path: Path, scripts: Path) -> dict:
         raise ValueError("manuscript or results requires claim_scope 'research-only' or 'real-world'")
     if claim_scope == "real-world" and "real_world_audit" not in paths:
         raise ValueError("real-world claim_scope requires real_world_audit")
+    mechanism_scope = config.get("mechanism_scope")
+    if mechanism_scope is not None and mechanism_scope not in {"claimed", "not-claimed"}:
+        raise ValueError("mechanism_scope must be 'claimed' or 'not-claimed'")
+    if "manuscript" in paths and mechanism_scope not in {"claimed", "not-claimed"}:
+        raise ValueError("manuscript requires mechanism_scope 'claimed' or 'not-claimed'")
+    if mechanism_scope == "claimed" and not {"mechanism_audit", "mechanism_review"}.issubset(paths):
+        raise ValueError("claimed mechanism_scope requires mechanism_audit and mechanism_review")
+    if ("mechanism_audit" in paths) != ("mechanism_review" in paths):
+        raise ValueError("mechanism_audit and mechanism_review must be declared together")
     checks: list[dict] = []
     python = sys.executable
 
@@ -128,6 +137,11 @@ def check(root: Path, config_path: Path, scripts: Path) -> dict:
             python, str(scripts / "check_design_audit.py"), str(paths["design_audit"]),
             "--root", str(root), "--require-pass", "--json",
         ]))
+    if "mechanism_audit" in paths:
+        checks.append(run([
+            python, str(scripts / "check_mechanism_audit.py"), str(paths["mechanism_audit"]),
+            "--root", str(root), "--review", str(paths["mechanism_review"]), "--require-pass", "--json",
+        ]))
     if "structural_audit" in paths:
         checks.append(run([
             python, str(scripts / "check_structural_audit.py"), str(paths["structural_audit"]),
@@ -160,7 +174,23 @@ def check(root: Path, config_path: Path, scripts: Path) -> dict:
             ]))
     if not checks:
         raise ValueError("package config selects no checks")
-    return {"valid": all(item["passed"] for item in checks), "checks": checks}
+    valid = all(item["passed"] for item in checks)
+    returns = []
+    for item in checks:
+        if item["passed"]:
+            continue
+        try:
+            target = json.loads(item.get("stdout", "")).get("return_to")
+        except (AttributeError, json.JSONDecodeError):
+            target = None
+        if target and target not in returns:
+            returns.append(target)
+    return {
+        "valid": valid,
+        "iteration_required": not valid,
+        "return_to": returns or (["gate_remediation"] if not valid else []),
+        "checks": checks,
+    }
 
 
 def main() -> int:

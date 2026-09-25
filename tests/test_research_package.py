@@ -67,6 +67,7 @@ class ResearchPackageTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "requires claim_scope"):
                 MODULE.check(root, config, ROOT / "scripts")
             package["claim_scope"] = "research-only"
+            package["mechanism_scope"] = "not-claimed"
             config.write_text(json.dumps(package), encoding="utf-8")
             with patch.object(MODULE, "run", return_value={"passed": True}) as run:
                 MODULE.check(root, config, ROOT / "scripts")
@@ -109,6 +110,56 @@ class ResearchPackageTests(unittest.TestCase):
             self.assertIn("check_structural_audit.py", command[1])
             self.assertIn("--require-pass", command)
 
+    def test_claimed_mechanism_requires_audit_and_independent_review(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "research").mkdir()
+            config = root / "research/package.json"
+            config.write_text(json.dumps({"mechanism_scope": "claimed"}), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "requires mechanism_audit and mechanism_review"):
+                MODULE.check(root, config, ROOT / "scripts")
+            (root / "research/mechanism-audit.json").write_text("{}", encoding="utf-8")
+            (root / "research/mechanism-review.json").write_text("{}", encoding="utf-8")
+            config.write_text(json.dumps({
+                "mechanism_scope": "claimed",
+                "mechanism_audit": "research/mechanism-audit.json",
+                "mechanism_review": "research/mechanism-review.json",
+            }), encoding="utf-8")
+            with patch.object(MODULE, "run", return_value={"passed": True}) as run:
+                MODULE.check(root, config, ROOT / "scripts")
+            command = run.call_args.args[0]
+            self.assertIn("check_mechanism_audit.py", command[1])
+            self.assertIn("--review", command)
+            self.assertIn("--require-pass", command)
+
+    def test_manuscript_must_declare_whether_it_claims_a_mechanism(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            files = {
+                "paper/main.tex": "text",
+                "paper/references.bib": "",
+                "research/manifest.jsonl": "",
+                "research/coverage.json": "{}",
+                "research/literature.json": "{}",
+                "research/logic-review.json": "{}",
+            }
+            for name, content in files.items():
+                path = root / name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(content, encoding="utf-8")
+            config = root / "research/package.json"
+            config.write_text(json.dumps({
+                "manuscript": "paper/main.tex",
+                "manifest": "research/manifest.jsonl",
+                "coverage": "research/coverage.json",
+                "bibliography": "paper/references.bib",
+                "literature_archive": "research/literature.json",
+                "logic_review": "research/logic-review.json",
+                "claim_scope": "research-only",
+            }), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "requires mechanism_scope"):
+                MODULE.check(root, config, ROOT / "scripts")
+
     def test_real_world_claims_require_applicability_audit(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -143,6 +194,27 @@ class ResearchPackageTests(unittest.TestCase):
             command = run.call_args.args[0]
             self.assertIn("check_text_audit.py", command[1])
             self.assertIn("--require-pass", command)
+
+    def test_failed_gate_exposes_iteration_target(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "research").mkdir()
+            (root / "research/mechanism-audit.json").write_text("{}", encoding="utf-8")
+            (root / "research/mechanism-review.json").write_text("{}", encoding="utf-8")
+            config = root / "research/package.json"
+            config.write_text(json.dumps({
+                "mechanism_scope": "claimed",
+                "mechanism_audit": "research/mechanism-audit.json",
+                "mechanism_review": "research/mechanism-review.json",
+            }), encoding="utf-8")
+            failed = {
+                "passed": False,
+                "stdout": json.dumps({"return_to": "evidence_generation"}),
+            }
+            with patch.object(MODULE, "run", return_value=failed):
+                report = MODULE.check(root, config, ROOT / "scripts")
+            self.assertTrue(report["iteration_required"])
+            self.assertEqual(report["return_to"], ["evidence_generation"])
 
     def test_coverage_cannot_run_without_manuscript_and_manifest(self):
         with tempfile.TemporaryDirectory() as directory:

@@ -55,6 +55,8 @@ Each row in `experiments.tsv` describes one attributable change. Status meanings
 
 Never edit prior rows to improve the story. Link results rather than pasting logs.
 
+When a deterministic package gate returns `iteration_required: true`, return to every stage named in `return_to`, make one attributable correction, append the result to the iteration ledger, and rerun the complete package. Continue until all applicable gates pass. Do not manufacture a pass: stop and report `blocked` when required evidence cannot be acquired, stop at an explicit budget or stop condition, and ask the researcher when remediation would change the frozen question, estimand, contribution, or claim scope.
+
 ## Referee checkpoint
 
 Before delivery, attack the strongest claim:

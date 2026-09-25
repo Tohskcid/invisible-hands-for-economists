@@ -81,6 +81,9 @@ Projects may declare applicable gates in `research/package.json`:
   "literature_archive": "research/literature-archive.json",
   "results": "research/results.json",
   "design_audit": "research/design-audit.json",
+  "mechanism_scope": "claimed",
+  "mechanism_audit": "research/mechanism-audit.json",
+  "mechanism_review": "research/mechanism-review.json",
   "claim_scope": "real-world",
   "real_world_audit": "research/real-world-audit.json",
   "text_audit": "research/text-audit.json",
@@ -88,7 +91,7 @@ Projects may declare applicable gates in `research/package.json`:
 }
 ```
 
-Run `python3 scripts/check_research_package.py --root .`. Only declared, existing artifacts are checked, except that quantitative `results` require valid `data_provenance`, while a `manuscript` requires a manifest, ready coverage matrix, bibliography, complete literature archive, and a passing hash-bound logic review. A package with a manuscript or results must declare `claim_scope` as `research-only` or `real-world`; real-world scope requires a passing `real_world_audit`. Declare `design_audit` or `structural_audit` for the applicable quantitative mode, and declare `text_audit` when LLM-annotated text variables are included. Declaring `latex_main` also requires a hash-bound visual review that covers every rendered page. Repository CI tests both the generic harness and the bounded bundled audit; research projects should run their own package gate for project-specific artifacts.
+Run `python3 scripts/check_research_package.py --root .`. Only declared, existing artifacts are checked, except that quantitative `results` require valid `data_provenance`, while a `manuscript` requires a manifest, ready coverage matrix, bibliography, complete literature archive, a passing hash-bound logic review, and `mechanism_scope` set to `claimed` or `not-claimed`. Claimed mechanisms require a passing hash-bound mechanism audit and independent review; `not-claimed` means the prose must not assert that a channel was established. A package with a manuscript or results must declare `claim_scope` as `research-only` or `real-world`; real-world scope requires a passing `real_world_audit`. Declare `design_audit` or `structural_audit` for the applicable quantitative mode, and declare `text_audit` when LLM-annotated text variables are included. Declaring `latex_main` also requires a hash-bound visual review that covers every rendered page. A failed package emits `iteration_required` and `return_to`; the controller remediates those stages and reruns the complete package instead of waiving a gate. Repository CI tests both the generic harness and the bounded bundled audit; research projects should run their own package gate for project-specific artifacts.
 
 File organization and the local cited-paper archive follow [project_layout.md](project_layout.md). Keep literature metadata in `research/literature-archive.json` and PDFs under `literature/papers/`; do not mix papers, data, tables, and build products in one output directory.
 
