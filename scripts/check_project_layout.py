@@ -13,25 +13,45 @@ DISPOSABLE_DIRS = {"build", "tmp", "temp", "scratch", ".cache", "rendered_pages"
 LATEX_TEMP = {".aux", ".bbl", ".bcf", ".blg", ".fdb_latexmk", ".fls", ".log", ".nav", ".out", ".run.xml", ".snm", ".synctex.gz", ".toc", ".xdv"}
 
 CATEGORIES = {
-    "manuscript": {
-        "extensions": {".tex", ".bib", ".pdf", ".doc", ".docx", ".odt", ".rtf", ".html"},
-        "directories": {"paper", "papers", "manuscript", "manuscripts", "docs", "documents", "latex", "literature", "output", "outputs", "reports", "research", "scripts", "src"},
+    "bibliography/reference metadata": {
+        "extensions": {".bib", ".enw", ".nbib", ".ris"},
+        "directories": {"bibliography", "literature", "metadata", "paper", "papers", "references"},
+    },
+    "TeX source or generated table": {
+        "extensions": {".tex"},
+        "directories": {"docs", "documents", "latex", "manuscript", "manuscripts", "paper", "papers", "table", "tables"},
+    },
+    "rendered PDF": {
+        "extensions": {".pdf"},
+        "directories": {"docs", "documents", "figure", "figures", "literature", "manuscript", "manuscripts", "paper", "papers", "pdf", "report", "reports", "slides"},
+    },
+    "document": {
+        "extensions": {".doc", ".docx", ".html", ".odt", ".qmd", ".rtf"},
+        "directories": {"docs", "documents", "manuscript", "manuscripts", "paper", "papers", "report", "reports"},
     },
     "figure": {
         "extensions": {".png", ".jpg", ".jpeg", ".svg", ".eps", ".tif", ".tiff", ".webp"},
-        "directories": {"figure", "figures", "image", "images", "plot", "plots", "assets", "output", "outputs", "paper", "docs", "latex", "literature", "scratch"},
+        "directories": {"assets", "docs", "figure", "figures", "image", "images", "latex", "literature", "paper", "plot", "plots", "slides"},
     },
     "data/result": {
-        "extensions": {".csv", ".tsv", ".parquet", ".feather", ".dta", ".sav", ".xls", ".xlsx", ".sqlite", ".db", ".jsonl"},
-        "directories": {"data", "dataset", "datasets", "table", "tables", "result", "results", "output", "outputs", "research", "literature", "library", "evals", "fixtures", "scratch"},
+        "extensions": {".arrow", ".csv", ".db", ".dta", ".feather", ".geojson", ".gpkg", ".h5", ".hdf5", ".jsonl", ".nc", ".parquet", ".rds", ".sav", ".shp", ".sqlite", ".tsv", ".xls", ".xlsx"},
+        "directories": {"data", "dataset", "datasets", "evals", "fixtures", "library", "literature", "research", "result", "results", "table", "tables"},
     },
     "code/notebook": {
-        "extensions": {".py", ".r", ".jl", ".do", ".ipynb"},
+        "extensions": {".c", ".cpp", ".do", ".h", ".ipynb", ".jl", ".js", ".m", ".py", ".r", ".sh", ".sql", ".stan", ".ts"},
         "directories": {"script", "scripts", "src", "source", "code", "notebook", "notebooks", "analysis", "tests", "scratch"},
+    },
+    "model": {
+        "extensions": {".joblib", ".onnx", ".pkl", ".pt", ".pth"},
+        "directories": {"model", "models", "research", "result", "results"},
+    },
+    "presentation": {
+        "extensions": {".key", ".ppt", ".pptx"},
+        "directories": {"presentation", "presentations", "slides"},
     },
     "archive": {
         "extensions": {".zip", ".tar", ".gz", ".7z"},
-        "directories": {"archive", "archives", "release", "releases", "output", "outputs", "paper", "docs", "literature", "research", "scratch"},
+        "directories": {"archive", "archives", "release", "releases", "research"},
     },
 }
 

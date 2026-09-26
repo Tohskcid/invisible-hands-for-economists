@@ -50,6 +50,7 @@ Core guarantees:
 - New and low-citation work remains eligible through separate frontier-search lanes.
 - Model memory is not accepted as literature or data evidence.
 - Quantitative claims require hash-bound data provenance and generated results.
+- Research outputs must be separated into purpose-named folders for manuscripts, references, PDFs, figures, tables, code, data, models, and audit artifacts.
 - Identification and economic mechanisms are audited separately.
 - Formal claims distinguish paper proofs, proof sketches, and Lean-verified theorems.
 - Manuscript delivery requires complete section coverage, central-claim review, and rendered LaTeX inspection.
@@ -123,7 +124,7 @@ git clone https://github.com/Tohskcid/invisible-hands-for-economists.git \
 | `check_manuscript_coverage.py` / `check_logic_review.py` | Gate section completeness and central claims |
 | `check_lean_proof.py` | Verify locked Lean statements, proof terms, and axioms |
 | `check_latex.py` | Compile, inspect logs, render, and bind visual review |
-| `check_project_layout.py` | Require paper artifacts to live in purpose-named folders |
+| `check_project_layout.py` | Block delivery when research artifacts are mixed or outside purpose-named folders |
 | `check_research_package.py` | Run all applicable delivery gates and return failed iteration stages |
 | `dream_replay_simulator.py` | Learn a safe research-action policy and run bounded online iterations |
 

@@ -15,11 +15,18 @@ class ProjectLayoutTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             files = [
-                "paper/main.tex",
+                "paper/manuscript/main.tex",
+                "paper/references/references.bib",
+                "output/pdf/manuscript.pdf",
                 "output/tables/estimates.csv",
-                "figure/event-study.png",
+                "output/figures/event-study.png",
+                "output/models/estimator.pkl",
+                "output/slides/talk.pptx",
+                "data/raw/source.parquet",
+                "data/processed/counties.geojson",
                 "Final Project/docs/thesis.pdf",
                 "Final Project/src/estimate.py",
+                "literature/papers/cited-paper.pdf",
                 "tmp/main.aux",
             ]
             for name in files:
@@ -27,6 +34,18 @@ class ProjectLayoutTests(unittest.TestCase):
                 path.parent.mkdir(parents=True, exist_ok=True)
                 path.write_text("x", encoding="utf-8")
             self.assertTrue(MODULE.scan(root)["valid"])
+
+    def test_rejects_mixed_files_directly_under_output(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            for name in ["output/thesis.pdf", "output/chart.png", "output/estimates.csv", "output/model.pkl"]:
+                path = root / name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text("x", encoding="utf-8")
+            report = MODULE.scan(root)
+            self.assertFalse(report["valid"])
+            self.assertEqual(len(report["violations"]), 4)
+            self.assertTrue(all(item["kind"] == "uncategorized-artifact" for item in report["violations"]))
 
     def test_rejects_root_artifacts_and_leaked_latex_files(self):
         with tempfile.TemporaryDirectory() as directory:

@@ -1,19 +1,29 @@
 # Project layout and literature archive
 
-Read this reference before creating a multi-file deliverable or acquiring cited papers. Reuse a clear existing project convention; otherwise use this compact layout:
+Read this reference before creating a multi-file deliverable or acquiring cited papers. Every research output must be classified by purpose; a generic project root or undivided `output/` directory is not an artifact category. Reuse a clear existing project convention; otherwise use this compact layout:
 
 ```text
-paper/                  manuscript sources and bibliography
+paper/manuscript/       authoritative TeX, Quarto, or word-processing sources
+paper/references/       BibTeX, RIS, or other bibliography metadata
 literature/papers/      lawfully obtained cited PDFs
-literature/metadata/    optional source or access records
-data/{raw,interim,processed,proxy}/
-scripts/{acquire,clean,analyze}/
-output/{tables,figures,models}/
+literature/metadata/    source, license, access, and retrieval records
+data/raw/               immutable acquired data
+data/{interim,processed,proxy}/
+scripts/{acquire,clean,analyze}/ or src/
+output/pdf/             final rendered manuscripts and reports
+output/figures/         generated images, plots, and maps
+output/tables/          generated tables and machine-readable estimates
+output/models/          fitted model and solver artifacts
+output/slides/          presentations
+archive/                explicit frozen releases, when needed
 research/               contracts, manifests, audits, ledgers, reports
 research/sections/      compact evidence-backed manuscript section packets
+build/ or tmp/           disposable compilation, rendering, and extraction files
 ```
 
-Do not put generated data, PDFs, tables, figures, logs, or draft variants in the project root. Keep one authoritative manuscript path; use version control or immutable run IDs rather than `final`, `final2`, or duplicated copies. Put temporary compilation and extraction files in an ignored build directory or an OS temporary directory. Record the final path of every material artifact in the research manifest or package config. Do not move user files or replace an established layout merely to match these names; map equivalent existing directories to the same categories and keep new outputs consistent.
+This classification applies to all material outputs, including but not limited to images, TeX sources, PDFs, code, notebooks, raw and derived data, tables, fitted models, presentations, bibliography files, cited papers, audit reports, and release archives. Do not put generated data or other research artifacts in the project root, and do not place mixed artifacts directly in `output/`; use a purpose-named child such as `output/pdf/`, `output/figures/`, or `output/tables/`.
+
+Keep one authoritative manuscript path; use version control or immutable run IDs rather than `final`, `final2`, or duplicated copies. Put temporary compilation and extraction files in an ignored build directory or an OS temporary directory. Record the final path of every material artifact in the research manifest or package config so uncommon formats remain accountable even when the extension scanner does not recognize them. Do not move user files or replace an established layout merely to match these names; map equivalent established directories such as `paper/`, `docs/`, `src/`, `figures/`, and `reports/` to the same purposes and keep new outputs consistent.
 
 Before delivery, enforce this rule with:
 
@@ -21,7 +31,7 @@ Before delivery, enforce this rule with:
 python3 scripts/check_project_layout.py --root . --json
 ```
 
-The research-package gate runs this check automatically whenever `manuscript` or `latex_main` is declared. A failure returns to `artifact_organization`; reorganize or regenerate the files, then rerun the package rather than waiving the failure. Equivalent purpose-named folders such as `docs/`, `figure/`, `src/`, and `latex/` are accepted for established projects.
+The research-package gate runs this check automatically whenever `manuscript` or `latex_main` is declared. A failure returns to `artifact_organization`; reorganize or regenerate the files, then rerun the package rather than waiving the failure. Delivery remains blocked until every recognized artifact is in a purpose-named directory and every material artifact is declared in the manifest or package config.
 
 ## Cited-paper archive
 
