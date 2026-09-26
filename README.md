@@ -5,14 +5,44 @@ An auditable economics-research skill that turns a research question into an evi
 ## Research flow
 
 ```mermaid
-flowchart LR
-    Q[Research question] --> L[Fresh literature survey]
-    L --> C{Researcher locks scope and contribution}
-    C --> D[Design, data, or theorem obligations]
-    D --> I[Bounded research iterations]
-    I --> G{Deterministic gates}
-    G -->|fail| I
-    G -->|pass| M[Manuscript and replication package]
+flowchart TD
+    subgraph Scope["1. Research Question and Contribution"]
+        Q["One-sentence research question"] --> BL["Baseline literature search"]
+        Q --> FL["Frontier search<br/>new and low-citation work"]
+        BL --> CP1{"Researcher checkpoint<br/>scope and contribution"}
+        FL --> CP1
+        CP1 --> RC["Research contract<br/>outlet, estimand, budget, stop rule"]
+    end
+
+    subgraph Design["2. Method and Evidence Obligations"]
+        RC --> MODE{"Research mode"}
+        MODE -->|Empirical| E["Identification design<br/>data and inference"]
+        MODE -->|Theory| T["Definitions, assumptions<br/>proof obligations"]
+        MODE -->|Structural| S["Moments, solver<br/>identification and holdout"]
+        E --> CP2{"Researcher checkpoint<br/>design and data lock"}
+        T --> CP2
+        S --> CP2
+    end
+
+    subgraph Iteration["3. Bounded Research Iteration"]
+        CP2 --> ACQ["Tool-acquired evidence<br/>sources, licenses, hashes"]
+        ACQ --> RUN["Reproducible analysis<br/>tables, figures, proofs"]
+        RUN --> MC["Mechanism challenge<br/>alternatives and falsification"]
+        MC --> LEDGER[("Append-only research ledger<br/>provenance and result bindings")]
+        LEDGER --> G{"Deterministic audit gates"}
+        G -->|fail| FAIL["Classify failure stage"]
+        FAIL --> DREAM["Dream-RSI policy<br/>recommend next bounded action"]
+        DREAM --> ACQ
+        FAIL -->|material scope change| CP2
+    end
+
+    subgraph Delivery["4. Delivery and Adversarial Review"]
+        G -->|pass| COV["Manuscript coverage<br/>claim-evidence graph"]
+        COV --> AR["Adversarial review<br/>identification, mechanism, data"]
+        AR --> RA["Replication and layout audit<br/>master script and rendered PDF"]
+        RA -->|fail| FAIL
+        RA -->|pass| M["Verified manuscript<br/>and replication package"]
+    end
 ```
 
 Core guarantees:
