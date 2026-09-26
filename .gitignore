@@ -10,9 +10,6 @@ venv/
 
 # Outputs & temporary files
 output/*
-!output/tables/
-output/tables/*
-!output/tables/*.tex
 test_output/
 *.csv
 !tests/fixtures/*.csv

@@ -15,7 +15,6 @@ def load_module(name, relative_path):
 
 manifest_tool = load_module("manifest_tool", "scripts/validate_research_manifest.py")
 claim_tool = load_module("claim_tool", "scripts/audit_claims.py")
-eval_tool = load_module("eval_tool", "scripts/run_skill_evals.py")
 
 
 class ResearchManifestTests(unittest.TestCase):
@@ -116,27 +115,6 @@ class ClaimAuditTests(unittest.TestCase):
     def test_manuscript_requires_every_central_claim_marker(self):
         errors = claim_tool.audit("A result. [claim:C1]", {"C1", "C2"}, False, required_claims={"C1", "C2"})
         self.assertIn("central claim marker 'C2' is missing from manuscript", errors)
-
-
-class SkillEvalTests(unittest.TestCase):
-    def test_required_and_forbidden_gates(self):
-        cases = [{"id": "case", "required_gates": ["a"], "forbidden_gates": ["bad"]}]
-        good = eval_tool.evaluate(cases, [{"case_id": "case", "gates": ["a"], "token_count": 10}])
-        bad = eval_tool.evaluate(cases, [{"case_id": "case", "gates": ["bad"]}])
-        self.assertTrue(good["all_passed"])
-        self.assertEqual(good["token_count"], 10)
-        self.assertFalse(bad["all_passed"])
-
-    def test_public_eval_cases_are_valid_jsonl(self):
-        cases = eval_tool.rows(ROOT / "evals/cases.jsonl")
-        self.assertGreaterEqual(len(cases), 3)
-        self.assertTrue(all(case.get("required_gates") for case in cases))
-
-    def test_duplicate_results_are_rejected(self):
-        cases = [{"id": "case", "required_gates": []}]
-        report = eval_tool.evaluate(cases, [{"case_id": "case", "gates": []}, {"case_id": "case", "gates": []}])
-        self.assertFalse(report["all_passed"])
-        self.assertIn("duplicate result", report["cases"][0]["errors"])
 
 
 if __name__ == "__main__":

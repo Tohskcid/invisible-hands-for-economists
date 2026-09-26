@@ -48,6 +48,13 @@ class DreamRSITests(unittest.TestCase):
         self.assertTrue(audit["valid"])
         self.assertEqual(audit["node_count"], 3)
 
+    def test_audit_rejects_dangling_parent(self):
+        nodes = list(self.sample_nodes)
+        nodes[1] = {**nodes[1], "parent_id": "missing"}
+        audit = MODULE.audit_tree_structure(nodes)
+        self.assertFalse(audit["valid"])
+        self.assertIn("unknown parent", audit["reason"])
+
     def test_dream_spec_curve_filters_weak_iv(self):
         nodes = MODULE.load_discovery_tree(self.tree_file)
         res = MODULE.dream_offline_spec_curve(nodes, min_f_stat=10.0)
@@ -58,9 +65,76 @@ class DreamRSITests(unittest.TestCase):
 
     def test_evolve_adversarial_pool(self):
         nodes = MODULE.load_discovery_tree(self.tree_file)
-        pool = MODULE.evolve_adversarial_pool(nodes)
+        pool_path = Path(self.temp_dir.name) / "adversarial-pool.json"
+        pool = MODULE.evolve_adversarial_pool(nodes, pool_path)
         self.assertIn("greg_correlation", pool)
         self.assertIn("macro_shock", pool)
+        self.assertEqual(json.loads(pool_path.read_text(encoding="utf-8")), pool)
+
+    def test_policy_learning_uses_gate_reward_not_effect_size(self):
+        nodes = [
+            {
+                "action": {"stage": "evidence_generation", "kind": "placebo"},
+                "reward": 0.8,
+                "reward_source": "package-gate-v1",
+                "metrics": {"direct_effect": 999.0},
+            },
+            {
+                "action": {"stage": "evidence_generation", "kind": "negative-control"},
+                "reward": 0.2,
+                "reward_source": "package-gate-v1",
+                "metrics": {"direct_effect": 0.0},
+            },
+        ]
+        policy = MODULE.learn_policy(nodes)
+        stats = policy["statistics"]
+        self.assertEqual(stats["evidence_generation|placebo"]["mean_reward"], 0.8)
+        nodes[0]["metrics"]["direct_effect"] = -999.0
+        self.assertEqual(MODULE.learn_policy(nodes), policy)
+
+    def test_action_selection_respects_gate_stage_budget_and_researcher_lock(self):
+        policy = {
+            "exploration": 1.0,
+            "action_priorities": ["negative-control", "placebo"],
+            "statistics": {},
+        }
+        actions = [
+            {"id": "wrong", "stage": "design", "kind": "negative-control", "estimated_cost": 1},
+            {"id": "locked", "stage": "evidence_generation", "kind": "negative-control", "estimated_cost": 1, "requires_researcher": True},
+            {"id": "eligible", "stage": "evidence_generation", "kind": "placebo", "estimated_cost": 2},
+        ]
+        selected = MODULE.select_action(policy, ["evidence_generation"], actions, remaining_cost=2)
+        self.assertEqual(selected["id"], "eligible")
+
+    def test_online_loop_executes_and_records_until_package_passes(self):
+        actions = [{"id": "a1", "stage": "evidence_generation", "kind": "placebo", "estimated_cost": 1}]
+        package_reports = iter([
+            {"valid": False, "return_to": ["evidence_generation"], "checks": [{"passed": False}]},
+            {"valid": True, "return_to": [], "checks": [{"passed": True}]},
+        ])
+
+        def package_runner(*_args):
+            return next(package_reports)
+
+        def adapter_runner(_adapter, request, _timeout):
+            self.assertEqual(request["action"]["id"], "a1")
+            return {"status": "complete", "cost": 1, "next_actions": []}
+
+        report = MODULE.online_loop(
+            tree_path=self.tree_file,
+            policy={"policy_id": "p1", "exploration": 1.0, "action_priorities": [], "statistics": {}},
+            actions=actions,
+            adapter=Path("adapter"),
+            root=Path(self.temp_dir.name),
+            config=Path("research/package.json"),
+            max_steps=3,
+            max_cost=3,
+            package_runner=package_runner,
+            adapter_runner=adapter_runner,
+        )
+        self.assertEqual(report["status"], "complete")
+        self.assertEqual(report["steps"], 1)
+        self.assertEqual(len(MODULE.load_discovery_tree(self.tree_file)), 4)
 
 
 if __name__ == "__main__":

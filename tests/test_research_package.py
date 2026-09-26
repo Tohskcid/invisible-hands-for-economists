@@ -72,6 +72,7 @@ class ResearchPackageTests(unittest.TestCase):
             with patch.object(MODULE, "run", return_value={"passed": True}) as run:
                 MODULE.check(root, config, ROOT / "scripts")
             commands = [call.args[0] for call in run.call_args_list]
+            self.assertTrue(any("check_project_layout.py" in command[1] for command in commands))
             logic_command = next(command for command in commands if "check_logic_review.py" in command[1])
             self.assertIn("--require-pass", logic_command)
 
@@ -93,7 +94,8 @@ class ResearchPackageTests(unittest.TestCase):
             with patch.object(MODULE, "run", return_value={"passed": True}) as run:
                 MODULE.check(root, config, ROOT / "scripts")
             commands = [call.args[0] for call in run.call_args_list]
-            self.assertEqual([command[2] for command in commands], ["check", "finalize"])
+            self.assertIn("check_project_layout.py", commands[0][1])
+            self.assertEqual([command[2] for command in commands[1:]], ["check", "finalize"])
 
     def test_structural_audit_is_run_as_a_hard_gate(self):
         with tempfile.TemporaryDirectory() as directory:

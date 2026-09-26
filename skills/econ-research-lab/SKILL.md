@@ -56,7 +56,6 @@ Load these only when triggered:
 - extracting or applying target-outlet conventions: [journal_style.md](references/journal_style.md); load only the selected outlet profile and never imitate an individual author
 - confidential, licensed, enclave, or identifying data: [confidential_data.md](references/confidential_data.md) before access
 - applicable theorem/method/counterexample: [research_library.md](references/research_library.md); search its index, open one selected card, and verify the primary source
-- explicit skill evaluation/evolution: [skill_evolution.md](references/skill_evolution.md); never rewrite skill instructions during an ordinary research run
 - recursive self-improvement, specification search, or offline policy replay: [dream_rsi.md](references/dream_rsi.md); treat discovery history as an exact replay simulator to test exploration policies at zero execution cost before online deployment
 
 ## Research loop
@@ -67,7 +66,7 @@ Do not optimize p-values, alter the harness, or pivot because results conflict w
 
 ## Coordination
 
-Delegate only independent tasks that save time. For multi-agent work read [team_protocol.md](references/team_protocol.md), use a validated task DAG, bounded budgets, and non-overlapping writes. With native tools, actually dispatch authorized tasks; do not merely name roles. Retain agent identifiers, wait for every required handoff, validate it, then synthesize. Otherwise use the adapter or the same checkpoints sequentially. The PI owns coupled decisions. Handoffs contain conclusions, evidence paths, uncertainty, and next action—not raw logs. Resolve disagreement by evidence or a discriminating test, never confidence votes.
+Delegate only independent tasks that save time, using the host's native agent tools with bounded budgets and non-overlapping writes. Actually dispatch authorized tasks; do not merely name roles. Retain agent identifiers, wait for every required handoff, validate it, then synthesize. The PI owns coupled decisions. Handoffs contain conclusions, evidence paths, uncertainty, and next action—not raw logs. Resolve disagreement by evidence or a discriminating test, never confidence votes.
 
 ## Boundaries
 

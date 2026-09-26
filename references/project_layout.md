@@ -15,6 +15,14 @@ research/sections/      compact evidence-backed manuscript section packets
 
 Do not put generated data, PDFs, tables, figures, logs, or draft variants in the project root. Keep one authoritative manuscript path; use version control or immutable run IDs rather than `final`, `final2`, or duplicated copies. Put temporary compilation and extraction files in an ignored build directory or an OS temporary directory. Record the final path of every material artifact in the research manifest or package config. Do not move user files or replace an established layout merely to match these names; map equivalent existing directories to the same categories and keep new outputs consistent.
 
+Before delivery, enforce this rule with:
+
+```bash
+python3 scripts/check_project_layout.py --root . --json
+```
+
+The research-package gate runs this check automatically whenever `manuscript` or `latex_main` is declared. A failure returns to `artifact_organization`; reorganize or regenerate the files, then rerun the package rather than waiving the failure. Equivalent purpose-named folders such as `docs/`, `figure/`, `src/`, and `latex/` are accepted for established projects.
+
 ## Cited-paper archive
 
 Before manuscript delivery, enumerate every BibTeX entry or `\bibitem` key. For each citation, verify metadata against the DOI, publisher, or authoritative repository, then search for a lawful full text in this order: publisher open-access copy, official working-paper or institutional repository, then author-hosted manuscript. Never bypass authentication, paywalls, robots controls, or license restrictions.

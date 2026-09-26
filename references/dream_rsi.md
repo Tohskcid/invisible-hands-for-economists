@@ -1,85 +1,87 @@
-# Dream-RSI: Recursive Self-Improvement through Evolving Worlds
+# Dream-RSI research iteration
 
-This reference defines the **Dream-RSI protocol** for economics research: converting accumulated discovery history into an exact replay simulator, enabling offline dreaming over candidate exploration and specification policies at zero execution cost, and continuously expanding the simulator pool across iterations and projects.
+Use Dream-RSI only for bounded research iteration with a frozen research contract. It improves the exploration policy, not the estimand, validity gates, or preferred result. The design follows the public Dream-RSI separation between offline replay and deployment: historical discovery trees provide cheap policy feedback; only the selected policy enters a real online iteration.
 
-Based on *Dream-RSI: Recursive Self-Improvement through Evolving Worlds* (Google DeepMind, UMD, UVA, 2026; https://www.dream-rsi.com/).
+## Closed loop
 
----
+1. Run the current policy online through an explicit executable adapter.
+2. Rerun `check_research_package.py` after every action.
+3. Append state, action, gate-derived reward, cost, artifact hash, and failure stage to `research/discovery_tree.jsonl`.
+4. Learn stage-conditioned action values from accumulated worlds.
+5. Reuse the learned policy in the next bounded run.
 
-## 1. The Core Principle
+The reward is derived only from deterministic gate completion, the fraction of applicable checks passed, and execution cost. Coefficients, effect direction, p-values, journal fit, and agreement with researcher intuition never enter the reward. A policy cannot waive a failed gate.
 
-In long-horizon economics research (e.g., exploring high-dimensional Spatial DML specifications, tuning structural contraction mappings, or searching Lean 4 formal theory proof tactics), the central bottleneck is that **meta-level exploration feedback is delayed and expensive**. Running a single high-dimensional econometric specification or full structural counterfactual rollout takes minutes to hours.
+## Offline policy improvement
 
-**The Dream-RSI Insight**:
-1. **History is already an exact simulator**: An empirical discovery run is not just dead text or a one-line result in `results.json`. It is a structured DAG (Discovery Tree) of every specification attempt, carrying its realized dataset slice, first-stage $F$-statistic, Neyman orthogonal score, Conley HAC standard errors, runtime, and convergence diagnostic.
-2. **Zero-Execution Dreaming**: An alternative exploration policy (e.g., how to prune fragile covariates, what spatial lag order to test, when to stop serial search) does not need to re-execute Stata, R, or Python scripts. It replays the recorded discovery tree in memory at **zero execution cost**.
-3. **Evolving World Pool**: Every completed research iteration records another discovery tree—adding one more "world" to the simulator pool. Policies dreamt across a growing pool of worlds beat policies tuned to a single run, and bring back discoveries no earlier policy could reach.
+```bash
+python3 scripts/dream_replay_simulator.py \
+  --tree research/discovery_tree.jsonl \
+  --policy-out research/dream-policy.json
+```
 
----
+Each transition contributes to statistics keyed by `return_to stage | action kind`. Action selection uses an upper-confidence-bound rule so successful actions are reused while untried actions still receive bounded exploration. This is RL-like policy improvement over recorded trajectories, not model-weight training.
 
-## 2. Discovery Tree Schema (`research/discovery_tree.jsonl`)
+The same command also reports a specification summary for audit. Estimate magnitudes are intentionally isolated from policy learning.
 
-Every econometric exploration step is appended to `research/discovery_tree.jsonl` as a self-contained node:
+## Online execution
+
+Supply candidate actions and an executable adapter:
 
 ```json
 {
-  "node_id": "spec-node-042",
-  "parent_id": "spec-node-031",
-  "timestamp": "2026-09-18T23:30:00Z",
-  "action": "expand_spatial_lag",
-  "specification": {
-    "estimator": "Spatial_DML",
-    "spatial_matrix": "W_345kV_topological",
-    "lag_order": 2,
-    "controls_subset": ["fiber_density", "water_stress", "zoning_stringency", "cdd"],
-    "learner": "RandomForest_min_samples_leaf_5"
-  },
-  "metrics": {
-    "direct_effect": -0.00323,
-    "direct_se": 0.00095,
-    "indirect_effect": 0.04234,
-    "indirect_se": 0.00812,
-    "first_stage_f": 3096.5,
-    "rho": 0.7941,
-    "wall_clock_seconds": 184.2,
-    "gate_status": "pass"
-  },
-  "referee_vulnerabilities": [
-    "greg_mechanical_correlation",
-    "macro_transformer_supply_shock"
+  "actions": [
+    {
+      "id": "mechanism-placebo-1",
+      "stage": "evidence_generation",
+      "kind": "negative-control",
+      "estimated_cost": 1.0,
+      "requires_researcher": false,
+      "payload": {
+        "command": ["python3", "scripts/run_placebo.py"],
+        "artifact": "output/diagnostics/placebo.json"
+      }
+    }
   ]
 }
 ```
 
----
+```bash
+python3 scripts/dream_replay_simulator.py --online \
+  --tree research/discovery_tree.jsonl \
+  --policy research/dream-policy.json \
+  --actions research/dream-actions.json \
+  --adapter scripts/research_action_adapter.py \
+  --root . --config research/package.json \
+  --max-steps 10 --max-cost 50
+```
 
-## 3. The Offline Replay Simulator
+The bundled adapter executes `payload.command` as an explicit argument list without a shell. A custom adapter may instead receive one JSON request on stdin and return:
 
-Given a recorded discovery tree $\\mathcal{T} = (\\mathcal{V}, \\mathcal{E})$, an exploration policy $\\pi_\\theta(a \\mid s)$ maps current search state $s$ (observed point estimates, stability metrics, computational budget remaining) to the next search decision $a \\in \\mathcal{A}$ (branch, prune, switch instrument, stop).
+```json
+{
+  "status": "complete",
+  "cost": 1.0,
+  "artifact": "output/diagnostics/placebo.json",
+  "referee_vulnerabilities": ["concurrent-shock"],
+  "next_actions": []
+}
+```
 
-Because all node outcomes in $\\mathcal{V}$ are pre-computed:
-$$\\text{Score}(\\pi_\\theta) = \\sum_{v \\in \\text{Traverse}(\\pi_\\theta, \\mathcal{T})} R(v) - \\lambda \\cdot \\text{Cost}(v)$$
-Evaluating $\\text{Score}(\\pi_\\theta)$ requires **zero code executions**. A meta-agent can dream through $10^4$ candidate exploration and pruning policies in milliseconds, identifying:
-- **Optimal Specification Curve Pruning**: Which model specifications maximize Neyman orthogonality without inflating standard errors?
-- **Robustness Boundary Detection**: Under which covariate subsets does the treatment effect sign flip?
-- **Computational Budget Allocation**: When should the agent stop serial exploration and commit to the primary manuscript specification?
+The harness, not the adapter, reruns the research-package gate and computes reward. Artifacts returned by the adapter are SHA-256-bound when they exist below the package root.
 
----
+## Stop and safety rules
 
-## 4. Evolving Worlds & Cross-Project Transfer
+- `requires_researcher: true` actions are never selected automatically.
+- Stop on package pass, budget exhaustion, blocked/failed adapter status, or lack of eligible actions.
+- A scope, contribution, estimand, data-authority, or claim-boundary change requires researcher input.
+- Histories are append-only. Never erase failed actions or retroactively change their rewards.
+- Public/shared worlds may contain policies, action kinds, gate results, costs, and anonymized failure modes; do not export licensed data, manuscript text, confidential metadata, or undisclosed results.
 
-When opening a new project in the economics research lab:
+Audit tree structure with:
 
-| Layer | Behavior on New Project | Role in Recursive Self-Improvement |
-|---|---|---|
-| **Discovery Tree (Local World)** | Re-grows from root node | Captures the new empirical setting, network topology, and institutional data primitives. |
-| **Meta-Policy (Exploration Engine)** | **Transferred & Inherited** | Uses pre-trained exploration instincts (pruning heuristics, search order) to discover viable models 5–10x faster. |
-| **Adversarial Pool (Referee Attacks)** | **Globally Persistent** | Retains historical referee attacks (GREG non-spatial audits, physical bypass checks, survivorship biases) so new projects pass Day 1 defenses. |
+```bash
+python3 scripts/dream_replay_simulator.py --tree research/discovery_tree.jsonl --audit
+```
 
----
-
-## 5. Verification Gate Integration
-
-The Dream-RSI replay simulator is verified via:
-1. `python3 scripts/dream_replay_simulator.py --tree research/discovery_tree.jsonl --audit`: confirms discovery tree integrity, topological DAG validity, and determinism.
-2. `python3 scripts/dream_replay_simulator.py --spec-curve --dream`: evaluates offline specification curves over historical discovery nodes at zero execution compute.
+The implementation deliberately stops short of Agent Lightning-style model training. Add weight-level RL only after reward semantics are stable and a sufficiently large, leakage-audited trajectory set exists.

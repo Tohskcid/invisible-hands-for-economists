@@ -87,6 +87,11 @@ def check(root: Path, config_path: Path, scripts: Path) -> dict:
     checks: list[dict] = []
     python = sys.executable
 
+    if "manuscript" in paths or "latex_main" in paths:
+        checks.append(run([
+            python, str(scripts / "check_project_layout.py"), "--root", str(root), "--json",
+        ]))
+
     if "topic_survey" in paths:
         command = [
             python, str(scripts / "check_topic_survey.py"), str(paths["topic_survey"]),

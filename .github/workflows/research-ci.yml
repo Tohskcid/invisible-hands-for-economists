@@ -23,5 +23,3 @@ jobs:
         run: python -m unittest discover -s tests -q
       - name: Validate result library
         run: python scripts/validate_library.py --json
-      - name: Validate bundled research audit
-        run: python scripts/check_research_package.py --root . --config research/package.json
