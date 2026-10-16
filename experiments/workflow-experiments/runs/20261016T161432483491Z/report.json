@@ -1,0 +1,305 @@
+[
+  {
+    "case": "Case 1: Synthetic DiD engineering fixture",
+    "reproducible": true,
+    "package_valid": false,
+    "status": "blocked",
+    "build_passed": true,
+    "failed_gates": [
+      {
+        "gate": "check_topic_survey.py",
+        "reason": [
+          "schema_version must be '2'",
+          "question must be a non-empty string",
+          "scope must be a non-empty string",
+          "contribution_statement must be a non-empty string",
+          "cutoff must use YYYY-MM-DD",
+          "refresh_after_days must be an integer from 1 to 365",
+          "frontier_window_years must be an integer from 1 to 5",
+          "citation_policy must be 'never-exclude'",
+          "searches must be a non-empty list",
+          "survey requires a question-axis search",
+          "survey requires at least one mechanism, method, or setting search",
+          "survey requires both baseline and frontier search lanes",
+          "survey requires at least two distinct frontier discovery channels",
+          "nearest_works must be a list",
+          "decision must be one of ['blocked', 'proceed', 'reframe', 'replicate', 'stop']",
+          "contribution_class must be one of ['distinct-under-search', 'duplicate', 'extension', 'external-validity', 'replication', 'synthesis', 'unresolved']",
+          "limitations must be a non-empty list of strings",
+          "researcher_checkpoints must be a list",
+          "no verified nearest work requires blocked/unresolved rather than a novelty claim"
+        ]
+      },
+      {
+        "gate": "check_data_provenance.py",
+        "reason": [
+          "schema_version must be '1'",
+          "generated_at must be an ISO-8601 timestamp with timezone",
+          "datasets must be a non-empty list"
+        ]
+      },
+      {
+        "gate": "check_literature_archive.py",
+        "reason": [
+          "schema_version must be '1'",
+          "generated_at must be an ISO-8601 timestamp with timezone",
+          "papers must be a list"
+        ]
+      },
+      {
+        "gate": "check_manuscript_coverage.py",
+        "reason": [
+          "required empirical roles missing: ['appendix', 'conclusion', 'data', 'identification', 'limitations', 'literature', 'robustness']"
+        ]
+      },
+      {
+        "gate": "check_research_team.py",
+        "reason": [
+          "missing research roles: ['data_acquisition', 'data_cleaning', 'interpretation', 'literature', 'model', 'planning', 'review', 'validation', 'writing']",
+          "manuscript delivery requires two research agents and one independent review agent",
+          "substantive review reviewer_id must match the team review agent",
+          "team review handoff must bind the substantive review file"
+        ]
+      },
+      {
+        "gate": "check_substantive_review.py",
+        "reason": [
+          "review does not bind the current manuscript",
+          "review does not bind the current topic survey",
+          "review requires reviewer_id",
+          "review requires author_agent_ids",
+          "substantive review verdict must be pass for delivery",
+          "review dimensions must be exactly ['completeness', 'inference_or_proof', 'logic', 'novelty', 'overlap', 'research_design']",
+          "review requires explicit manuscript limitations",
+          "open_critical_issues must be an empty list for delivery"
+        ]
+      },
+      {
+        "gate": "check_logic_review.py",
+        "reason": [
+          "overall_verdict must be pass, revise, or reject"
+        ]
+      },
+      {
+        "gate": "check_design_audit.py",
+        "reason": [
+          "diagnostic 'anticipation' has invalid status",
+          "diagnostic 'assignment' has invalid status",
+          "diagnostic 'comparison-groups' has invalid status",
+          "diagnostic 'heterogeneous-effects' has invalid status",
+          "diagnostic 'inference' has invalid status",
+          "diagnostic 'parallel-trends' has invalid status",
+          "diagnostic 'spillovers' has invalid status",
+          "diagnostic 'support' has invalid status",
+          "diagnostic 'timing' has invalid status"
+        ]
+      },
+      {
+        "gate": "check_latex.py",
+        "reason": [
+          "visual review status must be pass",
+          "visual review must cover every PDF page exactly once"
+        ]
+      }
+    ],
+    "spent_budget": 0.778,
+    "duration_sec": 1.402
+  },
+  {
+    "case": "Case 2: Bargaining manuscript fixture",
+    "package_valid": false,
+    "status": "blocked",
+    "build_passed": true,
+    "failed_gates": [
+      {
+        "gate": "check_literature_archive.py",
+        "reason": [
+          "schema_version must be '1'",
+          "generated_at must be an ISO-8601 timestamp with timezone",
+          "papers must be a list"
+        ]
+      },
+      {
+        "gate": "validate_research_manifest.py",
+        "reason": [
+          "line 2: run_ids entry 'r-1' must reference a run"
+        ]
+      },
+      {
+        "gate": "check_manuscript_coverage.py",
+        "reason": [
+          "section 'results' role 'results' requires one of ['proof']",
+          "section 'appendix' ready section requires a section_packet artifact",
+          "required theory roles missing: ['conclusion', 'limitations', 'literature', 'model']"
+        ]
+      },
+      {
+        "gate": "check_research_team.py",
+        "reason": [
+          "missing research roles: ['interpretation', 'literature', 'model', 'planning', 'review', 'validation', 'writing']",
+          "manuscript delivery requires two research agents and one independent review agent",
+          "substantive review reviewer_id must match the team review agent",
+          "team review handoff must bind the substantive review file"
+        ]
+      },
+      {
+        "gate": "check_substantive_review.py",
+        "reason": [
+          "review does not bind the current manuscript",
+          "review requires reviewer_id",
+          "review requires author_agent_ids",
+          "substantive review verdict must be pass for delivery",
+          "review dimensions must be exactly ['completeness', 'inference_or_proof', 'logic', 'novelty', 'overlap', 'research_design']",
+          "review requires explicit manuscript limitations",
+          "open_critical_issues must be an empty list for delivery"
+        ]
+      },
+      {
+        "gate": "check_logic_review.py",
+        "reason": [
+          "overall_verdict must be pass, revise, or reject"
+        ]
+      },
+      {
+        "gate": "check_latex.py",
+        "reason": [
+          "visual review status must be pass",
+          "visual review must cover every PDF page exactly once"
+        ]
+      }
+    ],
+    "spent_budget": 0.601,
+    "duration_sec": 1.149
+  },
+  {
+    "case": "Case 3: Synthetic event-return engineering fixture",
+    "reproducible": true,
+    "package_valid": false,
+    "status": "blocked",
+    "build_passed": true,
+    "failed_gates": [
+      {
+        "gate": "check_topic_survey.py",
+        "reason": [
+          "schema_version must be '2'",
+          "question must be a non-empty string",
+          "scope must be a non-empty string",
+          "contribution_statement must be a non-empty string",
+          "cutoff must use YYYY-MM-DD",
+          "refresh_after_days must be an integer from 1 to 365",
+          "frontier_window_years must be an integer from 1 to 5",
+          "citation_policy must be 'never-exclude'",
+          "searches must be a non-empty list",
+          "survey requires a question-axis search",
+          "survey requires at least one mechanism, method, or setting search",
+          "survey requires both baseline and frontier search lanes",
+          "survey requires at least two distinct frontier discovery channels",
+          "nearest_works must be a list",
+          "decision must be one of ['blocked', 'proceed', 'reframe', 'replicate', 'stop']",
+          "contribution_class must be one of ['distinct-under-search', 'duplicate', 'extension', 'external-validity', 'replication', 'synthesis', 'unresolved']",
+          "limitations must be a non-empty list of strings",
+          "researcher_checkpoints must be a list",
+          "no verified nearest work requires blocked/unresolved rather than a novelty claim"
+        ]
+      },
+      {
+        "gate": "check_data_provenance.py",
+        "reason": [
+          "schema_version must be '1'",
+          "generated_at must be an ISO-8601 timestamp with timezone",
+          "datasets must be a non-empty list"
+        ]
+      },
+      {
+        "gate": "check_literature_archive.py",
+        "reason": [
+          "schema_version must be '1'",
+          "generated_at must be an ISO-8601 timestamp with timezone",
+          "papers must be a list"
+        ]
+      },
+      {
+        "gate": "validate_research_manifest.py",
+        "reason": [
+          "line 2: run_ids entry 'r-1' must reference a run"
+        ]
+      },
+      {
+        "gate": "check_manuscript_coverage.py",
+        "reason": [
+          "required empirical roles missing: ['appendix', 'conclusion', 'data', 'identification', 'limitations', 'literature', 'robustness']"
+        ]
+      },
+      {
+        "gate": "check_research_team.py",
+        "reason": [
+          "missing research roles: ['data_acquisition', 'data_cleaning', 'interpretation', 'literature', 'model', 'planning', 'review', 'validation', 'writing']",
+          "manuscript delivery requires two research agents and one independent review agent",
+          "substantive review reviewer_id must match the team review agent",
+          "team review handoff must bind the substantive review file"
+        ]
+      },
+      {
+        "gate": "check_substantive_review.py",
+        "reason": [
+          "review does not bind the current manuscript",
+          "review does not bind the current topic survey",
+          "review requires reviewer_id",
+          "review requires author_agent_ids",
+          "substantive review verdict must be pass for delivery",
+          "review dimensions must be exactly ['completeness', 'inference_or_proof', 'logic', 'novelty', 'overlap', 'research_design']",
+          "review requires explicit manuscript limitations",
+          "open_critical_issues must be an empty list for delivery"
+        ]
+      },
+      {
+        "gate": "check_logic_review.py",
+        "reason": [
+          "overall_verdict must be pass, revise, or reject"
+        ]
+      },
+      {
+        "gate": "check_design_audit.py",
+        "reason": [
+          "diagnostic 'event-time' has invalid status",
+          "diagnostic 'information-leakage' has invalid status",
+          "diagnostic 'confounding-news' has invalid status",
+          "diagnostic 'normal-return-model' has invalid status",
+          "diagnostic 'cross-sectional-dependence' has invalid status",
+          "diagnostic 'assignment' has invalid status",
+          "diagnostic 'support' has invalid status",
+          "diagnostic 'inference' has invalid status"
+        ]
+      },
+      {
+        "gate": "check_latex.py",
+        "reason": [
+          "visual review status must be pass",
+          "visual review must cover every PDF page exactly once"
+        ]
+      }
+    ],
+    "spent_budget": 0.733,
+    "duration_sec": 1.415
+  },
+  {
+    "case": "Case 4: Bounded Self-Patching for CLI Flag Defect",
+    "attempted_calls": 2,
+    "recovered_successfully": true,
+    "self_patch_recorded": true,
+    "patch_detail": {
+      "type": "cli_flag_removal",
+      "removed_flag": "--json",
+      "reason": "removed unsupported CLI flag --json"
+    },
+    "duration_sec": 0.001
+  },
+  {
+    "case": "Case 5: Interruption & Budget Control",
+    "spent_preserved": true,
+    "halted_correctly": true,
+    "budget_limit": 10.0,
+    "recorded_cost": 9.0,
+    "duration_sec": 0.0
+  }
+]

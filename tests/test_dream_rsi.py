@@ -3,6 +3,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 SPEC = importlib.util.spec_from_file_location("dream_replay_simulator", ROOT / "scripts/dream_replay_simulator.py")
@@ -135,6 +136,82 @@ class DreamRSITests(unittest.TestCase):
         self.assertEqual(report["status"], "complete")
         self.assertEqual(report["steps"], 1)
         self.assertEqual(len(MODULE.load_discovery_tree(self.tree_file)), 4)
+
+    def test_pending_actions_survive_step_limit_and_restart(self):
+        actions = [
+            {"id": "a1", "stage": "evidence_generation", "kind": "check", "estimated_cost": 1},
+            {"id": "a2", "stage": "evidence_generation", "kind": "check", "estimated_cost": 1},
+        ]
+        calls = []
+
+        def package_runner(*_args):
+            return {"valid": len(calls) == 2, "return_to": ["evidence_generation"], "checks": []}
+
+        def adapter_runner(_adapter, request, _timeout):
+            calls.append(request["action"]["id"])
+            return {"status": "complete", "cost": 1, "next_actions": []}
+
+        options = dict(
+            tree_path=self.tree_file, policy=MODULE.DEFAULT_POLICY, adapter=Path("adapter"),
+            root=Path(self.temp_dir.name), config=Path("research/package.json"),
+            max_steps=1, max_cost=3, package_runner=package_runner, adapter_runner=adapter_runner,
+        )
+        first = MODULE.online_loop(actions=actions, **options)
+        self.assertEqual(first["status"], "step-limit")
+        self.assertEqual(calls, ["a1"])
+        second = MODULE.online_loop(actions=[], **options)
+        self.assertEqual(second["status"], "complete")
+        self.assertEqual(calls, ["a1", "a2"])
+        state = MODULE.load_action_state(self.tree_file.with_suffix(".state.json"))
+        self.assertEqual(state["pending_actions"], [])
+
+    def test_interrupted_action_is_not_reexecuted(self):
+        action = {"id": "a1", "stage": "evidence_generation", "kind": "check", "estimated_cost": 1}
+        calls = []
+
+        def package_runner(*_args):
+            return {"valid": False, "return_to": ["evidence_generation"], "checks": []}
+
+        def interrupted_adapter(_adapter, request, _timeout):
+            calls.append(request["action"]["id"])
+            raise RuntimeError("simulated process interruption")
+
+        options = dict(
+            tree_path=self.tree_file, policy=MODULE.DEFAULT_POLICY, adapter=Path("adapter"),
+            root=Path(self.temp_dir.name), config=Path("research/package.json"),
+            max_steps=1, max_cost=3, package_runner=package_runner, adapter_runner=interrupted_adapter,
+        )
+        with self.assertRaisesRegex(RuntimeError, "simulated process interruption"):
+            MODULE.online_loop(actions=[action], **options)
+        resumed = MODULE.online_loop(actions=[], **options)
+        self.assertEqual(resumed["status"], "interrupted")
+        self.assertEqual(resumed["in_flight"]["id"], "a1")
+        self.assertEqual(calls, ["a1"])
+
+    def test_self_patch_does_not_retry_without_budget_reserve(self):
+        action = {"id": "a1", "stage": "build", "kind": "compile", "estimated_cost": 0.75,
+                  "payload": {"command": ["python", "build.py", "--json"]}}
+        calls = []
+
+        def adapter_runner(_adapter, request, _timeout):
+            calls.append(request["action"]["id"])
+            return {"status": "failed", "cost": 0.75, "stderr": "unrecognized arguments: --json"}
+
+        result = MODULE.online_loop(
+            tree_path=self.tree_file, policy=MODULE.DEFAULT_POLICY, actions=[action], adapter=Path("adapter"),
+            root=Path(self.temp_dir.name), config=Path("research/package.json"), max_steps=2, max_cost=1,
+            package_runner=lambda *_: {"valid": False, "return_to": ["build"], "checks": []},
+            adapter_runner=adapter_runner,
+        )
+        self.assertEqual(result["status"], "failed")
+        self.assertEqual(result["cost"], 0.75)
+        self.assertEqual(calls, ["a1"])
+
+    def test_adapter_rejects_malformed_follow_up_actions(self):
+        completed = type("Completed", (), {"returncode": 0, "stdout": '{"status":"complete","cost":1,"next_actions":{}}'})()
+        with patch.object(MODULE.subprocess, "run", return_value=completed):
+            with self.assertRaisesRegex(ValueError, "next_actions"):
+                MODULE.run_adapter(Path("adapter.py"), {"action": {"estimated_cost": 1}}, 5)
 
 
 if __name__ == "__main__":

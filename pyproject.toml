@@ -9,6 +9,7 @@ dependencies = ["numpy>=1.24", "pandas>=2.0"]
 excel = ["openpyxl>=3.1"]
 parquet = ["pyarrow>=14"]
 pdf = ["markitdown[pdf]>=0.1"]
+mcp = ["mcp>=2,<3"]
 
 [tool.setuptools]
 py-modules = []

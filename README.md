@@ -77,6 +77,20 @@ python3 scripts/dream_replay_simulator.py --online \
 
 See [Dream-RSI research iteration](references/dream_rsi.md) for the action and adapter contracts. Online execution stops on package completion, budget exhaustion, a block, or a researcher checkpoint.
 
+## Skill, MCP, and one-shot execution
+
+The [Agent Skill](SKILL.md) directs the research agent from the initial question through sources, analysis, manuscript, review, and release. The [execution guide](references/workflow_execution.md) defines the frozen contract and repeated `next_tasks` loop. The Python runner checks artifacts; it does not generate scholarly evidence on its own.
+
+For clients that support MCP, install the optional `mcp` dependency (Python 3.11+) and launch a local stdio server bound to one project:
+
+```bash
+uv run --no-project --with 'mcp>=2,<3' python scripts/econ_mcp_server.py --root /absolute/path/to/research-project
+```
+
+The server exposes `project_status`, `audit_package`, `run_workflow`, and `run_iteration`, plus the `econ://workflow` resource and `research_question` prompt. `run_iteration` executes only declared `research/dream-actions.json` commands. A stopped action retains an in-flight receipt and is not blindly rerun. Configure the MCP host with the absolute path to `scripts/econ_mcp_server.py` and a project-specific `--root`.
+
+Full manuscript profiles now require a PI-accepted [multi-agent handoff report](references/team_workflow.md), an independent substantive review, and a limitations section. Empirical, descriptive, structural, and replication research rejects proxy datasets whenever data is declared. Simulation is reserved for theory validation or isolated engineering tests. A failed workflow returns `rework_plan` with the earliest stage to revisit and the downstream stages to regenerate. These checks verify declared artifacts and reviewer records; the host agent must actually dispatch and supervise the researchers.
+
 ## Install
 
 ### Codex
@@ -126,6 +140,9 @@ git clone https://github.com/Tohskcid/invisible-hands-for-economists.git \
 | `check_latex.py` | Compile, inspect logs, render, and bind visual review |
 | `check_project_layout.py` | Block delivery when research artifacts are mixed or outside purpose-named folders |
 | `check_research_package.py` | Run all applicable delivery gates and return failed iteration stages |
+| `run_replication.py` / `run_research_workflow.py` | Replay generated results in a temporary copy and orchestrate frozen-contract delivery checks |
+| `econ_mcp_server.py` | Expose those checks and bounded iteration through a local MCP server |
+| `check_research_team.py` / `check_substantive_review.py` | Check multi-agent handoffs, independent review, and stated limitations |
 | `dream_replay_simulator.py` | Learn a safe research-action policy and run bounded online iterations |
 
 ## Verify
@@ -133,7 +150,14 @@ git clone https://github.com/Tohskcid/invisible-hands-for-economists.git \
 ```bash
 python3 -m unittest discover -s tests -q
 python3 scripts/validate_library.py --json
-uvx --from skills-ref agentskills validate "$(pwd)"
+uvx --from skills-ref agentskills validate skills/econ-research-lab
+uv run --no-project --with 'mcp>=2,<3' python -m unittest tests.test_mcp_server
 ```
+
+## Research roadmap
+
+See the [harness optimization research plan](docs/research/harness-optimization-plan.md) (Traditional Chinese) for the proposed implementation work packages, controlled evaluation, milestones, and acceptance criteria grounded in the reconstruction pilot.
+
+The [workflow implementation status](docs/research/workflow-implementation-status.md) records the engineering changes, five synthetic experiments, failed research gates, and remaining work toward one-shot paper completion.
 
 MIT Licensed.

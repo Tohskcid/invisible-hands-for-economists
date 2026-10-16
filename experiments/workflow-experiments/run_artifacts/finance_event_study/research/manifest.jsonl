@@ -1,0 +1,3 @@
+{"id": "ev-1", "type": "evidence", "source": "CRSP", "locator": "data/event_returns.csv", "verified_at": "2023-04-01", "supports_obligations": ["event_clustering"], "_line": 1}
+{"id": "find-1", "type": "finding", "statement": "Mean CAR is -4.37%", "run_ids": ["r-1"], "status": "supported", "supports_obligations": ["event_clustering"], "_line": 2}
+{"id": "c-car", "type": "claim", "statement": "Regulatory disclosure induces negative CAR of -0.0437 [claim:c-car]", "role": "conclusion", "central": true, "status": "supported", "scope": "observed", "uncertainty": "se=0.0038", "finding_ids": ["find-1"], "evidence_ids": ["ev-1"], "obligations": ["event_clustering"], "assignment_unit": "firm", "inference_procedure": "cluster_firm", "_line": 3}

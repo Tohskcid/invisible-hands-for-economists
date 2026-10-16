@@ -58,7 +58,7 @@ def valid_locator(value: object) -> bool:
     return parsed.scheme == "https" and bool(parsed.netloc)
 
 
-def validate(document: object, root: Path | None = None) -> dict:
+def validate(document: object, root: Path | None = None, require_real: bool = False) -> dict:
     errors: list[str] = []
     if not isinstance(document, dict):
         return {"valid": False, "datasets": 0, "errors": ["provenance must be a JSON object"]}
@@ -88,6 +88,8 @@ def validate(document: object, root: Path | None = None) -> dict:
         kind = dataset.get("kind")
         if kind not in KINDS:
             errors.append(f"{prefix} kind must be one of {sorted(KINDS)}")
+        elif require_real and kind == "proxy":
+            errors.append(f"{prefix} proxy data cannot satisfy a substantive empirical delivery")
         for field in ("name", "producer", "version", "unit", "coverage"):
             if not nonempty(dataset.get(field)):
                 errors.append(f"{prefix} requires {field}")
@@ -154,6 +156,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("provenance", type=Path)
     parser.add_argument("--root", type=Path, help="verify artifacts and data files below this project root")
+    parser.add_argument("--require-real", action="store_true", help="reject proxy datasets in substantive empirical deliveries")
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args()
     if not args.provenance.is_file():
@@ -161,7 +164,7 @@ def main() -> int:
         return 2
     try:
         document = json.loads(args.provenance.read_text(encoding="utf-8"))
-        report = validate(document, args.root.resolve() if args.root else None)
+        report = validate(document, args.root.resolve() if args.root else None, args.require_real)
     except (OSError, json.JSONDecodeError) as exc:
         print(f"[Error] Cannot read data provenance: {exc}", file=sys.stderr)
         return 2

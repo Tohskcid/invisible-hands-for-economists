@@ -1,0 +1,11 @@
+# Frozen model and domains
+
+A unit pie is divided into (s1,s2)=(x,1-x). At dates t=0,1,... player 1 proposes on even dates and player 2 on odd dates. Both observe the complete finite history. The responder accepts (terminating immediately) or rejects (roles reverse next date). No commitment, transfers beyond the pie, breakdown, uncertainty or outside option is added. A subgame-perfect equilibrium is a strategy profile with no profitable unilateral complete continuation strategy in any finite-history subgame.
+
+Contractive preference class: deterministic outcomes (s,t) are ranked by D_i^t(s), infinite disagreement by zero. Each D_i:[0,1]->[0,1] is strictly increasing, D_i(0)=0 and Lipschitz with q_i in (0,1). Strategies in this general class are pure, because an ordinal delay equivalent alone does not specify lottery preferences. This contraction is an added sufficient condition, not necessary for all bargaining preferences.
+
+Discount benchmark: U_i(s,t)=delta_i^t*s, 0<delta_i<1; infinite disagreement zero. Expected utility specifies behavioral lotteries. All behavioral SPE, including history-dependent and mixed candidates, are considered. Candidate proposer shares p1=(1-delta2)/(1-delta1*delta2) and p2=(1-delta1)/(1-delta1*delta2) are hypotheses independently derived in appendix, with prior-memory disclosure.
+
+Additive benchmark: U_i(s,t)=s-c_i*t, c_i>0; perpetual disagreement and infinite expected waiting produce -infinity. At every subgame sunk waiting costs are removed (a constant shift), and expected utility over behavioral strategies is used. Characterize all SPE when c1 != c2 or min(c1,c2)>=1. When equal positive costs are below one, characterize stationary immediate SPE and exhibit a nonstationary delayed SPE; do not claim a complete description of all equal-cost SPE.
+
+Boundary statements outside the core strict-discount domain distinguish limits from exact games. For a single perfectly patient player and a strictly discounted opponent, exhibit arbitrary finite delay with all shares allocated to the patient player. With both patient exhibit arbitrary immediate divisions and finite delays. Exact delta=0 globally dated utility is not covered by the uniqueness theorem, since positive time normalization fails.

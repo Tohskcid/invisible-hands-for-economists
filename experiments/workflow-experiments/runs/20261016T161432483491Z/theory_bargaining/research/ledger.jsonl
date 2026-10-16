@@ -1,0 +1,3 @@
+{"timestamp": "2026-10-16T16:14:34.433062+00:00", "event_type": "contract_frozen", "contract": {"version": "1.0", "inputs": {"mode": "theory", "deliverable": "manuscript", "claim_scope": "research-only", "max_budget": 10.0}, "mode": "theory", "deliverable": "manuscript", "claim_scope": "research-only", "mechanism_scope": "not-claimed", "max_budget": 10.0, "budget_unit": "measured_wall_seconds", "target_journal": "AER", "question": "", "obligations": []}, "cost": 0.0}
+{"timestamp": "2026-10-16T16:14:35.034792+00:00", "event_type": "package_audit", "valid": false, "return_to": ["gate_remediation"], "cost": 0.601498}
+{"timestamp": "2026-10-16T16:14:35.035092+00:00", "event_type": "workflow_summary", "result_status": "blocked", "spent_budget": 0.601, "cost": 0.0}

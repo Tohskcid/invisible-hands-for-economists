@@ -1,0 +1,22 @@
+{
+  "mode": "empirical",
+  "deliverable": "manuscript",
+  "claim_scope": "research-only",
+  "mechanism_scope": "not-claimed",
+  "manifest": "research/manifest.jsonl",
+  "topic_survey": "research/topic.json",
+  "data_provenance": "research/data.json",
+  "results": "research/results.json",
+  "replication": "research/replication.json",
+  "design_audit": "research/design-audit.json",
+  "manuscript": "paper/manuscript/main.tex",
+  "coverage": "research/coverage.json",
+  "bibliography": "paper/ref.bib",
+  "literature_archive": "research/archive.json",
+  "logic_review": "research/logic.json",
+  "latex_main": "paper/manuscript/main.tex",
+  "latex_build_dir": "paper/build",
+  "latex_engine": "pdflatex",
+  "release_pdf": "paper/build/main.pdf",
+  "latex_visual_review": "research/visual-review.json"
+}

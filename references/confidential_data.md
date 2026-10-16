@@ -8,7 +8,7 @@ Record the governing DUA, IRB or organizational policy; approved host, users, to
 
 ## Synthetic-first development
 
-Develop against a synthetic fixture that matches schema, types, keys, units, missingness classes, category cardinality and important edge cases without reproducing real people or rare records. Use it to test interfaces, joins, estimators, failure paths and resource estimates. Synthetic success does not validate real-data support, identification, disclosure risk, runtime or estimates.
+Develop code against a synthetic fixture that matches schema, types, keys, units, missingness classes, category cardinality and important edge cases without reproducing real people or rare records. Keep this fixture in isolated engineering tests. Use it to test interfaces, joins, estimators, failure paths and resource estimates. Synthetic success does not validate real-data support, identification, disclosure risk, runtime or estimates and cannot complete empirical research delivery.
 
 Create a portable handoff containing code, environment lock, configuration template, input schema, expected artifact schema, deterministic tests and hashes—never source data. Run the unchanged bundle inside the enclave. Any necessary change creates a new reviewed bundle or ledger entry.
 

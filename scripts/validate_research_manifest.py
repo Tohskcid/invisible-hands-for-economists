@@ -149,7 +149,7 @@ def validate(records: list[dict]) -> list[str]:
             for run_id in finding.get("run_ids", []) if isinstance(finding.get("run_ids", []), list) else []:
                 run = by_id.get(run_id, {})
                 if isinstance(run.get("data_ids", []), list):
-                    data_ids.update(run["data_ids"])
+                    data_ids.update(run.get("data_ids", []))
         tainted = any(by_id.get(value, {}).get("type") == "proxy" for value in data_ids)
         for premise_id in record.get("premise_ids", []) if isinstance(record.get("premise_ids", []), list) else []:
             if premise_id in claims:
@@ -219,6 +219,81 @@ def validate_argument(records: list[dict]) -> list[str]:
             weak = [value for value in ancestors(claim_id) if claims[value].get("status") in {"contradicted", "unsupported"}]
             if weak:
                 errors.append(f"line {line}: supported conclusion depends on contradicted or unsupported premises {sorted(weak)}")
+
+    # WP2 & Section 8.1 Scenario 3: Obligation discharge consistency
+    by_id = {record["id"]: record for record in records if isinstance(record.get("id"), str)}
+    for record in conclusions:
+        line, claim_id = record["_line"], record["id"]
+        required_obligations = record.get("obligations")
+        if isinstance(required_obligations, list) and required_obligations:
+            discharged: set[str] = set()
+            for fid in record.get("finding_ids", []) if isinstance(record.get("finding_ids"), list) else []:
+                finding = by_id.get(fid, {})
+                discharged.update(finding.get("supports_obligations", []))
+                discharged.update(finding.get("discharged_obligations", []))
+            for eid in record.get("evidence_ids", []) if isinstance(record.get("evidence_ids"), list) else []:
+                ev = by_id.get(eid, {})
+                discharged.update(ev.get("supports_obligations", []))
+                discharged.update(ev.get("discharged_obligations", []))
+            for pid in ancestors(claim_id):
+                premise = claims.get(pid, {})
+                discharged.update(premise.get("supports_obligations", []))
+                discharged.update(premise.get("discharged_obligations", []))
+                for fid in premise.get("finding_ids", []) if isinstance(premise.get("finding_ids"), list) else []:
+                    finding = by_id.get(fid, {})
+                    discharged.update(finding.get("supports_obligations", []))
+                    discharged.update(finding.get("discharged_obligations", []))
+            undischarged = sorted(set(required_obligations) - discharged)
+            if undischarged and record.get("status") == "supported":
+                errors.append(
+                    f"line {line}: central conclusion {claim_id!r} requires obligations {required_obligations} "
+                    f"but undischarged obligations remain: {undischarged}"
+                )
+
+    # WP2 & Section 8.1 Scenario 4: Theory domain & model assumption consistency
+    for record in conclusions:
+        line, claim_id = record["_line"], record["id"]
+        claim_domain = record.get("domain")
+        if isinstance(claim_domain, str) and claim_domain.lower() in {"general", "unrestricted", "all"}:
+            for pid in ancestors(claim_id):
+                premise = claims.get(pid, {})
+                premise_domain = premise.get("domain")
+                if isinstance(premise_domain, str) and premise_domain.lower() not in {"general", "unrestricted", "all"}:
+                    errors.append(
+                        f"line {line}: general conclusion {claim_id!r} depends on narrower premise {pid!r} with domain {premise_domain!r}"
+                    )
+                for assumption in premise.get("model_assumptions", []) if isinstance(premise.get("model_assumptions"), list) else []:
+                    if isinstance(assumption, dict) and assumption.get("domain") and assumption["domain"].lower() not in {"general", "unrestricted"}:
+                        errors.append(
+                            f"line {line}: general conclusion {claim_id!r} depends on premise {pid!r} with restricted model assumption domain {assumption['domain']!r}"
+                        )
+
+    # WP2 & Section 8.1 Scenario 5: Assignment unit vs inference procedure consistency
+    aggregate_units = {"state", "cluster", "group", "market", "county", "school", "firm", "district", "village", "city"}
+    individual_inference = {"iid", "individual_iid", "homoskedastic_iid", "robust_individual", "ols_iid", "white_iid"}
+    for record in records:
+        if record.get("type") in {"claim", "finding", "experiment"}:
+            line = record["_line"]
+            unit = record.get("assignment_unit")
+            infer = record.get("inference_procedure")
+            if isinstance(unit, str) and isinstance(infer, str):
+                if unit.lower() in aggregate_units and infer.lower() in individual_inference:
+                    errors.append(
+                        f"line {line}: assignment unit {unit!r} conflicts with individual inference procedure {infer!r}; requires cluster or design-appropriate inference"
+                    )
+
+    # WP2 & Section 8.1 Scenario 10: Formal proof artifact verification
+    for record in records:
+        if record.get("type") == "claim":
+            line, claim_id = record["_line"], record.get("id")
+            if record.get("status") == "formally_proved" or record.get("proof_method") == "formal_proof":
+                proof_id = record.get("formal_proof_id")
+                target = by_id.get(proof_id) if isinstance(proof_id, str) else None
+                if target is None or target.get("status") != "verified" or "lean" not in str(target.get("artifact", "")).lower():
+                    errors.append(
+                        f"line {line}: claim {claim_id!r} claims formally_proved but lacks verified Lean formal proof run/artifact"
+                    )
+
     return errors
 
 

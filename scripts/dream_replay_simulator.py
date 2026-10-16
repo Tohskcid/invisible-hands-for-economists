@@ -5,6 +5,8 @@ import argparse
 import hashlib
 import json
 import math
+import os
+import re
 import subprocess
 import sys
 import uuid
@@ -120,9 +122,48 @@ def select_action(policy: dict, stages: list[str], actions: list[dict], remainin
         count = stat.get("count", 0)
         ucb = float("inf") if count == 0 else stat.get("mean_reward", 0.0) + exploration * math.sqrt(math.log(total) / count)
         priority = priorities.index(action["kind"]) if action["kind"] in priorities else len(priorities)
-        return (-ucb, priority, action.get("estimated_cost", 0), action["id"])
+        obstacle_bonus = 100.0 if action.get("addresses_obstacle") else 0.0
+        return (-(ucb + obstacle_bonus), priority, action.get("estimated_cost", 0), action["id"])
 
     return min(eligible, key=rank)
+
+
+def attempt_self_patch(action: dict, outcome: dict, root: Path) -> dict | None:
+    """WP5 & Section 8.1 Scenario 7: Bounded self-patching for CLI and build config defects."""
+    payload = action.get("payload", {})
+    command = payload.get("command")
+    stderr = outcome.get("stderr", "") + outcome.get("stdout", "")
+
+    # Patch 1: Unsupported CLI flag (e.g. unrecognized arguments: --json or no such option)
+    if isinstance(command, list) and ("unrecognized arguments:" in stderr or "no such option:" in stderr):
+        match = re.search(r"(?:unrecognized arguments:|no such option:)\s*(--[A-Za-z0-9_-]+)", stderr)
+        if match:
+            bad_flag = match.group(1)
+            if bad_flag in command:
+                patched_cmd = [arg for arg in command if arg != bad_flag]
+                patched_action = json.loads(json.dumps(action))
+                patched_action["payload"]["command"] = patched_cmd
+                patched_action["self_patch"] = {
+                    "type": "cli_flag_removal",
+                    "removed_flag": bad_flag,
+                    "reason": f"removed unsupported CLI flag {bad_flag}",
+                }
+                return patched_action
+
+    # Patch 2: Missing build directory
+    if "No such file or directory" in stderr and "build" in stderr:
+        build_dir = root / "build"
+        if not build_dir.exists():
+            build_dir.mkdir(parents=True, exist_ok=True)
+            patched_action = json.loads(json.dumps(action))
+            patched_action["self_patch"] = {
+                "type": "directory_creation",
+                "created_dir": "build",
+                "reason": "created missing build directory",
+            }
+            return patched_action
+
+    return None
 
 
 def package_reward(report: dict, cost: float, max_cost: float) -> float:
@@ -149,6 +190,15 @@ def run_adapter(adapter: Path, request: dict, timeout: int) -> dict:
     result = json.loads(completed.stdout)
     if not isinstance(result, dict) or result.get("status") not in {"complete", "blocked", "failed"}:
         raise ValueError("adapter must return status complete, blocked, or failed")
+    next_actions = result.get("next_actions", [])
+    if not isinstance(next_actions, list) or any(
+        not isinstance(action, dict) or not isinstance(action.get("id"), str) or not action["id"]
+        for action in next_actions
+    ):
+        raise ValueError("adapter next_actions must be a list of actions with nonempty ids")
+    cost = result.get("cost", request.get("action", {}).get("estimated_cost", 0))
+    if not isinstance(cost, (int, float)) or not math.isfinite(cost) or cost < 0:
+        raise ValueError("adapter cost must be a finite non-negative number")
     return result
 
 
@@ -158,23 +208,90 @@ def append_transition(path: Path, node: dict) -> None:
         handle.write(json.dumps(node, ensure_ascii=False) + "\n")
 
 
+def load_action_state(path: Path) -> dict:
+    if not path.is_file():
+        return {"pending_actions": [], "in_flight": None}
+    state = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(state, dict) or not isinstance(state.get("pending_actions"), list):
+        raise ValueError(f"invalid action state: {path}")
+    return state
+
+
+def save_action_state(path: Path, state: dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary = path.with_name(f"{path.name}.{uuid.uuid4().hex}.tmp")
+    temporary.write_text(json.dumps(state, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    os.replace(temporary, path)
+
+
+def merge_actions(*groups: list[dict], completed: set[str]) -> list[dict]:
+    merged = {}
+    for group in groups:
+        for action in group:
+            if isinstance(action, dict) and isinstance(action.get("id"), str) and action["id"] not in completed:
+                merged.setdefault(action["id"], action)
+    return list(merged.values())
+
+
 def online_loop(tree_path: Path, policy: dict, actions: list[dict], adapter: Path, root: Path, config: Path,
                 max_steps: int, max_cost: float, timeout: int = 3600, package_runner=run_package,
                 adapter_runner=run_adapter) -> dict:
     nodes = load_discovery_tree(tree_path)
-    parent_id, spent, steps = (nodes[-1].get("node_id") if nodes else None), 0.0, 0
+    parent_id = nodes[-1].get("node_id") if nodes else None
+
+    # WP5 & Section 8.1 Scenario 6: Cumulative cost is preserved across interruptions, never reset
+    spent = sum(float(n.get("cost", 0.0)) for n in nodes if isinstance(n.get("cost"), (int, float)))
+    steps = 0
+
+    # Persist the queue before execution; an interrupted command must not be rerun blindly.
+    state_path = tree_path.with_suffix(".state.json")
+    state = load_action_state(state_path)
+    terminal_actions = {n.get("action", {}).get("id") for n in nodes if n.get("outcome_status") in {"complete", "failed", "blocked"}}
+    in_flight = state.get("in_flight")
+    if isinstance(in_flight, dict) and in_flight.get("id") not in terminal_actions:
+        return {"status": "interrupted", "steps": 0, "cost": spent, "in_flight": in_flight,
+                "message": "Inspect the interrupted action and its artifacts before retrying."}
+    last_actions = nodes[-1].get("next_actions", []) if nodes else []
+    pending = merge_actions(state["pending_actions"], last_actions if isinstance(last_actions, list) else [], actions,
+                            completed=terminal_actions)
+    state = {"pending_actions": pending, "in_flight": None}
+    save_action_state(state_path, state)
+
     report = package_runner(root, config)
+    if report.get("valid"):
+        return {"status": "complete", "steps": steps, "cost": spent, "package": report, "policy": policy}
+    if spent >= max_cost:
+        return {"status": "budget-exhausted", "steps": steps, "cost": spent, "package": report}
+
     while not report.get("valid") and steps < max_steps and spent < max_cost:
         stages = report.get("return_to") or ["gate_remediation"]
-        action = select_action(policy, stages, actions, max_cost - spent)
+        action = select_action(policy, stages, pending, max_cost - spent)
         if action is None:
-            locked = any(item.get("requires_researcher") is True and item.get("stage") in stages + ["*"] for item in actions)
+            locked = any(item.get("requires_researcher") is True and item.get("stage") in stages + ["*"] for item in pending)
             return {"status": "researcher-input-required" if locked else "blocked", "steps": steps, "cost": spent, "package": report}
+
+        state = {"pending_actions": pending, "in_flight": action}
+        save_action_state(state_path, state)
         outcome = adapter_runner(adapter, {"policy_id": policy.get("policy_id"), "action": action, "package": report, "root": str(root)}, timeout)
-        cost = float(outcome.get("cost", action.get("estimated_cost", 0)))
+        attempted_cost = float(outcome.get("cost", action.get("estimated_cost", 0)))
+
+        # WP5: Bounded self-patching on CLI or build defect
+        if outcome.get("status") != "complete" and spent + attempted_cost + float(action.get("estimated_cost", 0)) <= max_cost:
+            patch = attempt_self_patch(action, outcome, root)
+            if patch is not None:
+                retry_outcome = adapter_runner(adapter, {"policy_id": policy.get("policy_id"), "action": patch, "package": report, "root": str(root)}, timeout)
+                if retry_outcome.get("status") == "complete":
+                    action = patch
+                    outcome = retry_outcome
+                    outcome["self_patched"] = True
+                attempted_cost += float(retry_outcome.get("cost", patch.get("estimated_cost", 0)))
+
+        cost = attempted_cost
         if not math.isfinite(cost) or cost < 0:
             raise ValueError("adapter cost must be a finite non-negative number")
         spent += cost
+        pending = merge_actions([a for a in pending if a.get("id") != action["id"]], outcome.get("next_actions", []),
+                                completed=terminal_actions | {action["id"]})
         updated, node_id = package_runner(root, config), uuid.uuid4().hex
         node = {
             "node_id": node_id, "parent_id": parent_id, "timestamp": datetime.now(timezone.utc).isoformat(),
@@ -182,18 +299,23 @@ def online_loop(tree_path: Path, policy: dict, actions: list[dict], adapter: Pat
             "cost": cost, "reward": package_reward(updated, cost, max_cost), "reward_source": "package-gate-v1",
             "package_valid": updated.get("valid") is True, "return_to": updated.get("return_to", []),
             "referee_vulnerabilities": outcome.get("referee_vulnerabilities", []),
+            "next_actions": pending,
         }
+        if "self_patch" in action:
+            node["self_patch"] = action["self_patch"]
         artifact = outcome.get("artifact")
         artifact_path = PurePosixPath(artifact) if isinstance(artifact, str) else None
         if artifact_path and not artifact_path.is_absolute() and ".." not in artifact_path.parts and (root / artifact).is_file():
             node.update({"artifact": artifact, "artifact_sha256": hashlib.sha256((root / artifact).read_bytes()).hexdigest()})
         append_transition(tree_path, node)
+        save_action_state(state_path, {"pending_actions": pending, "in_flight": None})
         parent_id, steps, report = node_id, steps + 1, updated
-        actions = outcome.get("next_actions", [])
+        terminal_actions.add(action["id"])
         if outcome.get("status") != "complete":
             return {"status": outcome.get("status"), "steps": steps, "cost": spent, "package": report}
         policy = learn_policy(load_discovery_tree(tree_path), policy)
-    return {"status": "complete" if report.get("valid") else "budget-exhausted", "steps": steps, "cost": spent, "package": report, "policy": policy}
+    status = "complete" if report.get("valid") else "budget-exhausted" if spent >= max_cost else "step-limit"
+    return {"status": status, "steps": steps, "cost": spent, "package": report, "policy": policy}
 
 
 def load_json(path: Path) -> object:

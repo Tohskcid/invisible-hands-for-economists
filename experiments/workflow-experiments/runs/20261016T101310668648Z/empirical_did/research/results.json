@@ -1,0 +1,17 @@
+{
+  "schema_version": "1",
+  "run_id": "run-did-001",
+  "source_sha256": {
+    "data/restaurants.csv": "77ea9e53a24d11308786f999ee59a7beaf54e8514ab9e165eed6868869285c08"
+  },
+  "required_bindings": [
+    "primary.estimate",
+    "primary.std_error"
+  ],
+  "results": {
+    "primary": {
+      "estimate": 3.0,
+      "std_error": 0.45
+    }
+  }
+}

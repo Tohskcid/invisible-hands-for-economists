@@ -1,0 +1,13 @@
+{
+  "topic_survey":"research/topic-survey.json",
+  "manifest":"research/manifest.jsonl",
+  "manuscript":"paper/manuscript/main.tex",
+  "coverage":"research/manuscript-coverage.json",
+  "bibliography":"paper/references/references.bib",
+  "literature_archive":"research/literature-archive.json",
+  "logic_review":"research/logic-review.json",
+  "mechanism_scope":"not-claimed",
+  "claim_scope":"research-only",
+  "latex_main":"paper/manuscript/main.tex",
+  "latex_visual_review":"research/latex-visual-review.json"
+}

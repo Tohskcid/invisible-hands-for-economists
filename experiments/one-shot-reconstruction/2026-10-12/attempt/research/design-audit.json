@@ -1,0 +1,62 @@
+{
+  "design": "did",
+  "estimand": "NJ–PA mean change in FTE headcount among observed complete restaurant pairs",
+  "assignment_narrative": "Known statewide NJ floor increase, compared with surveyed PA establishments; observational comparison, not random assignment.",
+  "interpretation_boundary": "Supported descriptive change contrast; conditional ATT only under unverified counterfactual, anticipation, spillover and selection assumptions.",
+  "diagnostics": [
+    {
+      "id": "assignment",
+      "status": "pass",
+      "finding": "State residence and statutory policy timing define treatment; no random-assignment claim.",
+      "artifact": "research/design-memo.md"
+    },
+    {
+      "id": "support",
+      "status": "pass",
+      "finding": "Both states and all four chains present; source-row keys preserve duplicate sheet identifier.",
+      "artifact": "research/design-memo.md"
+    },
+    {
+      "id": "inference",
+      "status": "inconclusive",
+      "finding": "Only two policy jurisdictions; HC1/OLS/bootstrap condition on state paths and cannot estimate statewide shock uncertainty.",
+      "artifact": "research/design-memo.md"
+    },
+    {
+      "id": "timing",
+      "status": "pass",
+      "finding": "NJ legislative archive schedules April 1, 1992; baseline instrument January–March and observed post dates November–December.",
+      "artifact": "research/design-memo.md"
+    },
+    {
+      "id": "comparison-groups",
+      "status": "inconclusive",
+      "finding": "PA restaurants are observed contemporaneously but comparable untreated employment changes cannot be verified.",
+      "artifact": "research/design-memo.md"
+    },
+    {
+      "id": "anticipation",
+      "status": "inconclusive",
+      "finding": "Increase legislated before baseline; no data identify anticipatory employment response.",
+      "artifact": "research/design-memo.md"
+    },
+    {
+      "id": "parallel-trends",
+      "status": "blocked",
+      "finding": "One baseline wave precludes pretrend diagnostics; assumption not empirically verified.",
+      "artifact": "research/design-memo.md"
+    },
+    {
+      "id": "spillovers",
+      "status": "inconclusive",
+      "finding": "Cross-border labor/product substitution and chain wage spillovers are not observed.",
+      "artifact": "research/design-memo.md"
+    },
+    {
+      "id": "heterogeneous-effects",
+      "status": "pass",
+      "finding": "Single adoption date; no staggered TWFE weighting problem. Chain omissions and initial-wage diagnostic reported descriptively.",
+      "artifact": "research/design-memo.md"
+    }
+  ]
+}

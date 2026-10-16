@@ -1,0 +1,426 @@
+{
+  "schema_version": "1",
+  "run_id": "R_BASE",
+  "source_sha256": {
+    "scripts/analyze.py": "9f09e11b50192aab57f48db48207f2cb448d559585ed869ec438f7b2fc844883",
+    "scripts/acquire.py": "b2c66b61ba443b52c13748d025086e27ac89f54f5501f0b1b6bbec68d181cb04",
+    "data/raw/public.dat": "04bde0cad5540980f32ce099c6dad369e2f05494698071d8a65b3e1cbe9ca53a",
+    "data/raw/codebook": "1d801d7bdfa77ad2138d79ead54eef830913a2bdf4861a50ee013b3474e4b52f",
+    "research/data-provenance.json": "4d78046de05f8b1440233958e6ef4eaf4a921a0b9444c6a524eebe86ce16a6f6"
+  },
+  "required_bindings": [
+    "primary.estimate",
+    "primary.std_error",
+    "primary.n",
+    "primary.n_nj",
+    "primary.n_pa",
+    "primary.se_homoskedastic",
+    "primary.bootstrap_low",
+    "primary.bootstrap_high"
+  ],
+  "results": {
+    "primary": {
+      "estimate": 2.7500000000000004,
+      "std_error": 1.337725311029075,
+      "se_homoskedastic": 1.1543553776958988,
+      "n": 384,
+      "n_nj": 309,
+      "n_pa": 75,
+      "coefficients": {
+        "intercept": -2.2833333333333328,
+        "state": 2.7500000000000004
+      },
+      "residual_sd": 8.967756134466416,
+      "outcome": "change",
+      "formula": "change ~ 1 + state",
+      "variance": "HC1; homoskedastic also reported",
+      "se_separate_groups": 1.3423409769082764,
+      "bootstrap_low": 0.19278317152103563,
+      "bootstrap_high": 5.273771035598704,
+      "normal_low": 0.1280583903830137,
+      "normal_high": 5.371941609616988
+    },
+    "controlled": {
+      "estimate": 2.784585431402901,
+      "std_error": 1.3414409286302411,
+      "se_homoskedastic": 1.1555793652711248,
+      "n": 384,
+      "n_nj": 309,
+      "n_pa": 75,
+      "coefficients": {
+        "intercept": -1.827726021782815,
+        "state": 2.784585431402901,
+        "chain2": 0.24078635641512813,
+        "chain3": -2.5883896502302544,
+        "chain4": -0.19100690679101173,
+        "co_owned": 0.36252804611257894
+      },
+      "residual_sd": 8.948980953574226,
+      "outcome": "change",
+      "formula": "change ~ 1 + state + chain2 + chain3 + chain4 + co_owned",
+      "variance": "HC1; homoskedastic also reported"
+    },
+    "gap": {
+      "estimate": 16.358975801892893,
+      "std_error": 5.9845426036059015,
+      "se_homoskedastic": 5.923743608099825,
+      "n": 368,
+      "n_nj": null,
+      "n_pa": null,
+      "coefficients": {
+        "intercept": -1.6685127728175182,
+        "gap": 16.358975801892893
+      },
+      "residual_sd": 8.677627420611918,
+      "outcome": "change",
+      "formula": "change ~ 1 + gap",
+      "variance": "HC1; homoskedastic also reported"
+    },
+    "gap_controlled": {
+      "estimate": 15.877397944908381,
+      "std_error": 6.320209628562183,
+      "se_homoskedastic": 6.043629243958508,
+      "n": 368,
+      "n_nj": null,
+      "n_pa": null,
+      "coefficients": {
+        "intercept": -1.5420171189034373,
+        "gap": 15.877397944908381,
+        "chain2": 0.8080231485425866,
+        "chain3": -1.8434451714712803,
+        "chain4": 0.3551183447955405,
+        "co_owned": 0.43080113212262516
+      },
+      "residual_sd": 8.675149069783071,
+      "outcome": "change",
+      "formula": "change ~ 1 + gap + chain2 + chain3 + chain4 + co_owned",
+      "variance": "HC1; homoskedastic also reported"
+    },
+    "pa": {
+      "n_raw": 79,
+      "n_pre": 77,
+      "n_post": 77,
+      "n_pair": 75,
+      "pre": 23.33116883116883,
+      "post": 21.165584415584416,
+      "paired_pre": 23.38,
+      "paired_post": 21.096666666666668,
+      "change": -2.283333333333333,
+      "missing_pair_rate": 0.05063291139240506,
+      "permanent_closed": 1,
+      "starting_wage_pre": 4.630131578947369,
+      "starting_wage_post": 4.617464788732394
+    },
+    "nj": {
+      "n_raw": 331,
+      "n_pre": 321,
+      "n_post": 319,
+      "n_pair": 309,
+      "pre": 20.439408099688475,
+      "post": 21.02742946708464,
+      "paired_pre": 20.430582524271845,
+      "paired_post": 20.89724919093851,
+      "change": 0.4666666666666666,
+      "missing_pair_rate": 0.06646525679758308,
+      "permanent_closed": 5,
+      "starting_wage_pre": 4.612133757961783,
+      "starting_wage_post": 5.080849056603773
+    },
+    "robust_pt04": {
+      "estimate": 2.8176440129449833,
+      "std_error": 1.356154430164849,
+      "se_homoskedastic": 1.1628380743845461,
+      "n": 384,
+      "n_nj": 309,
+      "n_pa": 75,
+      "coefficients": {
+        "intercept": -2.294666666666666,
+        "state": 2.8176440129449833
+      },
+      "residual_sd": 9.033655039375814,
+      "outcome": "altchange",
+      "formula": "altchange ~ 1 + state",
+      "variance": "HC1; homoskedastic also reported"
+    },
+    "robust_pt06": {
+      "estimate": 2.6823559870550158,
+      "std_error": 1.3358916986252323,
+      "se_homoskedastic": 1.1607337209283264,
+      "n": 384,
+      "n_nj": 309,
+      "n_pa": 75,
+      "coefficients": {
+        "intercept": -2.272,
+        "state": 2.6823559870550158
+      },
+      "residual_sd": 9.017307102699878,
+      "outcome": "altchange",
+      "formula": "altchange ~ 1 + state",
+      "variance": "HC1; homoskedastic also reported"
+    },
+    "robust_no_managers": {
+      "estimate": 2.9425125313283225,
+      "std_error": 1.3182342238289142,
+      "se_homoskedastic": 1.1226839289760282,
+      "n": 391,
+      "n_nj": 315,
+      "n_pa": 76,
+      "coefficients": {
+        "intercept": -2.4901315789473695,
+        "state": 2.9425125313283225
+      },
+      "residual_sd": 8.78478627834627,
+      "outcome": "altchange",
+      "formula": "altchange ~ 1 + state",
+      "variance": "HC1; homoskedastic also reported"
+    },
+    "robust_no_permanent": {
+      "estimate": 2.721919452347083,
+      "std_error": 1.3354088744962935,
+      "se_homoskedastic": 1.1533482314958963,
+      "n": 378,
+      "n_nj": 304,
+      "n_pa": 74,
+      "coefficients": {
+        "intercept": -2.064189189189189,
+        "state": 2.721919452347083
+      },
+      "residual_sd": 8.897483796717673,
+      "outcome": "change",
+      "formula": "change ~ 1 + state",
+      "variance": "HC1; homoskedastic also reported"
+    },
+    "robust_phone_only": {
+      "estimate": 2.5822514798938556,
+      "std_error": 1.393220166882624,
+      "se_homoskedastic": 1.1995019018899482,
+      "n": 353,
+      "n_nj": 284,
+      "n_pa": 69,
+      "coefficients": {
+        "intercept": -1.894927536231884,
+        "state": 2.5822514798938556
+      },
+      "residual_sd": 8.937114120665425,
+      "outcome": "change",
+      "formula": "change ~ 1 + state",
+      "variance": "HC1; homoskedastic also reported"
+    },
+    "robust_no_shore": {
+      "estimate": 2.974488567990373,
+      "std_error": 1.3439737842320656,
+      "se_homoskedastic": 1.15616923137813,
+      "n": 352,
+      "n_nj": 277,
+      "n_pa": 75,
+      "coefficients": {
+        "intercept": -2.283333333333334,
+        "state": 2.974488567990373
+      },
+      "residual_sd": 8.882200901158866,
+      "outcome": "change",
+      "formula": "change ~ 1 + state",
+      "variance": "HC1; homoskedastic also reported"
+    },
+    "robust_omit_chain1": {
+      "estimate": 1.546545667447307,
+      "std_error": 1.3372975685754454,
+      "se_homoskedastic": 1.3454275437432408,
+      "n": 225,
+      "n_nj": 183,
+      "n_pa": 42,
+      "coefficients": {
+        "intercept": -1.6845238095238098,
+        "state": 1.546545667447307
+      },
+      "residual_sd": 7.863560733523654,
+      "outcome": "change",
+      "formula": "change ~ 1 + state",
+      "variance": "HC1; homoskedastic also reported"
+    },
+    "robust_omit_chain2": {
+      "estimate": 3.5574478551751283,
+      "std_error": 1.564838929141,
+      "se_homoskedastic": 1.3515074753010086,
+      "n": 305,
+      "n_nj": 242,
+      "n_pa": 63,
+      "coefficients": {
+        "intercept": -3.1547619047619033,
+        "state": 3.5574478551751283
+      },
+      "residual_sd": 9.555347599178418,
+      "outcome": "change",
+      "formula": "change ~ 1 + state",
+      "variance": "HC1; homoskedastic also reported"
+    },
+    "robust_omit_chain3": {
+      "estimate": 2.9006465517241398,
+      "std_error": 1.6113341221195325,
+      "se_homoskedastic": 1.3836060585079526,
+      "n": 290,
+      "n_nj": 232,
+      "n_pa": 58,
+      "coefficients": {
+        "intercept": -1.8017241379310351,
+        "state": 2.9006465517241398
+      },
+      "residual_sd": 9.424784859427396,
+      "outcome": "change",
+      "formula": "change ~ 1 + state",
+      "variance": "HC1; homoskedastic also reported"
+    },
+    "robust_omit_chain4": {
+      "estimate": 2.6445878136200722,
+      "std_error": 1.4965924347920636,
+      "se_homoskedastic": 1.2229775377004417,
+      "n": 332,
+      "n_nj": 270,
+      "n_pa": 62,
+      "coefficients": {
+        "intercept": -2.2540322580645165,
+        "state": 2.6445878136200722
+      },
+      "residual_sd": 8.684146982516241,
+      "outcome": "change",
+      "formula": "change ~ 1 + state",
+      "variance": "HC1; homoskedastic also reported"
+    },
+    "robust_winsor_changes": {
+      "estimate": 2.4810071197410997,
+      "std_error": 1.2553593829389347,
+      "se_homoskedastic": 1.104290500580046,
+      "n": 384,
+      "n_nj": 309,
+      "n_pa": 75,
+      "coefficients": {
+        "intercept": -2.0434666666666663,
+        "state": 2.4810071197410997
+      },
+      "residual_sd": 8.578820787906901,
+      "outcome": "trimchange",
+      "formula": "trimchange ~ 1 + state",
+      "variance": "HC1; homoskedastic also reported"
+    },
+    "outcome_starting_wage": {
+      "estimate": 0.4965046747175693,
+      "std_error": 0.050704831933558576,
+      "se_homoskedastic": 0.04660104570959876,
+      "n": 370,
+      "n_nj": 302,
+      "n_pa": 68,
+      "coefficients": {
+        "intercept": -0.030147058823529412,
+        "state": 0.4965046747175693
+      },
+      "residual_sd": 0.34717842450626163,
+      "outcome": "wage_change",
+      "formula": "wage_change ~ 1 + state",
+      "variance": "HC1; homoskedastic also reported"
+    },
+    "outcome_opening_hours": {
+      "estimate": -0.11131080757248976,
+      "std_error": 0.10243774213564501,
+      "se_homoskedastic": 0.1256608462010431,
+      "n": 399,
+      "n_nj": 321,
+      "n_pa": 78,
+      "coefficients": {
+        "intercept": 0.10897435897435892,
+        "state": -0.11131080757248976
+      },
+      "residual_sd": 0.9954360152638168,
+      "outcome": "hours_change",
+      "formula": "hours_change ~ 1 + state",
+      "variance": "HC1; homoskedastic also reported"
+    },
+    "outcome_meal_price": {
+      "estimate": 0.1000816993464051,
+      "std_error": 0.04351304559984315,
+      "se_homoskedastic": 0.049230771198583566,
+      "n": 356,
+      "n_nj": 288,
+      "n_pa": 68,
+      "coefficients": {
+        "intercept": -0.03397058823529409,
+        "state": 0.1000816993464051
+      },
+      "residual_sd": 0.365142462661462,
+      "outcome": "meal_change",
+      "formula": "meal_change ~ 1 + state",
+      "variance": "HC1; homoskedastic also reported"
+    },
+    "outcome_fulltime_share": {
+      "estimate": 0.058871448551437985,
+      "std_error": 0.03730698132401985,
+      "se_homoskedastic": 0.035089624552385276,
+      "n": 378,
+      "n_nj": 304,
+      "n_pa": 74,
+      "coefficients": {
+        "intercept": -0.031243733867317894,
+        "state": 0.058871448551437985
+      },
+      "residual_sd": 0.2706982655904523,
+      "outcome": "share_change",
+      "formula": "share_change ~ 1 + state",
+      "variance": "HC1; homoskedastic also reported"
+    },
+    "highwage": {
+      "estimate": -2.566666666666667,
+      "std_error": 2.1244785052156225,
+      "se_homoskedastic": 2.391955527840251,
+      "n": 100,
+      "n_nj": 25,
+      "n_pa": 75,
+      "coefficients": {
+        "intercept": -2.283333333333334,
+        "state": -2.566666666666667
+      },
+      "residual_sd": 10.357471259161366,
+      "outcome": "change",
+      "formula": "change ~ 1 + state",
+      "variance": "HC1; homoskedastic also reported"
+    },
+    "crosssection": {
+      "estimate": 2.753605782980582,
+      "note": "Four cell means using available outcomes; not same sample as primary"
+    },
+    "audit": {
+      "n_raw": 410,
+      "n_pairs": 384,
+      "duplicate_sheet_rows": [
+        42,
+        168
+      ],
+      "missing_components": {
+        "empft": 6,
+        "emppt": 4,
+        "nmgrs": 6,
+        "empft2": 12,
+        "emppt2": 10,
+        "nmgrs2": 6
+      },
+      "permanent_closed": 6,
+      "state_clusters": 2,
+      "seed": 19920401,
+      "negative_employment_components": 0,
+      "second_wave_date_range": [
+        110592,
+        123192
+      ],
+      "winsor_limits": [
+        -26.255,
+        22.877500000000012
+      ],
+      "status_counts": {
+        "1": 399,
+        "3": 6,
+        "2": 2,
+        "4": 1,
+        "0": 1,
+        "5": 1
+      }
+    }
+  }
+}

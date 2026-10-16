@@ -1,0 +1,17 @@
+\documentclass{article}
+\usepackage{amsmath}
+\newcommand{\result}[2]{#2}
+\begin{document}
+\title{Market Reactions to Regulatory Disclosure: An Event Study}
+\author{Research Team}
+\maketitle
+\section{Introduction}
+We measure cumulative abnormal returns [claim:c-car] \cite{fama1969}.
+\section{Empirical Results}
+The 3-day mean CAR is \result{primary.car_mean}{-0.0437}
+with cluster standard error \result{primary.std_error}{0.0038}.
+% [results-sha256:a56d250698f9bcc080b4628a3052500ed2c2090fe27836749a6bb8acd4a8fdac]
+\input{../../output/tables/car_table.tex}
+\bibliographystyle{plain}
+\bibliography{../ref}
+\end{document}

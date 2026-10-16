@@ -1,0 +1,20 @@
+\documentclass{article}
+\usepackage{amsmath,amsthm}
+\newtheorem{theorem}{Theorem}
+\begin{document}
+\title{A Note on Infinite Horizon Alternating Offers Bargaining}
+\author{Research Team}
+\maketitle
+\section{Introduction}
+We study the bargaining game [claim:thm-1] \cite{rubinstein1982}. The formal derivation is presented in Appendix A.
+\section{Main Results}
+\begin{theorem}
+The unique subgame perfect equilibrium payoff to Player 1 is $x^* = \frac{1-\delta_2}{1-\delta_1\delta_2}$.
+\end{theorem}
+\section{Appendix: Mathematical Derivations}
+Let $M_1$ and $m_1$ be the supremum and infimum of Player 1's SPE payoffs.
+In round 2, Player 2 accepts any offer $y > \delta_2 M_1$, yielding $m_1 \ge 1 - \delta_2 M_2$.
+Symmetrically, $M_1 \le 1 - \delta_2 m_2$. Solving yields $M_1 = m_1 = \frac{1-\delta_2}{1-\delta_1\delta_2}$.
+\bibliographystyle{plain}
+\bibliography{../ref}
+\end{document}

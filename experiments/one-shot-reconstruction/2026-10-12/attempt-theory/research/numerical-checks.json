@@ -1,0 +1,32 @@
+{
+  "schema_version": "1",
+  "status": "pass",
+  "authority": "supplementary only; not proof",
+  "discount_rational_cases": 16,
+  "additive_rational_cases": 25,
+  "equal_cost_fixed_points_checked": 4,
+  "delayed_example": "exact rational checks pass",
+  "short_period_checks": [
+    {
+      "h": 0.1,
+      "p1": 0.6587089584387725,
+      "limit": 0.6
+    },
+    {
+      "h": 0.01,
+      "p1": 0.6059897007351185,
+      "limit": 0.6
+    },
+    {
+      "h": 0.001,
+      "p1": 0.6005998997000719,
+      "limit": 0.6
+    },
+    {
+      "h": 0.0001,
+      "p1": 0.6000599989997001,
+      "limit": 0.6
+    }
+  ],
+  "code_sha256": "d229a4dae3f883884dc3946b8de773dcbe90c64a8337c03bab10bb576dc9ab78"
+}

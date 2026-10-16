@@ -1,0 +1,227 @@
+{
+  "schema_version": "1",
+  "mode": "theory",
+  "manuscript_sha256": "9071cfc06e88621fc817147406c511a5a386afca6e420082e61f8f669d9f81aa",
+  "sections": [
+    {
+      "id": "introduction",
+      "role": "introduction",
+      "status": "ready",
+      "headings": [
+        "Introduction"
+      ],
+      "claim_ids": [
+        "C_SCOPE"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/introduction.md",
+          "sha256": "391bcf1f94c134fc4aedd80eff43e55d22ea6a121df6d0ed2c7d19fc158dc3c1"
+        },
+        {
+          "kind": "model",
+          "path": "research/model.md",
+          "sha256": "fe36506f62cad4efc1aaee8af7b6f3ec8c59060e487ad54044068cf7d9158d67"
+        }
+      ]
+    },
+    {
+      "id": "literature",
+      "role": "literature",
+      "status": "ready",
+      "headings": [
+        "Solution concept and source boundary"
+      ],
+      "claim_ids": [
+        "C_SCOPE"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/literature.md",
+          "sha256": "9b16f2f6ddc2302f64513c4413977a03b1427cb44b36d43c2554ad840117294b"
+        },
+        {
+          "kind": "literature",
+          "path": "paper/manuscript/main.tex",
+          "sha256": "9071cfc06e88621fc817147406c511a5a386afca6e420082e61f8f669d9f81aa"
+        }
+      ]
+    },
+    {
+      "id": "model",
+      "role": "model",
+      "status": "ready",
+      "headings": [
+        "Game and preferences"
+      ],
+      "claim_ids": [
+        "C_MODEL"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/model.md",
+          "sha256": "e7d75be2a6001917248c50283d0cd071f1dc618de410302db805ef1df653d0db"
+        },
+        {
+          "kind": "model",
+          "path": "research/model.md",
+          "sha256": "fe36506f62cad4efc1aaee8af7b6f3ec8c59060e487ad54044068cf7d9158d67"
+        }
+      ]
+    },
+    {
+      "id": "general",
+      "role": "results",
+      "status": "ready",
+      "headings": [
+        "Contractive waiting preferences"
+      ],
+      "claim_ids": [
+        "C_GENERAL"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/general.md",
+          "sha256": "59dbe6b98a7cef936bda9695dde65402f4251a0cc4d6acbf7e0713c72c819d85"
+        },
+        {
+          "kind": "proof",
+          "path": "paper/manuscript/main.tex",
+          "sha256": "9071cfc06e88621fc817147406c511a5a386afca6e420082e61f8f669d9f81aa"
+        }
+      ]
+    },
+    {
+      "id": "discount",
+      "role": "results",
+      "status": "ready",
+      "headings": [
+        "Exponential discounting"
+      ],
+      "claim_ids": [
+        "C_DISCOUNT",
+        "C_TIMING",
+        "C_LIMIT"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/discount.md",
+          "sha256": "97da604e2b2b7482e1c1468e4e948a12979a1bb5db6d0f2f9dfc3ef2f369f159"
+        },
+        {
+          "kind": "proof",
+          "path": "paper/manuscript/main.tex",
+          "sha256": "9071cfc06e88621fc817147406c511a5a386afca6e420082e61f8f669d9f81aa"
+        }
+      ]
+    },
+    {
+      "id": "additive",
+      "role": "results",
+      "status": "ready",
+      "headings": [
+        "Constant waiting costs"
+      ],
+      "claim_ids": [
+        "C_ADDITIVE",
+        "C_EQUAL",
+        "C_DELAY"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/additive.md",
+          "sha256": "efdfc851e418736e6e369bf6cfe6049437f39d39c80944a03f0b31c593ca54a3"
+        },
+        {
+          "kind": "proof",
+          "path": "paper/manuscript/main.tex",
+          "sha256": "9071cfc06e88621fc817147406c511a5a386afca6e420082e61f8f669d9f81aa"
+        }
+      ]
+    },
+    {
+      "id": "boundary",
+      "role": "results",
+      "status": "ready",
+      "headings": [
+        "Boundary cases and interpretation"
+      ],
+      "claim_ids": [
+        "C_BOUNDARY"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/boundary.md",
+          "sha256": "2ab3c7a18814a1a159f5c528ae1711198a3664f68c0a85f3d9c3c8a37a9619ad"
+        },
+        {
+          "kind": "proof",
+          "path": "paper/manuscript/main.tex",
+          "sha256": "9071cfc06e88621fc817147406c511a5a386afca6e420082e61f8f669d9f81aa"
+        }
+      ]
+    },
+    {
+      "id": "conclusion",
+      "role": "conclusion",
+      "status": "ready",
+      "headings": [
+        "Conclusion"
+      ],
+      "claim_ids": [
+        "C_SCOPE"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/conclusion.md",
+          "sha256": "5f9b4350620c778c2577022d41a7dfadac0fd4c8ee5e29055910e2f9f8f5a929"
+        },
+        {
+          "kind": "model",
+          "path": "research/model.md",
+          "sha256": "fe36506f62cad4efc1aaee8af7b6f3ec8c59060e487ad54044068cf7d9158d67"
+        }
+      ]
+    },
+    {
+      "id": "appendix",
+      "role": "appendix",
+      "status": "ready",
+      "headings": [
+        "Complete derivations and proofs"
+      ],
+      "claim_ids": [
+        "C_SCOPE",
+        "C_MODEL",
+        "C_GENERAL",
+        "C_DISCOUNT",
+        "C_TIMING",
+        "C_LIMIT",
+        "C_ADDITIVE",
+        "C_EQUAL",
+        "C_DELAY",
+        "C_BOUNDARY"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/appendix.md",
+          "sha256": "562503e815bf41924d499c690786a4b9e22e6866a105b62354de49315ade9fb0"
+        },
+        {
+          "kind": "appendix",
+          "path": "paper/manuscript/main.tex",
+          "sha256": "9071cfc06e88621fc817147406c511a5a386afca6e420082e61f8f669d9f81aa"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{"id":"aer","title":"American Economic Review","field":"general-economics","homepage":"https://www.aeaweb.org/journals/aer","profile_status":"derive-from-corpus"}
+{"id":"econometrica","title":"Econometrica","field":"general-economics","homepage":"https://www.econometricsociety.org/publications/econometrica","profile_status":"derive-from-corpus"}
+{"id":"jpe","title":"Journal of Political Economy","field":"general-economics","homepage":"https://www.journals.uchicago.edu/toc/jpe/current","profile_status":"derive-from-corpus"}
+{"id":"qje","title":"The Quarterly Journal of Economics","field":"general-economics","homepage":"https://academic.oup.com/qje","profile_status":"derive-from-corpus"}
+{"id":"restud","title":"The Review of Economic Studies","field":"general-economics","homepage":"https://academic.oup.com/restud","profile_status":"derive-from-corpus"}
+{"id":"jf","title":"The Journal of Finance","field":"finance","homepage":"https://afajof.org/journal-of-finance/","profile_status":"derive-from-corpus"}
+{"id":"jfe","title":"Journal of Financial Economics","field":"finance","homepage":"https://www.sciencedirect.com/journal/journal-of-financial-economics","profile_status":"derive-from-corpus"}
+{"id":"rfs","title":"The Review of Financial Studies","field":"finance","homepage":"https://academic.oup.com/rfs","profile_status":"derive-from-corpus"}
+{"id":"jfqa","title":"Journal of Financial and Quantitative Analysis","field":"finance","homepage":"https://www.cambridge.org/core/journals/journal-of-financial-and-quantitative-analysis","profile_status":"derive-from-corpus"}
+{"id":"rof","title":"Review of Finance","field":"finance","homepage":"https://academic.oup.com/rof","profile_status":"derive-from-corpus"}

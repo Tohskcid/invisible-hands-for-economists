@@ -1,0 +1,247 @@
+{
+  "schema_version": "1",
+  "root": "attempt-theory",
+  "build_products": "Disposable build/ contains checker logs and fourteen source-bound rendered pages; excluded from this stable index",
+  "artifacts": [
+    {
+      "path": "output/pdf/main.pdf",
+      "purpose": "final rendered manuscript",
+      "sha256": "36835bfef3b806c1cecaafbd4e672d516455661adc088c1f1702da4b975dcb83"
+    },
+    {
+      "path": "paper/manuscript/main.tex",
+      "purpose": "manuscript",
+      "sha256": "9071cfc06e88621fc817147406c511a5a386afca6e420082e61f8f669d9f81aa"
+    },
+    {
+      "path": "paper/references/references.bib",
+      "purpose": "bibliography",
+      "sha256": "33fbc566f2fc5cd796241b925b0552eec45414107c76a0d5bf95d7b25566d675"
+    },
+    {
+      "path": "research/attempt-summary.json",
+      "purpose": "research/audit/provenance",
+      "sha256": "5f8b9b9aceb27ca9298703b0125b68a31e89c51f21c996759aa4dfe53d38d842"
+    },
+    {
+      "path": "research/claims-gate.json",
+      "purpose": "research/audit/provenance",
+      "sha256": "4bd049937f983c92a3caf1f24eb7751c2c880db0825d87f26cb927a4f74032cf"
+    },
+    {
+      "path": "research/contamination.json",
+      "purpose": "research/audit/provenance",
+      "sha256": "9dc29b881ac19f4c58859ed913f453c3479e00ffe5c3825883f0efe7330574d8"
+    },
+    {
+      "path": "research/coverage-gate.json",
+      "purpose": "research/audit/provenance",
+      "sha256": "38c1b9cdd9f849450358aec7be64a89e5c481db9239f8e80efe601e13a945eb5"
+    },
+    {
+      "path": "research/experiments.tsv",
+      "purpose": "research/audit/provenance",
+      "sha256": "4913dd1fd6d7076557d3fe0e50b9311f47b5e9109ad1a6e13b5fda15bc975096"
+    },
+    {
+      "path": "research/gate-results.json",
+      "purpose": "research/audit/provenance",
+      "sha256": "67f01efcf1626af8b57d69227013a2c3edce67ceb7795b12aa30109f678bb3c3"
+    },
+    {
+      "path": "research/journal-profile-econometrica.md",
+      "purpose": "research/audit/provenance",
+      "sha256": "478c0378e186e782d3b14e5f1043643212cfa182ee60db3eb4ed79995707857d"
+    },
+    {
+      "path": "research/latex-as-is-failure.json",
+      "purpose": "research/audit/provenance",
+      "sha256": "9060948d0a6d2b6919beb581732abe283875107a9972638b3ad59c608de6e09e"
+    },
+    {
+      "path": "research/latex-build-history.json",
+      "purpose": "research/audit/provenance",
+      "sha256": "ebf2fc29732f6711128c77bcac6897813f1809d3ce88d3af51ef298f5524a279"
+    },
+    {
+      "path": "research/latex-final.json",
+      "purpose": "research/audit/provenance",
+      "sha256": "d545cd8681a2fbce5f1f10c2797f55163f7850456cccfc782b36bb2d976818ab"
+    },
+    {
+      "path": "research/latex-report.json",
+      "purpose": "research/audit/provenance",
+      "sha256": "c68557f20e7e93b2ebc4353b104627c6f98174704242405699d0e5fbeb45013e"
+    },
+    {
+      "path": "research/latex-visual-review.json",
+      "purpose": "research/audit/provenance",
+      "sha256": "419db4a9bb3a7047e6cff08ca5ab008c9d430d8cd8420011960356d1ed30eb83"
+    },
+    {
+      "path": "research/latex_finalize-gate.json",
+      "purpose": "research/audit/provenance",
+      "sha256": "5658e255f0edcd58d77bd526d0e38d66885ef86a0b8bfdd6a4411485f38ed6dc"
+    },
+    {
+      "path": "research/layout-gate.json",
+      "purpose": "research/audit/provenance",
+      "sha256": "14e6969a6117a1c2b2033cb8ce0d17ee5af13b64465fdba0ae4c6713c6f77953"
+    },
+    {
+      "path": "research/literature-archive.json",
+      "purpose": "research/audit/provenance",
+      "sha256": "63f78d93db81faa2ec2f939f4a0033cad18ae2235a0e92d8e6d9a80170828e26"
+    },
+    {
+      "path": "research/literature_archive-gate.json",
+      "purpose": "research/audit/provenance",
+      "sha256": "b1303ce37a49b4ca7dcb58eea64f3bbe131053ab9a2cf5516ceb5a62a6ed2c60"
+    },
+    {
+      "path": "research/logic-review.json",
+      "purpose": "research/audit/provenance",
+      "sha256": "88dcc544d46dc86a1b6aa9fa0050c26228f1917bb04e64824dc3c24e2b38b0ad"
+    },
+    {
+      "path": "research/logic_review-gate.json",
+      "purpose": "research/audit/provenance",
+      "sha256": "3a8d5b9b284a83f416a75e10493a8b7f21c963db03f39481bd76dddf1460ae21"
+    },
+    {
+      "path": "research/manifest-gate.json",
+      "purpose": "research/audit/provenance",
+      "sha256": "b89ef9370cee82172d2cee71fcf827eac0012da925c017ec317a243b29136c58"
+    },
+    {
+      "path": "research/manifest.jsonl",
+      "purpose": "research/audit/provenance",
+      "sha256": "edc3616047a8245fa28efa1ae667bf7c88a0ef983f1d3df2a5154f3355bafd81"
+    },
+    {
+      "path": "research/manuscript-coverage.json",
+      "purpose": "research/audit/provenance",
+      "sha256": "6d4f66cca39fc49cef5808e6a01e55232d96d4bb9bcef82b092f1b071a4f2a76"
+    },
+    {
+      "path": "research/model.md",
+      "purpose": "research/audit/provenance",
+      "sha256": "fe36506f62cad4efc1aaee8af7b6f3ec8c59060e487ad54044068cf7d9158d67"
+    },
+    {
+      "path": "research/numerical-checks.json",
+      "purpose": "research/audit/provenance",
+      "sha256": "eb0f1508ea377ad245d70afa876cf21b2cdb23c78085e2f5f041c27784ccb72c"
+    },
+    {
+      "path": "research/package-gate.json",
+      "purpose": "research/audit/provenance",
+      "sha256": "00a5da1a729ecc8c4f1798c0942af3fb8f5f833c51105aa0320b46d258f3ad2e"
+    },
+    {
+      "path": "research/package.json",
+      "purpose": "research/audit/provenance",
+      "sha256": "265c9cd83bbef465ffd4f963994f32cb1d4443173ddc579a35119149aab8e04d"
+    },
+    {
+      "path": "research/proof-obligations.json",
+      "purpose": "research/audit/provenance",
+      "sha256": "ee14f1aaa7fe8f64e0ce4184f254751bc4d861c59f77e0eaf022d78100d13230"
+    },
+    {
+      "path": "research/proof-status.json",
+      "purpose": "research/audit/provenance",
+      "sha256": "088d896d236aeb3ff770b34eff6907c1e5582bc2705421960f1c1f6bc567c3a2"
+    },
+    {
+      "path": "research/reproduction.md",
+      "purpose": "research/audit/provenance",
+      "sha256": "aa866744c6d4a24483434762cf25564288d72f124acffe3f75d6be847a0dab1f"
+    },
+    {
+      "path": "research/sections/additive.md",
+      "purpose": "research/audit/provenance",
+      "sha256": "efdfc851e418736e6e369bf6cfe6049437f39d39c80944a03f0b31c593ca54a3"
+    },
+    {
+      "path": "research/sections/appendix.md",
+      "purpose": "research/audit/provenance",
+      "sha256": "562503e815bf41924d499c690786a4b9e22e6866a105b62354de49315ade9fb0"
+    },
+    {
+      "path": "research/sections/boundary.md",
+      "purpose": "research/audit/provenance",
+      "sha256": "2ab3c7a18814a1a159f5c528ae1711198a3664f68c0a85f3d9c3c8a37a9619ad"
+    },
+    {
+      "path": "research/sections/conclusion.md",
+      "purpose": "research/audit/provenance",
+      "sha256": "5f9b4350620c778c2577022d41a7dfadac0fd4c8ee5e29055910e2f9f8f5a929"
+    },
+    {
+      "path": "research/sections/discount.md",
+      "purpose": "research/audit/provenance",
+      "sha256": "97da604e2b2b7482e1c1468e4e948a12979a1bb5db6d0f2f9dfc3ef2f369f159"
+    },
+    {
+      "path": "research/sections/general.md",
+      "purpose": "research/audit/provenance",
+      "sha256": "59dbe6b98a7cef936bda9695dde65402f4251a0cc4d6acbf7e0713c72c819d85"
+    },
+    {
+      "path": "research/sections/introduction.md",
+      "purpose": "research/audit/provenance",
+      "sha256": "391bcf1f94c134fc4aedd80eff43e55d22ea6a121df6d0ed2c7d19fc158dc3c1"
+    },
+    {
+      "path": "research/sections/literature.md",
+      "purpose": "research/audit/provenance",
+      "sha256": "9b16f2f6ddc2302f64513c4413977a03b1427cb44b36d43c2554ad840117294b"
+    },
+    {
+      "path": "research/sections/model.md",
+      "purpose": "research/audit/provenance",
+      "sha256": "e7d75be2a6001917248c50283d0cd071f1dc618de410302db805ef1df653d0db"
+    },
+    {
+      "path": "research/sections/outline.md",
+      "purpose": "research/audit/provenance",
+      "sha256": "280be1854dab1d1ec78acc6609c895d0679d6ee7d7d0d8fc6ae79de1ff73a923"
+    },
+    {
+      "path": "research/source-access.jsonl",
+      "purpose": "research/audit/provenance",
+      "sha256": "b7f54940c52f1c6dcafbe8bd44480ea383e862f2cc3c9067cb506f9057658629"
+    },
+    {
+      "path": "research/source-evidence.json",
+      "purpose": "research/audit/provenance",
+      "sha256": "b0aaf6c2693a92161d45cd61d4113d3f03fa639db2059c04480ad53b5867d621"
+    },
+    {
+      "path": "research/state.md",
+      "purpose": "research/audit/provenance",
+      "sha256": "b0510c38c61660259050ff9dee37bc67a7ba294d617e4eaff441a3d3c8c3ffed"
+    },
+    {
+      "path": "research/topic-survey.json",
+      "purpose": "research/audit/provenance",
+      "sha256": "a38a8f53b96999811afdf2f6d699b0275ee42b192cc0a7e6b100ea3e2c06761d"
+    },
+    {
+      "path": "research/topic_survey-gate.json",
+      "purpose": "research/audit/provenance",
+      "sha256": "3850f7253b64a57ce62c71a199c14422e1ecf5c6a2b9abe412c14393f69adeab"
+    },
+    {
+      "path": "scripts/run_gates.py",
+      "purpose": "verification code",
+      "sha256": "035b7661fed4cba694c040d0d6e4356a0aad4402925c550601ac609552327c35"
+    },
+    {
+      "path": "scripts/verify_and_package.py",
+      "purpose": "verification code",
+      "sha256": "d229a4dae3f883884dc3946b8de773dcbe90c64a8337c03bab10bb576dc9ab78"
+    }
+  ]
+}

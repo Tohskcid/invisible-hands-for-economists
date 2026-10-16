@@ -1,0 +1,72 @@
+{
+  "recorded_at_utc": "2026-10-16T03:24:22.524793+00:00",
+  "scope": "Post-hoc frozen-input computational replay, not a new question-only research run or a full package pass.",
+  "original_results_sha256": "4c13c45ca15e8487473c2ce2fa1685b5acf0ce12d4129718329e5ea11d87eed5",
+  "deleted_generated_outputs_before_run": true,
+  "commands": [
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "scripts/analyze.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"primary\": {\n    \"estimate\": 2.7500000000000004,\n    \"std_error\": 1.337725311029075,\n    \"se_homoskedastic\": 1.1543553776958988,\n    \"n\": 384,\n    \"n_nj\": 309,\n    \"n_pa\": 75,\n    \"coefficients\": {\n      \"intercept\": -2.2833333333333328,\n      \"state\": 2.7500000000000004\n    },\n    \"residual_sd\": 8.967756134466416,\n    \"outcome\": \"change\",\n    \"formula\": \"change ~ 1 + state\",\n    \"variance\": \"HC1; homoskedastic also reported\",\n    \"se_separate_groups\": 1.3423409769082764,\n    \"bootstrap_low\": 0.19278317152103563,\n    \"bootstrap_high\": 5.273771035598704,\n    \"normal_low\": 0.1280583903830137,\n    \"normal_high\": 5.371941609616988\n  },\n  \"groups\": {\n    \"pa\": {\n      \"n_raw\": 79,\n      \"n_pre\": 77,\n      \"n_post\": 77,\n      \"n_pair\": 75,\n      \"pre\": 23.33116883116883,\n      \"post\": 21.165584415584416,\n      \"paired_pre\": 23.38,\n      \"paired_post\": 21.096666666666668,\n      \"change\": -2.283333333333333,\n      \"missing_pair_rate\": 0.05063291139240506,\n      \"permanent_closed\": 1,\n      \"starting_wage_pre\": 4.630131578947369,\n      \"starting_wage_post\": 4.617464788732394\n    },\n    \"nj\": {\n      \"n_raw\": 331,\n      \"n_pre\": 321,\n      \"n_post\": 319,\n      \"n_pair\": 309,\n      \"pre\": 20.439408099688475,\n      \"post\": 21.02742946708464,\n      \"paired_pre\": 20.430582524271845,\n      \"paired_post\": 20.89724919093851,\n      \"change\": 0.4666666666666666,\n      \"missing_pair_rate\": 0.06646525679758308,\n      \"permanent_closed\": 5,\n      \"starting_wage_pre\": 4.612133757961783,\n      \"starting_wage_post\": 5.080849056603773\n    }\n  },\n  \"results\": \"research/results.json\"\n}\n",
+      "stderr": "\nFontconfig error: No writable cache directories\n\t/opt/homebrew/var/cache/fontconfig\n\t/Users/lixinzhe/.cache/fontconfig\n\t/Users/lixinzhe/.fontconfig\nMatplotlib is building the font cache; this may take a moment.\n"
+    },
+    {
+      "command": [
+        "Rscript",
+        "scripts/verify.R"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "scripts/build_package.py"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "results_tree_exact_match": true,
+  "base_r_primary_agreement": true,
+  "regenerated_text_and_tables": {
+    "paper/manuscript/main.tex": {
+      "expected_sha256": "50d6ff21f4d226ae86ffe3609ab14f96d1f5ff63cdb6880ea947daefc5f837d0",
+      "actual_sha256": "50d6ff21f4d226ae86ffe3609ab14f96d1f5ff63cdb6880ea947daefc5f837d0",
+      "match": true
+    },
+    "output/tables/main.tex": {
+      "expected_sha256": "2c4f139120019001c28da3fca4bec902333bb1068ecc856e45038f65ccb7ace4",
+      "actual_sha256": "2c4f139120019001c28da3fca4bec902333bb1068ecc856e45038f65ccb7ace4",
+      "match": true
+    },
+    "output/tables/outcomes.tex": {
+      "expected_sha256": "8b86ee59197588dfa5dab0514377bcd38c1414b09c3474a5c4a289e2676cf587",
+      "actual_sha256": "8b86ee59197588dfa5dab0514377bcd38c1414b09c3474a5c4a289e2676cf587",
+      "match": true
+    },
+    "output/tables/means.tex": {
+      "expected_sha256": "5161b854e964bd5edfd16689e0fc4726e98a731cee0c05a299821acf6fa7ca8b",
+      "actual_sha256": "5161b854e964bd5edfd16689e0fc4726e98a731cee0c05a299821acf6fa7ca8b",
+      "match": true
+    },
+    "output/tables/robustness.tex": {
+      "expected_sha256": "a35e7431f09daab7bac6116bd8c3570ccc0bb23e27216f9ea1aa77bb7f3035d5",
+      "actual_sha256": "a35e7431f09daab7bac6116bd8c3570ccc0bb23e27216f9ea1aa77bb7f3035d5",
+      "match": true
+    }
+  },
+  "passed": true,
+  "computed_primary": {
+    "estimate": 2.7500000000000004,
+    "std_error": 1.337725311029075,
+    "n": 384,
+    "n_nj": 309,
+    "n_pa": 75
+  }
+}

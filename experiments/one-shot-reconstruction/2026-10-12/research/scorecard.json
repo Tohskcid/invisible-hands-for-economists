@@ -1,0 +1,116 @@
+{
+  "schema_version": "1",
+  "completed_at_utc": "2026-10-16T03:27:21.138834+00:00",
+  "overall_verdict": "Core reconstruction demonstrated in two historical cases; full historical reconstruction and all-gate delivery not achieved.",
+  "strict_uninterrupted_one_shot_success_demonstrated": false,
+  "interpretation": "This is an interrupted two-case pilot of the combined host agent plus unchanged harness, not a general success-rate or causal added-value estimate for the harness.",
+  "harness_snapshot": {
+    "valid": true,
+    "source_files": 75,
+    "trees_checked": [
+      "frozen",
+      "repository"
+    ],
+    "mismatches": []
+  },
+  "cases": {
+    "aer-001": {
+      "original": "Card and Krueger (1994), American Economic Review",
+      "artifact_root": "attempt",
+      "pdf_pages": 10,
+      "core_computation": "pass",
+      "primary_estimate": 2.7500000000000004,
+      "primary_n": 384,
+      "independent_numeric_fields_matched": 116,
+      "clean_results_tree_exact_match": true,
+      "regenerated_manuscript_and_tables_byte_identical": true,
+      "published_core_comparisons_within_predeclared_tolerance": "5/5",
+      "full_historical_fidelity": "partial",
+      "current_gates": {
+        "topic_survey": false,
+        "data_provenance": true,
+        "layout": true,
+        "literature_archive": true,
+        "manifest": true,
+        "coverage": true,
+        "claims": true,
+        "result_bindings": true,
+        "design": false,
+        "logic_review": true,
+        "visual_review": true
+      },
+      "package_pass": false,
+      "posthoc_package": "research/reviews/empirical-package-posthoc.json",
+      "missing_original_scope": [
+        "Exact Table 4 and Table 5 original sample/specification set",
+        "Exact ZIP-based geographic robustness",
+        "Original state entry analysis and separate CPS evidence"
+      ],
+      "source_memory_contamination": true,
+      "kernel_verification": "not applicable to empirical arithmetic"
+    },
+    "econometrica-002": {
+      "original": "Rubinstein (1982), Econometrica",
+      "artifact_root": "attempt-theory",
+      "pdf_pages": 14,
+      "paper_proof_review": "pass within stated model classes",
+      "central_claims_reviewed": 10,
+      "proof_obligations_reviewed": 11,
+      "kernel_verified": false,
+      "full_historical_fidelity": "partial",
+      "current_gates": {
+        "manifest": true,
+        "claims": true,
+        "coverage": true,
+        "layout": true,
+        "literature_archive": false,
+        "topic_survey": false,
+        "logic_review": true,
+        "latex_finalize": true
+      },
+      "package_pass": false,
+      "missing_original_scope": [
+        {
+          "target": "Original A-1 through A-5 general preference model and full interval characterization of all equilibrium partitions",
+          "worker_scope": "Strictly contractive, strictly increasing stationary delay maps for pure strategies, plus separately proved discount and additive families",
+          "status": "narrower scope; original general theorem not recovered"
+        },
+        {
+          "target": "Original ordinary-Nash comparison and exact lexicographic zero-discount treatment",
+          "status": "not reproduced as original statements; worker excludes exact-zero discount uniqueness rather than claiming it"
+        }
+      ],
+      "source_memory_contamination": true
+    }
+  },
+  "failure_classification": {
+    "implementation_and_environment": [
+      "Empirical generated master invokes package with unsupported --json; historical exit 2 is preserved. Correct-CLI posthoc audit also fails on topic/design and package auto engine selection.",
+      "Empirical standalone explicit pdflatex works; package auto selects Tectonic with unavailable cached dependencies.",
+      "Theory package recompiles a fresh temporary PDF whose hash differs from the actually reviewed retained PDF; retained PDF/visual review themselves match.",
+      "Several worker gate snapshots/summary fields predate received reviews after quota interruptions; this final scorecard uses current hash-bound audit."
+    ],
+    "research_and_data": [
+      "Survey estimates alone do not resolve parallel trends, anticipation, spillovers, state shocks or missing-outcome selection.",
+      "The public survey archive does not contain all original auxiliary geographic/entry/CPS inputs; alternative worker specifications differ from published samples.",
+      "Theory worker deliberately proves narrower preference classes rather than the original general interval theorem."
+    ],
+    "benchmark_and_external_constraints": [
+      "Source restrictions and incomplete survey execution leave topic/contribution gates blocked; no claim that all literature errors were logically forced by the ban.",
+      "Theory conceptual-reference full text was unavailable; this access gap is distinct from withholding the target.",
+      "Both workers recognized classic papers from model memory; empirical search snippets also exposed a coefficient/specification information.",
+      "Execution was interrupted by usage limits and resumed after user continue; active budgets are not elapsed calendar time.",
+      "Two journals of the ten-journal registry, no finance/structural case and no no-harness control arm."
+    ]
+  },
+  "author_artifacts_modified_by_final_evaluation": false,
+  "new_scientific_inputs_to_workers_after_initial_question": false,
+  "evidence": [
+    "research/empirical-comparison.json",
+    "research/theory-comparison.json",
+    "research/clean-replay.json",
+    "research/reviews/empirical-execution.json",
+    "research/reviews/fresh-manuscript-referee.json",
+    "research/reviews/final-artifact-audit.json"
+  ]
+}

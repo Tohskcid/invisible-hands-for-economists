@@ -1,0 +1,17 @@
+{
+  "schema_version": "1",
+  "run_id": "run-fin-001",
+  "source_sha256": {
+    "data/event_returns.csv": "297c1349c54f8cf006b33ab14f4fbbd7f99f1b9a171ee9ca22f6d808336e20e0"
+  },
+  "required_bindings": [
+    "primary.car_mean",
+    "primary.std_error"
+  ],
+  "results": {
+    "primary": {
+      "car_mean": -0.0437,
+      "std_error": 0.0038
+    }
+  }
+}

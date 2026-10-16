@@ -1,0 +1,103 @@
+{
+  "classification": "evaluator-only holdout; never pass to reconstruction worker",
+  "created_on": "2026-10-12",
+  "journal_registry_id": "aer",
+  "citation": {"authors": ["David Card", "Alan B. Krueger"], "year": 1994, "title": "Minimum Wages and Employment: A Case Study of the Fast-Food Industry in New Jersey and Pennsylvania", "journal": "American Economic Review", "volume": 84, "issue": 4, "pages": "772-793"},
+  "worker_question": "1992年紐澤西州提高最低工資，如何影響當地速食餐廳的就業？",
+  "source_status": "All article targets below are visually checked published values, not author-program output or a curator rerun.",
+  "primary_sources": [
+    {"role": "author publication listing", "url": "https://davidcard.berkeley.edu/papers.html", "access": "public HTML, no authentication"},
+    {"role": "published article on author's site", "url": "https://davidcard.berkeley.edu/papers/njmin-aer.pdf", "access": "downloaded successfully", "local_holdout_path": "/private/tmp/ck1994-njmin-aer.pdf", "sha256": "6f9b9f1b6da9834c2a68bf86fc6078c83acdd7507db0d37b8b4814dfd2b3462e", "bytes": 582964, "note": "26-page file: published article pp.772-793 followed by citation pages; do not copy full text into repository"},
+    {"role": "author data landing page", "url": "https://davidcard.berkeley.edu/data_sets.html", "access": "public HTML, no authentication"},
+    {"role": "author README", "url": "https://davidcard.berkeley.edu/readme/njmin-readme.txt", "access": "public plaintext"},
+    {"role": "author original-data archive", "url": "https://davidcard.berkeley.edu/data_sets/njmin.zip", "access": "downloaded successfully", "local_holdout_path": "/private/tmp/ck1994-njmin.zip", "sha256": "41a29aec6b489658b20030d044a2b20a5f5a04b871cde41df057afd6013ba587", "bytes": 23017}
+  ],
+  "rights": {"data": "No explicit open-data license was found in landing page, README, codebook, or archive. Public download availability is verified; redistribution rights are not inferred.", "article": "Author-hosted published article; no blanket open license inferred. A separate author-hosted JSTOR copy includes personal/non-commercial-use terms. Keep article in temporary holdout only."},
+  "archive": {
+    "version_note": "README describes book Myth and Measurement chapter 2; archive timestamps are 1996-1997. Treat this public-data vintage separately from published numerical targets.",
+    "readme_discrepancy": "README says five files; actual archive contains six including read.me.",
+    "files": [
+      {"name": "public.dat", "bytes": 82410, "role": "raw observations", "shape": [410, 46], "sha256": "04bde0cad5540980f32ce099c6dad369e2f05494698071d8a65b3e1cbe9ca53a"},
+      {"name": "codebook", "bytes": 3822, "role": "variable descriptions and fixed-width positions", "sha256": "1d801d7bdfa77ad2138d79ead54eef830913a2bdf4861a50ee013b3474e4b52f", "encoding_note": "contains DOS box-drawing bytes; not valid UTF-8"},
+      {"name": "survey1.nj", "bytes": 5803, "role": "first-wave questionnaire"},
+      {"name": "survey2.nj", "bytes": 5480, "role": "second-wave questionnaire"},
+      {"name": "read.me", "bytes": 1254, "role": "archive description; identifies book and linked datasets"},
+      {"name": "check.sas", "bytes": 13770, "role": "answer-contaminating analysis code", "sha256": "b1861774bfefd527ccdae08122327c802071c1e3de332365c61fe3be1f506fe3", "quarantine": true}
+    ],
+    "code_contamination": "check.sas constructs FTE employment, changes, wage-gap exposure, NJ wage groups, meal prices, and samples; directly tabulates Table 2, part of Table 3, Table 4 and unpublished proportional-change models. Reading it reveals analysis decisions even without article access.",
+    "program_discrepancy": "check.sas line 160 excludes CO_OWNED from its region-controlled wage-gap model, whereas published Table 4(v) includes ownership controls. Do not equate this script's output with the published target.",
+    "codebook_status_codes": {"0": "second interview refused:1", "1": "answered:399", "2": "renovation:2", "3": "permanent closure:6", "4": "highway closure:1", "5": "mall-fire closure:1"}
+  },
+  "design": {
+    "event": "NJ minimum wage 4.25 to 5.05 on 1992-04-01; PA unchanged",
+    "sample": "410 establishments:331 NJ,79 PA; four fast-food chains",
+    "waves": ["1992-02-15 to 1992-03-04", "1992-11-05 to 1992-12-31"],
+    "estimand": "employment change at existing establishments; entry requires separate evidence",
+    "outcome": "FTE = full-time nonmanager workers + managers/assistant managers + 0.5*part-time workers",
+    "closure_rule": "permanent closures:post employment zero; temporary closures:missing in base case",
+    "identification": "cross-state before/after difference; complementary within-NJ initial-wage comparisons",
+    "gap": "PA:0; NJ:max(0,(5.05-initial_wage)/initial_wage)",
+    "locators": "pp.773-778; Table 1 p.774; employment construction p.775; Section III pp.778-784"
+  },
+  "published_targets": {
+    "units": "coefficients in FTE unless labelled proportional; standard errors in se fields",
+    "table3": {
+      "locator": {"journal_page": 780, "pdf_page_1_based": 9},
+      "columns": ["PA", "NJ", "NJ_minus_PA"],
+      "pre": {"value": [23.33,20.44,-2.89], "se": [1.35,0.51,1.44]},
+      "post": {"value": [21.17,21.03,-0.14], "se": [0.94,0.52,1.07]},
+      "change_all_available": {"value": [-2.16,0.59,2.76], "se": [1.25,0.54,1.36]},
+      "change_balanced": {"value": [-2.28,0.47,2.75], "se": [1.25,0.48,1.34]},
+      "change_temporary_zero": {"value": [-2.28,0.23,2.51], "se": [1.25,0.49,1.35]},
+      "within_NJ_change_low_minus_high": {"value": 3.36, "se": 1.48},
+      "within_NJ_change_middle_minus_high": {"value": 2.91, "se": 1.41}
+    },
+    "table4": {
+      "locator": {"journal_page": 780, "pdf_page_1_based": 9},
+      "N": 357,
+      "sample_rule": "employment change and initial wage available; second wage available or establishment permanently closed",
+      "models": [
+        {"column": "i", "regressor": "NJ", "controls": [], "value": 2.33, "se": 1.19},
+        {"column": "ii", "regressor": "NJ", "controls": ["chain", "ownership"], "value": 2.30, "se": 1.20},
+        {"column": "iii", "regressor": "gap", "controls": [], "value": 15.65, "se": 6.08},
+        {"column": "iv", "regressor": "gap", "controls": ["chain", "ownership"], "value": 14.92, "se": 6.21},
+        {"column": "v", "regressor": "gap", "controls": ["chain", "ownership", "region"], "value": 11.91, "se": 7.39}
+      ],
+      "inference_note": "Published standard errors are conventional OLS model standard errors; worker may add alternative inference but must label it."
+    },
+    "table5_key_robustness": {
+      "locator": {"journal_page": 783, "pdf_page_1_based": 12},
+      "all_models_controls": ["chain", "ownership"],
+      "coefficient_order": ["NJ", "gap"],
+      "rows": [
+        {"row": 1, "spec": "base", "value": [2.30,14.92], "se": [1.19,6.21]},
+        {"row": 2, "spec": "temporary closures zero", "value": [2.20,14.42], "se": [1.21,6.31]},
+        {"row": 3, "spec": "exclude managers", "value": [2.34,14.69], "se": [1.17,6.05]},
+        {"row": 4, "spec": "part-time weight 0.4", "value": [2.34,15.23], "se": [1.20,6.23]},
+        {"row": 5, "spec": "part-time weight 0.6", "value": [2.27,14.60], "se": [1.21,6.26]},
+        {"row": 6, "spec": "exclude NJ shore", "value": [2.58,16.88], "se": [1.19,6.36]},
+        {"row": 7, "spec": "interview-week controls", "value": [2.27,15.79], "se": [1.20,6.24]},
+        {"row": 8, "spec": "exclude more-than-two callbacks", "value": [2.41,14.08], "se": [1.28,7.11]}
+      ],
+      "weighted_proportional_row9": {"value": [0.13,0.81], "se": [0.05,0.26]},
+      "proportional_definition_locator": "p.782 footnote 18; change divided by mean employment, permanent-closure change set to -1",
+      "published_internal_difference": "Table 4(ii) prints se=1.20; Table 5(row1,i) prints se=1.19 for same reported beta=2.30. Keep both; allow a rounding/source discrepancy in evaluation."
+    },
+    "direction": "Employment reduction is not supported in the main survey estimates; positive point estimates should not be converted into an unqualified causal claim.",
+    "secondary_locators": {"table6": "p.786 (PDF15):full-time share, hours, registers, benefits, wage progression", "table7": "p.788 (PDF17):meal-price changes, N315", "table8": "p.790 (PDF19):state McDonald's entry analysis", "CPS_check": "Section VII pp.789-791"}
+  },
+  "scope_limits": [
+    "Two survey waves cannot empirically test pretreatment parallel trends; comparisons of high-wage NJ stores supplement but do not prove this assumption.",
+    "public.dat contains no ZIP code. Exact Table 5 Newark/Camden subsamples (rows10/11) need unverified extra location input.",
+    "Archive lacks Table 8 state restaurant-directory and wage inputs and Section VII monthly CPS inputs. These blocks require separate acquisition; a survey-only run cannot claim full-article numerical replication.",
+    "Original certainty about standard-error construction or historical data vintage is not implied by a successful current-code rerun."
+  ],
+  "evaluation_rules": {
+    "published_vs_computed": "Published targets remain immutable. Any independently computed values belong in a separate comparison file with dataset hash, transformations, estimation code and inference convention.",
+    "numeric_rounding": "Compare to the displayed precision: approximately 0.005 for two-decimal coefficients, allowing explicit documented vintage or publication inconsistencies.",
+    "must_check": ["real downloaded data and provenance", "sample and closure treatment", "constructed FTE", "main DID", "wage-gap models", "at least three substantively different robustness checks", "identification assumptions and limitations", "source-grounded interpretation", "full-article scope disclosure"],
+    "do_not_reward": ["matching remembered headline without executable estimates", "copied coefficient with no result binding", "pretreatment trend claims from only two waves", "asserting complete replication of missing blocks"],
+    "archive_access_audit": "Worker must log archive inventory before extraction and record whether check.sas or any paper/results/third-party replication was opened. Acquisition is not itself proof that analysis code was read; distinguish discovered presence from access.",
+    "memory_limit": "The topic plus place/year is readily identifiable and famous. Prohibiting paper access reduces retrieval contamination but cannot establish absence of model-training memory. Treat success as constrained reconstruction, not discovery."
+  }
+}

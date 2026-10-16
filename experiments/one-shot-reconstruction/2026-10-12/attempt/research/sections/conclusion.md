@@ -1,0 +1,6 @@
+
+On the retained restaurant sample, employment rises slightly in New Jersey while falling in Pennsylvania, producing a positive relative change of \result{primary.estimate}{2.75} FTE employees per establishment. Independent parsing, explicit missing-value rules, raw-file checksums, and a second implementation make this sample finding reproducible. Alternative measurement and sample choices preserve its sign, while chain exclusions and high-wage comparisons reveal meaningful variation. % [claim:C_MAIN] [claim:C_ROBUST] [claim:C_REPRO]
+
+The survey does not establish the counterfactual employment path. There is one baseline observation, advance notice of the policy, possible cross-border responses, outcome nonresponse, and only two policy jurisdictions. Those gaps remain after controls, robust restaurant-level standard errors, and bootstrap resampling. Under explicit parallel-trend, no-anticipation, no-spillover, and selection assumptions, the contrast can be interpreted as a short-run average effect for the observed treated restaurants. Without those assumptions it remains a descriptive relative employment change. No inference about national employment, long-run restaurant entry, welfare, or the desirability of a future wage floor is made. % [claim:C_LIMIT] [claim:C_ESTIMAND]
+
+\appendix

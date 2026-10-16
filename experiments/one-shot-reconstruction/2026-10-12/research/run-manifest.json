@@ -1,0 +1,41 @@
+{
+  "experiment_suite": "journal-registry historical reconstruction pilot",
+  "created_at": "2026-10-11T17:12:45.397893+00:00",
+  "case_count": 2,
+  "worker_context": "fresh agent via fork_turns=none; no target title, author, URL, design or results in worker prompt",
+  "harness_mutation_allowed": false,
+  "isolation": "instruction-based shared-filesystem segregation; not operating-system access isolation",
+  "cases": [
+    {
+      "case_id": "aer-001",
+      "question_file": "research/worker-input.txt",
+      "protocol": "research/protocol.json",
+      "attempt_root": "attempt",
+      "worker_agent": "/root/blind_empirical",
+      "worker_budget_minutes": 30
+    },
+    {
+      "case_id": "econometrica-002",
+      "question": "完全資訊、無限期、輪流出價且各自承擔等待成本的兩人談判，均衡分配與達成協議的時點如何決定？",
+      "protocol": "research/protocol-theory.json",
+      "attempt_root": "attempt-theory",
+      "worker_agent": "/root/blind_theory",
+      "worker_budget_minutes": 25
+    }
+  ],
+  "evaluation_ground_truth_source": "primary publication / author-hosted published copy; original code is a diagnostic artifact, not the numerical truth authority",
+  "evaluation_status": "complete: interrupted two-case pilot evaluated; full reconstruction and all-gate delivery not achieved",
+  "review_policy": "after attempt artifacts exist, dispatch fresh-context reviewer without author confidence or target answers; material corrections count as internal iterations",
+  "reporting_rules": [
+    "Do not claim academic publication acceptance or novelty from historical reconstruction.",
+    "Record target/source memory exposure, actual computations and empirical input availability separately.",
+    "Never equate an opt-in package pass with full original-paper reconstruction.",
+    "Record gates as pass, fail, not_run or blocked; do not turn absent gates into passes.",
+    "Only freeze and evaluate actual artifacts; preserve failures."
+  ],
+  "interruption_record": "research/interruption.json",
+  "final_scorecard": "research/scorecard.json",
+  "final_report": "report.md",
+  "posthoc_validation_date": "2026-10-16",
+  "additional_usage_interruptions": "Workers hit another usage limit after reviews/artifacts; final posthoc evaluation resumed on user instruction without altering scientific artifacts."
+}

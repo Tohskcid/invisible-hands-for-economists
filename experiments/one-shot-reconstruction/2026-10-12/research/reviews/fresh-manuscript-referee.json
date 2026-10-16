@@ -1,0 +1,97 @@
+{
+  "reviewer": "fresh_manuscript_referee",
+  "reviewed_at": "2026-10-12T04:46:30.822137+00:00",
+  "review_boundary": "Question, supplied manuscripts, manifests, results, proofs, specified data/design artifacts and rendered pages only. No holdout, original target article, author state, prior handoffs, contamination files or other referee assessments were read.",
+  "cases": {
+    "T": {
+      "logic_verdict": "pass",
+      "central_claims_reviewed": 10,
+      "reviewed_sha256": {
+        "manuscript": "9071cfc06e88621fc817147406c511a5a386afca6e420082e61f8f669d9f81aa",
+        "manifest": "edc3616047a8245fa28efa1ae667bf7c88a0ef983f1d3df2a5154f3355bafd81"
+      },
+      "layout_verdict": "pass",
+      "pdf_sha256": "36835bfef3b806c1cecaafbd4e672d516455661adc088c1f1702da4b975dcb83",
+      "pages_reviewed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "logic_review": "experiments/one-shot-reconstruction/2026-10-12/attempt-theory/research/logic-review.json",
+      "layout_review": "experiments/one-shot-reconstruction/2026-10-12/attempt-theory/research/latex-visual-review.json",
+      "proof_status": "complete paper proof; not kernel verified",
+      "uncertainty": "Independent human-readable proof review accepts completeness only within explicitly maintained model classes; no Lean or other proof kernel verification was performed. General nonlinear lottery preferences, unrestricted waiting preferences, exact-zero discount factors and exhaustive equal-cost/boundary characterization remain outside scope."
+    },
+    "E": {
+      "logic_verdict": "pass",
+      "central_claims_reviewed": 12,
+      "reviewed_sha256": {
+        "manuscript": "50d6ff21f4d226ae86ffe3609ab14f96d1f5ff63cdb6880ea947daefc5f837d0",
+        "manifest": "df75898e433d33c88c01d58a75400ae6c56f49ad94afb7a035ad1b8c15bbed3f"
+      },
+      "layout_verdict": "pass",
+      "pdf_sha256": "dda79d08c542adc6ed805f9af4ed27979dfb58798eaf5d27718d2cf26d5fae97",
+      "pages_reviewed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "logic_review": "experiments/one-shot-reconstruction/2026-10-12/attempt/research/logic-review.json",
+      "layout_review": "experiments/one-shot-reconstruction/2026-10-12/attempt/research/latex-visual-review.json",
+      "proof_status": "algebraic identification decomposition; assumptions unverified",
+      "uncertainty": "Pass concerns the coherence of the bounded descriptive and conditional claims. The policy effect is not identified unconditionally; parallel untreated trends, anticipation, spillovers, measurement, selection and state-shock uncertainty remain unresolved by these records. No original-article comparison or full pipeline rerun was performed.",
+      "reviewed_at": "2026-10-12T04:48:32.412578+00:00",
+      "results_sha256": "4c13c45ca15e8487473c2ce2fa1685b5acf0ce12d4129718329e5ea11d87eed5",
+      "freshness_update": {
+        "previous_manuscript_sha256": "5dda6694cec7bac797dca6a82ca5a2e79a39a6ad357deef7fa536d6fe22eece9",
+        "verified_change": "Single occurrence: employment falls by -2.28 changed to employment changes by -2.28. Reversing that exact change reproduces the prior reviewed manuscript SHA-256. Manifest and results are unchanged.",
+        "review_action": "Current manuscript and manifest reread; all twelve prior claim assessments remain coherent; ten current rendered pages re-opened with view_image."
+      }
+    }
+  },
+  "conclusion": "T proofs are internally coherent and reconstructible within their stated domains. E supplies a reproducible positive relative sample employment change and correctly leaves strong causal/policy interpretation unresolved. Neither review certifies novelty, historical independence, or formal proof verification.",
+  "validation": {
+    "logic_schema_require_pass": {
+      "T": {
+        "passed": true,
+        "errors": []
+      },
+      "E": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    "layout_finalize_in_memory": {
+      "T": {
+        "delivery_ready": true,
+        "errors": [],
+        "pdf_sha256": "36835bfef3b806c1cecaafbd4e672d516455661adc088c1f1702da4b975dcb83"
+      },
+      "E": {
+        "delivery_ready": true,
+        "errors": [],
+        "pdf_sha256": "dda79d08c542adc6ed805f9af4ed27979dfb58798eaf5d27718d2cf26d5fae97"
+      }
+    },
+    "note": "T checks retain their previously executed results. E require-pass CLI and layout finalize were rerun against the revised current report/reviews; no latex-final.json was written by this referee."
+  },
+  "updated_at": "2026-10-12T04:48:32.412578+00:00"
+}

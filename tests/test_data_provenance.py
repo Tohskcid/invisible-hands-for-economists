@@ -100,6 +100,8 @@ class DataProvenanceTests(unittest.TestCase):
             "calibration_sources": ["https://example.gov/moments"],
         })
         self.assertTrue(MODULE.validate(self.document(dataset), self.root)["valid"])
+        self.assertFalse(MODULE.validate(self.document(dataset), self.root, require_real=True)["valid"])
+        self.assertTrue(MODULE.validate(self.document(), self.root, require_real=True)["valid"])
 
     def test_restricted_data_uses_exported_verification_artifact(self):
         dataset = self.real_dataset()

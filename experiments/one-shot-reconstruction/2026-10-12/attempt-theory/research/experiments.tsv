@@ -1,0 +1,15 @@
+iteration	mode	hypothesis	validation	status	artifact	reason
+0	theory	Question permits a discounting benchmark but does not uniquely specify waiting preferences	Frozen question and disclosed memory	keep	research/state.md	Delegated PI scope lock; no novelty claim
+1	theory	Contractive stationary delay equivalents have a unique pure SPE	Fixed-point construction and all-SPE payoff envelopes	keep	paper/manuscript/main.tex#app:general	Complete independent argument; contraction explicitly added
+2	theory	Strict discount uniqueness extends to all behavioral strategies	Expected-payoff feasibility, spans and strict rejection gap	keep	paper/manuscript/main.tex#app:discount	No stationarity assumption in uniqueness
+3	theory	Positive unequal constant costs select a unique immediate SPE	Clipped reservation maps and unequal-cost envelope drift	keep	paper/manuscript/main.tex#app:additive	Equal low costs excluded from this uniqueness claim
+4	theory	Equal positive costs can support delay	Complete exact-rational history-dependent construction	keep	paper/manuscript/main.tex#app:equal	Counterexample to unqualified no-delay assertion
+5	theory	Perfect patience changes boundary timing	Full finite-date off-path constructions	keep	paper/manuscript/main.tex#app:boundaries	Boundary existence; no exhaustive characterization
+6	build	Cached automatic TeX engine can compile	Unchanged check_latex automatic Tectonic	crash	research/latex-build-history.json	Missing cached TeX files; no install
+7	build	Available pdflatex with initial fonts compiles	Unchanged check_latex pdflatex	crash	research/latex-build-history.json	Bitmap font missing; use installed lmodern
+8	build	As-is BibTeX accepts absolute build path	Fresh as-is unchanged checker	blocked	research/latex-as-is-failure.json	openout_any=p rejects absolute .blg
+9	build	Child-local path compatibility permits unchanged compile and render	Actual check_latex plus installed fonts	keep	research/latex-report.json	14 pages, zero overfull; visual review still required
+10	audit	Manifest and every manuscript section are traceable	Actual unchanged graph, claims, coverage and layout checkers	keep	research/gate-results.json	Source-only markers added; no proof claim inferred from schema pass
+11	literature	Generic pre-design and full-text manuscript gates can pass within source boundary	Actual topic-survey and require-complete literature checkers	blocked	research/gate-results.json	No target survey or full-text archive; do not fabricate
+12	referee	The frozen mathematical claims and all pages survive an actual independent review	Fresh-context proof/logic audit and every-page visual inspection plus hash checkers	keep	research/logic-review.json	Complete paper proof within explicit scope; no kernel verification
+13	package	The full unchanged package is delivery-ready	Actual package check including temporary recompile	blocked	research/package-gate.json	Topic survey and archive blocked; temporary PDF hash differs from reviewed PDF

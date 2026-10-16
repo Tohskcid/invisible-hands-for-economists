@@ -1,0 +1,142 @@
+{
+  "schema_version": "1",
+  "experiment_id": "rq-reconstruction-econometrica-002",
+  "input_question": "完全資訊、無限期、輪流出價且各自承擔等待成本的兩人談判，均衡分配與達成協議的時點如何決定？",
+  "target_outlet_id": "econometrica",
+  "completed_at": "2026-10-12T04:49:08.245557+00:00",
+  "execution_status": "Research and reviewed manuscript complete within explicitly stated model classes; generic package delivery gates remain blocked",
+  "one_shot_uninterrupted_success": false,
+  "execution_segments": {
+    "initial_start_utc": "2026-10-11T17:11:46Z",
+    "quota_interruption": "Root reported a saved quota interruption; approximately eleven hours were not active research time",
+    "resume_utc_approx": "2026-10-12T04:39:00Z",
+    "resume_stop_utc": "2026-10-12T04:59:00Z",
+    "resume_authorization": "User instructed continue; no new scientific input",
+    "time_accounting": "Segmented execution is explicitly disclosed; quota downtime is excluded from active time. This completion is before the recovery deadline."
+  },
+  "substantive_analysis_revisions": 5,
+  "maximum_analysis_revisions": 12,
+  "scientific_scope": {
+    "necessary_specification": "Unit divisible pie, alternating discrete offers, full public history, terminal and disagreement preferences, whole-continuation subgame perfection",
+    "added_sufficient_restrictions": [
+      "Strictly increasing stationary delay maps with a uniform Lipschitz constant below one; pure strategies",
+      "Strictly positive linear exponential discount factors below one; arbitrary behavioral strategies",
+      "Strictly positive additive per-date monetary costs; behavioral strategies"
+    ],
+    "not_claimed": [
+      "All noncontractive waiting preferences",
+      "Lottery preferences for ordinal nonlinear delay maps",
+      "Exhaustive characterization of all equal-low-additive-cost history-dependent equilibria",
+      "Unique equilibrium at perfect patience",
+      "Exact-zero globally dated discount factor uniqueness",
+      "Historical novelty, policy applicability, or complete literature coverage"
+    ]
+  },
+  "results": [
+    "Unique pure immediate SPE for the stated contractive class, characterized by p1=1-D2(p2), p2=1-D1(p1).",
+    "Unique behavioral immediate SPE for 0<delta_i<1, with p1=(1-delta2)/(1-delta1*delta2), p2=(1-delta1)/(1-delta1*delta2); every off-path threshold and tie response is specified.",
+    "Discounted patience comparative statics and short-period limit r2/(r1+r2), proved as a limit of discrete equilibria.",
+    "Positive unequal additive costs yield unique immediate behavioral SPE: the lower-cost proposer receives one; the other proposer receives min(lower cost,1). Both costs at least one yield proposer share one for both roles.",
+    "Equal additive costs c in (0,1) yield a stationary immediate family p1 in [c,1], p2=1-p1+c. At c=1/10 a full nonstationary pure SPE agrees at date one with allocation (4/5,1/5) and utilities (7/10,1/10).",
+    "Explicit boundary SPE permit any specified finite delay with one patient player receiving the entire pie; with both patient, any fixed division can follow any finite delay."
+  ],
+  "proof_status": "complete paper proof",
+  "proof_status_basis": "Actual independent fresh-context reviewer accepted all central claims and all listed proof obligations within their maintained scope",
+  "kernel_verified": false,
+  "formal_status": "No Lean/lake available; no formal proof authority or installation claimed",
+  "independent_review": {
+    "reviewer": "fresh_manuscript_referee",
+    "logic_verdict": "pass",
+    "central_claims": 10,
+    "proof_obligations": 11,
+    "visual_status": "pass",
+    "pages_actually_reviewed": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "logic_report": "research/logic-review.json",
+    "visual_report": "research/latex-visual-review.json"
+  },
+  "artifacts": {
+    "manuscript": "paper/manuscript/main.tex",
+    "pdf": "output/pdf/main.pdf",
+    "manifest": "research/manifest.jsonl",
+    "coverage": "research/manuscript-coverage.json",
+    "proof_obligations": "research/proof-obligations.json",
+    "gates": "research/gate-results.json",
+    "contamination": "research/contamination.json",
+    "source_access": "research/source-access.jsonl",
+    "reproduction": "research/reproduction.md"
+  },
+  "hashes": {
+    "manuscript": "9071cfc06e88621fc817147406c511a5a386afca6e420082e61f8f669d9f81aa",
+    "manifest": "edc3616047a8245fa28efa1ae667bf7c88a0ef983f1d3df2a5154f3355bafd81",
+    "final_pdf": "36835bfef3b806c1cecaafbd4e672d516455661adc088c1f1702da4b975dcb83",
+    "logic_review": "88dcc544d46dc86a1b6aa9fa0050c26228f1917bb04e64824dc3c24e2b38b0ad",
+    "visual_review": "419db4a9bb3a7047e6cff08ca5ab008c9d430d8cd8420011960356d1ed30eb83",
+    "proof_obligations_reviewed_snapshot": "ee14f1aaa7fe8f64e0ce4184f254751bc4d861c59f77e0eaf022d78100d13230"
+  },
+  "checker_outcomes": {
+    "manifest": true,
+    "claims": true,
+    "coverage": true,
+    "layout": true,
+    "literature_archive": false,
+    "topic_survey": false,
+    "logic_review": true,
+    "latex_finalize": true,
+    "package": false,
+    "latex-report": true,
+    "latex-as-is-failure": false
+  },
+  "blocking_gates": [
+    {
+      "gate": "topic_survey",
+      "status": "failed",
+      "reason": "No target/nearest-work or frontier survey acquired under source ban; topic record expressly blocked/unresolved; no novelty claim."
+    },
+    {
+      "gate": "require-complete literature archive",
+      "status": "failed",
+      "reason": "One conceptual primary citation has verified metadata but legally inaccessible full-text routes; archive valid but incomplete."
+    },
+    {
+      "gate": "package visual finalize",
+      "status": "failed",
+      "reason": "Package recompiles in a newly named temporary directory; rebuilt PDF SHA256 741ab5958aa32426954bb1de00c38b51bbadcd2b6fb006ee36b2287a9983832e differs from actually reviewed final PDF 36835bfef3b806c1cecaafbd4e672d516455661adc088c1f1702da4b975dcb83. The original final PDF/report/visual binding passes. No mismatch was waived."
+    }
+  ],
+  "compile_history": "Initial Tectonic cache, missing bitmap font and as-is absolute-BibTeX path failures are preserved as observed failures. Installed lmodern and child-local openout_any=r yield a genuine unchanged-checker compile/render pass. No global TeX settings or overfull limits changed.",
+  "contamination": {
+    "prior_familiarity": true,
+    "remembered_formula_and_proof_idea_disclosed": true,
+    "target_full_text_accessed": false,
+    "target_proof_exposition_accessed": false,
+    "holdout_accessed": false,
+    "other_attempts_accessed": false,
+    "accidental_target_answer_exposures": [],
+    "blind_discovery_claim": false
+  },
+  "authority_and_resources": {
+    "delegated_PI_decisions": true,
+    "fabricated_researcher_replies": false,
+    "harness_modified": false,
+    "writes_outside_attempt": false,
+    "dependency_installs": false,
+    "paid_services": false,
+    "external_communications": false
+  },
+  "historical_fidelity": "Comparison with withheld original is outside worker access; no historical-match score asserted."
+}

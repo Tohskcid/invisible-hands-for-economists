@@ -1,0 +1,10 @@
+{"from":"rochet-cyclic-monotonicity","to":"myerson-optimal-auction","type":"complements","note":"Rochet supplies a multidimensional implementability test for settings where one-dimensional auction monotonicity is insufficient."}
+{"from":"sun-abraham-event-study","to":"callaway-santanna-group-time-att","type":"alternative","note":"Both avoid opaque conventional TWFE aggregation under staggered timing, using different cohort-time constructions."}
+{"from":"callaway-santanna-group-time-att","to":"sun-abraham-event-study","type":"complements","note":"Group-time ATT aggregation and interaction-weighted event studies answer related but not identical dynamic-effect questions."}
+{"from":"hotz-miller-ccp","to":"rust-nested-fixed-point","type":"alternative","note":"CCP inversion offers a computational alternative to repeatedly nesting full dynamic-program solution inside estimation."}
+{"from":"blp-random-coefficients-demand","to":"rust-nested-fixed-point","type":"shares_method","note":"Both integrate an economic equilibrium or optimization model with a numerical estimation routine whose solver diagnostics matter."}
+{"from":"chernozhukov-et-al-dml","to":"callaway-santanna-group-time-att","type":"complements","note":"Orthogonal nuisance estimation can support flexible adjustment, but it does not replace the DiD identification design."}
+{"from":"arkhangelsky-sdid","to":"abadie-synthetic-control","type":"builds_on","note":"SDID combines synthetic-control-style unit balancing with time weighting and differencing."}
+{"from":"arkhangelsky-sdid","to":"callaway-santanna-group-time-att","type":"alternative","note":"Both target panel treatment effects but rely on different weighting structures and model conditions."}
+{"from":"borusyak-hull-jaravel-shocks","to":"goldsmith-pinkham-bartik-shares","type":"alternative","note":"The two frameworks distinguish identification from quasi-random shocks versus exogenous exposure shares."}
+{"from":"conley-spatial-gmm","to":"hahn-todd-vanderklaauw-rdd","type":"complements","note":"Distance-based covariance methods address dependence in inference, not the underlying causal identification design."}

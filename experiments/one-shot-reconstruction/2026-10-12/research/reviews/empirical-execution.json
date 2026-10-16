@@ -1,0 +1,307 @@
+{
+  "schema_version": "1",
+  "review_type": "fresh-context empirical execution",
+  "reviewed_at_utc": "2026-10-12T04:41:38.529930+00:00",
+  "scope": "Read-only author artifacts; raw data/codebook/survey instruments plus analysis and currently available manuscript template. No holdout, original target paper, target code, published numerical results, or another attempt were read.",
+  "method": "Independent base-R parsing using manually transcribed fixed-column endpoints from eligible codebook; lm/QR estimation, direct HC1 sandwich, native OLS vcov, and separate hand group-mean formulas. Did not import or rerun author analysis.",
+  "independent_verifier": {
+    "path": "scripts/independent_empirical_verify.R",
+    "sha256": "36ab72d26fa38334c23b0446f15b00b22860e976db00652b694e8abf291d4217",
+    "command": "Rscript experiments/one-shot-reconstruction/2026-10-12/scripts/independent_empirical_verify.R experiments/one-shot-reconstruction/2026-10-12/attempt/data/raw/public.dat",
+    "exit_code": 0,
+    "backend": "base R; no packages installed"
+  },
+  "original_analytical_correctness_verdict": "pass: internally correct execution of the declared complete-pair descriptive change contrast and supporting specifications; no numerical or estimator error found. This is not a historical-fidelity verdict against a withheld article.",
+  "verified_snapshot_sha256": {
+    "data/raw/public.dat": "04bde0cad5540980f32ce099c6dad369e2f05494698071d8a65b3e1cbe9ca53a",
+    "data/raw/codebook": "1d801d7bdfa77ad2138d79ead54eef830913a2bdf4861a50ee013b3474e4b52f",
+    "data/raw/read.me": "3bf4c370d368f11bd86ae20a49af1a874ad21ac6ab8c679f82a2f57789fd4f76",
+    "data/raw/survey1.nj": "076743c2d981764171ad4ab8fed12c1c23855f1be59a66ac985c716503a199bc",
+    "data/raw/survey2.nj": "ffa7c81804561f6641841e27122ba7140046773747efa71535a866a753173f86",
+    "scripts/analyze.py": "9f09e11b50192aab57f48db48207f2cb448d559585ed869ec438f7b2fc844883",
+    "scripts/acquire.py": "b2c66b61ba443b52c13748d025086e27ac89f54f5501f0b1b6bbec68d181cb04",
+    "research/data-provenance.json": "865f3978a1a4353128aff42fb613c0cc2b2f66b0dc0faa5aa9f81683d82b368b",
+    "research/data-schema.json": "99cc80b8e87691758140ab049d8f5db00e026ef4bef82044c9989bbbf5400358",
+    "research/results.json": "a60275b12a1f3cd313d1e0704f97063f385b09920b3b0d4efd2b17c1fc30f389"
+  },
+  "source_hash_checks": {
+    "scripts/analyze.py": {
+      "recorded": "9f09e11b50192aab57f48db48207f2cb448d559585ed869ec438f7b2fc844883",
+      "actual": "9f09e11b50192aab57f48db48207f2cb448d559585ed869ec438f7b2fc844883",
+      "match": true
+    },
+    "scripts/acquire.py": {
+      "recorded": "b2c66b61ba443b52c13748d025086e27ac89f54f5501f0b1b6bbec68d181cb04",
+      "actual": "b2c66b61ba443b52c13748d025086e27ac89f54f5501f0b1b6bbec68d181cb04",
+      "match": true
+    },
+    "data/raw/public.dat": {
+      "recorded": "04bde0cad5540980f32ce099c6dad369e2f05494698071d8a65b3e1cbe9ca53a",
+      "actual": "04bde0cad5540980f32ce099c6dad369e2f05494698071d8a65b3e1cbe9ca53a",
+      "match": true
+    },
+    "data/raw/codebook": {
+      "recorded": "1d801d7bdfa77ad2138d79ead54eef830913a2bdf4861a50ee013b3474e4b52f",
+      "actual": "1d801d7bdfa77ad2138d79ead54eef830913a2bdf4861a50ee013b3474e4b52f",
+      "match": true
+    },
+    "research/data-provenance.json": {
+      "recorded": "865f3978a1a4353128aff42fb613c0cc2b2f66b0dc0faa5aa9f81683d82b368b",
+      "actual": "865f3978a1a4353128aff42fb613c0cc2b2f66b0dc0faa5aa9f81683d82b368b",
+      "match": true
+    }
+  },
+  "provenance_hash_checks": [
+    {
+      "path": "data/raw/public.dat",
+      "match": true
+    },
+    {
+      "path": "data/raw/codebook",
+      "match": true
+    },
+    {
+      "path": "data/raw/read.me",
+      "match": true
+    },
+    {
+      "path": "data/raw/survey1.nj",
+      "match": true
+    },
+    {
+      "path": "data/raw/survey2.nj",
+      "match": true
+    },
+    {
+      "path": "research/docs/source-author-data.html",
+      "match": true
+    },
+    {
+      "path": "research/data-schema.json",
+      "match": true
+    },
+    {
+      "path": "scripts/acquire.py",
+      "match": true
+    }
+  ],
+  "core_result": {
+    "primary.estimate": 2.75000000000005,
+    "primary.std_error": 1.33772531102907,
+    "primary.se_homoskedastic": 1.1543553776959,
+    "primary.se_separate_groups": 1.34234097690828,
+    "primary.n": 384.0,
+    "primary.n_nj": 309.0,
+    "primary.n_pa": 75.0,
+    "primary.normal_low": 0.128058390383014,
+    "primary.normal_high": 5.37194160961699,
+    "independent.manual_estimate": 2.75,
+    "independent.manual_hc1": 1.33772531102907,
+    "independent.manual_ols": 1.1543553776959
+  },
+  "numerical_comparison": {
+    "matched_numeric_fields": 116,
+    "tolerance": 1e-10,
+    "maximum_absolute_difference": 9.237055564881302e-14,
+    "mismatches": {},
+    "all_independent_values": {
+      "primary.estimate": 2.75000000000005,
+      "primary.std_error": 1.33772531102907,
+      "primary.se_homoskedastic": 1.1543553776959,
+      "primary.n": 384.0,
+      "controlled.estimate": 2.78458543140296,
+      "controlled.std_error": 1.34144092863024,
+      "controlled.se_homoskedastic": 1.15557936527113,
+      "controlled.n": 384.0,
+      "gap.estimate": 16.3589758018928,
+      "gap.std_error": 5.98454260360588,
+      "gap.se_homoskedastic": 5.92374360809982,
+      "gap.n": 368.0,
+      "gap_controlled.estimate": 15.8773979449083,
+      "gap_controlled.std_error": 6.32020962856217,
+      "gap_controlled.se_homoskedastic": 6.04362924395851,
+      "gap_controlled.n": 368.0,
+      "independent.manual_estimate": 2.75,
+      "independent.manual_hc1": 1.33772531102907,
+      "independent.manual_ols": 1.1543553776959,
+      "primary.n_nj": 309.0,
+      "primary.n_pa": 75.0,
+      "primary.se_separate_groups": 1.34234097690828,
+      "primary.normal_low": 0.128058390383014,
+      "primary.normal_high": 5.37194160961699,
+      "pa.n_raw": 79.0,
+      "pa.n_pre": 77.0,
+      "pa.n_post": 77.0,
+      "pa.n_pair": 75.0,
+      "pa.pre": 23.3311688311688,
+      "pa.post": 21.1655844155844,
+      "pa.paired_pre": 23.38,
+      "pa.paired_post": 21.0966666666667,
+      "pa.change": -2.28333333333333,
+      "pa.missing_pair_rate": 0.0506329113924051,
+      "pa.permanent_closed": 1.0,
+      "pa.starting_wage_pre": 4.63013157894737,
+      "pa.starting_wage_post": 4.61746478873239,
+      "nj.n_raw": 331.0,
+      "nj.n_pre": 321.0,
+      "nj.n_post": 319.0,
+      "nj.n_pair": 309.0,
+      "nj.pre": 20.4394080996885,
+      "nj.post": 21.0274294670846,
+      "nj.paired_pre": 20.4305825242718,
+      "nj.paired_post": 20.8972491909385,
+      "nj.change": 0.466666666666665,
+      "nj.missing_pair_rate": 0.0664652567975831,
+      "nj.permanent_closed": 5.0,
+      "nj.starting_wage_pre": 4.61213375796178,
+      "nj.starting_wage_post": 5.08084905660377,
+      "crosssection.estimate": 2.75360578298059,
+      "robust_pt04.estimate": 2.81764401294504,
+      "robust_pt04.std_error": 1.35615443016485,
+      "robust_pt04.se_homoskedastic": 1.16283807438455,
+      "robust_pt04.n": 384.0,
+      "robust_pt06.estimate": 2.68235598705506,
+      "robust_pt06.std_error": 1.33589169862523,
+      "robust_pt06.se_homoskedastic": 1.16073372092833,
+      "robust_pt06.n": 384.0,
+      "robust_no_managers.estimate": 2.94251253132835,
+      "robust_no_managers.std_error": 1.31823422382891,
+      "robust_no_managers.se_homoskedastic": 1.12268392897603,
+      "robust_no_managers.n": 391.0,
+      "robust_no_permanent.estimate": 2.72191945234715,
+      "robust_no_permanent.std_error": 1.33540887449629,
+      "robust_no_permanent.se_homoskedastic": 1.1533482314959,
+      "robust_no_permanent.n": 378.0,
+      "robust_phone_only.estimate": 2.58225147989383,
+      "robust_phone_only.std_error": 1.39322016688262,
+      "robust_phone_only.se_homoskedastic": 1.19950190188995,
+      "robust_phone_only.n": 353.0,
+      "robust_no_shore.estimate": 2.97448856799038,
+      "robust_no_shore.std_error": 1.34397378423206,
+      "robust_no_shore.se_homoskedastic": 1.15616923137813,
+      "robust_no_shore.n": 352.0,
+      "robust_omit_chain1.estimate": 1.5465456674473,
+      "robust_omit_chain1.std_error": 1.33729756857545,
+      "robust_omit_chain1.se_homoskedastic": 1.34542754374324,
+      "robust_omit_chain1.n": 225.0,
+      "robust_omit_chain2.estimate": 3.5574478551751,
+      "robust_omit_chain2.std_error": 1.564838929141,
+      "robust_omit_chain2.se_homoskedastic": 1.351507475301,
+      "robust_omit_chain2.n": 305.0,
+      "robust_omit_chain3.estimate": 2.90064655172416,
+      "robust_omit_chain3.std_error": 1.61133412211953,
+      "robust_omit_chain3.se_homoskedastic": 1.38360605850795,
+      "robust_omit_chain3.n": 290.0,
+      "robust_omit_chain4.estimate": 2.64458781362007,
+      "robust_omit_chain4.std_error": 1.49659243479206,
+      "robust_omit_chain4.se_homoskedastic": 1.22297753770043,
+      "robust_omit_chain4.n": 332.0,
+      "robust_winsor_changes.estimate": 2.48100711974115,
+      "robust_winsor_changes.std_error": 1.25535938293894,
+      "robust_winsor_changes.se_homoskedastic": 1.10429050058005,
+      "robust_winsor_changes.n": 384.0,
+      "highwage.estimate": -2.56666666666666,
+      "highwage.std_error": 2.12447850521562,
+      "highwage.se_homoskedastic": 2.39195552784025,
+      "highwage.n": 100.0,
+      "outcome_starting_wage.estimate": 0.496504674717575,
+      "outcome_starting_wage.std_error": 0.0507048319335587,
+      "outcome_starting_wage.se_homoskedastic": 0.0466010457095991,
+      "outcome_starting_wage.n": 370.0,
+      "outcome_opening_hours.estimate": -0.111310807572487,
+      "outcome_opening_hours.std_error": 0.102437742135645,
+      "outcome_opening_hours.se_homoskedastic": 0.125660846201042,
+      "outcome_opening_hours.n": 399.0,
+      "outcome_meal_price.estimate": 0.100081699346407,
+      "outcome_meal_price.std_error": 0.0435130455998431,
+      "outcome_meal_price.se_homoskedastic": 0.0492307711985839,
+      "outcome_meal_price.n": 356.0,
+      "outcome_fulltime_share.estimate": 0.0588714485514393,
+      "outcome_fulltime_share.std_error": 0.0373069813240198,
+      "outcome_fulltime_share.se_homoskedastic": 0.0350896245523855,
+      "outcome_fulltime_share.n": 378.0,
+      "audit.n_raw": 410.0,
+      "audit.n_pairs": 384.0,
+      "audit.permanent_closed": 6.0,
+      "audit.state_clusters": 2.0,
+      "independent.duplicate_sheet_extra_rows": 1.0,
+      "independent.duplicate_sheet_affected_rows": 2.0,
+      "independent.exact_duplicate_full_rows": 0.0,
+      "independent.duplicate_row42_sheet": 407.0,
+      "independent.duplicate_row168_sheet": 407.0,
+      "independent.missing_empft": 6.0,
+      "independent.missing_emppt": 4.0,
+      "independent.missing_nmgrs": 6.0,
+      "independent.missing_empft2": 12.0,
+      "independent.missing_emppt2": 10.0,
+      "independent.missing_nmgrs2": 6.0,
+      "independent.R_bootstrap_low": 0.146551779935276,
+      "independent.R_bootstrap_high": 5.40057200647249
+    }
+  },
+  "data_audit": {
+    "raw_rows": 410,
+    "complete_pairs": 384,
+    "nj_pairs": 309,
+    "pa_pairs": 75,
+    "permanent_closures": 6,
+    "permanent_closures_retained_in_primary": 6,
+    "closure_post_components": "All six permanently closed rows record EMPFT2=EMPPT2=NMGRS2=0; no analyst imputation needed. Other closure statuses and missing components are not automatically zero.",
+    "fte_definition": "EMPFT+NMGRS+0.5*EMPPT; any required component missing makes FTE missing. Survey instrument explicitly separates managers from nonmanagement employees.",
+    "source_id_duplicate": {
+      "sheet": 407,
+      "rows": [
+        42,
+        168
+      ],
+      "extra_key_rows": 1,
+      "affected_rows": 2,
+      "exact_duplicate_full_rows": 0,
+      "treatment": "Both retained; source order row_id used. No merge or silent deduplication."
+    },
+    "gap_missingness": "PA exposure is zero by definition even when wage is missing. NJ missing baseline wage gives missing gap and is omitted from gap regressions. Gap regressions n=368 verified.",
+    "alternative_sample": "Excluding managers removes that component requirement, increasing n to391; template explicitly discloses this."
+  },
+  "inference": {
+    "analytical_covariance": "HC1 is n/(n-k) times the OLS residual sandwich; conventional OLS and separate-group SE computed correctly.",
+    "bootstrap": "Author code resamples paired restaurants separately within each state, 2000 draws, fixed seed19920401, percentile .025/.975. Independent base-R20000 draws use a different RNG and produce CI[0.146551779935276,5.40057200647249], compatible with author2k percentile CI[0.19278317152103563,5.273771035598704]. Exact same-RNG bootstrap was not needed for analytical correctness.",
+    "state_policy_clusters": 2,
+    "claim_boundary": "Current template.tex:76,81,135,169-183 correctly conditions restaurant SE/bootstrap on observed state paths and independent restaurant errors. It explicitly rejects statewide causal significance and explains that restaurant resampling cannot learn uncertainty from state shocks. Parallel trends/anticipation/spillover/selection remain unverified identifying assumptions.",
+    "verdict": "pass for stated conditional/descriptive claims; cannot establish unconditional policy causal uncertainty with these two jurisdictions."
+  },
+  "binding_audit": {
+    "observed_table_bindings": 71,
+    "all_observed_table_bindings_match": true,
+    "failed_bindings": [],
+    "two_segment_numeric_keys": "All conclusion-carrying displayed table fields use compatible result_id.field keys. Nested coefficient dictionaries and audit arrays are ancillary metadata ignored by frozen checker, not displayed table numbers.",
+    "whole_manuscript_status": "Final main.tex is still being generated; no final manuscript hash/coverage verdict is asserted. Current template uses generated @B:key@ placeholders and table insertion markers for all four modules. Root should run frozen check_result_bindings.py on the fully expanded final main.tex after freeze.",
+    "required_bindings_scope": "Only eight primary fields are required by current results.json. Author table macros cover main, means, robustness and auxiliary outcomes; the frozen checker validates bindings present but does not require every numerical result to be displayed."
+  },
+  "copied_or_typed_result_check": {
+    "numerical_verdict": "No evidence of a manually typed value that conflicts with raw data. Primary estimate and SE, supporting specs, robustness and outcomes all independently match.",
+    "originality_limit": "Numerical agreement alone cannot establish the absence of source/memory contamination; this review did not consult contamination content carrying exposed results."
+  },
+  "findings": [
+    {
+      "id": "E1",
+      "severity": "should_fix",
+      "category": "metadata",
+      "path": "attempt/research/data-schema.json",
+      "line": 3,
+      "title": "Declared key is not unique",
+      "problem": "The schema declares SHEET as the key, but raw source rows 42 and 168 both contain SHEET=407. They are distinct full records: there is one duplicated-key extra row, two affected rows, and zero exact duplicate source records. The analysis correctly preserves both using row_id, so this does not alter current numerical estimates.",
+      "fix": "Declare row_id as the processed-data key and SHEET as a source identifier that is not unique; update schema/provenance hashes and rerun generated metadata.",
+      "evidence_paths": [
+        "attempt/scripts/analyze.py:43",
+        "attempt/scripts/analyze.py:89",
+        "attempt/research/design-memo.md:3"
+      ]
+    }
+  ],
+  "not_checked": [
+    "Final manuscript generation, final binding hash, rendered PDF/layout and final unchanged-harness gate outcomes; author still writing.",
+    "Historical fidelity to withheld published specifications/results.",
+    "External source legal/substantive attribution or raw-file authenticity beyond frozen local provenance/hash evidence."
+  ],
+  "verdict": "Analytical execution passes; correct E1 metadata before final freeze if it remains present."
+}

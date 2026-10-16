@@ -1,0 +1,128 @@
+{
+  "classification": "evaluator-only holdout; never pass to reconstruction worker",
+  "created_on": "2026-10-12",
+  "journal_registry_id": "econometrica",
+  "citation": {"author": "Ariel Rubinstein", "year": 1982, "title": "Perfect Equilibrium in a Bargaining Model", "journal": "Econometrica", "volume": 50, "issue": 1, "pages_in_article": "97-109", "bibliography_note": "Author publication list reports 97-110; downloaded article ends on 109 and its 14th PDF page is blank."},
+  "worker_question": "完全資訊、無限期、輪流出價且各自承擔等待成本的兩人談判，均衡分配與達成協議的時點如何決定？",
+  "primary_sources": [
+    {"role": "author publication listing", "url": "https://arielrubinstein.tau.ac.il/publications.html", "locator": "Game Theory > Bargaining > first entry", "access": "public HTML, no authentication"},
+    {"role": "author-hosted published article", "url": "https://arielrubinstein.tau.ac.il/papers/11.pdf", "access": "downloaded successfully", "local_holdout_path": "/private/tmp/rubinstein1982.pdf", "sha256": "0f083141ef1f31a2b86383b1092d4d173403db399d89c20db514d517ba60867e", "pdf_pages": 14, "source_check": "All 13 article pages visually inspected; scanned file has no text layer; no article text copied into repository."}
+  ],
+  "rights": "Author-hosted download is public. No blanket open license or redistribution authorization is inferred; original remains in temporary holdout.",
+  "notation": {
+    "s": "player 1 share, player 2 share=1-s",
+    "A": "equilibrium partitions when player 1 proposes first",
+    "B": "equilibrium partitions when player 2 proposes first, still measured as player 1 share",
+    "time": "paper counts first accepted offer as T=1; worker may normalize it to t=0 if explicit",
+    "P_E_P": "induced equilibrium partition, not automatically a unique full strategy profile"
+  },
+  "original_model_and_assumptions": {
+    "locators": "Section 2 pp.100-101 (PDF4-5); introductory description pp.98-99",
+    "game": "two players; divisible unit surplus; alternating unrestricted offers; responder accepts or rejects; rejection reverses proposer; no binding prior offers; perfect information; indefinite horizon",
+    "strategy_space": "history-dependent proposal and response maps at every finite history, including unreached histories",
+    "outcomes": "finite agreement (s,T), or perpetual disagreement (0,infinity), with disagreement separately ordered",
+    "preference_base": "complete, reflexive and transitive outcome ranking; common knowledge of preferences",
+    "formal_assumptions": [
+      {"id": "A-1", "content": "strictly larger own share is better at the same date"},
+      {"id": "A-2", "content": "positive share earlier is strictly better; every positive finite agreement outranks perpetual disagreement"},
+      {"id": "A-3", "content": "one-period comparison invariant to common date shift"},
+      {"id": "A-4", "content": "preference closedness/continuity in shares, including comparison with disagreement"},
+      {"id": "A-5", "content": "required one-period compensating share increment weakly rises with own share"}
+    ],
+    "numbering_caution": "The introduction lists continuity as A-3 and stationarity as A-4; formal Section 2 reverses these labels. Evaluate content, not numbering alone.",
+    "scope": "preferences do not change with calendar time or history; time-dependent costs and nonlinear utility with additive fixed costs are outside this formulation (p.101 remark); incomplete-information bargaining is future work (pp.99-100)"
+  },
+  "equilibrium_concept": {
+    "locator": "Section 3 pp.101-103 (PDF5-7), P-1 through P-6 p.102",
+    "concept": "subgame perfect equilibrium: mutual best responses after every history, including accept/reject decisions and proposer continuation choices",
+    "nash_comparison": "unnumbered proposition p.101: every feasible partition is supportable as an ordinary Nash equilibrium; the p.103 example exposes a noncredible rejection",
+    "evaluation_warning": "Do not confuse subgame perfection with trembling-hand perfection; no assumption restricts all equilibria to stationary strategies."
+  },
+  "published_general_characterization": {
+    "locator": "Section 5 pp.104-106 (PDF8-10)",
+    "conversion_maps": {
+      "d1": "d1(x)=smallest immediate player-1 share y weakly preferred by 1 to player-1 share x after one period; clipped at 0",
+      "d2": "d2(y)=largest immediate player-1 share x for which player 2 weakly prefers immediate x to delayed player-1 share y; clipped at 1"
+    },
+    "Delta": "{(x,y):y=d1(x), x=d2(y)}",
+    "Delta1_Delta2": "first and second coordinate projections",
+    "theorem": "A=Delta1 != empty; B=Delta2 != empty; A and B closed intervals; B=A-epsilon for some epsilon>=0",
+    "proposition_map": [
+      {"label": "Proposition 1", "locator": "p.104 statement; p.105 proof (PDF8-9)", "target": "each fixed-point pair yields stationary credible strategies and partitions x in A,y in B"},
+      {"label": "Proposition 2", "locator": "p.105 (PDF9)", "target": "Delta nonempty through continuity and a fixed point of d2 composed with d1"},
+      {"label": "Proposition 3", "locator": "p.106 (PDF10)", "target": "Delta is a closed segment parallel to y=x, using A-5"},
+      {"label": "Proposition 4", "locator": "p.106 (PDF10)", "target": "all equilibrium partitions lie in these projections; bounds use the deviation lemmas"},
+      {"label": "Theorem", "locator": "p.106 (PDF10), after Proposition 4", "target": "the complete interval characterization"}
+    ],
+    "supporting_lemmas": "Lemmas 1-4 pp.103-104 (PDF7-8) relate proposer and responder continuation sets by credible rejection and profitable-deviation restrictions; Section 4 states only A-1/A-2 are needed there."
+  },
+  "published_special_cases": {
+    "fixed_cost": {
+      "locator": "Conclusion 1 p.107 (PDF11), model p.101",
+      "preferences": "own share minus c_i times elapsed periods, with separate disagreement ordering",
+      "maps": "d1(x)=max(x-c1,0); d2(y)=min(y+c2,1)",
+      "interior_domain_for_evaluation": "0<c1,c2<1; do not extrapolate the printed interior cases to costs exceeding the unit surplus",
+      "cases": [
+        {"condition": "c1>c2", "A": "{c2}", "B": "{0}", "timing": "first offer accepted"},
+        {"condition": "c1<c2", "A": "{1}", "B": "{1-c1}", "timing": "first offer accepted"},
+        {"condition": "c1=c2=c", "A": "[c,1]", "B": "[0,1-c]", "timing": "immediate stationary equilibria exist; history-dependent delay can also occur"}
+      ],
+      "essential_counterexample": "pp.107-108 (PDF11-12) explicitly construct an equal-cost equilibrium ending in period 2; the outcome need not be Pareto efficient. A blanket no-delay or unique-SPE claim for fixed costs fails.",
+      "parameter_caution": "The displayed Conclusion 1 does not spell out a bound on c_i. The clipped map characterization gives the appropriate feasible extension; evaluator must distinguish this issue from the printed interior cases."
+    },
+    "geometric_discount": {
+      "locator": "Conclusion 2 and remarks p.108 (PDF12); proof p.109 (PDF13); model p.101",
+      "preferences": "delta_i^t times own share",
+      "interior_domain": "0<delta1,delta2<1",
+      "maps": "d1(x)=delta1*x; d2(y)=1-delta2+delta2*y",
+      "player1_share_when1_starts": "x=(1-delta2)/(1-delta1*delta2)",
+      "player1_share_when2_starts": "y=delta1*(1-delta2)/(1-delta1*delta2)",
+      "timing_interior": "agreement at first offer in every SPE",
+      "symmetric": "delta1=delta2=delta: starter share=1/(1+delta)>1/2; advantage vanishes as delta approaches 1",
+      "comparative_statics": "player 1 share rises with own patience delta1 and falls with opponent patience delta2; first-mover comparison must hold preferences fixed",
+      "published_boundary_statement": "at least one delta<1 and at least one delta>0; delta=0 is reserved for lexicographic priority for earlier agreement, not ordinary zero discount utility",
+      "boundary_warning": "both delta=1 and both delta=0 excluded from Conclusion 2; interior uniqueness/no-delay proof must not be applied without argument when a delta is 1. Formula at delta1=delta2=1 is undefined.",
+      "scope_warning": "A finite-horizon backward-induction argument, equality of discount factors, or stationary-candidate equations alone do not establish the original infinite-horizon uniqueness result."
+    }
+  },
+  "timing_logic": {"locator": "p.107 remark (PDF11)", "sufficient_condition": "A intersection B empty implies no initial rejection in an SPE, since a delayed partition would have to belong to both sets", "scope": "holds for the interior unequal-cost and geometric-discount cases; equal costs admit overlap and delay; overlap alone is not a constructive proof of delay"},
+  "evaluator_independent_checks": {
+    "classification": "curator reasoning/verification aids, not extra published claims",
+    "discount_numeric": {"delta1": 0.9, "delta2": 0.8, "x": "5/7", "y": "9/14", "identity": "x=1-delta2+delta2*y and y=delta1*x"},
+    "fixed_cost_numeric": [
+      {"c1": 0.2, "c2": 0.1, "A": "{0.1}", "B": "{0}"},
+      {"c1": 0.1, "c2": 0.2, "A": "{1}", "B": "{0.9}"},
+      {"c1": 0.1, "c2": 0.1, "A": "[0.1,1]", "B": "[0,0.9]"}
+    ],
+    "equal_cost_delayed_construction": {
+      "c": 0.1,
+      "e(s)": "min(max(s-0.1,0),0.4)",
+      "initial_offer_player1_share": 0.5,
+      "initial_response": "2 accepts iff s<=0.1; otherwise rejects and enters a stationary continuation with player-1 responder share e(s), player-1 proposer share e(s)+0.1",
+      "path": "offer0.5 rejected; next offer gives player1 0.4 and is accepted",
+      "payoffs_t0_normalization": [0.3,0.5],
+      "verification": "player1 initial acceptance deviations yield <=0.1, rejected deviations yield e(s)-0.1<=0.3; player2 rejection yields 1-e(s)-0.1>=1-s for s>0.1; continuation profiles satisfy the equal-cost fixed-point thresholds",
+      "interpretation": "separate history-dependent example sufficient to refute a universal no-delay claim; preserve source provenance if used in evaluation"
+    }
+  },
+  "proof_obligations": [
+    "State preferences, perpetual-disagreement ranking, information, proposer order and feasible shares.",
+    "Specify proposals and acceptance rules after all histories and handle threshold indifference; verify both players' deviations, including rejected/off-path offers.",
+    "Establish equilibrium existence separately from uniqueness; a stationary construction alone proves existence.",
+    "For geometric discounts, bound outcomes across all SPE by infimum/supremum or equivalent contraction argument; do not assume stationarity to prove uniqueness.",
+    "For general preferences, prove the conversion maps and fixed-point characterization including exclusion of other equilibrium partitions.",
+    "Analyze both fixed-cost rankings and equal costs, with interval multiplicity and a credible delayed equilibrium.",
+    "Derive the unequal-discount case and first-mover comparison; state the domain and boundary limitations.",
+    "Support any universal immediate-agreement claim by a valid argument; distinguish outcome/partition uniqueness from full off-path strategy uniqueness.",
+    "Check perpetual disagreement and arbitrary-duration deviations, or establish the conditions for a valid one-shot-deviation principle.",
+    "Separate an analytically reviewed proof from a machine-checked proof; no Lean formal verification is available here."
+  ],
+  "evaluation_rules": {
+    "full_reconstruction": "Requires general characterization plus both special families and timing exceptions, not only the famous discount formula.",
+    "acceptable_alternative_proof": "Different notation and independently derived proofs are acceptable when assumptions, quantifiers and conclusion scope match.",
+    "question_underdetermination": "A one-sentence waiting-cost question does not uniquely identify exponential rather than additive or more general time preferences. A narrower internally correct paper should be scored as partial reconstruction, not fabricated theory.",
+    "critical_failures": ["universal unique equilibrium for equal fixed costs", "universal no delay for equal fixed costs", "stationary-only algebra labelled proof of uniqueness over all SPE", "unqualified first mover gets more than half with unequal patience", "undefined formula presented at both discounts equal 1", "claimed machine verification without execution"],
+    "memory_limit": "This is a famous textbook model. Source-access restrictions cannot establish absence of pretraining memory; evaluate proof execution and coverage, not scientific novelty.",
+    "formal_status": "analytic proof only; not Lean-verified"
+  }
+}

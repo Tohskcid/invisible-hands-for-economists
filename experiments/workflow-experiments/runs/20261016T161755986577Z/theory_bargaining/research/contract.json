@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "inputs": {
+    "mode": "theory",
+    "deliverable": "manuscript",
+    "claim_scope": "research-only",
+    "max_budget": 10.0
+  },
+  "mode": "theory",
+  "deliverable": "manuscript",
+  "claim_scope": "research-only",
+  "mechanism_scope": "not-claimed",
+  "max_budget": 10.0,
+  "budget_unit": "measured_wall_seconds",
+  "target_journal": "AER",
+  "question": "",
+  "obligations": []
+}

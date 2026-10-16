@@ -1,0 +1,307 @@
+{
+  "created_at": "2026-10-11T17:10:31.246653+00:00",
+  "git_head": "b301f2a4e963fa5643de75d10c0c9684bedda808",
+  "working_tree_snapshot": true,
+  "files": [
+    {
+      "path": "SKILL.md",
+      "sha256": "339478779367448159f98f422d3f95207d117a2ab8683fc679cacb01ffd18503"
+    },
+    {
+      "path": "library/catalog.jsonl",
+      "sha256": "b19530aec3f20c72ba6de0f77c0551a9d0150d67ca9e9da8c3a4e10c9be08452"
+    },
+    {
+      "path": "library/index.jsonl",
+      "sha256": "023f4a63c84c81be4c3798c3a4b0092a667dfc81a15436ee883f821e814052ad"
+    },
+    {
+      "path": "library/journals.jsonl",
+      "sha256": "e841ab3f245a4d158b415f27deaaa514219767b8f975adc5dff2892bcae42d1a"
+    },
+    {
+      "path": "library/papers/abadie-synthetic-control.md",
+      "sha256": "5cda4f37360252cba1028d858350aea38e414050a0b24101bb4d19006f1d3072"
+    },
+    {
+      "path": "library/papers/arellano-bond-difference-gmm.md",
+      "sha256": "bb6e67cf458a6c9e585f43e19c13f1a1c6f485a4033b1ddc2eaf10db78cc0068"
+    },
+    {
+      "path": "library/papers/arkhangelsky-sdid.md",
+      "sha256": "9c75fc3f76774cbb90df48e88268b642502825cb554519f43e532c8582f7aba2"
+    },
+    {
+      "path": "library/papers/blp-random-coefficients-demand.md",
+      "sha256": "33f95a4d3504bd4322c9c90cdffba27cb44cc7320796c883a90d3b3abf7aad8d"
+    },
+    {
+      "path": "library/papers/borusyak-hull-jaravel-shocks.md",
+      "sha256": "07e8385b6432511f73c83a8099eb4bcb280bae31d92b4fcebd3cebeaaeab4606"
+    },
+    {
+      "path": "library/papers/callaway-santanna-group-time-att.md",
+      "sha256": "403b43dc3d10a5001cec11dd02e8a21108561dc3bee71df54bfaace5120250fa"
+    },
+    {
+      "path": "library/papers/chernozhukov-et-al-dml.md",
+      "sha256": "5cca3849d882b5d332ebce79eb4594a4227b0caf4e084e83fb02cf5c484cdc76"
+    },
+    {
+      "path": "library/papers/conley-spatial-gmm.md",
+      "sha256": "1619b9a8056ed4e842c0653e4fefb3ba0ae7b66e6fce2131674b01cd7200964b"
+    },
+    {
+      "path": "library/papers/goldsmith-pinkham-bartik-shares.md",
+      "sha256": "de2fac819782fe5dce5297c8df119b5aa964b198be42287b07a78b70df18f8e6"
+    },
+    {
+      "path": "library/papers/hahn-todd-vanderklaauw-rdd.md",
+      "sha256": "821d92e9b8ad47afa007d7fb467775ed65b8757bc81ca4870a44bf7943566139"
+    },
+    {
+      "path": "library/papers/hotz-miller-ccp.md",
+      "sha256": "7ee4366750fb7c675fe45b726c03757b1d97f5ad41fc46749467f14c5a48927a"
+    },
+    {
+      "path": "library/papers/imbens-angrist-late.md",
+      "sha256": "c37e4f75fecf4b86c94adec6773d9972e775316b91449edfe0b1fcd575f0d118"
+    },
+    {
+      "path": "library/papers/milgrom-shannon-monotone-comparative-statics.md",
+      "sha256": "9eaf2683a3c79543111859c10e79baa321db438c8ec973ece767c6bf0a47eab0"
+    },
+    {
+      "path": "library/papers/myerson-optimal-auction.md",
+      "sha256": "39a9d0bdad9d4bfefea9f6518ad9234e42ec1393c59ef1487d390260fbbde8a1"
+    },
+    {
+      "path": "library/papers/nash-mixed-equilibrium-existence.md",
+      "sha256": "741284b93779838951cc05c7b38543c3d26569e14c9f4671e0d8e9043959dd08"
+    },
+    {
+      "path": "library/papers/rochet-cyclic-monotonicity.md",
+      "sha256": "83a0e36317aea5bf762aa048f4fbe0acf315b623a2273477e0a49b8865db72b9"
+    },
+    {
+      "path": "library/papers/rust-nested-fixed-point.md",
+      "sha256": "bc7b14e1cc0844f2fcbe648fa0d42734a9af7f2403b8a76cd6c2e5d0f41cffe2"
+    },
+    {
+      "path": "library/papers/saez-bunching-kinks.md",
+      "sha256": "d6521a28035f1eca47d2c68f4bbba798a2790f198c0ac0b408a3f40c3eede5e4"
+    },
+    {
+      "path": "library/papers/sun-abraham-event-study.md",
+      "sha256": "7a22a677348f5087fc350db6c8d1269578f583bdacf8c9b288d8777927d932b1"
+    },
+    {
+      "path": "library/relations.jsonl",
+      "sha256": "f2cb615c559a39d712ab48ad6b3b0da37c46f6e13e36f369b197094c4e584de1"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "8d2425569d899b89ae30d7a19872c6d46745f1702f3e8c1b50ffbf14146ecd79"
+    },
+    {
+      "path": "references/adversarial_referees.md",
+      "sha256": "5ddd4eb6663f80e2b15892b5d739a637d9946bf2ffc56f0008c7c17661d4dd2e"
+    },
+    {
+      "path": "references/breakthrough_anatomy.md",
+      "sha256": "42f58d84e41281d995c709018d5fc0a848b5056a7f5e544b845919c8a846bbda"
+    },
+    {
+      "path": "references/confidential_data.md",
+      "sha256": "3900e82279fa088adbfe6949589eaec9e81e17e33b37957bba095718128f45d5"
+    },
+    {
+      "path": "references/data_acquisition.md",
+      "sha256": "60527e542a00be653762a1cd1cd449e64d735786fc91a69306e0c2202872a6d3"
+    },
+    {
+      "path": "references/data_granularity_guide.md",
+      "sha256": "c75a077ed4811c1e648955c74fcaf3156bc6d7411b055b2c7cdc23262a968b86"
+    },
+    {
+      "path": "references/database_cleaning_recipes.md",
+      "sha256": "732c016fe34305a0c1feacf8a95b5961c9044dd790705ea021f72187e4442b16"
+    },
+    {
+      "path": "references/dream_rsi.md",
+      "sha256": "fabde1855442e5940e6d3ac98cb38f953f1aece5a0e164ccedbc8c9bac9eaf0f"
+    },
+    {
+      "path": "references/empirical.md",
+      "sha256": "8ebddc8c120e20209a69dea0a81961b86ff75353f8a1f20368d0fd01ee0bb4a0"
+    },
+    {
+      "path": "references/estimation_backends.md",
+      "sha256": "9e0a1e5123fd888b4c14bd302d2e948a9920e9effeee256fde924a01aad7e27b"
+    },
+    {
+      "path": "references/estimation_recipes.md",
+      "sha256": "0c90a21b30701dc8bc6634496db0ef2c10d63daeb0d81611fc0d86d31fc7d247"
+    },
+    {
+      "path": "references/falsification_battery.md",
+      "sha256": "b903778363e6e8a017fc21fcdb1fd605dffe415be3baf02d53f03b827d42e624"
+    },
+    {
+      "path": "references/journal_style.md",
+      "sha256": "6be818b99a43882e177acef695f68b97fba63fac1a6e8a35a8aebdc34e5ed388"
+    },
+    {
+      "path": "references/latex_validation.md",
+      "sha256": "5d17d1c2a9f1a22d9ff4dc4b7ea3f31ed389b6ebef566a10e6d9f7b3174dc2fd"
+    },
+    {
+      "path": "references/lean_harness.md",
+      "sha256": "23c21762f0a4d692f5121e440453c24284b1a98cf14d9ca16d9c4190f4e57f02"
+    },
+    {
+      "path": "references/manuscript.md",
+      "sha256": "af2c6bf06852b002c70a932d9fd57a293aae64ce64221f30aee30fb8914ee05e"
+    },
+    {
+      "path": "references/method_router.md",
+      "sha256": "eb53449f242cc457d38a3b98eda0c1190261b33aed169f5d79a49af56b591e44"
+    },
+    {
+      "path": "references/pdf_ingestion.md",
+      "sha256": "78b61517dd7629437759bf3d04d4f8eea7b004ecacec860aa0e99e15341ddcfa"
+    },
+    {
+      "path": "references/project_layout.md",
+      "sha256": "2739d488b4773da83c3914b3c2057c2b81d64267ec911f64b445109680e3bc01"
+    },
+    {
+      "path": "references/real_world_relevance.md",
+      "sha256": "6990ef1224c1af36a5ae312cc462d536792aed113e11649f49260d22e12bc4a3"
+    },
+    {
+      "path": "references/replication_audit.md",
+      "sha256": "907e3d7c0005d317f615a91c358b18243b99c091f45ebac03eb057fc90e54032"
+    },
+    {
+      "path": "references/research_artifacts.md",
+      "sha256": "31fcf34ef79fc4b84218e48e650ec07910443d7ad0f158ebc27db38859217789"
+    },
+    {
+      "path": "references/research_library.md",
+      "sha256": "70d200994ec1c1824124fb4b1a92aff6e9a4991f91557aaa0de9892a66ba0a0f"
+    },
+    {
+      "path": "references/research_protocol.md",
+      "sha256": "c68e099871bb2675ca86b923b4e53360ed0d7d162109d3691d64acc700e7c724"
+    },
+    {
+      "path": "references/structural.md",
+      "sha256": "e2d5501e7cc6dd18a2a8612d138be64c8d0d6eee2720ff56919d41eaa851477c"
+    },
+    {
+      "path": "references/text_as_data.md",
+      "sha256": "c8763e18dc46620a1aa63810b7d6a2f94cf653933fa7c6f86eec43fdfd735da1"
+    },
+    {
+      "path": "references/theory.md",
+      "sha256": "7411306b8d8d242dfcf73470b73026dbc2e1ac40e3c65d4db7e569fdc63510a5"
+    },
+    {
+      "path": "references/topic_survey.md",
+      "sha256": "859dcd515f58d91e9d0550c812f923859365a952b4b4422ba65bcde5246b0966"
+    },
+    {
+      "path": "scripts/audit_claims.py",
+      "sha256": "e5afd9ad92d14f0c02d960b2b737d038eb45e7e29822936b074e56941a11f8e3"
+    },
+    {
+      "path": "scripts/check_data_provenance.py",
+      "sha256": "553e113023e5b517dac077cf435b8d4b98429834c24bd64b53a34034d4ba26af"
+    },
+    {
+      "path": "scripts/check_design_audit.py",
+      "sha256": "b495421f58413b9c35c72cee41674308424c6fffac8b02208cfe6559326bad55"
+    },
+    {
+      "path": "scripts/check_latex.py",
+      "sha256": "11d0a7d60b5222d0eeae44e635344cae3b127e0f5ec9d1cdddf8b7b8026a63ac"
+    },
+    {
+      "path": "scripts/check_lean_proof.py",
+      "sha256": "babfbc5a246ec83068ea12b6d3b0f2de2e99424661ab33225c0e2a01016ca48d"
+    },
+    {
+      "path": "scripts/check_literature_archive.py",
+      "sha256": "2ab8f3d033242d5a956296af205e089e554ddec59d78aced2bd1fd28e6bda97c"
+    },
+    {
+      "path": "scripts/check_logic_review.py",
+      "sha256": "2554104e16edca8c175f4f6686b0732fb0f6beafa054e2bb64e152e7d648de00"
+    },
+    {
+      "path": "scripts/check_manuscript_coverage.py",
+      "sha256": "e85e23d297557c1575327866f345e7cd46be9db733516a53e932455aca2884be"
+    },
+    {
+      "path": "scripts/check_mechanism_audit.py",
+      "sha256": "f74982d83b7ca00900b1db19e5798692d94b7baa3bc0d4ef1331ea934bdaa156"
+    },
+    {
+      "path": "scripts/check_project_layout.py",
+      "sha256": "ed0d9c209da5838f04374f557b577c57b4903124e86797a2dd8c045cb162296f"
+    },
+    {
+      "path": "scripts/check_real_world_audit.py",
+      "sha256": "e10e6f6cb5a717a1276498b2997dc85f6ea9737d37b5193e885213ae05f3a53e"
+    },
+    {
+      "path": "scripts/check_research_package.py",
+      "sha256": "71260a5aa213f68d4a7887fe80ac2f6949b87f0272ddd6e1c10d56bf7c9de547"
+    },
+    {
+      "path": "scripts/check_result_bindings.py",
+      "sha256": "269f47ecccf77e3b5c5c7993d7b0b96ecad1079cc715388fa73e26c5520d6386"
+    },
+    {
+      "path": "scripts/check_structural_audit.py",
+      "sha256": "96de538ae91a0f5e5b9196d6799387cb950aa326fcfc13769002caab5d219750"
+    },
+    {
+      "path": "scripts/check_text_audit.py",
+      "sha256": "cb9d166f443babdc4a1da7db044ff64bd7396cf8cef3bc083092ab31a4fa1db0"
+    },
+    {
+      "path": "scripts/check_topic_survey.py",
+      "sha256": "02b30c27e5dd6cfe7e2600d36c3c5dcb589329ff208281623b718610e03e6fef"
+    },
+    {
+      "path": "scripts/dream_replay_simulator.py",
+      "sha256": "6ee63461ca133ea7ef5624cc3c9e41f8bff4dea3b9434cf8f53e92bddcb8e085"
+    },
+    {
+      "path": "scripts/econ_data_profiler.py",
+      "sha256": "ae53a23f14f16a54f529132c060bebfa1c0f9d4703c623da1adf6236eb0e5442"
+    },
+    {
+      "path": "scripts/research_action_adapter.py",
+      "sha256": "ffdd35ec8de16494f28ef758490d58babd23d7e11d85ded67f3e71c5aa0962bd"
+    },
+    {
+      "path": "scripts/search_library.py",
+      "sha256": "a5ce374af9d6c160be35ca567c35b7f795c83ceeb8ee87fe25d4755e0c9b8693"
+    },
+    {
+      "path": "scripts/search_literature.py",
+      "sha256": "db6dad5d80bc1ca0328b0cab5f31c0acfa035e18e516d03f3c3482ab136025d4"
+    },
+    {
+      "path": "scripts/validate_library.py",
+      "sha256": "06bb2f7722e02a8668b46540566b8092402fa87a9f6973a6f6809a0a7f055f95"
+    },
+    {
+      "path": "scripts/validate_research_manifest.py",
+      "sha256": "c674146d2324850db490bdbef133dc04390df7503385efb9d76b0d45940affe8"
+    }
+  ]
+}

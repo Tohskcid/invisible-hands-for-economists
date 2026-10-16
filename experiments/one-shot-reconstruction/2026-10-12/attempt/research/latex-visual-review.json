@@ -1,0 +1,92 @@
+{
+  "pdf_sha256": "dda79d08c542adc6ed805f9af4ed27979dfb58798eaf5d27718d2cf26d5fae97",
+  "status": "pass",
+  "reviewer": "fresh_manuscript_referee",
+  "reviewed_at": "2026-10-12T04:48:32.412578+00:00",
+  "pages_reviewed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "issues": [],
+  "method": "Every current rendered page was re-opened with view_image after the single-wording revision and visually inspected. No prior-PDF pass was reused as current validation.",
+  "page_records": [
+    {
+      "page": 1,
+      "path": "output/figures/pages/page-0001.png",
+      "image_sha256": "0d440c426c8f16a4559c49ffb159f7e8064c7e9b4d261cd45404b7fa2cd9da6a",
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "page": 2,
+      "path": "output/figures/pages/page-0002.png",
+      "image_sha256": "ccea3e74bb451d10f6ed64025f47c14219bf732d1f60f776db102aa35ef09e21",
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "page": 3,
+      "path": "output/figures/pages/page-0003.png",
+      "image_sha256": "291946e128d4003335c197dc59348fb3c4778c18d943ecfc40ffc3569612b99c",
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "page": 4,
+      "path": "output/figures/pages/page-0004.png",
+      "image_sha256": "395f6666873ecb476c84e21b582bd56ac9ac4d9b2de82388decbe06690d10599",
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "page": 5,
+      "path": "output/figures/pages/page-0005.png",
+      "image_sha256": "b322e520e384c178de02398a2c028aa7a34d1fb91cb3c8ab21b27f02fa6502e8",
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "page": 6,
+      "path": "output/figures/pages/page-0006.png",
+      "image_sha256": "82928ac4e7fa860d1accaf45d2ebb2065c376b6c3d1278e7385c7ffaa9697e37",
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "page": 7,
+      "path": "output/figures/pages/page-0007.png",
+      "image_sha256": "575b0bbc21899013def48e9c42b6a569bbe2e1d59d7f54907a60819ef9bda9f5",
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "page": 8,
+      "path": "output/figures/pages/page-0008.png",
+      "image_sha256": "4f8217559887e3caa4822bacbc5fd182f71b05e865f78e339fb724aacb4d281e",
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "page": 9,
+      "path": "output/figures/pages/page-0009.png",
+      "image_sha256": "1a03fd7da80d2a16380cad8d99ec200ce217f57e56c917e66618cc97bf94af07",
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "page": 10,
+      "path": "output/figures/pages/page-0010.png",
+      "image_sha256": "3f07dd35a3f21425a7faa9c602af2120a6110ae0db7cb0facd5f34fc2104e81a",
+      "status": "pass",
+      "issues": []
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": "1",
+  "obligations": [
+    {
+      "id": "O_ID",
+      "proposition": "Observed retained-sample change contrast decomposes into a treated effect plus differential untreated trend.",
+      "assumptions": [
+        "Finite expectations",
+        "Consistency",
+        "No baseline anticipation",
+        "No comparison spillovers",
+        "Stable interpretation of complete-pair sample"
+      ],
+      "argument": "Appendix A.1 adds/subtracts treated post untreated potential outcome; parallel untreated mean changes set the bias term to zero.",
+      "status": "algebraic conditional derivation; identifying assumptions unverified",
+      "artifact": "paper/manuscript/main.tex"
+    },
+    {
+      "id": "O_OLS",
+      "proposition": "The OLS state coefficient equals difference in group mean changes.",
+      "assumptions": [
+        "Nonempty NJ and PA groups",
+        "Unweighted complete pairs",
+        "Intercept and single binary state regressor"
+      ],
+      "argument": "Appendix A.2 derives both residual-sum first-order conditions and full-rank uniqueness.",
+      "status": "verified algebra and numerical group-mean equality",
+      "artifact": "scripts/analyze.py"
+    },
+    {
+      "id": "O_VAR",
+      "proposition": "Independent restaurant mean-change variance equals sum of separate-group variance components; shared state shocks survive restaurant averaging.",
+      "assumptions": [
+        "Finite second moments",
+        "Fixed group sizes",
+        "Independent restaurant disturbances for sampling-only variance"
+      ],
+      "argument": "Appendix A.3 derives the independent-sampling variance and common-state-shock decomposition; base R verifies HC1 and homoskedastic implementation.",
+      "status": "verified conditional variance calculation; not state-level valid inference",
+      "artifact": "research/base-r-verification.json"
+    }
+  ],
+  "formal_kernel_status": "No formal-kernel proof claimed; routine algebraic identification and estimator derivations only."
+}

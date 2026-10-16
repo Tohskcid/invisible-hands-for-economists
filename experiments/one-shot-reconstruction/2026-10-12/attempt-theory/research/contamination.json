@@ -1,0 +1,19 @@
+{
+  "schema_version": "1",
+  "recorded_at_utc": "2026-10-11T17:13:10Z",
+  "question_only_input": true,
+  "prior_familiarity": true,
+  "recognition": "The question immediately evokes the famous alternating-offer bargaining model commonly associated with Rubinstein. This is model-memory recognition, not an acquired source.",
+  "remembered_facts": [
+    "For exponential discount factors delta1 and delta2 between zero and one, the first proposer's share is recalled as (1-delta2)/(1-delta1*delta2).",
+    "Immediate agreement and subgame-perfect equilibrium uniqueness are recalled for the strictly discounted benchmark.",
+    "The usual proof idea compares acceptance thresholds with continuation values and bounds arbitrary equilibria, rather than imposing stationarity.",
+    "I recall that constant costs and more general time preferences are considered in classic work, but do not recall a complete general preference theorem or its hypotheses."
+  ],
+  "memory_role": "Memory supplies a disclosed candidate hypothesis. All displayed steps, strategies and proofs are independently written and checked in this attempt; no claim of uncontaminated discovery is made.",
+  "target_full_text_accessed": false,
+  "target_expositions_accessed": false,
+  "holdout_accessed": false,
+  "other_attempts_accessed": false,
+  "accidental_exposures": []
+}

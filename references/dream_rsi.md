@@ -70,6 +70,8 @@ The bundled adapter executes `payload.command` as an explicit argument list with
 
 The harness, not the adapter, reruns the research-package gate and computes reward. Artifacts returned by the adapter are SHA-256-bound when they exist below the package root.
 
+The pending queue and current in-flight action are saved beside the tree as `research/discovery_tree.state.json`. A resumed run keeps unexecuted candidates and cumulative cost. If execution stopped after an action began but before a terminal tree record, the runner returns `interrupted`; inspect artifacts and reconcile that action before any retry. A step-count limit returns `step-limit`, leaving the queue available for the next call.
+
 ## Stop and safety rules
 
 - `requires_researcher: true` actions are never selected automatically.

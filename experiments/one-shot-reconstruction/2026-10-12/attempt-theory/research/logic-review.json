@@ -1,0 +1,111 @@
+{
+  "schema_version": "1",
+  "reviewer": "fresh_manuscript_referee",
+  "reviewed_at": "2026-10-12T04:46:30.822137+00:00",
+  "reviewed_sha256": {
+    "manuscript": "9071cfc06e88621fc817147406c511a5a386afca6e420082e61f8f669d9f81aa",
+    "manifest": "edc3616047a8245fa28efa1ae667bf7c88a0ef983f1d3df2a5154f3355bafd81"
+  },
+  "overall_verdict": "pass",
+  "global_gaps": [],
+  "uncertainty": "Independent human-readable proof review accepts completeness only within explicitly maintained model classes; no Lean or other proof kernel verification was performed. General nonlinear lottery preferences, unrestricted waiting preferences, exact-zero discount factors and exhaustive equal-cost/boundary characterization remain outside scope.",
+  "claim_reviews": [
+    {
+      "claim_id": "C_SCOPE",
+      "verdict": "coherent",
+      "weakest_link": "The one-sentence question leaves waiting preferences underdetermined; the manuscript expressly adds sufficient model restrictions.",
+      "scope_or_number_mismatch": "No silent generalization from contractive, discount or additive models to all waiting preferences.",
+      "competing_explanation": "Different waiting-cost functions can change uniqueness and delay; this is explicitly demonstrated.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "C_MODEL",
+      "verdict": "coherent",
+      "weakest_link": "Model primitives, feasible pie, complete public histories, terminal utility, disagreement and whole-continuation SPE deviations are stated.",
+      "scope_or_number_mismatch": "Pure nonlinear delay maps are separated from behavioral expected-utility models.",
+      "competing_explanation": "Outside options, breakdown, incomplete information and indivisibilities would define different games and are excluded.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "C_GENERAL",
+      "verdict": "coherent",
+      "weakest_link": "Appendix A.2 constructs the fixed point, proves interiority and checks every finite or infinite pure deviation. The infimum/supremum envelopes range over all pure SPE and histories; contraction collapses payoff spans without assuming stationary equilibrium.",
+      "scope_or_number_mismatch": "Complete paper proof within strictly increasing Lipschitz delay maps with q_i in (0,1); no lottery-utility extension is claimed.",
+      "competing_explanation": "Noncontractive maps could preserve equilibrium payoff spans. This possibility is outside the theorem.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "C_DISCOUNT",
+      "verdict": "coherent",
+      "weakest_link": "Appendix A.3 checks pathwise payoffs for arbitrary behavioral deviations, bounds expected payoff feasibility, collapses both equilibrium payoff spans and forces deterministic offers and threshold ties at every history.",
+      "scope_or_number_mismatch": "The algebra yields the two proposer-role shares, not a single division. Behavioral strategies with defined measurable laws are the stated scope; kernel verification is absent.",
+      "competing_explanation": "History dependence and positive-probability mixing cannot escape the stated envelope and strict rejection-payoff gap.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "C_TIMING",
+      "verdict": "coherent",
+      "weakest_link": "The strict positive gap p_i-delta_i(1-p_j) makes any positive rejection probability incompatible with the established proposer payoff.",
+      "scope_or_number_mismatch": "Immediate acceptance is proved in every finite proposer subgame only for strict positive discount factors.",
+      "competing_explanation": "A perfectly patient player can be indifferent to finite delay, which the separate boundary construction permits.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "C_LIMIT",
+      "verdict": "coherent",
+      "weakest_link": "Appendix A.4 verifies denominator positivity, quotient-rule signs, symmetry and the ratio of first-order exponential limits.",
+      "scope_or_number_mismatch": "Positive r_i are maintained, and the limit is expressly a limit of discrete equilibria rather than a continuous-time existence theorem.",
+      "competing_explanation": "Changing how rates or period costs scale could produce different limiting games.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "C_ADDITIVE",
+      "verdict": "coherent",
+      "weakest_link": "Appendix A.5 proves nonnegative equilibrium continuation payoffs and finite expected waiting before using feasibility. Its clipped-reservation envelopes force the lower-cost proposer value to one; the strict rejection gap then proves behavioral strategy and timing uniqueness.",
+      "scope_or_number_mismatch": "Positive unequal costs and the both-at-least-one case are covered, including equality at one. Actual negative rejection values force strict acceptance of zero rather than artificial indifference.",
+      "competing_explanation": "Equal costs below one do not satisfy the strict-composite inequality and are expressly excluded from global uniqueness.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "C_EQUAL",
+      "verdict": "coherent",
+      "weakest_link": "Appendix A.6 derives the two clipped reservation equations for stationary immediate behavioral equilibria and solves them in both clipping cases; existence follows from the prior complete deviation checks.",
+      "scope_or_number_mismatch": "The interval p1 in [c,1] and p2=1-p1+c characterizes only the stationary immediate family.",
+      "competing_explanation": "Other history-dependent equal-cost equilibria may exist and are not ruled out.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "C_DELAY",
+      "verdict": "coherent",
+      "weakest_link": "The initial-offer-dependent B/P continuations are SPE at every later history. Every y=0, 0<y<0.9 and y>=0.9 response and proposer deviation is checked; utilities 0.7 and 0.1 sum to 0.8 after one rejection.",
+      "scope_or_number_mismatch": "One explicit equal-cost c=0.1 existence example, not an exhaustive delayed-equilibrium characterization.",
+      "competing_explanation": "Continuation-equilibrium selection supports delay; the construction does not rely on an unspecified noncredible punishment.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "C_BOUNDARY",
+      "verdict": "coherent",
+      "weakest_link": "Appendix A.7 specifies calendar-date strategies for every finite K and all histories. The patient player attains its payoff upper bound; the other player cannot earn a positive share. Both-patient fixed divisions also survive complete deviations.",
+      "scope_or_number_mismatch": "Finite-delay existence is claimed, not boundary uniqueness. Exact-zero discounts and zero-cost additive uniqueness are excluded.",
+      "competing_explanation": "Indifference at perfectly patient threshold ties permits timing multiplicity.",
+      "required_revision": ""
+    }
+  ],
+  "proof_status": "complete paper proof",
+  "kernel_verified": false,
+  "proof_obligations_sha256": "ee14f1aaa7fe8f64e0ce4184f254751bc4d861c59f77e0eaf022d78100d13230",
+  "obligation_assessment": {
+    "G1": "discharged in independent paper review",
+    "G2": "discharged in independent paper review",
+    "G3": "discharged in independent paper review",
+    "G4": "discharged in independent paper review",
+    "D1": "discharged in independent paper review",
+    "D2": "discharged in independent paper review",
+    "A1": "discharged in independent paper review",
+    "A2": "discharged in independent paper review",
+    "A3": "discharged in independent paper review",
+    "A4": "discharged in independent paper review",
+    "B1": "discharged in independent paper review"
+  },
+  "external_results_status": "Listed elementary real-analysis and expectation facts accepted as external results; no bargaining or infinite-game existence theorem imported."
+}

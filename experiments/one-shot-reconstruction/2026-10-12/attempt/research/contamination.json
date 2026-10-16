@@ -1,0 +1,32 @@
+{
+  "schema_version": "1",
+  "recognized_target": true,
+  "model_prior_familiarity": {
+    "recognized_at": "2026-10-11T17:11:46.361899+00:00",
+    "description": "The question evokes the well-known Card and Krueger New Jersey/Pennsylvania minimum-wage fast-food study. Prior memory includes qualitative controversy and difference-in-differences setting. No remembered coefficient or published table will be used as a result."
+  },
+  "search_exposures": [
+    {
+      "search": "Card Krueger 1992 New Jersey fast food raw data codebook data.dat; New Jersey minimum wage April 1992 official history",
+      "tool": "web search",
+      "date": "2026-10-12",
+      "exposure": "Search snippets disclosed 410 restaurants/two survey waves, the qualitative slight employment increase, target authors/title. No published numeric treatment coefficient exposed."
+    },
+    {
+      "search": "site.davidcard.berkeley.edu data minimum wage public.dat codebook; author data page",
+      "tool": "web search/open",
+      "date": "2026-10-12",
+      "exposure": "Data page supplied target title/outlet/year and njmin.zip route. Unopened teaching-code search snippet showed raw parsing approach (46 names/trailing empty column) and later reanalysis abstract snippet mentioned negative estimates and t-ratios <=0.7 in other samples. These results are excluded from the analysis."
+    },
+    {
+      "search": "Raw dataset license discovery",
+      "tool": "web search",
+      "date": "2026-10-12",
+      "exposure": "Unopened GitHub replication search result exposed a reported +2.75 coefficient, supporting specification descriptions and sample counts 351/357. These are excluded from numerical construction and original code was not inspected. This constitutes numeric target-answer contamination."
+    }
+  ],
+  "prohibited_material_read": false,
+  "numerical_source_rule": "Only project-code estimates from downloaded raw data enter results.",
+  "numeric_target_exposure": true,
+  "design_exposure_qualification": "Raw preparation and supporting specification descriptions (gap, controls, 0.4/0.6 part-time weights, no managers) appeared in unopened search-result snippets before design lock. They were not code-copied, but choice of supporting checks cannot be claimed uncontaminated. Primary estimator, complete-component rule and pair sample arise directly from raw codebook and independent computation."
+}

@@ -1,0 +1,15 @@
+harness/**/__pycache__/
+attempt/**/__pycache__/
+attempt/literature/papers/*.pdf
+attempt/data/raw/*
+attempt/build/
+attempt/research/latex-pages/
+attempt/research/docs/source-*.html
+attempt/research/mpl-cache/
+attempt/output/pdf/*.pdf
+holdout/*.pdf
+attempt-theory/**/__pycache__/
+attempt-theory/literature/papers/*.pdf
+attempt-theory/build/
+attempt-theory/research/latex-pages/
+attempt-theory/output/pdf/*.pdf

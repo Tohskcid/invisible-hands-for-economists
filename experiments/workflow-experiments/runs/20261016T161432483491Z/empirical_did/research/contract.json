@@ -1,0 +1,32 @@
+{
+  "version": "1.0",
+  "inputs": {
+    "mode": "empirical",
+    "deliverable": "manuscript",
+    "claim_scope": "research-only",
+    "max_budget": 10.0,
+    "analysis_commands": [
+      [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "scripts/analyze.py"
+      ]
+    ],
+    "raw_inputs": [
+      "data/restaurants.csv"
+    ],
+    "generated_outputs": [
+      "research/results.json",
+      "output/tables/table1.tex"
+    ],
+    "latex_engine": "pdflatex"
+  },
+  "mode": "empirical",
+  "deliverable": "manuscript",
+  "claim_scope": "research-only",
+  "mechanism_scope": "not-claimed",
+  "max_budget": 10.0,
+  "budget_unit": "measured_wall_seconds",
+  "target_journal": "AER",
+  "question": "",
+  "obligations": []
+}

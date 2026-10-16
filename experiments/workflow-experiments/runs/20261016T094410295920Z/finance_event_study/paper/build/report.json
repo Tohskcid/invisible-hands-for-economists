@@ -1,0 +1,63 @@
+{
+  "automated_passed": true,
+  "delivery_ready": false,
+  "visual_review_required": true,
+  "source_dir": "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/workflow-experiments/runs/20261016T094410295920Z/finance_event_study",
+  "input_hashes": {
+    "paper/manuscript/main.tex": "d962e558fe87fd7628e3e8bbc650237af1345c99d1e7eef4ba7872edaaec9525",
+    "output/tables/car_table.tex": "9b9c031890720ed9a614c8d2ecd72914b56e47a1c35702ef6691e58b5c4816d1",
+    "paper/ref.bib": "d9522dfc5efd05a6ee44daa20e8cfc4ee361b09aa99922d3c603691ca30caacf"
+  },
+  "compilation": {
+    "engine": "pdflatex",
+    "commands": [
+      [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-no-shell-escape",
+        "-recorder",
+        "-output-directory=/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/workflow-experiments/runs/20261016T094410295920Z/finance_event_study/paper/build",
+        "main.tex"
+      ],
+      [
+        "bibtex",
+        "main"
+      ],
+      [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-no-shell-escape",
+        "-recorder",
+        "-output-directory=/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/workflow-experiments/runs/20261016T094410295920Z/finance_event_study/paper/build",
+        "main.tex"
+      ],
+      [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-no-shell-escape",
+        "-recorder",
+        "-output-directory=/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/workflow-experiments/runs/20261016T094410295920Z/finance_event_study/paper/build",
+        "main.tex"
+      ]
+    ],
+    "errors": [],
+    "warnings": [],
+    "pdf": "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/workflow-experiments/runs/20261016T094410295920Z/finance_event_study/paper/build/main.pdf"
+  },
+  "rendering": {
+    "errors": [],
+    "pages": [
+      "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/workflow-experiments/runs/20261016T094410295920Z/finance_event_study/paper/build/rendered/page-0001.png"
+    ],
+    "page_count": 1,
+    "page_size": "612 x 792 pts (letter)",
+    "pdf_sha256": "218cd1b6a61ad06b9939c929ed37eef13016f37635fa9e6115544d6ab27e5aa2"
+  },
+  "note": "delivery_ready remains false until an agent or researcher visually inspects every rendered page"
+}

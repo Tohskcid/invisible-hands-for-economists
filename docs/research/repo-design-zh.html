@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Invisible Hands for Economists｜設計說明</title>
+  <style>
+    :root { --paper:#f5f3ed; --white:#fffefa; --ink:#19313a; --muted:#5b6c70; --line:#d9dfdc; --teal:#087e79; --mint:#e4f3ee; --amber:#a35c20; --sand:#fff0dc; --red:#a53d3d; --rose:#fcebe8; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.65 system-ui,-apple-system,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif; }
+    a { color:var(--teal); text-underline-offset:3px; }
+    a:focus-visible { outline:3px solid var(--amber); outline-offset:3px; }
+    .page { max-width:1120px; margin:auto; padding:0 26px 72px; }
+    .top { padding:18px 0; display:flex; align-items:center; justify-content:space-between; gap:16px; border-bottom:1px solid var(--line); }
+    .brand { font-size:.82rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
+    nav { display:flex; gap:18px; flex-wrap:wrap; font-size:.9rem; }
+    nav a { color:var(--muted); text-decoration:none; }
+    nav a:hover { color:var(--teal); text-decoration:underline; }
+    header.hero { padding:55px 0 38px; display:grid; grid-template-columns:1.55fr .8fr; gap:40px; align-items:end; }
+    .eyebrow { color:var(--teal); font-size:.78rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+    h1 { font-size:clamp(2.3rem,5.3vw,4.5rem); line-height:1.13; letter-spacing:-.055em; margin:13px 0 18px; }
+    .lead { font-size:1.15rem; max-width:650px; margin:0; }
+    .hero-note { background:var(--ink); color:#f8fbf8; border-radius:18px; padding:25px 26px; box-shadow:0 16px 32px #19313a14; }
+    .hero-note strong { display:block; color:#95e1d1; font-size:.8rem; letter-spacing:.1em; margin-bottom:10px; }
+    .hero-note p { margin:0; font-size:.96rem; }
+    .hero-note code { color:var(--ink); }
+    .chips { display:flex; flex-wrap:wrap; gap:8px; margin:25px 0 0; }
+    .chip { display:inline-block; padding:5px 10px; border-radius:999px; background:#e9e5db; font-size:.78rem; font-weight:700; }
+    section { padding:37px 0; border-top:1px solid var(--line); }
+    .section-head { display:flex; align-items:baseline; justify-content:space-between; gap:20px; margin-bottom:18px; }
+    h2 { font-size:1.55rem; line-height:1.35; letter-spacing:-.025em; margin:0; }
+    h3 { font-size:1.03rem; margin:0 0 7px; }
+    p { margin:0 0 11px; }
+    .muted { color:var(--muted); }
+    .small { font-size:.85rem; }
+    .flow { display:grid; grid-template-columns:repeat(5,1fr); gap:13px; }
+    .flow-card { position:relative; background:var(--white); border:1px solid var(--line); border-radius:15px; padding:21px 17px 17px; min-height:202px; }
+    .flow-card:not(:last-child)::after { content:"→"; position:absolute; z-index:1; top:38px; right:-18px; width:23px; height:26px; color:var(--teal); background:var(--paper); text-align:center; font-weight:900; }
+    .flow-card .number { color:var(--teal); font-size:.76rem; font-weight:800; letter-spacing:.1em; }
+    .flow-card p { font-size:.86rem; margin:0 0 10px; }
+    .flow-card a { font-size:.77rem; overflow-wrap:anywhere; }
+    .loop { margin-top:14px; display:flex; align-items:center; gap:12px; padding:12px 15px; border:1px solid #b8dbd0; border-radius:11px; background:var(--mint); font-size:.9rem; }
+    .loop b { color:var(--teal); white-space:nowrap; }
+    .grid-2 { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+    .panel { background:var(--white); border:1px solid var(--line); border-radius:15px; padding:22px; }
+    .panel p:last-child { margin-bottom:0; }
+    .panel .tag { display:inline-block; color:var(--teal); font-size:.75rem; font-weight:800; margin-bottom:7px; }
+    .stages { display:grid; gap:10px; }
+    .stage { display:grid; grid-template-columns:42px 1fr; gap:15px; padding:17px 19px; border:1px solid var(--line); border-radius:12px; background:var(--white); }
+    .stage .index { display:grid; place-items:center; width:36px; height:36px; border-radius:50%; background:var(--mint); color:var(--teal); font-weight:900; }
+    .stage h3 { margin:0 0 5px; }
+    .stage p { margin:0; font-size:.92rem; }
+    .stage .io { color:var(--muted); margin-top:5px; font-size:.82rem; }
+    .table-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:14px; background:var(--white); }
+    table { width:100%; border-collapse:collapse; min-width:690px; }
+    th,td { padding:13px 16px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+    tr:last-child td { border-bottom:0; }
+    th { background:#eaece7; color:var(--muted); font-size:.78rem; letter-spacing:.06em; }
+    td { font-size:.9rem; }
+    code { background:#edf0eb; border-radius:4px; padding:1px 4px; font-size:.88em; overflow-wrap:anywhere; }
+    pre { margin:10px 0 0; padding:16px 19px; overflow:auto; border-radius:10px; background:#19313a; color:#eef7f4; font:13px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace; }
+    pre code { background:none; padding:0; font-size:inherit; }
+    .status { font-weight:800; white-space:nowrap; }
+    .good { color:var(--teal); } .wait { color:var(--amber); } .stop { color:var(--red); }
+    .notice { padding:19px 21px; border-radius:12px; background:var(--sand); border-left:4px solid var(--amber); }
+    .notice p:last-child { margin-bottom:0; }
+    .metric-row { display:grid; grid-template-columns:repeat(3,1fr); gap:13px; }
+    .metric { background:var(--white); border:1px solid var(--line); border-radius:13px; padding:17px; }
+    .metric strong { display:block; font-size:1.55rem; line-height:1.2; margin-bottom:5px; }
+    .metric span { color:var(--muted); font-size:.85rem; }
+    footer { border-top:1px solid var(--line); padding-top:24px; color:var(--muted); font-size:.82rem; }
+    @media (max-width:850px) { header.hero { grid-template-columns:1fr; gap:24px; } .flow { grid-template-columns:repeat(2,1fr); } .flow-card:not(:last-child)::after { display:none; } }
+    @media (max-width:620px) { .page { padding:0 16px 48px; } .top { align-items:flex-start; flex-direction:column; } header.hero { padding-top:38px; } .flow,.grid-2,.metric-row { grid-template-columns:1fr; } .flow-card { min-height:auto; } .section-head { display:block; } }
+    @media print { body { background:white; font-size:11pt; } .page { max-width:none; padding:0; } nav { display:none; } section,.panel,.flow-card,.stage,.metric { break-inside:avoid; } .hero-note,pre { print-color-adjust:exact; } a { color:inherit; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="top">
+      <div class="brand">Invisible Hands for Economists / Design map</div>
+      <nav aria-label="本頁導覽">
+        <a href="#architecture">架構</a><a href="#cycle">研究迴圈</a><a href="#contracts">資料契約</a><a href="#gates">判定</a><a href="#limits">現況</a>
+      </nav>
+    </div>
+
+    <header class="hero">
+      <div>
+        <div class="eyebrow">Repo 設計說明 · 2026-10-17</div>
+        <h1>從研究問題<br>走到可審查的論文</h1>
+        <p class="lead">這個 repo 組合研究指引、工具入口、驗證程式與實驗紀錄。研究代理執行研究工作。程式檢查證據和產物。失敗關卡會指出下一步。</p>
+        <div class="chips"><span class="chip">Skill 指引</span><span class="chip">MCP 入口</span><span class="chip">可重跑驗證</span><span class="chip">有限試錯</span></div>
+      </div>
+      <aside class="hero-note" aria-label="設計原則">
+        <strong>核心判定</strong>
+        <p>完成一份檔案，不等於完成研究。只有宣告的研究關卡全部通過，工作流才回傳 <code>complete</code>。</p>
+      </aside>
+    </header>
+
+    <main>
+      <section id="architecture">
+        <div class="section-head"><h2>一頁架構</h2><p class="muted small">由左至右：指引 → 操作 → 執行 → 審查 → 留證</p></div>
+        <div class="flow" aria-label="系統架構流程">
+          <article class="flow-card"><div class="number">01 / 指引</div><h3>Agent Skill</h3><p>定義研究順序、方法分流和研究邊界。代理閱讀後執行研究。</p><a href="../../SKILL.md">SKILL.md</a></article>
+          <article class="flow-card"><div class="number">02 / 入口</div><h3>MCP</h3><p>提供狀態、審計、工作流和有限迭代工具。啟動時固定專案根目錄。</p><a href="../../scripts/econ_mcp_server.py">econ_mcp_server.py</a></article>
+          <article class="flow-card"><div class="number">03 / 協調</div><h3>Workflow runner</h3><p>凍結契約。記錄耗時。重跑分析。檢查論文。指出須重做的階段。</p><a href="../../scripts/run_research_workflow.py">run_research_workflow.py</a></article>
+          <article class="flow-card"><div class="number">04 / 判定</div><h3>Research gates</h3><p>檢查來源、設計、主張、結果、重跑、稿件和 PDF。</p><a href="../../scripts/check_research_package.py">check_research_package.py</a></article>
+          <article class="flow-card"><div class="number">05 / 紀錄</div><h3>Research artifacts</h3><p>保存契約、證據鏈、結果、論文、審閱、ledger 和實驗報告。</p><a href="workflow-implementation-status.md">實作狀態</a></article>
+        </div>
+        <div class="loop"><b>回饋迴圈 ↶</b><span>關卡失敗 → 產生 <code>next_tasks</code> 與 <code>rework_plan</code> → 重做受影響的階段 → 重跑同一組關卡。候選命令可交給 Dream-RSI 做有限試錯。</span></div>
+      </section>
+
+      <section id="cycle">
+        <div class="section-head"><h2>一輪研究怎麼跑</h2><p class="muted small">每一步只處理一個主要問題。</p></div>
+        <div class="stages">
+          <article class="stage"><div class="index">1</div><div><h3>凍結研究題目</h3><p>代理寫入原始問題、研究類型、交付物、主張範圍和預算。工作流保存契約。後續不得悄悄改題。</p><p class="io">輸入：<code>research/contract-input.json</code>　→　輸出：<code>research/contract.json</code></p></div></article>
+          <article class="stage"><div class="index">2</div><div><h3>確認文獻與資料</h3><p>代理取得可核對的來源。它記錄位置、取得狀態、授權、日期和檔案雜湊。缺少來源時，保留缺口。</p><p class="io">輸出：題目盤點、文獻紀錄、資料來源紀錄</p></div></article>
+          <article class="stage"><div class="index">3</div><div><h3>建立主張和研究義務</h3><p>代理連接主張、證據、分析結果與必要假設。實證研究要檢查識別與推論。理論研究要列出定義與證明義務。</p><p class="io">主要紀錄：<code>research/manifest.jsonl</code></p></div></article>
+          <article class="stage"><div class="index">4</div><div><h3>分工並產出論文</h3><p>至少兩名研究代理分工，一名獨立代理審查。實證研究使用核驗的真實資料；模擬資料只用於理論驗證或獨立工程測試。稿件須寫出限制。</p><p class="io">交接紀錄：<code>research/team.json</code>　→　審查：<code>research/substantive-review.json</code></p></div></article>
+          <article class="stage"><div class="index">5</div><div><h3>執行關卡並修正</h3><p>工作流檢查整個 package。失敗時，它回傳關卡、原因與 <code>next_tasks</code>。代理修正後再查一次。</p><p class="io">候選動作：<code>research/dream-actions.json</code>　→　執行紀錄：<code>research/discovery_tree.jsonl</code></p></div></article>
+          <article class="stage"><div class="index">6</div><div><h3>審閱相同版本並交付</h3><p>審閱者逐頁檢查 PDF。工作流用雜湊綁定審閱、PDF 與編譯輸入。所有必要關卡通過後，才可交付。</p><p class="io">輸出：已核對的論文與 replication package，或清楚的阻塞報告</p></div></article>
+        </div>
+      </section>
+
+      <section id="contracts">
+        <div class="section-head"><h2>元件各管一件事</h2><p class="muted small">研究代理負責判斷。驗證器負責可檢查的條件。</p></div>
+        <div class="grid-2">
+          <article class="panel"><div class="tag">研究工作</div><h3>代理與 Skill</h3><p>Skill 指定研究順序。代理找資料、選設計、做分析、寫稿和回應反證。程式不會自行發明文獻、資料或結論。</p></article>
+          <article class="panel"><div class="tag">工具呼叫</div><h3>MCP</h3><p><code>project_status</code> 讀取狀態。<code>audit_package</code> 查關卡。<code>run_workflow</code> 執行完整檢查。<code>run_iteration</code> 執行已宣告的有限動作。</p></article>
+          <article class="panel"><div class="tag">執行與停止</div><h3>Workflow runner</h3><p>它檢查凍結契約、記錄 ledger、重跑分析、編譯稿件和合併結果。它用已記錄的執行時間管理預算。</p></article>
+          <article class="panel"><div class="tag">有限試錯</div><h3>Dream-RSI</h3><p>它從舊紀錄學習動作順序。它只使用關卡進度當回饋。效果大小、p 值與研究者直覺不進入獎勵。</p></article>
+        </div>
+        <div class="notice" style="margin-top:14px"><strong>重要邊界</strong><p>科學障礙的測試命令成功，只代表命令已執行。若要標記為已解決，還需要具名審閱者、理由與雜湊綁定的證據。</p></div>
+      </section>
+
+      <section id="gates">
+        <div class="section-head"><h2>關卡如何作出判定</h2><p class="muted small">研究類型不同，必填產物也不同。</p></div>
+        <div class="table-wrap"><table><thead><tr><th>層次</th><th>檢查內容</th><th>主要檔案</th></tr></thead><tbody>
+          <tr><td>來源</td><td>題目盤點、文獻、真實資料取得與授權</td><td><a href="../../scripts/check_topic_survey.py">topic</a> · <a href="../../scripts/check_data_provenance.py">data</a> · <a href="../../scripts/check_literature_archive.py">literature</a></td></tr>
+          <tr><td>論證</td><td>主張、證據、假設、設計與反證</td><td><a href="../../scripts/validate_research_manifest.py">manifest</a> · <a href="../../scripts/check_design_audit.py">design</a> · <a href="../../scripts/check_logic_review.py">logic</a></td></tr>
+          <tr><td>結果</td><td>數字綁定、乾淨重跑、生成產物一致</td><td><a href="../../scripts/check_result_bindings.py">bindings</a> · <a href="../../scripts/run_replication.py">replication</a></td></tr>
+          <tr><td>交付</td><td>限制段落、團隊交接、獨立審查、逐頁審閱、發行 PDF</td><td><a href="../../scripts/check_manuscript_coverage.py">coverage</a> · <a href="../../scripts/check_research_team.py">team</a> · <a href="../../scripts/check_substantive_review.py">review</a> · <a href="../../scripts/check_latex.py">latex</a></td></tr>
+        </tbody></table></div>
+        <div class="grid-2" style="margin-top:14px">
+          <article class="panel"><h3><span class="status good">complete</span> / 完成</h3><p>契約、必要關卡、重跑、科學障礙與交付檢查都通過。</p><h3><span class="status stop">blocked</span> / 阻塞</h3><p>研究義務或必要產物未通過。工作流列出下一項工作。</p></article>
+          <article class="panel"><h3><span class="status wait">budget-exhausted</span> / 預算用盡</h3><p>工作流停止後續階段。它保留已完成的結果與待辦。</p><h3><span class="status wait">interrupted</span> / 動作中斷</h3><p>Dream-RSI 保留執行中收據。代理先檢查副作用，再決定是否重試。</p></article>
+        </div>
+      </section>
+
+      <section id="limits">
+        <div class="section-head"><h2>目前驗證到哪裡</h2><p class="muted small">這是工程狀態，不是論文品質評分。</p></div>
+        <div class="metric-row">
+          <div class="metric"><strong>186</strong><span>單元與整合測試通過；使用含 MCP 的環境。</span></div>
+          <div class="metric"><strong>5</strong><span>合成工程案例保存了報告與產物。</span></div>
+          <div class="metric"><strong>3 / 3</strong><span>論文示意案例仍被完整研究關卡擋下。</span></div>
+        </div>
+        <div class="notice" style="margin-top:14px"><strong>尚未驗證的目標</strong><p>目前沒有證據顯示系統能從一句題目穩定產出頂刊論文。下一步需要真實來源、真實資料、完整工作論文、獨立審查和受控比較實驗。</p></div>
+        <p class="small muted" style="margin-top:15px">已知工程限制：乾淨重跑使用工作副本，不是作業系統沙箱；Dream-RSI 尚無跨程序鎖；預算記錄是執行秒數，不是 API 金額。詳見<a href="workflow-implementation-status.md">實作狀態</a>與<a href="harness-optimization-plan.md">研究計劃</a>。</p>
+      </section>
+
+      <section id="use">
+        <div class="section-head"><h2>如何執行</h2><p class="muted small">下列命令在 repo 根目錄執行。</p></div>
+        <div class="grid-2">
+          <div class="panel"><h3>檢查研究工作流</h3><pre><code>python3 scripts/run_research_workflow.py \
+  --root /path/to/project \
+  --contract research/contract-input.json \
+  --json</code></pre></div>
+          <div class="panel"><h3>啟動本地 MCP</h3><pre><code>uv run --no-project --with 'mcp&gt;=2,&lt;3' \
+  python scripts/econ_mcp_server.py \
+  --root /path/to/project</code></pre></div>
+        </div>
+        <p class="small muted" style="margin-top:13px">完整操作順序見<a href="../../references/workflow_execution.md">工作流指南</a>。工程案例見<a href="../../experiments/workflow-experiments/runs/20261016T161755986577Z/report.md">實驗報告</a>。</p>
+      </section>
+    </main>
+
+    <footer>
+      <p><strong>文字方法：</strong>本頁借用受控技術寫作的做法。它使用短句、固定名稱、主動語態和清楚的動作順序。「80%」是寫作取向，不是合規分數。ASD-STE100 原標準用於英文技術文件；本頁是中文改寫，未宣稱符合標準。參見 <a href="https://www.asd-ste100.org/about_STE.html">ASD-STE100 官方說明</a>。</p>
+      <p>內容依據本 repo 的 <a href="../../README.md">README</a>、<a href="../../SKILL.md">Skill</a>、<a href="../../references/workflow_execution.md">工作流指南</a>與<a href="workflow-implementation-status.md">實作狀態</a>。更新日期：2026-10-17。</p>
+    </footer>
+  </div>
+</body>
+</html>

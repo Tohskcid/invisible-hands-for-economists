@@ -1,0 +1,145 @@
+{
+  "schema_version": "2",
+  "question": "1992年紐澤西州提高最低工資，如何影響當地速食餐廳的就業？",
+  "scope": "Historical restaurant-employment reconstruction; no target article/code/results review; descriptive estimates and conditional identification.",
+  "contribution_statement": "User-authorized verification from public raw records. No new substantive contribution or exhaustive literature claim can be established under the target-reading prohibition.",
+  "cutoff": "2026-10-12",
+  "refresh_after_days": 30,
+  "frontier_window_years": 4,
+  "citation_policy": "never-exclude",
+  "searches": [
+    {
+      "axis": "question",
+      "lane": "baseline",
+      "source": "web",
+      "query": "Card Krueger 1992 New Jersey fast food raw data codebook data.dat",
+      "searched_at": "2026-10-12",
+      "retrieval_tool": "browser",
+      "source_evidence_artifact": "research/topic-evidence.json",
+      "source_evidence_sha256": "a5bfc722c71df118385b4a08efa259152c4c1e13e68bdb0f35f004f9633199fa"
+    },
+    {
+      "axis": "setting",
+      "lane": "baseline",
+      "source": "web",
+      "query": "site.davidcard.berkeley.edu data minimum wage public.dat codebook",
+      "searched_at": "2026-10-12",
+      "retrieval_tool": "browser",
+      "source_evidence_artifact": "research/topic-evidence.json",
+      "source_evidence_sha256": "a5bfc722c71df118385b4a08efa259152c4c1e13e68bdb0f35f004f9633199fa"
+    },
+    {
+      "axis": "method",
+      "lane": "baseline",
+      "source": "web",
+      "query": "Conley Taber Inference Difference in Differences Small Number Policy Changes author pdf",
+      "searched_at": "2026-10-12",
+      "retrieval_tool": "browser",
+      "source_evidence_artifact": "research/topic-evidence.json",
+      "source_evidence_sha256": "a5bfc722c71df118385b4a08efa259152c4c1e13e68bdb0f35f004f9633199fa"
+    },
+    {
+      "axis": "method",
+      "lane": "frontier",
+      "source": "web/NBER",
+      "query": "site.nber.org difference differences few treated clusters inference 2024",
+      "searched_at": "2026-10-12",
+      "retrieval_tool": "browser",
+      "source_evidence_artifact": "research/topic-evidence.json",
+      "source_evidence_sha256": "a5bfc722c71df118385b4a08efa259152c4c1e13e68bdb0f35f004f9633199fa",
+      "channel": "working-paper-series"
+    },
+    {
+      "axis": "method",
+      "lane": "frontier",
+      "source": "web/arXiv",
+      "query": "site.arxiv.org \"difference-in-differences\" \"few\" \"2025\"",
+      "searched_at": "2026-10-12",
+      "retrieval_tool": "browser",
+      "source_evidence_artifact": "research/topic-evidence.json",
+      "source_evidence_sha256": "a5bfc722c71df118385b4a08efa259152c4c1e13e68bdb0f35f004f9633199fa",
+      "channel": "preprint-repository"
+    }
+  ],
+  "nearest_works": [
+    {
+      "title": "Inference with Difference in Differences with a Small Number of Policy Changes",
+      "locator": "https://www.nber.org/papers/t0312",
+      "verified_at": "2026-10-12",
+      "discovery_lane": "baseline",
+      "nearest": true,
+      "relation": "adjacent",
+      "question": "Inference when policy changes affect few groups",
+      "estimand_or_theorem": "Sampling distribution of policy-change effect estimators",
+      "method_or_proof": "Few-treated-group inferential analysis, as described in verified abstract",
+      "difference": "This application reconstructs a two-state observed change contrast and lacks the large donor set or panel history required by those methods.",
+      "prior_bottleneck": "Many-group approximations do not resolve uncertainty from few policy changes.",
+      "innovation": "Alternative inference for few policy-changing groups; only abstract-level scope checked here.",
+      "why_field_cares": "Separates establishment counts from the number of policy changes relevant to inference.",
+      "validation": "Verified primary abstract; full text archived for inspection, substantive target results not read.",
+      "influence_or_reuse": "Used to bound the claims rather than as an estimator implemented on the two-state data.",
+      "source_evidence_artifact": "research/topic-evidence.json",
+      "source_evidence_sha256": "a5bfc722c71df118385b4a08efa259152c4c1e13e68bdb0f35f004f9633199fa",
+      "full_text_status": "abstract-only",
+      "backward_checked": false,
+      "forward_checked": false,
+      "first_public_at": "2005-07-01",
+      "citation_key": "conley2005"
+    },
+    {
+      "title": "Extensions for Inference in Difference-in-Differences with Few Treated Clusters",
+      "locator": "https://arxiv.org/abs/2302.03131",
+      "verified_at": "2026-10-12",
+      "discovery_lane": "frontier",
+      "nearest": false,
+      "relation": "adjacent",
+      "question": "Inference when policy changes affect few groups",
+      "estimand_or_theorem": "Sampling distribution of policy-change effect estimators",
+      "method_or_proof": "Few-treated-group inferential analysis, as described in verified abstract",
+      "difference": "This application reconstructs a two-state observed change contrast and lacks the large donor set or panel history required by those methods.",
+      "prior_bottleneck": "Many-group approximations do not resolve uncertainty from few policy changes.",
+      "innovation": "Alternative inference for few policy-changing groups; only abstract-level scope checked here.",
+      "why_field_cares": "Separates establishment counts from the number of policy changes relevant to inference.",
+      "validation": "Verified primary abstract; full text archived for inspection, substantive target results not read.",
+      "influence_or_reuse": "Used to bound the claims rather than as an estimator implemented on the two-state data.",
+      "source_evidence_artifact": "research/topic-evidence.json",
+      "source_evidence_sha256": "a5bfc722c71df118385b4a08efa259152c4c1e13e68bdb0f35f004f9633199fa",
+      "full_text_status": "abstract-only",
+      "backward_checked": false,
+      "forward_checked": false,
+      "first_public_at": "2023-02-06",
+      "citation_key": "alvarez2023",
+      "quality_signals": [
+        "important-question",
+        "transparent-boundaries"
+      ],
+      "frontier_case": "Few-unit inference remains a constraint even when restaurant records are numerous.",
+      "manuscript_action": "cite",
+      "selection_reason": "Current methodological boundary for two-jurisdiction reconstruction; no novelty claim."
+    }
+  ],
+  "decision": "blocked",
+  "contribution_class": "unresolved",
+  "limitations": [
+    "The nearest substantive target work is deliberately not read; its published claims and scientific contribution cannot be independently verified in this blind attempt.",
+    "Checked works are methodological neighbors, not a complete substantive minimum-wage literature survey.",
+    "Accidental target snippets and model familiarity are recorded; no source result entered the analysis.",
+    "The protocol authorizes computation despite this incompatible survey delivery gate; the gate remains blocked rather than fabricated approved."
+  ],
+  "researcher_checkpoints": [
+    {
+      "id": "scope-lock",
+      "question": "Preserve the historical question and surveyed restaurant population?",
+      "response": "Delegated PI decision under user protocol: retain fixed question; no human reply fabricated.",
+      "decided_at": "2026-10-12",
+      "status": "accepted"
+    },
+    {
+      "id": "contribution-lock",
+      "question": "Replication rather than novelty?",
+      "response": "Delegated PI decision: perform reconstruction/verification; substantive literature approval remains unresolved under target ban.",
+      "decided_at": "2026-10-12",
+      "status": "accepted"
+    }
+  ]
+}

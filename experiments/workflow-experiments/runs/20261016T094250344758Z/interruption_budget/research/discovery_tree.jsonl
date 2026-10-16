@@ -1,0 +1,1 @@
+{"node_id": "n1", "parent_id": null, "cost": 9.0, "action": {"id": "a1", "stage": "estimation", "kind": "reg", "estimated_cost": 9.0}, "outcome_status": "complete", "next_actions": [{"id": "a2", "stage": "estimation", "kind": "reg", "estimated_cost": 2.0}]}

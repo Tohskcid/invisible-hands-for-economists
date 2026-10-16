@@ -1,0 +1,122 @@
+{
+  "schema_version": "1",
+  "manuscript_sha256": "9071cfc06e88621fc817147406c511a5a386afca6e420082e61f8f669d9f81aa",
+  "proof_status": "candidate complete paper proof; independent review pending",
+  "kernel_verified": false,
+  "lean_available": false,
+  "obligations": [
+    {
+      "id": "G1",
+      "statement": "Domains, normalization and disagreement",
+      "assumptions": "Exact model-class assumptions restated in the referenced appendix subsection",
+      "locator": "paper/manuscript/main.tex#sec:model",
+      "status": "discharged",
+      "argument": "Full human-readable derivation in appendix",
+      "unresolved_gap": null
+    },
+    {
+      "id": "G2",
+      "statement": "Reservation fixed-point existence, uniqueness and interiority",
+      "assumptions": "Exact model-class assumptions restated in the referenced appendix subsection",
+      "locator": "paper/manuscript/main.tex#app:general",
+      "status": "discharged",
+      "argument": "Full human-readable derivation in appendix",
+      "unresolved_gap": null
+    },
+    {
+      "id": "G3",
+      "statement": "Complete pure strategies and all future deviations",
+      "assumptions": "Exact model-class assumptions restated in the referenced appendix subsection",
+      "locator": "paper/manuscript/main.tex#app:general",
+      "status": "discharged",
+      "argument": "Full human-readable derivation in appendix",
+      "unresolved_gap": null
+    },
+    {
+      "id": "G4",
+      "statement": "Global pure envelopes and immediate agreement",
+      "assumptions": "Exact model-class assumptions restated in the referenced appendix subsection",
+      "locator": "paper/manuscript/main.tex#app:general",
+      "status": "discharged",
+      "argument": "Full human-readable derivation in appendix",
+      "unresolved_gap": null
+    },
+    {
+      "id": "D1",
+      "statement": "Behavioral existence, feasibility, envelopes and no mixing delay",
+      "assumptions": "Exact model-class assumptions restated in the referenced appendix subsection",
+      "locator": "paper/manuscript/main.tex#app:discount",
+      "status": "discharged",
+      "argument": "Full human-readable derivation in appendix",
+      "unresolved_gap": null
+    },
+    {
+      "id": "D2",
+      "statement": "Exact algebra and comparative statics/limits",
+      "assumptions": "Exact model-class assumptions restated in the referenced appendix subsection",
+      "locator": "paper/manuscript/main.tex#app:algebra",
+      "status": "discharged",
+      "argument": "Full human-readable derivation in appendix",
+      "unresolved_gap": null
+    },
+    {
+      "id": "A1",
+      "statement": "Additive stationary candidate existence against full deviations",
+      "assumptions": "Exact model-class assumptions restated in the referenced appendix subsection",
+      "locator": "paper/manuscript/main.tex#app:additive",
+      "status": "discharged",
+      "argument": "Full human-readable derivation in appendix",
+      "unresolved_gap": null
+    },
+    {
+      "id": "A2",
+      "statement": "Nonnegative equilibrium payoff and finite expected waiting",
+      "assumptions": "Exact model-class assumptions restated in the referenced appendix subsection",
+      "locator": "paper/manuscript/main.tex#app:additive",
+      "status": "discharged",
+      "argument": "Full human-readable derivation in appendix",
+      "unresolved_gap": null
+    },
+    {
+      "id": "A3",
+      "statement": "Unequal/high additive cost global behavioral uniqueness",
+      "assumptions": "Exact model-class assumptions restated in the referenced appendix subsection",
+      "locator": "paper/manuscript/main.tex#app:additive",
+      "status": "discharged",
+      "argument": "Full human-readable derivation in appendix",
+      "unresolved_gap": null
+    },
+    {
+      "id": "A4",
+      "statement": "Equal-cost stationary characterization and delayed off-path construction",
+      "assumptions": "Exact model-class assumptions restated in the referenced appendix subsection",
+      "locator": "paper/manuscript/main.tex#app:equal",
+      "status": "discharged",
+      "argument": "Full human-readable derivation in appendix",
+      "unresolved_gap": null
+    },
+    {
+      "id": "B1",
+      "statement": "Patient boundary strategies and finite delay",
+      "assumptions": "Exact model-class assumptions restated in the referenced appendix subsection",
+      "locator": "paper/manuscript/main.tex#app:boundaries",
+      "status": "discharged",
+      "argument": "Full human-readable derivation in appendix",
+      "unresolved_gap": null
+    }
+  ],
+  "external_results": [
+    "Completeness and order completeness of the real numbers",
+    "Geometric-series summation",
+    "Expectation monotonicity/conditioning for the specified measurable laws",
+    "Differentiability of exponential at zero"
+  ],
+  "outside_scope": [
+    "Noncontractive general time preferences",
+    "Lottery preferences for nonlinear ordinal delay maps",
+    "Full set of history-dependent equal-additive-cost equilibria",
+    "Exact-zero globally dated discount factors",
+    "Zero additive costs in the additive uniqueness theorem"
+  ],
+  "independent_review": "pending"
+}

@@ -1,0 +1,691 @@
+{
+  "schema_version": "1",
+  "audited_at": "2026-10-16T03:24:21.969304+00:00",
+  "audit_scope": "Artifact freshness, independent review binding, structural gates and recorded failure classification. No holdout/original article access, historical-fidelity review or empirical pipeline replay. Read-only except expressly requested audit reports and package temporary build.",
+  "cases": {
+    "attempt": {
+      "current_sha256": {
+        "manuscript": "50d6ff21f4d226ae86ffe3609ab14f96d1f5ff63cdb6880ea947daefc5f837d0",
+        "manifest": "df75898e433d33c88c01d58a75400ae6c56f49ad94afb7a035ad1b8c15bbed3f",
+        "final_pdf": "dda79d08c542adc6ed805f9af4ed27979dfb58798eaf5d27718d2cf26d5fae97",
+        "results": "4c13c45ca15e8487473c2ce2fa1685b5acf0ce12d4129718329e5ea11d87eed5"
+      },
+      "logic_review": {
+        "recorded_verdict": "pass",
+        "manuscript_hash_matches": true,
+        "manifest_hash_matches": true,
+        "scope_uncertainty": "Pass concerns the coherence of the bounded descriptive and conditional claims. The policy effect is not identified unconditionally; parallel untreated trends, anticipation, spillovers, measurement, selection and state-shock uncertainty remain unresolved by these records. No original-article comparison or full pipeline rerun was performed."
+      },
+      "pdf": {
+        "exists": true,
+        "page_count_from_pdfinfo": 10,
+        "page_count_from_report": 10,
+        "report_hash_matches": true,
+        "visual_review_hash_matches": true,
+        "reviewed_pages_cover_current_pdf": true,
+        "all_reviewed_image_hashes_match": true,
+        "reviewed_image_count": 10,
+        "review_accepted_as_current": true,
+        "build_pdf_hash_matches": true
+      },
+      "readonly_gate_reruns": [
+        {
+          "gate": "topic_survey",
+          "exit_code": 1,
+          "passed": false,
+          "report": {
+            "valid": true,
+            "gate_passed": false,
+            "decision": "blocked",
+            "contribution_class": "unresolved",
+            "errors": []
+          },
+          "stderr": ""
+        },
+        {
+          "gate": "data_provenance",
+          "exit_code": 0,
+          "passed": true,
+          "report": {
+            "valid": true,
+            "datasets": 1,
+            "errors": []
+          },
+          "stderr": ""
+        },
+        {
+          "gate": "layout",
+          "exit_code": 0,
+          "passed": true,
+          "report": {
+            "valid": true,
+            "iteration_required": false,
+            "return_to": [],
+            "root": "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt",
+            "files_checked": 111,
+            "violations": []
+          },
+          "stderr": ""
+        },
+        {
+          "gate": "literature_archive",
+          "exit_code": 0,
+          "passed": true,
+          "report": {
+            "valid": true,
+            "complete": true,
+            "papers": 3,
+            "downloaded": 3,
+            "errors": []
+          },
+          "stderr": ""
+        },
+        {
+          "gate": "manifest",
+          "exit_code": 0,
+          "passed": true,
+          "report": {
+            "valid": true,
+            "records": 23,
+            "errors": []
+          },
+          "stderr": ""
+        },
+        {
+          "gate": "coverage",
+          "exit_code": 0,
+          "passed": true,
+          "report": {
+            "valid": true,
+            "ready": true,
+            "sections": 9,
+            "required_roles_not_ready": [],
+            "errors": []
+          },
+          "stderr": ""
+        },
+        {
+          "gate": "claims",
+          "exit_code": 0,
+          "passed": true,
+          "report": {
+            "valid": true,
+            "errors": []
+          },
+          "stderr": ""
+        },
+        {
+          "gate": "result_bindings",
+          "exit_code": 0,
+          "passed": true,
+          "report": {
+            "valid": true,
+            "results_sha256": "4c13c45ca15e8487473c2ce2fa1685b5acf0ce12d4129718329e5ea11d87eed5",
+            "bindings": 110,
+            "errors": []
+          },
+          "stderr": ""
+        },
+        {
+          "gate": "design",
+          "exit_code": 1,
+          "passed": false,
+          "report": {
+            "valid": true,
+            "gate_passed": false,
+            "design": "did",
+            "required": [
+              "anticipation",
+              "assignment",
+              "comparison-groups",
+              "heterogeneous-effects",
+              "inference",
+              "parallel-trends",
+              "spillovers",
+              "support",
+              "timing"
+            ],
+            "nonpassing": [
+              "anticipation",
+              "comparison-groups",
+              "inference",
+              "parallel-trends",
+              "spillovers"
+            ],
+            "errors": []
+          },
+          "stderr": ""
+        },
+        {
+          "gate": "logic_review",
+          "exit_code": 0,
+          "passed": true,
+          "report": {
+            "passed": true,
+            "errors": []
+          },
+          "stderr": ""
+        },
+        {
+          "gate": "visual_review",
+          "exit_code": 0,
+          "passed": true,
+          "report": {
+            "delivery_ready": true,
+            "errors": [],
+            "pdf_sha256": "dda79d08c542adc6ed805f9af4ed27979dfb58798eaf5d27718d2cf26d5fae97"
+          },
+          "stderr": ""
+        }
+      ],
+      "recorded_gates": [
+        {
+          "gate": "topic_survey",
+          "passed": false,
+          "exit_code": 1
+        },
+        {
+          "gate": "data_provenance",
+          "passed": true,
+          "exit_code": 0
+        },
+        {
+          "gate": "layout",
+          "passed": true,
+          "exit_code": 0
+        },
+        {
+          "gate": "literature_archive",
+          "passed": true,
+          "exit_code": 0
+        },
+        {
+          "gate": "manifest",
+          "passed": true,
+          "exit_code": 0
+        },
+        {
+          "gate": "coverage",
+          "passed": true,
+          "exit_code": 0
+        },
+        {
+          "gate": "claims",
+          "passed": true,
+          "exit_code": 0
+        },
+        {
+          "gate": "result_bindings",
+          "passed": true,
+          "exit_code": 0
+        },
+        {
+          "gate": "design",
+          "passed": false,
+          "exit_code": 1
+        },
+        {
+          "gate": "logic_review",
+          "passed": false,
+          "exit_code": 1
+        },
+        {
+          "gate": "latex",
+          "passed": true,
+          "exit_code": 0
+        },
+        {
+          "gate": "visual_review",
+          "passed": false,
+          "exit_code": 2
+        },
+        {
+          "gate": "package",
+          "passed": false,
+          "exit_code": 2
+        }
+      ],
+      "all_applicable_gates_passed": false,
+      "failure_classification": {
+        "benchmark_source_ban": [
+          "topic_survey is valid but blocked/unresolved, not an approved literature/contribution survey; deliberately unread nearest target literature is the recorded cause."
+        ],
+        "substantive_research": [
+          "design remains nonpassing for anticipation, comparison-groups, inference, parallel-trends and spillovers; source-ban removal alone would not establish these assumptions."
+        ],
+        "stale_pre_review_snapshot": [
+          "Recorded logic_review and visual_review failed because review files did not yet exist; current hash-bound reviews and read-only CLI reruns pass.",
+          "Gate-results embeds an older PDF hash; current standalone latex-report and visual-review bind the current final PDF."
+        ],
+        "harness_or_invocation": [
+          "Recorded package exit 2 is unsupported --json, absent from the current parser. It is a failed invocation, not an executed package content audit."
+        ],
+        "harness_or_environment": [
+          "Posthoc correct package CLI on 2026-10-16 with child openout_any=a returns exit 1. Package defaults to auto engine and selected Tectonic --only-cached, which failed with missing-file/fatal compiler diagnostics and produced no PDF. Standalone current report explicitly used pdflatex successfully. This runtime/configuration difference is separate from real topic-survey/design failures.",
+          "Posthoc package finalize fails consequentially because its temporary compile produced no PDF/hash/pages; this does not invalidate the existing hash-matched independently reviewed final PDF."
+        ]
+      },
+      "summary_assessment": {
+        "overclaims_complete": false,
+        "status": "computed; delivery blocked pending fresh review and unresolved substantive gates",
+        "stale_understatement": "Still says fresh logic/layout review not received; both now exist and match current artifacts.",
+        "qualification": "Unresolved design gates and interrupted execution correctly disclosed."
+      },
+      "posthoc_package": {
+        "report": "research/reviews/empirical-package-posthoc.json",
+        "audited_at": "2026-10-16T03:24:28.941016+00:00",
+        "exit_code": 1,
+        "passed": false,
+        "checks": [
+          {
+            "command": [
+              "/opt/homebrew/opt/python@3.14/bin/python3.14",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/harness/scripts/check_project_layout.py",
+              "--root",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt",
+              "--json"
+            ],
+            "passed": true,
+            "exit_code": 0,
+            "stdout": "{\n  \"valid\": true,\n  \"iteration_required\": false,\n  \"return_to\": [],\n  \"root\": \"/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt\",\n  \"files_checked\": 111,\n  \"violations\": []\n}\n",
+            "stderr": ""
+          },
+          {
+            "command": [
+              "/opt/homebrew/opt/python@3.14/bin/python3.14",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/harness/scripts/check_topic_survey.py",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/research/topic-survey.json",
+              "--root",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt",
+              "--require-approved",
+              "--json",
+              "--manuscript",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/paper/manuscript/main.tex",
+              "--bibliography",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/paper/references.bib"
+            ],
+            "passed": false,
+            "exit_code": 1,
+            "stdout": "{\n  \"valid\": true,\n  \"gate_passed\": false,\n  \"decision\": \"blocked\",\n  \"contribution_class\": \"unresolved\",\n  \"errors\": []\n}\n",
+            "stderr": ""
+          },
+          {
+            "command": [
+              "/opt/homebrew/opt/python@3.14/bin/python3.14",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/harness/scripts/check_data_provenance.py",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/research/data-provenance.json",
+              "--root",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt",
+              "--json"
+            ],
+            "passed": true,
+            "exit_code": 0,
+            "stdout": "{\n  \"valid\": true,\n  \"datasets\": 1,\n  \"errors\": []\n}\n",
+            "stderr": ""
+          },
+          {
+            "command": [
+              "/opt/homebrew/opt/python@3.14/bin/python3.14",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/harness/scripts/check_literature_archive.py",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/research/literature-archive.json",
+              "--bibliography",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/paper/references.bib",
+              "--root",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt",
+              "--require-complete",
+              "--json"
+            ],
+            "passed": true,
+            "exit_code": 0,
+            "stdout": "{\n  \"valid\": true,\n  \"complete\": true,\n  \"papers\": 3,\n  \"downloaded\": 3,\n  \"errors\": []\n}\n",
+            "stderr": ""
+          },
+          {
+            "command": [
+              "/opt/homebrew/opt/python@3.14/bin/python3.14",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/harness/scripts/validate_research_manifest.py",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/research/manifest.jsonl",
+              "--require-argument-graph",
+              "--json"
+            ],
+            "passed": true,
+            "exit_code": 0,
+            "stdout": "{\n  \"valid\": true,\n  \"records\": 23,\n  \"errors\": []\n}\n",
+            "stderr": ""
+          },
+          {
+            "command": [
+              "/opt/homebrew/opt/python@3.14/bin/python3.14",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/harness/scripts/check_manuscript_coverage.py",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/research/manuscript-coverage.json",
+              "--manuscript",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/paper/manuscript/main.tex",
+              "--manifest",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/research/manifest.jsonl",
+              "--root",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt",
+              "--require-ready",
+              "--json"
+            ],
+            "passed": true,
+            "exit_code": 0,
+            "stdout": "{\n  \"valid\": true,\n  \"ready\": true,\n  \"sections\": 9,\n  \"required_roles_not_ready\": [],\n  \"errors\": []\n}\n",
+            "stderr": ""
+          },
+          {
+            "command": [
+              "/opt/homebrew/opt/python@3.14/bin/python3.14",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/harness/scripts/audit_claims.py",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/paper/manuscript/main.tex",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/research/manifest.jsonl",
+              "--strict-numbers",
+              "--require-central-claims",
+              "--json"
+            ],
+            "passed": true,
+            "exit_code": 0,
+            "stdout": "{\n  \"valid\": true,\n  \"errors\": []\n}\n",
+            "stderr": ""
+          },
+          {
+            "command": [
+              "/opt/homebrew/opt/python@3.14/bin/python3.14",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/harness/scripts/check_logic_review.py",
+              "--manuscript",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/paper/manuscript/main.tex",
+              "--manifest",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/research/manifest.jsonl",
+              "--review",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/research/logic-review.json",
+              "--require-pass",
+              "--json"
+            ],
+            "passed": true,
+            "exit_code": 0,
+            "stdout": "{\n  \"passed\": true,\n  \"errors\": []\n}\n",
+            "stderr": ""
+          },
+          {
+            "command": [
+              "/opt/homebrew/opt/python@3.14/bin/python3.14",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/harness/scripts/check_result_bindings.py",
+              "--results",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/research/results.json",
+              "--manuscript",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/paper/manuscript/main.tex",
+              "--root",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt",
+              "--json"
+            ],
+            "passed": true,
+            "exit_code": 0,
+            "stdout": "{\n  \"valid\": true,\n  \"results_sha256\": \"4c13c45ca15e8487473c2ce2fa1685b5acf0ce12d4129718329e5ea11d87eed5\",\n  \"bindings\": 110,\n  \"errors\": []\n}\n",
+            "stderr": ""
+          },
+          {
+            "command": [
+              "/opt/homebrew/opt/python@3.14/bin/python3.14",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/harness/scripts/check_design_audit.py",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/research/design-audit.json",
+              "--root",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt",
+              "--require-pass",
+              "--json"
+            ],
+            "passed": false,
+            "exit_code": 1,
+            "stdout": "{\n  \"valid\": true,\n  \"gate_passed\": false,\n  \"design\": \"did\",\n  \"required\": [\n    \"anticipation\",\n    \"assignment\",\n    \"comparison-groups\",\n    \"heterogeneous-effects\",\n    \"inference\",\n    \"parallel-trends\",\n    \"spillovers\",\n    \"support\",\n    \"timing\"\n  ],\n  \"nonpassing\": [\n    \"anticipation\",\n    \"comparison-groups\",\n    \"inference\",\n    \"parallel-trends\",\n    \"spillovers\"\n  ],\n  \"errors\": []\n}\n",
+            "stderr": ""
+          },
+          {
+            "command": [
+              "/opt/homebrew/opt/python@3.14/bin/python3.14",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/harness/scripts/check_latex.py",
+              "check",
+              "--main",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/paper/manuscript/main.tex",
+              "--build-dir",
+              "/var/folders/4g/0mmjc18s51x5hdvtkpcnxc740000gn/T/research-latex-m98eo1sk/build",
+              "--report",
+              "/var/folders/4g/0mmjc18s51x5hdvtkpcnxc740000gn/T/research-latex-m98eo1sk/build/report.json"
+            ],
+            "passed": false,
+            "exit_code": 1,
+            "stdout": "{\n  \"automated_passed\": false,\n  \"delivery_ready\": false,\n  \"visual_review_required\": false,\n  \"compilation\": {\n    \"engine\": \"tectonic\",\n    \"commands\": [\n      [\n        \"tectonic\",\n        \"--only-cached\",\n        \"--untrusted\",\n        \"--keep-logs\",\n        \"--keep-intermediates\",\n        \"--outdir\",\n        \"/private/var/folders/4g/0mmjc18s51x5hdvtkpcnxc740000gn/T/research-latex-m98eo1sk/build\",\n        \"main.tex\"\n      ]\n    ],\n    \"errors\": [\n      \"compiler did not produce a non-empty PDF\",\n      \"compiler exit code: 1\",\n      \"log matches fatal pattern: (?:LaTeX|Package\\\\s+\\\\S+) Error:\",\n      \"log matches fatal pattern: File [`'].+?[`'] not found\"\n    ],\n    \"warnings\": [],\n    \"pdf\": null\n  },\n  \"rendering\": {\n    \"errors\": [\n      \"render skipped because compilation failed\"\n    ],\n    \"pages\": [],\n    \"page_count\": null\n  },\n  \"note\": \"delivery_ready remains false until an agent or researcher visually inspects every rendered page\"\n}\n",
+            "stderr": ""
+          },
+          {
+            "command": [
+              "/opt/homebrew/opt/python@3.14/bin/python3.14",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/harness/scripts/check_latex.py",
+              "finalize",
+              "--report",
+              "/var/folders/4g/0mmjc18s51x5hdvtkpcnxc740000gn/T/research-latex-m98eo1sk/build/report.json",
+              "--visual-review",
+              "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/research/latex-visual-review.json"
+            ],
+            "passed": false,
+            "exit_code": 1,
+            "stdout": "{\n  \"delivery_ready\": false,\n  \"errors\": [\n    \"automated LaTeX gate did not pass\",\n    \"visual review PDF hash does not match the compiled PDF\",\n    \"visual review must cover every PDF page exactly once\"\n  ],\n  \"pdf_sha256\": null\n}\n",
+            "stderr": ""
+          }
+        ]
+      }
+    },
+    "attempt-theory": {
+      "current_sha256": {
+        "manuscript": "9071cfc06e88621fc817147406c511a5a386afca6e420082e61f8f669d9f81aa",
+        "manifest": "edc3616047a8245fa28efa1ae667bf7c88a0ef983f1d3df2a5154f3355bafd81",
+        "final_pdf": "36835bfef3b806c1cecaafbd4e672d516455661adc088c1f1702da4b975dcb83"
+      },
+      "logic_review": {
+        "recorded_verdict": "pass",
+        "manuscript_hash_matches": true,
+        "manifest_hash_matches": true,
+        "scope_uncertainty": "Independent human-readable proof review accepts completeness only within explicitly maintained model classes; no Lean or other proof kernel verification was performed. General nonlinear lottery preferences, unrestricted waiting preferences, exact-zero discount factors and exhaustive equal-cost/boundary characterization remain outside scope."
+      },
+      "pdf": {
+        "exists": true,
+        "page_count_from_pdfinfo": 14,
+        "page_count_from_report": 14,
+        "report_hash_matches": true,
+        "visual_review_hash_matches": true,
+        "reviewed_pages_cover_current_pdf": true,
+        "all_reviewed_image_hashes_match": true,
+        "reviewed_image_count": 14,
+        "review_accepted_as_current": true,
+        "build_pdf_hash_matches": true
+      },
+      "readonly_gate_reruns": [
+        {
+          "gate": "manifest",
+          "exit_code": 0,
+          "passed": true,
+          "report": {
+            "valid": true,
+            "records": 21,
+            "errors": []
+          },
+          "stderr": ""
+        },
+        {
+          "gate": "claims",
+          "exit_code": 0,
+          "passed": true,
+          "report": {
+            "valid": true,
+            "errors": []
+          },
+          "stderr": ""
+        },
+        {
+          "gate": "coverage",
+          "exit_code": 0,
+          "passed": true,
+          "report": {
+            "valid": true,
+            "ready": true,
+            "sections": 9,
+            "required_roles_not_ready": [],
+            "errors": []
+          },
+          "stderr": ""
+        },
+        {
+          "gate": "layout",
+          "exit_code": 0,
+          "passed": true,
+          "report": {
+            "valid": true,
+            "iteration_required": false,
+            "return_to": [],
+            "root": "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt-theory",
+            "files_checked": 76,
+            "violations": []
+          },
+          "stderr": ""
+        },
+        {
+          "gate": "literature_archive",
+          "exit_code": 1,
+          "passed": false,
+          "report": {
+            "valid": true,
+            "complete": false,
+            "papers": 1,
+            "downloaded": 0,
+            "errors": []
+          },
+          "stderr": ""
+        },
+        {
+          "gate": "topic_survey",
+          "exit_code": 1,
+          "passed": false,
+          "report": {
+            "valid": false,
+            "gate_passed": false,
+            "decision": "blocked",
+            "contribution_class": "unresolved",
+            "errors": [
+              "searches must be a non-empty list",
+              "survey requires a question-axis search",
+              "survey requires at least one mechanism, method, or setting search",
+              "survey requires both baseline and frontier search lanes",
+              "survey requires at least two distinct frontier discovery channels",
+              "survey requires a verified work inside the frontier window"
+            ]
+          },
+          "stderr": ""
+        },
+        {
+          "gate": "logic_review",
+          "exit_code": 0,
+          "passed": true,
+          "report": {
+            "passed": true,
+            "errors": []
+          },
+          "stderr": ""
+        },
+        {
+          "gate": "latex_finalize",
+          "exit_code": 0,
+          "passed": true,
+          "report": {
+            "delivery_ready": true,
+            "errors": [],
+            "pdf_sha256": "36835bfef3b806c1cecaafbd4e672d516455661adc088c1f1702da4b975dcb83"
+          },
+          "stderr": ""
+        }
+      ],
+      "recorded_gates": [
+        {
+          "gate": "manifest",
+          "passed": true,
+          "exit_code": 0
+        },
+        {
+          "gate": "claims",
+          "passed": true,
+          "exit_code": 0
+        },
+        {
+          "gate": "coverage",
+          "passed": true,
+          "exit_code": 0
+        },
+        {
+          "gate": "layout",
+          "passed": true,
+          "exit_code": 0
+        },
+        {
+          "gate": "literature_archive",
+          "passed": false,
+          "exit_code": 1
+        },
+        {
+          "gate": "topic_survey",
+          "passed": false,
+          "exit_code": 1
+        },
+        {
+          "gate": "logic_review",
+          "passed": true,
+          "exit_code": 0
+        },
+        {
+          "gate": "latex_finalize",
+          "passed": true,
+          "exit_code": 0
+        },
+        {
+          "gate": "package",
+          "passed": false,
+          "exit_code": 1
+        },
+        {
+          "gate": "latex-report",
+          "passed": true,
+          "exit_code": null
+        },
+        {
+          "gate": "latex-as-is-failure",
+          "passed": false,
+          "exit_code": null
+        }
+      ],
+      "all_applicable_gates_passed": false,
+      "failure_classification": {
+        "benchmark_source_ban": [
+          "topic_survey blocked/unresolved and schema-invalid for empty searches/missing baseline/frontier requirements. Source ban motivates nearest-target omission, but no frontier survey was attempted, so not every schema error is forced solely by the ban."
+        ],
+        "external_source_access": [
+          "literature_archive valid but incomplete: conceptual citation metadata verified, full text restricted/access attempts failed. This is an access gap, not target-source prohibition."
+        ],
+        "harness_or_environment": [
+          "Package actually ran and failed topic survey, archive, and visual-finalize hash mismatch for newly compiled temporary-directory PDF. Original final PDF/report/review match and finalize passes.",
+          "As-is pdflatex/BibTeX failure retained; successful compile used child-process openout_any=r and fixed source-date variables."
+        ],
+        "substantive_research": [
+          "No current central-claim gap recorded by independent referee within maintained classes; this audit does not independently reprove the paper. Kernel verification absent and outside claimed authority."
+        ]
+      },
+      "summary_assessment": {
+        "overclaims_complete": false,
+        "status": "Research and reviewed manuscript complete within explicitly stated model classes; generic package delivery gates remain blocked",
+        "interpretation": "Complete paper proof is backed by current hash-bound independent review within explicit classes. Does not mean generic package completion, historical fidelity, novelty or kernel verification.",
+        "summary_hashes_match": {
+          "manuscript": true,
+          "manifest": true,
+          "final_pdf": true
+        }
+      }
+    }
+  },
+  "conclusion": "Both current deliverable PDFs and manuscript/manifest hashes match independent fresh referee records (10 empirical pages, 14 theory pages). Current logic-review/finalize bindings pass. Neither case passes all generic gates. Empirical gate-results and summary predate fresh review.",
+  "posthoc_package_rerun_note": "Authorized follow-up correct-CLI empirical package replay used only temporary build/render paths, failed before rendering, and left author source/gate/review/final-PDF files untouched.",
+  "completed_at": "2026-10-16T03:24:41.615533+00:00"
+}

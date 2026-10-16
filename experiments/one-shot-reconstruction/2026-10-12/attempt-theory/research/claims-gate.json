@@ -1,0 +1,19 @@
+{
+  "command": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/harness/scripts/audit_claims.py",
+    "paper/manuscript/main.tex",
+    "research/manifest.jsonl",
+    "--strict-numbers",
+    "--require-central-claims",
+    "--json"
+  ],
+  "exit_code": 0,
+  "passed": true,
+  "stdout": "{\n  \"valid\": true,\n  \"errors\": []\n}\n",
+  "stderr": "",
+  "report": {
+    "valid": true,
+    "errors": []
+  }
+}

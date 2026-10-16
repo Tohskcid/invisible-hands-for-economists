@@ -1,0 +1,15 @@
+{
+  "schema_version":"1",
+  "generated_at":"2026-10-12T04:45:00Z",
+  "papers":[{
+    "citekey":"selten1975",
+    "authors":["Reinhard Selten"],
+    "title":"Reexamination of the Perfectness Concept for Equilibrium Points in Extensive Games",
+    "year":1975,
+    "canonical_locator":"https://link.springer.com/article/10.1007/BF01766400",
+    "verified_at":"2026-10-11T17:15:20Z",
+    "access_basis":"Verified publisher metadata and publicly returned repository search excerpt; no subscription or access controls bypassed",
+    "access_status":"restricted",
+    "reason":"Publisher requires paid/institutional access. CORE full-text open returned 403, official working-paper PDF open failed, and official repository record returned Access Denied. No full-text PDF downloaded."
+  }]
+}

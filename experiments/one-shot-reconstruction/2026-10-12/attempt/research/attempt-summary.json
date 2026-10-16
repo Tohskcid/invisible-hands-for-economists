@@ -1,0 +1,52 @@
+{
+  "schema_version": "1",
+  "status": "computed; delivery blocked pending fresh review and unresolved substantive gates",
+  "question": "1992年紐澤西州提高最低工資，如何影響當地速食餐廳的就業？",
+  "target_outlet": "American Economic Review",
+  "primary_results_artifact": "research/results.json",
+  "main_results": {
+    "estimate": 2.7500000000000004,
+    "std_error": 1.337725311029075,
+    "se_homoskedastic": 1.1543553776958988,
+    "n": 384,
+    "n_nj": 309,
+    "n_pa": 75,
+    "coefficients": {
+      "intercept": -2.2833333333333328,
+      "state": 2.7500000000000004
+    },
+    "residual_sd": 8.967756134466416,
+    "outcome": "change",
+    "formula": "change ~ 1 + state",
+    "variance": "HC1; homoskedastic also reported",
+    "se_separate_groups": 1.3423409769082764,
+    "bootstrap_low": 0.19278317152103563,
+    "bootstrap_high": 5.273771035598704,
+    "normal_low": 0.1280583903830137,
+    "normal_high": 5.371941609616988
+  },
+  "artifacts": {
+    "manuscript": "paper/manuscript/main.tex",
+    "pdf": "output/pdf/main.pdf",
+    "replication_master": "scripts/run_all.py",
+    "replication_readme": "README_replication.md",
+    "provenance": "research/data-provenance.json",
+    "contamination": "research/contamination.json",
+    "actual_checks": "research/gate-results.json"
+  },
+  "analysis_revisions": 2,
+  "substantive_estimation_revisions": 1,
+  "postreview_metadata_correction": "Nonunique source sheet is no longer declared an analysis key; row_id is retained.",
+  "interruption": "Initial quota interruption and user-authorized 20-minute recovery segment; uninterrupted one-shot success not claimed.",
+  "hard_gaps": [
+    "Nearest substantive target literature not read under benchmark prohibition: topic survey is valid stopped record, not approved.",
+    "Parallel trends, anticipation, spillovers, comparable untreated state changes, and two-jurisdiction policy-level inference unresolved.",
+    "Model familiarity and accidental search target numeric/specification exposure cannot be undone.",
+    "Fresh logic and layout review not yet received."
+  ],
+  "no_holdout_read": true,
+  "no_original_analysis_code_read": true,
+  "no_dependency_install": true,
+  "no_external_communication": true,
+  "license_qualification": "Verified producer public download, no express redistribution license; no open license fabricated."
+}

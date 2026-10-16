@@ -91,7 +91,7 @@ def artifact_file(root: Path, value: object, label: str, errors: list[str]) -> P
     return target
 
 
-def validate(document: object, root: Path, manuscript: Path, manifest: Path) -> dict:
+def validate(document: object, root: Path, manuscript: Path, manifest: Path, require_limitations: bool = False) -> dict:
     errors: list[str] = []
     if not isinstance(document, dict):
         return {"valid": False, "ready": False, "sections": 0, "errors": ["coverage must be a JSON object"]}
@@ -197,10 +197,11 @@ def validate(document: object, root: Path, manuscript: Path, manifest: Path) -> 
         errors.append(f"manuscript headings missing from coverage: {missing_headings}")
     if extra_headings:
         errors.append(f"coverage headings absent from manuscript: {extra_headings}")
-    missing_roles = sorted(REQUIRED_ROLES.get(mode, set()) - set(roles))
+    required_roles = REQUIRED_ROLES.get(mode, set()) | ({"limitations"} if require_limitations else set())
+    missing_roles = sorted(required_roles - set(roles))
     if missing_roles:
         errors.append(f"required {mode} roles missing: {missing_roles}")
-    required_not_ready = sorted(role for role in REQUIRED_ROLES.get(mode, set()) if role in roles and not any(
+    required_not_ready = sorted(role for role in required_roles if role in roles and not any(
         section.get("role") == role and section.get("status") == "ready" for section in sections if isinstance(section, dict)
     ))
     if required_not_ready:
@@ -221,6 +222,7 @@ def main() -> int:
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--root", type=Path, default=Path("."))
     parser.add_argument("--require-ready", action="store_true")
+    parser.add_argument("--require-limitations", action="store_true")
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args()
     root = args.root.resolve()
@@ -231,7 +233,7 @@ def main() -> int:
         return 2
     try:
         document = json.loads(paths[0].read_text(encoding="utf-8"))
-        report = validate(document, root, paths[1], paths[2])
+        report = validate(document, root, paths[1], paths[2], args.require_limitations)
     except (OSError, json.JSONDecodeError) as exc:
         print(f"[Error] Cannot check manuscript coverage: {exc}", file=sys.stderr)
         return 2

@@ -1,0 +1,14 @@
+[project]
+name = "invisible-hands-for-economists-tools"
+version = "2.18.0"
+description = "Deterministic utilities for the Invisible Hands for Economists Agent Skill"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "pandas>=2.0"]
+
+[project.optional-dependencies]
+excel = ["openpyxl>=3.1"]
+parquet = ["pyarrow>=14"]
+pdf = ["markitdown[pdf]>=0.1"]
+
+[tool.setuptools]
+py-modules = []

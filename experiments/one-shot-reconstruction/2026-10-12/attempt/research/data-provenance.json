@@ -1,0 +1,58 @@
+{
+  "schema_version": "1",
+  "generated_at": "2026-10-11T17:14:17+00:00",
+  "datasets": [
+    {
+      "id": "D_RAW",
+      "kind": "real",
+      "name": "New Jersey\u2013Pennsylvania restaurant survey public-use data",
+      "producer": "David Card and Alan B. Krueger",
+      "locator": "https://davidcard.berkeley.edu/data_sets/njmin.zip",
+      "version": "Undated public archive retrieved 2026-10-12; frozen by SHA-256",
+      "retrieved_at": "2026-10-11T17:14:17+00:00",
+      "license": "Producer publicly offers the file on Available data sets with a direct unrestricted download. No express open reuse or redistribution license is supplied. This record verifies lawful public access for the user-authorized local reconstruction only; it does not establish permission to redistribute the archive.",
+      "license_locator": "https://davidcard.berkeley.edu/data_sets.html",
+      "unit": "restaurant observed in two 1992 survey waves",
+      "coverage": "410 source rows; New Jersey and eastern Pennsylvania; January\u2013March first-wave survey instrument and November\u2013December 1992 second-wave records",
+      "source_evidence_artifact": "research/docs/source-author-data.html",
+      "source_evidence_sha256": "a2d6e14dc66e7e24171237130dc43c8c50bd1473878a164497190d5fc9913f6e",
+      "schema_artifact": "research/data-schema.json",
+      "schema_sha256": "8b02b55badacbc03695177d2eb8fc8d0209aa8a28486654a912c6dcf87e24f0b",
+      "acquisition": {
+        "method": "script",
+        "command": "python3 scripts/acquire.py (initial HTTP download by curl -fL; eligible files extracted with Python zipfile)",
+        "executed_at": "2026-10-11T17:14:17+00:00",
+        "artifact": "scripts/acquire.py",
+        "artifact_sha256": "b2c66b61ba443b52c13748d025086e27ac89f54f5501f0b1b6bbec68d181cb04"
+      },
+      "files": [
+        {
+          "role": "raw",
+          "path": "data/raw/public.dat",
+          "sha256": "04bde0cad5540980f32ce099c6dad369e2f05494698071d8a65b3e1cbe9ca53a"
+        },
+        {
+          "role": "raw",
+          "path": "data/raw/codebook",
+          "sha256": "1d801d7bdfa77ad2138d79ead54eef830913a2bdf4861a50ee013b3474e4b52f"
+        },
+        {
+          "role": "raw",
+          "path": "data/raw/read.me",
+          "sha256": "3bf4c370d368f11bd86ae20a49af1a874ad21ac6ab8c679f82a2f57789fd4f76"
+        },
+        {
+          "role": "raw",
+          "path": "data/raw/survey1.nj",
+          "sha256": "076743c2d981764171ad4ab8fed12c1c23855f1be59a66ac985c716503a199bc"
+        },
+        {
+          "role": "raw",
+          "path": "data/raw/survey2.nj",
+          "sha256": "ffa7c81804561f6641841e27122ba7140046773747efa71535a866a753173f86"
+        }
+      ]
+    }
+  ],
+  "access_qualification": "Public access is verified; an express redistribution license is unavailable. No fabricated license is asserted. Protocol authorizes public data acquisition/local reversible analysis."
+}

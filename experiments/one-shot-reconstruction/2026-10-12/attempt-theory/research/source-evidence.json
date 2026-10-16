@@ -1,0 +1,16 @@
+{
+  "schema_version": "1",
+  "record_type": "compact preservation of actual web-tool retrieval observations; not a fabricated full-text archive",
+  "searches": [
+    {"source":"web search","query":"Selten 1975 Reexamination of the perfectness concept equilibrium points extensive games Springer 10.1007 BF01766400","retrieved_at":"2026-10-11","retrieval_tool":"browser","observed_results":["Publisher DOI identified by discovery indexes","CORE repository search excerpt reproduces the article's introductory distinction between subgame perfection and a stronger refinement"]},
+    {"source":"web search","query":"Nash 1951 Non-cooperative games Annals of Mathematics official PDF Princeton","retrieved_at":"2026-10-11","retrieval_tool":"browser","observed_results":["Potential primary-source PDFs discovered; none opened or used"]},
+    {"source":"web search","query":"site:pub.uni-bielefeld.de \"Reexamination of the perfectness\"","retrieved_at":"2026-10-11","retrieval_tool":"browser","observed_results":["Official repository listing identifies working-paper record 2909636; record access denied"]}
+  ],
+  "sources": [
+    {"title":"Reexamination of the perfectness concept for equilibrium points in extensive games","authors":["R. Selten"],"year":1975,"journal":"International Journal of Game Theory","volume":"4","pages":"25-55","canonical_locator":"https://link.springer.com/article/10.1007/BF01766400","retrieved_at":"2026-10-11","retrieval_tool":"browser","observed_locator":"Publisher page lines 11-25 and 87-95","full_text_status":"inaccessible","access_observation":"Publisher explicitly labels subscription preview and offers paid access; no payment attempted"},
+    {"title":"Reexamination of the perfectness concept for equilibrium points in extensive games","canonical_locator":"https://core.ac.uk/download/pdf/6805957.pdf","retrieved_at":"2026-10-11","retrieval_tool":"browser","access_observation":"Search excerpt available; opening returned 403 Forbidden; no PDF acquired"},
+    {"title":"Reexamination of the perfectness concept for equilibrium points in extensive games","canonical_locator":"https://www.imw.uni-bielefeld.de/papers/files/imw-wp-23a.pdf","retrieved_at":"2026-10-11","retrieval_tool":"browser","access_observation":"Official working-paper PDF locator found in repository metadata; open returned internal error; no PDF acquired"},
+    {"title":"Reexamination of the perfectness concept for equilibrium points in extensive games","canonical_locator":"https://pub.uni-bielefeld.de/record/2909636","retrieved_at":"2026-10-11","retrieval_tool":"browser","access_observation":"Access Denied / Anubis block; no attempt to bypass"}
+  ],
+  "target_exposure": "No target article or bargaining formula/proof exposition opened. Search results included unrelated game-theory references and book names, but no target theorem/formula/proof was observed."
+}

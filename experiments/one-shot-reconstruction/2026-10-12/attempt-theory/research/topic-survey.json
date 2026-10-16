@@ -1,0 +1,19 @@
+{
+  "schema_version":"2",
+  "question":"完全資訊、無限期、輪流出價且各自承擔等待成本的兩人談判，均衡分配與達成協議的時點如何決定？",
+  "scope":"Historical question-only theory reconstruction; target paper and direct proof expositions are inaccessible by experimental design; general solution-concept sources are allowed.",
+  "cutoff":"2026-10-11",
+  "refresh_after_days":30,
+  "frontier_window_years":5,
+  "citation_policy":"never-exclude",
+  "searches":[],
+  "nearest_works":[],
+  "decision":"blocked",
+  "contribution_class":"unresolved",
+  "contribution_statement":"No novelty or literature completeness claim. This is an authorized bounded reconstruction and internal derivation; the generic new-question baseline/frontier survey gate cannot pass without violating the target-source ban or adding irrelevant sources.",
+  "limitations":["Nearest target work may not be read or used as evidence in this blind attempt.","No two-channel frontier survey was attempted; a frontier survey is not a historical reconstruction input.","The conceptual citation's full text was lawfully inaccessible.","User authorization permits continuing the reconstruction despite this explicitly recorded literature-gate block; it does not convert the gate to a pass."],
+  "researcher_checkpoints":[
+    {"id":"scope-lock","question":"Freeze question-only reconstruction and explicit model-class choices?","response":"Delegated PI decision under the benchmark protocol and user's bounded-autonomy authorization. No researcher Yes is fabricated.","decided_at":"2026-10-12","status":"accepted"},
+    {"id":"contribution-lock","question":"Claim reconstruction and verification rather than novelty?","response":"Delegated PI decision: maintain reconstruction scope and record incomplete literature gates. No researcher reply is invented.","decided_at":"2026-10-12","status":"accepted"}
+  ]
+}

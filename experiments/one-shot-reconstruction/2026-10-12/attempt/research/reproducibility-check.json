@@ -1,0 +1,9 @@
+{
+  "raw_checksums_verified_by_master": true,
+  "analysis_numpy_base_r_agreement": true,
+  "fresh_build_automated_passed": true,
+  "fresh_build_pdf_matches_final": true,
+  "pdf_sha256": "dda79d08c542adc6ed805f9af4ed27979dfb58798eaf5d27718d2cf26d5fae97",
+  "manuscript_sha256": "50d6ff21f4d226ae86ffe3609ab14f96d1f5ff63cdb6880ea947daefc5f837d0",
+  "limitation": "This verifies local frozen-input computation and PDF rebuild, not licensing, substantive causal assumptions, or future remote source availability."
+}

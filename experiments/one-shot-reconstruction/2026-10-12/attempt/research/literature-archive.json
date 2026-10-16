@@ -1,0 +1,56 @@
+{
+  "schema_version": "1",
+  "generated_at": "2026-10-12T01:16:00+08:00",
+  "papers": [
+    {
+      "citekey": "conley2005",
+      "title": "Inference with Difference in Differences with a Small Number of Policy Changes",
+      "authors": [
+        "Timothy Conley",
+        "Christopher Taber"
+      ],
+      "year": 2005,
+      "canonical_locator": "https://www.nber.org/papers/t0312",
+      "verified_at": "2026-10-12T01:16:00+08:00",
+      "access_basis": "Public official repository/author-authorized working paper download; local academic use only",
+      "access_status": "downloaded",
+      "download_locator": "https://www.nber.org/system/files/working_papers/t0312/t0312.pdf",
+      "retrieved_at": "2026-10-12T01:16:00+08:00",
+      "file": "literature/papers/conley2005--inference-with-difference-in-differences-with-a-small-number-of-policy-changes.pdf",
+      "sha256": "ed6b84b57f592b29bbcfcb73e64b6ebdfc52b1089c7dab6e0cc626f1982ce7ac"
+    },
+    {
+      "citekey": "alvarez2023",
+      "title": "Extensions for Inference in Difference-in-Differences with Few Treated Clusters",
+      "authors": [
+        "Luis Alvarez",
+        "Bruno Ferman"
+      ],
+      "year": 2023,
+      "canonical_locator": "https://arxiv.org/abs/2302.03131",
+      "verified_at": "2026-10-12T01:16:00+08:00",
+      "access_basis": "Public official repository/author-authorized working paper download; local academic use only",
+      "access_status": "downloaded",
+      "download_locator": "https://arxiv.org/pdf/2302.03131",
+      "retrieved_at": "2026-10-12T01:16:00+08:00",
+      "file": "literature/papers/alvarez2023--extensions-for-inference-in-difference-in-differences-with-few-treated-clusters.pdf",
+      "sha256": "17102f94168d10a35546277c3305d956eecb5edbb1901fab72dbcd87bb9b2266"
+    },
+    {
+      "citekey": "nj1990",
+      "title": "Minimum Wage-Increase to 5.05 by 1992",
+      "authors": [
+        "New Jersey State Library"
+      ],
+      "year": 1990,
+      "canonical_locator": "https://repo.njstatelib.org/items/af2bca87-0109-4742-8836-2684cd6e2fcf",
+      "verified_at": "2026-10-12T01:16:00+08:00",
+      "access_basis": "Public official repository/author-authorized working paper download; local academic use only",
+      "access_status": "downloaded",
+      "download_locator": "https://repo.njstatelib.org/server/api/core/bitstreams/da0ecddd-a999-4850-8969-317324d0f197/content",
+      "retrieved_at": "2026-10-12T01:16:00+08:00",
+      "file": "literature/papers/nj1990--minimum-wage-increase-to-5-05-by-1992.pdf",
+      "sha256": "63e7aebbae89b8308285f68ccae00077e175c04360dc04909e55651344ce5509"
+    }
+  ]
+}

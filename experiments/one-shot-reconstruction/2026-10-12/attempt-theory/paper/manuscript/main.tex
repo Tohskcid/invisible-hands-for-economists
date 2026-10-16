@@ -1,0 +1,404 @@
+% [claim:C_SCOPE]
+% !TeX program = pdflatex
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array,longtable}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{hidelinks,colorlinks=false,pdfborder={0 0 0},pdftitle={Waiting Costs and Alternating Offers},pdfauthor={Independent reconstruction experiment}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\newcommand{\pos}[1]{\left(#1\right)_{+}}
+\newcommand{\SPE}{\mathrm{SPE}}
+\title{Waiting Costs and Alternating Offers:\\Allocation, Agreement, and Equilibrium Selection}
+\author{Independent question-only reconstruction}
+\date{October 12, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+Two informed players bargain over a divisible pie by alternating offers without a deadline. The form of waiting costs matters for both allocation and timing. For a specified class of stationary, contractive delay equivalents, the unique pure subgame-perfect equilibrium solves two reservation-share equations and agrees immediately. Under linear exponential discounting, uniqueness extends to arbitrary behavioral strategies; the first proposer's share is $(1-\delta_2)/(1-\delta_1\delta_2)$. An envelope argument establishes this result without assuming stationary equilibrium behavior. With strictly positive constant costs per rejected offer, unequal costs select a unique immediate equilibrium; equal costs below the pie size admit a continuum of stationary divisions and can support history-dependent delay. Full strategies, proofs, degeneracies, and the limits of these claims are given in the appendix. These are human-readable proofs, not kernel-verified proofs. The exercise claims reconstruction and verification, not novelty or an uncontaminated historical discovery.
+\end{abstract}
+
+\section{Introduction}
+% [claim:C_SCOPE]
+The research question asks how complete-information, infinite-horizon bargaining with alternating offers and individual waiting costs determines division and agreement. A deadline cannot provide the terminal step of backward induction. Instead, each responder compares the proposed share with what rejection delivers in the next subgame. The proposer must meet that continuation requirement while recognizing that the same calculation will confront the other player one date later.
+
+Waiting costs are not a complete preference specification. A proportional loss in the value of one's eventual share differs from a fixed loss for each date spent negotiating. This paper makes that distinction explicit. It first supplies an implicit characterization for a contractive class of stationary preferences. It then derives an explicit allocation for exponential discounting and proves that neither randomization nor history dependence creates another equilibrium. Finally, it establishes how positive additive waiting costs change the answer and constructs a delayed equilibrium under equal costs.
+
+The main contribution of this exercise is a transparent answer within stated model classes. All proofs use the primitives of the game and elementary real analysis. No empirical or policy conclusion is drawn. The original bargaining paper and direct expositions of its theorem or proof were excluded from source access. The author recognized the familiar model from prior training and recalled the discounted candidate formula and the general continuation-value proof idea before deriving the argument. That exposure is disclosed in the accompanying contamination record. Thus ``question-only'' describes the supplied scientific input, not an assertion of absent prior knowledge.
+
+% [claim:C_SCOPE]
+\section{Solution concept and source boundary}
+At every finite history, a player can revise the entire continuation strategy. A subgame-perfect equilibrium requires that no such unilateral revision improve that player's payoff in any continuation game, including after an offer or rejection never reached in equilibrium. This definition is adopted explicitly rather than inferred from a stationary solution. The conceptual primary-source reference is Selten \cite{selten1975}; the verified publisher record and a repository search excerpt concern equilibrium refinements, not the bargaining result analyzed here. No existence theorem from that finite-game article is applied to the infinite game.
+
+The target bargaining article, its direct proof expositions, and evaluator material were not read. A complete baseline/frontier literature comparison therefore remains unavailable under this reconstruction protocol. The single conceptual citation is not a literature survey and supports no novelty claim. Its publisher metadata were verified; lawful full-text retrieval was blocked. The source archive records this gap rather than representing a downloaded or read paper. These restrictions do not supply any premise of the proofs below.
+
+\section{Game and preferences}\label{sec:model}
+% [claim:C_MODEL]
+There are two players, $i\in\{1,2\}$, and a pie of size one. A feasible division is $(s_1,s_2)\in[0,1]^2$ with $s_1+s_2=1$. Dates are $t=0,1,2,\ldots$. Player 1 proposes at even dates and player 2 at odd dates. At each date the proposer chooses a division and the responder observes it and either accepts or rejects. Acceptance ends the game at that date. Rejection passes the right to propose to the responder at the next date. Both players observe the entire history and all preferences. There is no commitment, breakdown risk, private information, indivisibility, or additional outside option.
+
+A strategy specifies an offer at every own proposer history and a response at every own responder history. In the discount and additive models, a behavioral strategy may randomize measurably over offers and over acceptance. We consider all such profiles for which the induced probability law is defined. Payoffs are expected utilities, and a subgame is evaluated in its current date units. For strictly positive discount factors this normalization divides by a positive constant; for additive costs it removes a sunk constant. Both operations preserve all preferences in the subgame. A pure strategy is a degenerate behavioral strategy.
+
+% [claim:C_MODEL]
+The general stationary class is specified differently because ordinal delay equivalents alone do not determine lottery preferences. For this class strategies are pure. Let $D_i:[0,1]\to[0,1]$ be a strictly increasing function with $D_i(0)=0$, and suppose for a constant $q_i\in(0,1)$ that
+\begin{equation}\label{eq:contract}
+ |D_i(a)-D_i(b)|\le q_i|a-b|\qquad(a,b\in[0,1]).
+% [claim:C_MODEL]
+\end{equation}
+Player $i$ ranks a share $s$ received $t$ dates later by $D_i^t(s)$, where the superscript denotes repeated composition and $D_i^0(s)=s$. Infinite disagreement has value zero. These preferences are stationary: at a finite date, the strictly increasing transformation $D_i^t$ preserves all later comparisons. Condition \eqref{eq:contract} implies $0\le D_i(s)\le q_i s<s$ for $s>0$. It is an added sufficient restriction, not a deduction from the research question and not a necessary condition for every unique bargaining outcome.
+
+% [claim:C_MODEL]
+Two important specifications receive separate treatment. Exponential discounting has
+\begin{equation}\label{eq:discount}
+ U_i(s,t)=\delta_i^t s,\qquad 0<\delta_i<1,
+\end{equation}
+and zero utility from infinite disagreement. Its expected-utility extension specifies lotteries and its delay equivalent is $D_i(s)=\delta_i s$. Constant waiting costs instead have
+\begin{equation}\label{eq:additive}
+ U_i(s,t)=s-c_i t,\qquad c_i>0.
+\end{equation}
+Infinite disagreement, or an infinite expected waiting time, gives expected payoff $-\infty$ in \eqref{eq:additive}. This model is stationary after sunk costs are removed, but its clipped acceptance threshold need not be a strict contraction.
+
+\section{Contractive waiting preferences}\label{sec:general}
+% [claim:C_GENERAL]
+Write $p_i$ for the share obtained by $i$ when $i$ proposes. These two numbers are not the components of a single division: $p_1$ applies at a player-1 proposer node and $p_2$ at a player-2 proposer node. A responder $j$ who expects $p_j$ next date requires the present share $D_j(p_j)$. Consequently the candidate equations are
+\begin{equation}\label{eq:reservation}
+ p_1=1-D_2(p_2),\qquad p_2=1-D_1(p_1).
+\end{equation}
+
+% [claim:C_GENERAL]
+\begin{theorem}[Contractive characterization]\label{th:general}
+Under the pure-strategy stationary preferences and assumptions of Section~\ref{sec:model}, there is exactly one pure subgame-perfect equilibrium. The pair $(p_1,p_2)\in(0,1)^2$ is the unique solution to \eqref{eq:reservation}. At every finite history with proposer $i$ and responder $j$, the proposer offers shares $(p_i,1-p_i)$ in player-role order. The responder accepts an own share $s$ if and only if $s\ge D_j(p_j)$. Agreement is immediate in every proposer subgame, including those reached after arbitrary rejected offers.
+\end{theorem}
+
+The intuition has two parts. The reservation equations link what each player can require as responder to what that player receives as proposer. Contraction also makes the range of possible proposer payoffs across all equilibria shrink when the two roles are compared. That second step proves uniqueness among history-dependent strategies; solving the equations alone would not. Appendix~\ref{app:general} supplies fixed-point existence, complete deviation checks, and the payoff-envelope proof. The equality response is part of the conclusion: rejecting the threshold would leave the proposer no maximizing offer once all continuation payoffs are fixed.
+
+\section{Exponential discounting}\label{sec:discount}
+% [claim:C_DISCOUNT] [claim:C_TIMING]
+\begin{theorem}[Behavioral equilibrium under discounting]\label{th:discount}
+For every $(\delta_1,\delta_2)\in(0,1)^2$, the exponentially discounted game has a unique subgame-perfect equilibrium among all behavioral strategies. The proposer shares are
+\begin{equation}\label{eq:formula}
+ p_1=\frac{1-\delta_2}{1-\delta_1\delta_2},\qquad
+ p_2=\frac{1-\delta_1}{1-\delta_1\delta_2}.
+\end{equation}
+At every proposer-$i$ history, the offer gives $i$ the share $p_i$ and gives $j$ the share $\delta_jp_j$. Every responder accepts at or above the own-share threshold $\delta_jp_j$ and rejects below it. Every equilibrium agreement occurs immediately. In particular, when player 1 begins, the allocation is $(p_1,1-p_1)$ at $t=0$.
+\end{theorem}
+
+The explicit formula is obtained from two linear reservation equations, not from a finite-horizon truncation. The proof permits all public-history contingencies and mixed offers and responses. It bounds expected continuation payoffs directly and rules out any positive rejection probability. Appendix~\ref{app:discount} proves the behavioral claim; Appendix~\ref{app:algebra} gives the exact algebra.
+
+% [claim:C_LIMIT]
+\begin{proposition}[Comparative statics and short-period limit]\label{prop:statics}
+In the domain of Theorem~\ref{th:discount}, the first proposer's share strictly increases with that player's discount factor and strictly decreases with the responder's discount factor:
+\begin{equation}\label{eq:derivatives}
+ \frac{\partial p_1}{\partial\delta_1}
+ =\frac{\delta_2(1-\delta_2)}{(1-\delta_1\delta_2)^2}>0,
+ \qquad
+ \frac{\partial p_1}{\partial\delta_2}
+ =-\frac{1-\delta_1}{(1-\delta_1\delta_2)^2}<0.
+\end{equation}
+When $\delta_1=\delta_2=\delta$, player 1 receives $1/(1+\delta)>1/2$. If the date length is $h>0$ and $\delta_i=e^{-r_i h}$ with $r_i>0$, then as $h\downarrow0$ the first proposer's share converges to $r_2/(r_1+r_2)$, and the difference between the allocations induced by the two possible first movers converges to zero.
+\end{proposition}
+
+Greater patience raises the value of rejecting an offer and therefore the share that the other player must concede. A first-mover advantage remains when the time step is positive, but disappears in the stated short-period limit. This is a limit of equilibria in discrete games; it is not an assertion about a separately specified continuous-time game. Appendix~\ref{app:algebra} verifies all differentiations and limits.
+
+\section{Constant waiting costs}\label{sec:additive}
+% [claim:C_ADDITIVE]
+\begin{theorem}[Unequal constant costs]\label{th:additive}
+For the additive expected-utility model \eqref{eq:additive}, suppose $c_1,c_2>0$ and either $c_1\ne c_2$ or $\min\{c_1,c_2\}\ge1$. There is a unique behavioral subgame-perfect equilibrium and every proposer subgame agrees immediately. If $c_1<c_2$, its proposer shares are
+\begin{equation}\label{eq:addformula}
+ p_1=1,\qquad p_2=\min\{c_1,1\}.
+\end{equation}
+If $c_2<c_1$, reverse the indices. If both costs are at least one, $p_1=p_2=1$. At every history responder $j$ accepts an own share $s$ exactly when $s\ge p_j-c_j$; when $p_j-c_j<0$, every feasible offer is strictly accepted. At equality acceptance is required in equilibrium.
+\end{theorem}
+
+The less costly negotiator obtains the entire pie when proposing. When the costlier player proposes and the lower cost is less than the pie, that player keeps only the opponent's per-date waiting cost. If even the lower cost equals or exceeds the pie, rejection is so costly that either proposer keeps the entire pie. These statements concern positive constant monetary costs; they do not follow from the discounted formula by replacing a discount factor with a cost. Appendix~\ref{app:additive} proves expected-payoff feasibility, global uniqueness, and all cost-size cases.
+
+% [claim:C_EQUAL]
+\begin{proposition}[Equal costs and stationary multiplicity]\label{prop:equal}
+If $c_1=c_2=c\in(0,1)$, the stationary immediate-agreement subgame-perfect equilibria are exactly those with
+\begin{equation}\label{eq:equal}
+ p_1\in[c,1],\qquad p_2=1-p_1+c.
+\end{equation}
+They offer the proposer $p_i$ and accept an own share at least $p_j-c$. Thus, when player 1 begins, every division $(p_1,1-p_1)$ with $p_1\in[c,1]$ is attainable in this stationary family. When $c\ge1$ the unique equilibrium instead has both proposer shares equal to one.
+\end{proposition}
+
+% [claim:C_DELAY]
+\begin{proposition}[Positive costs can coexist with equilibrium delay]\label{prop:delay}
+With equal additive costs $c=1/10$, there exists a pure, history-dependent subgame-perfect equilibrium in which player 1 initially offers the entire pie to itself, player 2 rejects, and player 2's next offer gives the shares $(4/5,1/5)$. Agreement occurs at $t=1$, with date-zero utilities $(7/10,1/10)$.
+\end{proposition}
+
+Complete information and positive waiting costs therefore do not by themselves establish a unique division or eliminate delay. History-dependent selection among different continuation equilibria can make a rejected initial offer optimal. Proposition~\ref{prop:delay} is an explicit construction, not a numerical search result. Appendix~\ref{app:equal} proves the stationary characterization and checks every continuation and deviation in the delayed construction. No complete characterization of all nonstationary equal-cost equilibria is asserted.
+
+\section{Boundary cases and interpretation}\label{sec:boundaries}
+% [claim:C_BOUNDARY]
+Perfect patience lies outside the strict-discount hypotheses and changes timing. If $\delta_1=1$ and $0<\delta_2<1$, the discounted formula has the allocation limit $(1,0)$. There are subgame-perfect equilibria giving player 1 the entire pie after any specified finite number of dates. The same statement with reversed indices holds when player 2 alone is patient. When both discount factors equal one, every immediate division of the pie and every prescribed finite delay followed by that division can be sustained. Appendix~\ref{app:boundaries} provides complete strategies and checks; it does not claim an exhaustive description of all boundary equilibria.
+
+% [claim:C_BOUNDARY]
+The limits $\delta_i\downarrow0$ of \eqref{eq:formula} exist with the other factor fixed. These limits should not silently be treated as a uniqueness theorem for exact zero factors in the globally dated payoff game: a player with $\delta_i=0$ is indifferent among every outcome after date zero, so division by $\delta_i^t$ no longer preserves subgame comparisons. Exact-zero factors are excluded from the theorems. Zero additive costs are likewise excluded from Theorem~\ref{th:additive}; they eliminate the strict waiting penalties used there. The no-cost game is already illustrated by the both-patient construction.
+
+The preference restriction carries the sharpest result. Contractive relative continuation values give uniqueness even without a terminal date. Constant absolute costs need not contract continuation-share differences; equal costs instead leave a genuine equilibrium-selection problem. Transferability, divisible shares, and a specified disagreement payoff also carry the conclusions. Different outside options, indivisible offers, incomplete information, breakdown, or bargaining protocols require new analysis.
+
+\section{Conclusion}
+Alternating offers pin down an allocation through what each player can obtain after rejecting. Under the stated contractive pure preferences the reservation equations determine a unique immediate equilibrium. Linear discounting strengthens this answer to a unique equilibrium among all behavioral strategies and produces the explicit fraction in \eqref{eq:formula}. Positive unequal additive costs also select a unique immediate equilibrium, but positive equal additive costs can admit both many divisions and delay. The question's qualitative assumptions alone therefore leave the waiting-cost specification essential.
+
+The appendix contains self-contained human-readable arguments and an obligation table. Formal kernel verification is unavailable, and the accompanying machine and independent-referee artifacts report their actual status. The source-access boundary and disclosed prior familiarity limit claims about historical independence. No claim of novelty, general empirical applicability, or completeness for all imaginable waiting preferences is made.
+
+\appendix
+\section{Complete derivations and proofs}\label{app:proofs}
+\subsection{Definitions and external dependencies}
+All payoff comparisons in this appendix are measured from the start of the subgame under discussion. A proposer subgame begins before its offer. A responder subgame begins after the currently offered division is observed. Removing sunk dates preserves comparisons for strictly positive discounts and for additive costs, as established in Section~\ref{sec:model}. The no-profitable-deviation condition concerns an entire future strategy, not only one immediate action.
+
+The only background real-analysis facts used are completeness of $\R$ (a Cauchy sequence of real numbers converges), existence of suprema and infima for nonempty bounded subsets of $\R$, geometric-series summation, elementary expectation monotonicity and conditioning, and differentiability of the exponential function at zero. Their hypotheses are verified explicitly below. No infinite-game equilibrium existence theorem, bargaining theorem, one-stage-deviation principle, or external fixed-point theorem is assumed. In particular, the contraction fixed-point argument is proved here.
+
+% [claim:C_GENERAL]
+\subsection{Fixed point and complete strategies for contractive preferences}\label{app:general}
+Restate the domain: $D_i$ is strictly increasing on $[0,1]$, $D_i(0)=0$, and satisfies \eqref{eq:contract} for $0<q_i<1$. Outcomes are deterministic and all strategies are pure. Define
+\begin{equation}\label{eq:fg}
+ F_i(a)=1-D_i(a),\qquad G(a)=F_2(F_1(a)).
+\end{equation}
+Each $F_i$ maps $[0,1]$ into $[0,1]$, is decreasing, and is Lipschitz with constant $q_i$. Thus $G$ maps $[0,1]$ into itself and has Lipschitz constant $q=q_1q_2<1$. Starting from any $a_0\in[0,1]$, set $a_{n+1}=G(a_n)$. Repeated use of the Lipschitz inequality gives
+\begin{equation}
+ |a_{n+1}-a_n|\le q^n|a_1-a_0|.
+\end{equation}
+For $m>n$, the triangle inequality and geometric sum imply
+\begin{equation}
+ |a_m-a_n|\le |a_1-a_0|\sum_{k=n}^{m-1}q^k
+% [claim:C_GENERAL]
+ \le \frac{|a_1-a_0|q^n}{1-q}.
+\end{equation}
+The last bound tends to zero; hence the sequence is Cauchy and converges by completeness to $a\in[0,1]$. The interval is closed, which places its limit inside the interval. Lipschitz continuity yields $G(a)=\lim_nG(a_n)=\lim_na_{n+1}=a$. If another fixed point $b$ existed, $|a-b|\le q|a-b|$ would imply $(1-q)|a-b|\le0$. Since $1-q>0$, $a=b$. Put $p_1=a$ and $p_2=F_1(a)$. This proves existence and uniqueness of the pair in \eqref{eq:reservation}.
+
+% [claim:C_GENERAL]
+For either $i$, $p_i=1-D_j(p_j)\ge1-D_j(1)\ge1-q_j>0$. Since $p_j>0$ and $D_j$ is strictly increasing from zero, $D_j(p_j)>0$, so $p_i<1$. Let $r_i=D_i(p_i)$. Equation \eqref{eq:reservation} gives $r_i=1-p_j$.
+
+% [claim:C_GENERAL]
+Define a profile at every finite history as follows. Proposer $i$ offers own share $p_i$ and responder share $r_j$. Responder $i$, upon being offered $s$, accepts exactly for $s\ge r_i$; ties are accepted. Because $p_i+r_j=1$, every prescribed offer is feasible and accepted.
+
+% [claim:C_GENERAL]
+We now check arbitrary unilateral continuation deviations without appealing to a one-stage principle. Against the other player's prescribed strategy, consider player $i$ at an own proposer node. Any offer accepted by the other player leaves $i$ at most $p_i$, since acceptance requires the other's share at least $r_j=1-p_i$. If that offer is rejected, the other player next offers $i$ the share $r_i$. Accepting it has value $D_i(r_i)$ from the original node. Rejecting it returns $i$ to an own proposer node two dates later. Therefore any finite deviating path that terminates at one of $i$'s proposer dates $2k$ yields at most
+\begin{equation}
+ D_i^{2k}(p_i)\le p_i.
+\end{equation}
+A path terminating at an intervening responder date $2k+1$ yields exactly $D_i^{2k+1}(r_i)\le p_i$, because $r_i=D_i(p_i)\le p_i$ and $D_i(s)\le s$. An infinite deviating path yields zero, also below $p_i$. These alternatives exhaust all pure continuation strategies. Prescribed immediate agreement attains $p_i$, so it is optimal.
+
+At a responder node offering $s$, accepting attains $s$. Rejecting makes $i$ the next proposer; the preceding argument shows its greatest attainable value there is $p_i$. Strict monotonicity of $D_i$ gives greatest rejection value exactly $D_i(p_i)=r_i$, attained by following the profile. Thus the specified threshold, including its allowed acceptance tie, is optimal. The same argument applies after every possible finite history because the other player's rule depends only on the role. This proves subgame-perfect existence.
+
+% [claim:C_GENERAL]
+To establish uniqueness, let $\mathcal V_i$ be the set of normalized own values of proposer $i$ over every pure SPE and every proposer-$i$ history. It is nonempty by the construction. Every member belongs to $[0,1]$: eventual shares belong to that interval, delay maps never increase them, and infinite disagreement has value zero. Define $m_i=\inf\mathcal V_i$ and $M_i=\sup\mathcal V_i$; both exist and lie in $[0,1]$ by completeness. Continuation values after an arbitrary offer are included in these sets because the restriction of an SPE to any proper subgame is an SPE of the same normalized game.
+
+% [claim:C_GENERAL]
+At a proposer-$i$ history, offer responder $j$ the share $D_j(M_j)+\varepsilon$ for any positive $\varepsilon<1-D_j(M_j)$. This interval is nonempty since $D_j(M_j)\le q_j<1$. Rejection would yield at most $D_j(M_j)$, so this offer is strictly accepted in any SPE continuation. It gives $i$ the share $1-D_j(M_j)-\varepsilon$. Equilibrium optimality for every such $\varepsilon$, followed by its limit to zero, implies
+\begin{equation}\label{eq:lowergeneral}
+ m_i\ge1-D_j(M_j).
+\end{equation}
+
+% [claim:C_GENERAL]
+At any accepted equilibrium offer, responder $j$ must receive at least $D_j(m_j)$, because rejection leads to a proposer-$j$ value at least $m_j$. Consequently the current proposer receives at most $1-D_j(m_j)$. If the offer is rejected instead, let the next subgame deliver normalized values $(v_i,v_j)$ with $j$ proposing. On its deterministic path, delay maps weakly reduce both eventual shares; hence $v_i+v_j\le1$, including when disagreement is infinite. Since $v_j\ge m_j$, the current proposer's rejection value is at most
+\begin{equation}\label{eq:rejectgeneral}
+ D_i(1-m_j)\le1-m_j\le1-D_j(m_j).
+\end{equation}
+Both cases give
+\begin{equation}\label{eq:uppergeneral}
+ M_i\le1-D_j(m_j).
+\end{equation}
+Subtracting \eqref{eq:lowergeneral} from \eqref{eq:uppergeneral}, with $\Delta_i=M_i-m_i\ge0$, gives
+\begin{equation}
+ \Delta_i\le D_j(M_j)-D_j(m_j)\le q_j\Delta_j.
+\end{equation}
+Applying this once for each index gives $\Delta_1\le q_1q_2\Delta_1$. Nonnegativity and $1-q_1q_2>0$ imply $\Delta_1=0$, and the other inequality then implies $\Delta_2=0$. Calling the common values $p_i$, the two envelope inequalities force \eqref{eq:reservation}; the pair is therefore the previously constructed fixed point.
+
+% [claim:C_GENERAL]
+No equilibrium offer can be rejected. In fact \eqref{eq:rejectgeneral} is now a strict bound below the proposer value:
+\begin{equation}\label{eq:strictgeneral}
+ D_i(1-p_j)\le1-p_j<1-D_j(p_j)=p_i.
+\end{equation}
+The strict inequality uses $p_j>0$ and $D_j(p_j)<p_j$. A rejected offer would give the proposer less than the proved equilibrium value, a contradiction. An accepted offer must leave the proposer exactly $p_i$, since that is its common equilibrium value. Its responder share is therefore uniquely $r_j$. At every responder node, rejection gives exactly $r_j$, so strict comparisons force rejection below $r_j$ and acceptance above it. At equality, rejection cannot be prescribed: that very offer is the unique required offer of the preceding proposer subgame, whose equilibrium must agree immediately. Thus equality acceptance is forced at every finite history. The complete profile is unique, proving Theorem~\ref{th:general}.
+
+% [claim:C_DISCOUNT]
+\subsection{Behavioral discounting: existence and global uniqueness}\label{app:discount}
+Restate the domain: $0<\delta_1,\delta_2<1$, utility is \eqref{eq:discount}, infinite disagreement gives zero, and strategies may be behavioral. The fixed-point pair for $D_i(s)=\delta_i s$ exists by Appendix~\ref{app:general}. Against the proposed pure profile, any realized path of a unilateral behavioral deviation ends at an own proposer date with value at most $\delta_i^{2k}p_i$, ends at an own responder date with value $\delta_i^{2k+1}(\delta_i p_i)$, or never agrees and has value zero. Each path's payoff is at most $p_i$. Expectation preserves this bound because all payoffs lie in $[0,1]$. At an arbitrary responder node the best rejection value is exactly $\delta_i p_i$, attained by the profile. Accepting at or above it and rejecting below it is optimal. This proves existence against every behavioral deviation at every history.
+
+% [claim:C_DISCOUNT]
+For uniqueness, redefine $\mathcal V_i$ to range over all behavioral SPE and all proposer-$i$ histories. Expected payoffs are nonnegative and bounded by one, so infima $m_i$ and suprema $M_i$ again exist. For any continuation subgame the two expected payoffs satisfy
+\begin{equation}\label{eq:discountfeasible}
+ v_1+v_2\le1.
+\end{equation}
+To verify this, on a path agreeing $T$ dates later at shares $(s_1,s_2)$, the sum is $\delta_1^T s_1+\delta_2^T s_2\le s_1+s_2=1$. On an infinite path it is zero. Taking expectation proves \eqref{eq:discountfeasible}.
+
+% [claim:C_DISCOUNT]
+Offering $\delta_jM_j+\varepsilon<1$ guarantees strict acceptance, as the responder's rejection value is at most $\delta_jM_j$. Equilibrium optimality and $\varepsilon\downarrow0$ imply $m_i\ge1-\delta_jM_j$. Conditional on any accepted equilibrium offer, the responder's offered share must be at least $\delta_jm_j$. If a response is instead rejection, the next proposer-$j$ subgame has $j$'s value at least $m_j$, and \eqref{eq:discountfeasible} bounds $i$'s next value by $1-m_j$. From the current date that is at most
+\begin{equation}
+ \delta_i(1-m_j)\le1-m_j\le1-\delta_jm_j.
+\end{equation}
+The acceptance case also leaves $i$ at most $1-\delta_jm_j$. Conditioning over offers and responses therefore gives
+\begin{equation}\label{eq:disc-envelope}
+ m_i\ge1-\delta_jM_j,\qquad M_i\le1-\delta_jm_j.
+\end{equation}
+The inequalities apply even if a single offer is accepted with probability strictly between zero and one, since both conditional outcomes obey the same upper bound. Conditioning is legitimate for the measurable probability laws specified in Section~\ref{sec:model}; all quantities are bounded.
+
+% [claim:C_DISCOUNT]
+Subtracting the two bounds gives $\Delta_i\le\delta_j\Delta_j$. Their composition and $\delta_1\delta_2<1$ imply both spans are zero. The common values satisfy $p_i=1-\delta_jp_j$. For a rejected offer, the current proposer now receives at most $\delta_i(1-p_j)$, whereas any accepted offer leaves it at most $p_i$. Their difference is strictly positive, because
+\begin{equation}\label{eq:gapdiscount}
+ p_i-\delta_i(1-p_j)
+ =(1-\delta_i)(1-p_j)+(1-\delta_j)p_j>0.
+\end{equation}
+Here $0<p_j<1$ and both discount factors are strictly below one. Any positive total rejection probability would thus make the proposer's expected payoff strictly below $p_i$, contrary to its common value. Therefore acceptance occurs with probability one.
+
+With certain acceptance, each possible accepted offer leaves the proposer at most $p_i$. Its expectation equals $p_i$, so the nonnegative random variable $p_i-s_i$ has mean zero and equals zero almost surely. Thus the offer is exactly the prescribed division with probability one. At every responder history strict comparisons force the threshold responses; equality must be accepted with probability one because it is the prescribed offer in that preceding proposer subgame, where rejection probability is zero. This proves behavioral strategy uniqueness, not merely allocation uniqueness, up to probability-zero distinctions in a strategy's randomization device and histories after termination. It also proves immediate agreement at every finite proposer history. Theorem~\ref{th:discount} follows.
+
+% [claim:C_LIMIT]
+\subsection{Exact algebra, comparative statics, and limiting games}\label{app:algebra}
+The two reservation equations are $p_1=1-\delta_2p_2$ and $p_2=1-\delta_1p_1$. Substitute the second into the first to obtain
+\begin{align}
+ p_1&=1-\delta_2+\delta_1\delta_2p_1,\\
+ (1-\delta_1\delta_2)p_1&=1-\delta_2.
+\end{align}
+The denominator is positive because $0<\delta_1\delta_2<1$. Division gives $p_1$ in \eqref{eq:formula}; reversing indices gives $p_2$. The first allocation's second component is
+\begin{equation}
+ 1-p_1=\frac{\delta_2(1-\delta_1)}{1-\delta_1\delta_2}=\delta_2p_2.
+\end{equation}
+All numerators are positive; moreover $1-\delta_2<1-\delta_1\delta_2$ because $\delta_2(1-\delta_1)>0$, proving $p_1<1$. The reversed comparison gives $p_2<1$.
+
+% [claim:C_LIMIT]
+For differentiation write $d=1-\delta_1\delta_2>0$. The quotient rule gives $\partial p_1/\partial\delta_1=\delta_2(1-\delta_2)/d^2$. For the other derivative it gives
+\begin{equation}
+ \frac{\partial p_1}{\partial\delta_2}
+ =\frac{-d+\delta_1(1-\delta_2)}{d^2}
+ =\frac{-(1-\delta_1)}{d^2}.
+\end{equation}
+Positive denominators and the maintained discount domain give the strict signs in \eqref{eq:derivatives}. Setting both factors to $\delta$ cancels the nonzero factor $1-\delta$ in $(1-\delta)/(1-\delta^2)$, yielding $1/(1+\delta)>1/2$ because $1+\delta<2$.
+
+% [claim:C_LIMIT]
+For the short-period limit, exponential differentiability at zero gives
+\begin{equation}
+ \lim_{h\downarrow0}\frac{1-e^{-r_2h}}h=r_2,
+ \qquad
+ \lim_{h\downarrow0}\frac{1-e^{-(r_1+r_2)h}}h=r_1+r_2.
+\end{equation}
+Since $r_1+r_2>0$, taking the ratio proves $p_1\to r_2/(r_1+r_2)$. If player 2 starts, player 1 receives $\delta_1p_1$. The first-mover allocation difference for player 1 is $(1-\delta_1)p_1$, which tends to zero since $p_1\le1$ and $e^{-r_1h}\to1$. This proves Proposition~\ref{prop:statics} without interchanging an equilibrium operator with a limit.
+
+% [claim:C_LIMIT]
+At fixed $0<\delta_2<1$, taking $\delta_1\uparrow1$ in \eqref{eq:formula} gives $p_1\to1$ and $p_2\to0$. Taking $\delta_1\downarrow0$ instead gives $p_1\to1-\delta_2$ and $p_2\to1$. At fixed $0<\delta_1<1$, taking $\delta_2\downarrow0$ gives $p_1\to1$ and $p_2\to1-\delta_1$. These are algebraic limits; exact-zero utility games are outside the positive-normalization theorem.
+
+% [claim:C_ADDITIVE]
+\subsection{Positive additive costs: existence, feasibility, and uniqueness}\label{app:additive}
+Restate the domain: each $c_i>0$; utility is $s-c_i t$ and perpetual disagreement is $-\infty$; behavioral expected utilities are allowed. Define
+\begin{equation}\label{eq:addmap}
+ H_i(a)=1-\pos{a-c_i},\qquad a\in[0,1],
+\end{equation}
+where $(z)_+=\max\{z,0\}$. A candidate immediate stationary pair solves
+\begin{equation}\label{eq:addres}
+ p_1=H_2(p_2),\qquad p_2=H_1(p_1).
+\end{equation}
+If $c_1<c_2$, take $p_1=1$ and $p_2=\min\{c_1,1\}$. Then $\pos{p_1-c_1}=1-\min\{c_1,1\}$, while $p_2-c_2<0$ since either $p_2=c_1<c_2$ or $p_2=1\le c_1<c_2$. Thus both equations hold. Reversing indices covers $c_2<c_1$. If $c_1,c_2\ge1$, taking $p_1=p_2=1$ satisfies them. For equal costs $c\in(0,1)$, every pair in \eqref{eq:equal} satisfies them by direct substitution, since both proposer shares are at least $c$.
+
+% [claim:C_ADDITIVE]
+For any such pair let $r_i=\pos{p_i-c_i}=1-p_j$. At every history proposer $i$ offers own share $p_i$ and responder share $r_j$. Responder $i$ accepts if its own share $s$ satisfies $s\ge p_i-c_i$ and rejects below it. When $p_i-c_i<0$ every feasible share is accepted, so the clipped threshold does not introduce false indifference at zero. Ties to the actual rejection value are accepted.
+
+% [claim:C_ADDITIVE]
+To check arbitrary deviations at an own proposer node, the other player's acceptance rule leaves $i$ at most $p_i$ in any accepted offer. An agreement reached at one of $i$'s proposer dates $2k$ therefore gives at most $p_i-2kc_i\le p_i$. Agreement at an intervening responder date $2k+1$ gives $r_i-(2k+1)c_i\le p_i$, since $r_i\le p_i$. Infinite disagreement gives $-\infty$. Every realized deviating path is bounded above by $p_i$, so its expected value is at most $p_i$, even if the negative tail has infinite expectation. At an arbitrary responder node, the greatest attainable rejection payoff is $p_i-c_i$, because after rejection $i$ becomes proposer and can attain exactly $p_i$. This validates its specified response. Thus each candidate profile is an SPE against all behavioral deviations at every history.
+
+% [claim:C_ADDITIVE]
+Before bounding all other equilibria, verify their payoff domains. Whatever strategies follow rejection, a responder's continuation payoff from the next date is at most one: a finite-path share is at most one and waiting costs only lower it; infinite disagreement has value $-\infty$. Offering the whole pie to that responder is strictly accepted, since rejection gives at most $1-c_j<1$. Therefore every proposer can guarantee zero immediately, so its equilibrium value is nonnegative. At each responder node accepting the feasible offered share guarantees a nonnegative value. Consequently the responder's expected value before the offer is also nonnegative in equilibrium. Both players' equilibrium values in every proposer subgame thus belong to $[0,1]$.
+
+% [claim:C_ADDITIVE]
+These nonnegative values rule out positive probability of perpetual disagreement and rule out infinite expected waiting. Formally, with eventual shares bounded by one and $c_i>0$, an infinite expected waiting time would give expected utility $-\infty$. With finite $\E T$, agreement occurs almost surely and expected-payoff feasibility is
+\begin{equation}\label{eq:addfeasible}
+ v_1+v_2=1-(c_1+c_2)\E T\le1.
+\end{equation}
+Hence if $j$ is proposer and its value is at least $m_j$, the other value is at most $1-m_j$.
+
+% [claim:C_ADDITIVE]
+Let $m_i,M_i$ now be the infimum and supremum of proposer-$i$ values across all behavioral SPE and all own proposer histories. They exist in $[0,1]$ by the proved bounds and the candidate existence. Offering $j$ the share $\pos{M_j-c_j}+\varepsilon<1$ guarantees strict acceptance: rejection gives at most $M_j-c_j$, and the chosen offer is strictly larger. Such positive $\varepsilon$ exist because $c_j>0$ and $M_j\le1$. Passing to zero gives the lower bound below. At an accepted equilibrium offer the responder must receive at least $\pos{m_j-c_j}$. At a rejected offer \eqref{eq:addfeasible} bounds the proposer's payoff by $1-m_j-c_i$, which is at most $1-\pos{m_j-c_j}$: if $m_j\ge c_j$ this compares $-c_i$ with $c_j$; if $m_j<c_j$ it compares $-m_j-c_i$ with zero. Conditioning over behavioral offers and responses proves
+\begin{equation}\label{eq:add-envelope}
+ m_i\ge H_j(M_j),\qquad M_i\le H_j(m_j).
+\end{equation}
+
+% [claim:C_ADDITIVE]
+Suppose $c_1<c_2$. Since $H_2$ is decreasing, $M_2\le H_1(m_1)$ and \eqref{eq:add-envelope} imply
+\begin{equation}\label{eq:addlowerfixed}
+ m_1\ge H_2(M_2)\ge H_2(H_1(m_1)).
+\end{equation}
+For every $a\in[0,1)$ the composite on the right is strictly larger than $a$. To check every case, if $c_2\ge1$, $H_2(b)=1$ for all $b\in[0,1]$, so the composite equals one. If $c_2<1$ and $a\le c_1$, $H_1(a)=1$ and the composite equals $c_2>a$, since $a\le c_1<c_2$. If $c_2<1$ and $a>c_1$, it equals
+\begin{equation}
+ H_2(H_1(a))=\min\{a-c_1+c_2,1\}>a.
+\end{equation}
+Both arguments of the minimum exceed $a$ in this case. Thus \eqref{eq:addlowerfixed} forces $m_1=1$, whence $M_1=1$. The two envelope inequalities for player 2 now give $m_2=M_2=H_1(1)=\min\{c_1,1\}$. Reversing player indices proves the $c_2<c_1$ case. If both costs are at least one, both $H_i$ are identically one, so \eqref{eq:add-envelope} forces all four bounds to one, including the equal-cost case.
+
+% [claim:C_ADDITIVE]
+Every proposer value is now uniquely $p_i$. A rejected offer gives that proposer at most $1-p_j-c_i$. Its gap below the common value is
+\begin{equation}\label{eq:addgap}
+ p_i-(1-p_j-c_i)=p_i+p_j+c_i-1>0.
+\end{equation}
+For unequal costs with the lower cost less than one, $p_1+p_2=1+\min\{c_1,c_2\}>1$. With both costs at least one the sum is two. This verifies the strict sign in every stated domain. Any positive rejection probability would therefore reduce expected proposer payoff below $p_i$, since accepted offers leave it at most $p_i$. Acceptance is certain, and a mean-zero nonnegative payoff shortfall makes the offer exactly the prescribed division almost surely. Rejection at any responder node gives $p_j-c_j$, so strict comparisons give the specified responses. Equality must be accepted when feasible because it is the prescribed offer in the preceding proposer subgame. This proves the complete strategy and timing uniqueness in Theorem~\ref{th:additive}.
+
+% [claim:C_EQUAL]
+\subsection{Equal-cost stationary family and a complete delayed construction}\label{app:equal}
+Restate this subsection's scope: $c_1=c_2=c\in(0,1)$, first characterize stationary immediate SPE, then give one fully specified history-dependent SPE. No global uniqueness is claimed.
+
+% [claim:C_EQUAL]
+In any stationary immediate equilibrium, a proposer obtains a deterministic own share $p_i$ if strategies are pure; behavioral stationary immediate equilibria obey the same deterministic offers as follows. Its responder continuation value after rejection is the fixed $p_j-c$. Offers below that threshold are rejected and those strictly above are accepted. The proposer can attain shares arbitrarily close to $1-\pos{p_j-c}$ with strictly acceptable offers. An accepted equilibrium offer can leave it no more than that amount. Since agreement is immediate, its expected proposer value must be exactly $p_i=1-\pos{p_j-c}$; all accepted offers must attain the bound almost surely. Threshold ties are consequently accepted. Thus \eqref{eq:addres} is necessary also for the stationary behavioral immediate family.
+
+% [claim:C_EQUAL]
+We solve these equations in full. If $p_1<c$, then $p_2=1$ and the first equation forces $p_1=c$, contradicting the strict inequality. Hence $p_1\ge c$. The same argument with reversed indices yields $p_2\ge c$. The equations now reduce to $p_2=1-p_1+c$, with $p_1\le1$ and $p_2\le1$ equivalent to $p_1\ge c$. Thus exactly \eqref{eq:equal} remains. Existence for each pair, all off-path responses, and arbitrary behavioral deviations have already been checked in Appendix~\ref{app:additive}; that argument did not assume unequal costs for existence. This proves Proposition~\ref{prop:equal}. For $c\ge1$ Appendix~\ref{app:additive} has already proved global uniqueness, including equality $c=1$.
+
+% [claim:C_DELAY]
+For the delayed example take $c=1/10$ and define two stationary immediate continuation profiles from this family. Profile $B$ has proposer shares $p_1=9/10$ and $p_2=1/5$. Its responses accept own shares at least $4/5$ for player 1 and $1/10$ for player 2. Profile $P$ has proposer shares $p_1=1/10$ and $p_2=1$. Its responses accept own shares at least zero for player 1 and $9/10$ for player 2. Every threshold tie is accepted. Their existence as complete continuation SPE has just been proved.
+
+% [claim:C_DELAY]
+Now specify the initial node and every continuation. Player 1 offers share $y=0$ to player 2. After any initial offer with $y=0$, a rejection switches permanently to profile $B$ starting with player 2 proposing at date one. After any initial offer with $y>0$, a rejection switches permanently to profile $P$ at date one. This switch depends on the observed first offer and remains in force after every later history. Acceptance of any initial offer terminates the game.
+
+% [claim:C_DELAY]
+At the initial response to $y=0$, player 2 compares accepting zero with rejecting to receive $1/5$ at date one, worth $1/5-1/10=1/10$. It therefore rejects strictly. After an initial $y>0$, player 2 compares $y$ with rejection to get one at date one, worth $9/10$. It rejects for $0<y<9/10$ and accepts for $y\ge9/10$, including equality. This specifies every initial response and is optimal given the proven continuation SPE.
+
+% [claim:C_DELAY]
+The prescribed $y=0$ gives player 1 a share $4/5$ at date one, worth $4/5-1/10=7/10$. A deviating offer with $0<y<9/10$ is rejected and leads to profile $P$, in which player 1 as responder gets zero at date one; its best attainable payoff from that continuation is zero, since $P$ is an SPE. The current-date payoff is therefore $-1/10$. A deviating offer with $y\ge9/10$ is accepted and leaves player 1 at most $1/10$. Both alternatives are strictly below $7/10$. Randomizing initial offers cannot improve because every realized offer's best continuation value is bounded by the prescribed value. All later subgames are restrictions of $B$ or $P$, so arbitrary multiperiod deviations there are unprofitable. At date one under $B$, player 2 offers own share $1/5$ and player 1 accepts $4/5$ at its threshold. The date-zero utilities are $(7/10,1/10)$ and sum to $4/5=1-2c$. This proves Proposition~\ref{prop:delay}, with no unspecified off-path threat.
+
+% [claim:C_BOUNDARY]
+\subsection{Perfect-patience boundary constructions}\label{app:boundaries}
+First set $\delta_1=1$ and $0<\delta_2<1$. For any integer $K\ge0$, define the following pure profile at every finite history whose current date is $t$. Every proposer offers the entire pie to player 1. At $t<K$, player 1 as responder rejects every offer, including share one; player 2 as responder accepts a positive own share and rejects zero. At $t\ge K$, player 1 as responder accepts exactly share one, and player 2 as responder accepts every own share, including zero. Rejected offers lead to the same calendar-date rule at $t+1$; arbitrary prior offers do not change the rule.
+
+% [claim:C_BOUNDARY]
+On the prescribed path all offers before $K$ are rejected and the date-$K$ offer is accepted, giving player 1 the entire pie. At every subgame player 1's prescribed continuation payoff is one, which no strategy can exceed; it is indifferent to waiting finitely and obtains a best attainable payoff. At a player-1 responder node before $K$, rejection gives one, so rejecting shares below one is strictly preferred and rejecting one is an allowed tie. At or after $K$, rejecting also gives one at the next proposer node, so acceptance of share one and rejection below one are optimal.
+
+% [claim:C_BOUNDARY]
+Player 2's prescribed continuation payoff is zero at every proposer history. If player 2 proposes before $K$, player 1 rejects all offers, and player 2 receives zero eventually; no future revision can extract a positive share because player 1 only accepts its entire pie after $K$ and as proposer always demands that pie. If player 2 proposes after $K$, any accepted offer gives player 1 the entire pie and therefore gives player 2 zero; other offers are rejected and still yield zero. At a player-2 responder node rejection gives zero, so it strictly accepts every positive own share and is indifferent at zero. The date-dependent tie rules are optimal. These checks cover all histories and all complete deviations: player 1 already attains its upper bound, and player 2 cannot obtain a positive share against player 1's specified behavior. Hence this is an SPE for every finite $K$. Reverse the identities to obtain the case with player 2 alone perfectly patient, with any given first mover.
+
+% [claim:C_BOUNDARY]
+Next set $\delta_1=\delta_2=1$. Choose any feasible fixed division $(a,1-a)$ and any finite integer $K\ge0$. Every proposer at every history offers that fixed division. Before date $K$, responder $i$ accepts only if its own offered share is strictly greater than its fixed share; it rejects equality and lower shares. At or after date $K$, it accepts at or above its fixed share and rejects below it. Rejection follows the same rule one date later.
+
+% [claim:C_BOUNDARY]
+Every proposer subgame's prescribed continuation gives each player its fixed share by date $\max\{t,K\}$, with no waiting disutility. A proposer deviating to an accepted offer before $K$ gives the responder strictly more than its fixed share and therefore retains strictly less than its own fixed share. At or after $K$, any accepted deviation leaves it at most its fixed share. A rejected offer leads to the same fixed continuation division, so it cannot improve the proposer payoff. At a responder history, rejection gives exactly that responder's fixed share in finite time. Its indicated comparisons and equality tie choices are therefore optimal. A complete future deviation cannot increase payoff: it can only settle for at most the fixed share at an own proposer date, accept the fixed share at a later responder date, or wait forever and receive zero, which is no greater than the fixed nonnegative share. Thus the specified profile is an SPE. Taking $K=0$ yields every immediate division; arbitrary finite $K$ gives delay. This completes the boundary constructions without extending the strict-discount uniqueness theorem to them.
+
+\subsection{Proof-obligation table and status}
+Table~\ref{tab:obligations} records the mathematical dependencies discharged in this appendix. The background analysis facts were listed explicitly at the start of the appendix and their hypotheses were checked where used. The independently written argument is a candidate complete paper proof pending the separate fresh-context proof referee. Its delivery status is recorded outside the manuscript; no Lean kernel has checked it. Exact-zero discounts, zero additive costs, all nonstationary equal-cost equilibria, and preferences without the specified contraction are outside the respective uniqueness statements, not unresolved dependencies of those statements.
+
+% [claim:C_SCOPE]
+\begin{longtable}{p{0.14\textwidth}p{0.51\textwidth}p{0.25\textwidth}}
+\caption{Conclusion-carrying proof obligations}\label{tab:obligations}\\
+\toprule ID & Obligation and locator & Status \\
+\midrule\endfirsthead
+\toprule ID & Obligation and locator & Status \\
+\midrule\endhead
+G1 & Preference normalization, domains, disagreement and pure/behavioral distinctions; Section~\ref{sec:model} & Discharged \\
+G2 & Existence, uniqueness and interiority of the reservation fixed point; Appendix~\ref{app:general} & Discharged \\
+G3 & Complete strategies and arbitrary pure deviations at all histories; Appendix~\ref{app:general} & Discharged \\
+G4 & Envelopes over all pure SPE, zero payoff spans, immediate agreement and threshold ties; Appendix~\ref{app:general} & Discharged \\
+D1 & Bounded behavioral payoffs, complete deviations, conditioning, envelopes and certain acceptance; Appendix~\ref{app:discount} & Discharged \\
+D2 & Algebra, signs, symmetry and short-period limit; Appendix~\ref{app:algebra} & Discharged \\
+A1 & Additive candidate existence and arbitrary behavioral deviations; Appendix~\ref{app:additive} & Discharged \\
+A2 & Nonnegative equilibrium payoffs, finite expected waiting and feasibility; Appendix~\ref{app:additive} & Discharged \\
+A3 & Unequal-cost and high-cost envelope solution, immediate agreement and ties; Appendix~\ref{app:additive} & Discharged \\
+A4 & Equal-cost stationary characterization and full delayed construction; Appendix~\ref{app:equal} & Discharged \\
+B1 & Patient boundary strategies, finite delay and all off-path comparisons; Appendix~\ref{app:boundaries} & Discharged \\
+E1 & Real completeness, suprema/infima, geometric sums, expectation properties and exponential differentiability & External elementary results \\
+\bottomrule
+\end{longtable}
+
+\bibliographystyle{plain}
+\bibliography{../references/references}
+\end{document}

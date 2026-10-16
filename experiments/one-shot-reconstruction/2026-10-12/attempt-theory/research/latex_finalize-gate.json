@@ -1,0 +1,22 @@
+{
+  "command": [
+    "/opt/homebrew/opt/python@3.14/bin/python3.14",
+    "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/harness/scripts/check_latex.py",
+    "finalize",
+    "--report",
+    "research/latex-report.json",
+    "--visual-review",
+    "research/latex-visual-review.json",
+    "--output",
+    "research/latex-final.json"
+  ],
+  "exit_code": 0,
+  "passed": true,
+  "stdout": "{\n  \"delivery_ready\": true,\n  \"errors\": [],\n  \"pdf_sha256\": \"36835bfef3b806c1cecaafbd4e672d516455661adc088c1f1702da4b975dcb83\"\n}\n",
+  "stderr": "",
+  "report": {
+    "delivery_ready": true,
+    "errors": [],
+    "pdf_sha256": "36835bfef3b806c1cecaafbd4e672d516455661adc088c1f1702da4b975dcb83"
+  }
+}

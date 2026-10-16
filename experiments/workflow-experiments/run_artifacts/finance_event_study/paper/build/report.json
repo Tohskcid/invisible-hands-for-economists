@@ -1,0 +1,63 @@
+{
+  "automated_passed": false,
+  "delivery_ready": false,
+  "visual_review_required": false,
+  "source_dir": "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/workflow-experiments/run_artifacts/finance_event_study/paper/manuscript",
+  "input_hashes": {
+    "main.tex": "c96cfc99e07c78b3016d7fd76d64f7199856f2c9367cda998cd52a7e694ddab1"
+  },
+  "compilation": {
+    "engine": "pdflatex",
+    "commands": [
+      [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-no-shell-escape",
+        "-recorder",
+        "-output-directory=/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/workflow-experiments/run_artifacts/finance_event_study/paper/build",
+        "main.tex"
+      ],
+      [
+        "bibtex",
+        "main"
+      ],
+      [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-no-shell-escape",
+        "-recorder",
+        "-output-directory=/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/workflow-experiments/run_artifacts/finance_event_study/paper/build",
+        "main.tex"
+      ],
+      [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-no-shell-escape",
+        "-recorder",
+        "-output-directory=/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/workflow-experiments/run_artifacts/finance_event_study/paper/build",
+        "main.tex"
+      ]
+    ],
+    "errors": [
+      "overfull box exceeds margin by 48.9347pt"
+    ],
+    "warnings": [
+      "underfull box reported; inspect typography"
+    ],
+    "pdf": "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/workflow-experiments/run_artifacts/finance_event_study/paper/build/main.pdf"
+  },
+  "rendering": {
+    "errors": [
+      "render skipped because compilation failed"
+    ],
+    "pages": [],
+    "page_count": null
+  },
+  "note": "delivery_ready remains false until an agent or researcher visually inspects every rendered page"
+}

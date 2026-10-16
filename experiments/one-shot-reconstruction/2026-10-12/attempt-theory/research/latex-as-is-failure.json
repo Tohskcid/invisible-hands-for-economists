@@ -1,0 +1,62 @@
+{
+  "automated_passed": false,
+  "delivery_ready": false,
+  "visual_review_required": false,
+  "compilation": {
+    "engine": "pdflatex",
+    "commands": [
+      [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-no-shell-escape",
+        "-recorder",
+        "-output-directory=/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt-theory/build/as-is-pdflatex",
+        "main.tex"
+      ],
+      [
+        "bibtex",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt-theory/build/as-is-pdflatex/main"
+      ],
+      [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-no-shell-escape",
+        "-recorder",
+        "-output-directory=/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt-theory/build/as-is-pdflatex",
+        "main.tex"
+      ],
+      [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-no-shell-escape",
+        "-recorder",
+        "-output-directory=/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt-theory/build/as-is-pdflatex",
+        "main.tex"
+      ]
+    ],
+    "errors": [
+      "compiler exit code: 1",
+      "log matches fatal pattern: (?:Citation|Reference).+undefined",
+      "log matches fatal pattern: Label\\(s\\) may have changed",
+      "log matches fatal pattern: There were undefined (?:references|citations)"
+    ],
+    "warnings": [
+      "underfull box reported; inspect typography"
+    ],
+    "pdf": "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt-theory/build/as-is-pdflatex/main.pdf"
+  },
+  "rendering": {
+    "errors": [
+      "render skipped because compilation failed"
+    ],
+    "pages": [],
+    "page_count": null
+  },
+  "note": "delivery_ready remains false until an agent or researcher visually inspects every rendered page"
+}

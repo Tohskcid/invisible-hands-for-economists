@@ -1,0 +1,63 @@
+{
+  "searches": [
+    {
+      "source": "web",
+      "query": "Card Krueger 1992 New Jersey fast food raw data codebook data.dat",
+      "retrieved_at": "2026-10-12",
+      "retrieval_tool": "browser",
+      "raw_evidence_artifact": "research/search-initial.json",
+      "raw_evidence_sha256": "fbccb65c227e74bfb72b355d25e1ee7c7eb6108b5778e3f486dfdc76fb29a0c4"
+    },
+    {
+      "source": "web",
+      "query": "site.davidcard.berkeley.edu data minimum wage public.dat codebook",
+      "retrieved_at": "2026-10-12",
+      "retrieval_tool": "browser",
+      "raw_evidence_artifact": "research/search-data.json",
+      "raw_evidence_sha256": "98d7ef9bb9cc87c0c6934fba7a393e48fd976de5789f1490ee46cc7bc19288f1"
+    },
+    {
+      "source": "web",
+      "query": "Conley Taber Inference Difference in Differences Small Number Policy Changes author pdf",
+      "retrieved_at": "2026-10-12",
+      "retrieval_tool": "browser",
+      "raw_evidence_artifact": "research/search-methods.json",
+      "raw_evidence_sha256": "26d5668ab18d32e9927813ecc67ae6bd96c15a3db462e67fbbfe12d460a6358c"
+    },
+    {
+      "source": "web/NBER",
+      "query": "site.nber.org difference differences few treated clusters inference 2024",
+      "retrieved_at": "2026-10-12",
+      "retrieval_tool": "browser",
+      "raw_evidence_artifact": "research/search-methods.json",
+      "raw_evidence_sha256": "26d5668ab18d32e9927813ecc67ae6bd96c15a3db462e67fbbfe12d460a6358c"
+    },
+    {
+      "source": "web/arXiv",
+      "query": "site.arxiv.org \"difference-in-differences\" \"few\" \"2025\"",
+      "retrieved_at": "2026-10-12",
+      "retrieval_tool": "browser",
+      "raw_evidence_artifact": "research/search-methods.json",
+      "raw_evidence_sha256": "26d5668ab18d32e9927813ecc67ae6bd96c15a3db462e67fbbfe12d460a6358c"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Inference with Difference in Differences with a Small Number of Policy Changes",
+      "canonical_locator": "https://www.nber.org/papers/t0312",
+      "retrieval_tool": "browser",
+      "retrieved_at": "2026-10-12",
+      "raw_evidence_artifact": "research/search-methods.json",
+      "raw_evidence_sha256": "26d5668ab18d32e9927813ecc67ae6bd96c15a3db462e67fbbfe12d460a6358c"
+    },
+    {
+      "title": "Extensions for Inference in Difference-in-Differences with Few Treated Clusters",
+      "canonical_locator": "https://arxiv.org/abs/2302.03131",
+      "retrieval_tool": "browser",
+      "retrieved_at": "2026-10-12",
+      "raw_evidence_artifact": "research/sources-methods.json",
+      "raw_evidence_sha256": "92c838cdf5d46aa57e51756d49df7ae9b88de411ff07d1c7b113563884055641"
+    }
+  ],
+  "qualification": "Normalized index of actual saved web tool output; target full text and target numerical results are prohibited, and accidental snippets are separately audited."
+}

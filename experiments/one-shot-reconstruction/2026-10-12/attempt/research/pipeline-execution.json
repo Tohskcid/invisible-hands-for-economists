@@ -1,0 +1,36 @@
+{
+  "computations_passed": true,
+  "independent_base_r_agreement": true,
+  "execution": [
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "scripts/analyze.py"
+      ],
+      "exit_code": 0,
+      "passed": true,
+      "stdout": "{\n  \"primary\": {\n    \"estimate\": 2.7500000000000004,\n    \"std_error\": 1.337725311029075,\n    \"se_homoskedastic\": 1.1543553776958988,\n    \"n\": 384,\n    \"n_nj\": 309,\n    \"n_pa\": 75,\n    \"coefficients\": {\n      \"intercept\": -2.2833333333333328,\n      \"state\": 2.7500000000000004\n    },\n    \"residual_sd\": 8.967756134466416,\n    \"outcome\": \"change\",\n    \"formula\": \"change ~ 1 + state\",\n    \"variance\": \"HC1; homoskedastic also reported\",\n    \"se_separate_groups\": 1.3423409769082764,\n    \"bootstrap_low\": 0.19278317152103563,\n    \"bootstrap_high\": 5.273771035598704,\n    \"normal_low\": 0.1280583903830137,\n    \"normal_high\": 5.371941609616988\n  },\n  \"groups\": {\n    \"pa\": {\n      \"n_raw\": 79,\n      \"n_pre\": 77,\n      \"n_post\": 77,\n      \"n_pair\": 75,\n      \"pre\": 23.33116883116883,\n      \"post\": 21.165584415584416,\n      \"paired_pre\": 23.38,\n      \"paired_post\": 21.096666666666668,\n      \"change\": -2.283333333333333,\n      \"missing_pair_rate\": 0.05063291139240506,\n      \"permanent_closed\": 1,\n      \"starting_wage_pre\": 4.630131578947369,\n      \"starting_wage_post\": 4.617464788732394\n    },\n    \"nj\": {\n      \"n_raw\": 331,\n      \"n_pre\": 321,\n      \"n_post\": 319,\n      \"n_pair\": 309,\n      \"pre\": 20.439408099688475,\n      \"post\": 21.02742946708464,\n      \"paired_pre\": 20.430582524271845,\n      \"paired_post\": 20.89724919093851,\n      \"change\": 0.4666666666666666,\n      \"missing_pair_rate\": 0.06646525679758308,\n      \"permanent_closed\": 5,\n      \"starting_wage_pre\": 4.612133757961783,\n      \"starting_wage_post\": 5.080849056603773\n    }\n  },\n  \"results\": \"research/results.json\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "Rscript",
+        "scripts/verify.R"
+      ],
+      "exit_code": 0,
+      "passed": true,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "scripts/build_package.py"
+      ],
+      "exit_code": 0,
+      "passed": true,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "results_sha256": "4c13c45ca15e8487473c2ce2fa1685b5acf0ce12d4129718329e5ea11d87eed5",
+  "holdout_sha256": "837b972220f4025cf14b6c2f114c78f6a585f499d8de7c02cd5e3afc85e5b223",
+  "comparisons": [
+    {
+      "target": "Table 3 balanced employment contrast",
+      "computed": 2.7500000000000004,
+      "published": 2.75,
+      "absolute_error": 4.440892098500626e-16,
+      "tolerance": 0.05,
+      "matches_protocol_tolerance": true,
+      "matches_displayed_two_decimals": true,
+      "note": "Same balanced-panel estimand."
+    },
+    {
+      "target": "Table 3 balanced independent-group standard error",
+      "computed": 1.3423409769082764,
+      "published": 1.34,
+      "absolute_error": 0.002340976908276282,
+      "tolerance": 0.05,
+      "matches_protocol_tolerance": true,
+      "matches_displayed_two_decimals": true,
+      "note": "Restaurant sampling uncertainty conditional on the two observed state paths."
+    },
+    {
+      "target": "Table 3 balanced pa mean change",
+      "computed": -2.283333333333333,
+      "published": -2.28,
+      "absolute_error": 0.0033333333333334103,
+      "tolerance": 0.05,
+      "matches_protocol_tolerance": true,
+      "matches_displayed_two_decimals": true,
+      "note": "Same balanced panel."
+    },
+    {
+      "target": "Table 3 balanced nj mean change",
+      "computed": 0.4666666666666666,
+      "published": 0.47,
+      "absolute_error": 0.003333333333333355,
+      "tolerance": 0.05,
+      "matches_protocol_tolerance": true,
+      "matches_displayed_two_decimals": true,
+      "note": "Same balanced panel."
+    },
+    {
+      "target": "Table 3 all-available contrast",
+      "computed": 2.753605782980582,
+      "published": 2.76,
+      "absolute_error": 0.0063942170194177805,
+      "tolerance": 0.05,
+      "matches_protocol_tolerance": true,
+      "matches_displayed_two_decimals": false,
+      "note": "Different from the balanced estimand; a displayed-rounding discrepancy is retained."
+    }
+  ],
+  "matches": 5,
+  "published_regressions": {
+    "published_table4_n": 357,
+    "worker_controlled_n": 384,
+    "worker_gap_n": 368,
+    "verdict": "not exact reconstruction: different samples/specifications",
+    "reason": "These valid alternative estimates cannot be treated as the original Table 4 estimates."
+  },
+  "full_article_verdict": "partial reconstruction",
+  "unrecovered_blocks": [
+    "Exact Table 4 and Table 5 original sample/specification set",
+    "Exact ZIP-based geographic robustness",
+    "Original state entry analysis and separate CPS evidence"
+  ],
+  "independent_verification": "research/reviews/empirical-execution.json",
+  "interpretation": "Matching these core quantities does not establish causal identification or complete original-paper recovery."
+}

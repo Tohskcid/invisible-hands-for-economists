@@ -49,7 +49,7 @@ Load these only when triggered:
 - extracting or annotating text data with LLMs: [text_as_data.md](references/text_as_data.md); require pinned model snapshots, zero temperature, inter-coder reliability (Cohen's kappa >= 0.70), and gold-standard sample audit
 - research PDFs: [pdf_ingestion.md](references/pdf_ingestion.md)
 - creating multi-file outputs or archiving cited papers: [project_layout.md](references/project_layout.md); classify artifacts by purpose and account for every bibliography entry
-- data discovery, acquisition, or proxy data: [data_acquisition.md](references/data_acquisition.md); require tool-acquired, hash-bound provenance before quantitative results and disclose reproducible proxies as feasibility evidence only
+- data discovery, acquisition, or proxy data: [data_acquisition.md](references/data_acquisition.md); require tool-acquired, hash-bound provenance before quantitative results and keep proxies outside empirical research evidence
 - drafting or auditing an article: [manuscript.md](references/manuscript.md); require hash-bound section coverage rather than a page target; for LaTeX also read [latex_validation.md](references/latex_validation.md), compile and render the full document, then inspect every page
 - policy, managerial, deployment, welfare, or other real-world recommendations: [real_world_relevance.md](references/real_world_relevance.md); separate academic validity from decision applicability and require a bounded decision contract
 - pre-submission peer review: [adversarial_referees.md](references/adversarial_referees.md); stress-test manuscripts against identification, mechanism, and data referee archetypes
@@ -63,18 +63,21 @@ Load these only when triggered:
 
 Build a claim-centered literature map and mathematical obligations; establish the fixed baseline; state one falsifiable hypothesis; make one attributable change; validate; record `keep`, `discard`, `inconclusive`, `blocked`, or `crash`; stop at the budget or milestone and report the best result, failures, uncertainty, and next decision. Keep changes only if they improve contract criteria without weakening identification, proof validity, numerical stability, or reproducibility.
 
+For one-shot projects, save `research/contract-input.json` with question, mode, deliverable, claim scope, and budget. Invoke this skill's `scripts/run_research_workflow.py` with `--root` and `--contract` before drafting. Follow `next_tasks` and `rework_plan`; invalidate dependent work, then rerun until `complete`, budget exhaustion, or a documented block. Record hash-bound scientific assessments; command success alone never resolves an obstacle. Follow [workflow execution](references/workflow_execution.md).
+
 Do not optimize p-values, alter the harness, or pivot because results conflict with intuition. Audit data, code, assumptions, counterexamples, and competing mechanisms first.
 
 ## Coordination
 
-Delegate only independent tasks that save time, using the host's native agent tools with bounded budgets and non-overlapping writes. Actually dispatch authorized tasks; do not merely name roles. Retain agent identifiers, wait for every required handoff, validate it, then synthesize. The PI owns coupled decisions. Handoffs contain conclusions, evidence paths, uncertainty, and next action—not raw logs. Resolve disagreement by evidence or a discriminating test, never confidence votes.
+For manuscript projects, use [team workflow](references/team_workflow.md). Actually dispatch authorized tasks with native agent tools; do not merely name roles. Retain agent identifiers, wait for every required handoff, verify artifacts, and record a PI-accepted team report. Keep the review agent independent. The PI owns coupled decisions.
 
 ## Boundaries
 
 - Reuse project tools and standard libraries before adding code or dependencies.
 - Keep generated artifacts in stable purpose-specific directories, not the project root. Lawfully acquire, verify, checksum, and consistently name every available cited PDF; record restricted or unavailable full text instead of fabricating it.
-- Never estimate or draft quantitative claims from unverified data. Public, restricted, and proxy inputs must pass the applicable provenance gate; missing provenance is `blocked`, not a prompt to invent records.
+- Empirical, descriptive, structural, and replication research uses verified real or restricted data. Simulated inputs belong only to theory validation or isolated engineering tests; they cannot support an empirical feasibility or manuscript result. Missing provenance is `blocked`.
 - Load one mode reference at a time. Keep raw data, full logs, papers, and proof traces in artifacts; return only decisions and paths.
+- Whenever a manuscript or report contains a mathematical proof or derivation, keep the result and intuition in the main text and put the complete step-by-step derivation in a numbered appendix with an explicit cross-reference from the main text.
 - Treat numerical examples as intuition or counterexample search, never as proof.
 - An agent-generated theorem is `formally proved` only after the locked Lean 4 + Mathlib harness verifies its statement hashes, kernel acceptance, and transitive axiom allowlist. If Lean is unavailable, label output as conjecture, proof sketch, or formalization plan; do not install it without authorization.
 - Stay inside scope and budget. Paid/restricted access, installs, external communication, and irreversible actions require authority.

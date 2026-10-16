@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "mode": "theory",
+  "deliverable": "manuscript",
+  "claim_scope": "research-only",
+  "mechanism_scope": "not-claimed",
+  "max_budget": 10.0,
+  "target_journal": "AER",
+  "question": "",
+  "obligations": []
+}

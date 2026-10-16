@@ -1,0 +1,16 @@
+{
+  "topic_survey": "research/topic-survey.json",
+  "data_provenance": "research/data-provenance.json",
+  "manifest": "research/manifest.jsonl",
+  "manuscript": "paper/manuscript/main.tex",
+  "coverage": "research/manuscript-coverage.json",
+  "bibliography": "paper/references.bib",
+  "literature_archive": "research/literature-archive.json",
+  "results": "research/results.json",
+  "design_audit": "research/design-audit.json",
+  "logic_review": "research/logic-review.json",
+  "claim_scope": "research-only",
+  "mechanism_scope": "not-claimed",
+  "latex_main": "paper/manuscript/main.tex",
+  "latex_visual_review": "research/latex-visual-review.json"
+}

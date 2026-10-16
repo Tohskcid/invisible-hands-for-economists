@@ -20,6 +20,12 @@ class SkillContractTests(unittest.TestCase):
         for link in links:
             self.assertTrue((ROOT / link).is_file(), link)
 
+    def test_plugin_skill_references_exist(self):
+        skill = ROOT / "skills/econ-research-lab/SKILL.md"
+        links = re.findall(r"\(([^)]+\.md)\)", skill.read_text(encoding="utf-8"))
+        for link in links:
+            self.assertTrue((skill.parent / link).is_file(), link)
+
     def test_version_is_consistent(self):
         pyproject = (ROOT / "pyproject.toml").read_text(encoding="utf-8")
         self.assertIn('version = "2.18.0"', pyproject)
@@ -29,6 +35,19 @@ class SkillContractTests(unittest.TestCase):
         theory = (ROOT / "references/theory.md").read_text(encoding="utf-8")
         for phrase in ["Complete paper-proof gate", "obligation table", "complete paper proof", "no obligation is unresolved"]:
             self.assertIn(phrase, theory)
+
+    def test_mathematical_proofs_are_complete_appendices(self):
+        portable = (ROOT / "skills/econ-research-lab/SKILL.md").read_text(encoding="utf-8")
+        theory = (ROOT / "references/theory.md").read_text(encoding="utf-8")
+        manuscript = (ROOT / "references/manuscript.md").read_text(encoding="utf-8")
+        for entrypoint in (self.text, portable):
+            self.assertIn("complete step-by-step derivation", entrypoint)
+            self.assertIn("numbered appendix", entrypoint)
+            self.assertIn("explicit cross-reference", entrypoint)
+        for reference in (theory, manuscript):
+            self.assertIn("complete step-by-step", reference)
+            self.assertIn("numbered appendix", reference)
+            self.assertIn("cross-reference", reference)
 
     def test_latex_gate_requires_semantic_equation_breaks(self):
         latex = (ROOT / "references/latex_validation.md").read_text(encoding="utf-8")

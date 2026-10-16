@@ -1,0 +1,1 @@
+{"commands": [["/opt/homebrew/opt/python@3.14/bin/python3.14", "scripts/analyze.py"]], "raw_inputs": ["data/event_returns.csv"], "generated": ["research/results.json", "output/tables/car_table.tex"], "results": "research/results.json", "clean": true}

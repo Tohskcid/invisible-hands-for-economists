@@ -1,0 +1,255 @@
+{
+  "recorded_at_utc": "2026-10-12T04:39:45.655478+00:00",
+  "reason": "Three child agents reported account usage limit before manuscript and review completion. User instructed continue; resume from preserved artifacts without original-paper feedback.",
+  "interrupted_agent_names": [
+    "blind_empirical",
+    "blind_theory",
+    "execution_referee"
+  ],
+  "scientific_inputs_added": [],
+  "original_deadline_exceeded_due_to_interruption": true,
+  "resume_worker_active_budget_minutes": 20,
+  "first_segment_status": "resource-interrupted; not a completed one-shot trial",
+  "artifacts_at_interrupt": [
+    {
+      "path": "attempt/data/processed/restaurants.csv",
+      "sha256": "5681f3330a2d369ce8ddf3591ff7cccc5ad5cc09331ef3569b5d52d60d6cbee7",
+      "bytes": 127659
+    },
+    {
+      "path": "attempt/data/raw/archive/njmin.zip",
+      "sha256": "41a29aec6b489658b20030d044a2b20a5f5a04b871cde41df057afd6013ba587",
+      "bytes": 23017
+    },
+    {
+      "path": "attempt/data/raw/checksums.sha256",
+      "sha256": "4049950989a4f7851ef8744db78b5d0d2e9c8face52978fb8c4dd062ddab086a",
+      "bytes": 464
+    },
+    {
+      "path": "attempt/data/raw/codebook",
+      "sha256": "1d801d7bdfa77ad2138d79ead54eef830913a2bdf4861a50ee013b3474e4b52f",
+      "bytes": 3822
+    },
+    {
+      "path": "attempt/data/raw/public.dat",
+      "sha256": "04bde0cad5540980f32ce099c6dad369e2f05494698071d8a65b3e1cbe9ca53a",
+      "bytes": 82410
+    },
+    {
+      "path": "attempt/data/raw/read.me",
+      "sha256": "3bf4c370d368f11bd86ae20a49af1a874ad21ac6ab8c679f82a2f57789fd4f76",
+      "bytes": 1254
+    },
+    {
+      "path": "attempt/data/raw/survey1.nj",
+      "sha256": "076743c2d981764171ad4ab8fed12c1c23855f1be59a66ac985c716503a199bc",
+      "bytes": 5803
+    },
+    {
+      "path": "attempt/data/raw/survey2.nj",
+      "sha256": "ffa7c81804561f6641841e27122ba7140046773747efa71535a866a753173f86",
+      "bytes": 5480
+    },
+    {
+      "path": "attempt/literature/papers/alvarez2023--extensions-for-inference-in-difference-in-differences-with-few-treated-clusters.pdf",
+      "sha256": "17102f94168d10a35546277c3305d956eecb5edbb1901fab72dbcd87bb9b2266",
+      "bytes": 230952
+    },
+    {
+      "path": "attempt/literature/papers/conley2005--inference-with-difference-in-differences-with-a-small-number-of-policy-changes.pdf",
+      "sha256": "ed6b84b57f592b29bbcfcb73e64b6ebdfc52b1089c7dab6e0cc626f1982ce7ac",
+      "bytes": 665042
+    },
+    {
+      "path": "attempt/literature/papers/nj1990--minimum-wage-increase-to-5-05-by-1992.pdf",
+      "sha256": "63e7aebbae89b8308285f68ccae00077e175c04360dc04909e55651344ce5509",
+      "bytes": 465002
+    },
+    {
+      "path": "attempt/output/figures/employment.pdf",
+      "sha256": "a07639ef48a891039986e7a253d1d6bae7538223152f56795e1855c48485ac91",
+      "bytes": 13759
+    },
+    {
+      "path": "attempt/output/figures/wages.pdf",
+      "sha256": "99ceb918297d3a9da32b12ee40f5c7635cc3a0c3cdbd1ad8de857b7b877e099c",
+      "bytes": 14631
+    },
+    {
+      "path": "attempt/output/tables/main.tex",
+      "sha256": "2c4f139120019001c28da3fca4bec902333bb1068ecc856e45038f65ccb7ace4",
+      "bytes": 778
+    },
+    {
+      "path": "attempt/output/tables/means.tex",
+      "sha256": "5161b854e964bd5edfd16689e0fc4726e98a731cee0c05a299821acf6fa7ca8b",
+      "bytes": 444
+    },
+    {
+      "path": "attempt/output/tables/outcomes.tex",
+      "sha256": "8b86ee59197588dfa5dab0514377bcd38c1414b09c3474a5c4a289e2676cf587",
+      "bytes": 756
+    },
+    {
+      "path": "attempt/output/tables/robustness.tex",
+      "sha256": "a35e7431f09daab7bac6116bd8c3570ccc0bb23e27216f9ea1aa77bb7f3035d5",
+      "bytes": 1695
+    },
+    {
+      "path": "attempt/paper/manuscript/template.tex",
+      "sha256": "4e8fb3fb65c3e2c45e0efbf8df5c468c6f3cff53d22073e292d86ffe32112937",
+      "bytes": 30588
+    },
+    {
+      "path": "attempt/research/base-r-verification.json",
+      "sha256": "4fd76a0dd7c76c966dda56593394d6ffe0e81b26ee22389c120be4ad757fafef",
+      "bytes": 103
+    },
+    {
+      "path": "attempt/research/contamination.json",
+      "sha256": "4b61927bf7430225263fce83b447333dff2bb96be737274388fabdacfa5e3016",
+      "bytes": 2397
+    },
+    {
+      "path": "attempt/research/data-provenance.json",
+      "sha256": "865f3978a1a4353128aff42fb613c0cc2b2f66b0dc0faa5aa9f81683d82b368b",
+      "bytes": 2928
+    },
+    {
+      "path": "attempt/research/data-schema.json",
+      "sha256": "99cc80b8e87691758140ab049d8f5db00e026ef4bef82044c9989bbbf5400358",
+      "bytes": 3651
+    },
+    {
+      "path": "attempt/research/design-memo.md",
+      "sha256": "7f13dac52ebebd3f380893d74760edf45fb5285e56040f003086ce213c829391",
+      "bytes": 1899
+    },
+    {
+      "path": "attempt/research/docs/source-aer-guidance.html",
+      "sha256": "a66095d073fdb4dfd8da3f433f8bf97ab95f405941bfcd2fb4bad4a7eb148c16",
+      "bytes": 31032
+    },
+    {
+      "path": "attempt/research/docs/source-author-data.html",
+      "sha256": "a2d6e14dc66e7e24171237130dc43c8c50bd1473878a164497190d5fc9913f6e",
+      "bytes": 3409
+    },
+    {
+      "path": "attempt/research/environment.json",
+      "sha256": "96d72893ff027302874de8204dc911eb75e32708f19433e5397e1d5d761b6c8e",
+      "bytes": 111
+    },
+    {
+      "path": "attempt/research/experiments.tsv",
+      "sha256": "3a775c6d501142dddd514831d05e72581fdd9d906817ab65dec4c18dbf272306",
+      "bytes": 202
+    },
+    {
+      "path": "attempt/research/mpl-cache/fontlist-v3.11.0.json",
+      "sha256": "cc06eb1dd2a34ff99b60751459bfe642ef1da6886b45374ccca64c8d87b7eadc",
+      "bytes": 598196
+    },
+    {
+      "path": "attempt/research/nj-law.txt",
+      "sha256": "db62009d428a8e4bfd6c77793b3c30c674ace7427ca5f910bcc71baf85648692",
+      "bytes": 10583
+    },
+    {
+      "path": "attempt/research/results-detail.json",
+      "sha256": "c938b14a67c88ae635b8513f7ea01fe389385d356e6ac2186e644b2e86e4fc92",
+      "bytes": 12493
+    },
+    {
+      "path": "attempt/research/results.json",
+      "sha256": "a60275b12a1f3cd313d1e0704f97063f385b09920b3b0d4efd2b17c1fc30f389",
+      "bytes": 12763
+    },
+    {
+      "path": "attempt/research/search-data.json",
+      "sha256": "98d7ef9bb9cc87c0c6934fba7a393e48fd976de5789f1490ee46cc7bc19288f1",
+      "bytes": 33067
+    },
+    {
+      "path": "attempt/research/search-initial.json",
+      "sha256": "fbccb65c227e74bfb72b355d25e1ee7c7eb6108b5778e3f486dfdc76fb29a0c4",
+      "bytes": 26483
+    },
+    {
+      "path": "attempt/research/search-license.json",
+      "sha256": "4908e28c1ac91d6809c7b6d65424435e2e51417aabb950ac0a5d69f4ebf52271",
+      "bytes": 31992
+    },
+    {
+      "path": "attempt/research/search-methods.json",
+      "sha256": "26d5668ab18d32e9927813ecc67ae6bd96c15a3db462e67fbbfe12d460a6358c",
+      "bytes": 35689
+    },
+    {
+      "path": "attempt/research/source-access.jsonl",
+      "sha256": "46f2eb38c775104e9b0619df73a6e535e4ad13e51522b6ea19443e249cb8cf15",
+      "bytes": 587
+    },
+    {
+      "path": "attempt/research/sources-methods.json",
+      "sha256": "92c838cdf5d46aa57e51756d49df7ae9b88de411ff07d1c7b113563884055641",
+      "bytes": 7956
+    },
+    {
+      "path": "attempt/research/sources-policy.json",
+      "sha256": "d6a120cdf3200763713e73b4d4087ed8e5a1ce70d245a12ea507b44622e32db2",
+      "bytes": 15537
+    },
+    {
+      "path": "attempt/research/state.md",
+      "sha256": "477b4fd739270c18a500155dca00062de9f3b874d6ba9aa4d49c3b48140a6e6e",
+      "bytes": 1972
+    },
+    {
+      "path": "attempt/scripts/acquire.py",
+      "sha256": "b2c66b61ba443b52c13748d025086e27ac89f54f5501f0b1b6bbec68d181cb04",
+      "bytes": 1469
+    },
+    {
+      "path": "attempt/scripts/analyze.py",
+      "sha256": "9f09e11b50192aab57f48db48207f2cb448d559585ed869ec438f7b2fc844883",
+      "bytes": 10990
+    },
+    {
+      "path": "attempt-theory/paper/manuscript/main.tex",
+      "sha256": "1bb6ac38d537501820c34107613bd8f950f8d6b9885a43b823a821826c40833a",
+      "bytes": 49302
+    },
+    {
+      "path": "attempt-theory/research/contamination.json",
+      "sha256": "9dc29b881ac19f4c58859ed913f453c3479e00ffe5c3825883f0efe7330574d8",
+      "bytes": 1344
+    },
+    {
+      "path": "attempt-theory/research/experiments.tsv",
+      "sha256": "be47ab80009d0abb1b4b7a82bae3e2aa5d99507f47c88e06a9ffd84e0b5bbdfa",
+      "bytes": 262
+    },
+    {
+      "path": "attempt-theory/research/model.md",
+      "sha256": "fe36506f62cad4efc1aaee8af7b6f3ec8c59060e487ad54044068cf7d9158d67",
+      "bytes": 2252
+    },
+    {
+      "path": "attempt-theory/research/sections/outline.md",
+      "sha256": "280be1854dab1d1ec78acc6609c895d0679d6ee7d7d0d8fc6ae79de1ff73a923",
+      "bytes": 1294
+    },
+    {
+      "path": "attempt-theory/research/source-access.jsonl",
+      "sha256": "56ef564898f606a8773a3be714d63a6be0b7ce3dc3446fa4104818dc520a6ef8",
+      "bytes": 708
+    },
+    {
+      "path": "attempt-theory/research/state.md",
+      "sha256": "6f0db0a3b7dfe42cc266191e5effda5e211b377859038a8abf69ac8bec300859",
+      "bytes": 2652
+    }
+  ]
+}

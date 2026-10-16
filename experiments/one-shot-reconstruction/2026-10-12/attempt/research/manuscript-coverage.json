@@ -1,0 +1,248 @@
+{
+  "schema_version": "1",
+  "mode": "empirical",
+  "manuscript_sha256": "50d6ff21f4d226ae86ffe3609ab14f96d1f5ff63cdb6880ea947daefc5f837d0",
+  "sections": [
+    {
+      "id": "intro",
+      "role": "introduction",
+      "status": "ready",
+      "headings": [
+        "Introduction"
+      ],
+      "claim_ids": [
+        "C_SCOPE",
+        "C_MAIN",
+        "C_LIMIT"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/intro.md",
+          "sha256": "81a65d0daed39e92b98dec969c029d7d379c94e01d611837fa886ebb244b9e6f"
+        }
+      ]
+    },
+    {
+      "id": "literature",
+      "role": "literature",
+      "status": "ready",
+      "headings": [
+        "Setting and Relation to the Literature"
+      ],
+      "claim_ids": [
+        "C_POLICY",
+        "C_INFERENCE",
+        "C_SCOPE"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/literature.md",
+          "sha256": "30d8ac7cffad09a3440f8707e0c447f3e7de88c2e916f38e3fcdb459b4560fa0"
+        },
+        {
+          "kind": "literature",
+          "path": "research/literature-archive.json",
+          "sha256": "39d1ac564ff5e399a8b495ccd1273887c78a06ce339d4051e448a43dbcbae2c1"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "role": "data",
+      "status": "ready",
+      "headings": [
+        "Data and Measurement"
+      ],
+      "claim_ids": [
+        "C_DATA",
+        "C_REPRO"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/data.md",
+          "sha256": "34dda0a06db1c0c79c76766c492b97b9344588603e34b8622028670d287e978b"
+        },
+        {
+          "kind": "data_documentation",
+          "path": "research/data-provenance.json",
+          "sha256": "4d78046de05f8b1440233958e6ef4eaf4a921a0b9444c6a524eebe86ce16a6f6"
+        },
+        {
+          "kind": "analysis_code",
+          "path": "scripts/analyze.py",
+          "sha256": "9f09e11b50192aab57f48db48207f2cb448d559585ed869ec438f7b2fc844883"
+        }
+      ]
+    },
+    {
+      "id": "design",
+      "role": "identification",
+      "status": "ready",
+      "headings": [
+        "Estimand, Design, and Uncertainty"
+      ],
+      "claim_ids": [
+        "C_ESTIMAND",
+        "C_INFERENCE",
+        "C_LIMIT"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/design.md",
+          "sha256": "101485f344197df9ed9d398bd27f35dd76e215c87450b85862678baca5773ac3"
+        },
+        {
+          "kind": "design_audit",
+          "path": "research/design-audit.json",
+          "sha256": "f67eff701d9c8cbf1346936bbf6e247f377f720932a654dbcb69eaeee4c086f2"
+        },
+        {
+          "kind": "analysis_code",
+          "path": "scripts/analyze.py",
+          "sha256": "9f09e11b50192aab57f48db48207f2cb448d559585ed869ec438f7b2fc844883"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "role": "results",
+      "status": "ready",
+      "headings": [
+        "Employment Results"
+      ],
+      "claim_ids": [
+        "C_MAIN",
+        "C_GAP"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/results.md",
+          "sha256": "97a467bfafa15d77c8e9fd2169064db65126c3debc3192b991e9e14881755493"
+        },
+        {
+          "kind": "result",
+          "path": "research/results.json",
+          "sha256": "4c13c45ca15e8487473c2ce2fa1685b5acf0ce12d4129718329e5ea11d87eed5"
+        },
+        {
+          "kind": "analysis_code",
+          "path": "scripts/analyze.py",
+          "sha256": "9f09e11b50192aab57f48db48207f2cb448d559585ed869ec438f7b2fc844883"
+        },
+        {
+          "kind": "table",
+          "path": "output/tables/main.tex",
+          "sha256": "2c4f139120019001c28da3fca4bec902333bb1068ecc856e45038f65ccb7ace4"
+        }
+      ]
+    },
+    {
+      "id": "robustness",
+      "role": "robustness",
+      "status": "ready",
+      "headings": [
+        "Sensitivity and Adjustment Margins"
+      ],
+      "claim_ids": [
+        "C_ROBUST",
+        "C_DIAGNOSTIC",
+        "C_AUX"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/robustness.md",
+          "sha256": "fdabfd7c9c797bfd2aeb7b51dcfea1c8ae40fdb141ad61d344ffe5fa14dcaa0f"
+        },
+        {
+          "kind": "result",
+          "path": "research/results.json",
+          "sha256": "4c13c45ca15e8487473c2ce2fa1685b5acf0ce12d4129718329e5ea11d87eed5"
+        },
+        {
+          "kind": "analysis_code",
+          "path": "scripts/analyze.py",
+          "sha256": "9f09e11b50192aab57f48db48207f2cb448d559585ed869ec438f7b2fc844883"
+        },
+        {
+          "kind": "table",
+          "path": "output/tables/robustness.tex",
+          "sha256": "a35e7431f09daab7bac6116bd8c3570ccc0bb23e27216f9ea1aa77bb7f3035d5"
+        }
+      ]
+    },
+    {
+      "id": "conclusion",
+      "role": "conclusion",
+      "status": "ready",
+      "headings": [
+        "Conclusion"
+      ],
+      "claim_ids": [
+        "C_MAIN",
+        "C_LIMIT"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/conclusion.md",
+          "sha256": "8d15fc40c48f25ab3e31981378a359dfa6588b27621f038f1ec52b8f328bf129"
+        }
+      ]
+    },
+    {
+      "id": "derivation",
+      "role": "appendix",
+      "status": "ready",
+      "headings": [
+        "Identification and Estimator Derivations"
+      ],
+      "claim_ids": [
+        "C_ESTIMAND",
+        "C_INFERENCE"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/derivation.md",
+          "sha256": "1e865824ff37513ab1ee0e0f3ee4b27f293ed017409bb2d24e3c2a853e363c80"
+        },
+        {
+          "kind": "appendix",
+          "path": "research/sections/derivation.md",
+          "sha256": "1e865824ff37513ab1ee0e0f3ee4b27f293ed017409bb2d24e3c2a853e363c80"
+        }
+      ]
+    },
+    {
+      "id": "replication",
+      "role": "appendix",
+      "status": "ready",
+      "headings": [
+        "Replication and Audit Record"
+      ],
+      "claim_ids": [
+        "C_REPRO",
+        "C_SCOPE"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/replication.md",
+          "sha256": "07c849e21975027ba67fd9a36cabb5b0a69769eb6ee184aed37f832a805c4d98"
+        },
+        {
+          "kind": "appendix",
+          "path": "research/sections/replication.md",
+          "sha256": "07c849e21975027ba67fd9a36cabb5b0a69769eb6ee184aed37f832a805c4d98"
+        }
+      ]
+    }
+  ],
+  "qualification": "Ready means documentation of bounded descriptive claims, including nonpassing causal obligations; it does not indicate strong causal identification."
+}

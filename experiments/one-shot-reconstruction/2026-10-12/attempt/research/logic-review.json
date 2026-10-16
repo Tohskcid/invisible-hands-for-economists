@@ -1,0 +1,116 @@
+{
+  "schema_version": "1",
+  "reviewer": "fresh_manuscript_referee",
+  "reviewed_at": "2026-10-12T04:48:32.412578+00:00",
+  "reviewed_sha256": {
+    "manuscript": "50d6ff21f4d226ae86ffe3609ab14f96d1f5ff63cdb6880ea947daefc5f837d0",
+    "manifest": "df75898e433d33c88c01d58a75400ae6c56f49ad94afb7a035ad1b8c15bbed3f"
+  },
+  "overall_verdict": "pass",
+  "global_gaps": [],
+  "uncertainty": "Pass concerns the coherence of the bounded descriptive and conditional claims. The policy effect is not identified unconditionally; parallel untreated trends, anticipation, spillovers, measurement, selection and state-shock uncertainty remain unresolved by these records. No original-article comparison or full pipeline rerun was performed.",
+  "claim_reviews": [
+    {
+      "claim_id": "C_SCOPE",
+      "verdict": "coherent",
+      "weakest_link": "The manuscript presents historical verification with explicit descriptive and conditional causal boundaries.",
+      "scope_or_number_mismatch": "No originality or absence-of-prior-exposure claim is used to justify numerical or causal findings.",
+      "competing_explanation": "Historical independence is a separate provenance question that this manuscript-only review does not certify.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "C_POLICY",
+      "verdict": "coherent",
+      "weakest_link": "The provided statutory evidence and design audit support the scheduled April 1, 1992 increase enacted in advance.",
+      "scope_or_number_mismatch": "The stated 5.05 floor and advance enactment agree with the supporting artifacts.",
+      "competing_explanation": "Advance enactment allows anticipation; the paper treats it as unresolved rather than random assignment.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "C_DATA",
+      "verdict": "coherent",
+      "weakest_link": "The fixed-width parser uses documented columns, explicit missing-component propagation and preserved source-row keys. Counts, paired means and recorded permanent-closure zeros agree with results and generated tables.",
+      "scope_or_number_mismatch": "410 rows, 331 NJ/79 PA, 384 employment pairs and 309 NJ/75 PA pairs are consistent. FTE is a weighted headcount rather than measured hours.",
+      "competing_explanation": "Survey reporting error, complete-pair selection and unobserved entry can affect population interpretation; all remain stated limitations.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "C_ESTIMAND",
+      "verdict": "coherent",
+      "weakest_link": "Appendix A correctly decomposes the observed retained-sample contrast into ATT plus differential untreated change and derives change-regression/group-mean equivalence.",
+      "scope_or_number_mismatch": "Equality with retained-sample ATT is conditional on consistency, parallel mean untreated changes, no anticipation/spillovers and appropriate selection; it is not asserted as an identified fact.",
+      "competing_explanation": "A differential untreated change b equal to 2.75 can account for the entire contrast; the data do not identify b.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "C_INFERENCE",
+      "verdict": "coherent",
+      "weakest_link": "The HC1 and homoskedastic formulas match the analysis and independent arithmetic record. The appendix shows that restaurant resampling holds common state shocks fixed.",
+      "scope_or_number_mismatch": "HC1 1.337725 and OLS 1.154355 are restaurant-level conditional uncertainty summaries. Only two policy jurisdictions preclude the claimed many-state policy inference; no such claim is made.",
+      "competing_explanation": "Shared state-by-time shocks are not absorbed by restaurant SEs or the stratified bootstrap.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "C_MAIN",
+      "verdict": "coherent",
+      "weakest_link": "Paired changes 0.466667 NJ and -2.283333 PA yield 2.75 FTE; tables and results agree.",
+      "scope_or_number_mismatch": "Positive relative sample change is distinct from NJ absolute growth, each restaurants change and statewide total jobs.",
+      "competing_explanation": "PA-specific decline, reporting differences or untreated state trends could generate the same positive contrast without a policy effect.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "C_ROBUST",
+      "verdict": "coherent",
+      "weakest_link": "All eleven stated measurement/subset variants have positive coefficients in results and the table; the leave-chain range and sample changes are disclosed.",
+      "scope_or_number_mismatch": "Robustness is sign stability for the displayed variants, not causal identification or an invariant treatment effect. The selected high-wage diagnostic is separately described as negative.",
+      "competing_explanation": "Shared state shocks and measurement errors common to variants can survive all these checks.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "C_GAP",
+      "verdict": "coherent",
+      "weakest_link": "The proportional baseline wage-gap formula and positive slopes 16.358976 and 15.877398 match code, results and text.",
+      "scope_or_number_mismatch": "The coefficients are associations per unit proportional exposure, not employment elasticities or instrumented causal dose responses.",
+      "competing_explanation": "Initial wage measurement error, demand/productivity and recovery at initially low-wage restaurants can produce the gradient.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "C_DIAGNOSTIC",
+      "verdict": "coherent",
+      "weakest_link": "The selected 25 high-wage NJ pairs plus 75 PA pairs yield -2.566667 with HC1 2.124479 in results and prose.",
+      "scope_or_number_mismatch": "The diagnostic is negative and imprecise; it is not presented as an untreated experiment or parallel-trend test.",
+      "competing_explanation": "Selection on baseline wages, spillovers and differing trends remain plausible.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "C_AUX",
+      "verdict": "coherent",
+      "weakest_link": "Outcome-specific samples and wage 0.496505, hours -0.111311, meal price 0.100082 and full-time share 0.058871 contrasts match the generated table.",
+      "scope_or_number_mismatch": "Reported entry wages, meal sums, opening hours and headcount shares are correctly separated from wage bills, hours paid and mechanisms.",
+      "competing_explanation": "Pass-through, market power, turnover, demand and reporting changes are not distinguished by these reduced-form comparisons.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "C_LIMIT",
+      "verdict": "coherent",
+      "weakest_link": "The design audit genuinely lacks multiple baseline waves, many state clusters and direct evidence eliminating anticipation, spillovers or differential outcome selection.",
+      "scope_or_number_mismatch": "The manuscript does not infer parallel trends from baseline levels or treat auxiliary wages as employment-trend validation.",
+      "competing_explanation": "Unobserved differential state shocks and selection remain enough to prevent strong unconditional causal claims.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "C_REPRO",
+      "verdict": "coherent",
+      "weakest_link": "The provided analysis code, checksums, structured results, generated tables and base-R arithmetic agreement make the primary numerical calculation auditable.",
+      "scope_or_number_mismatch": "This review inspected supplied code/results and arithmetic artifacts; it did not rerun the entire acquisition/replication master or certify historical exposure.",
+      "competing_explanation": "Independent arithmetic agreement reduces implementation-error concerns but does not validate survey measurement or counterfactual assumptions.",
+      "required_revision": ""
+    }
+  ],
+  "results_sha256": "4c13c45ca15e8487473c2ce2fa1685b5acf0ce12d4129718329e5ea11d87eed5",
+  "freshness_update": {
+    "previous_manuscript_sha256": "5dda6694cec7bac797dca6a82ca5a2e79a39a6ad357deef7fa536d6fe22eece9",
+    "verified_change": "Single occurrence: employment falls by -2.28 changed to employment changes by -2.28. Reversing that exact change reproduces the prior reviewed manuscript SHA-256. Manifest and results are unchanged.",
+    "review_action": "Current manuscript and manifest reread; all twelve prior claim assessments remain coherent; ten current rendered pages re-opened with view_image."
+  }
+}

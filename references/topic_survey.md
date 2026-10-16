@@ -28,6 +28,8 @@ For every frontier candidate record `first_public_at`, at least two `quality_sig
 
 Compare differences that can support a contribution: a distinct question, new credible variation, new data measurement, relaxed or sharper assumptions, new mechanism, materially broader scope, external-validity test, or informative replication. A different country, sample, estimator, or recent period is not automatically a contribution; explain why it changes what can be learned.
 
+No exact prior study is required. If none is found, compare the nearest related studies and record the search boundary. Do not turn "no exact match found" into a claim that no one has ever studied the question.
+
 ## Decision gate
 
 Write `research/topic-survey.json` and validate it:

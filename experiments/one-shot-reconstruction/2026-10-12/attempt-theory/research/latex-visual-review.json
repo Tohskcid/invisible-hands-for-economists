@@ -1,0 +1,124 @@
+{
+  "pdf_sha256": "36835bfef3b806c1cecaafbd4e672d516455661adc088c1f1702da4b975dcb83",
+  "status": "pass",
+  "reviewer": "fresh_manuscript_referee",
+  "reviewed_at": "2026-10-12T04:46:30.822137+00:00",
+  "pages_reviewed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "issues": [],
+  "method": "Every current rendered page was opened with view_image and visually inspected. Source/text extraction did not substitute for page review.",
+  "page_records": [
+    {
+      "page": 1,
+      "path": "build/latex-pages/page-0001.png",
+      "image_sha256": "b7c2789476c18d6de91488bfbbd916d1c8a87ce1ecc431438da395209a8a98a2",
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "page": 2,
+      "path": "build/latex-pages/page-0002.png",
+      "image_sha256": "bf2c668fbecc69fef3e43dfdc71739908cd630514c6dd79a9addf37ecf560882",
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "page": 3,
+      "path": "build/latex-pages/page-0003.png",
+      "image_sha256": "b942a77cddab0e95412e697b80586e4d17b2bbd1366fca79b9267fee95f6f657",
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "page": 4,
+      "path": "build/latex-pages/page-0004.png",
+      "image_sha256": "fe5e06287075cb3704278cb75464736b8bf6e017908c9c5590b1e52e2058e670",
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "page": 5,
+      "path": "build/latex-pages/page-0005.png",
+      "image_sha256": "17545592b7e3a44042fff7b7345d921bfa89119f1da46fab5e202fedecb56483",
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "page": 6,
+      "path": "build/latex-pages/page-0006.png",
+      "image_sha256": "1a683ea09bf2c23335ff56c94cadea4efa14300f5977fd68dd71b56fdcfa65da",
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "page": 7,
+      "path": "build/latex-pages/page-0007.png",
+      "image_sha256": "64977440788224cd1410c695e1a64f61d39bb8cfb31fa5300ea622b6e5160c31",
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "page": 8,
+      "path": "build/latex-pages/page-0008.png",
+      "image_sha256": "36fe639b84e3f3a1b5ec50c701087653853e7897507742a894cdae915d4150ac",
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "page": 9,
+      "path": "build/latex-pages/page-0009.png",
+      "image_sha256": "d1a00f3c946b0567ebbbd564265d2866ee9fd3c87782047d191862c8f2712b31",
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "page": 10,
+      "path": "build/latex-pages/page-0010.png",
+      "image_sha256": "e7f15a9bad6330a4e2b0827bd6cc4088505ddd3055981a3a3a1e79a90f09a950",
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "page": 11,
+      "path": "build/latex-pages/page-0011.png",
+      "image_sha256": "bad7c6bc449691c71a9116aa0c171f19fcb35f12174c740d1ad20e31f19dcd2c",
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "page": 12,
+      "path": "build/latex-pages/page-0012.png",
+      "image_sha256": "2abfa3aa65bfa1db813e9863e601f7ceced06bd439f4d29cf48d19d10e6bbd37",
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "page": 13,
+      "path": "build/latex-pages/page-0013.png",
+      "image_sha256": "b137a232a694d22b53460de29fd55b9bf743a42a8cf7d36f96b361b6496ab5d8",
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "page": 14,
+      "path": "build/latex-pages/page-0014.png",
+      "image_sha256": "ca32641bde5817f7e8754e90531865877daaffd3a5f5b5bb6ff9df036f420be4",
+      "status": "pass",
+      "issues": []
+    }
+  ]
+}

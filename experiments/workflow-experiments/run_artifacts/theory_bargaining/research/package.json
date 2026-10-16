@@ -1,0 +1,14 @@
+{
+  "mode": "theory",
+  "deliverable": "manuscript",
+  "claim_scope": "research-only",
+  "manifest": "research/manifest.jsonl",
+  "manuscript": "paper/manuscript/main.tex",
+  "coverage": "research/coverage.json",
+  "bibliography": "paper/ref.bib",
+  "literature_archive": "research/archive.json",
+  "logic_review": "research/logic.json",
+  "latex_main": "paper/manuscript/main.tex",
+  "latex_build_dir": "paper/build",
+  "latex_visual_review": "research/visual-review.json"
+}

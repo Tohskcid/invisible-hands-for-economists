@@ -1,0 +1,4 @@
+iteration	mode	hypothesis	validation	status	artifact	reason
+0	empirical	Adequate lawful raw data can answer the fixed question	source and schema audit	inconclusive	research/state.md	Acquisition pending
+1	empirical	Complete-pair NJ–PA contrast and frozen sensitivities	NumPy/base-R agreement; unchanged provenance/bindings/manifest/coverage checks	keep	research/results.json	Descriptive result reproducible; strong causal gate remains nonpassing
+2	empirical	Document unique source-row key and complete manuscript	schema correction; actual compile/render; no estimate change	keep	paper/manuscript/main.tex	Fresh execution review found nonunique sheet metadata; corrected without dropping rows

@@ -1,0 +1,29 @@
+\begin{thebibliography}{3}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Alvarez and Ferman(2023)]{alvarez2023}
+Luis Alvarez and Bruno Ferman.
+\newblock Extensions for inference in difference-in-differences with few
+  treated clusters.
+\newblock arXiv:2302.03131, 2023.
+\newblock URL \url{https://arxiv.org/abs/2302.03131}.
+
+\bibitem[Conley and Taber(2005)]{conley2005}
+Timothy Conley and Christopher Taber.
+\newblock Inference with difference in differences with a small number of
+  policy changes.
+\newblock Technical Report 312, National Bureau of Economic Research, 2005.
+\newblock URL \url{https://www.nber.org/papers/t0312}.
+
+\bibitem[{New Jersey State Library}(1990)]{nj1990}
+{New Jersey State Library}.
+\newblock Minimum wage-increase to 5.05 by 1992.
+\newblock Legislative History, Laws of 1990, Chapter 18, 1990.
+\newblock URL
+  \url{https://repo.njstatelib.org/items/af2bca87-0109-4742-8836-2684cd6e2fcf}.
+
+\end{thebibliography}

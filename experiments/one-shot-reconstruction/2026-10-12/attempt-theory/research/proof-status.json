@@ -1,0 +1,13 @@
+{
+  "schema_version": "1",
+  "proof_status": "complete paper proof",
+  "kernel_verified": false,
+  "basis": "Actual independent review, not graph/numerical checker passes",
+  "review_path": "research/logic-review.json",
+  "review_sha256": "88dcc544d46dc86a1b6aa9fa0050c26228f1917bb04e64824dc3c24e2b38b0ad",
+  "manuscript_sha256": "9071cfc06e88621fc817147406c511a5a386afca6e420082e61f8f669d9f81aa",
+  "manifest_sha256": "edc3616047a8245fa28efa1ae667bf7c88a0ef983f1d3df2a5154f3355bafd81",
+  "reviewed_obligations_path": "research/proof-obligations.json",
+  "reviewed_obligations_sha256": "ee14f1aaa7fe8f64e0ce4184f254751bc4d861c59f77e0eaf022d78100d13230",
+  "snapshot_note": "The pending-review proof-obligations snapshot is retained unchanged because the independent referee bound its hash; this separate status record reports the completed handoff."
+}

@@ -38,7 +38,7 @@ Add `"data_provenance": "research/data-provenance.json"` to `research/package.js
 
 ## Fallback when no adequate data are available
 
-After the stopping rule is reached, create proxy data automatically when it can advance feasibility, code, estimator, power, or failure-mode testing. Use the closest defensible rung:
+After the stopping rule is reached, an isolated engineering test may create proxy data to test code or failure handling. Keep it outside the empirical research evidence package. Theory validation may use simulated examples to search for counterexamples or numerical behavior; simulation does not replace a proof. Use the closest defensible rung:
 
 1. lawful public aggregates or a related population, clearly labeled as a proxy;
 2. synthetic observations calibrated to documented ranges or published moments;
@@ -47,6 +47,8 @@ After the stopping rule is reached, create proxy data automatically when it can 
 Write a project-local generator with a fixed seed, data dictionary, units, support, dependence structure, missingness, and sample size. Preserve the generator, parameters, seed, and output path. Add tests for schema, support, deterministic reproduction, and the feature the proxy is meant to exercise. Record it as a `proxy` object in the manifest.
 
 Never silently replace unavailable real data. Prefix or annotate proxy artifacts clearly and state what empirical features they do not reproduce. Proxy results may support engineering or method claims only. A manuscript claim linked to proxy data must be scoped `proxy_only`; it cannot establish prevalence, magnitude, causal effects, external validity, or policy conclusions about the real population. If no defensible proxy can exercise the required mechanism, deliver the schema and acquisition gap and mark substantive estimation blocked.
+
+The package gate adds `--require-real` for empirical, descriptive, structural, and replication modes, including feasibility work when it declares data. Any proxy dataset in their declared provenance blocks completion, even if individual claims are labeled `proxy_only`. Keep proxy experiments in isolated engineering tests or theory validation.
 
 ## Data-section handoff
 

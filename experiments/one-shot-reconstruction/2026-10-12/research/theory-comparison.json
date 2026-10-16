@@ -1,0 +1,46 @@
+{
+  "assessment_type": "Evaluator qualitative comparison against published holdout; not a mechanized proof or a new author revision.",
+  "original": "Rubinstein (1982), Perfect Equilibrium in a Bargaining Model, Econometrica",
+  "sources": [
+    "holdout/econometrica-rubinstein-1982.json",
+    "attempt-theory/paper/manuscript/main.tex",
+    "attempt-theory/research/logic-review.json"
+  ],
+  "covered": [
+    {
+      "target": "Complete-information alternating offers, full-history strategies and subgame perfection",
+      "status": "covered"
+    },
+    {
+      "target": "Unequal strict-discount allocation and immediate agreement",
+      "status": "covered",
+      "worker_scope": "All behavioral strategies with discount factors strictly between zero and one"
+    },
+    {
+      "target": "Positive unequal fixed costs",
+      "status": "covered"
+    },
+    {
+      "target": "Equal fixed-cost stationary continuum and a history-dependent delayed agreement",
+      "status": "covered",
+      "qualification": "Does not state an exhaustive characterization of all nonstationary equal-cost equilibria"
+    },
+    {
+      "target": "Patience/first-mover implications and boundary cautions",
+      "status": "covered within stated domains"
+    }
+  ],
+  "not_fully_reconstructed": [
+    {
+      "target": "Original A-1 through A-5 general preference model and full interval characterization of all equilibrium partitions",
+      "worker_scope": "Strictly contractive, strictly increasing stationary delay maps for pure strategies, plus separately proved discount and additive families",
+      "status": "narrower scope; original general theorem not recovered"
+    },
+    {
+      "target": "Original ordinary-Nash comparison and exact lexicographic zero-discount treatment",
+      "status": "not reproduced as original statements; worker excludes exact-zero discount uniqueness rather than claiming it"
+    }
+  ],
+  "proof_review": "Ten central claims and eleven stated obligations accepted by a fresh agent within maintained classes; not a human-expert or Lean-kernel verification.",
+  "verdict": "partial historical reconstruction; internally reviewed standalone manuscript"
+}
