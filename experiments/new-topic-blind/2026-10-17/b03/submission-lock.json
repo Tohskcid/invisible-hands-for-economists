@@ -1,0 +1,23 @@
+{
+  "locked_utc": "2026-10-17T08:36:47.778811+00:00",
+  "last_manuscript_write_utc": "2026-10-17T02:44:12.251838+00:00",
+  "last_pdf_write_utc": "2026-10-17T02:44:22.844649+00:00",
+  "author_final_message_missing": true,
+  "reason": "Agent session ended before final handoff; no source/PDF edits after initial build were observed.",
+  "files_sha256": {
+    "inputs/public-task.json": "e5f98dcd401e6225cd55bbae373e424ad83aa6f01431c61d0a9850e644eb8c52",
+    "research/contract-input.json": "604d73af89aed0a71c621735bba76f4a71dd65ef4db9a324b5f6a0041ee3f4e1",
+    "research/model/handoff.md": "7f1b9e44bcab409267c13ca73ca006878a67004841ed9f565ca315fd89ea79c7",
+    "research/analysis/check_examples.py": "1f5d1fabd880f5b12cd38ab1df516d7e9cc6db56088b9b12cb47bc7197ce5bad",
+    "research/analysis/check-examples-output.txt": "77081330fae1f3587fcb8f6d663c5bcfa73d9f9f4a07c46bdf46e3dc06a7ec13",
+    "research/topic-survey-draft.md": "6870150db7fb4bf49b60762504f6fc59dfd4af2b2eb430a4517092862d391c15",
+    "research/topic-survey.json": "4c2caa60df8bd1c34bd7120aa8a7d08a8c79ab798f09e1d017ada02bb9a52352",
+    "research/literature/safe-handoff.md": "ed86eaa1490df4a70f57f2f107bef3780ad7043488b3679dc083e15782a7c0d6",
+    "research/literature-archive.json": "fd8a03c5852cb1c37ae633591335a99bdaf395887e580ce9d0b5872367815935",
+    "research/manifest.jsonl": "46c415a39fa754d63217d34cfbbf322f3a27a6327f4fa283f6dbe2ab7b9981f0",
+    "paper/manuscript/main.tex": "2f5664debdcfedb208fdcc83dd688fbca16bc22d0fa6fb17489903138d07b89d",
+    "paper/manuscript/references.bib": "1f2d27cce41843e4a088e73fce613f9a8e08d91d0a4f4200831893f9e0513820",
+    "paper/build/main.pdf": "88c112eae123cf3a2ffed0b3de1abe9a975f1bbdfed673d0c1d30f5e1a9dec10",
+    "research/latex-report.json": "5a4ac53efb87c15c9189245f619ae08f083d2e7d346b0d7b5dd73e6e195edc48"
+  }
+}

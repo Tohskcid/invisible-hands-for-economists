@@ -1,0 +1,8 @@
+{
+  "coverage": "research/coverage.json",
+  "logic_review": "research/logic-review.json",
+  "mechanism_audit": "research/mechanism-audit.json",
+  "mechanism_review": "research/mechanism-review.json",
+  "team_report": "research/team.json",
+  "substantive_review": "research/substantive-review.json"
+}

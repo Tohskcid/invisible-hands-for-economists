@@ -1,0 +1,246 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper,margin=1.15in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype}
+\usepackage{natbib}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{hidelinks,colorlinks=false,pdfborder={0 0 0},
+  pdftitle={Fiscal Instruments and Substitutability in Indivisible Labor Markets}}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{assumption}{Assumption}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\numberwithin{equation}{section}
+
+\title{Fiscal Instruments and Substitutability in Markets for Indivisible Labor}
+\author{}
+\date{October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+How do taxes and subsidies contingent on a firm's hiring bundle or wages affect substitutability of demand for indivisible workers? In a finite transferable-utility labor market, we study fiscal changes to the employer's set valuation. A modular bundle transfer preserves an exchange condition sufficient for gross-substitutes demand, regardless of the signs of its components. With two workers, a single inequality gives the exact threshold: fiscal complementarity cannot exceed the original substitution margin. General bundle transfers can implement any target exchange valuation, while separable wage-dependent transfers preserve demand substitutability when they make effective wages weakly increasing. We construct competitive wages and an allocation for an additive target. A conditional bonus supplies a strict counterexample, and a three-worker example shows that pairwise submodularity does not suffice. These are demand and equilibrium claims within the stated model; no budget-balance or social-welfare conclusion follows.
+\end{abstract}
+
+\noindent\textbf{Keywords:} indivisible labor; gross substitutes; fiscal policy; equilibrium.
+
+\section{Introduction}
+A firm choosing among named, indivisible workers can respond to one worker's higher wage by releasing another worker whose wage has not changed. Fiscal rules can themselves create or remove this interaction: an employer may receive a subsidy for a particular hiring bundle, or pay a tax determined by the wage it offers. We ask which features of these rules preserve or restore a demand condition, and which equilibrium conclusions can be established from it.
+
+We represent a bundle-contingent net transfer as an addition to each firm's set valuation. The relevant property is the finite-set exchange condition in Definition~\ref{def:ex}. It implies gross-substitutes demand (Proposition~\ref{prop:exgs}). A modular transfer leaves every exchange comparison unchanged (Proposition~\ref{prop:modular}). With two workers, the comparison reduces to a threshold on the transfer's cross difference (Proposition~\ref{prop:two}). Nonmodular rules can also satisfy the condition: a concave headcount payment does so for additive production (Proposition~\ref{prop:headcount}). Conversely, a bundle bonus can strictly violate it.
+
+The equilibrium claim we prove directly is narrower. A transfer that makes adjusted valuations additive permits explicit nonnegative wages and a clearing allocation (Proposition~\ref{prop:additiveeq}). More generally, Appendix~\ref{app:lp} identifies a configuration linear program and the additional integrality statement needed to infer equilibrium. We do not present that statement as independently proved here. Wage-dependent transfers have their own sufficient condition for gross-substitutes demand (Proposition~\ref{prop:wagedemand}), but employer-specific effective wages prevent the additive equilibrium construction from applying without further assumptions.
+
+\section{Related literature}
+\citet{KelsoCrawford1982} develops a labor-market model with indivisible workers and a gross-substitutes requirement that provides a benchmark for wage-dependent employer choice. \citet{HatfieldMilgrom2005} considers matching with contracts, where substitutability and aggregate demand are formulated in a broader contract space. \citet{Murota2022} surveys discrete convex analysis, including exchange properties relevant to set-valued demand. \citet{ChenEtAl2023} studies competitive equilibrium with substitutes in more general discrete settings. Our calculations isolate how specified fiscal changes alter an employer's exchange inequalities. This comparison does not establish novelty relative to the restricted target literature.
+
+\section{Environment and definitions}
+Let $F\ne\varnothing$ be a finite set of employers and $N$ a finite set of named workers. A worker can be hired by at most one employer. An unhired worker has reservation utility zero. Employer $f$ obtains gross, transferable-utility value $v_f(S)\in\mathbb R$ from hiring $S\subseteq N$, with $v_f(\varnothing)=0$. A common vector of worker-specific wages is $w\in\mathbb R_+^N$. The employer pays $w(S):=\sum_{j\in S}w_j$, and every hired worker receives her wage. A net government payment $g_f(S,w)$ is positive for a subsidy and negative for a tax. The employer chooses $S$ to maximize
+\begin{equation}
+ U_f(S;w)=v_f(S)+g_f(S,w)-w(S).                 \label{eq:profit}
+\end{equation}
+Government budget balance, informational constraints, and worker-specific reservation values are outside the environment.
+
+For a bundle schedule $g_f(S,w)=g_f(S)$, put $h_f(S)=v_f(S)+g_f(S)$. For any real price vector $p\in\mathbb R^N$, define
+\begin{equation}
+ D_h(p)=\arg\max_{S\subseteq N}\{h(S)-p(S)\}.   \label{eq:demand}
+\end{equation}
+Finiteness makes this correspondence nonempty. We use all real $p$ when defining a property of $h$, although market wages are nonnegative.
+
+\begin{definition}[Exchange condition]\label{def:ex}
+A set valuation $h$ satisfies \emph{EX} if, for every $X,Y\subseteq N$ and $i\in X\setminus Y$, either
+\begin{equation}
+h(X)+h(Y)\le h(X\setminus\{i\})+h(Y\cup\{i\}), \label{eq:move}
+\end{equation}
+or there is $j\in Y\setminus X$ such that
+\begin{align}
+h(X)+h(Y)\le{}&
+h((X\setminus\{i\})\cup\{j\})\notag\\
+&+h((Y\setminus\{j\})\cup\{i\}).               \label{eq:swap}
+\end{align}
+\end{definition}
+This is the finite-set $M^\natural$ exchange form. No monotonicity or nonnegative-value assumption is imposed. The disjunction matters: a profitable exchange may replace the selected worker with one from the other bundle.
+
+\begin{definition}[Demand gross substitutes]\label{def:gs}
+Demand for $h$ satisfies \emph{GS} if, whenever $p'$ differs from $p\in\mathbb R^N$ only by $p'_k\ge p_k$, then for every $X\in D_h(p)$ there is $Y\in D_h(p')$ with $X\setminus\{k\}\subseteq Y$.
+\end{definition}
+The definition permits ties and asks for \emph{some} new maximizing bundle that retains every previously chosen worker whose price did not rise.
+
+\begin{definition}[Competitive equilibrium]\label{def:eq}
+For bundle schedules, a competitive equilibrium is a wage vector $w\in\mathbb R_+^N$ and pairwise disjoint bundles $(S_f)_{f\in F}$ such that $S_f\in D_{h_f}(w)$ for every $f$, and $w_j=0$ for every unhired worker $j$. A hired worker accepts the nonnegative wage; an unhired worker receives zero.
+\end{definition}
+
+\section{Results}
+\begin{proposition}[Exchange implies demand substitutes]\label{prop:exgs}
+If $h$ satisfies EX, then $D_h$ satisfies GS.
+\end{proposition}
+\noindent Appendix~\ref{app:exgs} proves this directly, including multiple demand maximizers. It is a sufficient bridge from valuation comparisons to choices; we do not invoke the converse for arbitrary $N$.
+
+\begin{proposition}[Modular fiscal schedule]\label{prop:modular}
+Suppose $g_f(S)=c_f+\sum_{j\in S}b_{fj}$ for real $c_f$ and $b_{fj}$. Then $v_f$ satisfies EX if and only if $h_f=v_f+g_f$ satisfies EX. Consequently, if $v_f$ satisfies EX, the adjusted demand is GS.
+\end{proposition}
+\noindent Appendix~\ref{app:modular} proves the claim. Each move or swap preserves the combined count of every worker across the two compared bundles. The $c_f$ affects the level of profit, while positive or negative $b_{fj}$ acts like a worker-specific price shift. This is preservation on the EX domain; modularity is not necessary for a given starting valuation.
+
+\begin{proposition}[Exact two-worker threshold]\label{prop:two}
+If $N=\{1,2\}$, $h=v+g$ satisfies EX if and only if
+\begin{equation}
+\underbrace{g(\{1,2\})+g(\varnothing)-g(\{1\})-g(\{2\})}_{\text{fiscal cross difference}}
+\le
+\underbrace{v(\{1\})+v(\{2\})-v(\{1,2\})-v(\varnothing)}_{\text{initial substitution margin}} .
+\label{eq:threshold}
+\end{equation}
+For the all-real-price definition in Definition~\ref{def:gs}, this inequality is also necessary and sufficient for GS.
+\end{proposition}
+\noindent Appendix~\ref{app:two} proves both directions. The threshold allows a positive joint-hiring subsidy when the original valuation has enough substitution margin. If the original valuation is additive, the joint fiscal cross difference must be nonpositive. If original production has complementarity, a sufficiently negative fiscal cross difference can restore EX. Equality is allowed and can generate tied demand.
+
+\begin{proposition}[Implementation by a bundle schedule]\label{prop:implement}
+For any normalized $v_f$ and any normalized target valuation $q_f$ satisfying EX, the schedule $g_f(S)=q_f(S)-v_f(S)$ makes $h_f=q_f$ and hence gives GS demand. In particular, an additive target $q_f(S)=\sum_{j\in S}a_{fj}$ can be implemented.
+\end{proposition}
+\noindent This is the identity $v_f+g_f=q_f$ followed by Proposition~\ref{prop:exgs}. It is a feasibility statement about an unrestricted bundle schedule, not a cost or welfare result. Implementing it may require knowledge of every $v_f(S)$ and transfers of either sign.
+
+\begin{proposition}[Separable wage-dependent schedule]\label{prop:wagedemand}
+Suppose
+\begin{equation}
+g_f(S,w)=g_f^0(S)-\sum_{j\in S}t_{fj}(w_j),\qquad
+q_{fj}(x)=x+t_{fj}(x),                          \label{eq:effective}
+\end{equation}
+and $h_f^0=v_f+g_f^0$ satisfies EX. If every $q_{fj}$ is weakly increasing on $\mathbb R_+$, employer $f$'s demand satisfies GS with respect to actual nonnegative wages.
+\end{proposition}
+\noindent Appendix~\ref{app:wagedemand} proves this. Employer-specific effective prices are allowed. The proposition concerns demand alone: even if every employer has this property, we do not derive a common-wage equilibrium from it.
+
+\begin{proposition}[Additive adjusted values]\label{prop:additiveeq}
+If every adjusted valuation is $h_f(S)=\sum_{j\in S}a_{fj}$, with $a_{fj}\in\mathbb R$, a competitive equilibrium exists. Put $A_j=\max_{f\in F}a_{fj}$ and $w_j=\max\{0,A_j\}$. Assign each worker with $A_j>0$ to one employer attaining $A_j$; leave all workers with $A_j\le0$ unassigned. This is an equilibrium. Its allocation maximizes adjusted private value, with
+\begin{equation}
+\max_{\substack{(S_f)\text{ pairwise disjoint}}}
+\sum_{f\in F}h_f(S_f)
+=\sum_{j\in N}\max\{0,A_j\}.                  \label{eq:adjusted}
+\end{equation}
+\end{proposition}
+\noindent Appendix~\ref{app:additiveeq} verifies every firm's demand and market clearance, then proves \eqref{eq:adjusted}. Because $h_f$ includes government transfers, the objective in \eqref{eq:adjusted} is adjusted private value; it is not social surplus with fiscal costs accounted for.
+
+For general EX valuations, the configuration-LP route would connect substitution to equilibrium. Appendix~\ref{app:lp} proves the conditional step from an integral LP optimum to an equilibrium and states the missing integrality obligation. Without a proof or a theorem verified against the exact hypotheses here, this paper makes no unconditional general-EX existence claim.
+
+\section{Boundaries and counterexamples}
+\begin{example}[A joint bonus destroys substitutes]\label{ex:bonus}
+Let $N=\{1,2\}$, $v(S)=|S|$, and set $g(\{1,2\})=2$ and $g(S)=0$ otherwise. Then $(h(\varnothing),h(\{1\}),h(\{2\}),h(\{1,2\}))=(0,1,1,4)$. The fiscal cross difference is $2$, against an initial substitution margin of $0$. At $p=(1.5,1.5)$, profits from $(\varnothing,\{1\},\{2\},\{1,2\})$ are $(0,-0.5,-0.5,1)$, so demand is uniquely $\{1,2\}$. Raising only $p_1$ to $4$ gives profits $(0,-3,-0.5,-1.5)$ and uniquely empty demand. Worker 2 is dropped despite an unchanged price. This establishes failure of GS, not nonexistence of equilibrium.
+\end{example}
+
+\begin{example}[Submodularity does not suffice]\label{ex:coverage}
+Let $N=\{1,2,3\}$ and
+\[
+h(S)=\mathbf 1\{S\cap\{1,3\}\ne\varnothing\}
+     +\mathbf 1\{S\cap\{2,3\}\ne\varnothing\}.
+\]
+Each summand has diminishing marginal returns, so $h$ is submodular. The values are $h(\varnothing)=0$, $h(\{1\})=h(\{2\})=1$, and $h(S)=2$ for every other nonempty $S$. For $X=\{1,2\}$, $Y=\{3\}$, and $i=1$, the original two-bundle value is $4$, while both the move and the only swap yield $3$: EX fails. At $p=(0.4,0.4,0.9)$, demand is uniquely $\{1,2\}$; after only $p_1$ rises to $0.7$, demand is uniquely $\{3\}$. The corresponding maximal profits are $1.2$ and $1.1$. Thus ordinary submodularity does not supply the multiperson exchange requirement or GS.
+\end{example}
+
+\begin{proposition}[Nonmodular headcount transfers]\label{prop:headcount}
+Let $h(S)=\sum_{j\in S}a_j+\phi(|S|)$, where $\phi(0)=0$, and write $d_k=\phi(k)-\phi(k-1)$. Then $h$ satisfies EX if and only if $d_1\ge d_2\ge\cdots\ge d_{|N|}$.
+\end{proposition}
+\noindent Appendix~\ref{app:headcount} proves the equivalence. Applied to an additive $v$, the proposition shows that a headcount transfer with diminishing increments can preserve substitution even when it is not modular. If an increment rises at any interior point, EX fails for this valuation class.
+
+With a single worker, the EX and GS restrictions concerning retention of other workers are vacuous. For two workers, the threshold may bind and demand need not be unique. Finiteness guarantees maximizers and underlies the equilibrium construction; no infinite-worker conclusion follows. The necessity direction in Proposition~\ref{prop:two} uses real prices and need not hold under a definition restricted only to nonnegative wages.
+
+\section{Discussion and limitations}
+The results distinguish three steps. A fiscal schedule changes an employer's set valuation or its effective wage vector. EX is a sufficient valuation condition for GS demand. Equilibrium additionally requires all firms' choices to clear at a common worker wage, which we construct for additive adjusted values. Neither demand GS under employer-specific wage wedges nor an unverified general exchange-to-equilibrium argument can replace that final step.
+
+Unrestricted bundle correction in Proposition~\ref{prop:implement} is an extreme benchmark: it presumes access to the full array of employer values and permits transfers of arbitrary size. Our equilibrium notion omits the government's budget and the cost of raising revenue. Accordingly, neither the adjusted-value maximum nor a restored demand property ranks policies by social welfare. The model also abstracts from worker heterogeneity in reservation utility, wage bargaining, endogenous labor supply, and incentive or commitment constraints. Claims about those features require additional primitives and proofs.
+
+\section{Conclusion}
+Fiscal interaction across hiring bundles determines whether a policy uses up or restores a valuation's substitution margin. A modular schedule preserves every exchange comparison; the exact two-worker condition measures the permissible cross interaction. More complex markets require the full exchange condition, as the three-worker example demonstrates. Additive correction yields an explicit clearing equilibrium, while extending equilibrium existence to all EX-adjusted values remains tied here to an integrality statement that is identified but not independently established.
+
+\appendix
+\section{Proof of Proposition~\ref{prop:exgs}}\label{app:exgs}
+
+Fix $p,p'$ that differ only in coordinate $k$, with $p'_k\ge p_k$, and choose $X\in D_h(p)$. If $k\notin X$, $h(X)-p'(X)=h(X)-p(X)$, whereas any bundle containing $k$ weakly loses payoff and every other bundle keeps its payoff. Thus $X\in D_h(p')$, and $Y=X$ works.
+
+Suppose $k\in X$. Among the nonempty finite set $D_h(p')$, choose $Y$ maximizing $|Y\cap(X\setminus\{k\})|$. Assume, toward a contradiction, that $i\in(X\setminus\{k\})\setminus Y$. Apply EX to $(X,Y,i)$. In the move case let $X'=X\setminus\{i\}$ and $Y'=Y\cup\{i\}$. Moving $i$ preserves its combined incidence in the two bundles; it also leaves $k$'s incidence separately unchanged in $X$ versus $X'$ and $Y$ versus $Y'$. All other prices are identical across $p,p'$. Subtracting prices from \eqref{eq:move} therefore gives
+\begin{equation}
+[h(X)-p(X)]+[h(Y)-p'(Y)]
+\le [h(X')-p(X')]+[h(Y')-p'(Y')].             \label{eq:gsproof}
+\end{equation}
+Because $X$ maximizes at $p$, its bracket is at least the $X'$ bracket. Hence the $Y'$ bracket is at least the $Y$ bracket. Since $Y$ maximizes at $p'$, $Y'$ also maximizes. But $Y'$ contains one more element of $X\setminus\{k\}$, contradicting the choice of $Y$.
+
+In the swap case take $j\in Y\setminus X$ given by \eqref{eq:swap}, and let $X'=(X\setminus\{i\})\cup\{j\}$ and $Y'=(Y\setminus\{j\})\cup\{i\}$. Here $i\ne k$ and $j\ne k$ because $k\in X$. The same combined-price cancellation gives \eqref{eq:gsproof}. Optimality again makes $Y'$ a new maximizer, while adding $i\in X\setminus\{k\}$ and removing $j\notin X$ increases the chosen intersection. This is a contradiction. Hence $X\setminus\{k\}\subseteq Y$, proving GS.
+
+\section{Proof of Proposition~\ref{prop:modular}}\label{app:modular}
+
+Write $m(S)=c+\sum_{j\in S}b_j$. In the move \eqref{eq:move}, the sum of the two modular terms is the same on each side: each side contains two copies of $c$, and for every worker the combined incidence across the two bundles is unchanged. The same calculation applies to a swap in \eqref{eq:swap}. Thus, for each triple $(X,Y,i)$ and each candidate move or swap, its exchange inequality holds for $v$ precisely when it holds for $v+m$. Taking the disjunction over candidates and then all triples proves EX equivalence. Proposition~\ref{prop:exgs} gives GS when EX holds.
+
+\section{Proof of Proposition~\ref{prop:two}}\label{app:two}
+
+With $N=\{1,2\}$, the only nontrivial EX comparison is $X=\{1,2\}$ and $Y=\varnothing$: the move requires
+\begin{equation}
+h(\{1,2\})+h(\varnothing)\le h(\{1\})+h(\{2\}). \label{eq:twoex}
+\end{equation}
+There is no worker in $Y\setminus X$ to exchange. For the other triples, either moving $i$ leaves the two-bundle sum unchanged or the two sets are disjoint singletons and swapping them leaves the sum unchanged. Hence \eqref{eq:twoex} is necessary and sufficient for EX. Substitution of $h=v+g$ and rearrangement gives \eqref{eq:threshold}; Proposition~\ref{prop:exgs} gives GS sufficiency.
+
+To show necessity for GS over all real prices, suppose \eqref{eq:twoex} fails strictly. Then
+\[
+h(\{2\})-h(\varnothing)
+<h(\{1,2\})-h(\{1\}).
+\]
+Choose $p_2$ strictly between these values. Choose $p_1$ sufficiently negative that $\{1,2\}$ strictly beats $\{2\}$ and $\varnothing$. It strictly beats $\{1\}$ because $p_2<h(\{1,2\})-h(\{1\})$. Thus it is the unique initial demand. Raise $p_1$ sufficiently high that both bundles containing worker 1 are strictly inferior to $\varnothing$. Since $p_2>h(\{2\})-h(\varnothing)$, singleton $\{2\}$ is also inferior to $\varnothing$. The new unique demand is empty, dropping worker 2 although only worker 1's price rose. GS fails.
+
+\section{Proof of Proposition~\ref{prop:wagedemand}}\label{app:wagedemand}
+
+For any $w\in\mathbb R_+^N$, substitute \eqref{eq:effective} into \eqref{eq:profit} to obtain
+\[
+U_f(S;w)=h_f^0(S)-\sum_{j\in S}q_{fj}(w_j).
+\]
+Consequently, $D_f(w)=D_{h_f^0}(q_f(w))$. If only $w_k$ increases, every effective price other than $q_{fk}$ is unchanged, while $q_{fk}$ weakly increases. Proposition~\ref{prop:exgs} applied to $h_f^0$ supplies, for each old demand bundle, a new maximizing bundle retaining all members except possibly $k$. This is GS with respect to actual wages on the nonnegative domain.
+
+\section{Proof of Proposition~\ref{prop:additiveeq}}\label{app:additiveeq}
+
+Since $F$ is finite and nonempty, each $A_j$ is attained. The proposed wages are nonnegative and assignments are pairwise disjoint. If $A_j>0$, $w_j=A_j\ge a_{fj}$ for every employer; if $A_j\le0$, $w_j=0\ge a_{fj}$. Thus $a_{fj}-w_j\le0$ for every $(f,j)$, so every bundle yields employer $f$ profit at most zero. The empty bundle yields zero. Every worker actually assigned to $f$ satisfies $a_{fj}=A_j=w_j$, making $S_f$ yield exactly zero. Hence $S_f\in D_{h_f}(w)$. Every unassigned worker has $A_j\le0$ and wage zero, giving market clearance.
+
+For \eqref{eq:adjusted}, an arbitrary feasible allocation assigns each $j$ to at most one firm and obtains contribution at most $A_j$ if assigned, or zero if not. Its total adjusted value is therefore at most $\sum_j\max\{0,A_j\}$. The constructed allocation assigns every $j$ with $A_j>0$ to an employer attaining $A_j$ and leaves the remaining workers unassigned, reaching that bound. Negative and zero $A_j$ cause no exception.
+
+\section{Conditional configuration-LP equilibrium argument}\label{app:lp}
+
+For arbitrary finite adjusted valuations $h_f$, define nonnegative configuration variables $x_{fS}$ for every $f$ and $S\subseteq N$. The primal program is
+\begin{align}
+\max_{x\ge0}\quad&\sum_{f\in F}\sum_{S\subseteq N}h_f(S)x_{fS} \label{eq:primal}\\
+\text{subject to}\quad&
+ \sum_{S\subseteq N}x_{fS}=1 &&(f\in F),\notag\\
+&\sum_{f\in F}\sum_{S\ni j}x_{fS}\le1 &&(j\in N).\notag
+\end{align}
+The dual, with unrestricted employer variables $u_f$ and nonnegative worker variables $w_j$, is
+\begin{align}
+\min_{u\in\mathbb R^F,w\ge0}\quad&
+\sum_{f\in F}u_f+\sum_{j\in N}w_j \label{eq:dual}\\
+\text{subject to}\quad&
+u_f+w(S)\ge h_f(S) &&(f\in F,\ S\subseteq N).\notag
+\end{align}
+
+Suppose the primal has an integral optimum $x^*$. Each firm's equality and nonnegativity then select exactly one bundle $S_f$ with $x^*_{fS_f}=1$; worker capacity makes the bundles pairwise disjoint. The finite primal is feasible (select every empty bundle) and bounded because every firm's variables sum to one; strong LP duality gives an optimal $(u,w)$. Complementary slackness for $x^*_{fS_f}=1$ implies $u_f+w(S_f)=h_f(S_f)$. Dual feasibility gives $u_f\ge h_f(T)-w(T)$ for every $T$. Combining them yields $h_f(S_f)-w(S_f)\ge h_f(T)-w(T)$, so $S_f\in D_{h_f}(w)$. If worker $j$ is unassigned, its capacity constraint is slack, and complementary slackness gives $w_j=0$. Thus integrality of the optimum suffices for Definition~\ref{def:eq}.
+
+The outstanding step is to verify, under precisely Definition~\ref{def:ex} for every $h_f$ and the present finite market assumptions, that \eqref{eq:primal} admits an integral optimum. We have not supplied an independent proof or checked the exact hypotheses of an external integrality theorem. Accordingly, the argument in this appendix is conditional and supports no unconditional equilibrium assertion for all EX valuations.
+
+\section{Proof of Proposition~\ref{prop:headcount}}\label{app:headcount}
+
+Write $m(S)=\sum_{j\in S}a_j$ and $n=|N|$. Suppose $d_1\ge\cdots\ge d_n$, and fix $X,Y$ and $i\in X\setminus Y$. If $|X|>|Y|$, move $i$ from $X$ to $Y$. The sum of modular terms is unchanged, and the change in headcount terms, new minus old, equals
+\[
+\phi(|X|-1)+\phi(|Y|+1)-\phi(|X|)-\phi(|Y|)
+=d_{|Y|+1}-d_{|X|}\ge0,
+\]
+because $|Y|+1\le|X|$. Thus \eqref{eq:move} holds. If $|X|\le|Y|$, the facts that $i\in X\setminus Y$ and $|X|\le|Y|$ imply $Y\setminus X\ne\varnothing$. Choose any $j$ there and swap $i,j$. Both bundle sizes and the combined incidence of each worker stay fixed, so both the headcount and modular sums are unchanged; \eqref{eq:swap} holds. Hence $h$ satisfies EX.
+
+Conversely, if $d_{k+1}>d_k$ for some $1\le k<n$, choose $X$ of size $k+1$, a subset $Y\subset X$ of size $k-1$, and $i\in X\setminus Y$. There can be no swap because $Y\setminus X=\varnothing$. The new-minus-old value in the move is
+\[
+2\phi(k)-\phi(k+1)-\phi(k-1)=d_k-d_{k+1}<0;
+\]
+the modular sum cancels. The required move inequality fails, so EX fails. This proves necessity.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

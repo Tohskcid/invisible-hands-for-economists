@@ -1,0 +1,9 @@
+Subject: Request for independent economics referee report on a blinded paper-reconstruction test
+
+Dear [Researcher],
+
+Could you review the attached seven-page theory manuscript as an independent referee? It was generated from a one-sentence research question and frozen before comparison with a published Review of Economic Studies paper. The packet includes the exact question, frozen files and hashes, the published comparator, and seven review prompts. Please assess internal scientific validity first, then reconstruction fidelity and publishability. The manuscript is an evaluation artifact, not a submission claiming original discovery.
+
+If you are willing and have no conflict of interest, please return an attributable report with your verdict and strongest concerns. We will keep your wording intact and identify it as external human review only after receiving it.
+
+[Sender]

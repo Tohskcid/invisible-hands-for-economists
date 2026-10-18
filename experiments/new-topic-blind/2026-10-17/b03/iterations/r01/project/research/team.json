@@ -1,0 +1,125 @@
+{
+  "coordinator_id": "/root",
+  "tasks": [
+    {
+      "role": "literature",
+      "agent_id": "/root/b03_literature",
+      "status": "accepted",
+      "accepted_by": "/root",
+      "artifacts": [
+        {
+          "path": "research/literature/safe-handoff.md",
+          "sha256": "ed86eaa1490df4a70f57f2f107bef3780ad7043488b3679dc083e15782a7c0d6"
+        },
+        {
+          "path": "research/topic-survey.json",
+          "sha256": "c3cefc03cbd0825d34ea4419b816d2805e783bf7379562d614490ed204f2d223"
+        }
+      ]
+    },
+    {
+      "role": "planning",
+      "agent_id": "/root",
+      "status": "accepted",
+      "accepted_by": "/root",
+      "artifacts": [
+        {
+          "path": "research/contract-input.json",
+          "sha256": "066c62b9bb8783a0be77e55021add5e65d8cbd7d0fc6ac17cb1160dc74adcbe0"
+        },
+        {
+          "path": "research/plan.md",
+          "sha256": "fdeb5a4628784d6a78096f809be2e116855625fd36c88b1f075cc7db2468ebdb"
+        }
+      ]
+    },
+    {
+      "role": "model",
+      "agent_id": "/root/b03_r01_science",
+      "status": "accepted",
+      "accepted_by": "/root",
+      "artifacts": [
+        {
+          "path": "research/model/handoff.md",
+          "sha256": "6c2b11a74ad3d46dad3426bd438136826c5c6082606fe7e9b29fa1ba92834f4f"
+        },
+        {
+          "path": "research/model/science-notes.md",
+          "sha256": "202bf047f0df7071e5132a423d59335620bc446a3559a732221fb13a18fa868c"
+        }
+      ]
+    },
+    {
+      "role": "validation",
+      "agent_id": "/root/b03_r01_gate_audit",
+      "status": "accepted",
+      "accepted_by": "/root",
+      "artifacts": [
+        {
+          "path": "research/manifest.jsonl",
+          "sha256": "0d5b2045238d34da7a384aa8203980386e6cf9ffd8c844587c8c3e18c1238131"
+        },
+        {
+          "path": "research/coverage.json",
+          "sha256": "fc0ee1879037bd95e2473b4cc673b5850ffa9cd3f254cf7ae5b55ea5f905f477"
+        },
+        {
+          "path": "research/mechanism-audit.json",
+          "sha256": "22dda1c5c271920b9e98865c3a06d25baec357272cfdbe49ae1f644401b2b30b"
+        }
+      ]
+    },
+    {
+      "role": "interpretation",
+      "agent_id": "/root/b03_r01_overlap",
+      "status": "accepted",
+      "accepted_by": "/root",
+      "artifacts": [
+        {
+          "path": "research/overlap-audit.md",
+          "sha256": "049b2d8074eca6d459335227d9649827f9e975013973a5a98d70a3bea5073554"
+        }
+      ]
+    },
+    {
+      "role": "writing",
+      "agent_id": "/root/b03_r01_science",
+      "status": "accepted",
+      "accepted_by": "/root",
+      "artifacts": [
+        {
+          "path": "paper/manuscript/main.tex",
+          "sha256": "7a3dc698f06938c34ba50b66eec0e717c9e8a2203b40e4f1c395440961fec5ab"
+        },
+        {
+          "path": "paper/manuscript/references.bib",
+          "sha256": "1f2d27cce41843e4a088e73fce613f9a8e08d91d0a4f4200831893f9e0513820"
+        }
+      ]
+    },
+    {
+      "role": "review",
+      "agent_id": "/root/b03_r01_referee",
+      "status": "accepted",
+      "accepted_by": "/root",
+      "artifacts": [
+        {
+          "path": "research/substantive-review.json",
+          "sha256": "7c741f484f4b469043fcc87f6626d6dc67629fa1de1ad6b6be41c6053881c139"
+        },
+        {
+          "path": "research/logic-review.json",
+          "sha256": "6aa252a51ddf81c075051f92d4550f95fac4ec577a61928ba5ece8d26d000aa8"
+        },
+        {
+          "path": "research/mechanism-review.json",
+          "sha256": "4aab48a7e82609b583c2a121aacb12e7fb48fa93a7f1bbf63841df0c968c7781"
+        },
+        {
+          "path": "research/latex-visual-review.json",
+          "sha256": "31d0a49dbfef4b8609c4508d4d7872b9b2bce238293ef29914fda86d0f5c0a02"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "pending_actions": [
+    {
+      "id": "a2",
+      "stage": "estimation",
+      "kind": "reg",
+      "estimated_cost": 2.0
+    }
+  ],
+  "in_flight": null
+}

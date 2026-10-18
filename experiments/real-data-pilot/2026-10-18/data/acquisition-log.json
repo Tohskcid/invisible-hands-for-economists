@@ -1,0 +1,47 @@
+{
+  "endpoint": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
+  "downloads": [
+    {
+      "path": "data/raw/bls-2001-2010.json",
+      "request": {
+        "seriesid": [
+          "LNS14000000",
+          "JTS000000000000000JOR"
+        ],
+        "startyear": "2001",
+        "endyear": "2010"
+      },
+      "retrieved_at": "2026-10-17T18:52:46.792025+00:00",
+      "sha256": "7b10ccb0ab22c824ca092ce7742732ee1de779dbfbd8d81f189a5d0d48c8ee62",
+      "bytes": 20372
+    },
+    {
+      "path": "data/raw/bls-2011-2020.json",
+      "request": {
+        "seriesid": [
+          "LNS14000000",
+          "JTS000000000000000JOR"
+        ],
+        "startyear": "2011",
+        "endyear": "2020"
+      },
+      "retrieved_at": "2026-10-17T18:52:47.863835+00:00",
+      "sha256": "a907e0fcd3ab406551d88bb5abca97d4221dbe9c2295fc1a146ddd7749f55db5",
+      "bytes": 20375
+    },
+    {
+      "path": "data/raw/bls-2021-2024.json",
+      "request": {
+        "seriesid": [
+          "LNS14000000",
+          "JTS000000000000000JOR"
+        ],
+        "startyear": "2021",
+        "endyear": "2024"
+      },
+      "retrieved_at": "2026-10-17T18:52:48.932861+00:00",
+      "sha256": "d67cddce377d045b6e89dbd248e77b45418333497fafbd7ff3baf6230c35feb7",
+      "bytes": 8250
+    }
+  ]
+}

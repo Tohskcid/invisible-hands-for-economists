@@ -1,0 +1,2359 @@
+Theoretical Economics 14 (2019), 927–970                                              1555-7561/20190927
+
+
+
+
+              Competing mechanisms in markets for lemons
+                                            Sarah Auster
+                     Department of Decision Sciences and IGIER, Bocconi University
+
+
+                                           Piero Gottardi
+                              Department of Economics, University of Essex
+
+
+        We study directed search equilibria in a decentralized market with adverse selec-
+        tion, where uninformed buyers post general trading mechanisms and informed
+        sellers select one of them. We show that this has differing and significant impli-
+        cations with respect to the traditional approach, based on bilateral contracting
+        between the parties. In equilibrium, all buyers post the same mechanism and
+        low-quality sellers receive priority in any meeting with a buyer. Also, buyers make
+        strictly higher profits with low- than with high-type sellers. When adverse selec-
+        tion is severe, the equilibrium features rationing and is constrained inefficient.
+        Compared to the equilibrium with bilateral contracting, the equilibrium with gen-
+        eral mechanisms yields a higher surplus for most, but not all, parameter specifi-
+        cations.
+        Keywords. Competitive search, adverse selection.
+        JEL classification. C78, D44, D83.
+
+
+                                          1. Introduction
+Spurred on by recent events in the financial markets, such as market freezes and the
+rapid growth of decentralized forms of trading, there has been a renewed interest in
+the study of markets with adverse selection and richer trading processes. The hiring
+process in the labor market has also been traditionally viewed as occurring in a de-
+centralized fashion and, sometimes, characterized by the presence of adverse selec-
+tion. The traditional approach to markets with adverse selection relies on bilateral con-
+tracting between the parties, where the trading protocol involves one principal and one
+agent. However, in many situations the process leading to a transaction features multi-
+ple agents interacting with the same principal. In decentralized financial markets, buy-
+ers may be approached by several sellers at the same time; for instance, a private equity
+firm negotiates the possibility of making an investment with several entrepreneurs. In
+
+Sarah Auster: sarah.auster@unibocconi.it
+Piero Gottardi: piero.gottardi@essex.ac.uk
+We would like to thank the three anonymous referees for very useful suggestions. We also received very
+helpful comments from Simone Cerreia-Vioglio, Melvyn Coles, Vitor Farinha Luz, Willie Fuchs, Andrea Ga-
+leotti, Veronica Guerrieri, Teddy Kim, Philipp Kircher, Nenad Kos, Ben Lester, Andrea Mattozzi, Sergei Sev-
+erinov, Pierre-Olivier Weill, Randy Wright, Ronald Wolthoff, and Thomas Tröger. We gratefully acknowledge
+financial support from Grant MIUR–PRIN Bando 2015 Prot. 20157NH5TP.
+
+© 2019 The Authors. Licensed under the Creative Commons Attribution-NonCommercial License 4.0.
+Available at http://econtheory.org. https://doi.org/10.3982/TE2921
+928 Auster and Gottardi                                    Theoretical Economics 14 (2019)
+
+the labor market, the analysis of the empirical evidence on these issues has been the
+subject of a number of papers. In particular, the recent work by Davis and Samaniego
+de la Parra (2017) provides new support in favor of not only the presence of multiple job
+applications, but also the fact that they are processed at the same time rather than in se-
+quence (see also De Los Santos et al. 2012 for other evidence from consumers’ markets
+in support of this).
+     This paper studies the properties of competitive markets with adverse selection
+when the trading protocol allows for the possibility that several agents interact with the
+same principal. We argue the importance of this in the light of the previous consider-
+ations. Moreover, even though multiple interactions have been considered in markets
+with public information or independent private values, we show that, with adverse se-
+lection, allowing for multiple interactions has significant and novel implications for the
+properties of market outcomes, in particular for their welfare features.
+     In markets with adverse selection, uninformed principals have an incentive to use
+the terms of trade they post to separate the different types of agents. Separation can
+occur in two ways: first, within the offer made by a single principal (when this entails
+a menu of contracts or a trading mechanism); second, by having different types self-
+selecting into different offers posted. A common finding in the literature following the
+traditional approach with bilateral contracting is that the second way always obtains
+in equilibrium: agents are separated in their choice of contract. Principals’ profits are
+then equalized across the different contracts posted. Hence, the equilibrium exhibits no
+cross-subsidization, which has important welfare implications with adverse selection.
+We show that this feature is overturned when we allow for multiple interactions and, as
+a consequence, the equilibria may now feature cross-subsidies across types. However,
+competition among principals implies that the equilibrium allocation must satisfy other
+properties, which make the welfare comparison between the allocations obtained in the
+two setups far from trivial and quite rich.
+     More specifically, in the model we consider, uninformed principals post trading
+mechanisms, and informed agents select a mechanism and one of the principals post-
+ing it. We, therefore, follow a directed search approach, where each principal may be
+selected by several or no agents. We allow principals to exploit this fact by posting gen-
+eral direct mechanisms that specify trading probabilities and transfers for agents, con-
+tingent not only on their own reported type, but also on the number and the reported
+types of other agents meeting the same principal. A key feature of the directed search
+model is that the probability distribution over the size and composition of these meet-
+ings is determined by the ratio between the mass of participants of each type searching
+for a given mechanism and the mass of principals posting it. The effective probability
+for an agent to trade within a certain mechanism thus not only depends on the terms
+of the mechanism itself, but also on how many other agents the mechanism attracts. To
+illustrate, we can think of a trading mechanism as a form of auction with endogenous
+participation rates.
+     The approach we follow appears natural in situations such as decentralized procure-
+ment markets, where procurers meet several firms that are privately informed about the
+quality of their products. In this context, the terms of trade between a procurer and
+Theoretical Economics 14 (2019)          Competing mechanisms in markets for lemons       929
+
+a contractor may not only depend on the contractor’s type, but also on the number
+and composition of the contractor’s competitors. More generally, as already mentioned
+above, this approach is also relevant for other decentralized markets, where trading pro-
+tocols are less explicit but still involve multiple agents. Examples include financial mar-
+kets and also the labor market, where firms meet different workers who are privately
+informed about their productivity. In addition to the empirical support regarding the
+importance of considering trading mechanisms that involve several agents, we should
+also mention some theoretical considerations. The existing microfoundations of the di-
+rected search equilibrium concept (see, for example, Peters 1997) consider finite games
+where the principals propose the terms of trade and the agents select one of the prin-
+cipals. Hence, each principal may meet several agents, and it is natural to consider the
+case where the terms of trade that he posts can exploit this fact.
+    In an environment such as in Akerlof (1970), where sellers are privately informed
+about the quality of their good—assumed to be either high or low—we find that there
+always exists an equilibrium in which all buyers post and sellers select the same mecha-
+nism. The equilibrium mechanism specifies that a low-quality object is traded whenever
+such an object is present in a meeting between a buyer and one or more sellers, mean-
+ing that low-type sellers receive priority in every meeting. Remarkably, this property
+holds no matter how great the gains from trade for the high-quality good are relative
+to those for the low-quality good. In equilibrium, buyers make strictly higher profits
+with low- than with high-type sellers. As a consequence, cream-skimming deviations—
+in particular those attracting only the high types—are not profitable. This is the feature
+that makes it possible for high- and low-type sellers to participate in the same mecha-
+nism. We show that the equilibrium mechanism can be implemented via a sequence of
+second-price auctions with increasing reserve prices.
+    While the described properties of the equilibrium allocation hold regardless of the
+size of the gains from trade for low- and high-quality goods, the latter matters for other
+features of the equilibrium. We find that in situations where buyers care sufficiently for
+quality and when competition for high-quality sellers is sufficiently intense—a situa-
+tion we refer to as adverse selection being severe—buyers make zero profits with high-
+quality sellers, and meetings where only those sellers are present do not always end with
+trade. The intuition is that giving priority to low-quality sellers may not be sufficient to
+satisfy their incentive compatibility constraint, so the trading probability of sellers with
+a high-quality good needs to be further reduced by rationing them in meetings where
+they are alone. Also, in such a case, additional equilibria exist where sellers partially
+separate themselves through their choice of mechanism: buyers post different mecha-
+nisms, attracting different ratios of high-type sellers relative to buyers. A sufficiently low
+trading probability for high-quality sellers can, therefore, be achieved in three ways: via
+rationing within the mechanisms, through an asymmetric assignment of high-type sell-
+ers across the mechanisms posted by buyers, or by a combination of the two. These are
+new properties due to adverse selection.
+    The extent to which adverse selection is (or is not) severe also matters for the welfare
+properties of the equilibrium. We show that whenever adverse selection is not severe
+and the gains from trade are higher for the low- than the high-quality object, the equi-
+930 Auster and Gottardi                                            Theoretical Economics 14 (2019)
+
+librium allocation maximizes total surplus. The result follows directly from the facts that
+(i) the pooling of sellers on the choice of the same mechanism maximizes the number
+of meetings and (ii) the equilibrium mechanism gives priority to the good for which the
+gains from trade are larger. Alternatively, with severe adverse selection, total surplus is
+no longer maximal in equilibrium and—provided the share of high-type sellers in the
+population is large enough—the equilibrium allocation can be Pareto improved, even
+subject to the constraints imposed by incentive compatibility and the meeting technol-
+ogy.
+     Given the features of the equilibrium outcome we obtain, in particular the possibil-
+ity of cross-subsidization, it is interesting to compare its welfare properties with those of
+the equilibria that obtain when contracting can only be bilateral. To this end, we con-
+sider the case where the mechanisms available to buyers are restricted to the class of
+menus from which one seller, who is randomly selected among those meeting a buyer,
+can choose. As should be expected in the light of the results of earlier work (see, for ex-
+ample, Guerrieri et al. 2010), we find that in equilibrium, buyers post one of two prices:
+the higher one selected by high-type sellers and the lower one selected by low types. Sell-
+ers are thus separated by their choice of mechanism at the search stage, rather than by
+their choice within the mechanism. We find that for many but not all parameter specifi-
+cations, total surplus at the equilibrium with general mechanisms is strictly higher than
+at the equilibrium with bilateral contracts. Hence, there are situations in which more
+surplus is generated when the only available trading mechanisms are bilateral contracts.
+Even more surprisingly, this does not arise in the case of severe adverse selection, where
+the equilibrium with general mechanisms features rationing. It occurs instead when
+gains from trade for the high-quality good are larger than for the low-quality good but
+competition for high-type sellers is sufficiently weak, so that every meeting still leads to
+trade.
+
+
+                                         Related literature
+Since the work of Akerlof (1970) and Rothschild and Stiglitz (1976), the properties of
+market outcomes in the presence of adverse selection have been the subject of intense
+study, both in Walrasian models and in models where agents act strategically. In the lat-
+ter models, agents compete among themselves over contracts that specify the transfer
+of goods and the price, whereas in the former models, available contracts indicate the
+transfer of goods while prices are taken as given and set so as to clear the markets. Initi-
+ated by Gale (1992), Inderst and Müller (1999), and, more recently, Guerrieri et al. (2010),
+the use of competitive, directed search models to study markets with adverse selection
+has generated several interesting insights.1 This framework allows for a richer specifi-
+cation of the terms of the contracts available for trade, which—in contrast to Walrasian
+models—also include the price to be paid. Both in competitive search models and in
+Walrasian models (on the latter, see Dubey and Geanakoplos 2002 and Bisin and Got-
+  1 For earlier work on directed search in markets without informational asymmetries see, for instance,
+
+Moen (1997) and Burdett et al. (2001).
+Theoretical Economics 14 (2019)                   Competing mechanisms in markets for lemons                 931
+
+tardi 2006), it is shown that when contracting is bilateral, an equilibrium always exists
+and is separating, with agents of different types trading different contracts.2
+     Our paper is also closely related to the work on competing mechanisms in inde-
+pendent private value environments. Peters (1997) and Peters and Severinov (1997)
+consider—as do we—a framework where buyers are not constrained in their ability to
+meet and contract with multiple sellers. They show that an equilibrium exists where
+all buyers post the same mechanism, given by a second-price auction with a reserve
+price equal to their valuation.3 The finding that a single mechanism is posted in equi-
+librium is analogous to that which we obtain in the presence of common value un-
+certainty (though the posted mechanism we find is different from a second-price auc-
+tion in several important aspects). Furthermore, the argument we use to establish the
+property that all buyers post the same mechanism is rather different. In independent
+private value settings, equilibria are always efficient. It is, therefore, possible to use
+this feature to solve the planner’s problem, find a mechanism that decentralizes the
+solution, and show that no profitable deviation exists.4 However, this approach can-
+not be followed in our environment with adverse selection, since we cannot rely on
+the fact that the equilibrium is efficient. Nevertheless, we show that once the general
+space of available mechanisms is projected to a simpler, reduced space, the character-
+ization of the equilibrium is still tractable and is obtained by analyzing the solutions
+of the buyers’ optimization problem. Another important difference with respect to the
+independent private value case is the fact that in our environment, rationing and par-
+tial separation of sellers across different mechanisms at the search stage can occur in
+equilibrium—two features that never arise when buyers’ valuations do not depend on
+sellers’ types.
+     Eeckhout and Kircher (2010) study the role of the properties of the meeting technol-
+ogy for the allocation that obtains at a directed search equilibrium, again in a setting
+with independent private values.5 In particular, they show that when meetings can only
+be bilateral, in equilibrium buyers post different prices that attract different types of sell-
+ers, whereas such equilibria do not exist when buyers face no restriction on the number
+of buyers they can meet. These results are related to our findings on equilibria when
+mechanisms are restricted to simple menus, as these constitute the available mecha-
+nisms when buyers meet one seller at most. Furthermore, the literature on directed
+search with public information has considered different specifications of the space of
+available mechanisms and has obtained results similar to ours: if agents can be discrim-
+  2 Other papers study adverse selection in economies where trade takes place over a sequence of periods,
+
+both in markets with random search, where offers of contracts are made only after meetings occur, and in
+markets à la Akerlof (1970), where all trades occur at a single price (see, for example, Blouin and Serrano
+2001, Janssen and Roy 2002, Camargo and Lester 2014, Fuchs and Skrzypacz 2013, and Moreno and Wooders
+2016). It is interesting to note that in these dynamic models, the equilibrium outcome is similar: separation
+obtains, in this case with sellers of different types trading at different prices and at different points in time.
+  3 Note that in this literature, the labels of buyers and sellers are typically reversed.
+  4 See, for instance, Cai et al. (2017a) and Lester et al. (2017). Albrecht et al. (2014) consider an environ-
+
+ment with free entry of the uninformed party and show that the equilibrium remains efficient.
+  5 Their findings were further developed by Lester et al. (2015) and Cai et al. (2017a).
+932 Auster and Gottardi                                     Theoretical Economics 14 (2019)
+
+inated by the mechanism through a priority rule, different types will participate in the
+same mechanism (see Shi 2002 and Shimer 2005), whereas if the set of available mech-
+anisms is restricted to the set of posted prices, types separate according to their type at
+the search stage (see Shi 2001). In contrast to these papers, however, our focus lies on
+the welfare implications of such restriction, for which adverse selection plays a critical
+role.
+    The paper is organized as follows. Section 2 presents the economy and the set of
+available trading mechanisms, and defines the notion of directed search equilibrium
+that is considered. Section 3 establishes the main result, showing the existence and the
+uniqueness of the equilibrium allocation. The properties of this allocation are also char-
+acterized in this section, together with the key steps of the proof. Section 4 provides the
+welfare analysis of the equilibria we find and compares their properties to those of the
+equilibrium that obtains when mechanisms are restricted to bilateral contracts. Sec-
+tion 5 concludes. Proofs can be found in the Appendix.
+
+
+                                    2. Environment
+
+There is a measure b of uninformed buyers and a measure s of informed sellers. Each
+seller possesses one unit of an indivisible good with uncertain quality and each buyer
+wants to buy at most one unit. The good’s quality is identically and independently dis-
+tributed across sellers. Quality can be either high or low, and μ denotes the fraction of
+                                                     p
+sellers who possess a high-quality good. Let λ = μs/b denote the ratio of high-type
+sellers to buyers and let λp = (1 − μ)s/b the ratio of low-type sellers to buyers.
+    The valuation of buyers and sellers for the low-quality good is denoted, respectively,
+by v and c, and that of the high quality good is denoted by v and c. We assume that both
+the buyers and the sellers value the high-quality good more than the low-quality good,
+that is, v ≥ v, c > c. For sellers, this preference is assumed to be strict, while we allow
+buyers to have the same valuation for both types of good, that is, v = v. When v is strictly
+greater than v, the buyer’s valuation depends on the seller’s valuation of the object, a
+situation we refer to as the common value case. This is no longer true when v = v, which
+we refer to as the private value case. We further assume that there are always positive
+gains from trade, meaning that for both types of the good, the buyer’s valuation strictly
+exceeds the seller’s valuation, that is, v > c, v > c.
+
+
+                                   Meeting technology
+
+The trading process operates as follows. Buyers simultaneously post mechanisms that
+specify how trade takes place with the sellers they meet. Sellers observe the posted
+mechanisms and select one of the mechanisms they like best, as well as one of the buy-
+ers posting it. We refer to the collection of buyers posting the same mechanism and the
+collection of sellers selecting that mechanism as constituting a submarket. We have in
+mind markets that are decentralized and anonymous, where interactions are relatively
+infrequent, as for the situations mentioned in the Introduction. In line with the first
+Theoretical Economics 14 (2019)                  Competing mechanisms in markets for lemons                933
+
+feature, the matching between buyers and sellers in any submarket does not occur in a
+centralized way, but is determined by the individual choices of sellers, each of them se-
+lecting a buyer. Anonymity is captured by the assumption that the mechanisms posted
+do not condition on the identity of sellers and that sellers do not condition their choice
+on the identity of buyers, only on the mechanism they post. Sellers thus pick at random
+one of the buyers posting the selected mechanism (see, for example, Shimer 2005). Also,
+since each seller can only select one buyer, contracting is exclusive.
+    More specifically, we assume that in any submarket, a seller meets one, randomly
+selected, of the buyers who are present. Buyers have no capacity constraint in their
+ability to meet sellers; that is, they can meet all arriving sellers, no matter how many
+there are. As a result, matching occurs according to the urn–ball technology. Under
+this meeting technology, the number of sellers who meet a particular buyer follows a
+Poisson distribution with a mean equal to the queue length in the submarket, defined
+as the ratio of the measure of sellers to the measure of buyers visiting that submarket.6
+Sellers are certain to meet a buyer, while buyers may end up with many sellers or with
+no seller at all. Moreover, a buyer’s probability of meeting a seller of a given type is fully
+determined by the queue length of that type of seller in the submarket, while it does not
+depend on the presence of other types of sellers.7 Both the latter property and the fact
+that buyers can meet multiple sellers are essential for the following analysis, while most
+other features of the meeting technology are not. Furthermore, given that we focus on
+an environment with one-sided heterogeneity, the consideration of meetings between
+one principal and several agents is interesting only when the heterogeneity is on the
+agents’ side.8
+    Under urn–ball matching, a buyer’s probability of meeting k sellers in a market with
+queue length λ is given by
+                                                         λk −λ
+                                              Pk (λ) =      e 
+                                                         k!
+Since the presence of high-type sellers does not affect the meeting chances of low-type
+sellers and vice versa, the probability of a buyer meeting L low-type sellers and H high-
+type sellers in a market where the queue length of low-type sellers is λ, and the queue
+length of high-type sellers is λ is given by
+                                                                  H
+                                                         λL −λ λ −λ
+                                     PL (λ)PH (λ) =         e     e 
+                                                         L!    H!
+
+Notice that PL (λ)PH (λ) is also the probability for a seller to be in a meeting with other
+L low-type sellers and H high-type sellers.
+  6 In principle, we can have a continuum of active submarkets, each with a measure zero of buyers and
+
+sellers. In that case, we can use the Radon–Nikodym derivatives to define queue lengths (see also foot-
+note 13).
+   7 The class of meeting technologies that have this property, called invariance (Lester et al. 2015), includes
+
+the urn–ball matching technology as a special case.
+   8 See the concluding remarks for further discussion on possible generalizations of the meeting technol-
+
+ogy.
+934 Auster and Gottardi                                                    Theoretical Economics 14 (2019)
+
+                                         Mechanisms and payoffs
+We restrict attention to direct mechanisms that do not condition on mechanisms posted
+by other buyers.9 A mechanism m is defined by the maps
+
+                                (X m  X m  T m  T m ) : N2 → [0 1]2 × R2 
+
+where the first argument is the number of low messages and the second argument is
+the number of high messages received by a buyer from the sellers he meets. The maps
+X m (L H) and X m (L H) describe the trading probabilities specified by mechanism m
+for sellers reporting, respectively, to be of low and of high type. The associated transfers
+(unconditional on whether trade occurs) are given by the maps T m (L H) and T m (L H).
+For instance, T m (L H) is the transfer to a seller who reports to be of low type when L − 1
+other sellers report to be of low type and H other sellers report to be of high type. We say
+a mechanism m is feasible if
+
+                           X m (L H)L + X m (L H)H ≤ 1             ∀(L H) ∈ N2                            (1)
+
+Thus, in each meeting the probability that a good is exchanged cannot exceed 1. Let M
+denote the measurable set of feasible mechanisms.10
+   We assume that when matched with a buyer, a seller does not observe how many
+other sellers are actually matched with the same buyer or their types.11 Let λ denote the
+expected number of high reports and let λ denote the expected number of low reports,
+which under truthful reporting simply correspond to the queue lengths of high- and
+low-type sellers for mechanism m. The expected trading probabilities for a seller when
+reporting to be of low and of high type, respectively, are then given by
+                                              +∞
+                                           +∞ 
+                                           
+                            xm (λ λ) =             PL (λ)PH (λ)X(L + 1 H)
+                                          L=0 H=0
+                                              +∞
+                                           +∞ 
+                                           
+                            xm (λ λ) =             PL (λ)PH (λ)X(L H + 1)
+                                          L=0 H=0
+
+  9 In principle, indirect mechanisms could allow buyers to elicit information about the mechanisms other
+
+buyers post. However, given the large market environment we consider, in the equilibria we characterize
+in Theorem 3.1 below, each buyer knows the realized distribution of mechanisms posted by other buyers
+and this distribution is not affected by deviations of individual buyers. It then follows that, as noted by
+Eeckhout and Kircher (2010) in an analogous setup, the buyer does not profit from conditioning on those
+mechanisms. Hence, the equilibria we characterize are robust to removing the restriction to mechanisms
+conditioning only on the sellers’ reported types, though additional equilibria may exist in that case.
+   10 The set M is identified by the collection of sequences of vectors in R4 , indexed by the set I = N × N. Let-
+
+ting Mi denote the Borel σ-algebra of R4 , we can consider the family of measurable spaces {(Mi  Mi ) i ∈ I}
+and use the Kolmogorov extension theorem to define a probability measure for the set of these sequences.
+   11 The assumption that a seller cannot observe the realized number of competitors in a meeting facili-
+
+tates notation considerably, but is not essential for any of our results. To see this, notice that since traders
+are assumed to be risk neutral, sellers’ payoffs are linear in trading probabilities and transfers. Therefore, if
+incentive compatibility constraints (2) and (3) below are satisfied, the values of the expected trading proba-
+bilities and transfers can always be decomposed in terms of trading probabilities and transfers in each pos-
+sible meeting in such a way that incentive compatibility is satisfied also when sellers observe the number
+of competitors in a meeting.
+Theoretical Economics 14 (2019)                  Competing mechanisms in markets for lemons               935
+
+Analogously, we can determine expected transfers t m (λ λ) and t m (λ λ). The expected
+payoff for low- and high-type sellers when choosing mechanism m and revealing their
+type truthfully, net of the utility of their endowment point,12 is then given by
+
+                                  u(m|λ λ) = t m (λ λ) − xm (λ λ)c
+                                  u(m|λ λ) = t m (λ λ) − xm (λ λ)c
+
+Truthful reporting is optimal if the following two inequalities hold:
+
+                           t m (λ λ) − xm (λ λ)c ≤ t m (λ λ) − xm (λ λ)c                               (2)
+                           t m (λ λ) − xm (λ λ)c ≤ t m (λ λ) − xm (λ λ)c                              (3)
+
+Note that since incentive compatibility is defined in terms of expected trading probabil-
+ities and transfers, whether a given mechanism m is incentive compatible depends on
+the values of λ and λ. Let M IC denote the set of tuples (m λ λ) such that m ∈ M and
+incentive compatibility with respect to λ and λ is satisfied.
+     The expected payoff for a buyer posting mechanism m, when sellers report truthfully
+and the expected number of high- and low-type sellers, respectively, is λ and λ, is then
+                                                                           
+             π(m|λ λ) = λ xm (λ λ)v − t m (λ λ) + λ xm (λ λ)v − t m (λ λ) 
+
+
+                                               Equilibrium
+An allocation in this setting is defined by a probability measure β on M with support
+M β , where β(M  )b describes the measure of buyers who post mechanisms in M  ⊆ M,
+and two maps λ λ : M β → R+ specifying, respectively, the queue lengths of low- and
+high-type sellers selecting mechanism m. We say that an allocation is feasible if13
+                                              
+                                                                  p
+                         λ(m) dβ(m) = λp          λ(m) dβ(m) = λ                  (4)
+                         Mβ                                 Mβ
+
+We call an allocation incentive compatible if (m λ(m) λ(m)) ∈ M IC for all m ∈ M β . We
+can show that we can restrict our attention to incentive-compatible allocations without
+loss of generality (w.l.o.g.):14 for any non-incentive-compatible mechanism there always
+exists an incentive-compatible mechanism that yields the same payoff for buyers and
+sellers as the original mechanism.
+    An equilibrium in the environment considered is given by a feasible and incentive-
+compatible allocation, such that the values of β, λ, and λ are consistent with buyers’
+   12 For example, the low-type seller has utility c at his endowment. His utility gain when participating in
+
+mechanism m is then given by t m (λ λ) + (1 − xm (λ λ))c − c = u(m|λ λ).
+   13 Let σ̄ and σ be the probability measures describing, respectively, the high- and low-type sellers’ search
+
+strategy. The fact that sellers can only search for mechanisms that are posted by some buyers is captured
+by the assumption that both probability measures are absolutely continuous with respect to β. Condition
+(4) then says that the queue length λ̄ is obtained as the product of λ̄p and the Radon–Nikodym derivative
+of σ̄ with respect to β. Similarly for λ.
+   14 For a formal proof, see the Supplemental Material, available in a supplementary file on the journal
+
+website, http://econtheory.org/supp/2921/supplement.pdf.
+936 Auster and Gottardi                                                Theoretical Economics 14 (2019)
+
+and sellers’ optimal choices. For mechanisms not posted in equilibrium, we extend the
+maps λ and λ to the domain M\M β so as to describe the beliefs of buyers over the queue
+lengths of low- and high-type sellers that such mechanisms attract. We require these be-
+liefs to be pinned down by a similar consistency condition with sellers’ optimal choices
+out of equilibrium. More specifically, a buyer believes that a deviating mechanism at-
+tracts some low-type sellers only if low-type sellers are indifferent between this mecha-
+nism and the one they choose in equilibrium, and similarly for high-type sellers:15
+                                      
+     u m|λ(m) λ(m) ≤ max u m |λ m  λ m         holding with equality if λ(m) > 0 (5)
+                             m ∈M β
+                                
+    u m|λ(m) λ(m) ≤ max u m |λ m  λ m                    holding with equality if λ(m) > 0 (6)
+                             m ∈M β
+
+Hence, we can say that beliefs are correct also out of equilibrium, should a deviation oc-
+cur. This specification of the beliefs for mechanisms that are not posted in equilibrium
+is standard in the literature of directed search, both with and without common value
+uncertainty (see Guerrieri et al. 2010 and Eeckhout and Kircher 2010, among others).
+     Formally, we impose the following conditions on out of equilibrium beliefs λ(m) and
+λ(m) for m ∈/ M β:
+
+    (i) If (5) and (6) admit a unique solution, then λ(m) and λ(m) are given by that solu-
+        tion.
+
+   (ii) If (5) and (6) admit no solution, we set λ(m) and/or λ(m) equal to +∞ and
+        π(m|λ(m) λ(m)) = c for some c ≤ 0.16
+
+  (iii) If (5) and (6) admit multiple solutions, then λ(m), λ(m) are given by the solution
+        for which the buyer’s payoff π(m|λ(m) λ(m)) is the highest.
+
+    Condition (i) says that whenever there is a unique pair λ(m), λ(m) satisfying condi-
+tions (5) and (6) for an out of equilibrium mechanism m ∈      / M β , buyers’ beliefs regarding
+the queue lengths for such a deviating mechanism are pinned down by these conditions.
+This includes the solution where both (5) and (6) are satisfied with strict inequality and
+λ(m) = λ(m) = 0. In this case, both types of sellers are worse off by choosing mechanism
+m, whatever the queue length is, so the buyer believes that m does not attract any seller.
+Since we allow for arbitrary direct mechanisms (which may feature unconditional par-
+ticipation transfers), and since buyers have no constraints in their ability to meet sellers,
+there are mechanisms for which a solution to (5) and (6) does not exist. That is, for any
+finite pair λ, λ, at least one type of seller strictly prefers the deviating mechanism over
+any mechanism in the set M β . Condition (ii) specifies that in such a case, the queue
+   15 Conditions (5) and (6) are perfectly analogous to the sellers’ optimality conditions appearing in the
+
+equilibrium Definition 1. Hence, conditions (5) and (6) indeed require that queue lengths are consistent
+with sellers’ optimal choices also for out of equilibrium mechanisms, as if all mechanisms were effectively
+available to sellers. This is analogous to existing refinements in other competitive models with adverse
+selection, such as Gale (1992) and Dubey and Geanakoplos (2002).
+                                                                                                     
+                                           m ∈M β u(m |λ(m ) λ(m )) and u(m|λ λ) > maxm ∈M β u(m |λ(m )
+   16 More precisely, if u(m|λ λ) > max
+     
+λ(m )) for all (λ λ) ∈ R+ , then (λ(m) λ(m)) = (+∞ +∞). If only one of the two inequalities is violated,
+                         2
+
+say the first one, then λ(m) = +∞, while λ(m) is determined by (6).
+Theoretical Economics 14 (2019)                  Competing mechanisms in markets for lemons               937
+
+lengths λ(m), λ(m) are set equal to infinity, while a buyer’s associated payoff is nonpos-
+itive.17 Finally, if there are multiple solutions of (5) and (6), we follow McAfee (1993),
+Eeckhout and Kircher (2010), and others, and assume in condition (iii) that buyers are
+“optimistic,” so that the pair λ(m), λ(m) is given by their preferred solution.18
+     We are now ready to define a directed search equilibrium.
+
+Definition 1. A directed search equilibrium is a feasible and incentive-compatible al-
+location, given by a probability measure β with support M β and two maps λ λ : M →
+R+ ∪ +∞, such that the following conditions hold:
+
+    • Buyers’ optimality: For all m ∈ M such that (m λ(m) λ(m)) ∈ M IC ,
+                                        
+       π m|λ(m) λ(m) ≤ max π m |λ m  λ m         holding with equality if m ∈ M β 
+                                  m ∈M
+
+    • Sellers’ optimality: For all m ∈ M β ,
+                                          
+       u m|λ(m) λ(m) ≤ max u m |λ m  λ m      holding with equality if λ(m) > 0
+                                 m ∈M β
+                                    
+        u m|λ(m) λ(m) ≤ max u m |λ m  λ m holding with equality if λ(m) > 0
+                                 m ∈M β
+
+    • Beliefs: For all m ∈
+                         / M β , λ(m) and λ(m) are determined by conditions (i)–(iii).
+
+
+                                3. Directed search equilibrium
+We state now our main result, which characterizes the directed search equilibria in the
+environment described in the previous section.
+
+Theorem 3.1. There exists a directed search equilibrium with the following properties:
+
+   (i) All buyers post the same mechanism.
+
+  (ii) Whenever a low-type seller is present in a match with a buyer, a low-quality good is
+       traded.
+
+    The equilibrium is unique in terms of expected payoffs.
+
+    Theorem 3.1 states that there always exists an equilibrium in which sellers are pooled
+at the stage of selecting a mechanism and screened at the mechanism stage. That is, all
+  17 The property that mechanism m is strictly preferred by one type of seller for all possible queue lengths
+
+requires that m features a strictly positive participation transfer, paid to each seller independently of how
+many other sellers show up. Such a mechanism attracts infinitely many sellers. Since the possible gains
+from trade of a buyer are finite, it follows that his payoff associated with such mechanism must be negative.
+   18 This is akin to the focus on strongly robust equilibria in the common-agency literature (see Peters 2001
+
+and Han 2007). An equilibrium is said to be strongly robust if the equilibrium payoff for each principal is not
+less than his payoff when he deviates to another available mechanism, and this is true in any continuation
+equilibria on and off the equilibrium path (Han 2007). We should point out that in the equilibria that we
+characterize in the next sections, condition (iii) is not only satisfied for the mechanisms that are not chosen
+in equilibrium, but also for those that are chosen by buyers.
+938 Auster and Gottardi                                                    Theoretical Economics 14 (2019)
+
+buyers post identical mechanisms so that everybody trades in a single submarket, and
+this mechanism specifies different trading probabilities for different types of sellers. In
+particular, the equilibrium mechanism always gives priority to low-type sellers, mean-
+ing that a low-quality good is traded whenever a low-type seller is present in a meeting
+with a buyer. This not only implies that a low-type seller’s probability of trade strictly ex-
+ceeds a high-type seller’s probability of trade,19 but also that the equilibrium allocation
+maximizes the trade of low-quality goods in the economy. It is important to point out
+that this property of the equilibrium holds, regardless of the relative gains from trade
+and of the fraction of high-type sellers in the population. That is, even when the gains
+from trade for the low-quality good are arbitrarily small and those for the high-quality
+good are arbitrarily large, in equilibrium high-type sellers trade only when they are in
+meetings where there are no low-type sellers. Theorem 3.1 also states that the equilib-
+rium is unique in terms of payoffs. In particular, although we will show that there may
+also be equilibria where more than one mechanism is posted, all of those equilibria yield
+the same expected levels of trade and transfers. The remainder of this section is devoted
+to proving the above result.
+
+
+                            3.1 Buyers’ auxiliary optimization problem
+
+A distinguishing feature of the environment considered here—with asymmetric infor-
+mation and common value uncertainty—is that the equilibrium cannot be found by
+decentralizing the constrained planner’s solution, as noted in the Introduction. To es-
+tablish the existence and the stated properties of directed search equilibria, we must,
+therefore, study the solution of the buyers’ optimization problem. Given that the space
+of mechanisms available to buyers is quite large, we first show that we can conve-
+niently restrict our attention to the space of expected trading probabilities and trans-
+fers associated with mechanisms in M. To this end, we provide a characterization of
+the set of expected trading probabilities and transfers associated with the feasible and
+incentive-compatible mechanisms in our environment.20 This makes the buyers’ prob-
+lem tractable, and the study of its solution allows us to derive important properties of
+the equilibrium outcome.
+    More precisely, the following result provides conditions on the values of expected
+trading probabilities and transfers that any feasible and incentive-compatible mech-
+anism satisfies, and, vice versa, that are generated by some feasible and incentive-
+compatible mechanism.
+
+
+  19 The probability of trade for a low-type seller is strictly larger than his probability of meeting no other
+
+low-type seller, while the probability of trade for a high-type seller is strictly smaller than his probability of
+meeting no low-type seller.
+   20 Expected trading probabilities and transfers have been used in the earlier literature on directed search
+
+to determine equilibrium payoffs (see, for instance, Shi 2001, 2002 for the case of public information and
+Peters 1997 for the case of independent private values), but the characterization that we provide of this set
+is novel.
+Theoretical Economics 14 (2019)                 Competing mechanisms in markets for lemons               939
+
+Proposition 3.2. For any (x x t t) ∈ [0 1]2 × R2 and λ λ ∈ [0 ∞), there exists a feasible
+and incentive-compatible mechanism m, such that
+
+              xm (λ λ) = x         xm (λ λ) = x        t m (λ λ) = t       t m (λ λ) = t
+
+if and only if
+
+                                            t − xc ≤ t − xc                                               (7)
+                                            t − xc ≤ t − xc                                               (8)
+                                                             −λ
+                                                λx ≤ 1 − e                                                (9)
+                                                λx ≤ 1 − e−λ                                             (10)
+                                         λx + λx ≤ 1 − e−λ−λ                                            (11)
+
+     Please note that most proofs are provided in the Appendix.
+     Conditions (7) and (8) are analogous to the sellers’ incentive compatibility con-
+straints (2) and (3). It is immediate to see that these two conditions imply x ≥ x; that
+is, the expected trading probability is higher for low- than for high-type sellers. The re-
+maining three conditions guarantee that the mechanism m associated with (x x t t) is
+feasible according to (1), and that meetings take place according to the urn–ball tech-
+nology. In particular, inequality (9) requires that a buyer’s probability of trading with a
+high-type seller, λx, is weakly smaller than a buyer’s probability of meeting at least one
+                  
+high-type seller, +∞                     −λ
+                      k=1 Pk (λ) = 1 − e . Inequality (10) is the analogous condition for
+the low-type seller and inequality (11) requires that a buyer’s probability of trading with
+any seller, λx + λx, is weakly smaller than the probability of meeting at least one seller,
+1 − e−λ−λ . While it is easy to see that any feasible and incentive-compatible mechanism
+must satisfy conditions (7)–(11), the main achievement of the proof of Proposition 3.2 is
+to show, using a constructive argument, that any trading probabilities and transfers that
+satisfy these conditions can be generated by some feasible and incentive-compatible
+mechanism in the original space described in Section 2.
+     Next, we rewrite the buyers’ optimization problem in terms of an auxiliary problem.
+This problem consists of choosing a mechanism m, with the associated queue lengths
+λ, λ, so as to maximize a buyer’s payoff, taking as given the utility gain attained in the
+market by low- and high-type sellers relative to their endowment points, denoted by U
+and U (in short, their market utilities). More precisely, in this problem a buyer chooses
+a mechanism and the queue lengths, subject to the constraint that the queue lengths
+must satisfy the sellers’ optimality conditions in Definition 1 for the mechanisms posted
+in equilibrium and conditions (5) and (6) restricting out of equilibrium beliefs. These
+constraints can be viewed as a form of participation constraints.21
+  21 Letting the representative buyer optimize over queue lengths means that in cases where there are mul-
+
+tiple solutions to (5) and (6), the buyer picks the preferred pair, which is consistent with condition (iii)
+pinning down out of equilibrium beliefs. The auxiliary optimization problem does not allow the buyer to
+choose values of λ, λ for which the set of inequalities (5) and (6) does not have a solution. This comes with-
+out loss of generality because, as we argued in footnote 17, such a mechanism must yield a strictly negative
+payoff and can, therefore, not be optimal.
+940 Auster and Gottardi                                                Theoretical Economics 14 (2019)
+
+    The approach based on the study of a constrained optimization problem of the
+buyer taking market utilities as given has been followed in earlier work in the literature
+on directed search (for instance, see Shi 2001, 2002 for the case of public information
+and Eeckhout and Kircher 2010 for the case of independent private values). In these
+papers, the optimization problem is formulated over the original space of mechanisms
+being considered. In our setup, alternatively, we rely on Proposition 3.2 to state it simply
+in terms of values of expected trading probabilities and transfers satisfying the feasibility
+and incentive constraints (7)–(11). Hence, we have the optimization problem
+
+                                       max        λ(xv − t) + λ(xv − t)                              (P aux )
+                                    xxttλλ
+
+
+subject to
+
+                            t − xc ≤ U       holding with equality if λ > 0
+                            t − xc ≤ U       holding with equality if λ > 0                             (12)
+
+and constraints (7)–(11).
+    Whenever the values of λ and λ are consistent with the population parameters, the
+solutions of the buyer’s auxiliary problem give us the expected trading probabilities and
+transfers in a candidate equilibrium. By consistent we mean that a probability mea-
+sure β can be assigned to the set of solutions of problem P aux , so that the feasibility
+conditions in (4) are satisfied.22 For instance, if the solution to the auxiliary problem
+is unique, consistency simply requires that the optimal queue lengths λ and λ coincide
+                                           p
+with the population parameters λp and λ . In such a case, we have a candidate equilib-
+rium where all buyers post the same mechanism. If the solution is not unique and the
+optimal queue lengths differ across the different solutions, consistency requires that the
+average value of the queue lengths equals the population parameters. In this case, at
+the candidate equilibrium sellers separate through their choice of mechanisms. Having
+found the expected trading probabilities and transfers of the candidate equilibrium, it is
+immediate to verify that the associated mechanisms—which exist by Proposition 3.2—
+are a solution of the buyer’s optimization problem in the original space of mechanisms.
+Hence, the candidate equilibrium is indeed an equilibrium.
+    Finding an equilibrium thus amounts to finding values of the market utilities U and
+U, such that the solutions of the buyer’s auxiliary problem can be assigned appropriate
+weights so as to achieve consistency with the population parameters. In what follows,
+we show that the analysis of the general properties of these solutions allows us to es-
+tablish two key properties of equilibria: first, equilibrium mechanisms give priority to
+low-type sellers; second, equilibria are not separating at the search stage.
+  22 More precisely, we can restate condition (4) in the reduced space of mechanisms by replacing the do-
+
+main M β with the set of solutions of the buyer’s auxiliary problem P aux . Letting S be the set of solutions
+                                                                                           
+and λ(s), λ(s) indicate the associated queue lengths for each s ∈ S, these conditions say S λ(s) dβ(s) = λp
+                    p
+and S λ(s) dβ(s) = λ .
+Theoretical Economics 14 (2019)                  Competing mechanisms in markets for lemons               941
+
+Property 1: Priority for low-type sellers To establish the first property, we show that at
+any solution of P aux , we have λx = 1 − e−λ . This condition says that a buyer’s prob-
+ability of trading a low-quality good is equal to his probability of meeting a low-type
+seller, which immediately implies property (ii) of Theorem 3.1: any mechanism posted
+in equilibrium must give priority to low-type sellers.23 As already noted, this also im-
+plies that x > x. Thus, no pooling mechanism—treating both types equally—is posted
+in equilibrium.
+
+Lemma 3.3. At any solution of P aux , the low-type feasibility constraint (10) is satisfied
+with equality.
+
+     An important step for proving the above result is the observation that incentive com-
+patibility of equilibrium mechanisms requires that U > U. That is, the expected utility
+gain obtained by trading in the market is strictly higher for low-type sellers than for high-
+type sellers (see Appendix A.2). Given this, the proof of Lemma 3.3 shows that whenever
+the posted mechanisms are such that low-type sellers do not receive priority, buyers
+have a profitable deviation. This deviation is reminiscent of cream skimming. It consists
+of offering a mechanism that attracts fewer low types and more high types, but gives pri-
+ority to low-type sellers, so that the overall probability of trading a low- and high-quality
+good remains unchanged for the buyer. At the deviating mechanism, sellers get the same
+utility as with the mechanisms posted in the market, but the buyer’s profits are higher
+because the rents paid to sellers are strictly lower. Since high-type sellers obtain a strictly
+lower market utility than low-type sellers, they are less costly to attract.
+     The above discussion illustrates how the priority rule proves an effective device for
+the principal to relax the incentive and participation constraints he faces, in particular of
+the low types. It also shows that it is possible to do this without changing the probability
+of trading a high- and low-quality good, something the buyer cares for in an adverse
+selection environment (in contrast to the private value case).
+
+Property 2: No equilibria with separation at the search stage Next we show that we can-
+not have fully separating equilibria, where some buyers attract only high-type sellers
+and others attract only low-type sellers. For this to happen, P aux should have (at least)
+two solutions, one with λ = 0 and the other with λ = 0, and we prove that this is not
+possible.
+    Indeed the following lemma shows that the solution of P aux is always unique with
+regard to the variables concerning the low-type sellers, including their queue length.
+This implies that in equilibrium, there can be no posted mechanism that attracts only
+high types. The uniqueness of the complete solution of P aux then depends on whether
+market utilities are such that buyers can or cannot make positive profits with high-type
+sellers when their trading probability is set at the maximal level that is feasible and in-
+centive compatible.24
+   23 This property has bite only for mechanisms that attract both low and high types. It still leaves open the
+
+possibility of a fully separating equilibrium where certain mechanisms attract only high-type sellers.
+   24 It can be shown (see Appendix A.2) that the maximal incentive-compatible and feasible trading proba-
+
+bility for high-type sellers is xmax = (U − U)/(c − c). We thus distinguish the cases where U and U are such
+that the associated value of buyers’ profits for such trades, xmax (v − c) − U , is strictly positive or zero.
+942 Auster and Gottardi                                                  Theoretical Economics 14 (2019)
+
+Lemma 3.4. (i) If market utilities are such that buyers can make strictly positive profits
+    with high-type sellers, there is a unique solution of P aux .
+
+  (ii) If market utilities are such that buyers can at most make zero profits with high-type
+       sellers, the solution of P aux is unique for (λ x t).
+
+    Lemma 3.4 shows that when there are mechanisms that satisfy the constraints of
+problem P aux and yield the buyer strictly positive profits with high-type sellers, the prob-
+lem has a unique solution. Hence, in equilibrium, all buyers and sellers trade in a single
+submarket. To show the uniqueness of the solution of P aux in this case, we proceed in
+two steps. First, we show that at any solution of P aux , the overall feasibility constraint
+(11) is satisfied with equality, meaning that every meeting leads to trade. If not, buyers
+would have a profitable deviation, which consists of attracting additional high-type sell-
+ers while keeping the terms of trade of all of the previous sellers unchanged. The rest
+of the proof of Lemma 3.4 verifies that given this property and the one established in
+Lemma 3.3, P aux is a strictly convex problem.
+    When, instead, market utilities are such that buyers make at most zero profits with
+high-type sellers, buyers are indifferent regarding the number of high-type sellers they
+attract. As a result, there are typically multiple values of λ that solve the buyer’s auxiliary
+problem. Part (ii) of the lemma shows that in this case, there is still a unique solution for
+the variables that describe the terms of trade and the queue length for low-type sellers.
+The result follows again from the strict convexity of the choice problem with regard to
+these variables. Hence, buyers could post different mechanisms, which, however, differ
+only in the terms of trade and the queue length for high-type sellers.
+    To gain some intuition as to why an equilibrium with full separation at the search
+stage cannot exist, we observe that in such an equilibrium, high- and low-type sellers
+would trade in two separate markets, with each market generating the same profits for
+buyers. The latter property implies that buyers must be able to make strictly positive
+profits with high-type sellers. Consider then a buyer who posts a mechanism that at-
+tracts only low-type sellers. This buyer can profit by deviating to an alternative mecha-
+nism that also attracts high-type sellers but grants priority to low types, providing them
+with the same trading probability and expected transfer as the original mechanism.
+Since buyers have no capacity constraints in their ability to meet sellers, the additional
+meetings with high types do not crowd out any meetings with low types. Hence, the al-
+ternative mechanism would attract the same number of low-type sellers, and the buyer
+would obtain the same expected payoff from them; in addition, the buyer can make
+some positive profits with high-type sellers.25
+
+   25 If buyers can offer high-type sellers the same terms of trade as in the market where only high types
+
+trade, each additional high type generates the same profit as in this market and the profitability of the devi-
+ation follows immediately. Sometimes providing the same terms of trade is not feasible because the prior-
+ity for low-type sellers imposes constraints on the trading probability of high-type sellers. Hence, transfers
+must be adjusted to attract high types, but our proof shows that also in this case additional profits can be
+generated.
+Theoretical Economics 14 (2019)                  Competing mechanisms in markets for lemons                 943
+
+    In the next section we build on these properties and characterize the conditions un-
+der which the solutions of problem P aux satisfy the consistency condition with the pop-
+ulation parameters, thus establishing the existence of an equilibrium and some addi-
+tional properties.
+
+
+                       3.2 Existence of equilibrium and further properties
+
+3.2.1 Mild adverse selection We begin by considering the case where market utilities
+are such that buyers can make strictly positive profits with high-type sellers. We know
+from the analysis in the previous section that both the low-type feasibility constraint
+(10) and the overall feasibility constraint (11) are binding at all solutions of P aux . We
+thus have
+                                                               
+                        λx = 1 − e−λ and λx = e−λ 1 − e−λ                              (13)
+
+As shown in Lemma 3.4(i), the solution to problem P aux is unique. Hence, so as to ob-
+tain an equilibrium, we need to find values of U and U such that the population ratios
+          p
+λp and λ , together with the associated values of x, x obtained from (13), solve problem
+P aux , and the profits with high-type sellers are indeed positive. The following proposi-
+tion identifies the condition on the parameter values of the economy under which such
+values of U, U exist. The argument of the proof also allows us to determine the equilib-
+rium values of the market utilities, thereby characterizing the equilibrium allocation in
+closed form.
+
+Proposition 3.5. There exists a directed search equilibrium in which buyers make
+                                                                        p   p
+strictly positive profits with high-type sellers if and only if (1 − e−λ )/λ < (v − c)/(v − c).
+In any such equilibrium, all buyers post the same mechanism with trading probabilities
+
+                                 1     −λp
+                                                                     1             p
+                                                        x = e−λ               1 − e−λ 
+                                                                  p
+                          x=      p 1−e                                  p
+                                λ                                     λ
+                            p     p
+    Condition (1 − e−λ )/λ < (v − c)/(v − c) is always satisfied in the case of indepen-
+dent private values (v = v). More generally, it holds when buyers do not care sufficiently
+for quality (v̄ − v is sufficiently small) and when the competition for high-type sellers is
+                                          p
+not too intense (their ratio to buyers λ is sufficiently large).26 In this situation, the equi-
+librium utility gain of high-type sellers relative to that of low-type sellers is sufficiently
+small, so that buyers make strictly positive profits with high-type sellers and all meet-
+ings lead to trade. We refer to this parameter region as characterizing a situation where
+adverse selection is “mild.”
+
+3.2.2 Severe adverse selection Next we examine the alternative scenario where market
+utilities are such that buyers can make, at most, zero profits with high-type sellers. In
+this case, buyers who attract high-type sellers offer a mechanism whereby the trading
+  26 Notice that the function f (λ) = (1 − e−λ )/λ is strictly decreasing on (0 +∞) and its range is (0 1).
+944 Auster and Gottardi                                                  Theoretical Economics 14 (2019)
+
+probability of high-type sellers is at the highest possible level that is feasible and incen-
+tive compatible.27 The trading probability of low-type sellers is again determined by the
+priority rule and thus is specified by (13). Similar to the previous section, we identify
+conditions on the parameter values under which the solution of P aux yields an equilib-
+rium. In this case, as we know from Lemma 3.4(ii), problem P aux has multiple solutions
+for λ. We, therefore, have multiple payoff equivalent equilibria, as the following propo-
+sition establishes.
+
+Proposition 3.6. There exists a directed search equilibrium in which buyers make zero
+                                                                    p   p
+profits with high-type sellers if and only if the condition (1 − e−λ )/λ ≥ (v − c)/(v − c) is
+satisfied. In any such equilibrium, buyers post mechanisms such that
+                                      1     −λp
+                                                                        v−c
+                                                               x = e−λ
+                                                                     p
+                               x=      p 1−e                                
+                                     λ                                   v−c
+                 p     p
+When (1 − e−λ )/λ ≥ (v − c)/(v − c) is satisfied with equality, the equilibrium is unique;
+otherwise there is a continuum of payoff equivalent equilibria. The set of equilibria al-
+ways includes one where all buyers post the same mechanism.
+                                                                                 p   p
+     The condition under which the above equilibria exist, (1 − e−λ )/λ ≥ (v − c)/(v − c),
+is the exact complement of that stated in Proposition 3.5. In each of the two parameter
+regions, the trading probabilities are uniquely determined, and, as we show in the proofs
+of Propositions 3.5 and 3.6, the same is true for the expected transfers. Hence, the equi-
+librium is always unique in terms of expected payoffs, as stated in Theorem 3.1. Note
+                              p    p
+that the condition (1 − e−λ )/λ ≥ (v − c)/(v − c) can only be satisfied if v > v; that is,
+in a situation of common values. More precisely, it requires that buyers care sufficiently
+for quality (v − v sufficiently large) and that there are relatively few high-type sellers for
+               p
+each buyer (λ sufficiently small). We refer to such a situation as one of “severe” adverse
+selection. The stated properties imply that there is now intense competition for high-
+type sellers. This leads buyers to make zero profits in equilibrium in trades with high
+types, who consequently extract all of the gains from trade that are realized. Hence, in
+contrast to results obtained in the cited literature on competitive equilibria with adverse
+selection, buyers’ profits are not equalized across trades with the two types.
+     The feature whereby buyers make zero profits with high-type sellers is closely linked
+to two other important equilibrium properties, which we discuss next.
+                                                       p       p
+Rationing Suppose the condition (1 − e−λ )/λ ≥ (v − c)/(v − c) is satisfied with strict
+inequality. In the equilibrium where all buyers post the same mechanism, the probabil-
+                                                                    p
+ity that a buyer ends up trading a high-quality object, given by λ e−λ (v − c)/(v − c), is
+                                                                         p
+
+
+strictly smaller than the probability that a buyer is in a match with high-type sellers only,
+              p
+e−λ (1 − e−λ ). Thus, meetings where only high-type sellers are present do not always
+    p
+
+
+end in trade.
+     To gain some intuition as to why rationing occurs in equilibrium, it is useful to ob-
+serve that in equilibrium, the payoff of a buyer conditional on meeting a low-type seller
+  27 That is, x̄ = xmax = (U − U)/(c − c) (see footnote 24).
+Theoretical Economics 14 (2019)                 Competing mechanisms in markets for lemons                945
+
+must be strictly higher than his payoff conditional on meeting a high-type seller. That
+is,
+                                     x(v − c) − U > x(v − c) − U                                         (14)
+Note that this property holds for all parameter values. It ensures that in the situation
+where all buyers post the same mechanism attracting both types, cream-skimming de-
+viations are not profitable. In contrast, if buyers did not make lower profits with high-
+type sellers, replacing low-type sellers with a larger number of high-type sellers—while
+keeping their trading probabilities and transfers unchanged—would be both feasible28
+and profitable.
+     When gains from trade for the high-quality good are large, compared to those for
+the low-quality good, condition (14) requires that most of these gains are appropriated
+by the sellers, which means that the high quality object must trade at a high price. In-
+centive compatibility then requires that the trading probability of high-type sellers is
+sufficiently small. Giving priority to low-type sellers may not be sufficient to guaran-
+tee a small enough trading probability, especially when the ratio of high-type sellers to
+buyers is very small. Therefore, high-type sellers must be rationed. Crucially, the higher
+the buyers’ valuation of the high-quality good is, the more severe rationing becomes.
+This can be seen formally by observing that the high-type sellers’ equilibrium trading
+probability decreases in v (see Proposition 3.6).
+     This feature stands in contrast to a monopolistic auction setting or one with random
+rather than directed search. In a monopolistic auction setting, larger values of v favor
+the posting of pooling mechanisms, whereby both types trade with the same probabil-
+ity, and, thus, lead to a weakly larger trading probability of the high-quality good.29 Our
+environment, with competing buyers posting general mechanisms, delivers the oppo-
+site comparative statics result. To gain some intuition for this, we should note that in
+both the monopolistic auction and the random search setting, a buyer faces a set of sell-
+ers with given proportions among the different types. In our setup, each buyer faces
+competition from other buyers, implying that the composition of the sellers he attracts
+depends on the mechanism he posts. Specifically, if he were to post a pooling price,
+thereby offering a higher information rent for low-type sellers, he would attract only low
+types.30
+                                      p     p
+Partial sorting When (1 − e−λ )/λ > (v − c)/(v − c) holds, Proposition 3.6 shows that
+we can sustain multiple, payoff equivalent equilibria that differ in their assignment of
+high-type sellers across buyers. In particular, rather than having each buyer attract the
+same average number of high-type sellers, we can distribute high-type sellers asymmet-
+rically across submarkets.
+  28 This is true since, as shown, sellers with a high-quality good trade with a lower probability than sellers
+
+with a low-quality good.
+   29 See Manelli and Vincent (1995) for the case of a single buyer who can purchase the good from multiple
+
+sellers, and Chiu and Koeppl (2016) and Maurin (2018) for the case of random search. In the latter case,
+each buyer meets a single seller and optimally posts a price (see Samuelson 1984).
+   30 Some further explanation of this property can be found in Section 4, where we discuss the welfare
+
+properties of directed search equilibria.
+946 Auster and Gottardi                                                     Theoretical Economics 14 (2019)
+
+    To illustrate this, consider the following specification with two active submarkets,
+labelled 1 and 2. The respective queue lengths are λ1 , λ1 and λ2 , λ2 . For simplicity, set
+λ2 = 0 so that high-type sellers visit only submarket 1. The trading probabilities for low-
+type sellers in the two submarkets and for high-type sellers in submarket 1 are then as
+specified in Proposition 3.6.31 By Lemma 3.4, both λ1 and λ2 must be equal to λp . Let
+γ denote the fraction of buyers posting mechanism 1. Consistency with the population
+                                                p
+parameters requires that λ1 = (μs)/(γb) = λ /γ; that is, the queue length of high-type
+sellers in the first submarket, λ1 , is equal to the ratio between all high-type sellers in
+the economy, μs, and those buyers who visit the first submarket, γb. Furthermore, the
+value of λ1 must be such that the overall feasibility constraint (11) is satisfied, which,
+after substituting the values specified above, requires32
+
+                                          1         − γ1 λ 
+                                                          p         v−c
+                                               1−e              ≥                                        (15)
+                                        1 p                         v−c
+                                          λ
+                                        γ
+
+Under the stated parameter restriction, the above condition is always satisfied for an
+interval of values of γ sufficiently close to 1; that is, such that sufficiently many buyers
+and low-type sellers participate in submarket 1, where both types of objects are traded.
+    In the situation described, two mechanisms coexist in equilibrium. In submarket
+2, buyers post a simple mechanism (effectively a price) that only attracts low-type sell-
+ers. In submarket 1, buyers post a more complex mechanism (some form of auction),
+attracting both high- and low-type sellers. Notice that γ can be set so that the overall
+feasibility constraint (15) is satisfied with equality, in which case there is no rationing in
+either market.
+    These two properties of equilibria with severe adverse selection show that the re-
+duction of the equilibrium trading probability of high-type sellers (needed to satisfy
+incentive compatibility for low-type sellers), can be achieved in different ways: either
+by rationing high types within the mechanism, by assigning high types asymmetrically
+across buyers, or by a combination of the two.
+
+Remark. The parameter region with severe adverse selection includes, as a limiting
+case, the situation where there is free entry of buyers, captured in our environment
+by letting the measure of buyers tend to +∞. This case is of interest as it corre-
+sponds to the analogue of the Rothschild and Stiglitz (1976) game form in the lemons
+                                                                 p
+model. As b → +∞, the ratio of high-type sellers to buyers, λ , tends to 0, implying
+              p    p
+that (1 − e−λ )/λ tends to 1. From the proof of Proposition 3.6, it can be seen that
+as b → +∞, the transfer to low-type sellers conditional on trading, t/x, converges to
+v, while their trading probability converges to 1. Hence, in the limit, buyers also make
+  31 In contrast, in submarket 2 where λ = 0, the value of high types’ trading probability can be chosen
+                                        2
+freely as long as the low-type incentive constraint is satisfied. For instance, it could be equal to that of the
+low types.
+   32 Letting x denote the trading probability of high types in submarket 1, we have λ x = λp /γ · e−λp (v −
+               1                                                                          1 1
+                          p
+c)/(v − c) ≤ e−λ (1 − e−λ /γ ), which yields the expression in the text.
+                p
+Theoretical Economics 14 (2019)                    Competing mechanisms in markets for lemons                  947
+
+zero profits with low-type sellers. Alternatively, the transfer to high-type sellers condi-
+tional on trading is equal to v, while their trading probability converges to (v − c)/(v − c).
+These values correspond precisely to those of the separating candidate equilibrium in
+Rothschild and Stiglitz (1976).33
+
+
+                                            3.3 Implementation
+
+Propositions 3.5 and 3.6 characterize the values of the expected trading probabilities
+for the mechanism buyers post in equilibrium. In their proofs, we also determine the
+associated market utilities, which yield the expected transfer payments for these mech-
+anisms. What can we say regarding the properties of trading rules that implement these
+values? As noted in the Introduction, for the case of independent private values, ear-
+lier work (see, in particular, Peters 1997) has shown the existence of a directed search
+equilibrium, where all buyers post the same mechanism and the equilibrium trading
+probabilities and transfers can be implemented through a second-price auction with a
+reserve price equal to the buyers’ valuation
+     Our equilibrium characterization shows that in the case of mild adverse selection,
+trading probabilities—as determined by the priority for low types and the fact that all
+meetings of a buyer with some sellers end up with trade—are the same as in a second-
+price auction. The associated transfers, however, can never be implemented through a
+standard second-price auction with reserve price r, not even if coupled with a participa-
+tion fee or transfer κ. To see this, notice that the payoffs of low- and high-type sellers in
+                                                                        p
+such an auction, denoted by mrκ , when the queue lengths are λp , λ , are given by34
+                                p    p   p               p      
+                   u mrκ |λp  λ = e−λ e−λ (r − c) + 1 − e−λ (c − c) + κ
+                                p       p
+                   u mrκ |λp  λ = e−λ −λ (r − c) + κ
+                                       p
+
+
+
+
+Setting these values equal to the equilibrium market utilities we obtained yields two
+linearly dependent equations in r and κ. As can be verified, these equations have no
+solution, except when v = v (that is, in the case of independent private values).
+     In contrast, the equilibrium trading probabilities and transfers can be implemented,
+for instance, via a sequential auction. Buyers could first run a second-price auction with
+reserve price r1 ∈ (c c) and if nobody wins the auction, run another auction with reserve
+price r2 > c with probability 1 (when adverse selection is mild) or less than 1 (when it
+is severe). It is clear that such a sequential auction generates the trading probabilities
+stated in Propositions 3.5 and 3.6. Furthermore, it can be easily verified that there al-
+ways exists a pair (r1  r2 )—possibly coupled with a participation transfer or fee κ—such
+   33 Note that in competitive search models, as well as in Walrasian models, the nonexistence issue found
+
+by Rothschild and Stiglitz (1976) in a strategic setting does not arise.
+   34 In such a second-price auction, a low-type seller earns a positive payoff if and only if he is the only low-
+
+type seller in a meeting, an event with probability e−λ (his actual payoff then differs according to whether
+                                                         p
+
+
+there are also high-type sellers). For a high-type seller, a positive payoff arises only if he is the only seller in
+                                                      p
+a meeting (which happens with probability e−λ −λ ).
+                                                  p
+948 Auster and Gottardi                                                        Theoretical Economics 14 (2019)
+
+that the sellers’ expected utilities associated with this mechanism are equal to the equi-
+librium market utilities specified in the proofs of Propositions 3.5 and 3.6.35
+
+
+                                                 4. Welfare
+In the economy under consideration, the level of total surplus coincides with the re-
+alized gains from trade. At an allocation where the trading probabilities for high- and
+low-type sellers are, respectively, x and x, total surplus is given by
+                                  p                        
+                                b λ x(v − c) + λp x(v − c) 
+
+The welfare properties of the equilibria we characterize depend on the values of the pa-
+rameters of the economy. We first show that when adverse selection is mild and gains
+from trade are larger for the low-quality object, maximal surplus is attained in equilib-
+rium (hence, the equilibrium is Pareto efficient).
+
+Proposition 4.1. At the directed search equilibrium allocation, total surplus is maxi-
+mal, relative to all feasible allocations, if
+                                                          1           p          v−c
+                             v−c≥v−c            and          p   1 − e−λ       ≤       
+                                                         λ                         v−c
+
+If either of the two conditions is violated, there exists a feasible and incentive-compatible
+allocation that generates strictly more total surplus. Moreover, if μ is sufficiently large, this
+allocation constitutes a Pareto improvement with respect to the one of the directed search
+equilibrium.
+
+     In the first part of the proposition, we consider the set of allocations that are attain-
+able, subject only to the meeting friction, that is, ignoring incentive compatibility. In this
+set, total surplus is maximal if (i) the number of meetings is maximized, (ii) every meet-
+ing leads to trade, and (iii) sellers who own the good with the larger gains from trade
+receive priority. It is well known that under the urn–ball meeting technology, the total
+number of meetings is maximal whenever the queue length of sellers is the same for all
+                                                                      p    p
+the mechanisms traded in equilibrium.36 The restriction (1 − e−λ )/λ ≤ (v − c)/(v − c)
+   35 Letting m
+                r1 r2 κρ denote the mechanism with sequential reserve prices r1 , r2 , participation transfer κ,
+and a conditional probability of going to the second round ρ, the low- and high-type seller’s payoff are,
+respectively, given by
+                                                         p       p
+                                      u mr1 r2 κ |λp  λ = e−λ −λ (r1 − c) + κ
+                                                                p
+
+
+                                                      p       p
+                                   u mr1 r2 κ |λp  λ = e−λ −λ ρ(r2 − c) + κ
+                                                             p
+
+
+
+  36 See for example Eeckhout and Kircher (2010).       For the private value case, Cai et al. (2017a) in fact
+demonstrate that merging any two submarkets increases the total surplus under any type distribution if
+and only if the meeting technology satisfies a property called joint concavity. According to this property,
+the probability of meeting at least one low-type seller is a concave function of the queue length of low-type
+sellers and the queue length of high-type sellers. For completeness of the argument, in the Supplemental
+Material, we provide a formal proof of the property that in our environment the number of meetings is
+maximized when buyers and sellers trade in a single submarket.
+Theoretical Economics 14 (2019)                 Competing mechanisms in markets for lemons              949
+
+assures that in equilibrium, all sellers trade in a single submarket and that high-type
+sellers are not rationed in equilibrium; thus, the first two properties stated above are in-
+deed satisfied. When v − c ≥ v − c, the sellers with the larger gains from trade are those
+with a low-quality good. In this case, the property that low-types sellers receive priority
+in equilibrium implies that the last requirement is also satisfied.
+     Notice that the two conditions stated in Proposition 4.1 are always satisfied in the
+case of independent private values, v = v. The result that the directed search equilib-
+rium maximizes total surplus in private value environments is well established in the
+literature (see, for example, Eeckhout and Kircher 2010 and Cai et al. 2017b). The first
+part of Proposition 4 extends this result to the case of common values, provided that
+gains from trade are still larger for the low-quality object and the ratio of high-type sell-
+ers to buyers is not too low. In such a situation, incentive compatibility and adverse
+selection do not constrain attainable welfare.
+     When, instead, buyers care sufficiently for quality so that the gains from trade for
+the low-quality object are strictly smaller than those for the high-quality object or when
+there are sufficiently few high-type sellers so that they are rationed in equilibrium, the
+welfare properties of equilibria are quite different. The second part of the proposition
+shows that in this case, the allocation of the directed search equilibrium no longer maxi-
+mizes total surplus, even subject to the additional constraint imposed by incentive com-
+patibility. Moreover, if the fraction μ of high-type sellers relative to low-type sellers is
+sufficiently large, there exists an allocation that satisfies the constraints imposed by the
+meeting friction as well as incentive compatibility and Pareto improves on the allocation
+of the directed search equilibrium. Hence, the equilibrium is not incentive constrained
+efficient.
+     More specifically, the proof of this last part of the claim shows that when either of the
+two stated conditions is violated, an increase in the trading probability of high-type sell-
+ers relative to their equilibrium level—possibly combined with a reduction of the low
+types’ trading probability and a suitable adjustment of the transfers—is both feasible
+and incentive compatible. This change in the allocation increases total surplus and im-
+proves sellers’ utility. It also constitutes a Pareto improvement, in the sense that buyers
+gain as well, provided that the fraction of high- relative to low-type sellers is sufficiently
+high. In this case, the additional gains made by buyers with high-type sellers more than
+compensate for the possible losses with low types.
+     In the equilibrium we characterized, there exists no profitable deviation that allows
+buyers to capture the additional gains from trade. The reason is that such a deviation
+would attract too many low-type sellers so as to be profitable. To see this, note that as
+shown in the proof of the second part of Proposition 4, to increase the trading probability
+of high-type sellers, a buyer would have to pay an additional information rent to low-
+type sellers. This implies that all low-type sellers would have strict incentives to switch
+to the deviating contract, thereby making the deviation nonprofitable.37
+   37 More precisely, if a buyer posts a mechanism m that yields a higher trading probability for high types,
+
+incentive compatibility requires that he offers a payoff for low-type sellers strictly larger than U for any
+pair λ, λ (see the proof of Proposition 4.1). The buyer’s belief is thus pinned down by condition (ii) of
+Definition 1: λ(m) = +∞. Given this belief, the deviating contract yields a strictly negative payoff for the
+buyer.
+950 Auster and Gottardi                                                Theoretical Economics 14 (2019)
+
+                             4.1 General versus bilateral mechanisms
+The inefficiency of competitive equilibria with adverse selection we found should not
+come as a surprise. Analogous inefficiency results were obtained in the literature with
+bilateral contracting, both for competitive equilibria with directed search when meet-
+ings are restricted to be bilateral (see Gale 1992 and Guerrieri et al. 2010) and for Wal-
+rasian equilibria without search frictions (Dubey and Geanakoplos 2002 and Bisin and
+Gottardi 2006). In all of these cases, the forces of competition prevent (uninformed) buy-
+ers from internalizing the externalities induced by incentive compatibility, linking the
+trades of different types of (informed) sellers. The properties of the allocations obtained
+in equilibrium, and, hence, the nature of the inefficiency, are however quite different. As
+stated in the Introduction, a common feature of bilateral contracting is that in equilib-
+rium, different types of sellers trade different contracts and buyers’ profits are equalized
+across the trades with each type. In that case, the inefficiency of the equilibrium can be
+entirely imputed to such “no cross-subsidization” property.38 In contrast, in our setup,
+all sellers select the same mechanism and profits are not equalized across types. The
+fact that inefficiency may still obtain suggests that competition among buyers imposes
+some conditions on the directions of the cross-subsidies, which may be contrary to what
+is required to achieve efficiency. To better understand this, it is useful to analyze in more
+detail how the equilibrium allocations in the two setups compare in terms of welfare.
+     To conduct such a comparison within our framework, we consider the case in which
+the space of available mechanisms is restricted to the class of bilateral menus, while
+keeping the meeting technology unchanged. Such restriction entails that a buyer picks
+at random one of the arriving sellers, who can then choose his preferred item from the
+menu that is proposed. Conditional on being chosen, a seller’s trading probabilities and
+transfers thus depend on his own report but not on the report of others.
+     The next proposition shows that given the restriction to bilateral menus, the equilib-
+rium outcome features different mechanisms posted in equilibrium. These mechanisms
+treat all types the same (x = x) and do not ration any sellers. Hence, rather than posting
+menus, buyers offer single contracts, which take the form of posted prices, and never
+find it optimal to attract both types of sellers. Sellers separate themselves according
+to their type across the different prices posted and buyers’ profits are equalized across
+submarkets, in line with the results in the literature on bilateral contracting discussed
+above.
+
+Proposition 4.2. If the set of available mechanisms is restricted to bilateral menus, a
+directed search equilibrium exists and has the following properties:
+
+    • A fraction γ ∈ [0 1) of buyers post a price ph and attract only high-type sellers.
+
+    • The remaining fraction 1 − γ ∈ (0 1] of buyers post a price pl < ph and attract only
+      low-type sellers.
+   38 As Davoodalhosseini (2018) shows, if adverse selection is sufficiently severe, a planner can improve on
+
+the competitive search equilibrium allocation by taxing the high-quality market and subsidizing the low-
+quality market. The cross-subsidization relaxes the incentive compatibility constraint of low-type sellers
+and thereby allows more trades of the high-quality good.
+Theoretical Economics 14 (2019)                Competing mechanisms in markets for lemons            951
+
+    See the Supplemental Material for the proof.
+    We can now compare the equilibrium allocation with bilateral contracts to that with
+general mechanisms, in terms of welfare. Recall first that if the gains from trade for the
+low-quality good exceed those for the high-quality good and the ratio of high-type sell-
+ers to buyers is not too small, the equilibrium with general mechanisms maximizes total
+surplus (see Proposition 4.1). Hence, it always dominates the one with bilateral con-
+tracts in terms of total surplus. The interesting case to consider is that whereby the gains
+from trade are larger for the high-quality good, as the equilibrium with general mech-
+anisms may not be incentive constrained efficient. As we discussed, the inefficiency is
+due to the fact that high types trade too little. Their level of trade is particularly low when
+adverse selection is severe, that is, when equilibrium mechanisms not only give priority
+to low-quality sellers but also ration high-quality sellers. It could be conjectured that
+the equilibrium with bilateral contracts, characterized by no cross-subsidization, may
+do better in such situations. However, we find that this is typically not the case, as the
+next numerical example illustrates.39
+                            p
+Example 1. Let λp = λ = 1, and c = 0, c = 1, v = 1, and v = 3. Under this specification,
+adverse selection is severe and the equilibrium with general mechanisms is as charac-
+terized in Proposition 3.6. A buyer’s probability to trade, respectively, a high- and low-
+quality good is given by
+                                    p
+                                   λ x ≈ 0123        λp x ≈ 0632
+while a buyer’s probability of meeting some high-type seller without meeting a low-type
+seller is ≈ 0233. Hence, in meetings without low-type sellers, trade occurs only slightly
+more than half of the time.
+     In the equilibrium where mechanisms are restricted to bilateral menus, a fraction
+γ ≈ 0120 of buyers post the high price, while the rest post a low price. A buyer’s proba-
+bility of trading a high- and low-quality good is now
+                                    p
+                                   λ x ≈ 0119        λp x ≈ 0598
+
+     In the above example, we see that both the probability that a buyer meets a seller and
+that he trades a low-quality good are lower in the equilibrium with bilateral contracts.
+The two properties are intuitive: distributing buyers and sellers over two submarkets
+with different seller–buyer ratios entails a higher possibility that sellers are misallocated
+across buyers. Moreover, low-type sellers distribute themselves only across a fraction of
+buyers, rather than across all of them. What is more surprising is that also the probabil-
+ity of trading a high-quality good is slightly lower. To gain some understanding as to why
+this happens, notice that for low-type sellers to choose the lower price pl in equilibrium,
+the trading probability in the market where ph is posted must be sufficiently low. The
+higher are the gains from trade for the high-quality good, the lower is the trading prob-
+ability for high-type sellers, similar to the case where buyers post general mechanisms.
+  39 We considered several other specifications of the parameters in the region with severe adverse selec-
+
+tion. In all cases we found that the total surplus in the equilibrium with general mechanisms exceeds that
+in the equilibrium with bilateral contracts.
+952 Auster and Gottardi                                      Theoretical Economics 14 (2019)
+
+    Nevertheless, total surplus is not always higher in the equilibrium with general
+mechanisms. Notably, this reversal arises when parameters fall in the region of mild
+adverse selection, where such equilibrium features no rationing. The next proposition
+demonstrates that, provided the gains from trade for the high-quality good exceed those
+for the low-quality good, this happens when the measure of high-type sellers is suffi-
+ciently large.
+
+Proposition 4.3. Assume v − c < v − c. If the measure of high-type sellers is sufficiently
+large, total surplus is strictly greater when buyers are restricted to bilateral menus com-
+pared to when they can post general mechanisms.
+
+     The result is established by considering the properties of the equilibrium allocations
+      p
+as λ → +∞ and can be explained as follows. The property that low-type sellers are
+given priority in every meeting implies that buyers trade the low-quality good with prob-
+ability 1 − e−λ , the probability with which they meet at least one low-type seller. As
+                  p
+
+  p
+λ → +∞, a buyer’s probability of meeting some high-type seller tends to 1. Since there
+is no rationing, this implies that in the limit, buyers trade a high-quality good with the
+residual probability, e−λ . Total surplus thus approaches b(e−λ (v − c) + (1 − e−λ )(v −
+                              p                                      p                  p
+
+
+c)).
+     In the equilibrium with bilateral contracts, the trading probability of sellers con-
+                   p
+verges to 0 as λ → +∞, both in the submarket where ph is posted and in the submarket
+where pl is posted. As a consequence, the probability that a buyer trades tends to 1 in
+both submarkets and the measure of buyers posting the high price tends to b. In the
+limit, the total surplus in the equilibrium with bilateral contracts is thus given by b(v −c),
+which is equal to the first best level (all buyers purchase the high-quality object). This
+value strictly exceeds total surplus in the equilibrium with general mechanisms where,
+as demonstrated, a positive fraction of buyers end up purchasing the low-quality object,
+                p
+even when λ → +∞.
+                                                                                        p
+     It is useful to illustrate these features in the environment of Example 1. When λ = 10
+               p
+instead of λ = 1, the equilibrium with general mechanisms features no rationing. Due
+to the high ratio of sellers to buyers, almost all buyers are matched, but given the fea-
+ture that low-type sellers receive priority in any match, only 37% of them end up pur-
+chasing a high-quality good. Conversely, in the equilibrium with bilateral contracts, the
+probability that a buyer trades is slightly lower (94% instead of 99%), but the probabil-
+ity of trading a high-quality good is considerably higher (52%). Since gains from trade
+are higher for the high-quality object, the effect of the increased probability of trading
+a high-quality good outweighs the effect of the reduced overall probability of trade, and
+surplus is larger in the equilibrium with bilateral contracts.
+     To summarize, the analysis in this section shows that the features of the trading
+mechanisms available to buyers matter considerably. While for most parameter spec-
+ifications the equilibrium with general mechanisms yields a higher level of total surplus
+than the equilibrium where mechanisms are restricted to bilateral contracts, this is not
+Theoretical Economics 14 (2019)                 Competing mechanisms in markets for lemons               953
+
+always the case when there is adverse selection.40 When gains from trade are higher for
+the high-quality good than for the low-quality good, competition among buyers gen-
+erates inefficiencies in the equilibrium outcome, caused by either the priority given to
+low-type sellers or the absence of cross-subsidization among sellers’ types. For different
+parameter specifications, one or the other kind of inefficiency proves to be more severe.
+
+                                            5. Conclusion
+This paper shows that allowing uninformed buyers to post general mechanisms instead
+of bilateral contracts in markets with adverse selection has important implications for
+the equilibrium allocation and its welfare properties. In particular, we find that with
+general mechanisms there always exists a directed search equilibrium, where all buyers
+post the same mechanism that gives priority to sellers with a low-quality good. Hence,
+separation of the different types of sellers occurs within the same mechanism that is
+posted. According to this mechanism, high-type sellers can trade only in meetings with
+a buyer where no low-type seller is present, no matter how large are the gains from trade
+of the good that they own. As discussed, this property of the equilibrium can give rise to
+severe inefficiencies.
+    Our analysis is based on the consideration of a specific trading protocol and meeting
+technology that, even though standard, has some important implications worth high-
+lighting. With regard to the trading protocol, the feature that the uninformed party posts
+the mechanisms avoids issues of signaling and the associated multiplicity of equilib-
+ria.41 Furthermore, in an environment with one-sided heterogeneity as the one consid-
+ered, the study of general mechanisms—as opposed to bilateral contracts—is only in-
+teresting when homogeneous principals post and heterogeneous agents search, as dis-
+cussed in Section 2. Extending the analysis to markets with two-sided heterogeneity is
+an interesting task for future research (for more on this, see Albrecht et al. 2016).
+    With regard to the meeting technology, we assumed that buyers are not constrained
+in their ability to meet sellers and that sellers can at most meet one buyer. This consti-
+tutes a natural benchmark. In ongoing work, we study the case of more general meeting
+technologies, where buyers face capacity constraints in their ability to meet sellers.42 In
+the presence of these constraints, the deviations that prevented the existence of equi-
+libria with separation at the search stage entail a cost (attracting high types requires at-
+tracting fewer low types) and, therefore, may no longer be profitable. As a consequence,
+it may occur that in all equilibria, buyers post different mechanisms that attract different
+compositions of seller types.
+    Some interesting issues also arise when sellers are allowed to meet more than one
+buyer. This amounts to dropping the maintained assumption of exclusivity at the meet-
+ing stage and implies that sellers may have more than a single opportunity to trade at
+  40 Lester et al. (2019) study a related issue in an environment with random search and imperfect compe-
+
+tition. In particular, they examine how the features of the meeting technology affect traders’ market power
+and, hence, the consequences for the welfare properties of equilibria in the presence of adverse selection.
+    41 Delacroix and Shi (2013) take steps in that direction by exploring the consequences of signaling in
+
+directed search models, though in environments rather different from ours.
+    42 This line of research has been pursued for the case of independent private values by Cai et al. (2017a,
+
+2017b).
+954 Auster and Gottardi                                                Theoretical Economics 14 (2019)
+
+the same time, possibly with different terms. In this case, some of the offers made by
+buyers may end up being rejected. Following Galenianos and Kircher (2009), Kircher
+(2009), and Wolthoff (2018), we plan to pursue this issue in future research. We conjec-
+ture that in an environment where sellers can meet multiple buyers, it is no longer pos-
+sible to separate sellers at the search or at the mechanism stage. The equilibrium may
+thus exhibit pooling, a feature that is reminiscent of results obtained in the literature on
+markets with nonexclusive contracting (see Attar et al. 2011, 2017).
+
+                                              Appendix
+                                    A.1 Proof of Proposition 3.2
+“Only if.” We first show that for any feasible and incentive-compatible mechanism m,
+expected trading probabilities and prices satisfy conditions (7)–(11). Let x = xm (λ λ),
+x = xm (λ λ) and t = t m (λ λ), t = t m (λ λ). Incentive compatibility of m then trivially im-
+plies (7) and (8). Feasibility implies the remaining conditions. To see this, note first that
+X m (L H)L + X m (L H)H ≤ 1 ∀L H requires X m (L H) ≤ 1/L, which in turn implies
+                  +∞
+               +∞ 
+                                                             +∞
+                                                           +∞ 
+                                                                                    1  1      
+xm (λ λ) =               PH (λ)PL (λ)X m (L + 1 H) ≤               PH (λ)PL (λ)      = 1 − e−λ 
+                                                                                    L+1 λ
+               H=0 L=0                                     H=0 L=0
+
+Analogously it can be shown that X m (L H) ≤ 1/H implies xm (λ λ) ≤ (1 − e−λ )/λ. From
+the perspective of a buyer, the probability of trading a low-quality good is given by
+   +∞ L
++∞ 
+                     H                       +∞ +∞
+                                            λL                  H
+     λ               λ −λ                            λ −λ
+               e−λ      e X m (L H)L = λ        e−λ    e X m (L + 1 H) = λxm (λ λ)
+          L!         H!                       L!     H!
+L=1 H=0                                       L=0 H=0
+
+Similarly, the probability for a buyer to trade a high-quality good can be shown to equal
+λxm (λ λ). Feasibility then implies
+                                        +∞
+                                         +∞
+                                                                                       
+       λxm (λ λ) + λxm (λ λ) =                  PH (λ)PL (λ) X m (L H)L + X m (L H)H 
+                                        H=0 L=0
+                                           +∞
+                                        +∞ 
+                                        
+                                    ≤             PH (λ)PL (λ) · 1 − P0 (λ)P0 (λ)
+                                        H=0 L=0
+
+                                    = 1 − e−λ−λ 
+
+    “If.” We now show that for any vector (x x t t) satisfying conditions (7)–(11),
+there exists a feasible and incentive-compatible mechanism m such that xm (λ λ) = x,
+xm (λ λ) = x and t m (λ λ) = t, t m (λ λ) = t. Consider the mechanism
+                                            1
+                          X m (L H) = ρ                T m (L H) = t    L≥1
+                                         L + αH
+                                            α
+                          X m (L H) = ρ                T m (L H) = t    H ≥ 1
+                                         L + αH
+for some α ρ ρ ∈ [0 1]. For the case α = 0, let X m (0 H) = ρ/H.
+Theoretical Economics 14 (2019)                         Competing mechanisms in markets for lemons          955
+
+    This mechanism trivially satisfies t m (λ λ) = t and t m (λ λ) = t. We thus want to show
+that there always exists some tuple (α ρ ρ) such that xm (λ λ) = x and xm (λ λ) = x. Ex
+ante trading probabilities are given by
+                                                +∞ 
+                                                  +∞
+                                                                             1
+                           xm (λ λ) = ρ                 PH (λ)PL (λ)
+                                                                        L + 1 + αH
+                                               H=0 L=0
+                                                +∞ 
+                                                  +∞
+                                                                             α
+                           xm (λ λ) = ρ                 PH (λ)PL (λ)                
+                                                                        L + α(H + 1)
+                                               H=0 L=0
+
+Define the function
+                                              +∞ 
+                                                +∞
+                                                                            1
+                                 f (α) =                PH (λ)PL (λ)              
+                                                                       L + 1 + αH
+                                              H=0 L=0
+
+Note that f  (α) < 0. The function’s range is given by [(1 − e−λ−λ )/(λ + λ) (1 − e−λ )/λ].
+To see this, consider first the case α = 0:
+             +∞ 
+               +∞                                   +∞                  +∞                  +∞
+                                              1                1              1  λL+1 −λ
+   f (0) =             PH (λ)PL (λ)              =     PL (λ)         PH (λ) =                e
+                                             L+1              L+1              λ     (L + 1)!
+             H=0 L=0                               L=0            H=0            L=0
+                                                                  
+                                                                               =1
+
+             1        
+        =       1 − e−λ 
+             λ
+
+Consider next the case α = 1:
+             +∞ 
+               +∞                            +∞
+                                              
+                                        1                     1   1           
+   f (1) =               PH (λ)PL (λ)       =    PN (λ + λ)     =     1 − e−λ−λ 
+                                      L+1+H                 N +1 λ+λ
+             H=0 L=0                                        N=0
+
+Define the function
+                                 ⎧
+                                   +∞ 
+                                     +∞
+                                 ⎪
+                                 ⎪                         α
+                                 ⎪
+                                 ⎪       PH (λ)PL (λ)                                if α > 0
+                                 ⎪
+                                 ⎨                    L + α(H + 1)
+                             H=0 L=0
+                      g(α) = +∞
+                            ⎪   ⎪                            1
+                                 ⎪
+                                 ⎪                                                   if α = 0
+                                 ⎪
+                                 ⎩           PH (λ)PL (λ)
+                                                            H +1
+                                     H=0
+
+Note that g (α) > 0 and that g is continuous at α = 0, i.e., lim                   α→0 g(α) = g(0). At α = 1, g
+is equal to f . At α = 0, we have
+               +∞
+                                                      λ  +∞                            +∞
+                                                                      e−λ  λ
+                                                                H                                  H+1
+                                              1                  1
+      g(0) =         PH (λ)P0 (λ)                = e−λ     e−λ      =               e−λ
+                                            H +1        H!     H +1    λ   (H + 1)!
+               H=0                                        H=0                            H=0
+
+                  −λ 1
+                                −λ
+                                    
+             =e            1−e          
+                     λ
+
+The range of g is consequently [e−λ (1 − e−λ )/λ (1 − e−λ−λ )/(λ + λ)].
+956 Auster and Gottardi                                            Theoretical Economics 14 (2019)
+
+     With this we can show that for any x and x satisfying conditions (9)–(11), we can
+find some α ρ ρ ∈ [0 1] such that ρf (α) = x and ρg(α) = x. Given that x x ≥ 0 and
+ρ ρ ∈ [0 1], this can be satisfied if there exists an α such that f (α) ≥ x and g(α) ≥ x. The
+first inequality requires that α is not too large, while the second requires that α is not too
+small. Consider first the case in which x ≤ (1 − e−λ−λ )/(λ + λ). Here f (α) ≥ x is satisfied
+for all α ∈ [0 1]. Conditions (7), (8), and (11) together imply x ≤ (1 − e−λ−λ )/(λ + λ),
+from which it follows that g(α) ≥ x can be satisfied (e.g., α = 1). Consider now the case
+x ≥ (1 − e−λ−λ )/(λ + λ) and let α̃ be such that f (α̃) = x. We can show
+
+    λg(α̃) + λf (α̃)
+                 +∞
+              +∞ 
+                                                       +∞ +∞
+                                                       
+                                            α̃                              1
+       =λ              PH (λ)PL (λ)                 +λ    PH (λ)PL (λ)
+                                      L + α̃(H + 1)                    L + 1 + α̃H
+             H=0 L=0                                   H=0 L=0
+                 +∞
+              +∞ 
+                      H−1                           +∞ H
+                                                  +∞ 
+                                                  
+                     λ       λL −λ−λ    α̃   H         λ   λL−1       1    L
+       =λ                       e              +λ
+                    (H − 1)! L!      L + α̃H H         H! (L − 1)! L + α̃H L
+             H=1 L=0                                      H=0 L=1
+                +∞ H L
+             +∞ 
+                                                              +∞ H
+                                                                                     +∞ L
+                                                                                      
+                  λ λ                    α̃H      L                λ                    λ
+       =                     e−λ−λ            +              +              e−λ−λ +              e−λ−λ
+           H=1 L=1
+                     H! L!            L + α̃H L + α̃H           H=1
+                                                                       H!
+                                                                                      L=1
+                                                                                            L!
+                                              =1
+                                                      
+       = 1 − e−λ − e−λ + e−λ−λ + e−λ − e−λ−λ + e−λ − e−λ−λ
+
+       = 1 − e−λ−λ 
+
+With this,
+                             1                   1                  
+                  g(α̃) =  1 − e−λ−λ − λ f (α̃) = 1 − e−λ−λ − λx ≥ x
+                         λ                           λ
+where the last inequality follows from condition (11). Thus, there exists some ρ ∈ [0 1]
+such that ρg(α̃) = x. Together this implies that for any x and x satisfying conditions
+(9)–(11), there exists some α ρ ρ ∈ [0 1] such that xm (λ λ) = x and xm (λ λ) = x.
+    Finally we need to check feasibility and incentive compatibility of the proposed
+mechanism. Feasibility follows from
+                                        1          α         1         α
+    x(L H)L + x(L H)H = ρ                 L+ρ        H≤        L+        H = 1
+                                     L + αH     L + αH    L + αH    L + αH
+Incentive compatibility is trivially satisfied given that xm (λ λ) = x, xm (λ λ) = x and
+t m (λ λ) = t, t m (λ λ) = t.
+
+                                  A.2 Solving P aux : Preliminaries
+We start by deriving some properties of the market utilities that need to be satisfied in
+equilibrium.
+
+Lemma A.1. At a directed search equilibrium, we have
+
+   (i) U > U and U − U < c − c
+Theoretical Economics 14 (2019)                  Competing mechanisms in markets for lemons                 957
+
+   (ii) U U > 0
+
+  (iii) U < v − c and U ≤ (v − c)/(v − c)U.
+
+Proof. Let (x t) and (x t) be pairs of expected trading probabilities and transfers as-
+sociated to (possibly different) mechanisms chosen by low- and high-type sellers in a
+given equilibrium. These values must then also be part of a solution of P aux . Market
+utilities are, therefore, U = t − xc and U = t − xc. The following properties must hold:
+
+   (i)(a) U > U: The low-type incentive constraint (16) requires t − xc ≥ t − xc, which
+          can be rewritten as x(c − c) ≤ U − U. Since x ≥ 0, this inequality can only be
+          satisfied if U ≥ U. Suppose now that U = U so that x = 0. Since, under any
+          solution of P aux , buyers must make weakly positive profits with both types of
+          seller,43 we must have t = 0 and, hence, U = U = 0. A buyer’s expected profit
+          with low-type sellers when U = t − xc = 0 is λx(v − c). The maximal value of
+          this last expression at an admissible solution of P aux is attained when λx =
+          (1 − e−λ ); that is, if the buyer trades with low-type sellers whenever possible.
+          However, since 1 − e−λ is strictly increasing in λ, no finite value of λ can solve
+          P aux , implying that U = U = 0 cannot be admissible equilibrium values.
+
+      (b) U − U < c − c: The high-type incentive constraint (8) requires t − xc ≥ t − xc or
+          x(c − c) ≥ U − U. Since by condition (10), we have x ≤ (1 − e−λ )/λ < 1,44 the
+          inequality x(c − c) ≥ U − U can only be satisfied if U − U < c − c.
+
+      (ii) U U > 0: The inequality U > 0 follows directly from U > U and U ≥ 0. It
+           thus remains to show that U > 0. Toward a contradiction, suppose U = 0.
+           In this case, by an argument symmetric to that in (i)(a) above, the expected
+           profit a buyer makes trading with high-type sellers is λx(v − c). Since U > U,
+           there always exists a strictly positive value of x that satisfies the low-type in-
+           centive constraint (7) and the overall feasibility constraint (11). Given that
+           λ can be set equal to 0, a strictly positive value of x is also weakly optimal.
+           Thus, w.l.o.g. suppose x > 0 and consider an increase of λ together with a de-
+           crease of x so as to keep λx unchanged. Adjusting t so as to keep the utility
+           of high-type sellers constant while keeping the remaining contracting param-
+                                                          
+           eters unchanged, we obtain a tuple (λ λ  x x  t t) that is incentive compati-
+           ble and satisfies the overall feasibility constraint (11) with strict inequality, i.e.,
+                                      
+           λx + λ x < 1 − e−λ−λ . The buyer can then increase his payoff by deviating
+                                    
+           to (λ λ + ε x x  t t ), with ε > 0, while still satisfying all constraints of P aux ,
+           thus, a contradiction.
+
+  (iii)(a) U < v − c: Suppose not, U ≥ v − c. Since, as shown in (i)(b) above, x < 1 when-
+           ever λ > 0, this implies that x(v − c) − U < 0; that is, a buyer’s payoff with each
+           low-type seller is strictly negative. As a consequence, at any solution of P aux
+           we have λ = 0. This in turn implies that the low types’ market utility U must
+           equal 0 and, therefore, U < v − c, a contradiction.
+  43 If buyers make losses with one type of seller, they can always set the respective ratio, λ or λ, equal to 0.
+  44 The inequality (1 − e−λ )/λ < 1 is a general property for all λ ∈ (0 +∞).
+958 Auster and Gottardi                                            Theoretical Economics 14 (2019)
+
+      (b) U ≤ (v − c)/(v − c)U: Suppose not, U > (v − c)/(v − c)U. As argued above, the
+          low-type incentive constraint (7) can be written as x ≤ (U − U)/(c − c). This
+          implies that the payoff of a buyer with each high-type seller is negative:
+
+                                       U −U               (v − c)U − (v − c)U
+                     x(v − c) − U ≤         (v − c) − U =                     < 0
+                                       c−c                       c−c
+
+           All solutions of P aux must, therefore, satisfy λ = 0, which in turn implies U = 0
+           and, therefore, U < (v − c)/(v − c)U, a contradiction.
+
+    Next, we can show that w.l.o.g. the participation constraints of the two types of sell-
+ers in P aux can be set to hold as equalities. Consider first the possibility that at a solution
+of P aux the buyer only wants to attract high-type sellers, i.e., λ = 0. Since U − U < c − c,
+there exists a pair t, x so as to satisfy t − xc = U and t − xc ≤ U. In particular, any combi-
+nation of x and t that satisfies x ≥ (U − U)/(c − c) and t = U + xc makes low-type sellers
+indifferent and satisfies the incentive constraint of high-type sellers. The actual choice
+of x, t does not affect the buyer’s payoff, as x and t are multiplied by λ = 0 both in the
+objective and in the remaining constraints. A symmetric argument can be made for the
+case of λ = 0.
+    Solving the participation constraints for t, t and substituting into the objective func-
+tion and the remaining constraints, the buyer’s optimization problem can be rewritten
+in the simpler form
+                                                                                                   
+                            max λ x(v − c) − U + λ x(v − c) − U                                 (P aux )
+                           xxλλ
+
+
+subject to
+
+                                       x(c − c) ≤ U − U                                             (16)
+                                       x(c − c) ≥ U − U                                             (17)
+                                             λx ≤ 1 − e−λ                                           (18)
+                                       λx + λx ≤ 1 − e−λ−λ                                          (19)
+                                            λ λ ≥ 0
+                                                                                             
+All properties of P aux will be proven by considering the simplified problem P aux .
+
+
+                                     A.3 Proof of Lemma 3.3
+                                                                                                           
+Suppose the claim is not valid; that is, suppose there exists a solution (x x λ λ) of P aux
+with xλ < 1 − e−λ . Note that the strict inequality requires λ > 0. Consider then an alter-
+                                                                                              
+native tuple (x  x  λ  λ ) with λ < λ, λ = λ + (λ − λ ), x = λ/λ x, and x = λ/λ x. If λ
+                                                                                                 
+is sufficiently close to λ, (x  x  λ  λ ) satisfies constraint (18). Since x λ = xλ, x λ = xλ,
+           
+and λ + λ = λ + λ, it also satisfies the overall feasibility constraint (19). Last, since x > x
+Theoretical Economics 14 (2019)               Competing mechanisms in markets for lemons          959
+
+and x < x, the mechanism associated to this alternative tuple always satisfies the incen-
+tive compatibility constraints (16) and (17). Consider now the buyer’s payoff associated
+                    
+to (x  x  λ  λ ):
+                                                         
+                   λ x (v − c) + λ x (v − c) − λ U − λ U
+                                                               
+                      = λx(v − c) + λx(v − c) − λ U − λ + λ − λ U
+                                                                
+                      = λx(v − c) + λx(v − c) − λU − λU + λ − λ (U − U)
+                                                                          
+Since the last term of the last line is strictly positive, (x  x  λ  λ ) yields a strictly higher
+payoff than (x x λ λ), a contradiction.
+
+                                       A.4 Proof of Lemma 3.4
+Given market utilities, a buyer’s profit per high-type seller he attracts is x(v − c) − U . The
+maximal incentive feasible trading probability for high-type sellers is x = (U − U)/(c − c)
+                             
+(see constraint (16) in P aux ). Substituting this value of the trading probability into the
+profits a buyer obtains with each high-type seller, we find that these profits are nonneg-
+ative if U ≤ (v − c)/(v − c)U.
+(i) We start by considering the case where U < (v − c)/(v − c)U, so that buyers can
+make strictly positive profits with high-type seller. We show next that at all solutions
+        
+of P aux , the overall feasibility condition (19) is satisfied as equality. Let (x x λ λ) be
+                          
+a tuple that solves P aux . If λ = 0, constraint (19) is satisfied as equality by Lemma 3.3.
+Consider now the case λ > 0. Toward a contradiction, suppose that (19) is satisfied as
+                                          
+a strict inequality at a solution of P aux . If this is the case, when the buyer’s profit with
+each high-type seller, x(v − c) − U, is strictly positive, the buyer can strictly increase his
+payoff by increasing λ. For this not to be a profitable deviation, we must therefore have
+x(v − c) ≤ U. Noting that the stated property U < (v − c)/(v − c)U is equivalent to U/(v −
+c) < (U − U)/(c − c), the inequality x(v − c) ≤ U implies x < (U − U)/(c − c). That is, the
+low-type incentive constraint (16) is satisfied as a strict inequality. By slackness of the
+constraints (16) and (19), an increase in x is then both feasible and incentive compatible.
+Since increasing x strictly increases the buyer’s payoff with each high-type seller and
+since λ > 0, the buyer has a profitable deviation, thus a contradiction.
+    Having shown that when U < (v − c)/(v − c)U, feasibility constraint (19) is satisfied
+with equality and recalling that the same is true for (18) by Lemma 3.3, the values of λ, λ
+                                  
+belonging to a solution of P aux maximize
+                                                          
+               π̂(λ λ) := 1 − e−λ (v − c) + e−λ 1 − e−λ (v − c) − λU − λU                (20)
+
+subject to incentive compatibility constraints (16) and (17). The two latter constraints
+can, respectively, be rewritten as
+
+                                                     U −U
+                                       e−λ 1 − e−λ ≤ λ                                            (21)
+                                                       c−c
+                                                     U −U
+                                           1 − e−λ ≥ λ                                           (22)
+                                                       c−c
+960 Auster and Gottardi                                               Theoretical Economics 14 (2019)
+
+    (a) Consider first the case v − c > v − c. Under this condition, π̂(λ λ) is strictly con-
+                                         2
+cave. To see this, note that ∂2 π̂/∂λ = −e−λ e−λ (v − c) < 0 and that the determinant of
+the Hessian is given by e−2λ e−λ (v − c)[(v − c) − (v − c)] > 0. The Hessian is thus negative
+definite.
+    We can show that, as a consequence, there cannot exist two solutions (x1  x1  λ1  λ1 )
+and (x2  x2  λ2  λ2 ). Strict concavity of π̂(λ λ) would in fact imply that a strictly larger
+payoff is attained at λ = αλ1 + (1 − α)λ2 , λ = αλ1 + (1 − α)λ2 , α ∈ (0 1). The pair (λ λ)
+satisfies the incentive constraints since (1 − e−λ )/λ ≥ Min{(1 − e−λ1 )/λ1  (1 − e−λ2 )/λ2 }
+and e−λ (1 − e−λ )/λ ≤ Max{e−λ1 (1 − e−λ1 )/λ1  e−λ2 (1 − e−λ2 )/λ2 }.45 Hence (λ λ x x) is
+an admissible solution and yields a higher payoff, a contradiction.
+    (b) Consider next the case v −c ≤ v −c. We first establish that the incentive constraint
+                                                                  
+of the low-type sellers must be binding at a solution of P aux .
+                                                                                       
+Lemma A.2. If U < (v − c)/(v − c)U and v − c ≤ v − c, at any solution of P aux the low-type
+incentive compatibility constraint (16) is satisfied with equality.
+                                                                                             
+Proof. We argue by contradiction. Assume (x x λ λ) is a solution of P aux (with
+λ > 0) and (16) is satisfied as inequality: x < (U − U)/(c − c). Suppose first that
+                                                                                      
+λ > 0 and consider an alternative tuple (x  x  λ  λ ) with λ = λ − ,  > 0, λ = λ + ,
+                                               
+x = (1 − e−λ )/λ , and x = e−λ (1 − e−λ )/λ . In the alternative tuple some low types are
+replaced with high types, while the ratio between buyers and all types of sellers is kept
+unchanged, and the feasibility constraints (18) and (19) still hold as equality. As a con-
+                                                                        
+sequence, we have x > x and x > x, implying that (x  x  λ  λ ) satisfies all constraints
+                 
+of problem P aux as long as  is sufficiently small. The difference between the buyer’s
+                                       
+payoff associated to (x  x  λ  λ ) and that associated to (x x λ λ) is then
+                                                         
+           π̂ λ  λ − π̂(λ λ) = e−λ+ − e−λ (v − c) − (v − c) + (U − U) > 0
+
+The first term is the difference in the probability of meeting no low-type seller (in which
+case a high-quality good is traded) multiplied by the difference between the gains from
+trade of the high- and low-quality good, while the second term is the difference in rent
+paid to sellers: since the alternative mechanism on average replaces  low-type sellers
+with high-type sellers, the reduction in rent is (U − U). Under the assumption v − c ≤
+                                                                              
+v − c, the sum of the two terms is strictly positive. Hence, (x  x  λ  λ ) yields a strictly
+larger payoff than (x x λ λ), a contradiction.
+     For the case λ = 0, notice that π̂(λ λ) as well as the correspondence that determines
+the set of feasible values of λ, defined by the constraint e−λ (1 − e−λ )/λ ≤ (U − U)/(c − c),
+are continuous in λ at λ = 0. Consider the constrained optimization problem where we
+require λ ≥ ε > 0. By the previous argument, incentive constraint (16) holds as equality
+at a solution of this constrained problem for all ε > 0, and by the continuity property, the
+solution of the constrained problem converges to the solution of the original problem
+where we require only λ ≥ 0. Since (16) holds as equality along all points in the sequence,
+it does so in the limit.
+  45 It can be verified that e−λ (1 − e−λ )/λ is convex in λ and λ.
+Theoretical Economics 14 (2019)          Competing mechanisms in markets for lemons       961
+
+   Having shown that the low-type incentive constraint (16) is binding for all λ > 0, we
+can solve this constraint for λ, yielding
+                                                       
+                                          1 − e−λ c − c
+                                  λ = ln                 
+                                             λ   U −U
+
+The condition λ ≥ 0 requires that λ ≤ L, where L is defined by (1 − e−L )/L = (U −
+U)/(c − c). For λ ∈ (0 L], the buyer’s payoff can then be written as a function of λ only:
+                                                                           
+          U −U                  λ   U −U                        1 − e−λ c − c
+π̃(λ) = λ      (v − c) + 1 −                (v − c) − λU − ln                   U (23)
+          c−c                1 − e−λ c − c                         λ   U −U
+
+Since x > x = for λ λ > 0 (by Lemma 3.3), the fact that the low-type incentive constraint
+(16) holds as equality immediately implies that the high-type incentive constraint (17)
+                                
+is slack. At a solution of P aux with λ > 0, λ is thus the unconstrained maximizer of π̃ on
+(0 L]. We show in the Supplemental Material that the function π̃ is strictly concave in λ
+                                                         
+and that there cannot be a solution of problem P aux with λ = 0. Hence, the solution to
+this problem is unique and the optimal value of λ is strictly positive.
+
+(ii) We next consider the case where U = (v − c)/(v − c)U so that buyers make at most
+zero profits with high-type sellers. In this case, we have λ[x(v − c) − U] = 0 for all so-
+                                                                      
+lutions of P aux and x = (U − U)/(c − c) for all solutions of P aux with λ > 0. We can
+                                                          
+then show that λ is the same at all solutions of P aux . Suppose not. By Lemma 3.3,
+the buyer’s payoff from low-type sellers is given by (1 − e−λ )(v − c) − λU. This term
+is strictly concave in λ and attains its maximum at λ = ln((v − c)/U). This implies that
+                     
+any solution of P aux must satisfy λ ≤ ln((v − c)/U): if in fact the buyer proposes a mech-
+anism with λ > ln((v − c)/U), decreasing λ and adjusting x so that (18) still holds as
+equality strictly increases the buyer’s payoff and weakly relaxes all constraints. Now
+suppose there exist two values λ1 and λ2 with λ1 = λ2 that belong to some solution of
+     
+P aux . Without loss of generality, assume λ1 < λ2 , which implies (1 − e−λ1 )(v − c) − λ1 U <
+(1 − e−λ2 )(v − c) − λ2 U. Since both solutions must yield the same payoff for the buyer,
+we must then have λ1 [x1 (v − c) − U] > λ2 [x2 (v − c) − U]. However, we know that
+                                              
+λ[x(v − c) − U] = 0 for all solutions of P aux and, therefore, we have a contradiction.
+                                                                         
+     Finally, the property that λ is the same for all solutions of P aux , together with the
+result in Lemma 3.3, immediately implies that x must have the same value for all solu-
+               
+tions of P aux . Through the low-type participation constraint (12), this in turn implies
+that also the transfer t is the same.
+
+
+                                A.5 Proof of Proposition 3.5
+Assume buyers make positive profits with high-type sellers in equilibrium. In this case,
+market utilities must satisfy U < (v − c)/(v − c)U (see Appendix A.4, first paragraph). The
+proof of Lemma 3.4 showed that in this case the overall feasibility constraint is binding;
+                                                                   
+hence, we can use (13) to substitute for x and x, and write P aux solely in terms of the
+                                                                                      
+variables λ, λ, as already done in the proof of Lemma 3.4. At a solution of P aux , the
+962 Auster and Gottardi                                                            Theoretical Economics 14 (2019)
+
+values of λ, λ must then maximize π̂(λ λ), specified in (20), subject to the incentive
+constraints, as rewritten in (21) and (22).
+    (a) Suppose first that the incentive constraints are not binding. The first-order con-
+ditions for an interior solution with respect to λ and λ are
+                                                    
+                            e−λ (v − c) − e−λ 1 − e−λ (v − c) − U = 0
+
+                                                             e−λ−λ (v − c) − U = 0
+                                                                                   p
+The solution of this system of equations is equal to λp , λ if and only if market utilities
+U and U are given by
+                                  p             p                
+                        U = e−λ −λ (v − c) + e−λ (v − c) − (v − c)
+                               p
+                                                                                                             (24)
+                                          p
+                                    −λp −λ
+                        U =e                  (v − c)                                                       (25)
+
+Consider then the buyers’ payoff with high-type sellers:
+
+                                                 p   1             p   p   p
+                      x(v − c) − U = e−λ                 p   1 − e−λ − λ e−λ (v − c)
+                                                     λ
+                  p     p       p                            p
+We have 1 − e−λ > λ e−λ because 1 − e−λ equals the probability of at least one arrival
+                              p
+when the queue length is λ , and this strictly exceeds the probability of exactly one ar-
+        p −λp
+rival, λ e    . The buyers’ payoff with high-type sellers at the equilibrium mechanism
+is therefore strictly positive, which implies that market utilities as given in (24) and (25)
+satisfy the assumed condition U < (v − c)/(v − c)U.
+     Finally, we need to check under which conditions incentive compatibility con-
+                                     p
+straints (21) and (22) hold at λp , λ . Substituting the values of U and U as in (24) and
+(25) into these constraints, we obtain the inequalities
+
+                                        1                   p            v−v
+                                         p    1 − e−λ                ≤1−                                     (26)
+                                       λ                                   c−c
+                                               1 − e−λ
+                                                             p
+                                                                           v−v
+                                                 p −λp
+                                                                     ≥1−                                    (27)
+                                               λ e                         c−c
+
+Since 1 − e−λ > λp e−λ , as we just argued, inequality (27) is always satisfied. The de-
+              p             p
+
+
+scribed equilibrium thus exists if and only if (26) is satisfied.
+    (b) Suppose next at least one of the incentive constraints (21) and (22) is binding.
+Letting γl and γh denote the respective Lagrange multipliers of these constraints, the
+                             p
+population parameters λp , λ are optimal if they solve the first-order conditions
+                                                                             
+                  p      p                   p      p        U −U
+ e−λ (v − c) − e−λ 1 − e−λ (v − c) − U + γl e−λ 1 − e−λ − γh           − e−λ = 0
+    p                                                                       p
+
+                                                                 c−c
+                                                                             
+                                          p                   U −U          p
+                                    e−λ −λ (v − c) − U + γl         − e−λ −λ = 0
+                                       p                                 p
+
+                                                              c−c
+Theoretical Economics 14 (2019)             Competing mechanisms in markets for lemons         963
+
+Consider first the possibility that the high-type incentive constraint (22) is binding, i.e.,
+γh > 0, γl = 0. In this case, U has the same value as in case (a), given by (25), and (1 −
+e−λ )/λp = (U − U)/(c − c). Since e−λ < (1 − e−λ )/λp = (U − U)/(c − c), the term
+   p                                       p          p
+
+
+multiplying γh is positive. For γh to be strictly positive, the following condition must
+then hold:
+                                          p       p
+                       e−λ (v − c) − e−λ 1 − e−λ (v − c) − U > 0
+                           p
+
+
+
+With U determined by (25) and U such that (1 − e−λ )/λp = (U − U)/(c − c), this in-
+                                                            p
+
+
+equality can be rewritten as
+                                      1 − e−λ
+                                             p
+                                                       v−v
+                                       p −λp
+                                                 <1−       
+                                      λ e              c−c
+This inequality is the complement of (27). Following the argument above, it is always
+violated and, hence, we must have γh = 0.
+    Consider next the case where the low-type incentive constraint (21) binds: e−λ (1 −
+ −λ
+e )/λ = (U − U)/(c − c). As shown in the proof of part (i)(b) of Lemma 3.4, the solution
+of the buyer’s auxiliary problem is obtained from the first-order condition π̃  (λ) = 0,
+                                                                 p
+with π̃(λ) as in (23). Substituting the population parameter λ into this equation, we
+get the condition
+                                  p    p                            p   p   p
+                 U −U     p eλ − λ − 1           U − U e λ − λ eλ − 1
+         (v − c)      − eλ  p          (v − c)      +    p p     U = 0
+                 c−c          eλ − 1
+                                       2         c−c      λ eλ − 1
+
+Solving this equation, together with e−λ (1 − e−λ )/λ = (U − U)/(c − c), for U and U yields
+                                                                p
+            −λp −λ
+                     p
+                               −λp 1        −λ
+                                                p     1 − e−λ
+      U =e          (v − c) + e        1 − e                           (v − v)
+                                  λ
+                                    p                   1      −λ
+                                                                    p
+                                                   1− p 1−e
+                                                       λ
+                                                                p                       
+           −λp −λ
+                  p
+                               −λp 1
+                                            −λ
+                                                p       1 − e−λ
+      U =e          (v − c) + e        1 − e                            (v − v) − (c − c)  
+                                  λ
+                                    p                    1        −λ
+                                                                     p
+                                                     1− p 1−e
+                                                        λ
+
+It is immediate to verify that these values satisfy the condition U < (v − c)/(v − c)U if
+                     p   p
+and only if (1 − e−λ )/λ < (v − c)/(v − c). This condition implies that at the maximal
+incentive feasible trading probability for high-type sellers, buyers make strictly positive
+profits with high-type sellers. Since the low-type incentive constraint is binding, this is
+indeed the case.
+
+
+                                 A.6 Proof of Proposition 3.6
+Assume buyers make zero profits with high-type sellers in equilibrium. We first show
+that market utilities must then satisfy U = (v − c)/(v − c)U. Suppose instead that there is
+an equilibrium with buyers making zero profits with high types and U < (v − c)/(v − c)U.
+In this case, P aux must have a solution (x x λ λ) with λ > 0 and x < (U − U)/(c − c).
+964 Auster and Gottardi                                               Theoretical Economics 14 (2019)
+
+The latter inequality implies that the low-type incentive constraint (7) is slack at the
+                                                         
+solution. There exists an alternative tuple (x x  λ λ ) with x < x ≤ (U − U)/(c − c),
+                         
+λ > 0 and λx + λ x−λ−λ . Since the trading probability and queue length of low-type
+sellers remain unchanged, this tuple satisfies all constraints of P aux and generates the
+same profits with low types as (x x λ λ). Moreover, it generates strictly positive profits
+with high types. Hence, (x x λ λ) cannot be a solution of P aux and equilibrium market
+utilities must satisfy U = (v − c)/(v − c)U.
+     Given this condition on the market utilities, we have x = (U − U)/(c − c) for all so-
+                                                                               
+lutions with λ > 0. Furthermore, x is determined by (13) and problem P aux amounts to
+maximizing (1 − e−λ )(v − c) − λU over λ subject to the incentive constraint of high-type
+sellers, as rewritten in (22). This constraint is not binding, given the above value of x̄
+and the property x > x we established. With the high-type incentive constraint (17) not
+binding, the optimal value of λ is uniquely characterized by the first-order condition
+
+                                       e−λ (v − c) − U = 0
+
+Since all buyers find it optimal to attract the same queue length of low-type seller, con-
+sistency with the population parameters requires that this solution is given by λp , which
+requires
+                                        U = e−λ (v − c)
+                                                     p
+                                                                                                (28)
+The value of U in the candidate equilibrium is then pinned down by the assumed con-
+dition U = (v − c)/(v − c)U and is, therefore, given by
+
+                                                   (v − c)(v − c)
+                                     U = e−λ
+                                               p
+                                                                                               (29)
+                                                       v−c
+                               
+With x = (U −U)/(c −c), P aux is solved by all values of λ that satisfy the overall feasibility
+constraint (19). Substituting x = (U − U)/(c − c) evaluated at the market utilities in (28)
+and (29), and substituting x as determined by (13) and λp , this constraint reduces to
+
+                                       1        v−c
+                                         1 − e−λ ≥                                             (30)
+                                       λ           v−c
+
+An equilibrium is then given by any distribution of ratios between high-type sellers and
+                                                      p
+buyers G with support  such that  λ dG(λ) = λ and feasibility constraint (30) is sat-
+                                                                                          p
+isfied for all values of λ in . Since (1 − e−λ )/λ is decreasing in λ and since max  ≥ λ ,
+                                                                    p
+such distribution exists if and only if (30) is satisfied at λ = λ , i.e., at the degenerate
+                             p
+distribution localized at λ . When (30) holds as an equality, this is the only distribution;
+otherwise there is a continuum of distributions.
+
+
+                                   A.7 Proof of Proposition 4.1
+The statement that the directed search equilibrium allocation maximizes total surplus if
+        p   p
+(1 − e−λ )/λ ≤ (v − c)/(v − c) and v − c ≥ v − c follows from the argument in the text to-
+gether with the property that under urn–ball matching, having buyers and sellers trade
+Theoretical Economics 14 (2019)            Competing mechanisms in markets for lemons             965
+
+in a single submarket maximizes the number of meetings (formally shown in the Sup-
+plemental Material). We now demonstrate that both conditions are necessary for total
+surplus to be maximized and that, if they are not satisfied, the allocation is constrained
+inefficient whenever μ is sufficiently large.
+                                       p       p
+   • Consider first the case (1 − e−λ )/λ > (v − c)/(v − c). Proposition 3.6 shows that
+     under this condition, at a directed search equilibrium, the overall feasibility con-
+     straint (11) is slack. Consider an increase in the trading probability of the high-
+     type seller x, small enough so that (11) is not violated. Modify then the expected
+     transfer to the high-type seller so that his utility is kept constant:
+
+                                               t = xc
+
+      The trading probability of the low-type seller is kept unchanged and the expected
+      transfer to the low-type seller is adjusted to ensure that his incentive compatibility
+      constraint is satisfied:
+
+                          t − xc = t − xc              ⇔     t = (c − c)x
+                               
+                                  =0
+
+      These changes make the high-type sellers indifferent, strictly improve the low-
+      type sellers (since t > 0), and increase the total surplus that is generated. They
+      also make buyers weakly better off and thus constitute a Pareto improvement if
+
+            p                                                   λp                    
+          λ [xv − t] + λp [xv − t] ≥ 0            ⇔             μ(v − c) − (c − c) x ≥ 0
+                                                               1−μ
+
+      which is satisfied whenever μ ≥ (c − c)/(v − c) ∈ (0 1).
+                                           p       p
+   • Next, consider the case (1 − e−λ )/λ ≤ (v − c)/(v − c) together with v − c < v −
+     c. Under this specification, the overall feasibility constraint (11) is binding (see
+     Propositions 3.5 and 3.6). Consider an increase in the trading probability of the
+     high-type seller by x, while adjusting the trading probability of the low-type seller
+     so that the feasibility constraint is still satisfied as equality:
+
+                            p                                            μ
+                          λ x + λp  x = 0           ⇔       x = −       x
+                                                                        1−μ
+
+      Let us again modify the expected transfer to the high-type seller so that his utility
+      remains unchanged,
+
+                                               t = xc
+
+      and the expected transfer to the low-type seller so that his incentive compatibility
+      constraint is satisfied with equality:
+
+                                       t − xc = t − xc
+966 Auster and Gottardi                                           Theoretical Economics 14 (2019)
+
+      Substituting the previous values of x and t into the above equation yields
+                                              1              
+                                     t =         (1 − μ)c − c x
+                                             1−μ
+      As before, these changes make high-type sellers indifferent and strictly improve
+      the utility of low-type sellers:
+                                                           
+                                    1                 μ
+                    t − xc =          (1 − μ)c − c +     c x = c − c > 0
+                                  1−μ                  1−μ
+
+      They also increase total surplus (while satisfying incentive compatibility and the
+      feasibility constraints imposed by the matching technology) because trades of the
+      good with the lower gains are substituted by trades of the good with the higher
+      gains. Finally, they make buyers weakly better off and, therefore, constitute a
+      Pareto improvement if
+                                      p
+                                    λ [xv − t] + λp [xv − t] ≥ 0
+                                      λp                    
+                                ⇔          μ(v − v) − (c − c) x ≥ 0
+                                     1−μ
+      The above inequality is satisfied whenever μ ≥ (c − c)/(v − v) ∈ (0 1).
+
+
+                                A.8 Proof of Proposition 4.3
+Let W GM denote the total surplus in the equilibrium under general mechanisms and
+W BC the total surplus in the equilibrium under bilateral contracts. We are interested in
+                                                                                   p
+the limiting case of μs → +∞, while b and (1 − μ)s are kept finite, implying that λ tends
+to +∞ and λp is finite.
+                                                                                p    p
+    Consider first the case of general mechanisms. Given limλp →+∞ (1 − e−λ )/λ = 0,
+                      p     p
+the condition (1−e−λ )/λ < (v −c)/(v −c) is always satisfied, meaning that the limiting
+case falls into the parameter region of Proposition 3.5. The limit of total surplus is thus
+given by
+                                           p            p      p      
+           p
+             lim   W GM = plim      b 1 − e−λ (v − c) + e−λ 1 − e−λ (v − c) 
+          λ →+∞             λ →+∞
+                                   p                    
+                          = b 1 − e−λ (v − c) + e−λ (v − c) 
+                                                   p
+
+
+                                                                                   p
+Consider next the case of bilateral contracts. We can first show that as λ → +∞, the
+equilibrium fraction of buyers going to the high-quality market, γ, tends to 1. As shown
+in the proof of Proposition 4.2 in the Supplemental Material, a buyer’s profit in the low-
+and high-quality market, respectively, is given by
+                                                   
+                                  −
+                                    λp    λp − 1−γ
+                                                 λp
+                            1 − e 1−γ −       e       (v − c)
+                                         1−γ
+                                                        p
+                                      λ 
+                                       p                    λp
+                                    − 1−γ              λ − 1−γ
+                             1−e           (v − c) −     e     (v − c)
+                                                       γ
+Theoretical Economics 14 (2019)                           Competing mechanisms in markets for lemons   967
+
+Suppose γ does not tend to 1. Then
+                                                                 p             
+                                                 λ 
+                                                   p
+                                               − 1−γ
+                                                                      λp
+                                                                 λ − 1−γ
+                             lim      1−e              (v − c) −    e    (v − c) = −∞
+                         p
+                        λ →+∞                                    γ
+
+implying that the indifference condition for buyers cannot be satisfied. Instead we need
+                       p
+γ to be a function of λ such that
+                                                         p       λp      
+                                                        λ      −     p
+                                         p
+                                             lim         p  e 1−γ(λ )       = l ∈ R
+                                         λ →+∞         γ λ
+
+and we need l such that buyers are indifferent between both markets. Since
+               p
+limλp →+∞ γ(λ ) = 1, the limit of total surplus in the equilibrium with bilateral contracts
+is then given by
+
+                                       p             p             p       − λp         
+                                                       λp                                    p
+                BC                                 −
+  p
+      lim   W        = plim        b 1−γ λ      1−e  1−γ(λ  ) (v − c) + γ λ     1 − e γ(λ ) (v − c)
+ λ →+∞                 λ →+∞
+
+                     = b(v − c)
+                     > plim        W GM 
+                       λ →+∞
+                                                        References
+Akerlof, George A. (1970), “The market for ‘lemons’: Quality uncertainty and the market
+mechanism.” Quarterly Journal of Economics, 84, 488–500. [929, 930, 931]
+Albrecht, James, Pieter Gautier, and Susan Vroman (2014), “Efficient entry in competing
+auctions.” American Economic Review, 104, 3288–3296. [931]
+Albrecht, James W., Pieter A. Gautier, and Susan B. Vroman (2016), “Directed search in
+the housing market.” Review of Economic Dynamics, 19, 218–231. [953]
+Attar, Andrea, Thomas Mariotti, and François Salanié (2011), “Nonexclusive competi-
+tion in the market for lemons.” Econometrica, 79, 1869–1918. [954]
+Attar, Andrea, Thomas Mariotti, and François Salanié (2017), “Entry-proofness and mar-
+ket breakdown under adverse selection.” Working Paper, No 17-788, TSE Working Papers
+from Toulouse School of Economics. [954]
+Bisin, Alberto and Piero Gottardi (2006), “Efficient competitive equilibria with adverse
+selection.” Journal of Political Economy, 114, 485–516. [930, 931, 950]
+Blouin, Max and Roberto Serrano (2001), “A decentralized market with common values
+uncertainty: Non-steady states.” Review of Economic Studie, 68, 323–346. [931]
+Burdett, Kenneth, Shouyong Shi, and Randall Wright (2001), “Pricing and matching with
+frictions.” Journal of Political Economy, 109, 1060–1085. [930]
+Cai, Xiaoming, Pieter Gautier, and Ronald Wolthoff (2017a), “Search frictions, compet-
+ing mechanisms and optimal market segmentation.” Journal of Economic Theory, 169,
+453–473. [931, 948, 953]
+968 Auster and Gottardi                                   Theoretical Economics 14 (2019)
+
+Cai, Xiaoming, Pieter Gautier, and Ronald Wolthoff (2017b), “Meetings and mecha-
+nisms.” Working paper. [949, 953]
+Camargo, Braz and Benjamin Lester (2014), “Trading dynamics in decentralized markets
+with adverse selection.” Journal of Economic Theory, 153, 534–568. [931]
+Chiu, Jonathan and Thorsten Koeppl (2016), “Trading dynamics with adverse selection
+and search: Market freeze, intervention and recovery.” Review of Economic Studies, 83,
+969–1000. [945]
+Davis, Steven J. and Brenda Samaniego de la Parra (2017), “Application flows.” Working
+Paper. [928]
+Davoodalhosseini, Seyed Mohammadreza (2018), “Constrained efficiency with adverse
+selection and directed search.” Unpublished paper, SSRN 2925521. [950]
+De Los Santos, Babur, Ali Hortaçsu, and Matthijs Wildenbeest (2012), “Testing models
+of consumer search using data on web browsing and purchasing behavior.” American
+Economic Review, 102, 2955–2980. [928]
+Delacroix, Alain and Shouyong Shi (2013), “Pricing and signaling with frictions.” Journal
+of Economic Theory, 148, 1301–1332. [953]
+Dubey, Pradeep and John Geanakoplos (2002), “Competitive pooling: Rothschild–
+Stiglitz reconsidered.” Quarterly Journal of Economics, 117, 1529–1570. [930, 936, 950]
+Eeckhout, Jan and Philipp Kircher (2010), “Sorting versus screening: Search frictions
+and competing mechanisms.” Journal of Economic Theory, 145, 1354–1385. [931, 934,
+936, 937, 940, 948, 949]
+Fuchs, William and Andrzej Skrzypacz (2013), “Costs and benefits of dynamic trading in
+a lemons market.” Unpublished paper, SSRN 2320179. [931]
+Gale, Douglas (1992), “A Walrasian theory of markets with adverse selection.” Review of
+Economic Studies, 59, 229–255. [930, 936, 950]
+Galenianos, Manolis and Philipp Kircher (2009), “Directed search with multiple job ap-
+plications.” Journal of Economic Theory, 144, 445–471. [954]
+Guerrieri, Veronica, Robert Shimer, and Randall Wright (2010), “Adverse selection in
+competitive search equilibrium.” Econometrica, 78, 1823–1862. [930, 936, 950]
+Han, Seungjin (2007), “Strongly robust equilibrium and competing-mechanism games.”
+Journal of Economic Theory, 137, 610–626. [937]
+Inderst, Roman and Holger Müller (1999), “Competitive search markets with adverse
+selection.” Unpublished paper, University of Mannheim. [930]
+Janssen, Maarten C. W. and Santanu Roy (2002), “Dynamic trading in a durable good
+market with asymmetric information.” International Economic Review, 43, 257–282.
+[931]
+Theoretical Economics 14 (2019)        Competing mechanisms in markets for lemons   969
+
+Kircher, Philipp (2009), “Efficiency of simultaneous search.” Journal of Political Econ-
+omy, 117, 861–913. [954]
+Lester, Benjamin, Ali Shourideh, Venky Venkateswaran, and Ariel Zetlin-Jones (2019),
+“Screening and adverse selection in frictional markets.” Journal of Political Economy,
+127, 338–377. [953]
+Lester, Benjamin, Ludo Visschers, and Ronald Wolthoff (2015), “Meeting technologies
+and optimal trading mechanisms in competitive search markets.” Journal of Economic
+Theory, 155, 1–15. [931, 933]
+Lester, Benjamin, Ludo Visschers, and Ronald Wolthoff (2017), “Competing with asking
+prices.” Theoretical Economics, 12, 731–770. [931]
+Manelli, Alejandro and Daniel Vincent (1995), “Optimal procurement mechanism.”
+Econometrica, 63, 591–620. [945]
+Maurin, Vincent (2018), “Liquidity fluctuations in over the counter markets.” Unpub-
+lished paper, Stockholm School of Economics. [945]
+McAfee, R. Preston (1993), “Mechanisms design by competing sellers.” Econometrica,
+61, 1281–1312. [937]
+Moen, Espen R. (1997), “Competitive search equilibrium.” Journal of Political Economy,
+105, 385–411. [930]
+Moreno, Diego and John Wooders (2016), “Dynamic markets for lemons: Performance,
+liquidity, and policy intervention.” Theoretical Economics, 11, 601–639. [931]
+Peters, Michael (1997), “A competitive distribution of auctions.” Review of Economic
+Studies, 64, 97–123. [929, 931, 938, 947]
+Peters, Michael (2001), “Common agency and the revelation principle.” Econometrica,
+69, 1349–1372. [937]
+Peters, Michael and Sergei Severinov (1997), “Competition among sellers who offer auc-
+tions instead of prices.” Journal of Economic Theory, 75, 141–179. [931]
+Rothschild, Michael and Joseph E. Stiglitz (1976), “Equilibrium in competitive insurance
+markets: An essay on the economics of imperfect information.” Quarterly Journal of Eco-
+nomics, 90, 629–649. [930, 946, 947]
+Samuelson, William (1984), “Bargaining under asymmetric information.” Econometrica,
+52, 995–1005. [945]
+Shi, Shouyong (2001), “Frictional assignment, part I: Efficiency.” Journal of Economic
+Theory, 98, 232–260. [932, 938, 940]
+Shi, Shouyong (2002), “A directed search model of inequality with heterogeneous skills
+and skill-biased technology.” Review of Economic Studies, 69, 467–491. [932, 938, 940]
+Shimer, Robert (2005), “The assignment of workers to jobs in an economy with coordi-
+nation frictions.” Journal of Political Economy, 113, 996–1025. [932, 933]
+970 Auster and Gottardi                                       Theoretical Economics 14 (2019)
+
+Wolthoff, Ronald (2018), “Applications and interviews: Firms’ recruiting decisions in a
+frictional labor market.” Review of Economic Studies, 85, 1314–1351. [954]
+
+
+Co-editor Thomas Mariotti handled this manuscript.
+
+Manuscript received 21 June, 2017; final version accepted 9 December, 2018; available online 13
+December, 2018.
+

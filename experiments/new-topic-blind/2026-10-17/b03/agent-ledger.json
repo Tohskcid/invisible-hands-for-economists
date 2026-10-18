@@ -1,0 +1,46 @@
+{
+  "experiment": "b03",
+  "agents": [
+    {
+      "id": "/root/b03_benchmark_curator",
+      "role": "Published target, public question, sealed PDFs, preregistered rubric and hashes",
+      "outputs": ["public-task.json", "public-hashes.json", "sealed/target.json", "sealed/rubric.json", "sealed/target-published.pdf", "sealed/target-online-appendix.pdf"]
+    },
+    {
+      "id": "/root/b03_literature",
+      "role": "Non-target literature scout and safe source handoff",
+      "outputs": ["attempt/research/literature/safe-handoff.md", "attempt/research/topic-survey.json", "attempt/research/literature/contamination-log.tsv"],
+      "limitation": "A possibly target-related title and URL appeared in a search result; quarantined from model and writer handoffs."
+    },
+    {
+      "id": "/root/b03_model",
+      "role": "Independent formal model, propositions, proof checks and boundary cases",
+      "outputs": ["attempt/research/model/handoff.md", "attempt/research/analysis/check_examples.py", "attempt/research/manifest.jsonl"],
+      "limitation": "General EX equilibrium integrality remained unresolved; agent later hit a platform usage limit."
+    },
+    {
+      "id": "/root/b03_writer",
+      "role": "LaTeX manuscript and PDF from the public question and safe research handoffs",
+      "outputs": ["attempt/paper/manuscript/main.tex", "attempt/paper/manuscript/references.bib", "attempt/paper/build/main.pdf"],
+      "limitation": "Final agent handoff was lost after a session interruption; bibliography hash in build report differs from frozen BibTeX."
+    },
+    {
+      "id": "/root/b03_blind_referee",
+      "role": "Independent pre-unblinding substantive review and eight-page visual inspection",
+      "outputs": ["review/independent-report.md", "attempt/research/latex-visual-review.json"],
+      "verdict": "Reject at Review of Economic Studies standard",
+      "limitation": "AI agent, not a human external referee."
+    },
+    {
+      "id": "/root/b03_unblind_scorer",
+      "role": "Verify sealed hashes and grade frozen submission against preregistered published-paper rubric",
+      "outputs": ["evaluation/comparison-score.json", "evaluation/unblinded-report.md"],
+      "score": "4/10"
+    }
+  ],
+  "coordinator": "/root",
+  "submission_lock": "submission-lock.json",
+  "strict_blindness": false,
+  "strict_budget_sealing_proven": false,
+  "human_external_review_completed": false
+}

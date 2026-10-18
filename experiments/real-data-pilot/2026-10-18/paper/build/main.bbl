@@ -1,0 +1,77 @@
+\begin{thebibliography}{9}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Akinyooye et~al.(2026)Akinyooye, Crankshaw, and McIllece]{BLS2026}
+Larry Akinyooye, Mark Crankshaw, and Sean McIllece.
+\newblock Debunking common misconceptions about the job openings and labor
+  turnover survey: Bls research disproves overcounting and other myths in jolts
+  data.
+\newblock \emph{Monthly Labor Review}, August 2026.
+\newblock
+  \href{https://www.bls.gov/opub/mlr/2026/article/debunking-common-misconceptions-about-the-job-openings-and-labor-turnover-survey-bls-research-disproves-overcounting-and-other-myths-in-jolts-data.htm}{Official
+  BLS article}; accessed 18 October 2026.
+
+\bibitem[Barlevy et~al.(2023)Barlevy, Faberman, Hobijn, and
+  \c{S}ahin]{BarlevyEtAl2023}
+Gadi Barlevy, R.~Jason Faberman, Bart Hobijn, and Ay\c{s}eg\"ul \c{S}ahin.
+\newblock The shifting reasons for beveridge-curve shifts.
+\newblock Working Paper 31783, National Bureau of Economic Research, 2023.
+\newblock URL \url{https://www.nber.org/papers/w31783}.
+\newblock Accessed 18 October 2026; a 2024 Journal of Economic Perspectives
+  version also exists.
+
+\bibitem[Kindberg-Hanlon and Girard(2024)]{KindbergGirard2024}
+Gene Kindberg-Hanlon and Michael Girard.
+\newblock What caused the beveridge curve to shift higher in the united states
+  during the pandemic?
+\newblock IMF Working Paper 2024/008, International Monetary Fund, 2024.
+\newblock
+  \href{https://www.imf.org/en/publications/wp/issues/2024/01/12/what-caused-the-beveridge-curve-to-shift-higher-in-the-united-states-during-the-pandemic-542870}{Official
+  IMF paper}; accessed 18 October 2026.
+
+\bibitem[{U.S. Bureau of Labor Statistics}({\natexlab{a}})]{BLSChart}
+{U.S. Bureau of Labor Statistics}.
+\newblock The beveridge curve (job openings rate vs. unemployment rate),
+  seasonally adjusted, {\natexlab{a}}.
+\newblock URL
+  \url{https://www.bls.gov/charts/job-openings-and-labor-turnover/job-openings-unemployment-beveridge-curve.htm}.
+\newblock Accessed 18 October 2026.
+
+\bibitem[{U.S. Bureau of Labor Statistics}({\natexlab{b}})]{BLSCopyright}
+{U.S. Bureau of Labor Statistics}.
+\newblock Bls copyright information, {\natexlab{b}}.
+\newblock URL \url{https://www.bls.gov/opub/copyright-information.htm}.
+\newblock Accessed 18 October 2026.
+
+\bibitem[{U.S. Bureau of Labor Statistics}({\natexlab{c}})]{BLSDefinitions}
+{U.S. Bureau of Labor Statistics}.
+\newblock Job openings and labor turnover survey: Data definitions,
+  {\natexlab{c}}.
+\newblock URL \url{https://www.bls.gov/jlt/jltdef.htm}.
+\newblock Accessed 18 October 2026.
+
+\bibitem[{U.S. Bureau of Labor Statistics}(2013)]{BLS2013}
+{U.S. Bureau of Labor Statistics}.
+\newblock Job openings and the beveridge curve, december 2000--april 2013,
+  2013.
+\newblock URL \url{https://www.bls.gov/opub/ted/2013/ted_20130612.htm}.
+\newblock Accessed 18 October 2026.
+
+\bibitem[{U.S. Bureau of Labor Statistics}(2014)]{BLSAPI}
+{U.S. Bureau of Labor Statistics}.
+\newblock Accessing the public data api with unix command line, 2014.
+\newblock URL \url{https://www.bls.gov/developers/api_unix_v2.htm}.
+\newblock Accessed 18 October 2026.
+
+\bibitem[{U.S. Bureau of Labor Statistics}(2024)]{BLSJOLTS}
+{U.S. Bureau of Labor Statistics}.
+\newblock Job openings and labor turnover survey news release, july 2024, 2024.
+\newblock URL
+  \url{https://www.bls.gov/news.release/archives/jolts_09042024.htm}.
+\newblock Accessed 18 October 2026.
+
+\end{thebibliography}

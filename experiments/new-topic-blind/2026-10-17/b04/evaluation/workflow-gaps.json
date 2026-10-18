@@ -1,0 +1,80 @@
+{
+  "status": "blocked-before-checks",
+  "reason": "Required theory-manuscript package artifacts absent from frozen one-shot submission; checker rejects missing declared files before running constituent gates.",
+  "gate_invocation_exit": 2,
+  "post_lock_config_only": true,
+  "present": [
+    {
+      "field": "latex_main",
+      "path": "paper/manuscript/main.tex",
+      "present": true
+    },
+    {
+      "field": "latex_visual_review",
+      "path": "research/writing/latex-visual-review.json",
+      "present": true
+    },
+    {
+      "field": "manuscript",
+      "path": "paper/manuscript/main.tex",
+      "present": true
+    },
+    {
+      "field": "release_pdf",
+      "path": "paper/pdf/main.pdf",
+      "present": true
+    }
+  ],
+  "missing": [
+    {
+      "field": "bibliography",
+      "path": "paper/manuscript/references.bib",
+      "present": false
+    },
+    {
+      "field": "coverage",
+      "path": "research/coverage.json",
+      "present": false
+    },
+    {
+      "field": "literature_archive",
+      "path": "research/literature-archive.json",
+      "present": false
+    },
+    {
+      "field": "logic_review",
+      "path": "research/logic-review.json",
+      "present": false
+    },
+    {
+      "field": "manifest",
+      "path": "research/manifest.jsonl",
+      "present": false
+    },
+    {
+      "field": "mechanism_audit",
+      "path": "research/mechanism-audit.json",
+      "present": false
+    },
+    {
+      "field": "mechanism_review",
+      "path": "research/mechanism-review.json",
+      "present": false
+    },
+    {
+      "field": "substantive_review",
+      "path": "research/substantive-review.json",
+      "present": false
+    },
+    {
+      "field": "team_report",
+      "path": "research/team.json",
+      "present": false
+    },
+    {
+      "field": "topic_survey",
+      "path": "research/topic-survey.json",
+      "present": false
+    }
+  ]
+}

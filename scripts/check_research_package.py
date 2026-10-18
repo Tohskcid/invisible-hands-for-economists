@@ -11,13 +11,13 @@ from pathlib import Path, PurePosixPath
 
 
 PATH_FIELDS = {
-    "topic_survey", "data_provenance", "manifest", "manuscript", "bibliography",
+    "topic_survey", "prior_art_review", "exploration_ledger", "data_provenance", "manifest", "manuscript", "bibliography",
     "literature_archive", "coverage", "results", "design_audit", "structural_audit", "logic_review",
     "mechanism_audit", "mechanism_review", "real_world_audit", "text_audit", "latex_main", "latex_visual_review",
     "replication", "team_report", "substantive_review",
 }
 METADATA_FIELDS = {"claim_scope", "mechanism_scope"}
-PROFILE_FIELDS = {"mode", "profile", "contract", "deliverable", "latex_build_dir", "latex_engine", "release_pdf", "unapplicable_justification"}
+PROFILE_FIELDS = {"mode", "profile", "contract", "deliverable", "protocol_version", "latex_build_dir", "latex_engine", "release_pdf", "unapplicable_justification"}
 ALLOWED = PATH_FIELDS | METADATA_FIELDS | PROFILE_FIELDS
 
 RESEARCH_PROFILES = {
@@ -85,6 +85,9 @@ def check(root: Path, config_path: Path, scripts: Path) -> dict:
         raise ValueError(f"unknown package fields: {unknown}")
     mode = config.get("mode") or config.get("profile")
     deliverable = config.get("deliverable", "manuscript")
+    protocol_version = config.get("protocol_version", "1")
+    if protocol_version not in {"1", "2"}:
+        raise ValueError("protocol_version must be '1' or '2'")
     if mode is not None:
         if mode not in RESEARCH_PROFILES:
             raise ValueError(f"unknown research mode/profile: {mode!r}; valid: {sorted(RESEARCH_PROFILES)}")
@@ -101,6 +104,10 @@ def check(root: Path, config_path: Path, scripts: Path) -> dict:
             )
         if deliverable == "feasibility_report" and "latex_main" in config:
             raise ValueError("feasibility_report deliverable cannot claim manuscript delivery")
+    if protocol_version == "2" and deliverable == "manuscript":
+        missing = sorted({"topic_survey", "prior_art_review", "exploration_ledger"} - set(config))
+        if missing:
+            raise ValueError(f"protocol_version 2 manuscript requires {missing}")
 
     paths = {field: resolve(root, config[field], field) for field in PATH_FIELDS if field in config}
     if "results" in paths and "data_provenance" not in paths:
@@ -109,6 +116,8 @@ def check(root: Path, config_path: Path, scripts: Path) -> dict:
         raise ValueError("team_report requires a research mode")
     if "substantive_review" in paths and "manuscript" not in paths:
         raise ValueError("substantive_review requires manuscript")
+    if "prior_art_review" in paths and "topic_survey" not in paths:
+        raise ValueError("prior_art_review requires topic_survey")
     manuscript_requirements = {"manifest", "coverage", "bibliography", "literature_archive", "logic_review"}
     if "manuscript" in paths and not manuscript_requirements.issubset(paths):
         missing = sorted(manuscript_requirements - set(paths))
@@ -161,6 +170,19 @@ def check(root: Path, config_path: Path, scripts: Path) -> dict:
         if "manuscript" in paths and "bibliography" in paths:
             command.extend(["--manuscript", str(paths["manuscript"]), "--bibliography", str(paths["bibliography"])])
         checks.append(run(command))
+    if "prior_art_review" in paths:
+        prior_art_command = [
+            python, str(scripts / "check_prior_art_review.py"), str(paths["prior_art_review"]),
+            "--root", str(root), "--topic-survey", str(paths["topic_survey"]), "--json",
+        ]
+        if "manuscript" in paths and "manifest" in paths:
+            prior_art_command.extend(["--manifest", str(paths["manifest"])])
+        checks.append(run(prior_art_command))
+    if "exploration_ledger" in paths:
+        checks.append(run([
+            python, str(scripts / "check_exploration_ledger.py"), str(paths["exploration_ledger"]),
+            "--root", str(root), "--json",
+        ]))
     if "data_provenance" in paths:
         command = [
             python, str(scripts / "check_data_provenance.py"), str(paths["data_provenance"]),
@@ -199,10 +221,14 @@ def check(root: Path, config_path: Path, scripts: Path) -> dict:
             command.extend(["--topic-survey", str(paths["topic_survey"])])
         checks.append(run(command))
     if "manuscript" in paths and "manifest" in paths:
-        checks.append(run([
+        claim_command = [
             python, str(scripts / "audit_claims.py"), str(paths["manuscript"]), str(paths["manifest"]),
-            "--strict-numbers", "--require-central-claims", "--json",
-        ]))
+            "--require-central-claims", "--json",
+        ]
+        # The numeric-paragraph parser handles Markdown prose, not TeX commands or math.
+        if paths["manuscript"].suffix.lower() in {".md", ".markdown"}:
+            claim_command.append("--strict-numbers")
+        checks.append(run(claim_command))
     if "logic_review" in paths:
         checks.append(run([
             python, str(scripts / "check_logic_review.py"),
@@ -328,6 +354,8 @@ def check(root: Path, config_path: Path, scripts: Path) -> dict:
             returns.append(target)
     return {
         "valid": valid,
+        "protocol_version": protocol_version,
+        "legacy_protocol": protocol_version == "1",
         "iteration_required": not valid,
         "return_to": returns or (["gate_remediation"] if not valid else []),
         "checks": checks,

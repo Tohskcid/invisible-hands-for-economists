@@ -1,0 +1,7 @@
+{
+  "id": "b01",
+  "created_utc": "2026-10-16T17:11:22.209495+00:00",
+  "rubric_sha256": "21cde8109c55809e954ab7eb9558074b6402fd35293687d036acaed195628544",
+  "rubric_hidden_during_worker_run": true,
+  "holdout_path_local": "/var/folders/4g/0mmjc18s51x5hdvtkpcnxc740000gn/T/econ-blind-holdout-55vrln7p"
+}

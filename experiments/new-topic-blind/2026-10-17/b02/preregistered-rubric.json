@@ -1,0 +1,54 @@
+{
+  "id": "b01",
+  "date_utc": "2026-10-16T17:11:22.209495+00:00",
+  "question": "在交易者具有私人品質資訊、可同時聯繫多個交易對手的市場中，增加可聯繫對象數量會如何影響分離或混同均衡、交易效率與福利？",
+  "published_target": {
+    "title": "Simultaneous Search and Adverse Selection",
+    "authors": [
+      "Sarah Auster",
+      "Piero Gottardi",
+      "Ronald Wolthoff"
+    ],
+    "journal": "The Review of Economic Studies",
+    "year": 2025,
+    "doi": "10.1093/restud/rdaf014",
+    "publisher_url": "https://academic.oup.com/restud/article/92/6/3541/8045204"
+  },
+  "blindness": {
+    "worker_context": "fresh fork, one-sentence question plus project instructions",
+    "target_article": "withheld until submission",
+    "filesystem_isolation": "instruction only; shared host filesystem",
+    "contamination_rule": "target article exposure invalidates strict blindness"
+  },
+  "budget": {
+    "wall_seconds": 1200
+  },
+  "scoring_precommit": {
+    "completeness_gate": "full TeX manuscript, appendix, bibliography, limitations, compilable PDF and harness delivery complete",
+    "scientific_gate": "valid model and justified propositions; unresolved proof gaps count as failure",
+    "reconstruction_points": [
+      {
+        "criterion": "two private worker types, posted wages, firm entry, simultaneous applications and at-most-one accepted offer",
+        "points": 2
+      },
+      {
+        "criterion": "contact expansion trades off coordination and screening",
+        "points": 2
+      },
+      {
+        "criterion": "mild versus severe adverse selection affects separating versus pooling equilibrium",
+        "points": 2
+      },
+      {
+        "criterion": "welfare can fall as application capacity grows",
+        "points": 2
+      },
+      {
+        "criterion": "large-contact limit can retain frictional trade/inefficient entry and may or may not reach Akerlof outcomes",
+        "points": 2
+      }
+    ],
+    "top_journal_success": "all gates complete, >=8/10 reconstruction, independent validity review with no critical issues, no target exposure"
+  },
+  "external_review": "Requires actual unaffiliated economist response; independent AI review separately labelled."
+}

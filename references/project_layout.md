@@ -6,6 +6,7 @@ Read this reference before creating a multi-file deliverable or acquiring cited 
 paper/manuscript/       authoritative TeX, Quarto, or word-processing sources
 paper/references/       BibTeX, RIS, or other bibliography metadata
 literature/papers/      lawfully obtained cited PDFs
+literature/pages/       retained official HTML source pages
 literature/metadata/    source, license, access, and retrieval records
 data/raw/               immutable acquired data
 data/{interim,processed,proxy}/
@@ -18,6 +19,7 @@ output/slides/          presentations
 archive/                explicit frozen releases, when needed
 research/               contracts, manifests, audits, ledgers, reports
 research/sections/      compact evidence-backed manuscript section packets
+review/                 independent referee reports and agent event receipts
 build/ or tmp/           disposable compilation, rendering, and extraction files
 ```
 
@@ -44,6 +46,8 @@ literature/papers/<normalized-citekey>--<normalized-short-title>.pdf
 ```
 
 Use lowercase ASCII, hyphens, and no spaces. Do not rename two editions as though they were identical; keep the cited edition and record its version. Create `research/literature-archive.json` with one record per bibliography key containing authors, title, year, canonical locator, verification time, license or lawful access basis, access status, and—when downloaded—the download locator, retrieval time, path, and SHA-256. If no lawful copy is available, record `unavailable` or `restricted` plus the verified reason; do not fabricate a PDF or omit the citation from the audit.
+
+For an official source published as a webpage rather than a paper, set `source_kind: "official-webpage"`, retain the complete HTML at `literature/pages/<normalized-citekey>--<normalized-short-title>.html`, and record the original HTTPS page as `download_locator`. The archive checker verifies the path, HTML signature, and SHA-256. Do not convert a partial browser excerpt into a purported complete page or label a research-paper abstract as an official full-text page.
 
 Validate coverage, names, file signatures, and checksums with:
 

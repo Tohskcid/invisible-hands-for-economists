@@ -1,0 +1,8 @@
+{
+  "sealed_archive_sha256": "4280b62e7924ad09984f0354e568bdab32474a15ba4f9f889a3032a436ceb273",
+  "sealed_plain_tar_sha256": "c899f76c0cdbef7b0371d702d1d565addbe8167cddfc84509192404a0e4df542",
+  "public_task_sha256": "705fbbb6cd4a63f154f7c3ddacabc5146697a74a056bee587fa92165745db886",
+  "cipher": "AES-256-CBC/PBKDF2-200000",
+  "sealed_before_authoring": true,
+  "caveat": "Local target files were encrypted before author agents were dispatched; web access and model memory are not technically isolated."
+}

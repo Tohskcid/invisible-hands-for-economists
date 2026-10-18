@@ -1,0 +1,63 @@
+{
+  "reviewer_id": "/root/b03_r01_referee",
+  "author_agent_ids": ["/root/b03_r01_science"],
+  "reviewed_at": "2026-10-17",
+  "manuscript_sha256": "7a3dc698f06938c34ba50b66eec0e717c9e8a2203b40e4f1c395440961fec5ab",
+  "topic_survey_sha256": "c3cefc03cbd0825d34ea4419b816d2805e783bf7379562d614490ed204f2d223",
+  "verdict": "reject",
+  "dimensions": {
+    "novelty": {
+      "verdict": "reject",
+      "reason": "The post-unblind survey identifies the original question as directly published in Kojima, Sun and Yu (2024). P7 applies known theorems; the new P8 threshold is narrow algebra without established priority against budget-constrained policy literature.",
+      "evidence": [{"path": "research/topic-survey.json", "sha256": "c3cefc03cbd0825d34ea4419b816d2805e783bf7379562d614490ed204f2d223"}]
+    },
+    "overlap": {
+      "verdict": "reject",
+      "reason": "The published KSY paper directly covers the same labor matching and fiscal substitutes question with broader classifications; the revised manuscript still omits a direct citation and comparison.",
+      "evidence": [{"path": "research/topic-survey.json", "sha256": "c3cefc03cbd0825d34ea4419b816d2805e783bf7379562d614490ed204f2d223"}]
+    },
+    "research_design": {
+      "verdict": "revise",
+      "reason": "P8 specifies a worst-case cap and limited information, but only for two workers and a uniform singleton payment. The complementarity bound is assumed certified; financing and welfare remain absent.",
+      "evidence": [{"path": "paper/manuscript/main.tex", "sha256": "7a3dc698f06938c34ba50b66eec0e717c9e8a2203b40e4f1c395440961fec5ab"}]
+    },
+    "inference_or_proof": {
+      "verdict": "pass",
+      "reason": "Murota Theorems 6.1(9) and 9.4 apply under the checked finite real-valued M-natural domains. The dummy employer and LP dual argument prove P7; the two-worker cross difference and exact 2r spending maximum prove P8.",
+      "evidence": [{"path": "paper/manuscript/main.tex", "sha256": "7a3dc698f06938c34ba50b66eec0e717c9e8a2203b40e4f1c395440961fec5ab"}]
+    },
+    "logic": {
+      "verdict": "pass",
+      "reason": "The manuscript keeps valuation EX, demand GS, bundle-schedule common-wage equilibrium, wage-dependent demand, and fiscal welfare as distinct claims. Boundary counterexamples and tie handling are sound within the all-real-price definition.",
+      "evidence": [{"path": "paper/manuscript/main.tex", "sha256": "7a3dc698f06938c34ba50b66eec0e717c9e8a2203b40e4f1c395440961fec5ab"}]
+    },
+    "completeness": {
+      "verdict": "revise",
+      "reason": "Mathematical P7/P8 proofs are complete, but the whole paper does not engage the directly corresponding published study or specify a social-welfare and financing model; common-wage equilibrium under salary-dependent wedges is unproved.",
+      "evidence": [{"path": "paper/manuscript/main.tex", "sha256": "7a3dc698f06938c34ba50b66eec0e717c9e8a2203b40e4f1c395440961fec5ab"}]
+    }
+  },
+  "limitations": [
+    {
+      "text_anchor": "This manuscript is a post-unblind development revision of a historical reconstruction exercise.",
+      "effect_on_claim": "The draft should be evaluated as a reconstruction and development exercise, not a priority claim or novel journal submission.",
+      "boundary_or_mitigation": "The survey and overlap audit mark the original topic duplicate; a new manuscript needs a genuinely different research question and direct literature engagement."
+    },
+    {
+      "text_anchor": "The cap does not specify financing, incidence, or a social-welfare criterion.",
+      "effect_on_claim": "P8's spending threshold is a fiscal feasibility statement and cannot rank welfare or efficient allocations after financing costs.",
+      "boundary_or_mitigation": "Introduce a government budget and welfare primitive before making such claims."
+    },
+    {
+      "text_anchor": "The proposition concerns demand alone",
+      "effect_on_claim": "P5 cannot support common-wage equilibrium with employer-specific nonlinear wage wedges.",
+      "boundary_or_mitigation": "Retain the demand-only scope or provide a separate equilibrium theorem."
+    }
+  ],
+  "open_critical_issues": [
+    "Direct KSY 2024 overlap makes the original broad question and core contribution nonnovel; the revised manuscript does not cite or distinguish it.",
+    "The narrow B>=kappa result lacks a targeted budget-constrained fiscal substitutes literature audit and a demonstrated contribution beyond an elementary two-worker threshold.",
+    "No fiscal financing or net-welfare primitive supports policy welfare conclusions."
+  ],
+  "report": "../../review/independent-report.md"
+}

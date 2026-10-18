@@ -1,0 +1,38 @@
+{
+  "id": "b03",
+  "preregistered_date": "2026-10-17",
+  "total_points": 10,
+  "scoring_rule": "Five substantive criteria, each 0, 1, or 2. Two requires a correct, clearly justified result with its scope and qualifications; one requires a correct but incomplete or weakly justified result; zero means absent or materially wrong. Historical exact-title matching is not scored. Independently assess proof validity and source contamination.",
+  "criteria": [
+    {
+      "id": "model",
+      "points": 2,
+      "criterion": "Build a finite indivisible-worker hiring model with firm set-valued revenue, wages, a set-dependent transfer, profit-maximizing demand correspondence, and the gross substitutes condition under wage increases. Explain why the condition matters for equilibrium existence."
+    },
+    {
+      "id": "universal_simple",
+      "points": 2,
+      "criterion": "For salary-independent transfers, obtain the necessary-and-sufficient universal preservation class: an additively separable worker-specific part plus a function of total hires with weakly decreasing marginal increments. Distinguish this from merely requiring the transfer itself to satisfy gross substitutes."
+    },
+    {
+      "id": "information_scope",
+      "points": 2,
+      "criterion": "Show how knowledge about firm production changes the admissible policies: for group-separable revenue, additive plus group-cardinal/gross-substitutes transfer; for group-concave revenue with at least three groups, group-separable plus cardinally concave transfer. State group assumptions and the relevant group-count qualification."
+    },
+    {
+      "id": "salary_dependent",
+      "points": 2,
+      "criterion": "Extend to salary-dependent transfers with own-hire salary dependence and increasing net hiring costs; characterize universal preservation as own-worker salary-dependent additivity plus an essentially cardinally concave part, including the all-workers boundary qualification. Give a valid reason that arbitrary joint salary taxes can fail."
+    },
+    {
+      "id": "restoration",
+      "points": 2,
+      "criterion": "Characterize when a cardinally concave scale-based transfer can restore gross substitutes: exactly constrained substitutes and a nested demand-chain condition must both hold; scale concavity is the repairable missing ingredient. State the necessary-and-sufficient nature and distinguish restoration from universal preservation."
+    }
+  ],
+  "reference_anchors": [
+    "main text Sections 2-6; Theorems 1-5",
+    "publisher online appendix OA.1-OA.2 for mathematical proofs"
+  ],
+  "neutrality": "Do not award points for optimistic policy recommendations, nominal journal fit, or naming the target paper. A valid contrary result under different assumptions can be scientifically sound but does not score historical reconstruction."
+}

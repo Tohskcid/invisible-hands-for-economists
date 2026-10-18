@@ -1,0 +1,204 @@
+{
+  "valid": false,
+  "iteration_required": true,
+  "return_to": [
+    "gate_remediation"
+  ],
+  "checks": [
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/scripts/check_project_layout.py",
+        "--root",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt",
+        "--json"
+      ],
+      "passed": true,
+      "exit_code": 0,
+      "stdout": "{\n  \"valid\": true,\n  \"iteration_required\": false,\n  \"return_to\": [],\n  \"root\": \"/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt\",\n  \"files_checked\": 111,\n  \"violations\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/scripts/check_topic_survey.py",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/research/topic-survey.json",
+        "--root",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt",
+        "--json",
+        "--require-approved",
+        "--manuscript",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/paper/manuscript/main.tex",
+        "--bibliography",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/paper/references.bib"
+      ],
+      "passed": false,
+      "exit_code": 1,
+      "stdout": "{\n  \"valid\": true,\n  \"gate_passed\": false,\n  \"decision\": \"blocked\",\n  \"contribution_class\": \"unresolved\",\n  \"errors\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/scripts/check_data_provenance.py",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/research/data-provenance.json",
+        "--root",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt",
+        "--json"
+      ],
+      "passed": true,
+      "exit_code": 0,
+      "stdout": "{\n  \"valid\": true,\n  \"datasets\": 1,\n  \"errors\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/scripts/check_literature_archive.py",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/research/literature-archive.json",
+        "--bibliography",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/paper/references.bib",
+        "--root",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt",
+        "--require-complete",
+        "--json"
+      ],
+      "passed": true,
+      "exit_code": 0,
+      "stdout": "{\n  \"valid\": true,\n  \"complete\": true,\n  \"papers\": 3,\n  \"downloaded\": 3,\n  \"errors\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/scripts/validate_research_manifest.py",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/research/manifest.jsonl",
+        "--require-argument-graph",
+        "--json"
+      ],
+      "passed": true,
+      "exit_code": 0,
+      "stdout": "{\n  \"valid\": true,\n  \"records\": 23,\n  \"errors\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/scripts/check_manuscript_coverage.py",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/research/manuscript-coverage.json",
+        "--manuscript",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/paper/manuscript/main.tex",
+        "--manifest",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/research/manifest.jsonl",
+        "--root",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt",
+        "--require-ready",
+        "--json",
+        "--require-limitations"
+      ],
+      "passed": false,
+      "exit_code": 1,
+      "stdout": "{\n  \"valid\": false,\n  \"ready\": false,\n  \"sections\": 9,\n  \"required_roles_not_ready\": [],\n  \"errors\": [\n    \"required empirical roles missing: ['limitations']\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/scripts/audit_claims.py",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/paper/manuscript/main.tex",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/research/manifest.jsonl",
+        "--strict-numbers",
+        "--require-central-claims",
+        "--json"
+      ],
+      "passed": true,
+      "exit_code": 0,
+      "stdout": "{\n  \"valid\": true,\n  \"errors\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/scripts/check_logic_review.py",
+        "--manuscript",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/paper/manuscript/main.tex",
+        "--manifest",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/research/manifest.jsonl",
+        "--review",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/research/logic-review.json",
+        "--require-pass",
+        "--json"
+      ],
+      "passed": true,
+      "exit_code": 0,
+      "stdout": "{\n  \"passed\": true,\n  \"errors\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/scripts/check_result_bindings.py",
+        "--results",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/research/results.json",
+        "--manuscript",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/paper/manuscript/main.tex",
+        "--root",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt",
+        "--json"
+      ],
+      "passed": true,
+      "exit_code": 0,
+      "stdout": "{\n  \"valid\": true,\n  \"results_sha256\": \"4c13c45ca15e8487473c2ce2fa1685b5acf0ce12d4129718329e5ea11d87eed5\",\n  \"bindings\": 110,\n  \"errors\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/scripts/check_design_audit.py",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/research/design-audit.json",
+        "--root",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt",
+        "--require-pass",
+        "--json"
+      ],
+      "passed": false,
+      "exit_code": 1,
+      "stdout": "{\n  \"valid\": true,\n  \"gate_passed\": false,\n  \"design\": \"did\",\n  \"required\": [\n    \"anticipation\",\n    \"assignment\",\n    \"comparison-groups\",\n    \"heterogeneous-effects\",\n    \"inference\",\n    \"parallel-trends\",\n    \"spillovers\",\n    \"support\",\n    \"timing\"\n  ],\n  \"nonpassing\": [\n    \"anticipation\",\n    \"comparison-groups\",\n    \"inference\",\n    \"parallel-trends\",\n    \"spillovers\"\n  ],\n  \"errors\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/scripts/check_latex.py",
+        "check",
+        "--main",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/paper/manuscript/main.tex",
+        "--build-dir",
+        "/var/folders/4g/0mmjc18s51x5hdvtkpcnxc740000gn/T/research-latex-y2ezrdv_/build",
+        "--report",
+        "/var/folders/4g/0mmjc18s51x5hdvtkpcnxc740000gn/T/research-latex-y2ezrdv_/build/report.json",
+        "--engine",
+        "auto"
+      ],
+      "passed": false,
+      "exit_code": 1,
+      "stdout": "{\n  \"automated_passed\": false,\n  \"delivery_ready\": false,\n  \"visual_review_required\": false,\n  \"source_dir\": \"/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt\",\n  \"input_hashes\": {\n    \"paper/manuscript/main.tex\": \"50d6ff21f4d226ae86ffe3609ab14f96d1f5ff63cdb6880ea947daefc5f837d0\",\n    \"output/figures/employment.pdf\": \"0acb49840d930f9bcbc94c5b35080f933aed29c3dd2b73d86c7c57a3094a404a\",\n    \"output/figures/wages.pdf\": \"7fbd76091fddcadecedaba6194c3d9cbf2ac5311f0d4f56d3281e12227ec26a4\",\n    \"paper/references.bib\": \"ee262c2c2ee4b99878e8b8d75eb01737425ad6407b87b87dc920cb10e45c4088\"\n  },\n  \"compilation\": {\n    \"engine\": \"pdflatex\",\n    \"commands\": [\n      [\n        \"pdflatex\",\n        \"-interaction=nonstopmode\",\n        \"-halt-on-error\",\n        \"-file-line-error\",\n        \"-no-shell-escape\",\n        \"-recorder\",\n        \"-output-directory=/private/var/folders/4g/0mmjc18s51x5hdvtkpcnxc740000gn/T/research-latex-y2ezrdv_/build\",\n        \"main.tex\"\n      ],\n      [\n        \"bibtex\",\n        \"main\"\n      ],\n      [\n        \"pdflatex\",\n        \"-interaction=nonstopmode\",\n        \"-halt-on-error\",\n        \"-file-line-error\",\n        \"-no-shell-escape\",\n        \"-recorder\",\n        \"-output-directory=/private/var/folders/4g/0mmjc18s51x5hdvtkpcnxc740000gn/T/research-latex-y2ezrdv_/build\",\n        \"main.tex\"\n      ],\n      [\n        \"pdflatex\",\n        \"-interaction=nonstopmode\",\n        \"-halt-on-error\",\n        \"-file-line-error\",\n        \"-no-shell-escape\",\n        \"-recorder\",\n        \"-output-directory=/private/var/folders/4g/0mmjc18s51x5hdvtkpcnxc740000gn/T/research-latex-y2ezrdv_/build\",\n        \"main.tex\"\n      ]\n    ],\n    \"errors\": [\n      \"compiler exit code: 2\",\n      \"log matches fatal pattern: (?:Citation|Reference).+undefined\",\n      \"log matches fatal pattern: Label\\\\(s\\\\) may have changed\",\n      \"log matches fatal pattern: There were undefined (?:references|citations)\"\n    ],\n    \"warnings\": [],\n    \"pdf\": \"/private/var/folders/4g/0mmjc18s51x5hdvtkpcnxc740000gn/T/research-latex-y2ezrdv_/build/main.pdf\"\n  },\n  \"rendering\": {\n    \"errors\": [\n      \"render skipped because compilation failed\"\n    ],\n    \"pages\": [],\n    \"page_count\": null\n  },\n  \"note\": \"delivery_ready remains false until an agent or researcher visually inspects every rendered page\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/scripts/check_latex.py",
+        "finalize",
+        "--report",
+        "/var/folders/4g/0mmjc18s51x5hdvtkpcnxc740000gn/T/research-latex-y2ezrdv_/build/report.json",
+        "--visual-review",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/one-shot-reconstruction/2026-10-12/attempt/research/latex-visual-review.json"
+      ],
+      "passed": false,
+      "exit_code": 1,
+      "stdout": "{\n  \"delivery_ready\": false,\n  \"errors\": [\n    \"automated LaTeX gate did not pass\",\n    \"visual review PDF hash does not match the compiled PDF\",\n    \"visual review must cover every PDF page exactly once\"\n  ],\n  \"pdf_sha256\": null\n}\n",
+      "stderr": ""
+    }
+  ]
+}

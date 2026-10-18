@@ -1,0 +1,31 @@
+{
+  "status": "open",
+  "workflow_status": "blocked",
+  "rework_plan": {
+    "restart_from": "literature",
+    "invalidate_stages": [
+      "literature",
+      "data",
+      "design",
+      "argument",
+      "analysis",
+      "replication",
+      "manuscript",
+      "review",
+      "delivery"
+    ],
+    "reason_sources": [
+      "check_topic_survey.py",
+      "check_data_provenance.py",
+      "check_literature_archive.py",
+      "validate_research_manifest.py",
+      "check_manuscript_coverage.py",
+      "check_research_team.py",
+      "check_substantive_review.py",
+      "check_logic_review.py",
+      "check_design_audit.py",
+      "check_latex.py"
+    ]
+  },
+  "updated_at": "2026-10-16T17:04:45.818721+00:00"
+}

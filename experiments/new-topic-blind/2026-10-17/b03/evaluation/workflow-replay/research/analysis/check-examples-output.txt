@@ -1,0 +1,1 @@
+Exact finite checks passed: C1, C2, C3, and P6 boundary case.

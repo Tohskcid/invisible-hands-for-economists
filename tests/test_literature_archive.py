@@ -80,6 +80,23 @@ class LiteratureArchiveTests(unittest.TestCase):
         self.assertTrue(report["valid"], report["errors"])
         self.assertFalse(report["complete"])
 
+    def test_official_html_page_can_be_retained_without_fabricating_pdf(self):
+        folder = self.root / "literature/pages"
+        folder.mkdir()
+        name = MODULE.expected_html_filename("Smith2020", "A Test")
+        page = folder / name
+        page.write_text("<!doctype html><html><body>Official research documentation.</body></html>", encoding="utf-8")
+        record = self.record()
+        record.update({"source_kind": "official-webpage", "file": f"literature/pages/{name}",
+                       "download_locator": "https://example.org/test.html",
+                       "sha256": hashlib.sha256(page.read_bytes()).hexdigest()})
+        report = MODULE.validate(self.document([record]), self.root, self.bibliography)
+        self.assertTrue(report["complete"], report["errors"])
+        page.write_text("just an abstract", encoding="utf-8")
+        record["sha256"] = hashlib.sha256(page.read_bytes()).hexdigest()
+        report = MODULE.validate(self.document([record]), self.root, self.bibliography)
+        self.assertTrue(any("not an HTML page" in error for error in report["errors"]))
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,62 @@
+{
+  "automated_passed": true,
+  "delivery_ready": false,
+  "visual_review_required": true,
+  "source_dir": "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/full-validation/2026-10-17/engineering/theory_bargaining",
+  "input_hashes": {
+    "paper/manuscript/main.tex": "391cd5d945f8570bacbb7948070b77cd2422c87872e72879cfa82c4ac47a833b",
+    "paper/ref.bib": "181e291ed9250390262039c6632a2a7d4556d9f3d4702218a53c36f26f822ef8"
+  },
+  "compilation": {
+    "engine": "pdflatex",
+    "commands": [
+      [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-no-shell-escape",
+        "-recorder",
+        "-output-directory=/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/full-validation/2026-10-17/engineering/theory_bargaining/paper/build",
+        "main.tex"
+      ],
+      [
+        "bibtex",
+        "main"
+      ],
+      [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-no-shell-escape",
+        "-recorder",
+        "-output-directory=/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/full-validation/2026-10-17/engineering/theory_bargaining/paper/build",
+        "main.tex"
+      ],
+      [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-no-shell-escape",
+        "-recorder",
+        "-output-directory=/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/full-validation/2026-10-17/engineering/theory_bargaining/paper/build",
+        "main.tex"
+      ]
+    ],
+    "errors": [],
+    "warnings": [],
+    "pdf": "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/full-validation/2026-10-17/engineering/theory_bargaining/paper/build/main.pdf"
+  },
+  "rendering": {
+    "errors": [],
+    "pages": [
+      "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/full-validation/2026-10-17/engineering/theory_bargaining/paper/build/rendered/page-0001.png"
+    ],
+    "page_count": 1,
+    "page_size": "612 x 792 pts (letter)",
+    "pdf_sha256": "007af9244268acec171271a543f504345b5b7a4dd470883e11066844c92edfb2"
+  },
+  "note": "delivery_ready remains false until an agent or researcher visually inspects every rendered page"
+}

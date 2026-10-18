@@ -13,6 +13,32 @@ SPEC.loader.exec_module(MODULE)
 
 
 class ResearchPackageTests(unittest.TestCase):
+    def test_v2_manuscript_requires_prior_art_and_exploration(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            config = root / "package.json"
+            config.write_text(json.dumps({"protocol_version": "2", "deliverable": "manuscript"}), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "prior_art_review"):
+                MODULE.check(root, config, ROOT / "scripts")
+
+    def test_declared_prior_art_and_exploration_are_package_gates(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            for name in ("topic-survey.json", "prior-art-review.json", "experiments.tsv"):
+                (root / name).write_text("{}", encoding="utf-8")
+            config = root / "package.json"
+            config.write_text(json.dumps({
+                "topic_survey": "topic-survey.json",
+                "prior_art_review": "prior-art-review.json",
+                "exploration_ledger": "experiments.tsv",
+                "deliverable": "feasibility_report",
+            }), encoding="utf-8")
+            with patch.object(MODULE, "run", return_value={"passed": True}) as run:
+                MODULE.check(root, config, ROOT / "scripts")
+            commands = [call.args[0] for call in run.call_args_list]
+            self.assertTrue(any("check_prior_art_review.py" in command[1] for command in commands))
+            self.assertTrue(any("check_exploration_ledger.py" in command[1] for command in commands))
+
     def test_quantitative_results_require_data_provenance(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
@@ -75,6 +101,40 @@ class ResearchPackageTests(unittest.TestCase):
             self.assertTrue(any("check_project_layout.py" in command[1] for command in commands))
             logic_command = next(command for command in commands if "check_logic_review.py" in command[1])
             self.assertIn("--require-pass", logic_command)
+            claim_command = next(command for command in commands if "audit_claims.py" in command[1])
+            self.assertIn("--require-central-claims", claim_command)
+            self.assertNotIn("--strict-numbers", claim_command)
+
+    def test_markdown_manuscript_keeps_numeric_paragraph_audit(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            files = {
+                "paper/main.md": "The estimate is 12%. [claim:C1]",
+                "paper/references.bib": "",
+                "research/manifest.jsonl": "",
+                "research/coverage.json": "{}",
+                "research/literature.json": "{}",
+                "research/logic-review.json": "{}",
+            }
+            for name, content in files.items():
+                path = root / name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text(content, encoding="utf-8")
+            config = root / "research/package.json"
+            config.write_text(json.dumps({
+                "manuscript": "paper/main.md",
+                "manifest": "research/manifest.jsonl",
+                "coverage": "research/coverage.json",
+                "bibliography": "paper/references.bib",
+                "literature_archive": "research/literature.json",
+                "logic_review": "research/logic-review.json",
+                "claim_scope": "research-only",
+                "mechanism_scope": "not-claimed",
+            }), encoding="utf-8")
+            with patch.object(MODULE, "run", return_value={"passed": True}) as run:
+                MODULE.check(root, config, ROOT / "scripts")
+            claim_command = next(call.args[0] for call in run.call_args_list if "audit_claims.py" in call.args[0][1])
+            self.assertIn("--strict-numbers", claim_command)
 
     def test_latex_delivery_requires_and_runs_visual_review(self):
         with tempfile.TemporaryDirectory() as directory:

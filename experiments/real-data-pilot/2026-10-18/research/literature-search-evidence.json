@@ -1,0 +1,51 @@
+{
+  "searched_at": "2026-10-18",
+  "tool": "web.run",
+  "searches": [
+    {
+      "source": "BLS official site",
+      "query": "Beveridge curve vacancies unemployment BLS 2001 2013",
+      "retrieved_at": "2026-10-18",
+      "retrieval_tool": "browser"
+    },
+    {
+      "source": "NBER working paper search",
+      "query": "Beveridge curve shifts pandemic NBER 2023",
+      "retrieved_at": "2026-10-18",
+      "retrieval_tool": "browser"
+    },
+    {
+      "source": "SSRN preprint search",
+      "query": "Beveridge curve post-pandemic vacancies unemployment 2024 2025 working paper",
+      "retrieved_at": "2026-10-18",
+      "retrieval_tool": "browser"
+    },
+    {
+      "source": "BLS Monthly Labor Review site",
+      "query": "JOLTS post pandemic openings measurement 2026 BLS",
+      "retrieved_at": "2026-10-18",
+      "retrieval_tool": "browser"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Job openings and the Beveridge curve, December 2000–April 2013",
+      "canonical_locator": "https://www.bls.gov/opub/ted/2013/ted_20130612.htm",
+      "retrieved_at": "2026-10-18",
+      "retrieval_tool": "browser"
+    },
+    {
+      "title": "The Shifting Reasons for Beveridge-Curve Shifts",
+      "canonical_locator": "https://www.nber.org/papers/w31783",
+      "retrieved_at": "2026-10-18",
+      "retrieval_tool": "browser"
+    },
+    {
+      "title": "What Caused the Beveridge Curve to Shift Higher in the United States During the Pandemic?",
+      "canonical_locator": "https://www.imf.org/en/publications/wp/issues/2024/01/12/what-caused-the-beveridge-curve-to-shift-higher-in-the-united-states-during-the-pandemic-542870",
+      "retrieved_at": "2026-10-18",
+      "retrieval_tool": "browser"
+    }
+  ],
+  "note": "Metadata transcribed from actual browser searches and official source pages, not a retained full-text corpus."
+}

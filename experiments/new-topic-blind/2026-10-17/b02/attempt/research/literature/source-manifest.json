@@ -1,0 +1,56 @@
+[
+  {
+    "key": "gsw2010",
+    "url": "https://www.nber.org/system/files/working_papers/w14915/w14915.pdf",
+    "final_url": "https://www.nber.org/system/files/working_papers/w14915/w14915.pdf",
+    "content_type": "application/pdf",
+    "bytes": 298387,
+    "sha256": "018bd4561bab6a77e1da36d2579408ec3ce31c2827532a2083179ab6af33a070",
+    "retrieved_at_utc": "2026-10-16T17:12:42.056409+00:00"
+  },
+  {
+    "key": "albrecht2024",
+    "url": "https://docs.iza.org/dp17246.pdf",
+    "final_url": "https://docs.iza.org/dp17246.pdf",
+    "content_type": "application/pdf",
+    "bytes": 906999,
+    "sha256": "637ce14a7c161b63aa45197acb2af1e5bb57b82652eddfd4e95c3467266ba033",
+    "retrieved_at_utc": "2026-10-16T17:12:47.760199+00:00"
+  },
+  {
+    "key": "kong2024",
+    "url": "https://www.nber.org/system/files/working_papers/w33187/w33187.pdf",
+    "final_url": "https://www.nber.org/system/files/working_papers/w33187/w33187.pdf",
+    "content_type": "application/pdf",
+    "bytes": 3440609,
+    "sha256": "a11afece16452cb53d4034af98a32cef6ac4294b321c6d394649751715c8fe58",
+    "retrieved_at_utc": "2026-10-16T17:12:51.579413+00:00"
+  },
+  {
+    "key": "rs1976",
+    "url": "https://economia.uc3m.es/docencia/MicroII/Rothschild-Stiglitz%201976.pdf",
+    "final_url": "https://economia.uc3m.es/docencia/MicroII/Rothschild-Stiglitz%201976.pdf",
+    "content_type": "application/pdf",
+    "bytes": 5218392,
+    "sha256": "1c5f371957a4cd8e9102e7c686f2c61432c5cd169f29a24294a26ba53cd961f4",
+    "retrieved_at_utc": "2026-10-16T17:12:59.058102+00:00"
+  },
+  {
+    "key": "bj1983",
+    "url": "https://christine-braun.github.io/Papers/BurdettJudd1983.pdf",
+    "final_url": "https://christine-braun.github.io/Papers/BurdettJudd1983.pdf",
+    "content_type": "application/pdf",
+    "bytes": 508187,
+    "sha256": "5c5fe3bd7790ef79b6eb133d202dacdf71e44bdc1ca67c11ce37cbb2d4a8316e",
+    "retrieved_at_utc": "2026-10-16T17:13:00.789712+00:00"
+  },
+  {
+    "key": "auster_gottardi2019",
+    "url": "https://www.econtheory.org/ojs/index.php/te/article/viewFile/20190927/24488/713",
+    "final_url": "https://www.econometricsociety.org/publications/theoretical-economics/2019/08/02/Competing-mechanisms-in-markets-for-lemons/file/2921-24488-1-PB.pdf",
+    "content_type": "application/pdf",
+    "bytes": 444687,
+    "sha256": "d4efe971578892a75ae13ea0a1be5e7e925f65c5f2b1c1229144a988aba29ba7",
+    "retrieved_at_utc": "2026-10-16T17:13:33.282043+00:00"
+  }
+]

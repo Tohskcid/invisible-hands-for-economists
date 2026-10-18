@@ -1,0 +1,12 @@
+{
+  "id": "b03",
+  "committed_date": "2026-10-17",
+  "algorithm": "SHA-256",
+  "sealed_files": {
+    "sealed/target.json": "894650d555b8cedbbb0635e401701cd160330f90540d3a7ad60784fe2a5c8078",
+    "sealed/rubric.json": "df958a2eccc84286acec02e8eda39d7009d5c577c31b6b073fc4362ca69b6494",
+    "sealed/target-published.pdf": "87d138f3f49a9c0cb45941cf8ee2ec80290d8e032a9302622b9cab9bfb0f66c1",
+    "sealed/target-online-appendix.pdf": "ff7d33d0e15f6d7f354a6c10c6ffab7896b48d2cdc691f373d44f156b84ff1b6"
+  },
+  "isolation_note": "The same host filesystem is shared. sealed/ is hidden by instruction only, not enforced by filesystem permissions; accidental target exposure must be recorded and invalidates strict blindness."
+}

@@ -1,0 +1,9 @@
+{
+  "iteration": "r01",
+  "parent": "b03",
+  "kind": "post-unblinding-development-revision",
+  "started_utc": "2026-10-17T08:43:51.931712+00:00",
+  "budget_seconds": 3600,
+  "scientific_success": "New, independently reviewed contribution or honest remaining block; no historical blind-score replacement",
+  "workflow_success": "Run full workflow and record all remaining gates; never fabricate pass"
+}

@@ -1,0 +1,299 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{setspace}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{hidelinks,colorlinks=false,pdfborder={0 0 0}}
+\onehalfspacing
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{example}{Example}
+\newcommand{\E}{\mathbb E}
+\newcommand{\I}{\mathbf 1}
+\title{Allocating Heterogeneous Public Slots with Hidden Welfare Weights}
+\author{Anonymous manuscript}
+\date{October 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+How should a designer assign scarce slots of unequal quality when willingness to pay and individual social welfare weights are unobserved, group labels are observed, and transfers to recipients are restricted? I study independent private values and latent welfare weights under dominant-strategy incentives, ex post participation, and no positive transfers. When a welfare weight does not enter private utility, truthful weight reporting is only weakly supported and weight reports cannot tailor expected outcomes at almost every value. The relevant welfare statistic is instead the weight's conditional expectation given an incentive-compatible value report and an observable group. The objective has a virtual-surplus representation that accounts for informational rents and public revenue. For arbitrary integrable group scores, a lower-quantile convex-envelope construction yields an ironed ranking with envelope payments that is optimal within the stated mechanism class, including unequal qualities. When all scores fall with value, the rule reduces to free assignment based on group mean weighted value. These are conditional design rules, not a policy recommendation or a claim of novelty.
+\end{abstract}
+
+\section{Introduction}
+
+Publicly allocated places, permits, or service slots can be scarce and differ in quality. Charges may help elicit who values a place, yet the designer may value an extra dollar of public revenue differently from a recipient's dollar of utility. Moreover, the recipient's social welfare weight need not be observable even when a group label is. The allocation problem therefore combines private willingness to pay, hidden normative information, heterogeneous objects, and a constraint on transfers to people.
+
+This paper gives a precise answer for a narrow, assignable-resource model. It distinguishes a welfare weight from a preference parameter: a person's weight enters the designer's objective but not that person's utility. A direct request for the weight supplies no incentive to distinguish truthful from false reports; expected quality and charge must be the same across weight reports at almost every value. Under a known prior, the designer can use the conditional mean weight associated with an incentive-compatible value report and the observed group. A payment identity turns the objective into an expected sum of quality times a group-specific virtual score. When these scores are nondecreasing, pointwise score ranking is implementable. When they are not, a convex-envelope transform pools values into flat-score intervals, and ranking by these ironed scores restores incentives without sacrificing the constrained optimum. In the fully decreasing case, optimal assignment ignores private reports and ranks groups by mean weighted value.
+
+The classic auction problem with privately known willingness to pay is a useful point of reference; the verified publisher description of Myerson (1981) concerns one object and a seller's expected utility. The verified publisher description of Saez and Stantcheva (2016) concerns the use of social marginal welfare weights to aggregate gains and losses in tax reform. Those descriptions motivate the two ingredients of this model but do not establish its results. The derivations here are self-contained. The available source evidence does not establish where these particular weighted-quality results sit in the full literature, so no priority or novelty claim is made.
+
+\section{Environment and mechanism class}\label{sec:model}
+
+There are $n$ agents and $m\le n$ indivisible, rival slots. Slot $j$ has publicly known quality $q_j$, with
+\[
+q_1\ge q_2\ge\cdots\ge q_m>0.
+\]
+An agent receives at most one slot; a slot is assigned to at most one agent. Unassigned agents have quality zero. Agents' group labels $g_i$ are observable. The declared private-type domain in group $g$ is the rectangle $[0,\bar v_g]\times\mathcal W_g$, where $\mathcal W_g\subseteq[0,\infty)$ is a nonempty set of possible weights. Incentive constraints apply to every pair in this domain, including pairs assigned zero probability by the prior. Conditional on the vector of labels, the pairs $(v_i,w_i)$ are independent across agents. The value $v_i$ has an atomless distribution on $[0,\bar v_{g_i}]$, with strictly positive density $f_{g_i}$ almost everywhere and distribution function $F_{g_i}$. The social weight $w_i\ge0$ has finite expectation. The joint distribution of value and weight is known to the designer; their within-agent dependence is unrestricted. Write
+\[
+\mu_g(v)=\E[w_i\mid v_i=v,g_i=g],\qquad
+\bar\mu_g=\E[w_i\mid g_i=g].
+\]
+Conditional means are defined almost everywhere. No assumption says that a group has one common welfare weight.
+
+A reported profile determines a lottery over feasible matchings and a charge $p_i$ for each agent, where $p_i<0$ is a transfer \emph{to} the agent. Let $Q_i$ be the expected quality from the lottery. Quasilinear utility is
+\begin{equation}\label{eq:utility}
+u_i=v_iQ_i-p_i.
+\end{equation}
+The core mechanism class imposes dominant-strategy incentive compatibility (DSIC), ex post individual rationality (IR), and no positive transfers, $p_i\ge0$. These conditions hold for every report by opponents and every type of the agent, taking expectations only over a mechanism's lottery. They allow charges from recipients. Group labels are verified; $v_i$ and $w_i$ are not. The report domain for $(v_i,w_i)$ is rectangular, so a person can claim any allowed weight at any allowed value. A randomized mechanism's utility and welfare depend on its expected qualities and expected charges.
+
+For a public-funds value $\lambda\ge0$, the designer maximizes
+\begin{equation}\label{eq:objective}
+W=\E\!\left[\sum_{i=1}^n w_i(v_iQ_i-p_i)+\lambda\sum_{i=1}^n p_i\right].
+\end{equation}
+Thus $w_i$ weights the recipient's \emph{net} utility and $\lambda$ weights revenue available to the public budget. This is a normative objective, not an identified empirical welfare measure. The known joint prior and the specified $\lambda$ are maintained inputs. If either is unknown to the designer, the optimization below cannot be implemented as stated.
+
+The word ``public'' here describes the provider. Slots are rival and assignable, not a nonrival public good. The transfer restriction is a ban on payments \emph{to} agents; a ceiling on charges \emph{from} agents is a different problem.
+
+\section{What private weights can reveal}\label{sec:weights}
+
+Because $w_i$ has no effect on utility in \eqref{eq:utility}, a report of it is cheap talk unless the mechanism gives it an incentive consequence.
+
+\begin{proposition}[Weight-report equivalence]\label{prop:weights}
+Fix an agent and opponents' reports. In any DSIC mechanism, truthful utility is the same for all reported weights at a given true value. At every value where that utility is differentiable, truthful expected quality and charge are also the same for every weight report. Consequently, with an atomless value distribution, weight reports cannot change expected qualities or charges on a positive-probability set of true values.
+\end{proposition}
+
+The complete proof is in Appendix \ref{app:proofs}. At a differentiability point all weight reports yield the same expected outcome, so truthful reporting can be weakly dominant but is not uniquely induced. At a kink, distinct reports could select distinct subgradients; the proposition is therefore an almost-everywhere outcome-equivalence statement, not a claim that an agent cannot say her weight. It does not rule out elicitation when a weight affects preferences, is verifiable, or has some other contractual consequence. In the present model, the welfare-relevant statistic after a truthful value report is $\mu_{g_i}(v_i)$.
+
+\section{Payments and virtual welfare}\label{sec:score}
+
+Suppress opponents' reports and a weight report. DSIC for the scalar value implies a nondecreasing quality function $Q_i(v)$ and the envelope identity
+\begin{equation}\label{eq:envelope}
+U_i(v)=U_i(0)+\int_0^v Q_i(t)\,dt,
+\qquad
+p_i(v)=vQ_i(v)-U_i(0)-\int_0^vQ_i(t)\,dt.
+\end{equation}
+Conversely, a nondecreasing $Q_i$ and payments given by \eqref{eq:envelope} are DSIC. At $v=0$, IR and $p_i\ge0$ imply $U_i(0)=p_i(0)=0$. Monotonicity then implies $p_i(v)\ge0$ at all values, and \eqref{eq:envelope} implies IR.
+
+Define the group score, at values with $f_g(v)>0$, by
+\begin{equation}\label{eq:score}
+S_g(v)=\lambda v-\lambda\frac{1-F_g(v)}{f_g(v)}
++\frac{\int_v^{\bar v_g}\mu_g(t)f_g(t)\,dt}{f_g(v)}.
+\end{equation}
+It combines the public value of payments with the value of preserving recipient rents. The last term uses an \emph{upper-tail integral} of social weights, not just $\mu_g(v)$: changing quality at a low value changes payments and utility at higher values through incentive constraints.
+
+\begin{proposition}[Virtual-welfare identity]\label{prop:identity}
+Under the assumptions of Section \ref{sec:model}, every feasible DSIC, ex post IR mechanism without positive transfers satisfies
+\begin{equation}\label{eq:virtual}
+W=\E\!\left[\sum_{i=1}^n S_{g_i}(v_i)Q_i(\mathbf v)\right],
+\end{equation}
+where the equality is unchanged by the reports of weights except on value-null sets. The qualities in \eqref{eq:virtual} may be randomized.
+\end{proposition}
+
+The proof in Appendix \ref{app:proofs} substitutes the payment identity into \eqref{eq:objective} and reverses a bounded double integral. Cross-agent independence ensures that conditioning on opponents' reports leaves $f_g$ and $\mu_g$ unchanged. Equation \eqref{eq:virtual} is an accounting identity, not yet an implementation theorem: a pointwise maximizer of its right-hand side need not be monotone in an agent's own value.
+
+\section{A regular assignment rule}\label{sec:regular}
+
+Call a group \emph{regular for this objective} if $S_g$ has a nondecreasing version on its value support. This depends on the prior, the conditional social weights, and $\lambda$; regularity is a substantive assumption.
+
+\begin{proposition}[Optimal assignment under regularity]\label{prop:optimal}
+Suppose each observed group is regular. At each value-report profile, order agents by decreasing $S_{g_i}(v_i)$. Assign the best slot to the highest positive score, the next-best slot to the next positive score, and continue until either slots or positive scores run out. Leave unused slots unassigned. Resolve equal scores by a fixed priority independent of reports. For each agent, set the charge using \eqref{eq:envelope} with $U_i(0)=0$. This mechanism is feasible, DSIC, ex post IR, has no positive transfers, and maximizes \eqref{eq:objective} among mechanisms with those properties.
+\end{proposition}
+
+The proof is in Appendix \ref{app:proofs}. Sorting maximizes virtual welfare at each profile by pairwise swaps. Regularity makes an agent's assigned quality nondecreasing in that agent's value, including across fixed-priority ties. The envelope charge therefore implements the assignment. The virtual-welfare identity then gives a global upper bound attained by this mechanism. The rule can deliberately leave a positive-quality slot unused when all remaining virtual scores are negative.
+
+For a transparent special case, let $v\sim U[0,1]$ and let a group's weight be the constant $a_g$. Direct substitution gives
+\begin{equation}\label{eq:linear}
+S_g(v)=(2\lambda-a_g)v+(a_g-\lambda).
+\end{equation}
+For $\lambda>0$, the score is nondecreasing exactly when $a_g\le2\lambda$. With $a_g=0$ it crosses zero at $v=1/2$, reproducing a revenue-only reserve in the one-slot case. With $a_g=\lambda$, $S_g(v)=\lambda v$, so allocation follows value. With $a_g=2\lambda$, the score is flat: value reports do not affect the virtual-welfare ranking within that group, and fixed-priority ties are truthful. These are model implications, not estimates of actual group weights.
+
+\subsection*{A bound on transfers to recipients}
+
+The no-transfer core sets the permitted payment to an individual to zero. Suppose instead that each agent may receive at most $B_i\ge0$, so $p_i\ge-B_i$, with no common budget constraint. The same envelope identity applies. At value zero, IR and the transfer bound give $0\le U_i(0)\le B_i$. For a nondecreasing allocation, this condition is also sufficient for IR and the transfer bound at every value. Repeating the objective calculation adds $(\bar\mu_{g_i}-\lambda)U_i(0)$ to that agent's expected virtual welfare, conditional on opponents' reports. Thus, for each agent, an optimal mechanism sets $U_i(0)=B_i$ if $\bar\mu_{g_i}>\lambda$, sets it to zero if $\bar\mu_{g_i}<\lambda$, and may choose any value in the interval at equality. This is a fixed subsidy that does not change allocation incentives. The allocation from Proposition \ref{prop:optimal} under regularity, and the ironed allocation in Proposition \ref{prop:ironed} more generally, remain optimal with this modified payment. Appendix \ref{app:subsidy} verifies the extension. A shared transfer budget would couple agents' choices and is outside this result.
+
+\section{Optimal allocation without score regularity}\label{sec:ironing}
+
+The regular rule fails when a raw score falls as a person reports a higher value. The same environment nevertheless admits a general constrained solution. Use the \emph{lower} value quantile $x=F_g(v)$. Since $f_g>0$ almost everywhere, $F_g$ is continuous and strictly increasing on its support. Let $v_g(x)=F_g^{-1}(x)$, and define
+\begin{equation}\label{eq:irondef}
+s_g(x)=S_g(v_g(x)),\qquad
+H_g(x)=\int_0^x s_g(t)\,dt,\qquad 0\le x\le1.
+\end{equation}
+The score is integrable in quantiles because $f_gS_g$ is integrable under the model's bounded-value and finite-mean assumptions. Let $G_g$ be the greatest convex minorant of the continuous function $H_g$ on $[0,1]$. Define the \emph{ironed score} $\widetilde S_g(v)$ as the right derivative of $G_g$ at $F_g(v)$, using any nondecreasing convention at the finitely or countably many points where a derivative choice matters. Appendix \ref{app:convex} proves the envelope properties used below. In particular, $G_g(0)=H_g(0)$ and $G_g(1)=H_g(1)$; on every open interval where $G_g<H_g$, the minorant is affine and its derivative is constant.
+
+\begin{proposition}[Optimal ironed assignment]\label{prop:ironed}
+Under Section \ref{sec:model}'s assumptions, with no regularity requirement on the raw scores, rank agents at every value-report profile by descending positive $\widetilde S_{g_i}(v_i)$ and assign slot qualities in descending order. Leave other slots unused. Break all score ties by a fixed priority independent of reports, ignore weight reports, and charge each agent according to \eqref{eq:envelope} with $U_i(0)=0$. This mechanism is feasible, DSIC, ex post IR, has no positive transfers, and maximizes \eqref{eq:objective} among all mechanisms in that class, including randomized mechanisms.
+\end{proposition}
+
+Appendix \ref{app:ironedproof} gives a complete paper proof. For any DSIC allocation, quality is nondecreasing in the recipient's own quantile. An integration-by-parts inequality bounds its raw virtual welfare by ironed virtual welfare. Sorting by ironed scores maximizes the latter at every profile and is monotone in each own value. On an interval where ironing strictly changes the primitive $H_g$, the constructed rule holds an agent's quality constant as her value changes: the ironed score is flat and the fixed tie rule never uses the raw value. This makes the integration-by-parts inequality an equality, so the pointwise upper bound is attained. The fixed tie rule is part of the result; a rule that uses raw values to break an ironed tie can lose that equality.
+
+\begin{proposition}[Fully decreasing scores]\label{prop:decreasing}
+Suppose each observed group's raw score has a nonincreasing version. Put $M_i=\E[w_i v_i\mid g_i]$. Rank agents by decreasing $M_i$ and assign the highest-quality slots to the highest-ranked agents independently of all private reports, charging zero. This is optimal in the class of Proposition \ref{prop:ironed}. Its welfare is $\sum_{j=1}^m q_j M_{(j)}$, where $M_{(1)}\ge\cdots\ge M_{(n)}$ are the ordered conditional mean weighted values; slots allocated to zero-mean agents may be left unused.
+\end{proposition}
+
+If $s_g$ is nonincreasing, $H_g$ is concave and its greatest convex minorant is the chord between its endpoints. Its ironed score is constant at $H_g(1)-H_g(0)=\E[w_i v_i\mid g_i=g]$. Proposition \ref{prop:ironed} then gives the stated report-independent rule. Appendix \ref{app:decreasing} supplies the direct covariance proof as a separate check. For uniform values and a constant group weight $a_g>2\lambda$, equation \eqref{eq:linear} has a strictly falling score and $M_i=a_{g_i}/2$. Thus, when every observed group satisfies this inequality, optimal assignment ranks those group means and charges zero even with unequal slot qualities. This does not determine what to do when some scores fall and others rise by raw-score ranking; Proposition \ref{prop:ironed}'s group-by-group ironing supplies that answer under the maintained assumptions.
+
+\section{An incentive failure of raw ranking}\label{sec:limits}
+
+\begin{example}[A falling score violates incentives]\label{ex:fall}
+Take two agents, one unit-quality slot, independent uniform values on $[0,1]$, constant weights $w_i=3$, and $\lambda=1$. Equation \eqref{eq:linear} gives $S(v)=2-v$. Hold agent 2's report at $1/2$. The pointwise score maximizer assigns the slot to agent 1 when she reports $1/4$, but assigns it to agent 2 when she reports $3/4$. If agent 1's true value moves from $1/4$ to $3/4$, her assigned quality falls from one to zero. The two incentive inequalities for these values require $(3/4-1/4)(Q(3/4)-Q(1/4))\ge0$, which is false. Thus raw-score ranking is not DSIC and Proposition \ref{prop:optimal} does not apply.
+\end{example}
+
+This failure explains why the ironed allocation in Proposition \ref{prop:ironed} uses flat-score regions rather than ranking by \eqref{eq:score} directly. In this example, both ironed scores equal $3/2$; a fixed-priority free assignment attains $W=3/2$. Raw-score ranking would select lower values and violate IC.
+
+\begin{proposition}[A free-assignment benchmark]\label{prop:free}
+Suppose there are two agents, one unit-quality slot, independent uniform values on $[0,1]$, constant weights $w_i=1$, and $\lambda=0$. Every feasible DSIC, ex post IR, no-positive-transfer mechanism has $W\le1/2$. Assigning the slot to either fixed agent for free, or by a value-independent lottery for free, attains $W=1/2$.
+\end{proposition}
+
+The proof in Appendix \ref{app:proofs} uses $S(v)=1-v$ and the negative covariance of a decreasing score with a nondecreasing own-value allocation. It is a special case of Proposition \ref{prop:decreasing}; the earlier direct proof is retained as a check. Charging for a value-sensitive assignment destroys recipient utility when revenue has no social value. The fully decreasing-score proposition states the precise broader domain of this conclusion.
+
+\section{Discussion and limitations}\label{sec:discussion}
+
+The ironed rule answers the design question only after specifying a joint prior for $(v,w)$, the public value $\lambda$, and the exact transfer restriction. Even when $w$ itself is hidden, a known correlation between $w$ and $v$ can affect $\mu_g(v)$ and thus the score. Without a defensible prior or welfare criterion, group-specific scores cannot be calculated. The analysis offers no empirical method to identify either object.
+
+The model also assumes independent agents conditional on group labels, one-dimensional multiplicative values for quality, quasilinearity, verifiable group labels, and no externalities among recipients. It imposes ex post IR and DSIC, which can be stronger than participation and incentive requirements in particular institutions. A cap on \emph{charges from} agents, $p_i\le C_i$, would alter implementability and potentially the optimal allocation. A genuine nonrival public good, complementary qualities, or fairness constraints needs a different feasibility and welfare analysis. These boundaries matter more than the tractability of the score formula.
+
+The limited verified literature record supports background links to the private-value auction problem and to welfare-weighted tax analysis. It does not justify a claim that the propositions, including the ironing result, are new or that they resolve an existing frontier. The paper's claim scope is theoretical: under the stated assumptions, ironed ranking is optimal in the specified mechanism class. The result does not identify a policy-relevant prior or welfare criterion.
+
+\section{Conclusion}
+
+For rival public slots of unequal quality, a costless weight report cannot reliably tailor an agent's expected outcome when that weight does not enter utility; truthful talk is only weakly supported. With a known prior, observable group and truthful value report supply a conditional mean weight. The envelope formula converts weighted net welfare plus public revenue into virtual welfare. Ranking by monotone ironed scores, with report-independent tie priority and envelope charges, implements the optimum under the stated independent-type model even when raw scores are nonmonotone. If all scores fall, this becomes a free assignment by group mean weighted value. The conclusions remain conditional on the model's information, welfare, and feasibility assumptions.
+
+\appendix
+\section{Complete paper proofs}\label{app:proofs}
+
+\subsection{Proposition \ref{prop:weights}: weight-report equivalence}
+
+Fix agent $i$ and every report of the other agents. Write $(Q(r,z),p(r,z))$ for the expected quality and charge offered by value report $r$ and weight report $z$. Utility from this report for true value $v$ is $vQ(r,z)-p(r,z)$, independent of the true weight. For any two true weights $z,z'$ and the same $v$, DSIC gives both
+\[
+vQ(v,z)-p(v,z)\ge vQ(v,z')-p(v,z')
+\]
+and the reverse inequality. Thus the truthful utility is a common number $U(v)$ for every weight. DSIC against every possible $(r,z)$ also gives
+\[
+U(v)=\sup_{r,z}\{vQ(r,z)-p(r,z)\}.
+\]
+As a supremum of affine functions of $v$, $U$ is convex. Bounded qualities in $[0,q_1]$ make it $q_1$-Lipschitz: an agent can compare the maximizing contracts at two values to bound the utility difference by $q_1$ times the value difference. The truthful contract at $(v,z)$ supports $U$ at $v$, since for every $t$ DSIC implies
+\[
+U(t)\ge tQ(v,z)-p(v,z)=U(v)+(t-v)Q(v,z).
+\]
+Hence $Q(v,z)$ is a subgradient of $U$ at $v$. A convex Lipschitz function on an interval is differentiable almost everywhere; at such a point the only subgradient is $U'(v)$. Therefore $Q(v,z)=U'(v)$ for all weight reports $z$, and $p(v,z)=vU'(v)-U(v)$ for all $z$. Endpoints and nondifferentiability points have zero probability under the atomless value law. This proves the stated almost-everywhere equivalence. At differentiability points every weight report gives the same expected payoff, so DSIC permits truthful reporting as one weakly optimal report but supplies no strict incentive to reveal the true weight. The argument concerns expected quality and charge; lotteries with the same expectations need not be identical.
+
+\subsection{Envelope lemma and Proposition \ref{prop:identity}}
+
+Fix opponents' reports. For any two values $s<t$, the two value IC inequalities yield
+\[
+sQ(s)-p(s)\ge sQ(t)-p(t),\qquad
+tQ(t)-p(t)\ge tQ(s)-p(s).
+\]
+Adding them gives $(t-s)(Q(t)-Q(s))\ge0$, so $Q$ is nondecreasing. The same IC inequalities imply that $Q(v)$ is a subgradient of the truthful utility $U(v)$, which is convex and Lipschitz by the argument above. Its derivative equals $Q(v)$ almost everywhere, and absolute continuity gives $U(v)=U(0)+\int_0^vQ(t)dt$. Rearranging $U(v)=vQ(v)-p(v)$ proves \eqref{eq:envelope}.
+
+Conversely, let $Q$ be nondecreasing and define $U$ and $p$ by \eqref{eq:envelope}. For true $v$ and report $r$, truthful utility minus reporting utility is
+\[
+U(v)-\{vQ(r)-p(r)\}
+=\int_r^v\{Q(t)-Q(r)\}\,dt\ge0.
+\]
+When $v<r$, the integral reverses its limits and its integrand is nonpositive, so the result still holds. At $v=0$, $U(0)=-p(0)$; IR requires $U(0)\ge0$, while no positive transfers requires $p(0)\ge0$. Hence both equal zero. Since $Q(t)\le Q(v)$ for $t\le v$, $p(v)=vQ(v)-\int_0^vQ(t)dt\ge0$. And $U(v)=\int_0^vQ(t)dt\ge0$ because qualities are nonnegative. These facts include $v=0$ and any flat or jump regions of $Q$.
+
+To derive the virtual identity, fix the opponents' reports and a group $g$. Independence gives the conditional law of $(v,w)$ as $f_g$ and $\mu_g$ even after those reports. Suppress indices and set $b=\bar v_g$. Conditional expected welfare for this agent is
+\begin{align*}
+&\int_0^b f_g(v)\bigl[\mu_g(v)vQ(v)
++(\lambda-\mu_g(v))p(v)\bigr]dv\\
+&\quad=\int_0^b f_g(v)\lambda vQ(v)\,dv
+-\int_0^b f_g(v)(\lambda-\mu_g(v))
+\left[\int_0^vQ(t)dt\right]dv\\
+&\quad=\int_0^b\left\{\lambda vf_g(v)
+-\int_v^b(\lambda-\mu_g(s))f_g(s)ds\right\}Q(v)dv\\
+&\quad=\int_0^b f_g(v)S_g(v)Q(v)dv.
+\end{align*}
+The second line uses $U(0)=0$ and \eqref{eq:envelope}. The third reverses the order of integration over $0\le t\le v\le b$; this is valid because $Q\le q_1$, $b<\infty$, and $\E[w\mid g]<\infty$, so the absolute double integral is finite. The last line uses $\int_v^b f_g(s)ds=1-F_g(v)$ and definition \eqref{eq:score}. Sum over agents and integrate over opponents' reports. Proposition \ref{prop:weights} makes possible weight-report distinctions null for this expectation. This proves Proposition \ref{prop:identity}.
+
+\subsection{Proposition \ref{prop:optimal}: regular assignment}
+
+At a fixed value profile let $s_i=S_{g_i}(v_i)$. Consider any feasible deterministic matching. If agent $a$ has score $s_a\ge s_b$ but receives quality $q_l<q_h$ received by agent $b$, swapping their slots changes virtual surplus by $(s_a-s_b)(q_h-q_l)\ge0$. The same calculation applies if one quality is zero. Assigning a positive-quality slot to a nonpositive score cannot increase virtual surplus relative to leaving it unused. Repeated pairwise swaps therefore produce the stated descending-score assignment and show that it maximizes $\sum_i s_iQ_i$ among all deterministic matchings. A lottery is a convex combination of matchings, so its expected virtual surplus cannot exceed that maximum. Equality cases are harmless; fixed priority chooses one maximizing matching.
+
+Fix an agent and all other reports. When that agent raises her value, regularity makes her score weakly rise. Her position in the score ordering can only improve, and fixed tie priority cannot make her position worse. She therefore receives weakly higher quality, including when she moves from no assignment to a slot. Her $Q(v)$ is nondecreasing. The envelope lemma then proves DSIC, IR, and nonnegative charges for the formula in \eqref{eq:envelope}. It also shows feasibility is unaffected by payments. Finally, Proposition \ref{prop:identity} bounds the welfare of every admissible mechanism by the expected pointwise maximum of virtual surplus. The constructed mechanism attains that maximum at every profile, hence attains the bound. This proves optimality without assuming that every pointwise maximizing rule is implementable; regularity supplies the needed monotonicity here.
+
+\subsection{Bounded-subsidy extension}\label{app:subsidy}
+
+Keep a fixed opponent-report profile and allow $p(v)\ge-B_i$. Equation \eqref{eq:envelope} gives $p(0)=-U(0)$, so IR at zero and the transfer bound imply $0\le U(0)\le B_i$. Conversely, if this interval condition holds and $Q$ is nondecreasing, then $U(v)=U(0)+\int_0^vQ(t)dt\ge0$ and
+\[
+p(v)=\underbrace{vQ(v)-\int_0^vQ(t)dt}_{\ge0}-U(0)\ge-B_i.
+\]
+In the conditional-welfare derivation for Proposition \ref{prop:identity}, retaining $U(0)$ adds
+\[
+-U(0)\int_0^{\bar v_g}(\lambda-\mu_g(v))f_g(v)dv
+=(\bar\mu_g-\lambda)U(0).
+\]
+The coefficient depends only on the group, by cross-agent independence; $U(0)$ may be chosen separately for each opponent-report profile. Maximizing this linear term over $[0,B_i]$ gives the stated endpoint choices, including any choice at equality. These choices shift all payments for the agent by the same amount and therefore preserve value IC. The virtual-surplus part has the same constrained optimum, characterized by Proposition \ref{prop:optimal} under regularity and Proposition \ref{prop:ironed} without it. This proves the extension. If a common budget links transfers, the independent endpoint maximizations no longer follow.
+
+\subsection{A convex-envelope lemma}\label{app:convex}
+
+Let $H:[0,1]\to\mathbb R$ be continuous, and let $G$ be its greatest convex minorant. The following construction establishes the properties used in Proposition \ref{prop:ironed}. For a probability measure $P$ on $[0,1]$ with mean $x$, define its expected height $\int H(t)dP(t)$, and put
+\begin{equation}\label{eq:convexconstruction}
+C(x)=\inf_{P:\,\int t\,dP(t)=x}\int H(t)\,dP(t).
+\end{equation}
+The feasible set is nonempty because it contains the point mass at $x$. It is compact under weak convergence: probability measures on compact $[0,1]$ are weakly compact, and the mean constraint is closed because $t$ is continuous. Since $H$ is continuous, the infimum is attained. Mixing optimal measures at two means proves $C$ convex. The point mass at $x$ gives $C(x)\le H(x)$. If $J$ is any convex function below $H$, Jensen's inequality gives $J(x)\le\int J(t)dP(t)\le\int H(t)dP(t)$ for every feasible $P$, hence $J\le C$. Therefore $C=G$. At $x=0$ and $x=1$, only a point mass has that mean, so $G(0)=H(0)$ and $G(1)=H(1)$.
+
+Set $D=H-G\ge0$. Fix an interior $x$ with $D(x)>0$. A finite convex function has a supporting affine line $\ell(t)=G(x)+a(t-x)$ at $x$, with $\ell\le G\le H$. Let $P_x$ attain \eqref{eq:convexconstruction}. Since $\int\ell\,dP_x=\ell(x)=G(x)=\int H\,dP_x$ and $H-\ell\ge0$, $P_x$ is supported on the closed contact set $K=\{t:H(t)=\ell(t)\}$. As $x\notin K$ and $P_x$ has mean $x$, $K$ contains points $a_0<x<b_0$. At those points $G=H=\ell$. Convexity places $G$ below the chord joining $(a_0,G(a_0))$ and $(b_0,G(b_0))$, which is $\ell$, while the supporting-line inequality places it above $\ell$. Thus $G=\ell$ on $[a_0,b_0]$. Every point of the open set $\{D>0\}$ consequently has a neighborhood on which $G$ is affine. On a connected component of that set, these affine pieces overlap and have one common slope; continuity gives contact $G=H$ at both component endpoints. The components are disjoint open intervals, and there are at most countably many because each contains a rational number. This proves the needed flat-interval property.
+
+In the application, $H_g$ is absolutely continuous because $s_g\in L^1[0,1]$. The convex $G_g$ is finite and continuous on the compact interval, with finite total variation and an integrable monotone derivative; hence it is absolutely continuous. Thus $D_g=H_g-G_g$ is absolutely continuous. Its derivative is $s_g-\widetilde s_g$ almost everywhere, where $\widetilde s_g$ is any nondecreasing derivative version of $G_g$. These facts also show that ironing preserves the mean score because $G_g$ and $H_g$ agree at both endpoints.
+
+\subsection{Proof of Proposition \ref{prop:ironed}}\label{app:ironedproof}
+
+Fix an agent $i$ in group $g$ and every report by opponents. Value IC makes the agent's expected quality $Q_i(v)$ nondecreasing by the envelope lemma. Write $q_i(x)=Q_i(v_g(x))$; it is bounded between zero and $q_1$ and nondecreasing in $x$. The raw contribution to Proposition \ref{prop:identity}'s virtual welfare is $\int_0^1s_g(x)q_i(x)dx$. Let $D_g=H_g-G_g$ as above. Replacing $q_i$ by a right-continuous version changes none of these Lebesgue integrals. Integration by parts between the absolutely continuous $D_g$ and the bounded monotone $q_i$ gives
+\begin{align}\label{eq:ironinginequality}
+\int_0^1\widetilde s_g(x)q_i(x)dx
+-\int_0^1s_g(x)q_i(x)dx
+&=-\int_0^1D_g'(x)q_i(x)dx\notag\\
+&=\int_{[0,1]}D_g(x)\,dq_i(x)\ge0.
+\end{align}
+The boundary terms vanish because $D_g(0)=D_g(1)=0$. The Stieltjes measure $dq_i$ is nonnegative, and $D_g\ge0$, so the last inequality holds. Bounded quality and integrability of $s_g$ and $\widetilde s_g$ justify every integral. Cross-agent independence permits the same inequality after conditioning on opponents' reports; summing and then averaging yields
+\[
+W\le\E\!\left[\sum_i\widetilde S_{g_i}(v_i)Q_i\right]
+\]
+for every admissible mechanism, including lotteries.
+
+At a fixed value profile, the pairwise-swap proof of Proposition \ref{prop:optimal} applies to the ironed scores. Ranking positive ironed scores against descending qualities therefore maximizes the expression inside this expectation over all feasible matchings, and no lottery can do better. Each ironed score is nondecreasing in its agent's value. Holding opponents' reports fixed, an agent's rank and quality cannot fall as her value rises, because ties are settled by a fixed report-independent priority. The envelope formula then makes the constructed allocation DSIC, ex post IR, and free of positive transfers. Ignoring weight reports satisfies weight IC as well.
+
+It remains to show that the upper bound in \eqref{eq:ironinginequality} is attained, rather than only bounded. On each component $(a,b)$ of $\{D_g>0\}$, Appendix \ref{app:convex} makes $G_g$ affine, so $\widetilde s_g$ is constant. Holding opponents' reports fixed, the agent's score, fixed-priority position, and assigned quality are constant throughout that interval. Hence $dq_i$ assigns it zero mass. Outside the union of those components, $D_g=0$; their boundary points also have $D_g=0$ by continuity. Thus $\int D_g\,dq_i=0$ for the constructed mechanism. It attains equality in \eqref{eq:ironinginequality} agent by agent and opponent-report profile by opponent-report profile. Its ranking also attains the pointwise ironed maximum. Every admissible mechanism's raw welfare is bounded by that maximum, and the constructed mechanism attains it, proving Proposition \ref{prop:ironed}. This argument includes flat regions, jump points, zero scores, unequal qualities, and randomized competitors; only arbitrary tie-breaking within an ironing interval is excluded from the constructed rule.
+
+\subsection{Proof of Proposition \ref{prop:decreasing}}\label{app:decreasing}
+
+First, if $s_g$ is nonincreasing, then $H_g$ is concave. Its endpoint chord lies below $H_g$ and is convex. Every convex minorant lies below the chord because its endpoint values cannot exceed those of $H_g$. Thus $G_g$ equals the chord and $\widetilde s_g$ is the constant $H_g(1)-H_g(0)$. Direct integration of \eqref{eq:score}, using $\int_0^{\bar v_g}(1-F_g(v))dv=\E[v_i\mid g]$ and Fubini for the upper-tail term, gives
+\[
+H_g(1)-H_g(0)=\int_0^{\bar v_g}f_g(v)S_g(v)dv
+=\int_0^{\bar v_g}v\mu_g(v)f_g(v)dv
+=\E[w_i v_i\mid g_i=g]=M_g.
+\]
+Since $w_i,v_i\ge0$, all $M_g$ are nonnegative. Proposition \ref{prop:ironed}'s ranking therefore becomes the fixed ranking by $M_i$, with a zero envelope charge because each agent's assigned quality is independent of her own value. Its welfare is the displayed sum of ordered means times qualities.
+
+For an independent direct check, fix opponents' reports and let $V,V'$ be independent draws from group $g$'s value law. For a nondecreasing own-value quality $Q$, the product $[S_g(V)-S_g(V')][Q(V)-Q(V')]\le0$ almost surely because $S_g$ is nonincreasing. Taking expectations and expanding yields $\operatorname{Cov}(S_g(V),Q(V))\le0$. Hence $\E[S_g(V)Q(V)]\le M_g\E[Q(V)]$. Integrate this inequality over opponents' reports and sum agents. Feasibility and the pairwise-swap argument imply $\sum_iM_iQ_i\le\sum_{j=1}^m q_jM_{(j)}$ at every report profile. The report-independent free assignment attains that bound directly from \eqref{eq:objective}. This second proof does not rely on the convex-envelope construction and confirms the decreasing-score corollary.
+
+\subsection{Proposition \ref{prop:free}: a no-revenue benchmark}
+
+With $\lambda=0$, $\mu(v)=1$, and uniform $f(v)=1$, equation \eqref{eq:score} gives $S(v)=1-v$. Fix an agent and an opponent's report. Let $V,V'$ be independent uniform draws and $Q$ the agent's nondecreasing own-value allocation rule. The product
+\[
+\bigl[(1-V)-(1-V')\bigr]\bigl[Q(V)-Q(V')\bigr]\le0
+\]
+for every pair of draws. Expanding its expectation and using independence gives
+\[
+2\,\operatorname{Cov}(1-V,Q(V))\le0.
+\]
+Because $\E[1-V]=1/2$, it follows that $\E[(1-V)Q(V)]\le\tfrac12\E[Q(V)]$. Integrate over the opponent's report, apply this bound to both agents, and use feasibility $Q_1+Q_2\le1$ at every profile. Proposition \ref{prop:identity} then yields
+\[
+W\le\tfrac12\E[Q_1+Q_2]\le\tfrac12.
+\]
+A fixed assignment of the unit slot for zero charge is DSIC, IR, and transfer-free; its recipient's expected value is $1/2$, so its welfare equals the bound. Any report-independent lottery that always assigns the slot for free has the same welfare. This proves Proposition \ref{prop:free}.
+
+\subsection{Proof-obligation record}
+
+The weight-report argument uses the elementary fact that convex Lipschitz functions on an interval are differentiable almost everywhere and equal the integral of their almost-everywhere derivative; bounded quality establishes its hypotheses. The virtual identity's interchange is justified by finite value bounds, bounded quality, and finite expected weight. The convex-envelope proof uses weak compactness of probability measures on compact $[0,1]$, Jensen's inequality, and a supporting line for an interior point of a finite convex function. Its application satisfies compactness and continuity by construction. The ironing inequality uses integration by parts for an absolutely continuous function and a bounded monotone function; Appendix \ref{app:ironedproof} maps those hypotheses explicitly. The ranking proof covers ties, unassigned slots, and lotteries. No theorem in this manuscript is claimed to be machine verified. Historical priority, correlated types, charge caps, shared budgets, nonrival goods, and multidimensional values remain unresolved here.
+
+\begin{thebibliography}{9}
+\bibitem{Myerson1981}
+Myerson, Roger B. 1981. ``Optimal Auction Design.'' \emph{Mathematics of Operations Research} 6 (1): 58--73. \url{https://doi.org/10.1287/moor.6.1.58}.
+\bibitem{SaezStantcheva2016}
+Saez, Emmanuel, and Stefanie Stantcheva. 2016. ``Generalized Social Marginal Welfare Weights for Optimal Tax Theory.'' \emph{American Economic Review} 106 (1): 24--45. \url{https://doi.org/10.1257/aer.20141362}.
+\end{thebibliography}
+
+\end{document}

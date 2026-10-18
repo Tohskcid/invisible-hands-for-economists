@@ -1,0 +1,18 @@
+{
+  "question": "在交易者具有私人品質資訊、可同時聯繫多個交易對手的市場中，增加可聯繫對象數量會如何影響分離或混同均衡、交易效率與福利？",
+  "mode": "theory",
+  "deliverable": "manuscript",
+  "claim_scope": "research-only",
+  "mechanism_scope": "claimed",
+  "target_journal": "The Review of Economic Studies",
+  "max_budget": 1200,
+  "obligations": [
+    "明確定義私人資訊、同時搜尋、進入與均衡概念",
+    "提出可檢驗的理論命題與完整推導，區分未證明的猜想",
+    "分析可聯繫對象數量變化對配置與福利的作用",
+    "呈現與最接近文獻的關係及重複風險",
+    "產出完整 LaTeX 論文、限制與可重現的理論驗證"
+  ],
+  "evaluation_mode": "historical-reconstruction",
+  "original_article_policy": "在提交與封存前不可閱讀、搜尋精確題名或使用目標論文及其摘要；若意外接觸，記錄並停止將其用於研究"
+}

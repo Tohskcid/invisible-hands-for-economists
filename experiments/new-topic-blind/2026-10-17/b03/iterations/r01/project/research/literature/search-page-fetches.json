@@ -1,0 +1,23 @@
+[
+  {
+    "name": "arxiv_murota_search.html",
+    "url": "https://arxiv.org/search/?query=Discrete+Convex+Analysis%3A+A+Tool+for+Economics+and+Game+Theory&searchtype=title",
+    "retrieved_at": "2026-10-17T02:43:04.410547+00:00",
+    "error": "The read operation timed out"
+  },
+  {
+    "name": "arxiv_chen_search.html",
+    "url": "https://arxiv.org/search/?query=Existence+of+a+Competitive+Equilibrium+with+Substitutes&searchtype=title",
+    "retrieved_at": "2026-10-17T02:43:16.573057+00:00",
+    "error": "HTTP Error 429: Unknown Error"
+  },
+  {
+    "name": "nber_lamadon_search.html",
+    "url": "https://www.nber.org/search?perPage=50&q=Labor%20Market%20Matching%2C%20Wages%2C%20and%20Amenities",
+    "retrieved_at": "2026-10-17T02:43:16.991348+00:00",
+    "status": 200,
+    "bytes": 64035,
+    "sha256": "f42eff1eae1ef8fb81c20b519cfb62074e93aae74f3561432c0dc4c7bb1caff8",
+    "content_type": "text/html; charset=UTF-8"
+  }
+]

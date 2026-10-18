@@ -1,0 +1,6 @@
+{
+  "exit_code": 2,
+  "stdout": "",
+  "stderr": "[Error] Cannot check research package: coverage file does not exist: research/coverage.json\n",
+  "note": "post-lock replay config only; frozen author submission untouched"
+}

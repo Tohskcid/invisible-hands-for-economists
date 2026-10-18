@@ -1,0 +1,76 @@
+{
+  "schema_version": "1",
+  "claim_id": "CL-B03-P8",
+  "claim": "Within the specified two-worker uniform singleton-rebate class, a rebate offsets the worst-case production complementarity margin exactly when 2r >= kappa; a cap permits that guarantee exactly when B >= kappa.",
+  "bounded_conclusion": "This identifies an exchange-inequality repair mechanism and a worst-case spending threshold for the stated policy class. It does not establish a unique cause in a particular observed market, another policy class, financing, welfare, or employer-specific wage-wedge equilibrium.",
+  "preferred_mechanism": {
+    "id": "singleton_rebate_exchange_repair",
+    "statement": "Paying r for a singleton hire reduces the adjusted valuation cross-difference by 2r, which restores EX against every production complementarity no larger than kappa.",
+    "distinctive_prediction": "For the worst-case admissible valuation with complementarity kappa > 0, GS fails at r=0 and holds within this class when 2r reaches kappa; robust affordability requires B >= kappa.",
+    "causal_chain": [
+      "A singleton-only rebate adds r to each one-worker bundle and zero to the empty and two-worker bundles.",
+      "The adjusted cross-difference falls by 2r and meets the two-worker EX inequality when 2r >= kappa.",
+      "EX implies GS demand; P7 supplies common-wage equilibrium for EX-adjusted bundle valuations."
+    ]
+  },
+  "alternatives": [
+    {
+      "id": "baseline_robust_substitution",
+      "statement": "Every valuation allowed by the information bound already satisfies EX, so a rebate is unnecessary for the robust guarantee.",
+      "observable_implication": "The worst-case admissible valuation should have GS at r=0 even when kappa > 0."
+    },
+    {
+      "id": "modular_repair",
+      "statement": "An employer-specific modular hiring payment alone can repair a strict EX failure.",
+      "observable_implication": "Adding a modular schedule should turn the strict two-worker witness into an EX valuation."
+    },
+    {
+      "id": "actual_market_preexisting_ex",
+      "statement": "A particular observed market may already satisfy EX despite the loose upper bound kappa; the rebate could be redundant there.",
+      "observable_implication": "Observed firm values would satisfy EX and GS at r=0 even though the information class also permits non-EX valuations."
+    }
+  ],
+  "tests": [
+    {
+      "id": "p8_worst_case_no_rebate",
+      "alternative_id": "baseline_robust_substitution",
+      "preferred_prediction": "For kappa > 0 the admissible witness v(1)=v(2)=0, v(12)=kappa violates EX and all-real-price GS at r=0.",
+      "alternative_prediction": "The same admissible witness satisfies EX and GS at r=0.",
+      "design": "Apply the exact P8 counterexample and P3 real-price necessity argument to the bound-saturating two-worker valuation.",
+      "decision_rule": "Distinguish baseline robust substitution if the witness is in the information class and strictly violates EX/GS without a rebate.",
+      "finding": "The witness meets the complementarity bound with equality and strictly violates EX and GS at r=0 for kappa > 0.",
+      "status": "distinguished",
+      "artifact": "research/model/handoff.md",
+      "artifact_sha256": "6c2b11a74ad3d46dad3426bd438136826c5c6082606fe7e9b29fa1ba92834f4f"
+    },
+    {
+      "id": "modular_invariance_witness",
+      "alternative_id": "modular_repair",
+      "preferred_prediction": "The P8 strict witness remains non-EX under every modular transfer; the singleton-only rebate is nonmodular.",
+      "alternative_prediction": "A modular transfer repairs strict EX failure in that witness.",
+      "design": "Combine the P2 modular-invariance proof with the P8 strict counterexample.",
+      "decision_rule": "Distinguish modular repair if the exchange cross-difference is invariant to every modular term.",
+      "finding": "P2 proves the modular term cancels from every exchange comparison, so it cannot repair the strict two-worker violation.",
+      "status": "distinguished",
+      "artifact": "research/model/handoff.md",
+      "artifact_sha256": "6c2b11a74ad3d46dad3426bd438136826c5c6082606fe7e9b29fa1ba92834f4f"
+    },
+    {
+      "id": "observed_value_slack",
+      "alternative_id": "actual_market_preexisting_ex",
+      "preferred_prediction": "If an observed firm has a strictly positive production cross-difference near kappa, a sufficient rebate changes its EX status.",
+      "alternative_prediction": "If observed firms already have nonpositive production cross-difference, they satisfy EX before the rebate.",
+      "design": "This would require verified employer-specific bundle values or a direct pre-policy demand audit; the present work is a theory model with no such observed values.",
+      "decision_rule": "Distinguish only with verified employer-level baseline values or observed demand establishing which prediction holds for the particular market.",
+      "finding": "The paper proves a worst-case guarantee, not an attribution of observed market demand to the rebate. No employer-specific data are supplied.",
+      "status": "inconclusive",
+      "artifact": "research/model/science-notes.md",
+      "artifact_sha256": "202bf047f0df7071e5132a423d59335620bc446a3559a732221fb13a18fa868c"
+    }
+  ],
+  "unresolved_alternatives": [
+    "actual_market_preexisting_ex"
+  ],
+  "overall_verdict": "revise",
+  "claim_status": "consistent-with"
+}

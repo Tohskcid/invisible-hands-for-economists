@@ -1,0 +1,933 @@
+Equilibrium Price Dispersion
+Author(s): Kenneth Burdett and Kenneth L. Judd
+Source: Econometrica, Vol. 51, No. 4 (Jul., 1983), pp. 955-969
+Published by: The Econometric Society
+Stable URL: https://www.jstor.org/stable/1912045
+Accessed: 01-11-2018 12:13 UTC
+
+
+JSTOR is a not-for-profit service that helps scholars, researchers, and students discover, use, and build upon a wide
+range of content in a trusted digital archive. We use information technology and tools to increase productivity and
+facilitate new forms of scholarship. For more information about JSTOR, please contact support@jstor.org.
+
+
+Your use of the JSTOR archive indicates your acceptance of the Terms & Conditions of Use, available at
+https://about.jstor.org/terms
+
+
+
+
+                 The Econometric Society is collaborating with JSTOR to digitize, preserve and extend access
+                 to Econometrica
+
+
+
+
+                                This content downloaded from 194.66.251.34 on Thu, 01 Nov 2018 12:13:32 UTC
+                                                 All use subject to https://about.jstor.org/terms
+                               Econometrica, Vol. 51, No. 4 (July, 1983)
+
+
+                          EQUILIBRIUM PRICE DISPERSION
+
+
+                     BY KENNETH BURDETT AND KENNETH L. JUDD1
+
+        It is shown that equilibria with dispersed prices exist in environments with identical and
+     rational agents on both sides of the market. In particular, the original Stigler model of
+     nonsequential search often has many equilibria, some with price dispersion. Also, price
+     dispersion holds in equilibrium in general if search is "noisy," i.e., there is some chance of
+     learning two or more prices when an agent is looking for one price.
+
+
+
+                                         1. INTRODUCTION
+
+
+THE PURPOSE OF THIS STUDY iS to define and characterize equilibrium in a market
+for a consumer good in which firms set their own prices and price information is
+costly to consumers. Particular attention will be paid to the conditions required
+for an equilibrium to involve price dispersion, i.e., the state where some firms
+charge different prices than others.
+  An important paper by Stigler [16] has stimulated much research on the
+optimal search strategy of a consumer when faced with a nondegenerate distribu-
+tion of prices for a good (see, for example, [6 or 9]). The reason why different
+firms charge different prices is not discussed in this literature. Nevertheless, there
+is a considerable amount of empirical evidence that even in a market for a
+seemingly homogeneous good, price dispersion is not an uncommon phenome-
+non.2 In the present study results from this consumer search literature will be
+used in specifying the demand side of a market for a consumer good where firms
+set their own prices.
+  Several previous studies have also succeeded in building models with dispersed
+price equilibria. However, the models examined here show that equilibrium price
+dispersion with rational agents may occur in simpler environments than previ-
+ously thought. For example, many models contain some form of ex ante
+heterogeneity: in Reinganum [11] firms have different costs of production; in
+Salop and Stiglitz [15], consumers have different search costs; and in Wilde and
+Schwartz [18], consumers have different propensities to search with such pro-
+pensities being independent of the economic value of search, i.e., some people
+love to shop, while others avoid it at all costs. In contrast, we confine our
+aftention to models where firms' costs are identical, consumers are identical, an
+consumers search only to lower the expected costs of acquiring, a desired
+commodity, balancing the monetary cost of search against its monetary benefit.
+Nor does one need a continual stream of poorly informed agents to support
+equilibrium dispersion. Following most of the literature we only examine rational
+expectations equilibria, i.e., in equilibrium firms know consumer search behavior,
+and consumers know the true distribution of prices. Therefore, the existence of
+
+
+   IWe thank anonymous referees for their comments. Also, support from the National Science
+Foundation is gratefully acknowledged.
+  2Pratt, Wise, and Zeckhauser [10] and Stigler [16] provide evidence on this point.
+                                                  955
+
+
+
+
+          This content downloaded from 194.66.251.34 on Thu, 01 Nov 2018 12:13:32 UTC
+                           All use subject to https://about.jstor.org/terms
+ 956 K. BURDETT AND K. L. JUDD
+
+
+equilibrium price dispersion in these models demonstrates that ex ante heteroge-
+neity in neither costs, tastes, nor rationality is necessary to explain sustained
+variation in prices.
+   What appears to be crucial for equilibrium price dispersion is an ex post
+heterogeneity in consumer information. This is what also drives many of the
+previous models: the stochastic advertising mechanism in Butters [3] and the
+stochastic nonsequential search in Wilde [17], both force an ex post (i.e., after
+consumers have all their information) heterogeneity in how much various con-
+sumers know. If consumers differ sufficiently in search costs (as in Salop and
+Stiglitz [15]) or in their fixed propensities to search (as in Wilde and Schwartz
+[18]), they will purchase different amounts of information, leading again to ex
+post heterogeneity of information. We shall aee that firms will offer differing
+prices precisely when there is a positive, but not certain, probability that a
+randomly observed consumer knows only one price. It is then clear that any
+mechanism which forces this will generate dispersion in prices. What is surprising
+is that, as in Section 3.2, the ex post heterogeneity may still occur when there is
+no a priori reason to expect it.
+   In the present study a framework is developed in which several types of
+consumer search can be analyzed. Two general search methods are then consid-
+ered: nonsequential search and what we call noisy sequential search. To the
+authors' knowledge these two methods encompass all the nonsystematic search
+strategies presented in the literature to date.3 When one of these search methods
+is specified, a market equilibrium with that type of search can be defined where
+firms maximize their expected profit, given their (correct) beliefs about consumer
+behavior, and consumers minimize their expected cost of purchasing one unit
+each given their (correct) beliefs about the distribution of prices in the market.4
+   In Section 2, the framework used in this study is developed. In Section 3, it will
+be shown that when nonsequential and noisy sequential search are considered, a
+dispersed price equilibrium can exist. With the nonsequential search method a
+consumer must decide how many price quotations to observe before any are
+received. Although most research has concentrated on cases where nonsequential
+search is inferior to sequential search, it is straightforward to construct environ-
+ments where this is not the case. For example, suppose a consumer wants to
+purchase one unit of a good, but cannot visit any firm. Instead, the consumer has
+to write to a firm to learn the price it is charging. It takes a week for a firm to
+reply and another week to deliver the good if the consumer wants to purchase. A
+sequential search strategy is one in which the consumer writes to one firm and
+then waits for a reply before deciding whether to write for another price
+quotation or purchase at the lowest price observed. The nonsequential search
+problem is to determine how many letters to send (at the same time), given a
+
+
+
+  3A search method is termed nonsystematic if any price observed by a consumer can be envis
+as a random draw distribution of prices in the market.
+   4At any equilibrium considered in the present study the agents will be assumed to know a great
+deal. How agents acquired this information is not discussed.
+
+
+
+
+          This content downloaded from 194.66.251.34 on Thu, 01 Nov 2018 12:13:32 UTC
+                           All use subject to https://about.jstor.org/terms
+                                EQUILIBRIUM PRICE DISPERSION 957
+
+
+
+fixed cost per letter. If the consumer must purchase in two weeks a nonsequential
+search strategy will be preferred to a sequential search strategy.5
+   In Section 3.2 it is shown that a dispersed price equilibrium can exist with
+nonsequential search, even when all consumers face the same cost of search. To
+the authors' knowledge this result is new.
+   In Section 3.3 noisy sequential search is considered. In this case, if a consumer
+pays to guarantee that one price quotation is observed, there is a known
+probability more than one price will be observed. An example will help explain
+this method. Suppose a consumer wants to buy one unit of a good and can
+guarantee observing one price by purchasing a newspaper.6 There is, however, a
+known probability the newspaper will contain two firms' price quotations. In this
+case the strategy of the consumer which minimizes the expected cost of purchas-
+ing is to buy a newspaper, look at the price offered, and then either purchase at
+the lowest price observed, or buy another newspaper and observe more prices. It
+is shown that a dispersed price equilibrium can exist with noisy search.
+
+
+
+                                        2. THE FRAMEWORK
+
+   Throughout the study the following framework will be used. Suppose there is a
+large number of firms that produce and sell a particular good and a large fixed
+number of consumers who buy it. Let ,t denote the (finite) measure of consumer
+per firm.7 Assume that firms face the same production costs; specifically,
+suppose any firm's marginal cost is constant and equal to r. Each firm selects the
+price it will charge, and thus different firms may offer different prices. Let F
+indicate the distribution function describing the prices charged by firms in the
+market, i.e., F(p) indicates the proportion of firms that charge a price no greater
+thanp, for anyp.
+   At any equilibrium to be considered it will be assumed that consumers know
+the distribution of prices, F, or at least act as if they know it. However,
+consumers are assumed not to know which firm is charging which price. To
+obtain information about this, a consumer searches a subset of the set of firms
+(in ways specified below) to obtain price quotations. Any price quotation
+received by a consumer is envisaged as a random draw from the distribution F.
+A consumer can only purchase from a firm whose price quotation he has
+received. If a consumer has chosen to purchase from a firm charging p, one unit
+will be bought if p is no greater than some fixed p*; otherwise no amount of the
+
+
+
+   5In general, the optimal policy will be to choose a number of letters to be sent and to accept the
+lowest reply if it is less than the chosen reservation price. If the consumer's time preference is great
+enough, the optimal strategy will be a purely nonsequential strategy.
+   6The firm's name and address is also presented in the newspaper so the consumer will know where
+to purchase.
+    7Specifically, we are thinking of the following process. Let N be an integer. Suppose that there are
+N firms and ,pN2 consumers, each demanding 1/N units of the good. Suppose that the consumers are
+allocated at random and independently among the firms. Then as N -* on, the total demand per firm
+becomes deterministic and equal to y.
+
+
+
+
+           This content downloaded from 194.66.251.34 on Thu, 01 Nov 2018 12:13:32 UTC
+                            All use subject to https://about.jstor.org/terms
+ 958 K. BURDETT AND K. L. JUDD
+
+
+good will be bought. It will be assumed throughout thatp* > r for no market will
+exist if p* < r. There is a well-known difficulty with this "box" demand function:
+since there is no consumer surplus if p is the price paid, then no individual will
+ever want to participate in the market if he has to pay search costs to find a firm
+which surely charges p*. Since some of our equilibria are degenerate atp*, as was
+the case in Diamond [4], this would indicate that the market would fail to exist.
+This is not an essential difficulty. If instead p* was the monopoly price of a
+downward sloping demand curve, the demand being unity for any p < p*, then
+there would be some consumer surplus, which is assumed sufficient to cover the
+costs of deciding to participate, and the analysis below would remain valid since
+no firm would ever find it optimal to charge a price in excess of the monopoly
+price.
+  In general, a firm's expected profit will depend on (a) the price it charges, (b)
+the prices other firms charge, and (c) the search method used by consumers. It
+should lead to no confusion if we simplify notation and let H(p) denote a firm's
+expected profit when it charges p and (b) and (c) are well specified. Note that
+no expected profit maximizing firm will choose a price greater than p* or less
+than r. Hence, without loss of generality, it will be assumed throughout that for
+any distribution function F considered F(p*) = 1, and F(r - e) = 0 if e > 0.
+  The method of search used by consumers is crucial in determining the
+expected profit of a firm, and thus important in analyzing a market equilibrium.
+In the next section two different search methods are considered. The principal
+objective is to characterize the market equilibria obtained, when firms maximize
+their expected profits and consumers minimize their expected cost of purchasing,
+given the search method used.
+
+
+                       3. NONSEQUENTIAL AND NOISY SEARCH
+
+  In this section market equilibria with two different methods of search are
+analyzed. With both of these search methods a consumer may observe more than
+one price quotation before deciding whether to buy or search again. In these
+cases a firm not only has to worry about the reservation price used by a customer
+but also the other prices he/she will observe. For example, a firm may be
+offering a price less than the maximum acceptable price of a consumer who
+receives a price quotation, but still not sell to that consumer as an even lower
+price was observed. As the problems faced by a firm are essentially the same with
+either method of search discussed in this section, the firm side of the market in
+both cases will be presented first.
+
+
+                                      3.1. The Firms
+
+  The most important information for a firm to have is the distribution of prices
+of other firms and the consumers' search strategies. In our models we assume
+that the consumers use the following strategy: observe n prices and then
+purchase at the lowest price observed if and only if that price is no greater than
+p, the reservation price. If all n prices are greater than -, the consumer will
+
+
+         This content downloaded from 194.66.251.34 on Thu, 01 Nov 2018 12:13:32 UTC
+                          All use subject to https://about.jstor.org/terms
+                           EQUILIBRIUM PRICE DISPERSION 959
+
+
+observe more prices. Thus, consumer search behavior may be summarized by the
+pair (<q,>? 1, p), where qn denotes the probability a randomly selected consumer
+observes n prices before comparing the lowest price observed with -, the
+reservation price. Note that while - is the same for all consumers, it is allowed
+that some consumers may observe more prices than others before comparing
+them with f. The generality of this characterization will be clear when consumer
+search behavior is outlined. Without loss of generality, assume - > r.
+
+
+  DEFINITION 1: Given (<qn>' 1, p), a firm equilibrium is a pair (F(.), H), where
+F(*) is a distribution function and H is scalar, such that (a) H = H(p), for all p
+in support of F(.) and (b) H > H(p), for all p.
+
+  Condition (a) implies that all firms earn the same expected profits at a firm
+equilibrium, whereas (b) implies there is no incentive for any firm to change its
+price. Note that at a firm equilibrium (F(.), H), F(pf) = 1. The following lemma
+allows us to concentrate on specific types of firm equilibria.
+
+
+  LEMMA 1: If (<qn> 1, p-) is such that q1 7& 1 and (F(.), HIL) is an associated firm
+equilibrium, F(.) is either continuous with connected support, or concentrated at r.
+
+  PROOF: Suppose F(.) has a discontinuity at some p', where r < p' < -, i.e.,
+F(p' + ) > F(p' -). If q, #& 1, there is a strictly positive probability that
+consumer who observes the price of a firm charging p' will also search another
+firm charging p'. Hence, if this firm lowered its price infinitesimally it would
+increase its expected profits, as the negligible decline in the profit per sale would
+be more than offset by the increase in that firm's expected total sales. This
+implies that if F(- ) has a discontinuity at some point p' > r, it cannot be part of
+a firm equilibrium, if q1 7t 1.
+   Assume F(.) is constant on some region [PI, P21' PI < P2, in the convex hull of
+its support. In this case a firm charging PI > r can raise its price to PI + e < P2
+(e > 0) and lose none of its purchasing customers. If Pi = r and F(r) < 1, then
+raising its price from r will not cause a firm to lose all customers and will raise
+the profit per sale from zero to a positive amount. Hence, the expected profit of a
+firm charging Pi is less than one charging Pi + c, violating the equal profit
+equilibrium condition. This implies the support of F(.) must be connected, if
+F(.) is to be part of a firm equilibrium. This establishes the lemma.
+   Given the above lemma, the expected profit of a firm charging p can be
+written as
+
+                           r00
+
+
+   (1)                H(p)                          {        (P               -        r)[t
+                       to,              if            p>            .8
+  The              next                  lemma                           characte
+
+    8Note                that              rI(p)            =      0     for           any   p
+
+
+
+         This content downloaded from 194.66.251.34 on Thu, 01 Nov 2018 12:13:32 UTC
+                          All use subject to https://about.jstor.org/terms
+ 960 K. BURDETT AND K. L. JUDD
+
+
+        LEMMA 2: Three cases exhaust the possibilities for firm equilibria:
+        (i) Given (<q,> ?%1, p) with qI = 1, the unique firm equilibrium (F(), H) is the
+monopoly price equilibrium,
+
+
+               = ,u(p*-r), and F(p) = 0j, if p < p*,
+
+        (ii) Given (<q >n1 fi) with qI = 0, the unique firm equilibrium (F(-), H) is the
+competitive price equilibrium,
+
+
+               HI= 0, and F(p) =f{ if p < r,
+                                          I if p >r.
+
+    (iii) Given (<qn>' 1, pf) with 0 < q1 < 1 and
+(F(*), H) is such that F(*) is continuous with compact support [p, >l, p >p> r,
+and
+                                                00
+
+
+               IT= liql(pr) =i( p- r) E nqn> O,
+                                               n= 1
+
+
+defines H and p. If K < q1 < 1 and - = r, the unique market equilibrium is where
+all firms charge the competitive price, r, and H = 0.
+
+
+        PROOF: Claim (i) of the lemma follows immediately from (1). To establish
+claim (ii) suppose (<Kqn > ?-1, p) is such that q1 = 0. From Lemma 1 we kno
+at any firm equilibrium (F(.), H), F(-) is either concentrated at r or continuous
+and strictly increasing on the convex hull of its support. First, it is clear that if
+q, = 0 the competitive price is a firm equilibrium, since any firm that raises it
+price above r will lose all its purchasing customers. Second, it is claimed that
+there is no other firm equilibrium. Suppose there is another equilibrium. That
+firm equilibrium (F(-), H) will be such that F(.) is continuous with compact
+support. LetF = supF(P) < I p. As p --p, F(p) - 1, and since q1 = 0
+                                    00
+
+
+               IH(p)7 -r)u kqk(l - l)k1 = 0.
+                                   k=1
+
+
+But JI(p) = H for all p in the support of F(.), and the support is an interval.
+Hence, H = 0. However, at any p where 0 < F(p) < 1,
+
+
+               IH(p) = (p - r) - E nqk(l - F(p))k > 0,
+                                   k= 1
+
+
+which contradicts the assumption that H(p) is constant. This establishes claim
+(ii).
+    Suppose (<qn>? 1, pf) is such that 0 < q, < 1. It follows that if p > r, no firm
+equilibrium can have all firms charging r as any firm could raise its price
+infinitesimally, keep some customers, and make more money. Thus, if - > r and
+
+
+
+
+              This content downloaded from 194.66.251.34 on Thu, 01 Nov 2018 12:13:32 UTC
+                               All use subject to https://about.jstor.org/terms
+                               EQUILIBRIUM PRICE DISPERSION 961
+
+
+F(,) is part of a firm equilibrium, F(-) must be continuous with compact
+support. Hence, at any firm equilibrium when 0 < q1 < I and fl> r,
+                                      00
+
+
+          I = H(p) = (p - r) y E kqk(l - F(p))kI
+                                      k=1
+
+
+for any p in support of F(-). This implies
+                          00
+
+
+              11 = 2 kqk(l - F(p))
+           (P-r)M k=1I
+The right hand side of the above is a C?? monotone increasing function of
+1 - F(p) and hence has a Co' increasing inverse (I(-). Thus,
+
+
+          F(p) = 1 - 4(I/(p -r),i),
+
+for any p in support of F(-). It is straightforward to check that supF(p) < p
+Hence, HI = H(fi) = (p-r)Aql. The equal profit condition implies
+                                 00
+
+
+
+          H( p) ( p-r)u E qkk= , where inf p= p.
+                                 k~=1           F(p)          >O
+
+
+This establishes the first part of claim (iii). The second part of claim (iii) follows
+from the fact that a firm would lose all its customers if it raised its price above r.
+
+
+                                3.2. Nonsequential Search
+
+  As discussed above, suppose that the delays in communication and the time
+rate of preference together make nonsequential search superior to sequential
+search. In this case a consumer will choose the number of prices to observe
+before receiving any offers. Suppose the cost of receiving n price quotations is cn.
+Thus, if each price quotation is a random draw from the distribution F(.), the
+expected cost of purchasing when n prices are obtained is
+
+
+          cn + f np(l - F(p))n-I dF(p).
+
+Note that this is a convex function of n with a unique minimum when n is
+allowed to be any positive real number. Hence there exists either a unique integer
+n* that minimizes the expected cost of purchasing, or there are two integers n*
+and n* + 1 that both minimize the expected cost of purchasing. With nonsequen-
+tial search a consumer will purchase at the lowest price observed if and only if it
+is no greater than p*. We shall call p* the effective reservation price when the
+nonsequential search method is used.
+
+
+  DEFINITION 2: The triple (F( ), ,< qn> ) is a market equilibrium with non-
+sequential search if, and only if, for fixed p* and cost of search c > 0, (a)
+
+
+
+
+         This content downloaded from 194.66.251.34 on Thu, 01 Nov 2018 12:13:32 UTC
+                          All use subject to https://about.jstor.org/terms
+ 962 K. BURDETT AND K. L. JUDD
+
+
+ (F(.), H) is a firm equilibrium given (<qn>??1
+from the expected cost minimizing strategies of the consumers given F(.).
+
+
+   If at a market equilibrium with nonsequential search F(.) is such that it is
+concentrated at p*, it is termed a monopoly price market equilibrium. Similarly, if
+F( * ) is concentrated on r, it is termed a competitive price market equilibrium. If at
+equilibrium F(*) is not concentrated at any price, it is termed a dispersed price
+equilibrium. Note that from Lemma 2, these three are the only possible types of
+market equilibria.
+
+
+   THEOREM 1: If c > 0 and if (FQ ), H, <qn>? 1) is a market equilibrium with
+nonsequential search, then it is either a monopoly price equilibrium or a dispersed
+price equilibrium. Furthermore, a monopoly price equilibrium always exists.
+
+
+   PROOF: Suppose all firms charge r. Then all consumers would search only
+once. However, with this search behavior firms would raise prices to p*. The
+second claim follows as consumers will search only once if all firms charge p*.
+This completes the proof.
+
+
+   The above result establishes that a monopoly price market equilibrium always
+exists with nonsequential search, given the search costs faced by consumers are
+strictly positive. The existence of dispersed price equilibria has not been estab-
+lished. Below it is shown that a dispersed price equilibrium can exist, even if all
+consumers face the same search costs.
+
+
+   THEOREM 2: Suppose all consumers face the same cost peP price observation,
+c > 0. In this case there are one, two, or three market equilibria with nonsequential
+search; one monopoly price equilibrium, and zero, one, or two dispersed price
+equilibria. Further, there exists a c* > 0 such that (i) c < c* implies there are two
+dispersed price market equilibria, and (ii) c > c* implies there are no dispersed price
+equilibria.
+
+
+ PROOF: We showed in Theorem 1 above that there exists a monopoly price
+market equilibrium with nonsequential search. To establish the other results
+claimed in Theorem 2 three claims are stated and proved.
+
+   CLAIM 1: If all consumers face the same cost of search c > 0, then at any
+market equilibrium (F(*), H, < qn> L 1), qI + q2 = 1 and 1 > q1 > 0.
+
+  PROOF OF CLAIM 1: As all consumers face the same cost of search, they will all
+observe the same number of price quotations, or be indifferent to searching n or
+n + 1 times for some positive integer n. If all consumers search more than once,
+at a firm equilibrium all firms will charge r. But then all consumers would search
+only once. Thus, q1 > 0 and q1 + q2 = 1. This completes the proof of claim 1.
+
+
+
+
+              This content downloaded from 194.66.251.34 on Thu, 01 Nov 2018 12:13:32 UTC
+                               All use subject to https://about.jstor.org/terms
+                              EQUILIBRIUM PRICE DISPERSION 963
+
+
+  Before stating claim 2 some notation is developed. For any q E [0, 1], set
+q, = q, q2 = 1 - q, and let (Fq(.), ll-q) denote the associated firm equilibr
+Such firm equilibria are now characterized.
+
+
+  CLAIM 2: For any fixed q with 0 < q < 1, the unique associated firm equilib-
+rium (Fq(.), Ilq) satisfies
+
+
+(a) Il = (p*-r) uq = ( p-r) [ q + 2(1-q)(l- F4(p))]
+
+for anyp in the support of Fq(.),
+
+
+  (b)            0)           if         p         <p(q),
+
+ (2)        F[(])             if     p(q)            <     p      <      p*,
+
+                                                             if p>p*,
+
+and
+
+
+(c) p(q)=(p*-r) + 4 r.
+
+
+  PROOF OF CLAIM 2: Lemma 2 established that if q E (0, 1), a firm equilibrium
+(Fq(.), IJq) exists and Fq(.) is continuous and strictly increasing on the convex
+hull of its support. (a) above follows from the equal profit condition of a firm
+equilibrium. (b) and (c) can now be established from (a). This completes the
+proof of Claim 2.
+
+
+  Let V denote the expected difference in the purchasing price paid by a
+consumer who observes two prices instead of one price quotation. It follows
+
+
+           v= P*pdF(p) - Pp(I -F(p))dF(p)
+
+               fP*F(p) dp -9P [ F(p) 1 dp (by integration by parts).
+
+Clearly V depends on the distribution of prices faced by the consumer. Consider-
+ing only those distributions specified in (2), V is a function of q,
+
+
+(3) V(q) = FJ PF(p)dp JP[F [(p)12dp
+
+for any q E (0, 1). A consumer will strictly prefer to observe two prices instead of
+one if and only if V(q) > E. Further, a consumer will be indifferent to observing
+one or two prices if and only if V(q)= E.
+
+
+
+
+         This content downloaded from 194.66.251.34 on Thu, 01 Nov 2018 12:13:32 UTC
+                          All use subject to https://about.jstor.org/terms
+964 K. BURDETT AND K. L. JUDD
+
+
+      V(.).cI
+
+
+
+
+          C*
+
+
+
+
+                          q?               q*                ql              ql
+                                             FIGURE                                1.
+
+
+
+   CLAIM 3: V(q) has a unique maximum at some q*, 0 < q* < 1. Further, V(l)
+is strictly increasing (decreasing) if q* < q < 1 (if 0 > q > 1), and V(q) -0 as
+q-O0 or q-- 1.
+
+
+  PROOF OF CLAIM 3: As the proof of this claim is of little or no economic
+interest it is relegated to an Appendix.
+
+
+  The proof of Theorem 3 can now be established from the above claims and
+inspection of Figure 1. Claims 1 and 2 demonstrate that if we are looking for a
+dispersed market equilibrium we need only consider distributions of the type
+specified in (2) with q, + q2 = 1. Figure 1 graphs the function V(-). The shape of
+this function is as demonstrated in Claim 3. Suppose the cost of a price
+observation is c, as shown in Figure 1. In this case, if q? or q of the consumers
+obtain only one price quotation, there is a dispersed price market equilibrium
+with nonsequential search as V(q) = c, i = 0, 1. If the common search cost
+exceeds c*, no dispersed price market equilibrium exists, and only one exists if
+the common search cost is c*. This establishes the claims made in the Theorem.
+
+
+
+                                    3.3. Noisy Search
+
+  With noisy search a consumer pays c to receive an unknown number of price
+quotations. The consumer can then purchase at the lowest price observed, or
+search again. Although the consumer does not know how many price quotations
+will be received from paying cost c, the probability any particular number of
+price quotations will be observed from any search is assumed to be known.
+Making a harmless change in the notation previously used, let qk denote th
+
+
+
+
+         This content downloaded from 194.66.251.34 on Thu, 01 Nov 2018 12:13:32 UTC
+                          All use subject to https://about.jstor.org/terms
+                            EQUILIBRIUM PRICE DISPERSION 965
+
+
+probability k prices will be observed from one search, k = 1,2,..., and
+Ek=1qk= 1.
+  Throughout this section it will be assumed that all consumers face the same
+cost search, c > 0. The optimal strategy for a consumer faced with noisy search is
+a straightforward generalization of sequential search. The strategy that minimizes
+the expected cost of purchasing one unit involves the use of a reservation price, z.
+If z denotes the lowest price observed to date, the consumer will be indifferent
+between purchasing and searching again. Formally, the reservation price, z, is the
+price which equates the marginal cost of search to the expected benefit, i.e.,
+
+
+ (4) c = Z(z - p) dJ(p),
+where J(-) is the distribution of the lowest price observed during one search.
+Since F(.) denotes the distribution of prices,
+                   00
+
+
+          J(p) = qk(l -(I1 F(p))k), for any p.
+
+Integration by parts yields
+
+                                  00
+
+
+
+(5) C =JJ(p) dp =f 2 qk(l - (I - F(p)dp
+                    fo Jo k= 1()
+Hence, for any given <qn>?1 and F(.), (5) can be used to generate the
+reservation price used by all consumers. For noisy search, the effective reserva-
+tion price, p, is defined by
+
+(6) P = min(p*,z).
+
+
+   If consumers utilize the effective reservation price p, at any equilibrium no
+firm will offer a price greater than p. Any firm that did would have no
+purchasing customers. Consequently, at any equilibrium each consumer will
+search only once as all prices observed will be no greater than p. Utilizing the
+above results implies that at any firm equilibrium the search strategy of all
+consumers can be characterized by (<qn>'1, fp), if all consumers face the sam
+cost of search, where - denotes the reservation price the firms believe consumers
+are using. Hence, the results obtained in Section 3.1 can be used. It should be
+noted that with noisy search <qn>n=I is a parameter and is not generate
+endogenously as in nonsequential search.
+
+
+   DEFINITION 3: For any given <qn>n' 1, and any cost of search c > 0, a market
+equilibrium with noisy search is a triple (F(-), TI, p) where (a) (F(.), H) is a firm
+equilibrium given (<qn>? 1, p), and (b) p is the effective reservation price given
+Ff *4.
+
+
+
+
+         This content downloaded from 194.66.251.34 on Thu, 01 Nov 2018 12:13:32 UTC
+                          All use subject to https://about.jstor.org/terms
+966 K. BURDETT AND K. L. JUDD
+
+
+   For given c the market equilibrium will d
+is such that q1 = 1. In this case the model is identical to the sequential search
+model with consumers facing the same search cost. The well-known result, e.g.,
+[4], is that the unique equilibrium is the monopoly price equilibrium. Suppose
+now that <qn>n I is such that q1 = 0. Lemma 2(ii) established that the
+firm equilibrium is a competitive price equilibrium, if q1 = 0. If all firms charge r,
+the effective reservation price used by all consumers will be p = r + c. This
+defines a market equilibrium when q1 = 0. It should be noted that consumers
+need not have perfect information about prices for a market equilibrium to be a
+competitive price equilibrium. For example, if each consumer observes two
+prices, a competitive price equilibrium is the unique market equilibrium.
+ The situation is not so straightforward if 0 < q1 < 1. For any given <qn>'n =
+where 0 < q, < 1, if - > r, Lemma 2(iii) established that there is a unique fir
+equilibrium which is a dispersed price equilibrium. To simplify the exposition let
+(F(*; p-), H(pD) denote the unique firm equilibrium for any r < - < p* when
+<qn>n?I is fixed with 0 < q1 < 1. If a consumer is faced with distribution
+function F(.; p-), letfp(pi) indicate the reservation price used by the consumer for
+a fixed c > 0. Using Definition 3, (1), and the assumption that 0 < q1 < 1, we
+may conclude that at a market equilibrium with noisy search
+                                  00
+
+
+
+(7) qj(f-r) = (p - r) E kqk(l - F(p; p))k-l
+                                 k=1
+
+
+for any p in the support of F(.; p-), and
+
+(8) p(pf)=fP.
+  To verify the existence of an equilibrium the two extreme positions are first
+considered. Suppose - = r. Then all firms will charge r and consumers will utilize
+an effective reservation price p(r) = r + c. Hence, at pf = r, p(p-) > p. Next
+consider the case wherep =p*. From (5) and (6) it follows that p(p*) < p*. As
+p(.) is clearly continuous, there exists at least one market equilibrium. The
+following claim establishes that a unique market equilibrium with noisy search
+exists for given <q">'1 when 0 < q, < 1; the proof is given in the Appendix.
+
+  CLAIM 4: If p(fi) = fl for some p, where r < K< p*, then p'(fp) < 1.
+
+  Claim 4 is sufficient to claim uniqueness of a market equilibrium when
+0 < q1 < 1. The results that can be obtained for the noisy search case can now be
+summarized.
+
+
+  THEOREM 4: For fixed <q">? I and c > 0, with noisy search: (a) the unique
+market equilibrium is a monopoly price equilibrium if q1 = 1, (b) the unique market
+equilibrium is a competitive price equilibrium if q, = 0, and (c) the unique market
+equilibrium is a dispersed price equilibrium if 0 < q1 K 1.
+
+
+
+
+         This content downloaded from 194.66.251.34 on Thu, 01 Nov 2018 12:13:32 UTC
+                          All use subject to https://about.jstor.org/terms
+                                EQUILIBRIUM PRICE DISPERSION 967
+
+
+      Similar results to those presented in Sections 3.1 and 3.2 can be obtained if
+market entry by firms is allowed. Suppose firms will continue to enter until the
+expected profit accruing to a firm is no greater than some K > 0. If there is a
+dispersed price equilibrium or a monopoly price equilibrium, allowing market
+entry determines the long-run number of consumers per firm. If the market
+equilibrium is a competitive price equilibrium, there is no equilibrium consumers
+per firm as firms always make zero expected profit in this case.
+
+
+                                          4. CONCLUSION
+
+
+   We have succeeded in demonstrating the possibility of price dispersion in
+equilibrium with fully rational and identical agents on both sides of the market.
+First, this proves that price dispersion may exist independent of the heterogene-
+ities used by other authors. Second, this shows that equilibrium price dispersion
+may be a durable long-run phenomenon, not arising merely due to short-run
+differences in cost functions or consumer rationality. These models also have the
+advantage of being simple, therefore, amenable to the development of extensions
+and further analysis. Examples of further possible work include stability analysis,
+which may give further information concerning the durability of equilibrium
+price dispersion and reduce the multiplicity of equilibria in the nonsequential
+model. Another interesting generalization would be the introduction of advertis-
+ing in both models, thereby having information gathered by consumers and
+disseminated by producers.
+
+
+   Cornell University
+                and
+      Northwestern University
+
+                      Manuscript received July, 1979; revision received June, 1981.
+
+
+
+                                             APPENDIX
+
+   PROOF OF CLAIM 3: To establish the claim it will be assumed, without loss of generality, r = 0.
+Doing the indicated integration in (3) yields
+
+
+
+             V(q) =P p[ q In q 2[ q 1q]
+
+and
+
+
+
+
+                      [ 2 q 2(l q)ln[ q ](_ -2-
+Hence, if q E (0, 1), V'(q) = 0 if and only if X(q) = 0, where
+
+
+             X(q) =2(1-q)(q-3) + 2I - 1
+                      (Il+q)(2 -q) Lqj
+
+
+
+
+            This content downloaded from 194.66.251.34 on Thu, 01 Nov 2018 12:13:32 UTC
+                             All use subject to https://about.jstor.org/terms
+ 968 K. BURDETT AND K. L. JUDD
+
+
+ Thus, if X(q) = 0 for exactly one q E (0, 1), V(q) h
+demonstrate X(q) = 0 only once for q E (0, 1):
+
+ (a) X(O)= +oo and X(l) = 0.
+
+
+        (b) X'(q) =Y(q) _-4 + 16q -20q 2+8q 3
+ (b) X'(q) Z(q) = q(2 - q)2(l + q)
+ (c) Z(q) > 0, if q E (0, 1),
+
+ (d) Y(0) = -4, Y'(0) = 16, Y(1/2) = 0, Y'(1/2) = 2, Y(l) = 0, and Y'(1) = 0.
+
+The above facts imply V( ) has exactly one stationary point for q E (0, 1). To see that V(-) is
+maximized at this stationary point it is sufficient to note that V'(.) is positive for some value of q
+close to 0, and negative for some value of q close to 1. This is sufficient by the uniqueness of a zero of
+V' and the continuity of V"(-).
+
+
+   PROOF OF CLAIM 4: Supposepj is such thatp(p) = p andpj <p*. The derivative of (5) at thisp can
+be written as
+
+                    00
+
+
+            0 = fi qXfP(I3k(l - F(p; 15))k-lJ7.(p; p)dp+ p'(p)[1 -(1-F(p
+
+where
+
+
+            Fpp; p) = a(F(p;)
+
+Since pf(p) = p by assumption and F(p-(); j) = 1 by implication, we see that
+
+
+                p'(1p) =- z qk[fP(P)k(l - F(p; p3))kFp(p; p) dp1
+
+Hence, if (a) Fp(p; p(jp)) < 0 and
+
+ (b) foP(P)k(l - F(p; p3))k lp(p; j)dp< 1,
+
+p'( p) < 1. Thus if (a) and (b) hold, the claim is proved. To demonstrate (a) and (b) are true we divide
+(7) by (p - r) for p in the support of F(-, p) and differentiate with respect to this p and p
+respectively, which yields
+
+                q1(~ -r)
+                         9(P )=RFp(p; p
+                (p-r)
+
+and
+
+
+                (q-r, =-RFp(p;jp)
+where
+
+                 00          a8F(p;                   i
+            R= kqk(l k)(l-F(p; j))k-2>0 and Fp(p;P)= ()
+                         k=1              p
+
+Thus,
+
+
+(Al) Fp-(p; p) (= - 1r)R < and Fp(p;jp)= R(p r) >0.
+
+
+
+            This content downloaded from 194.66.251.34 on Thu, 01 Nov 2018 12:13:32 UTC
+                             All use subject to https://about.jstor.org/terms
+                               EQUILIBRIUM PRICE DISPERSION 969
+
+
+Further, using the above, r < p < p implies
+
+             JF(p-(; P)| < IF,p(; j)j.
+It then follows
+
+
+(A2) fPk(l - F(p; p))klFp(p;I5)dp <fPk(l - F(p; )klFp(p; 1)I dp
+
+
+                                                <fPd[l - (1 - F(p; j))k] = 1.
+
+(Al) and (A2) implyp-'(j) < 1, if p(p) = j < p* and the claim is proved.
+
+
+                                          REFERENCES
+
+ [1] ARROW, K. J., AND M. ROTHSCHILD: "Preliminary Notes on Equilibrium Price Distributions
+       with Limited Information," Working Paper No. 34, The Economic Series, Institute of
+       Mathematical Studies in Social Science, Stanford University, August 1973.
+ [2] AXELL, B.: "Search Market Equilibrium," Scandinavian Journal of Economics, 79(1977), 20-40.
+ [3] BUTTERS, G. R.: "Equilibrium Distributions of Sales and Advertising Prices," Review of Eco-
+       nomic Studies, 44(1977), 465-491.
+ [4] DIAMOND, P. A.: "A Model of Price Adjustment," Journal of Economic Theory, 3(1971), 156-168.
+ [5] GROSSMAN, S., AND J. STIGLITZ: "Information and Competitive Price Systems," American
+       Economic Review, Papers and Proceedings, 66(1976), 246-253.
+ [6] KoHN, M. G., AND S. SHAVELL: "The Theory of Search," Journal of Economic Theory, 9(1974),
+        93-123.
+ [7] LIPPMAN, S., AND J. J. MCCALL: "The Economics of Job Search: A Survey," Economic Inquiry,
+        14(1976), 155-189.
+ [8] MORTENSEN, D. T.: "Search Equilibrium in a Simple Multi-Market Economy," Discussion Paper
+       No. 54, Center for Mathematical Studies in Economics and Management Sciences, Northwest-
+       ern University, October, 1973.
+ [9] NELSON, P.: "Information and Consumer Behavior," Journal of Political Economy, 78(1970),
+       311-329.
+[10] PRATT, J. W., D. WISE, AND R. ZECKHAUSER: "Price Differences in Almost Competitive
+       Markets," Quarterly Journal of Economics, 93(1979), 189-211.
+[11] REINGANUM, J. F.: "A Simple Model of Equilibrium Price Dispersions," mimeo, Northwestern
+       University, 1979.
+[12] ROTHSCHILD, M.: "Models of Market Organization with Imperfect Information: A Survey,"
+       Journal of Polictical Economy, 81(1973), 1283-1308.
+[13] : "A Two-Armed Bandit Theory of Pricing," Journal of Economic Theory, 9(1974),
+       185-202.
+[14] SALOP, S.: "The Noisy Monopolist," Review of Economic Studies, 44(1976), 393-405.
+[15] SALOP, S., AND J. STIGLITZ: "Bargains and Ripoffs: A Model of Monopolistically Competitive
+       Prices," Review of Economic Studies, 44(1976), 493-510.
+[16] STIGLER, G. J.: "The Economics of Information," Journal of Political Economy, 69(1961),
+       213-225.
+[17] WILDE, L. L.: "Labor Market Equilibrium Under Nonsequential Search," Journal of Economic
+      Theory, 16(1977), 373-393.
+[18] WILDE, L. L., AND A. SCHWARTZ: "Equilibrium Comparison Shopping," Review of Economic
+      Studies, 46(1979), 543-554.
+
+
+
+
+            This content downloaded from 194.66.251.34 on Thu, 01 Nov 2018 12:13:32 UTC
+                             All use subject to https://about.jstor.org/terms
+

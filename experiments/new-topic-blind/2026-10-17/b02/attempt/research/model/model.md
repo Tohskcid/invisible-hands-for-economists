@@ -1,0 +1,23 @@
+# Simultaneous contact and quality participation: frozen benchmark
+
+Status: independent reconstruction, 2026-10-17. No target article, abstract, experimental score, or answer was consulted. This is a deliberately restricted rational-expectations benchmark, not a claim of novelty or a general theorem about decentralized bargaining.
+
+Primitives: A unit mass of sellers has private quality q in {L,H}, with masses pi_L, pi_H>0 summing to one. Buyers value a unit at v_L<v_H. A seller's opportunity cost is c_q, with 0<=c_L<c_H. Entry burns k_q>0. Each entrant simultaneously contacts n distinct potential buyers; each is independently available with probability a in (0,1]. A_n=1-(1-a)^n is the chance that at least one is available. Contacts are costless in the baseline. An entrant can sell at most one unit. Sellers know q before entry. Buyers see only the aggregate entry composition, not q; the institution posts one actuarially fair uniform price p for all successful matches. The seller can reject when p<c_q. Competitive buyers have zero expected profit conditional on a trade. Seller welfare is included, so p is a transfer.
+
+Timing: (1) Nature draws q; (2) sellers simultaneously decide whether to enter, paying k_q; (3) competitive price p equals expected buyer value among types that trade; (4) contacts become available simultaneously; (5) seller chooses one available buyer and trades if p>=c_q. Equilibrium is a rational-expectations entry-price fixed point, allowing within-type mixed entry. It is not a signaling equilibrium in prices. "Separation" below means participation separation (only L enters/trades); "pooling" means both types enter/trade.
+
+Maintained restrictions for the main characterization: v_L>c_L; A_1(v_L-c_L)>k_L (ensures L strictly enters at all n for any fair p); v_L<v_H; c_L<c_H; k_H>0. Let p(t)=(pi_L v_L+pi_H t v_H)/(pi_L+pi_H t) for the H entry probability t in [0,1], and z_n=c_H+k_H/A_n. Since price in any candidate equilibrium is at least v_L, L enters under the stated restriction. Any participating H needs p>=z_n>c_H. Hence the following fixed-point conditions are necessary and sufficient:
+
+- separation t=0 iff v_L<=z_n;
+- pooling t=1 iff z_n<=p(1)=bar_v;
+- interior t in (0,1) iff v_L<z_n<bar_v, with t=pi_L(z_n-v_L)/[pi_H(v_H-z_n)].
+
+Boundary equalities give indifferent pure participation at t=0 or t=1; the formula gives t=0 or t=1 at those points. If z_n>bar_v, separation is unique. If z_n< v_L, pooling is unique. If v_L<z_n<bar_v, all three equilibria coexist. If z_n=bar_v, separation and pooling coexist. If z_n=v_L, separation and pooling coexist; no distinct interior equilibrium.
+
+Comparative statics: A_n rises strictly in n if 0<a<1, and is constant at one if a=1. Thus z_n weakly falls. Pooling can appear when A_n reaches k_H/(bar_v-c_H), provided bar_v>c_H. Separation disappears only if c_H<v_L and A_n exceeds k_H/(v_L-c_H). If c_H>=v_L, separation persists for every n. When interior mixing exists, t_n strictly falls with n (0<a<1); this is an unstable participation threshold, not a selected equilibrium path.
+
+Welfare per initial seller population: W_n(t)=A_n[pi_L(v_L-c_L)+pi_H t(v_H-c_H)]-pi_L k_L-pi_H t k_H. The fixed-t derivative in A_n is positive for L and, whenever H enters in an equilibrium, for H. Within separation and pooling branches, welfare weakly increases in n. In the coexistence region, W_n(1)>W_n(t)>W_n(0) for 0<t<1 because A_n(v_H-c_H)>k_H follows from A_n(bar_v-c_H)>=k_H and v_H>bar_v. For the interior branch, substituting its indifference condition yields W_n(t_n)=pi_L[A_n(c_H-c_L)+k_H-k_L], strictly increasing with A_n since c_H>c_L. Yet arbitrary equilibrium selection can reverse the welfare comparison across n.
+
+Counterexample to unconditional welfare monotonicity across selected equilibria: pi_L=pi_H=1/2, (v_L,c_L,k_L)=(2,0,0.1), (v_H,c_H,k_H)=(8,3,0.8), a=1/2. Both separation and pooling exist for n=1,2. Selecting pooling at n=1 yields W_1(1)=1.30; selecting separation at n=2 yields W_2(0)=0.70. This is a selection comparison, not a causal prediction about how selection changes.
+
+Limitations: a centralized actuarially fair uniform-price institution is imposed; buyers do not strategically quote or bargain. Availability is independent across buyers and quality. Quality does not affect contact probability. Sellers have no capacity for multiple units. No matching externalities or buyer entry are modeled. The model does not characterize signaling, screening, endogenous buyer entry, or effects of costly contacts. The results answer the question only within this institutional class.

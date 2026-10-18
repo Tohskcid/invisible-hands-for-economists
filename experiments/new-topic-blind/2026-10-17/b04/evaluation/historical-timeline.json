@@ -1,0 +1,76 @@
+{
+  "target": {
+    "title": "Redistributive Allocation Mechanisms",
+    "first_journal_public_at": "2024-05-10",
+    "journal_date_source": "https://www.journals.uchicago.edu/doi/full/10.1086/728111",
+    "first_target_public_at": "2020-06-18",
+    "target_date_source": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3609182",
+    "date_qualification": "SSRN Posted: 18 Jun 2020 is the earliest precisely dated public target version verified here; the 2020 GRAPE paper has no day on its cover."
+  },
+  "comparators": [
+    {
+      "title": "Is the Price System or Rationing More Effective in Getting a Commodity to Those Who Need It Most?",
+      "first_public_at": "1977",
+      "date_source": "https://www.jstor.org/stable/i353446",
+      "is_target_version": false,
+      "author_material": false,
+      "date_note": "JSTOR issue table of contents identifies Bell Journal of Economics 8(2), Autumn 1977; a precise public day was not established."
+    },
+    {
+      "title": "Optimal Auction Design",
+      "first_public_at": "1981-02-01",
+      "date_source": "https://pubsonline.informs.org/doi/10.1287/moor.6.1.58",
+      "is_target_version": false,
+      "author_material": true,
+      "date_note": "INFORMS says Published Online: 1 Feb 1981."
+    },
+    {
+      "title": "Market and non-market mechanisms for the optimal allocation of scarce resources",
+      "first_public_at": "2013-09-04",
+      "date_source": "https://www.condorelli.science/MNMASR.pdf",
+      "is_target_version": false,
+      "author_material": false,
+      "date_note": "Publisher-formatted article on author site states Available online 4 September 2013."
+    },
+    {
+      "title": "Generalized Social Marginal Welfare Weights for Optimal Tax Theory",
+      "first_public_at": "2016-01",
+      "date_source": "https://www.aeaweb.org/articles?id=10.1257/aer.20141362",
+      "is_target_version": false,
+      "author_material": true,
+      "date_note": "AEA gives January 2016 issue; exact first-public day not verified."
+    },
+    {
+      "title": "Redistribution through Markets (BFI working paper)",
+      "first_public_at": "2018-03-26",
+      "date_source": "https://bfi.uchicago.edu/working-paper/redistribution-through-markets/",
+      "is_target_version": false,
+      "author_material": false,
+      "date_note": "BFI working-paper landing page dated Mar 26, 2018. Different research work by the same team."
+    },
+    {
+      "title": "Redistributive Allocation Mechanisms (SSRN first posted version)",
+      "first_public_at": "2020-06-18",
+      "date_source": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3609182",
+      "is_target_version": true,
+      "author_material": false,
+      "date_note": "Target itself; excluded from external historical prior art and all author material."
+    },
+    {
+      "title": "Redistributive Allocation Mechanisms (2023 author version)",
+      "first_public_at": "2023-06-22",
+      "date_source": "https://bpb-us-e1.wpmucdn.com/sites.northwestern.edu/dist/1/2465/files/2023/06/Redistributive-Allocation-Mechanisms.pdf",
+      "is_target_version": true,
+      "author_material": false,
+      "date_note": "Cover date, not independently verified upload date; target version regardless of date."
+    },
+    {
+      "title": "Redistributive Allocation Mechanisms (Journal of Political Economy online version)",
+      "first_public_at": "2024-05-10",
+      "date_source": "https://www.journals.uchicago.edu/doi/full/10.1086/728111",
+      "is_target_version": true,
+      "author_material": false,
+      "date_note": "Publisher History says Published online: 10 May 2024; June 2024 is issue date."
+    }
+  ]
+}

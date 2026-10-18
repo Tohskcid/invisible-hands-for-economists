@@ -10,7 +10,7 @@ from pathlib import Path, PurePosixPath
 
 
 HASH = re.compile(r"^[0-9a-f]{64}$")
-MODES = {"empirical", "theory", "structural"}
+MODES = {"empirical", "descriptive", "replication", "theory", "structural"}
 STATUSES = {"ready", "blocked", "not_applicable"}
 KINDS = {
     "section_packet", "literature", "data_documentation", "analysis_code",
@@ -19,6 +19,8 @@ KINDS = {
 }
 REQUIRED_ROLES = {
     "empirical": {"introduction", "literature", "data", "identification", "results", "robustness", "conclusion", "appendix"},
+    "descriptive": {"introduction", "literature", "data", "results", "robustness", "conclusion", "appendix"},
+    "replication": {"introduction", "literature", "data", "results", "robustness", "conclusion", "appendix"},
     "theory": {"introduction", "literature", "model", "results", "conclusion", "appendix"},
     "structural": {"introduction", "literature", "data", "identification", "model", "results", "counterfactual", "robustness", "conclusion", "appendix"},
 }
@@ -55,7 +57,18 @@ def nonempty(value: object) -> bool:
 def manuscript_headings(path: Path) -> set[str]:
     text = path.read_text(encoding="utf-8")
     if path.suffix.casefold() == ".tex":
-        return {value.strip() for value in re.findall(r"\\section\*?\{([^{}]+)\}", text)}
+        headings = set()
+        for match in re.finditer(r"\\section\*?\s*\{", text):
+            depth = 1
+            for index in range(match.end(), len(text)):
+                if text[index] == "{":
+                    depth += 1
+                elif text[index] == "}":
+                    depth -= 1
+                    if depth == 0:
+                        headings.add(text[match.end():index].strip())
+                        break
+        return headings
     headings = [match.group(1).strip() for match in re.finditer(r"^#{1,2}\s+(.+?)\s*$", text, re.MULTILINE)]
     return set(headings[1:] if headings and text.lstrip().startswith("# ") else headings)
 

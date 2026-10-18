@@ -8,6 +8,8 @@ Translate the initial question into the population or model class, outcome or ta
 
 Freeze a search cutoff and scope. The cutoff is the date the tools actually ran, not the model's knowledge date. Set `refresh_after_days` (normally 30; use 7 for fast-moving working-paper topics), and rerun the search when the gate is stale. Search several formulations rather than the exact title phrase:
 
+For a historical paper-reconstruction benchmark, keep **search date** separate from **historical novelty date**. Compare the target's contribution only with external work first publicly available strictly before the target's first journal publication (normally its online publication date, not the later volume/issue year). The target's own working-paper and preprint versions are not competing prior art. To protect a strict author-blind test, use the earlier date of the target's first public version as the author-visible literature cutoff; quarantine all target versions and sources first public at or after that date. An external work between the target's preprint and journal dates can inform the retrospective reviewer, but not the blind author. Record publication-date evidence and classify comparator eligibility with `scripts/check_historical_prior_art.py`; the script checks chronology only, so a reviewer must still compare claims and priority. Never use a later paper to deny historical originality, or a historical pass to assert originality of a manuscript submitted today.
+
 - question and outcome/exposure synonyms;
 - proposed mechanism and competing mechanisms;
 - candidate estimands, designs, or proof concepts;
@@ -24,7 +26,9 @@ For each close work record a canonical HTTPS locator to the DOI, publisher, work
 
 Do not equate placement or citations with intellectual importance. For each nearest or exemplar work decompose `prior_bottleneck`, `innovation`, `why_field_cares`, `validation`, and `influence_or_reuse`. Read [breakthrough_anatomy.md](breakthrough_anatomy.md) for the comparison rubric. The aim is to recover a reusable move—new object, new variation, new measurement, new theorem, or a bridge that makes previously infeasible work possible—not to copy surface style.
 
-For every frontier candidate record `first_public_at`, at least two `quality_signals`, a falsifiable `frontier_case`, and a `manuscript_action` of `cite`, `discuss`, or `exclude` with a reason. Quality signals concern substance—important question, credible design/proof, unique data, new method, surprising discriminating result, reuse potential, transparent boundaries—not author fame, institution, journal, downloads, or citations. An approved project must select at least one verified work inside the frontier window for citation or discussion.
+For every frontier candidate record `first_public_at` at the precision supported by its source (`YYYY`, `YYYY-MM`, or `YYYY-MM-DD`); the validators use the latest possible day at that precision for conservative chronological checks. Do not invent a publication day from a month-only publisher record. Also record at least two `quality_signals`, a falsifiable `frontier_case`, and a `manuscript_action` of `cite`, `discuss`, or `exclude` with a reason. Quality signals concern substance—important question, credible design/proof, unique data, new method, surprising discriminating result, reuse potential, transparent boundaries—not author fame, institution, journal, downloads, or citations. An approved project must select at least one verified work inside the frontier window for citation or discussion.
+
+For `run_research_team.py` with `publication_goal: "original"`, add `contribution_probe` to the survey before design. Record the closest `nearest_result`, the exact `proposed_delta`, `field_significance`, a `discriminating_test` against the closest competing explanation, its `failure_condition`, and `feasible_evidence` (real data for empirical work or a proof path for theory). A populated probe makes the candidate auditable; the independent reviewer must still judge whether it is substantively new and important. A date extension or a different mean alone does not satisfy that scientific judgment.
 
 Compare differences that can support a contribution: a distinct question, new credible variation, new data measurement, relaxed or sharper assumptions, new mechanism, materially broader scope, external-validity test, or informative replication. A different country, sample, estimator, or recent period is not automatically a contribution; explain why it changes what can be learned.
 
@@ -39,6 +43,50 @@ python3 scripts/check_topic_survey.py research/topic-survey.json --root . --json
 ```
 
 The schema audit distinguishes a valid stopped/blocked record from permission to continue. Add `--require-approved` before entering design or use the research-package gate, which adds it automatically. The gate fails when the tool evidence is absent or hash-mismatched, when the search is older than `refresh_after_days`, when baseline/frontier coverage is missing, when a nearest work lacks an innovation decomposition, or when the decision is stopped/blocked. At manuscript delivery, the package gate also requires every frontier work selected for `cite` or `discuss` to appear in both the bibliography and an actual manuscript citation. For reproducible historical audits pass `--as-of YYYY-MM-DD`; ordinary runs use today's date.
+
+Before drafting an original contribution, add `research/prior-art-review.json` and run:
+
+```bash
+python3 scripts/check_prior_art_review.py research/prior-art-review.json \
+  --topic-survey research/topic-survey.json --root . --json
+```
+
+The review binds the current survey through `topic_survey_sha256`. Its `proposed_claims` give stable claim IDs and statements. Its `works` list covers every `nearest_works` citation key exactly once, using the same title, canonical locator and first-public date as the survey, a primary `date_source`, `full_text_status: "checked"`, `full_text_locator`, `full_text_retrieved_at`, and a retained PDF or HTML `full_text_artifact` plus `full_text_sha256`. Its `comparisons` list covers **each proposed claim against each nearest work**, with `prior_claim`, an exact `source_pointer` (page, section, theorem, table, or figure), a short `source_excerpt` present in the retained text at that pointer, `difference`, and `overlap` (`same`, `partial`, `distinct`, or `uncertain`). PDF checks require `pdfinfo` and `pdftotext`; a scan without extractable text remains blocked. At manuscript delivery, the reviewed IDs and statements must exactly match every central claim in the manifest. A distinct reviewer or reviewer agent fills `independent_review` with `reviewer_id`, `independent_of_author: true`, `source_passages_verified: true`, `source_dates_verified: true`, `reviewed_at`, decision, and rationale; its decision must match the survey. Record the drafting agent as `author_id`. For a historical blind test, set `historical_author_cutoff_exclusive` to the target's first public date; uncertain publication precision is treated conservatively.
+
+The checker blocks an approved project when a nearest work is abstract-only, its retained text or hash is missing, any claim/work pair lacks a comparison, dates violate the author cutoff, or the reviewer is the author. `proceed` and `reframe` cannot retain `same`/`uncertain` overlap; explicit `replicate` may retain `same` overlap but cannot retain `uncertain`. A reviewer must resolve semantic overlap by reading the cited passages and may reframe, replicate, or stop the project. The machine verifies evidence and attestations only: even a passing report returns `novelty_certified: false`. An inaccessible close work should remain a documented blocker until another legitimate source or a narrower claim resolves it; never assert novelty from the absence of accessible text.
+
+For PDF `source_pointer`, use the PDF page index (for example, `page 7`) so the checker can find the excerpt on that page; a printed journal page number may differ. A parseable file and matching excerpt do not establish that its URL, date, identity, or interpretation are genuine; the independent reviewer must check those against the primary source.
+
+Minimal shape (replace every illustrative value and hash with acquired evidence):
+
+```json
+{
+  "schema_version": "1",
+  "author_id": "writer-agent",
+  "topic_survey_sha256": "<SHA-256 of exact survey bytes>",
+  "proposed_claims": [{"id": "C1", "statement": "Precise proposed theorem or estimand"}],
+  "works": [{
+    "citation_key": "nearest2025", "title": "Nearest work",
+    "locator": "https://publisher.example/article", "first_public_at": "2025-03",
+    "date_source": "https://publisher.example/article",
+    "full_text_status": "checked", "full_text_locator": "https://publisher.example/article.pdf",
+    "full_text_retrieved_at": "2026-10-17",
+    "full_text_artifact": "literature/nearest2025.pdf", "full_text_sha256": "<SHA-256 of PDF>"
+  }],
+  "comparisons": [{
+    "claim_id": "C1", "citation_key": "nearest2025",
+    "prior_claim": "What that paper actually establishes",
+    "source_pointer": "Theorem 2, page 7", "difference": "A precise testable or provable difference",
+    "overlap": "partial"
+  }],
+  "independent_review": {
+    "reviewer_id": "referee-agent", "independent_of_author": true,
+    "source_passages_verified": true, "source_dates_verified": true,
+    "reviewed_at": "2026-10-17",
+    "decision": "proceed", "rationale": "Specific source-based reason for the bounded decision"
+  }
+}
+```
 
 ## Researcher checkpoints
 

@@ -1,0 +1,194 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs}
+\usepackage[T1]{fontenc}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{hidelinks,colorlinks=false,pdfborder={0 0 0}}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{remark}{Remark}
+\title{Simultaneous Contacts, Private Quality, and Market Participation}
+\author{Independent theoretical reconstruction}
+\date{October 17, 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We study a market in which sellers know their own quality, choose whether to enter, and simultaneously contact several potential buyers. A uniform competitive price reflects the quality composition of sellers who trade. More contacts raise the probability of a match and lower the participation threshold for high-quality sellers. Consequently, an equilibrium in which both qualities trade can emerge. A low-quality-only equilibrium may nevertheless persist, and an interior entry equilibrium can coexist with both pure outcomes. Within a fixed equilibrium branch, additional costless contacts raise total surplus; across equilibria, welfare need not be monotone without a selection rule. These are complete paper-proof results for a restricted uniform-price institution, not formalized theorems or claims about all decentralized search markets.
+\end{abstract}
+
+\section{Introduction}
+
+When a privately informed seller can contact several buyers at once, better access changes two margins. It raises the probability of finding at least one available buyer. It also changes which qualities find market entry worthwhile, thereby changing the value buyers expect to receive. The second margin makes the first margin an equilibrium problem: a high-quality seller may enter only if buyers expect high-quality sellers to enter. We isolate this feedback in a deliberately small model with two qualities and an actuarially fair uniform transaction price.
+
+The model delivers three conclusions. First, a larger contact set weakly expands the parameter region admitting trade by both qualities. Second, entry complementarity can support low-quality-only and both-quality equilibria at the same contact intensity; more contacts do not necessarily eliminate the former. Third, each equilibrium branch has increasing surplus when contacts are costless, but a comparison that changes equilibrium selection may have the opposite sign. We provide necessary and sufficient conditions, exact boundary cases, and complete derivations in Appendix~\ref{app:proofs}. The numerical example illustrates selection risk and is not used as proof.
+
+This paper is a historical reconstruction exercise. We make no novelty claim. Its relation to adverse-selection and search models remains provisional pending a source-level comparison with the nearest primary papers. The central distinction is that ``separation'' here means separation in \emph{entry and trade}; buyers observe neither quality nor a signaling price. This limits what the model says about signaling or strategic offer competition.
+
+\section{Environment and equilibrium}\label{sec:model}
+
+A unit mass of sellers has type $q\in\{L,H\}$, with ex ante shares $\pi_L,\pi_H>0$ and $\pi_L+\pi_H=1$. A seller observes her own type, which buyers cannot observe. A type-$q$ unit gives a buyer value $v_q$ and has opportunity cost $c_q$ to its seller. Entry costs the seller $k_q>0$. We maintain
+\begin{equation}\label{eq:primitive}
+ v_L>c_L\geq 0,\qquad v_H>v_L,\qquad c_H>c_L,\qquad
+ A_1(v_L-c_L)>k_L.
+\end{equation}
+The last condition ensures that low-quality sellers enter even with one contact at their own actuarially fair price. It is an assumption, not an empirical fact.
+
+An entrant simultaneously contacts $n\in\{1,2,\ldots\}$ distinct potential buyers. Each contact is available independently with probability $a\in(0,1]$. The probability of at least one available buyer is
+\begin{equation}\label{eq:A}
+ A_n=1-(1-a)^n.
+\end{equation}
+An entrant can sell at most one unit and chooses any available buyer; buyers are otherwise identical. Contact is costless in the baseline. If no buyer is available, there is no trade.
+
+The institution posts a common transaction price $p$. Competitive buyers earn zero expected profit conditional on a transaction, so $p$ equals their expected value among sellers who trade. Sellers may reject trade when $p<c_q$. The sequence is: sellers learn their types, decide whether to enter and pay $k_q$, the market price is determined consistently with aggregate participation, contacts realize simultaneously, and sellers accept or reject. Each seller is negligible and takes the equilibrium price as given. Type-$H$ sellers may use a common mixed entry probability $t$.
+
+An \emph{entry-price equilibrium} is a price, type-specific entry probabilities, and trade decisions such that each type maximizes its expected payoff at the price and availability technology, and the price equals the mean buyer value of types that trade. A \emph{separating participation equilibrium} has only $L$ entering and trading ($t=0$); a \emph{pooling participation equilibrium} has both types entering and trading ($t=1$). An interior entry equilibrium has $0<t<1$. These names describe participation, not a separating price signal.
+
+Write
+\begin{equation}\label{eq:pz}
+ p(t)=\frac{\pi_Lv_L+\pi_Ht v_H}{\pi_L+\pi_Ht},\quad
+ \bar v=p(1)=\pi_Lv_L+\pi_Hv_H,\quad
+ z_n=c_H+\frac{k_H}{A_n}.
+\end{equation}
+The quantity $z_n$ is the price required to cover a type-$H$ seller's opportunity and entry costs at contact intensity $n$.
+
+\section{Participation equilibria}\label{sec:eq}
+
+\begin{proposition}[Complete paper proof; participation equilibrium]\label{prop:eq}
+Under \eqref{eq:primitive}, the complete set of entry-price equilibria is as follows:
+\begin{enumerate}
+\item Separation exists if and only if $v_L\leq z_n$.
+\item Pooling exists if and only if $z_n\leq\bar v$.
+\item A distinct interior equilibrium exists if and only if $v_L<z_n<\bar v$. Its high-type entry probability is unique and equals
+\begin{equation}\label{eq:tstar}
+ t_n^*=\frac{\pi_L(z_n-v_L)}{\pi_H(v_H-z_n)}.
+\end{equation}
+\end{enumerate}
+Thus separation alone is the only equilibrium when $z_n>\bar v$, pooling alone when $z_n<v_L$, and all three when $v_L<z_n<\bar v$. At either boundary equality, the two pure equilibria coexist and the interior formula reduces to the corresponding boundary.
+\end{proposition}
+The full proof, including rejection and indifference cases, is in Appendix~\ref{app:proofs}, Proof~\ref{proof:eq}. A high-quality seller benefits more from entry when she expects other high-quality sellers to enter because the expected common price rises. This complementarity creates the coexistence region. It does not require buyers to infer quality from an individual seller's action.
+
+\begin{corollary}[Complete paper proof; contact comparative statics]\label{cor:contacts}
+For $a\in(0,1)$, $A_n$ strictly rises and $z_n$ strictly falls with $n$; for $a=1$ both are constant. Consequently, the set of $n$ admitting pooling is upward closed and the set admitting separation is downward closed. If $\bar v>c_H$, pooling begins once $A_n\geq k_H/(\bar v-c_H)$; if $c_H\geq\bar v$ it cannot occur. Separation persists for every $n$ when $c_H\geq v_L$. If $c_H<v_L$, separation ends only when $A_n>k_H/(v_L-c_H)$. Along a distinct interior branch, $t_n^*$ falls as $n$ rises.
+\end{corollary}
+Appendix~\ref{app:proofs}, Proof~\ref{proof:contacts}, handles equality and finite-$n$ boundaries. The decline of $t_n^*$ is a movement of an indifferent-entry threshold, not a prediction that high-quality participation falls. Without an equilibrium-selection model, neither a unique participation path nor a unique price path follows from the primitives.
+
+\section{Allocation and welfare}\label{sec:welfare}
+
+At high-type entry probability $t$, low-quality trade has mass $A_n\pi_L$, high-quality trade has mass $A_n\pi_Ht$, and the rest of the potential units are unmatched or do not enter. Transfers cancel from aggregate surplus. With entry costs paid by entrants, welfare per unit initial seller mass is
+\begin{equation}\label{eq:welfare}
+ W_n(t)=A_n\{\pi_L(v_L-c_L)+\pi_Ht(v_H-c_H)\}
+           -\pi_Lk_L-\pi_Ht k_H.
+\end{equation}
+
+\begin{proposition}[Complete paper proof; welfare ordering]\label{prop:welfare}
+Under \eqref{eq:primitive}, welfare in either pure equilibrium branch weakly rises with $n$ for costless contacts. In a coexistence region, at fixed $n$,
+\begin{equation}\label{eq:worder}
+ W_n(1)>W_n(t_n^*)>W_n(0)
+\end{equation}
+when the interior equilibrium is distinct; at equality boundaries the applicable weak version holds. Welfare along the distinct interior branch also strictly rises with $A_n$ and satisfies
+\begin{equation}\label{eq:wmix}
+ W_n(t_n^*)=\pi_L\{A_n(c_H-c_L)+k_H-k_L\}.
+\end{equation}
+There is no unconditional welfare monotonicity across arbitrary selections from the equilibrium correspondence.
+\end{proposition}
+Appendix~\ref{app:proofs}, Proof~\ref{proof:welfare}, derives each comparison and gives an explicit counterexample to the last possible inference. In this model, both-quality trade adds positive social surplus wherever pooling is supportable, because $v_H>\bar v\geq z_n>c_H$. Yet a market can coordinate on the low-quality-only outcome despite this gain.
+
+For intuition, let $\pi_L=\pi_H=1/2$, $(v_L,c_L,k_L)=(2,0,0.1)$, $(v_H,c_H,k_H)=(8,3,0.8)$, and $a=1/2$. Both pure equilibria exist at $n=1$ and $n=2$. Welfare is $W_1(1)=1.30$ under pooling at one contact and $W_2(0)=0.70$ under separation at two contacts. This comparison changes equilibrium selection; it does not show that the same equilibrium worsens as contacts expand.
+
+\section{Interpretation, literature boundary, and limitations}\label{sec:limits}
+
+The result separates a mechanical matching effect from an endogenous composition effect. Additional contacts raise the probability of a match. Through that probability they make the fixed entry cost easier for high-quality sellers to recoup, which can support a higher-price, both-quality equilibrium. The low-quality-only outcome may persist because a single high-quality seller cannot change buyers' aggregate belief. Thus extra contacts expand the set of possible allocations before any selection rule chooses among them.
+
+The nearest intellectual antecedents are adverse selection in competitive trade, competitive search with private information, price signaling, and competing mechanisms. Rothschild and Stiglitz (1976) provide a classic equilibrium treatment of adverse selection; Guerrieri, Shimer, and Wright (2010) and Albrecht, Cai, Gautier, and Vroman (2024) concern competitive search with private information; Auster and Gottardi (2019) study competing mechanisms in a lemons market. Burdett and Judd (1983) is a benchmark for simultaneous contacts in consumer search. These citations locate the question but do not establish a new result relative to them. Our fixed uniform-price institution, exogenous buyer availability, and seller-entry response define the exact scope of the propositions. In particular, a result about signaling, competing bids, or endogenous buyer entry would require different strategy spaces and proof obligations. A source-level nearest-paper comparison is needed before making a contribution claim.
+
+The maintained uniform-price institution is decisive. Buyers do not strategically submit individual bids or price menus. Buyer availability is independent, identically distributed, and unrelated to quality. There is no congestion, bargaining, contact cost, or capacity beyond one sale. The paper therefore does not establish that extra contacts improve welfare in every market with private information, or that a particular equilibrium will be selected after a change in $n$. Its welfare result is a model statement, not a policy recommendation. Endogenizing price competition and equilibrium selection is the central unresolved extension.
+
+\section{Conclusion}
+
+In a competitive uniform-price entry market, simultaneous access to more potential buyers lowers the price threshold required for high-quality participation. Pooling can become feasible while separation remains feasible. Conditional on an equilibrium branch, costless contacts raise surplus; comparing different selected equilibria can reverse the ranking. These conclusions rest on explicit institutional and information assumptions and do not establish a general result for strategic decentralized offers.
+
+\begin{thebibliography}{99}
+\bibitem{albrecht2024} Albrecht, J., Cai, X., Gautier, P., and Vroman, S. (2024). Competitive Search with Private Information: Can Price Signal Quality? IZA Discussion Paper 17246. \url{https://docs.iza.org/dp17246.pdf}.
+\bibitem{auster2019} Auster, S. and Gottardi, P. (2019). Competing Mechanisms in Markets for Lemons. \emph{Theoretical Economics} 14(3), 927--970. doi:10.3982/TE2921.
+\bibitem{burdett1983} Burdett, K. and Judd, K. L. (1983). Equilibrium Price Dispersion. \emph{Econometrica} 51(4), 955--969. doi:10.2307/1912045.
+\bibitem{guerrieri2010} Guerrieri, V., Shimer, R., and Wright, R. (2010). Adverse Selection in Competitive Search Equilibrium. \emph{Econometrica} 78(6), 1823--1862. doi:10.3982/ECTA8535.
+\bibitem{rothschild1976} Rothschild, M. and Stiglitz, J. (1976). Equilibrium in Competitive Insurance Markets: An Essay on the Economics of Imperfect Information. \emph{Quarterly Journal of Economics} 90(4), 629--649. doi:10.2307/1885326.
+\end{thebibliography}
+
+\appendix
+\section{Complete derivations and boundary cases}\label{app:proofs}
+
+\subsection{Proof of Proposition~\ref{prop:eq}}\label{proof:eq}
+We first show that $L$ enters in every equilibrium. Any transaction price formed from the values of trading types belongs to $[v_L,v_H]$. At $p\geq v_L>c_L$, an $L$ entrant trades whenever at least one contact is available, and earns $A_n(p-c_L)-k_L$. Since $A_n\geq A_1$ and \eqref{eq:primitive} states $A_1(v_L-c_L)>k_L$, this payoff is strictly positive. Therefore every $L$ seller enters. An equilibrium with no trade cannot have an actuarially fair transaction price, but at any price supporting an $H$ transaction the same inequality implies $L$ would enter and trade; hence it cannot be an omitted equilibrium.
+
+Let $t\in[0,1]$ denote the aggregate fraction of $H$ sellers that enter. If $t>0$, an $H$ seller must weakly prefer entering and trading to staying out, so $p\geq c_H$ and trade occurs after at least one available contact. Since availability is type-independent, the quality shares among transactions equal the shares among entrants. Zero expected buyer profit therefore gives $p=p(t)$ in \eqref{eq:pz}. If $t=0$, only $L$ trades and the same condition gives $p=v_L$. If an $H$ seller contemplated entering at that price but $p<c_H$, she would reject every available match and lose $k_H>0$. If $p\geq c_H$, her net entry payoff would be $A_n(p-c_H)-k_H$. In either case, the sign of her best entry gain relative to staying out is positive precisely when $p>c_H+k_H/A_n=z_n$; it is zero precisely when $p=z_n$ and negative for $p<z_n$ (the negative expression below $c_H$ is only a sign device, not the actual reject payoff).
+
+It follows that $t=0$ is an equilibrium exactly when $v_L\leq z_n$. At $t=1$, all $H$ sellers enter exactly when $p(1)=\bar v\geq z_n$. Both statements include indifference at equality and are sufficient because the $L$ entry condition is strict and buyer pricing is consistent.
+
+For $0<t<1$, identical $H$ sellers must be indifferent: $p(t)=z_n$. Direct differentiation gives
+\[
+ p'(t)=\frac{\pi_L\pi_H(v_H-v_L)}{(\pi_L+\pi_Ht)^2}>0.
+\]
+Thus there can be at most one interior solution. Since $p(0)=v_L$ and $p(1)=\bar v$, an interior solution exists precisely when $v_L<z_n<\bar v$. Solving
+\[
+ z_n(\pi_L+\pi_Ht)=\pi_Lv_L+\pi_Ht v_H
+\]
+gives \eqref{eq:tstar}. Both numerator and denominator are positive in this interval, and $t_n^*<1$ follows from $z_n<\bar v$, since $p$ is strictly increasing. At $z_n=v_L$, the formula gives $t=0$; at $z_n=\bar v$, it gives $t=1$. There are no other types, entry actions, prices, or transaction outcomes under the specified institution, which completes the characterization.
+
+\subsection{Proof of Corollary~\ref{cor:contacts}}\label{proof:contacts}
+For integer $n\geq1$,
+\[
+ A_{n+1}-A_n=a(1-a)^n.
+\]
+This is strictly positive for $0<a<1$ and zero for $a=1$. Since $A_n>0$,
+\[
+ z_{n+1}-z_n=k_H\left(\frac{1}{A_{n+1}}-\frac{1}{A_n}\right)
+\]
+has the opposite sign. Proposition~\ref{prop:eq} then implies that pooling condition $z_n\leq\bar v$ remains true after increasing $n$, while separation condition $v_L\leq z_n$ cannot reappear after becoming false. If $\bar v>c_H$, rearranging $c_H+k_H/A_n\leq\bar v$ (multiplying by positive $A_n$ and $\bar v-c_H$) gives $A_n\geq k_H/(\bar v-c_H)$. If $\bar v\leq c_H$, $z_n>c_H\geq\bar v$, so pooling is impossible. If $c_H\geq v_L$, $z_n>c_H\geq v_L$, so separation always exists. If $c_H<v_L$, rearranging the strict failure $z_n<v_L$ yields $A_n>k_H/(v_L-c_H)$; equality preserves separation by high-type indifference.
+
+On the interior branch, $p(t_n^*)=z_n$. Since $p$ is strictly increasing and $z_n$ strictly decreases when $0<a<1$, $t_n^*$ strictly decreases whenever interior equilibria exist at both compared $n$. When $a=1$, both sides remain constant. These comparisons cover integer jumps and do not assume a continuous $n$.
+
+\subsection{Proof of Proposition~\ref{prop:welfare}}\label{proof:welfare}
+Each entered $L$ seller pays $k_L$, each entered $H$ seller pays $k_H$, and the probability of a transaction is $A_n$ for either type. Transaction surplus is $v_q-c_q$, so summing over masses gives \eqref{eq:welfare}; $p$ is a buyer-to-seller transfer and cancels. Along separation, $W_n(0)=\pi_L\{A_n(v_L-c_L)-k_L\}$, which weakly rises with $A_n$ because $v_L-c_L>0$. Along pooling, feasibility implies $\bar v\geq z_n>c_H$, and $v_H>\bar v$ because $\pi_L>0$ and $v_H>v_L$. Hence $v_H-c_H>0$. Both terms multiplied by $A_n$ in $W_n(1)$ are positive, so pooling welfare weakly rises with $A_n$. Strictness holds when $0<a<1$.
+
+At a fixed $n$ with both pure equilibria, pooling feasibility implies
+\[
+ A_n(v_H-c_H)-k_H
+ \;>\; A_n(\bar v-c_H)-k_H \;\geq\;0,
+\]
+where the strict inequality uses $v_H>\bar v$ and $A_n>0$. From \eqref{eq:welfare}, $W_n(t)-W_n(0)=\pi_Ht\{A_n(v_H-c_H)-k_H\}$. It is positive for every $t>0$. Hence if a distinct interior equilibrium exists, $W_n(1)>W_n(t_n^*)>W_n(0)$. At the boundary where $t_n^*=0$ or $1$, the corresponding equality replaces one strict comparison.
+
+For interior $t_n^*$, indifference implies $k_H=A_n\{p(t_n^*)-c_H\}=A_n(z_n-c_H)$. Substituting this in \eqref{eq:welfare} gives
+\begin{align*}
+ W_n(t_n^*)
+ &=A_n\pi_L(v_L-c_L)-\pi_Lk_L
+   +A_n\pi_Ht_n^*(v_H-z_n)\\
+ &=A_n\pi_L(v_L-c_L)-\pi_Lk_L
+   +A_n\pi_L(z_n-v_L)\\
+ &=\pi_L\{A_n(z_n-c_L)-k_L\}\\
+ &=\pi_L\{A_n(c_H-c_L)+k_H-k_L\}.
+\end{align*}
+The second equality uses the exact identity $\pi_Ht_n^*(v_H-z_n)=\pi_L(z_n-v_L)$ from \eqref{eq:tstar}; the last uses $A_nz_n=A_nc_H+k_H$. Since $\pi_L>0$ and $c_H>c_L$, \eqref{eq:wmix} increases strictly with $A_n$.
+
+Finally, consider the numerical primitives in Section~\ref{sec:welfare}. They satisfy \eqref{eq:primitive} because $A_1(v_L-c_L)=1>0.1$. Here $\bar v=5$, $A_1=1/2$, $A_2=3/4$, $z_1=3+0.8/(1/2)=4.6$, and $z_2=3+0.8/(3/4)=61/15\approx4.067$. Both lie strictly between $v_L=2$ and $\bar v=5$, so both pure equilibria exist at each $n$ by Proposition~\ref{prop:eq}. Direct substitution into \eqref{eq:welfare} gives $W_1(1)=(1/2)\{(1/2)2+(1/2)5\}-(1/2)0.1-(1/2)0.8=1.30$, while $W_2(0)=(3/4)(1/2)2-(1/2)0.1=0.70$. The selected-equilibrium comparison is therefore negative even as $n$ rises. This final calculation establishes a counterexample to unconditional cross-equilibrium monotonicity; it is not evidence that selection changes in any particular way.
+
+\subsection{Proof obligations and status}
+\begin{center}
+\begin{tabular}{p{0.54\linewidth}p{0.25\linewidth}}
+\toprule
+Obligation & Status\\
+\midrule
+Well-defined price and entry domain & Discharged above\\
+Low-type entry and exclusion of omitted pure cases & Discharged in Proof~\ref{proof:eq}\\
+Necessity and sufficiency of each equilibrium & Discharged in Proof~\ref{proof:eq}\\
+Equality and reject cases & Discharged in Proof~\ref{proof:eq}\\
+Integer contact comparative statics & Discharged in Proof~\ref{proof:contacts}\\
+Welfare comparisons and selection counterexample & Discharged in Proof~\ref{proof:welfare}\\
+Lean 4 kernel verification & Not attempted; no formal-proof claim\\
+Decentralized strategic-price extension & Outside maintained model\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\end{document}

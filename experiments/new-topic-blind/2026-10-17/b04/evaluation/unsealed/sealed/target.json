@@ -1,0 +1,52 @@
+{
+  "id": "b04",
+  "retrieved_date": "2026-10-17",
+  "published_target": {
+    "title": "Redistributive Allocation Mechanisms",
+    "authors": ["Mohammad Akbarpour", "Piotr Dworczak", "Scott Duke Kominers"],
+    "journal_registry_id": "jpe",
+    "journal": "Journal of Political Economy",
+    "volume": 132,
+    "issue": 6,
+    "year": 2024,
+    "pages": "1831-1875",
+    "doi": "10.1086/728111",
+    "publisher_article_url": "https://www.journals.uchicago.edu/doi/full/10.1086/728111",
+    "first_journal_online_date": "2024-05-10",
+    "issue_date": "2024-06-01"
+  },
+  "earliest_publicly_verifiable_target_version": {
+    "date": "2020-06-18",
+    "precision": "day",
+    "source": "SSRN paper record, 'Posted: 18 Jun 2020'",
+    "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3609182",
+    "contemporaneous_working_paper_path": "sealed/target-working-paper-2020.pdf",
+    "contemporaneous_working_paper_url": "https://grape.org.pl/WP/40_Dworczak_website.pdf",
+    "contemporaneous_working_paper_sha256": "550006e5073bd8023988c5043ec67b47d26c7db3f338f6d09ae880d6b3bb8bc6",
+    "qualification": "The GRAPE Working Paper 40 record gives 2020 without a day; its RePEc NEP announcements are dated 2020-06-22. No earlier precisely dated public version was verified."
+  },
+  "cutoffs": {
+    "historical_originality_other_work": "date < 2024-05-10",
+    "blind_author_visible_sources": "date < 2020-06-18",
+    "same_day_policy": "Exclude absent a verified timestamp earlier than the corresponding target release."
+  },
+  "full_text": {
+    "published_html_url": "https://www.journals.uchicago.edu/doi/full/10.1086/728111",
+    "publisher_supplement_landing_url": "https://www.journals.uchicago.edu/doi/full/10.1086/728111",
+    "publisher_supplement_label": "Appendixes B-D",
+    "local_author_version_path": "sealed/target-author-fulltext-2023.pdf",
+    "local_author_version_url": "https://bpb-us-e1.wpmucdn.com/sites.northwestern.edu/dist/1/2465/files/2023/06/Redistributive-Allocation-Mechanisms.pdf",
+    "local_author_version_date_on_cover": "2023-06-22",
+    "local_author_version_pages": 53,
+    "local_author_version_sha256": "e39b2a94217bf0bf0eb6b336a01902505b856bfa06a4f98b847b50ce5d96ba67",
+    "version_note": "The local PDF is a dated author version with main text, Appendix A proofs, and Online Appendixes B-D. Score against the published full-text HTML when wording or numbering differs."
+  },
+  "selection_audit": {
+    "mode": "theory",
+    "one_sentence_question_possible": true,
+    "substantial_theorem_criteria": true,
+    "no_required_empirical_data": true,
+    "distinct_from_b03": true,
+    "blindness": "Instruction-only separation on a shared filesystem; no technical access boundary. Do not expose this file or its identifiers to the author."
+  }
+}

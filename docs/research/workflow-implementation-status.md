@@ -1,6 +1,18 @@
 # 自動論文工作流：實作與工程驗證狀態
 
-更新：2026-10-17。對應[研究計劃](harness-optimization-plan.md)。這份紀錄區分「檢查程式可運作」與「研究成果已成立」。
+更新：2026-10-18。對應[研究計劃](harness-optimization-plan.md)。這份紀錄區分「檢查程式可運作」與「研究成果已成立」。
+
+## 2026-10-18 新增實作與邊界
+
+新增 [`run_research_team.py`](../../scripts/run_research_team.py) 作為有預算與輪次上限的真實 Codex CLI 多代理入口。每個角色有獨立 CLI 執行紀錄及 handoff 雜湊；文獻調查後另派獨立全文審查代理，topic survey 和 [`check_prior_art_review.py`](../../scripts/check_prior_art_review.py) 未通過時，不派研究設計或寫作代理。稿件審查也使用新代理程序，並核對新建／更新的審查檔、指定 reviewer ID 和 handoff 雜湊。每輪探索須在 [`experiments.tsv`](../../references/research_protocol.md) 保留舊紀錄並新增有證據雜湊的假說測試與下一步；研究失敗仍可能正確地停止。
+
+本次試點的獨立審稿指出「數值正確、原創性不足」後，研究迴圈新增 `publication_goal`：以原創稿為目標時，先驗審查若只支持重做，會在設計前寫入 `research/contribution-branches.jsonl` 並於剩餘輪次內重新派文獻與全文審查；後期創見／重複否決也回到此分支。設計或推論否決會攜帶審稿理由回到設計。輪次或預算用盡則回報 `contribution-unresolved`，不把換年份或修飾文字當成新貢獻。
+
+新自主稿件須在 `research/package.json` 宣告 `protocol_version: "2"`、`prior_art_review`、`exploration_ledger`。先驗文獻閘門核最近作品的留存 PDF／HTML、來源摘錄與 PDF 頁碼、每個主張和近作的比較；交付時審過的主張須與 manifest 所有核心主張一致。這可查漏與發現部分偽填資料，不能證明下載檔就是網址所示的論文、頁面解釋正確、或真正達到原創。未宣告版本的舊 package 仍按 v1 回放，報告標為 `legacy_protocol: true`；它不是新版自主流程的完成證據。
+
+真實資料試點在 [`experiments/real-data-pilot/2026-10-18`](../../experiments/real-data-pilot/2026-10-18)：使用 BLS 官方失業率與職缺率月度 API 原始 JSON，保留擷取程式、快照雜湊、清理與分析、圖表、LaTeX／PDF 和限制。此案例只做已知 Beveridge 曲線的描述性重現，用來檢驗來源至稿件的鏈條；它不是盲題、因果識別或頂刊原創性成功案例。最終 gate 與代理審核狀態見[案例驗證報告](../../experiments/real-data-pilot/2026-10-18/validation-summary.md)，未通過者照實保留。
+
+此更新後 `python3 -m unittest discover -s tests -p 'test_*.py'` 為 **222 tests OK，4 skipped**；獨立審稿代理另核實實際 Codex CLI 派工收據並從 BLS 原始快照重算結果。它否決此案例作為頂刊原創論文；這一科學判斷不因程式門檻通過而改變。CLI 代理共享檔案系統，仍欠 OS 級隔離、可獨立驗證的來源身分與大樣本受控盲測。以下工程結果是 2026-10-17 的歷史紀錄，不應視為新功能未實作。
 
 目前交付的是 **Skill 指導的研究迴圈、MCP 工具入口與確定性執行／審計核心**，不是從一句研究問題無條件產出頂刊論文。`scripts/run_research_workflow.py` 讀取研究契約，記錄狀態與實際耗時，執行科學障礙測試、乾淨重跑、LaTeX 編譯／審閱檢查與 package 審計，並為失敗關卡產生 `next_tasks`。Agent 依任務繼續蒐證、分析、改稿、重驗；執行器本身不生成研究內容。科學障礙的測試指令成功只表示指令已執行，仍需具名審定與雜湊綁定證據才可標成 `resolved`。完整完成須通過所宣告的全部關卡。
 

@@ -1,0 +1,5 @@
+{
+  "time_utc": "2026-10-17T13:54:51.353004+00:00",
+  "cause": "Coordinator passed a repo-relative --contract path; runner resolves relative paths below --root, did not find it, and silently froze default empirical/AER/10-second contract. No manuscript was frozen. Preserved bad initialization files here before clean rerun.",
+  "correct_contract": "author/research/contract-input.json"
+}

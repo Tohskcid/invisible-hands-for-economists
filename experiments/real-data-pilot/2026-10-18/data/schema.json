@@ -1,0 +1,14 @@
+{
+  "producer": "U.S. Bureau of Labor Statistics",
+  "endpoint": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
+  "unit": "United States calendar month, seasonally adjusted published national aggregate",
+  "fields": {
+    "year": "four-digit calendar year",
+    "period": "M01 to M12 month; M13 annual average is excluded if present",
+    "value": "published rate in percent, one decimal place",
+    "LNS14000000": "civilian unemployment rate, Current Population Survey",
+    "JTS000000000000000JOR": "total nonfarm job-openings rate, Job Openings and Labor Turnover Survey"
+  },
+  "coverage": "2001-01 through 2024-12; 288 paired monthly observations; 2020-2021 excluded only from analysis windows",
+  "limitations": "Two survey estimates with sampling and nonsampling error; historical BLS values can be revised. Snapshot is not an original respondent-level dataset."
+}

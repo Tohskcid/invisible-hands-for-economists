@@ -1,0 +1,258 @@
+{
+  "valid": false,
+  "protocol_version": "2",
+  "legacy_protocol": false,
+  "iteration_required": true,
+  "return_to": [
+    "gate_remediation"
+  ],
+  "checks": [
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/scripts/check_project_layout.py",
+        "--root",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18",
+        "--json"
+      ],
+      "passed": true,
+      "exit_code": 0,
+      "stdout": "{\n  \"valid\": true,\n  \"iteration_required\": false,\n  \"return_to\": [],\n  \"root\": \"/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18\",\n  \"files_checked\": 64,\n  \"violations\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/scripts/check_topic_survey.py",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/research/topic-survey.json",
+        "--root",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18",
+        "--json",
+        "--require-approved",
+        "--manuscript",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/paper/main.tex",
+        "--bibliography",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/paper/references.bib"
+      ],
+      "passed": true,
+      "exit_code": 0,
+      "stdout": "{\n  \"valid\": true,\n  \"gate_passed\": true,\n  \"decision\": \"replicate\",\n  \"contribution_class\": \"replication\",\n  \"errors\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/scripts/check_prior_art_review.py",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/research/prior-art-review.json",
+        "--root",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18",
+        "--topic-survey",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/research/topic-survey.json",
+        "--json",
+        "--manifest",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/research/manifest.jsonl"
+      ],
+      "passed": true,
+      "exit_code": 0,
+      "stdout": "{\n  \"valid\": true,\n  \"gate_passed\": true,\n  \"evidence_complete\": true,\n  \"novelty_certified\": false,\n  \"decision\": \"replicate\",\n  \"errors\": [],\n  \"note\": \"This checks evidence, dates, coverage and attestation, not semantic originality.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/scripts/check_exploration_ledger.py",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/research/experiments.tsv",
+        "--root",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18",
+        "--json"
+      ],
+      "passed": true,
+      "exit_code": 0,
+      "stdout": "{\n  \"valid\": true,\n  \"rows\": 2,\n  \"errors\": [],\n  \"evidence_note\": \"Hashes bind files; they do not establish scientific validity.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/scripts/check_data_provenance.py",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/research/data-provenance.json",
+        "--root",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18",
+        "--json",
+        "--require-real"
+      ],
+      "passed": true,
+      "exit_code": 0,
+      "stdout": "{\n  \"valid\": true,\n  \"datasets\": 1,\n  \"errors\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/scripts/check_literature_archive.py",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/research/literature-archive.json",
+        "--bibliography",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/paper/references.bib",
+        "--root",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18",
+        "--require-complete",
+        "--json"
+      ],
+      "passed": true,
+      "exit_code": 0,
+      "stdout": "{\n  \"valid\": true,\n  \"complete\": true,\n  \"papers\": 9,\n  \"downloaded\": 9,\n  \"errors\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/scripts/validate_research_manifest.py",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/research/manifest.jsonl",
+        "--require-argument-graph",
+        "--json"
+      ],
+      "passed": true,
+      "exit_code": 0,
+      "stdout": "{\n  \"valid\": true,\n  \"records\": 17,\n  \"errors\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/scripts/check_manuscript_coverage.py",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/research/coverage.json",
+        "--manuscript",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/paper/main.tex",
+        "--manifest",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/research/manifest.jsonl",
+        "--root",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18",
+        "--require-ready",
+        "--json",
+        "--require-limitations"
+      ],
+      "passed": true,
+      "exit_code": 0,
+      "stdout": "{\n  \"valid\": true,\n  \"ready\": true,\n  \"sections\": 9,\n  \"required_roles_not_ready\": [],\n  \"errors\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/scripts/check_research_team.py",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/research/team-report.json",
+        "--root",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18",
+        "--mode",
+        "descriptive",
+        "--json",
+        "--review",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/research/substantive-review.json"
+      ],
+      "passed": false,
+      "exit_code": 1,
+      "stdout": "{\n  \"valid\": false,\n  \"roles\": [],\n  \"errors\": [\n    \"missing research roles: ['data_acquisition', 'data_cleaning', 'interpretation', 'literature', 'model', 'planning', 'review', 'validation', 'writing']\",\n    \"manuscript delivery requires two research agents and one independent review agent\",\n    \"substantive review reviewer_id must match the team review agent\",\n    \"team review handoff must bind the substantive review file\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/scripts/check_substantive_review.py",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/research/substantive-review.json",
+        "--manuscript",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/paper/main.tex",
+        "--root",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18",
+        "--json",
+        "--topic-survey",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/research/topic-survey.json"
+      ],
+      "passed": false,
+      "exit_code": 1,
+      "stdout": "{\n  \"valid\": false,\n  \"errors\": [\n    \"substantive review verdict must be pass for delivery\",\n    \"dimension novelty needs a passing verdict and reason\",\n    \"dimension overlap needs a passing verdict and reason\",\n    \"dimension research_design needs a passing verdict and reason\",\n    \"dimension inference_or_proof needs a passing verdict and reason\",\n    \"dimension logic needs a passing verdict and reason\",\n    \"dimension completeness needs a passing verdict and reason\",\n    \"open_critical_issues must be an empty list for delivery\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/scripts/audit_claims.py",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/paper/main.tex",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/research/manifest.jsonl",
+        "--require-central-claims",
+        "--json"
+      ],
+      "passed": true,
+      "exit_code": 0,
+      "stdout": "{\n  \"valid\": true,\n  \"errors\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/scripts/check_logic_review.py",
+        "--manuscript",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/paper/main.tex",
+        "--manifest",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/research/manifest.jsonl",
+        "--review",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/research/logic-review.json",
+        "--require-pass",
+        "--json"
+      ],
+      "passed": false,
+      "exit_code": 1,
+      "stdout": "{\n  \"passed\": false,\n  \"errors\": [\n    \"overall_verdict must be pass for delivery\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/scripts/check_result_bindings.py",
+        "--results",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/research/results.json",
+        "--manuscript",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/paper/main.tex",
+        "--root",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18",
+        "--json"
+      ],
+      "passed": true,
+      "exit_code": 0,
+      "stdout": "{\n  \"valid\": true,\n  \"results_sha256\": \"41aeaf8dd7080f2a4e2c0abc9646ed5fd46db730c4acb59993148a1bf9aa807a\",\n  \"bindings\": 16,\n  \"errors\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/scripts/run_replication.py",
+        "--root",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18",
+        "--config",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/research/replication.json",
+        "--clean",
+        "--json"
+      ],
+      "passed": true,
+      "exit_code": 0,
+      "stdout": "{\n  \"reproducible\": true,\n  \"clean_replay_verified\": true,\n  \"execution_duration_seconds\": 0.578,\n  \"commands\": [\n    {\n      \"command\": [\n        \"python3\",\n        \"scripts/analyze.py\"\n      ],\n      \"exit_code\": 0,\n      \"duration_seconds\": 0.573,\n      \"passed\": true,\n      \"stdout\": \"{\\n  \\\"primary\\\": {\\n    \\\"pre_n\\\": 48,\\n    \\\"post_n\\\": 35,\\n    \\\"pre_mean\\\": 4.095833333333333,\\n    \\\"post_mean\\\": 5.7,\\n    \\\"difference\\\": 1.604166666666667,\\n    \\\"pre_median\\\": 4.2,\\n    \\\"post_median\\\": 5.6\\n  },\\n  \\\"check\\\": {\\n    \\\"pre_n\\\": 75,\\n    \\\"post_n\\\": 8,\\n    \\\"pre_mean\\\": 3.5746666666666664,\\n    \\\"post_mean\\\": 4.7875,\\n    \\\"difference\\\": 1.2128333333333332,\\n    \\\"pre_median\\\": 3.4,\\n    \\\"post_median\\\": 4.5\\n  },\\n  \\\"last_year_check\\\": {\\n    \\\"n\\\": 12,\\n    \\\"mean\\\": 4.65,\\n    \\\"difference_from_pre\\\": 0.5541666666666671\\n  }\\n}\\n\",\n      \"stderr\": \"\"\n    }\n  ],\n  \"deleted_outputs_before_run\": [\n    \"data/analysis-panel.csv\",\n    \"research/results.json\",\n    \"output/tables/means.tex\"\n  ],\n  \"missing_raw_inputs\": [],\n  \"stale_artifacts\": [],\n  \"numeric_discrepancies\": [],\n  \"artifact_discrepancies\": [],\n  \"generated_sha256\": {\n    \"data/analysis-panel.csv\": \"31df501fde9de102b309304b5e53ae9fd0a9f4ad6460b9210663d7d845ae4552\",\n    \"research/results.json\": \"41aeaf8dd7080f2a4e2c0abc9646ed5fd46db730c4acb59993148a1bf9aa807a\",\n    \"output/tables/means.tex\": \"8759480ba942af6c45d7f431147774dd91dbcb82c78ae0350d949a77018a589b\"\n  },\n  \"replay_isolated_copy\": true,\n  \"errors\": [],\n  \"disclaimer\": \"Computational replication verified: does not imply causal identification, historical fidelity, or novel contribution.\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/scripts/check_latex.py",
+        "finalize",
+        "--report",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/paper/build/report.json",
+        "--visual-review",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/research/visual-review.json",
+        "--release-pdf",
+        "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/real-data-pilot/2026-10-18/paper/pdf/manuscript.pdf"
+      ],
+      "passed": true,
+      "exit_code": 0,
+      "stdout": "{\n  \"delivery_ready\": true,\n  \"errors\": [],\n  \"pdf_sha256\": \"195e5e98c0dae40a3df1a152449cfe02c4266214996a43c4edde070d659053c5\"\n}\n",
+      "stderr": ""
+    }
+  ]
+}

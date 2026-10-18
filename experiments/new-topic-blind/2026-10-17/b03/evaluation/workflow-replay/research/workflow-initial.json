@@ -1,0 +1,76 @@
+{
+  "status": "in-progress",
+  "spent_budget": 0.0,
+  "max_budget": 1200.0,
+  "contract": {
+    "version": "1.0",
+    "inputs": {
+      "question": "在雇主雇用不可分割的勞動者、政府可依雇用組合或薪資設計稅補的市場中，財政措施何時會保留或恢復需求替代性及其均衡基礎？",
+      "mode": "theory",
+      "deliverable": "manuscript",
+      "claim_scope": "research-only",
+      "mechanism_scope": "claimed",
+      "target_journal": "The Review of Economic Studies",
+      "max_budget": 1200,
+      "latex_main": "paper/manuscript/main.tex",
+      "latex_build_dir": "paper/build",
+      "latex_visual_review": "research/latex-visual-review.json",
+      "obligations": [
+        "定義不可分割勞動者、雇主需求、稅補與均衡",
+        "對需求替代性或均衡存在作出明確可反駁命題",
+        "完整證明、邊界及反例驗證",
+        "處理相關背景文獻、重複風險、限制",
+        "提交完整 LaTeX 主文、附錄、參考文獻及可編譯 PDF"
+      ],
+      "evaluation_mode": "historical-reconstruction",
+      "source_restrictions": "不得搜尋、開啟、讀取、引用或利用與本題直接對應之已發表論文、預印本、摘要、作者頁、補充材料，以及本題 sealed/ 內任何檔案；可使用一般背景文獻並記錄來源。若意外接觸受限來源，須記錄污染並停止利用其內容。",
+      "neutrality_obligation": "事前保持結果中立；允許正、負、零或條件性結論及反例，僅依明示假設、完整論證與可核查來源作答，不得把預期結論當作假設。"
+    },
+    "mode": "theory",
+    "deliverable": "manuscript",
+    "claim_scope": "research-only",
+    "mechanism_scope": "claimed",
+    "max_budget": 1200.0,
+    "budget_unit": "measured_wall_seconds",
+    "target_journal": "The Review of Economic Studies",
+    "question": "在雇主雇用不可分割的勞動者、政府可依雇用組合或薪資設計稅補的市場中，財政措施何時會保留或恢復需求替代性及其均衡基礎？",
+    "obligations": [
+      "定義不可分割勞動者、雇主需求、稅補與均衡",
+      "對需求替代性或均衡存在作出明確可反駁命題",
+      "完整證明、邊界及反例驗證",
+      "處理相關背景文獻、重複風險、限制",
+      "提交完整 LaTeX 主文、附錄、參考文獻及可編譯 PDF"
+    ]
+  },
+  "obstacles": [],
+  "replication": null,
+  "latex_build": null,
+  "package_audit": null,
+  "next_tasks": [
+    {
+      "stage": "package",
+      "source": "research/package.json",
+      "instruction": "Declare the frozen delivery profile and required artifacts",
+      "reason": "package audit has not run",
+      "requires_scientific_judgment": false
+    }
+  ],
+  "rework_plan": {
+    "restart_from": "package",
+    "invalidate_stages": [
+      "package",
+      "literature",
+      "data",
+      "design",
+      "argument",
+      "analysis",
+      "replication",
+      "manuscript",
+      "review",
+      "delivery"
+    ],
+    "reason_sources": [
+      "research/package.json"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "question": "在雇主雇用不可分割的勞動者、政府可依雇用組合或薪資設計稅補的市場中，財政措施何時會保留或恢復需求替代性及其均衡基礎？",
+  "mode": "theory",
+  "deliverable": "manuscript",
+  "claim_scope": "research-only",
+  "mechanism_scope": "claimed",
+  "target_journal": "The Review of Economic Studies",
+  "max_budget": 3600,
+  "latex_main": "paper/manuscript/main.tex",
+  "latex_build_dir": "paper/build",
+  "latex_visual_review": "research/latex-visual-review.json",
+  "obligations": [
+    "定義不可分割勞動者、雇主需求、稅補與均衡",
+    "對需求替代性或均衡存在作出明確可反駁命題",
+    "完整證明、邊界及反例驗證",
+    "處理相關背景文獻、重複風險、限制",
+    "提交完整 LaTeX 主文、附錄、參考文獻及可編譯 PDF"
+  ],
+  "evaluation_mode": "post-unblinding-development",
+  "source_restrictions": "Authoring agent may use only the frozen public question, prior blind draft, blind referee and non-target literature; coordinator and independent overlap auditor may inspect the published target after authoring for an honest novelty decision. This revision is not a blind benchmark.",
+  "neutrality_obligation": "事前保持結果中立；允許正、負、零或條件性結論及反例，僅依明示假設、完整論證與可核查來源作答，不得把預期結論當作假設。",
+  "obstacles": [
+    {
+      "obstacle_id": "general-ex-equilibrium",
+      "blocked_claim_id": "CL-B03-P7",
+      "discriminating_test": "Find and verify an exact integrality theorem under the stated EX hypotheses or give a complete self-contained paper proof; otherwise retain unresolved status."
+    }
+  ]
+}

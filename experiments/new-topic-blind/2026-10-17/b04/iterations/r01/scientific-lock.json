@@ -1,0 +1,13 @@
+{
+  "iteration": "r01",
+  "scientific_freeze_reported_utc": "2026-10-17T14:06:36+00:00",
+  "locked_utc": "2026-10-17T14:06:46.905666+00:00",
+  "copy": "evaluation/r01-frozen",
+  "files_sha256": {
+    "paper/manuscript/main.tex": "6cc84bc7036aec8915674b4f1e935e149345c8961a0f548c1dcd0ea3ee69e31b",
+    "paper/pdf/manuscript.pdf": "4d31ea62c219df7efa735b07dc91bdd0eb70dcfc6c06ed71a6bbc41deea2ae58"
+  },
+  "separate_from_one_shot": true,
+  "input_feedback": "evaluation/blind-review/independent-report.md only; no target/rubric/comparison sent to author or model agent",
+  "caveat": "Instruction-only separation on shared filesystem; coordinator had unsealed target before iteration."
+}

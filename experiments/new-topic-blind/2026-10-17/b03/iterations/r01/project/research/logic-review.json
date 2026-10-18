@@ -1,0 +1,110 @@
+{
+  "reviewed_sha256": {
+    "manuscript": "7a3dc698f06938c34ba50b66eec0e717c9e8a2203b40e4f1c395440961fec5ab",
+    "manifest": "0d5b2045238d34da7a384aa8203980386e6cf9ffd8c844587c8c3e18c1238131"
+  },
+  "overall_verdict": "reject",
+  "global_gaps": [
+    "The original fiscal-substitutes matching question directly overlaps the published Kojima–Sun–Yu (2024) article, and the revised manuscript does not cite or distinguish it.",
+    "The narrow capped two-worker rebate result has no targeted priority check against budget-constrained substitutes policy and no welfare or financing model."
+  ],
+  "uncertainty": "The mathematical statements are coherent within the stated finite EX model, conditional on the verified published Murota theorems. Publication novelty of the narrow budget result has not been established; no formal proof assistant check was performed.",
+  "claim_reviews": [
+    {
+      "claim_id": "CL-B03-P1",
+      "verdict": "coherent",
+      "weakest_link": "EX move/swap cancellation must respect the changed coordinate and all demand ties.",
+      "scope_or_number_mismatch": "No mismatch within finite real-price domain.",
+      "competing_explanation": "Demand ties could break a unique-choice shortcut, but the maximal-overlap selection covers them.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "CL-B03-P2",
+      "verdict": "coherent",
+      "weakest_link": "Both sides of each exchange need the same modular incidence.",
+      "scope_or_number_mismatch": "The iff is for EX; GS preservation is claimed only on the EX domain.",
+      "competing_explanation": "Nonmodular schedules may also preserve EX for a specific valuation; the paper acknowledges this.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "CL-B03-P3",
+      "verdict": "coherent",
+      "weakest_link": "All-real-price necessity needs a strict witness when the two-worker inequality fails.",
+      "scope_or_number_mismatch": "The necessity need not hold on a nonnegative-only price domain; the manuscript says so.",
+      "competing_explanation": "Tied demand at equality does not invalidate weak EX or GS.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "CL-B03-P4",
+      "verdict": "coherent",
+      "weakest_link": "g=q-v is an algebraic implementation and requires full valuation knowledge.",
+      "scope_or_number_mismatch": "No bounded expenditure, information feasibility, or welfare claim follows.",
+      "competing_explanation": "Other feasible policy classes may fail to implement the target; this is explicitly unrestricted.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "CL-B03-P5",
+      "verdict": "coherent",
+      "weakest_link": "Weakly increasing effective own-wage costs must be the sole changed price coordinate.",
+      "scope_or_number_mismatch": "Only demand GS on nonnegative actual wages is proved; common-wage equilibrium is excluded.",
+      "competing_explanation": "Employer-specific wedges can obstruct equilibrium despite each firm's GS demand.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "CL-B03-P6",
+      "verdict": "coherent",
+      "weakest_link": "Allocated positive-max-value workers must yield zero marginal firm profit at chosen wages.",
+      "scope_or_number_mismatch": "The maximized objective is adjusted private value, not fiscally net social welfare.",
+      "competing_explanation": "Government payments can alter allocation rankings relative to production value.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "CL-B03-P7",
+      "verdict": "coherent",
+      "weakest_link": "Murota 6.1(9) closure and 9.4 intersection must allow real values; dummy-price conversion and LP duality must follow.",
+      "scope_or_number_mismatch": "The LP claim is existence of an integral optimum, not integrality of every vertex or novelty of the theorem.",
+      "competing_explanation": "Ordinary GS alone may need additional hypotheses; the proof assumes the stronger EX property.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "CL-B03-C1",
+      "verdict": "coherent",
+      "weakest_link": "Four bundle profits at both prices must show unique choices.",
+      "scope_or_number_mismatch": "The example demonstrates GS failure, not equilibrium nonexistence.",
+      "competing_explanation": "Market equilibrium might still exist for some multi-firm profile.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "CL-B03-C2",
+      "verdict": "coherent",
+      "weakest_link": "The coverage function must be submodular yet fail the full three-worker exchange and GS tests.",
+      "scope_or_number_mismatch": "The counterexample says nothing about all submodular valuations.",
+      "competing_explanation": "Diminishing marginal returns alone misses cross-bundle exchange structure.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "CL-B03-C3",
+      "verdict": "coherent",
+      "weakest_link": "The headcount-increment necessity witness must eliminate swaps.",
+      "scope_or_number_mismatch": "The equivalence is for additive value plus cardinality term, not arbitrary baseline valuations.",
+      "competing_explanation": "Nonadditive values can change the exact headcount condition.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "CL-B03-L1",
+      "verdict": "coherent",
+      "weakest_link": "The firm objective includes fiscal payments by definition.",
+      "scope_or_number_mismatch": "No financing or social welfare primitive appears in the model.",
+      "competing_explanation": "Adjusted private value can disagree with production or fiscally net welfare.",
+      "required_revision": ""
+    },
+    {
+      "claim_id": "CL-B03-P8",
+      "verdict": "coherent",
+      "weakest_link": "Worst-case spending is exactly 2r when at least two firms exist; robust EX requires 2r>=kappa.",
+      "scope_or_number_mismatch": "B>=kappa is only for a uniform nonnegative singleton rebate with a cap on every feasible allocation.",
+      "competing_explanation": "A particular realized valuation may need no rebate; an alternative policy could cost less.",
+      "required_revision": ""
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "benchmark": "b04",
+  "decision": "fail-and-restart-topic-selection",
+  "decision_scope": "Research readiness of this line of work, not a claim that the published target lacked historical originality.",
+  "frozen_one_shot_reconstruction": {
+    "score": 4,
+    "maximum": 10,
+    "source": "comparison-score.json"
+  },
+  "post_feedback_iterations": [
+    {
+      "id": "r01",
+      "score": 5,
+      "maximum": 10,
+      "source": "../iterations/r01/rescore.json",
+      "finding": "General finite-slot ironing theorem added; independent review found two scope/endpoint proof gaps."
+    },
+    {
+      "id": "r02",
+      "score": 5,
+      "maximum": 10,
+      "source": "../iterations/r02/rescore.json",
+      "finding": "The two r01 proof gaps were repaired; independent AI referee found no new material theorem error but still recommended JPE rejection."
+    }
+  ],
+  "failed_gates": [
+    {
+      "gate": "historical-overlap-and-novelty",
+      "finding": "The target's own public 2020 version already contains the baseline's weighted virtual score and more general structural results. This is high duplicate risk for a new 2026 submission. Independent novelty of the finite-agent/bounded-subsidy variants has not been established.",
+      "evidence": "historical-prior-art.md"
+    },
+    {
+      "gate": "independent-journal-readiness",
+      "finding": "Independent target-blind AI referee recommended rejection for the baseline, r01, and r02. This is not external human peer review.",
+      "evidence": "blind-review/independent-report.md; ../iterations/r01/independent-review.md; ../iterations/r02/independent-review.md"
+    },
+    {
+      "gate": "complete-research-package",
+      "finding": "The baseline and revisions did not provide every required theory-manuscript claim, literature, audit, team, and independent review artifact; check_research_package.py exits before constituent checks on missing files.",
+      "evidence": "workflow-gaps.json; ../iterations/r02/research/writing/package-gate.txt"
+    }
+  ],
+  "restart_from": "topic-selection-and-prior-art",
+  "next_attempt_requirements": [
+    "Choose a different question or an independently defensible breakthrough relative to all external pre-cutoff work and the now-public target versions.",
+    "Before authoring, verify broad eligible literature with primary full text where possible, seal task and rubric, and lock the author-visible corpus.",
+    "Run a new fresh-context author team and separate content, originality, and journal-readiness evaluations; do not reuse b04's post-unblinding revisions as a one-shot success."
+  ],
+  "qualification": "A one-sentence prompt does not uniquely specify model assumptions. Reconstruction, historical priority, current duplicate risk, and publishability are distinct endpoints."
+}

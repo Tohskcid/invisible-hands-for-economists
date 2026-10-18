@@ -1,0 +1,43 @@
+{
+  "iteration": "r01",
+  "scope": "Post-lock blind-feedback rework of b04. This iteration is separate from the timed one-shot score and does not alter evaluation/frozen-submission or author files.",
+  "started_at_utc": "2026-10-17T14:01:37Z",
+  "scientific_freeze_at_utc": "2026-10-17T14:06:36Z",
+  "recorded_at_utc": "2026-10-17T14:08:29Z",
+  "elapsed_seconds_to_scientific_freeze": 299,
+  "elapsed_seconds_to_record": 412,
+  "changes": [
+    "Clarified that unobservable weight reports are outcome-equivalent cheap talk and truth telling is weakly dominant; the mechanism ignores those reports.",
+    "Added a finite-slot nonregular assignment theorem using the greatest convex minorant of the lower-quantile raw-score primitive, with full envelope, Stieltjes-inequality, equality, and implementation arguments.",
+    "Added the falling-score corollary: report-independent, zero-charge assignment ranked by group expected weighted value.",
+    "Clarified the no-shared-budget bounded-subsidy extension and the limits of the model and source evidence.",
+    "Added a two-source BibTeX record and author-side source-provenance note using only the vetted pre-cutoff handoff."
+  ],
+  "scientific_artifacts": {
+    "tex": {
+      "path": "paper/manuscript/main.tex",
+      "sha256": "6cc84bc7036aec8915674b4f1e935e149345c8961a0f548c1dcd0ea3ee69e31b"
+    },
+    "pdf": {
+      "path": "paper/pdf/manuscript.pdf",
+      "sha256": "4d31ea62c219df7efa735b07dc91bdd0eb70dcfc6c06ed71a6bbc41deea2ae58",
+      "pages": 14
+    }
+  },
+  "checks": {
+    "latex_compile": "pass: pdflatex, zero reported errors or warnings; see research/writing/latex-report.json",
+    "latex_visual_finalize": "pass: all 14 rendered pages inspected; see research/latex-visual-review.json",
+    "research_package": "blocked before checks: research/substantive-review.json is absent; exit code 2 and exact output in research/writing/package-gate.txt"
+  },
+  "package_evidence": {
+    "bibliography_sha256": "a60962f32ac5689ebe1ece6a64f486f5b4fa8a5f4d24fc371368e138f446c668",
+    "visual_review_sha256": "e13369ff4a1685b5e7fac849be709b56b77566af1a5144781eaffedd11446611",
+    "package_config_sha256": "2ae60412697ebdb87a445257fa0946f9fc2fa10eb08dc5d1e2f177f0b6482be9",
+    "package_gate_output_sha256": "091dcd0e00824a3d66d01a802a6da27ea7221a63aac2171d64cebd086380cbaa"
+  },
+  "remaining_gates": [
+    "Independent substantive review and independent mechanism review have not been supplied or self-attested.",
+    "The declared claim manifest, topic survey, manuscript coverage, literature archive, logic review, team report, and mechanism audit have not been completed; the package checker cannot validate the manuscript until genuine evidence fills these paths.",
+    "No journal-readiness or priority claim is made."
+  ]
+}

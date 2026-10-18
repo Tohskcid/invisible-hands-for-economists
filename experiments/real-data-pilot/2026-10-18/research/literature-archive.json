@@ -1,0 +1,164 @@
+{
+  "schema_version": "1",
+  "generated_at": "2026-10-18T04:05:28+00:00",
+  "papers": [
+    {
+      "citekey": "BLSAPI",
+      "title": "Accessing the Public Data API with Unix Command Line",
+      "authors": [
+        "U.S. Bureau of Labor Statistics"
+      ],
+      "year": 2014,
+      "canonical_locator": "https://www.bls.gov/developers/api_unix_v2.htm",
+      "verified_at": "2026-10-17T19:01:29+00:00",
+      "access_basis": "Official BLS page captured directly from its HTTPS URL; BLS published material is public domain with attribution.",
+      "access_status": "downloaded",
+      "source_kind": "official-webpage",
+      "download_locator": "https://www.bls.gov/developers/api_unix_v2.htm",
+      "retrieved_at": "2026-10-18T04:05:28+00:00",
+      "file": "literature/pages/blsapi--accessing-the-public-data-api-with-unix-command-line.html",
+      "sha256": "b0782faa17aa97fc50a1f130adbc7b2ca5ff11de328f5b0193a0d9a1b2a60a71"
+    },
+    {
+      "citekey": "BLSChart",
+      "title": "The Beveridge Curve (Job Openings Rate vs. Unemployment Rate), Seasonally Adjusted",
+      "authors": [
+        "U.S. Bureau of Labor Statistics"
+      ],
+      "year": 2026,
+      "canonical_locator": "https://www.bls.gov/charts/job-openings-and-labor-turnover/job-openings-unemployment-beveridge-curve.htm",
+      "verified_at": "2026-10-17T19:01:29+00:00",
+      "access_basis": "Official BLS page captured directly from its HTTPS URL; BLS published material is public domain with attribution.",
+      "access_status": "downloaded",
+      "source_kind": "official-webpage",
+      "download_locator": "https://www.bls.gov/charts/job-openings-and-labor-turnover/job-openings-unemployment-beveridge-curve.htm",
+      "retrieved_at": "2026-10-18T04:05:28+00:00",
+      "file": "literature/pages/blschart--the-beveridge-curve-job-openings-rate-vs-unemployment-rate-seasonally-adjusted.html",
+      "sha256": "db1bfee417b4d638df35497958c9ca10d8d8a5fc90384aa5da5e4c7e77983595"
+    },
+    {
+      "citekey": "BLS2013",
+      "title": "Job openings and the Beveridge curve, December 2000–April 2013",
+      "authors": [
+        "U.S. Bureau of Labor Statistics"
+      ],
+      "year": 2013,
+      "canonical_locator": "https://www.bls.gov/opub/ted/2013/ted_20130612.htm",
+      "verified_at": "2026-10-17T19:01:29+00:00",
+      "access_basis": "Official BLS page captured directly from its HTTPS URL; BLS published material is public domain with attribution.",
+      "access_status": "downloaded",
+      "source_kind": "official-webpage",
+      "download_locator": "https://www.bls.gov/opub/ted/2013/ted_20130612.htm",
+      "retrieved_at": "2026-10-18T04:05:28+00:00",
+      "file": "literature/pages/bls2013--job-openings-and-the-beveridge-curve-december-2000april-2013.html",
+      "sha256": "cf8a9ed55096f2af1d8418b67a58ca84a06a219d78adb2ec6472057bd44670c0"
+    },
+    {
+      "citekey": "BLSDefinitions",
+      "title": "Job Openings and Labor Turnover Survey: Data Definitions",
+      "authors": [
+        "U.S. Bureau of Labor Statistics"
+      ],
+      "year": 2026,
+      "canonical_locator": "https://www.bls.gov/jlt/jltdef.htm",
+      "verified_at": "2026-10-17T19:01:29+00:00",
+      "access_basis": "Official BLS page captured directly from its HTTPS URL; BLS published material is public domain with attribution.",
+      "access_status": "downloaded",
+      "source_kind": "official-webpage",
+      "download_locator": "https://www.bls.gov/jlt/jltdef.htm",
+      "retrieved_at": "2026-10-18T04:05:28+00:00",
+      "file": "literature/pages/blsdefinitions--job-openings-and-labor-turnover-survey-data-definitions.html",
+      "sha256": "d80650f80261654bac3260fb3ac11b37eb3a98704a118fc909444cf739168241"
+    },
+    {
+      "citekey": "BLSCopyright",
+      "title": "BLS Copyright Information",
+      "authors": [
+        "U.S. Bureau of Labor Statistics"
+      ],
+      "year": 2026,
+      "canonical_locator": "https://www.bls.gov/opub/copyright-information.htm",
+      "verified_at": "2026-10-17T19:01:29+00:00",
+      "access_basis": "Official BLS page captured directly from its HTTPS URL; BLS published material is public domain with attribution.",
+      "access_status": "downloaded",
+      "source_kind": "official-webpage",
+      "download_locator": "https://www.bls.gov/opub/copyright-information.htm",
+      "retrieved_at": "2026-10-18T04:05:28+00:00",
+      "file": "literature/pages/blscopyright--bls-copyright-information.html",
+      "sha256": "93b73a7df1d66de966702f1ebe76ad42d3dcf5ca38741b4fcbf610f885021be2"
+    },
+    {
+      "citekey": "BLSJOLTS",
+      "title": "Job Openings and Labor Turnover Survey News Release, July 2024",
+      "authors": [
+        "U.S. Bureau of Labor Statistics"
+      ],
+      "year": 2024,
+      "canonical_locator": "https://www.bls.gov/news.release/archives/jolts_09042024.htm",
+      "verified_at": "2026-10-17T19:01:29+00:00",
+      "access_basis": "Official BLS page captured directly from its HTTPS URL; BLS published material is public domain with attribution.",
+      "access_status": "downloaded",
+      "source_kind": "official-webpage",
+      "download_locator": "https://www.bls.gov/news.release/archives/jolts_09042024.htm",
+      "retrieved_at": "2026-10-18T04:05:28+00:00",
+      "file": "literature/pages/blsjolts--job-openings-and-labor-turnover-survey-news-release-july-2024.html",
+      "sha256": "36791dd9a95ac8578356d9ddd4e4252f09418ea78577727fa1e4b394a86d5d3f"
+    },
+    {
+      "citekey": "BLS2026",
+      "title": "Debunking common misconceptions about the Job Openings and Labor Turnover Survey: BLS research disproves overcounting and other myths in JOLTS data",
+      "authors": [
+        "Larry Akinyooye",
+        "Mark Crankshaw",
+        "Sean McIllece"
+      ],
+      "year": 2026,
+      "canonical_locator": "https://www.bls.gov/opub/mlr/2026/article/debunking-common-misconceptions-about-the-job-openings-and-labor-turnover-survey-bls-research-disproves-overcounting-and-other-myths-in-jolts-data.htm",
+      "verified_at": "2026-10-17T19:01:29+00:00",
+      "access_basis": "Official BLS page captured directly from its HTTPS URL; BLS published material is public domain with attribution.",
+      "access_status": "downloaded",
+      "source_kind": "official-webpage",
+      "download_locator": "https://www.bls.gov/opub/mlr/2026/article/debunking-common-misconceptions-about-the-job-openings-and-labor-turnover-survey-bls-research-disproves-overcounting-and-other-myths-in-jolts-data.htm",
+      "retrieved_at": "2026-10-18T04:05:28+00:00",
+      "file": "literature/pages/bls2026--debunking-common-misconceptions-about-the-job-openings-and-labor-turnover-survey.html",
+      "sha256": "b088fe850121374c394a61d240598537138120bb4d7d95675f42b83bad74d2b4"
+    },
+    {
+      "citekey": "BarlevyEtAl2023",
+      "title": "The Shifting Reasons for Beveridge-Curve Shifts",
+      "authors": [
+        "Gadi Barlevy",
+        "R. Jason Faberman",
+        "Bart Hobijn",
+        "Ayşegül Şahin"
+      ],
+      "year": 2023,
+      "canonical_locator": "https://www.nber.org/papers/w31783",
+      "verified_at": "2026-10-17T19:01:29+00:00",
+      "access_basis": "NBER permits personal download and reading; PDF is gitignored and must not be redistributed without permission.",
+      "access_status": "downloaded",
+      "download_locator": "https://www.nber.org/system/files/working_papers/w31783/w31783.pdf",
+      "retrieved_at": "2026-10-17T19:01:29+00:00",
+      "file": "literature/papers/barlevyetal2023--the-shifting-reasons-for-beveridge-curve-shifts.pdf",
+      "sha256": "1fe837b59c899fa602709a15601bf9fe003d5ff5da33bef231a9b8897090ddb1"
+    },
+    {
+      "citekey": "KindbergGirard2024",
+      "title": "What Caused the Beveridge Curve to Shift Higher in the United States During the Pandemic?",
+      "authors": [
+        "Gene Kindberg-Hanlon",
+        "Michael Girard"
+      ],
+      "year": 2024,
+      "canonical_locator": "https://www.imf.org/en/publications/wp/issues/2024/01/12/what-caused-the-beveridge-curve-to-shift-higher-in-the-united-states-during-the-pandemic-542870",
+      "verified_at": "2026-10-17T19:01:29+00:00",
+      "access_basis": "Official IMF working-paper PDF retrieved for research; redistribution license not asserted.",
+      "access_status": "downloaded",
+      "source_kind": "paper",
+      "download_locator": "https://www.imf.org/-/media/files/publications/wp/2024/english/wpiea2024008-print-pdf.pdf",
+      "retrieved_at": "2026-10-18T04:05:28+00:00",
+      "file": "literature/papers/kindberggirard2024--what-caused-the-beveridge-curve-to-shift-higher-in-the-united-states-during-the.pdf",
+      "sha256": "c4b6404dda6a5ecb2c8281ecaaf91954069c5b428ee7886f5ee55f3032e2a0da"
+    }
+  ]
+}

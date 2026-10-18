@@ -6,6 +6,8 @@ Use this reference when synthesizing literature, recording experiments, delegati
 
 For a new research question, run the pre-design gate in [topic_survey.md](topic_survey.md) before selecting a method or promising novelty. A general literature synthesis may continue below after that decision.
 
+If the frozen goal is an original article and the nearest-work review supports only replication, record the failed candidate and its source hashes, then search a different contribution within the same question before collecting data or drafting. Each candidate needs an explicit difference from the closest result, why that difference matters, a feasible discriminating test or proof, and a condition under which the candidate is discarded. After a substantive referee rejects novelty, overlap, design, or inference, carry the referee's exact objection into the next literature or design round. A smaller p-value, a newer endpoint, or better prose cannot clear these objections by itself. Stop honestly when the bounded search finds no defensible contribution.
+
 Set the review scope from the question, mechanism, estimand or theorem, method, population/model class, and search cutoff. Run separate baseline and frontier lanes: search established primary papers and citation chains, then search current working-paper series, preprints, advance articles, conferences, and author repositories. Never exclude a frontier candidate because citations are low. Every query must run through a browser, API, publisher search, or bibliographic database and preserve tool evidence; model memory is not a literature source. Record queries, sources searched, dates, access status, inclusion reasons, and a refresh interval. A stale survey must be rerun before a novelty or coverage claim.
 
 Synthesize by claim rather than paper order. For each close work, capture its question, result, assumptions, design or proof method, scope, and relation to the proposed contribution. For empirical work compare estimands, assignment mechanisms, data, and external validity; for theory compare primitives, solution concepts, theorem statements, and which assumptions strengthen or relax prior results. Surface disagreements and negative results. Do not claim novelty until the nearest alternatives and their differences have been checked.
@@ -52,6 +54,8 @@ Each row in `experiments.tsv` describes one attributable change. Status meanings
 - `inconclusive`: evidence cannot distinguish the hypothesis;
 - `blocked`: missing authority, input, or required capability;
 - `crash`: execution failed before valid evaluation.
+
+For autonomous manuscript runs, use the TSV columns `iteration`, `mode`, `hypothesis`, `validation`, `status`, `artifact`, `artifact_sha256`, `reason`, and `next_action`. Record the evidence file under the project root and its SHA-256, even when the result is `blocked` or `crash`; the file can document the failed attempt or missing input. Give a concrete next action such as a narrower hypothesis, a different discriminating test, or a stop decision. Run `python3 scripts/check_exploration_ledger.py research/experiments.tsv --root PROJECT --json` before drafting or revising. This check verifies the decision trail and file identity, not whether the scientific inference is correct.
 
 Never edit prior rows to improve the story. Link results rather than pasting logs.
 

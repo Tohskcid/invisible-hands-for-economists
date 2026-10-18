@@ -1,0 +1,92 @@
+{
+  "valid": true,
+  "historical_cutoff_exclusive": "2023-02-24",
+  "strict_blind_cutoff_exclusive": "2020-08-16",
+  "comparators": [
+    {
+      "title": "Job Matching and Coalition Formation in a Labor Market with Competitive Salaries",
+      "first_public_at": "1982-11",
+      "historical_prior_art": true,
+      "author_visible_for_strict_blind": true,
+      "classification": "pre-publication-external-work"
+    },
+    {
+      "title": "Matching with Contracts",
+      "first_public_at": "2005-09",
+      "historical_prior_art": true,
+      "author_visible_for_strict_blind": true,
+      "classification": "pre-publication-external-work"
+    },
+    {
+      "title": "Taxation in Matching Markets",
+      "first_public_at": "2020-07-13",
+      "historical_prior_art": true,
+      "author_visible_for_strict_blind": true,
+      "classification": "pre-publication-external-work"
+    },
+    {
+      "title": "Comparative Statics for Size-Dependent Discounts in Matching Markets",
+      "first_public_at": "2020-08-06",
+      "historical_prior_art": true,
+      "author_visible_for_strict_blind": true,
+      "classification": "pre-publication-external-work"
+    },
+    {
+      "title": "Job Matching with Subsidy and Taxation (SSRN version)",
+      "first_public_at": "2020-08-16",
+      "historical_prior_art": false,
+      "author_visible_for_strict_blind": false,
+      "classification": "target-version"
+    },
+    {
+      "title": "Job Matching under Constraints (AER version)",
+      "first_public_at": "2020-09",
+      "historical_prior_art": true,
+      "author_visible_for_strict_blind": false,
+      "classification": "pre-publication-external-work"
+    },
+    {
+      "title": "On Optimal Taxes and Subsidies: A Discrete Saddle-Point Theorem with Application to Job Matching under Constraints",
+      "first_public_at": "2020-12",
+      "historical_prior_art": true,
+      "author_visible_for_strict_blind": false,
+      "classification": "pre-publication-external-work"
+    },
+    {
+      "title": "Discrete Convex Analysis: A Tool for Economics and Game Theory (2022 arXiv revision)",
+      "first_public_at": "2022-12-07",
+      "historical_prior_art": true,
+      "author_visible_for_strict_blind": false,
+      "classification": "pre-publication-external-work"
+    },
+    {
+      "title": "Existence of a Competitive Equilibrium with Substitutes, with Applications to Matching and Discrete Choice Models (2023 arXiv version)",
+      "first_public_at": "2023-09-20",
+      "historical_prior_art": false,
+      "author_visible_for_strict_blind": false,
+      "classification": "at-or-after-journal-publication"
+    },
+    {
+      "title": "Labor Market Matching, Wages, and Amenities (NBER 32687 version)",
+      "first_public_at": "2024-07",
+      "historical_prior_art": false,
+      "author_visible_for_strict_blind": false,
+      "classification": "at-or-after-journal-publication"
+    },
+    {
+      "title": "Job Matching with Subsidy and Taxation (2024 issue version)",
+      "first_public_at": "2024-01",
+      "historical_prior_art": false,
+      "author_visible_for_strict_blind": false,
+      "classification": "target-version"
+    }
+  ],
+  "author_corpus_safe": false,
+  "unsafe_author_material": [
+    "Discrete Convex Analysis: A Tool for Economics and Game Theory (2022 arXiv revision)",
+    "Existence of a Competitive Equilibrium with Substitutes, with Applications to Matching and Discrete Choice Models (2023 arXiv version)",
+    "Labor Market Matching, Wages, and Amenities (NBER 32687 version)"
+  ],
+  "errors": [],
+  "note": "Date eligibility only; substantive overlap and novelty require source-based review."
+}

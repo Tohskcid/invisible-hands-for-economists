@@ -1,0 +1,7 @@
+{
+  "start_utc": "2026-10-17T13:50:55.976142+00:00",
+  "budget_seconds": 1200,
+  "nominal_deadline_utc": "2026-10-17T14:10:55.976142+00:00",
+  "start_basis": "mtime of public-hashes.json; created after target encryption and before author-side agents were dispatched; conservative proxy because a dedicated start event was not written at dispatch",
+  "strict_timing_caveat": "Proxy start cannot certify exact dispatch timing."
+}

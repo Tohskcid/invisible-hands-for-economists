@@ -50,6 +50,8 @@ def load_ledger_events(ledger_path: Path) -> list[dict]:
 
 GATE_TASKS = {
     "check_topic_survey.py": ("literature", "Verify nearest research and the contribution decision", True),
+    "check_prior_art_review.py": ("literature", "Read full text and independently compare each proposed claim with every nearest work", True),
+    "check_exploration_ledger.py": ("exploration", "Record each hypothesis, discriminating test, evidence-bound decision, and next action", True),
     "check_data_provenance.py": ("data", "Acquire and verify source data, access, license, and hashes", True),
     "check_literature_archive.py": ("literature", "Retrieve cited sources or record access gaps", True),
     "validate_research_manifest.py": ("argument", "Repair claim, evidence, and obligation links", True),
@@ -64,7 +66,7 @@ GATE_TASKS = {
     "check_substantive_review.py": ("review", "Obtain a current independent review of novelty, validity, logic, and limitations", True),
 }
 
-STAGE_ORDER = ("package", "literature", "data", "design", "argument", "analysis", "replication", "manuscript", "review", "delivery")
+STAGE_ORDER = ("package", "literature", "data", "design", "exploration", "argument", "analysis", "replication", "manuscript", "review", "delivery")
 
 
 def rework_plan(tasks: list[dict]) -> dict | None:
@@ -492,8 +494,9 @@ def main() -> int:
     contract_data = {}
     if args.contract:
         c_path = args.contract if args.contract.is_absolute() else root / args.contract
-        if c_path.is_file():
-            contract_data = json.loads(c_path.read_text(encoding="utf-8"))
+        if not c_path.is_file():
+            parser.error(f"contract file not found: {c_path}")
+        contract_data = json.loads(c_path.read_text(encoding="utf-8"))
 
     contract_data.setdefault("mode", args.mode)
     contract_data.setdefault("deliverable", args.deliverable)

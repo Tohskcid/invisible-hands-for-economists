@@ -427,6 +427,16 @@ class HarnessOptimizationAcceptanceTests(unittest.TestCase):
         self.assertTrue(any("claims formally_proved but lacks verified Lean formal proof run/artifact" in err for err in errs_formal))
 
     # --- Automated Paper-Writing Workflow Orchestrator End-to-End ---
+    def test_explicit_missing_contract_does_not_freeze_defaults(self):
+        result = subprocess.run(
+            [sys.executable, str(ROOT / "scripts/run_research_workflow.py"),
+             "--root", str(self.root), "--contract", "research/missing.json", "--json"],
+            capture_output=True, text=True, check=False,
+        )
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("contract file not found", result.stderr)
+        self.assertFalse((self.root / "research/contract.json").exists())
+
     def test_automated_workflow_orchestrator_execution(self):
         """Verify run_research_workflow.py initializes contract, records events, and executes gates."""
         contract = {

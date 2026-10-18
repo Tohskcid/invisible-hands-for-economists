@@ -1,0 +1,12 @@
+{
+  "manifest": "research/manifest.jsonl",
+  "topic_survey": "research/topic-survey.json",
+  "coverage": "research/coverage.json",
+  "bibliography": "manuscript/references.bib",
+  "literature_archive": "research/literature-archive.json",
+  "logic_review": "research/logic-review.json",
+  "mechanism_audit": "research/mechanism-audit.json",
+  "mechanism_review": "research/mechanism-review.json",
+  "team_report": "research/team.json",
+  "substantive_review": "research/substantive-review.json"
+}

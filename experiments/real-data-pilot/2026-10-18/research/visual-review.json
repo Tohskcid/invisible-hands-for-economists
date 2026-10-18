@@ -1,0 +1,12 @@
+{
+  "pdf_sha256": "195e5e98c0dae40a3df1a152449cfe02c4266214996a43c4edde070d659053c5",
+  "status": "pass",
+  "reviewer": "root_final_visual_QA",
+  "pages_reviewed": [
+    1,
+    2,
+    3
+  ],
+  "issues": [],
+  "notes": "All three final rendered pages visually inspected after rebuilding the revised TeX and bibliography. Text, table, figure, links and references are legible; no clipping or isolated reference page."
+}

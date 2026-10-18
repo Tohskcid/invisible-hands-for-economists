@@ -1,0 +1,1 @@
+Initial contract used an invalid mechanism_scope enum before researcher outputs. Preserved as a failed setup; the corrected run is b02. Scientific question, time budget, and pre-registered scoring remain unchanged.

@@ -1,0 +1,40 @@
+{
+  "id": "b04",
+  "preregistered_date": "2026-10-17",
+  "total_points": 10,
+  "scoring_rule": "Five substantive criteria, each scored 0, 1, or 2. Award 2 for a correct result with justified scope and proof or valid derivation; 1 for a correct but incomplete or weakly justified result; 0 for absence or material error. Do not score title, authors, or verbal similarity. Audit proof validity and source contamination separately.",
+  "reference_url": "https://www.journals.uchicago.edu/doi/full/10.1086/728111",
+  "criteria": [
+    {
+      "id": "model_and_reduction",
+      "points": 2,
+      "criterion": "Specify heterogeneous one-dimensional qualities, observable group labels, private willingness to pay, unobservable welfare weights, quasilinear utility, incentive compatibility, individual rationality, nonnegative payments, and feasible assignment with free disposal. Derive the monotone expected-quality/envelope representation and a welfare objective using conditional Pareto weights and a revenue weight.",
+      "exact_locators": ["published article Section II.A-C", "conditions (1)-(4)", "Claims 1-3 and equation (5)", "(OBJ) and (OBJ')"]
+    },
+    {
+      "id": "within_group_optimum",
+      "points": 2,
+      "criterion": "Solve the within-group allocation by a transformed social-value function and concave/decreasing concave closures: identify when qualities are discarded, pooled randomly, or sorted assortatively, and how the lowest-type rent depends on the revenue weight versus average group welfare weight. Give a valid derivation, not only an intuition.",
+      "exact_locators": ["published article Section III.A, Theorem 1", "equation (6)", "Appendix A1, Proof of Theorem 1"]
+    },
+    {
+      "id": "across_group_optimum",
+      "points": 2,
+      "criterion": "Show how to allocate the fixed quality distribution across observed groups after solving within-group problems. Derive the resource-constrained program and a correct marginal-value or equivalent greedy characterization, including the relevant monotonicity or feasibility argument.",
+      "exact_locators": ["published article Section III.B, equations (7)-(8), Theorem 2", "Appendix A2, Proof of Theorem 2"]
+    },
+    {
+      "id": "free_or_random_allocation_conditions",
+      "points": 2,
+      "criterion": "Establish when a favored group receiving a universally desired good must have a nondegenerate zero-price random allocation region at the bottom. Distinguish this from full free random provision and give its necessary inequality and the stated sufficient regularity condition.",
+      "exact_locators": ["published article Section IV.A.1, Propositions 1-2", "equation (9)", "Appendix A3.1-A3.2", "publisher supplementary Appendix B"]
+    },
+    {
+      "id": "private_information_and_market_boundary",
+      "points": 2,
+      "criterion": "Characterize the separate case where willingness to pay reveals distributional information: under the stated boundary assumption, a random interval is optimal exactly when the weighted social-value function fails to be nondecreasing. Explain the market/assortative boundary and at least one implication for allocation of qualities across groups, with qualifications.",
+      "exact_locators": ["published article Section IV.A.2, Proposition 3", "Section IV.B, Proposition 4", "Appendix A3.3-A3.4"]
+    }
+  ],
+  "neutrality": "A sound contrary or conditional result under different stated assumptions can be scientifically valid, but historical reconstruction points require the corresponding target-domain result and assumptions."
+}

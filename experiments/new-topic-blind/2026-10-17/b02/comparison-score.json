@@ -1,0 +1,79 @@
+{
+  "scored_utc": "2026-10-17T02:35:41.525162+00:00",
+  "evaluator": "PI post-unblinding assessment; not independent human review",
+  "rubric_sha256": "21cde8109c55809e954ab7eb9558074b6402fd35293687d036acaed195628544",
+  "submission_tex_sha256": "8c3b67bafc061cb616f5296f579fd0bf69e6de3b1cbf3ceb07c97b9b49c77965",
+  "published_pdf_sha256": "0273be038411fbfaac331f388041af4e916f11e16bc4d18f2b6c6d5f6a4a659d",
+  "criteria": [
+    {
+      "criterion": "environment",
+      "score": 1,
+      "max": 2,
+      "original_pdf_pages": [
+        4,
+        5,
+        6
+      ],
+      "submission_sections": [
+        "Environment and equilibrium"
+      ],
+      "reason": "Private types and simultaneous contacts are present; posted wages, firm entry and portfolios are absent."
+    },
+    {
+      "criterion": "coordination_screening_tradeoff",
+      "score": 0,
+      "max": 2,
+      "original_pdf_pages": [
+        1,
+        2
+      ],
+      "submission_sections": [
+        "Environment and equilibrium"
+      ],
+      "reason": "Contacts enter only through an exogenous availability probability; no liquidity-based screening."
+    },
+    {
+      "criterion": "adverse_selection_equilibria",
+      "score": 1,
+      "max": 2,
+      "original_pdf_pages": [
+        12,
+        14
+      ],
+      "submission_sections": [
+        "Participation equilibria"
+      ],
+      "reason": "Participation multiplicity is derived, but separation is trade exclusion rather than sorting into wage submarkets."
+    },
+    {
+      "criterion": "welfare_can_fall",
+      "score": 1,
+      "max": 2,
+      "original_pdf_pages": [
+        18
+      ],
+      "submission_sections": [
+        "Allocation and welfare"
+      ],
+      "reason": "A fall appears only through arbitrary equilibrium switching; no endogenous welfare-reducing contact effect."
+    },
+    {
+      "criterion": "large_contact_limit",
+      "score": 0,
+      "max": 2,
+      "original_pdf_pages": [
+        19,
+        20,
+        22
+      ],
+      "submission_sections": [
+        "Conclusion"
+      ],
+      "reason": "No Akerlof convergence, persistent frictional trading or excessive firm entry result."
+    }
+  ],
+  "score": 3,
+  "max_score": 10,
+  "threshold": 8,
+  "passed": false
+}

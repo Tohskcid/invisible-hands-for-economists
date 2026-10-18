@@ -1,0 +1,182 @@
+{
+  "schema_version": "1",
+  "status": "author-complete-awaiting-independent-review",
+  "block_reason": "Author comparisons revised after independent referee findings; no separate reviewer has signed this revised matrix.",
+  "topic_survey_sha256": "ee18431583b73634c263734732590c440b819bfb705fd894e393653151fb4ed8",
+  "author_id": "real_case_agent",
+  "proposed_claims": [
+    {
+      "id": "c-main",
+      "statement": "Openings-rate mean was 1.6042 percentage points higher in 2022-2024 among months with unemployment 3.5-4.5%"
+    },
+    {
+      "id": "c-normalization",
+      "statement": "2024-only gap was smaller than pooled post-2021 gap"
+    },
+    {
+      "id": "c-limitations",
+      "statement": "Conditional comparison does not establish a structural or causal shift"
+    },
+    {
+      "id": "c-conclusion",
+      "statement": "The pilot reproduces a known descriptive gap that narrowed by 2024 and cannot claim novelty or causality"
+    }
+  ],
+  "works": [
+    {
+      "citation_key": "BLS2013",
+      "title": "Job openings and the Beveridge curve, December 2000–April 2013",
+      "locator": "https://www.bls.gov/opub/ted/2013/ted_20130612.htm",
+      "date_source": "https://www.bls.gov/opub/ted/2013/ted_20130612.htm",
+      "first_public_at": "2013-06-12",
+      "full_text_status": "checked",
+      "full_text_locator": "https://www.bls.gov/opub/ted/2013/ted_20130612.htm",
+      "full_text_retrieved_at": "2026-10-18",
+      "full_text_artifact": "literature/pages/bls2013--job-openings-and-the-beveridge-curve-december-2000april-2013.html",
+      "full_text_sha256": "cf8a9ed55096f2af1d8418b67a58ca84a06a219d78adb2ec6472057bd44670c0"
+    },
+    {
+      "citation_key": "BarlevyEtAl2023",
+      "title": "The Shifting Reasons for Beveridge-Curve Shifts",
+      "locator": "https://www.nber.org/papers/w31783",
+      "date_source": "https://www.nber.org/papers/w31783",
+      "first_public_at": "2023-10",
+      "full_text_status": "checked",
+      "full_text_locator": "https://www.nber.org/system/files/working_papers/w31783/w31783.pdf",
+      "full_text_retrieved_at": "2026-10-18",
+      "full_text_artifact": "literature/papers/barlevyetal2023--the-shifting-reasons-for-beveridge-curve-shifts.pdf",
+      "full_text_sha256": "1fe837b59c899fa602709a15601bf9fe003d5ff5da33bef231a9b8897090ddb1"
+    },
+    {
+      "citation_key": "KindbergGirard2024",
+      "title": "What Caused the Beveridge Curve to Shift Higher in the United States During the Pandemic?",
+      "locator": "https://www.imf.org/en/publications/wp/issues/2024/01/12/what-caused-the-beveridge-curve-to-shift-higher-in-the-united-states-during-the-pandemic-542870",
+      "date_source": "https://www.imf.org/en/publications/wp/issues/2024/01/12/what-caused-the-beveridge-curve-to-shift-higher-in-the-united-states-during-the-pandemic-542870",
+      "first_public_at": "2024-01-12",
+      "full_text_status": "checked",
+      "full_text_locator": "https://www.imf.org/-/media/files/publications/wp/2024/english/wpiea2024008-print-pdf.pdf",
+      "full_text_retrieved_at": "2026-10-18",
+      "full_text_artifact": "literature/papers/kindberggirard2024--what-caused-the-beveridge-curve-to-shift-higher-in-the-united-states-during-the.pdf",
+      "full_text_sha256": "c4b6404dda6a5ecb2c8281ecaaf91954069c5b428ee7886f5ee55f3032e2a0da"
+    }
+  ],
+  "comparisons": [
+    {
+      "claim_id": "c-main",
+      "citation_key": "BLS2013",
+      "prior_claim": "The agency documented the same aggregate unemployment–openings relationship in an earlier period.",
+      "source_pointer": "section Main text",
+      "source_excerpt": "The Beveridge curve is a graphical representation of the relationship between the unemployment rate and the job openings rate.",
+      "difference": "BLS plots the same aggregate relation only through April 2013, so it cannot contain the pilot’s later numerical comparison.",
+      "overlap": "partial"
+    },
+    {
+      "claim_id": "c-main",
+      "citation_key": "BarlevyEtAl2023",
+      "prior_claim": "The working paper surveys shifts and their changing drivers through 2023.",
+      "source_pointer": "page 3",
+      "source_excerpt": "Figure 1: U.S. Beveridge curve: December 2000 - August 2023.",
+      "difference": "NBER already displays the pandemic separation through August 2023; the exact frozen band mean and 2024 endpoint are later arithmetic.",
+      "overlap": "partial"
+    },
+    {
+      "claim_id": "c-main",
+      "citation_key": "KindbergGirard2024",
+      "prior_claim": "The IMF paper studies the pandemic shift with state data and a search model.",
+      "source_pointer": "page 5",
+      "source_excerpt": "The Beveridge curve in the United States has shifted substantially higher since the start of the COVID-19 pandemic",
+      "difference": "IMF establishes the outward pandemic pattern, but its vacancy measure uses vacancies divided by labor force, so its plotted magnitude is not numerically interchangeable with the pilot’s JOLTS openings rate.",
+      "overlap": "partial"
+    },
+    {
+      "claim_id": "c-normalization",
+      "citation_key": "BLS2013",
+      "prior_claim": "The agency documented the same aggregate unemployment–openings relationship in an earlier period.",
+      "source_pointer": "section Main text",
+      "source_excerpt": "From 2010 to the present, the point moved up and to the left as the job openings rate increased and the unemployment rate decreased.",
+      "difference": "This older movement gives no evidence about 2024; the pilot updates the endpoint, while using an established display.",
+      "overlap": "distinct"
+    },
+    {
+      "claim_id": "c-normalization",
+      "citation_key": "BarlevyEtAl2023",
+      "prior_claim": "The working paper surveys shifts and their changing drivers through 2023.",
+      "source_pointer": "page 19",
+      "source_excerpt": "Since the summer of 2022, the empirical Beveridge curve has exhibited what looks like a puzzling, vertical drop.",
+      "difference": "NBER documents falling vacancies with little unemployment increase before 2024; the pilot’s 2024-only mean is a later update.",
+      "overlap": "partial"
+    },
+    {
+      "claim_id": "c-normalization",
+      "citation_key": "KindbergGirard2024",
+      "prior_claim": "The IMF paper studies the pandemic shift with state data and a search model.",
+      "source_pointer": "page 27",
+      "source_excerpt": "Many of the factors mentioned here will fade in importance as time goes on, suggesting that a progressive partial renormalization of the Beveridge curve could take place.",
+      "difference": "IMF anticipates possible partial reversal; it does not observe the pilot’s 2024-only arithmetic.",
+      "overlap": "partial"
+    },
+    {
+      "claim_id": "c-limitations",
+      "citation_key": "BLS2013",
+      "prior_claim": "The agency documented the same aggregate unemployment–openings relationship in an earlier period.",
+      "source_pointer": "section Main text",
+      "source_excerpt": "The outward shift in the Beveridge curve may be due to a greater mismatch between available jobs and the unemployed in terms of skills or location, or that employers are delaying hiring due to economic uncertainty.",
+      "difference": "BLS itself offers competing explanations; the pilot likewise cannot identify a cause from the aggregate chart.",
+      "overlap": "same"
+    },
+    {
+      "claim_id": "c-limitations",
+      "citation_key": "BarlevyEtAl2023",
+      "prior_claim": "The working paper surveys shifts and their changing drivers through 2023.",
+      "source_pointer": "page 8",
+      "source_excerpt": "the reasons for why the Beveridge curve shifts, and how and whether they also affect job creation, cannot be gleaned from movements in the unemployment and job openings rates alone.",
+      "difference": "The same nonidentification warning applies directly to the pilot’s two-rate comparison.",
+      "overlap": "same"
+    },
+    {
+      "claim_id": "c-limitations",
+      "citation_key": "KindbergGirard2024",
+      "prior_claim": "The IMF paper studies the pandemic shift with state data and a search model.",
+      "source_pointer": "page 9",
+      "source_excerpt": "The reduced form specification is liable to the critique that it may incorrectly identify vertical shifts in the curve that actually capture horizontal shifts of a steeply sloped curve",
+      "difference": "Even the richer IMF specification flags a shift-identification problem; the pilot’s band means are less informative.",
+      "overlap": "same"
+    },
+    {
+      "claim_id": "c-conclusion",
+      "citation_key": "BLS2013",
+      "prior_claim": "The agency documented the same aggregate unemployment–openings relationship in an earlier period.",
+      "source_pointer": "section Main text",
+      "source_excerpt": "From 2010 to the present, the point moved up and to the left as the job openings rate increased and the unemployment rate decreased.",
+      "difference": "BLS establishes the descriptive method and historical movement, but its 2013 endpoint cannot show a 2024 narrowing.",
+      "overlap": "partial"
+    },
+    {
+      "claim_id": "c-conclusion",
+      "citation_key": "BarlevyEtAl2023",
+      "prior_claim": "The working paper surveys shifts and their changing drivers through 2023.",
+      "source_pointer": "page 19",
+      "source_excerpt": "Since the summer of 2022, the empirical Beveridge curve has exhibited what looks like a puzzling, vertical drop.",
+      "difference": "The prior paper already addresses the subsequent decline; the pilot extends the endpoint through 2024 without a new mechanism.",
+      "overlap": "partial"
+    },
+    {
+      "claim_id": "c-conclusion",
+      "citation_key": "KindbergGirard2024",
+      "prior_claim": "The IMF paper studies the pandemic shift with state data and a search model.",
+      "source_pointer": "page 27",
+      "source_excerpt": "Many of the factors mentioned here will fade in importance as time goes on, suggesting that a progressive partial renormalization of the Beveridge curve could take place.",
+      "difference": "Prior work offers mechanisms and predicts possible reversal; the pilot adds a 2024 descriptive endpoint only.",
+      "overlap": "partial"
+    }
+  ],
+  "independent_review": {
+    "reviewer_id": "codex-independent-referee-01a14d30-0bad-75d1-a6f1-82aa78ede55f",
+    "independent_of_author": true,
+    "source_passages_verified": true,
+    "source_dates_verified": true,
+    "reviewed_at": "2026-10-18",
+    "decision": "replicate",
+    "rationale": "I independently checked all 12 claim-by-work excerpts at their retained HTML or physical PDF-page pointers, read the surrounding passages, matched all three full-text hashes, and checked publication dates against the BLS, NBER, and IMF publisher records. The revised matrix correctly separates BLS's pre-pandemic descriptive evidence, NBER's observed 2022-23 decline, and IMF's forecast of possible partial renormalization from the pilot's 2024-only arithmetic; it also notes the IMF vacancy denominator difference. The October 2023 NBER date is appropriately month-precise. The 2024 endpoint adds a bounded descriptive replication update, not a new mechanism, causal result, or top-journal contribution. This attestation approves the honest replicate decision and source tracing only; it does not certify novelty or manuscript acceptance."
+  }
+}

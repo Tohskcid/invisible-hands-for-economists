@@ -1,0 +1,9 @@
+{
+  "reviewer": "b04 manuscript author",
+  "status": "pass",
+  "pages_reviewed": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
+  "issues": [],
+  "source_sha256": "0ac1e0995a25c5b2e43aab5527db5013968a7277b7e0c5bda0f2b225cd04698b",
+  "pdf_sha256": "a35fa62fa29b7ec3e5ad1afb21f8b553059a18e98a3c3ad8e689c3c735303c7d",
+  "notes": "All rendered pages inspected; text and mathematics are legible, with no observed clipping or overlap. This records layout review only, not independent mathematical or substantive review."
+}

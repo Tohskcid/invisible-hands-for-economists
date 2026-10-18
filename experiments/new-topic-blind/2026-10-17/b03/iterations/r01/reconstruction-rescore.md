@@ -1,0 +1,15 @@
+# b03 r01 揭盲後重建複評
+
+**結果：4/10，與 b03 原始盲測的 4/10 相同；五項均無分數變動。** r01 是 **post-unblind development revision**，不是第二次盲測；本報告只評修訂稿對原先封存五項內容的重建程度，不改動 `evaluation/comparison-score.json`。依 `sealed/rubric.json` 原定規則，各項 0/1/2；2 分須有正確且充分論證、範圍和限定，1 分是正確但不完整或論證薄弱，0 分是缺漏或實質錯誤。題名相近和準備投稿的措辭不計分。
+
+| 封存項目 | b03 → r01 | 逐項依據 |
+|---|---:|---|
+| 模型 `model` | **2 → 2** | 原文主文 §2 pp.7–9、Definition 1 定義集合產值、轉移、工資、最大化需求及漲薪後保留未漲薪工人的 substitutes；p.8 n.12 說明均衡意義。r01 `main.tex` §3，lines 47–80，式 `eq:profit`、`eq:demand` 與 Demand GS 定義仍具備有限雇主／工人、集合產值、工資及轉移；§4 Proposition `prop:exgs`（lines 85–88）連結交換條件與 GS。這項原已滿分。新增 Proposition `prop:generaleq`（lines 139–142；附錄 lines 229–271）的 EX 均衡與 LP 論證，提升稿件完整性，不產生額外 rubric 分。 |
+| 簡單轉移的普遍保留 `universal_simple` | **1 → 1** | 原文主文 p.9 Definition 2 的量詞是**對所有 GS 產值**；§3 pp.10–11 Proposition 1、Theorem 1 給充要類別：逐工人加法項加上邊際增量弱遞減的頭數凹項。p.9 的兩個 unit-demand 函數之和反例表明「轉移本身 GS」不足；附錄 OA.2.2 證 Theorem 1。r01 Proposition `prop:modular`（lines 91–94）仍只證模組化轉移在 EX 域保留，Proposition `prop:headcount`（lines 167–170；證明 lines 279–292）仍只在加法基底得頭數凹性的充要式。沒有對**任意 GS 產值**證完整充分性與必要性，也沒有 GS 轉移相加失敗的對應辨析。 |
+| 產值資訊與群組 `information_scope` | **0 → 0** | 原文 §4.1 pp.13–14 Theorem 2：群組可分且各組 GS 的產值，恰由逐工人加法項加 group-cardinal 且 GS 的 group-concave 轉移保留；§4.2 pp.15–16 Theorem 3：至少三組時，群組可分項加頭數凹項為充要類別；p.16 Proposition 2 對兩組只給充分性。附錄 OA.2.6 證 Theorems 2–3。r01 Proposition `prop:rebate`（lines 145–148、273–277）只使用兩工人產值互補性的共同上界與單人 rebate；沒有工人群組分割、兩類群組產值或組數限定。這是另一個資訊問題，並未重建該項。 |
+| 薪資相依轉移 `salary_dependent` | **1 → 1** | 原文 §5.1 pp.18–20 要求轉移只依受雇者薪資、淨聘僱成本在**全實數薪資**上嚴格遞增；Proposition 3 給逐工人薪資相依加法充分性。§5.2 p.21 Theorem 4（附錄 OA.2.10）給普遍保留的充要分類：C-additively separable 加 C-cardinally concave，後者含全員受雇時受約束的薪資相依邊界；p.21 指出聯合總薪資稅可能破壞替代性。r01 Proposition `prop:wagedemand`（lines 116–124；證明 lines 215–221）保留正確的逐工人有效價格充分條件，但只要求非負工資上的弱遞增；沒有必要性、全員邊界或聯合薪資稅的有效反例。lines 152–154 的反例是**與薪資無關**的共同雇用獎金。 |
+| 頭數凹政策修復 `restoration` | **0 → 0** | 原文 §6.2 pp.24–25 Definitions 4–6 分別是精確雇用人數下 substitutes、相鄰人數最適集合的巢狀鏈、規模凹性；Proposition 8 說三者合起來對 GS 充要。§6.3 pp.25–26 Proposition 9 說頭數轉移不改前兩者；Theorem 5（附錄 OA.2.12–OA.2.13）說存在頭數凹轉移修復 GS **當且僅當**前兩者成立，規模凹性才是可修復的缺項。r01 Proposition `prop:two`（lines 97–107）為兩工人交叉差門檻，`prop:implement`（lines 110–113）是完全觀測產值後的任意集合別 `q−v`；新增 `prop:rebate`（lines 145–148、273–277）是兩工人、共同互補性上界和均一單人 rebate 的預算充要門檻。其頭數支付 `φ=(0,r,0)` 的增量 `r,−r` 確實凹，但修訂稿仍未定義或刻畫精確人數 substitutes、巢狀需求鏈及 Theorem 5 的可修復產值充要類。`prop:headcount`（lines 167–170）只處理加法產值上的保留，也不能補此缺口。 |
+
+r01 的實質進展在原分數之外：Proposition `prop:generaleq` 與附錄以 Murota 的卷積和交集定理補足一般 EX 調整估值的均衡論證，另提出指定政策類下的兩工人預算門檻。它們不等於原文 Theorems 1–5 尚缺的普遍保留、群組分類、複雜轉移分類與一般頭數凹修復定理。因此本次**重建分數變化為 0 分**，並不否定修訂稿在自身較窄問題上的新推導。
+
+核對材料：`sealed/rubric.json`（SHA-256 `df958a2eccc84286acec02e8eda39d7009d5c577c31b6b073fc4362ca69b6494`）、`sealed/target-published.pdf`（`87d138f3f49a9c0cb45941cf8ee2ec80290d8e032a9302622b9cab9bfb0f66c1`）、`sealed/target-online-appendix.pdf`（`ff7d33d0e15f6d7f354a6c10c6ffab7896b48d2cdc691f373d44f156b84ff1b6`）、r01 `main.tex`（`7a3dc698f06938c34ba50b66eec0e717c9e8a2203b40e4f1c395440961fec5ab`）及原 `evaluation/comparison-score.json`。原文頁碼為論文印刷頁碼；r01 行號為 LaTeX 原始檔行號。

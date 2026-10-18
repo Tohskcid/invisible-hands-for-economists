@@ -1,0 +1,17 @@
+{
+  "obstacles": {
+    "general-ex-equilibrium": {
+      "status": "resolved",
+      "rationale": "Independent referee checked Murota 2022 Theorems 6.1(9) and 9.4 against the paper reduction. Finite real-valued EX valuations extend to binary-domain M-natural-concave functions; finite convolution never equals +infinity; the singleton-domain indicator intersects the convolution at the all-ones vector, so the real-valued intersection theorem yields a supporting price. A zero-value dummy employer converts that price into nonnegative common wages with zero wages for unassigned workers. The equilibrium allocation and employer-profit/wage dual have equal objectives, proving existence of an integral configuration-LP optimum. This resolves the proof obstacle only, not novelty or welfare.",
+      "reviewer_kind": "agent",
+      "reviewer": "b03-r01-independent-referee",
+      "reviewer_id": "b03-r01-independent-referee",
+      "evidence": [
+        {
+          "path": "research/model/science-notes.md",
+          "sha256": "202bf047f0df7071e5132a423d59335620bc446a3559a732221fb13a18fa868c"
+        }
+      ]
+    }
+  }
+}

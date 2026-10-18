@@ -1,0 +1,88 @@
+{
+  "id": "b03",
+  "rubric_sha256": "df958a2eccc84286acec02e8eda39d7009d5c577c31b6b073fc4362ca69b6494",
+  "score": 4,
+  "maximum": 10,
+  "rule": "Five preregistered criteria, each 0/1/2; no threshold changes or title matching.",
+  "sealed_integrity": {
+    "algorithm": "SHA-256",
+    "verified": true,
+    "files": {
+      "sealed/target.json": "894650d555b8cedbbb0635e401701cd160330f90540d3a7ad60784fe2a5c8078",
+      "sealed/rubric.json": "df958a2eccc84286acec02e8eda39d7009d5c577c31b6b073fc4362ca69b6494",
+      "sealed/target-published.pdf": "87d138f3f49a9c0cb45941cf8ee2ec80290d8e032a9302622b9cab9bfb0f66c1",
+      "sealed/target-online-appendix.pdf": "ff7d33d0e15f6d7f354a6c10c6ffab7896b48d2cdc691f373d44f156b84ff1b6"
+    }
+  },
+  "source_urls": {
+    "published_article": "https://academic.oup.com/restud/article/91/1/372/7056201",
+    "published_full_text": "https://www.restud.com/wp-content/uploads/2023/02/Transfer_KSY_main_text.pdf",
+    "online_appendix": "https://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/restud/91/1/10.1093_restud_rdad032/1/rdad032_supplementary_data.pdf",
+    "doi": "https://doi.org/10.1093/restud/rdad032"
+  },
+  "submission_sha256": {
+    "attempt/paper/manuscript/main.tex": "2f5664debdcfedb208fdcc83dd688fbca16bc22d0fa6fb17489903138d07b89d",
+    "attempt/paper/build/main.pdf": "88c112eae123cf3a2ffed0b3de1abe9a975f1bbdfed673d0c1d30f5e1a9dec10",
+    "attempt/research/model/handoff.md": "7f1b9e44bcab409267c13ca73ca006878a67004841ed9f565ca315fd89ea79c7",
+    "review/independent-report.md": "a5842fbca2bc61330085672384b2e5dab27cf4b0b9ef33742dc89594da5d5ee8"
+  },
+  "criteria": [
+    {
+      "id": "model",
+      "score": 2,
+      "published": "Main PDF pp.7-9, §2, Definitions 1-2; p.8 n.12 links substitutes to equilibrium.",
+      "submission": "main.tex §3 Environment and definitions, eqs. (3.1)-(3.2), Definitions Exchange condition/Demand GS/Competitive equilibrium; §4 Proposition Exchange implies demand substitutes and Appendix proof.",
+      "reason": "Finite firms/workers, set revenue, salary and bundle-contingent transfer, profit-maximizing demand and salary-rise GS are explicit and correctly related. Equilibrium importance is explained, though general EX equilibrium is left conditional."
+    },
+    {
+      "id": "universal_simple",
+      "score": 1,
+      "published": "Main PDF pp.9-11, Definition 2, Proposition 1, Theorem 1; p.9 gives GS plus GS counterexample; Appendix PDF p.7 proof of Theorem 1.",
+      "submission": "main.tex §4 Proposition Modular fiscal schedule; §5 Proposition Nonmodular headcount transfers; Appendices Proof of Proposition Modular fiscal schedule and Proof of Proposition Nonmodular headcount transfers.",
+      "reason": "Correct modular preservation and diminishing-headcount characterization for additive baseline constitute a partial sufficient subclass. No necessary-and-sufficient universal class for every GS revenue function; no proof that GS of transfer alone is insufficient."
+    },
+    {
+      "id": "information_scope",
+      "score": 0,
+      "published": "Main PDF pp.13-16, §4.1-4.2, Theorems 2-3 and two-group qualification; Appendix PDF p.17 proofs.",
+      "submission": "main.tex §3-§5 has no group partition, group-separable/group-concave production classes, or corresponding policy characterizations.",
+      "reason": "Required information-dependent group theorems and at-least-three-groups qualification are absent."
+    },
+    {
+      "id": "salary_dependent",
+      "score": 1,
+      "published": "Main PDF pp.18-21, §5.1-5.2, Proposition 3, Proposition 4, Theorem 4 and all-workers C-cardinal boundary; Appendix PDF p.22 proof of Theorem 4.",
+      "submission": "main.tex §4 Proposition Separable wage-dependent schedule and Appendix Proof of Proposition Separable wage-dependent schedule.",
+      "reason": "Correct sufficient own-worker effective-price reparametrization. It uses weak increase on nonnegative wages, while the original complex-transfer domain requires strict increase on all real salaries. No universal necessity, C-cardinal all-workers exception, or joint-salary-tax counterexample."
+    },
+    {
+      "id": "restoration",
+      "score": 0,
+      "published": "Main PDF pp.24-26, §6.2-6.3, Definitions 4-6, Propositions 7-9, Theorem 5; Appendix PDF pp.30-33 proof of Theorem 5.",
+      "submission": "main.tex §4 Proposition Implementation by a bundle schedule, §4 two-worker threshold, §5 headcount proposition; no exact-size demand or nested-chain criteria.",
+      "reason": "q-v unrestricted correction and two-worker repair are different, narrower questions. The necessary-and-sufficient cardinally-concave restoration test and scale-concavity decomposition are absent."
+    }
+  ],
+  "interpretation": {
+    "historical_reconstruction": "Partial, 4/10; not reproduction of core Theorems 1-5.",
+    "internal_validity": "Independent AI referee found stated propositions largely valid within scope; general EX equilibrium remains unproved.",
+    "journal_readiness": "Independent AI referee recommended Reject; no human external review or acceptance prediction."
+  },
+  "audit": {
+    "run_started_utc": "2026-10-17T02:39:37.993983+00:00",
+    "budget_seconds": 1200,
+    "nominal_deadline_utc": "2026-10-17T02:59:37.993983+00:00",
+    "manuscript_last_write_utc": "2026-10-17T02:44:12.251838+00:00",
+    "pdf_last_write_utc": "2026-10-17T02:44:22.844649+00:00",
+    "submission_locked_utc": "2026-10-17T08:36:47.778811+00:00",
+    "author_final_message_missing": true,
+    "timing_conclusion": "Manuscript/PDF file timestamps lie within nominal budget, but lock was created about 5h37m afterward; strict on-time sealing cannot be certified from the late lock alone. Current hashes match the lock.",
+    "shared_filesystem": "Instruction-only blindness, no technical permission boundary.",
+    "contamination": "Literature scout search result exposed a possibly target-related SciSpace title/URL at 02:40:31 UTC; log records URL only. No evidence of opening content or passing title to author/model; zero exposure cannot be proven. Independent AI reviewer reports not reading sealed/target and only seeing a quarantined contamination notice."
+  },
+  "uncertainties": [
+    "The late submission lock prevents independently proving the exact within-budget state from the lock alone.",
+    "Instruction-only separation on a shared filesystem cannot prove no unseen access.",
+    "No claim of real external peer review or actual journal acceptance."
+  ]
+}

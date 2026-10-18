@@ -1,0 +1,97 @@
+[
+  {
+    "name": "kelso_crawford_1982.pdf",
+    "url": "https://econweb.ucsd.edu/~vcrawfor/KelsoCrawford82EMT.pdf",
+    "retrieved_at": "2026-10-17T02:40:12.345800+00:00",
+    "tool": "python urllib.request",
+    "status": 200,
+    "final_url": "https://econweb.ucsd.edu/~vcrawfor/KelsoCrawford82EMT.pdf",
+    "content_type": "application/pdf",
+    "bytes": 2174974,
+    "sha256": "5de5e5dff2c1965de584a9c065a0f434de0d3deb049b29ec051fa4a43caeb0e6"
+  },
+  {
+    "name": "hatfield_milgrom_2005.pdf",
+    "url": "https://milgrom.people.stanford.edu/wp-content/uploads/2005/09/Matching-with-Contracts-AER.pdf",
+    "retrieved_at": "2026-10-17T02:40:15.269867+00:00",
+    "tool": "python urllib.request",
+    "status": 200,
+    "final_url": "https://milgrom.people.stanford.edu/wp-content/uploads/2005/09/Matching-with-Contracts-AER.pdf",
+    "content_type": "application/pdf",
+    "bytes": 198929,
+    "sha256": "1ebc2b3ee2a0a410057d798a780b1e311c7ea8cba092634b0f11c3f629140a71"
+  },
+  {
+    "name": "gul_stacchetti_1999.html",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0022053199925310",
+    "retrieved_at": "2026-10-17T02:40:17.299218+00:00",
+    "tool": "python urllib.request",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "name": "murota_2022_abs.html",
+    "url": "https://arxiv.org/abs/2212.03598",
+    "retrieved_at": "2026-10-17T02:40:17.507165+00:00",
+    "tool": "python urllib.request",
+    "status": 200,
+    "final_url": "https://arxiv.org/abs/2212.03598",
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 40693,
+    "sha256": "c308ee2724d0594628ea4da625110bf9c27d7af52f16fc9202d84c4fc1dc69e6"
+  },
+  {
+    "name": "murota_2022.pdf",
+    "url": "https://arxiv.org/pdf/2212.03598",
+    "retrieved_at": "2026-10-17T02:40:18.004002+00:00",
+    "tool": "python urllib.request",
+    "status": 200,
+    "final_url": "https://arxiv.org/pdf/2212.03598",
+    "content_type": "application/pdf",
+    "bytes": 764162,
+    "sha256": "785705146c280834f458e5dca243eff059c33661be9dc53cb9f74f47d1616e1a"
+  },
+  {
+    "name": "chen_etal_2023_abs.html",
+    "url": "https://arxiv.org/abs/2309.11416",
+    "retrieved_at": "2026-10-17T02:40:18.815327+00:00",
+    "tool": "python urllib.request",
+    "status": 200,
+    "final_url": "https://arxiv.org/abs/2309.11416",
+    "content_type": "text/html; charset=utf-8",
+    "bytes": 41709,
+    "sha256": "7b6e46d8b992147c3c527b4ab84c2730e742367b706f4370db2c491ee8d71c4d"
+  },
+  {
+    "name": "chen_etal_2023.pdf",
+    "url": "https://arxiv.org/pdf/2309.11416",
+    "retrieved_at": "2026-10-17T02:40:19.085734+00:00",
+    "tool": "python urllib.request",
+    "status": 200,
+    "final_url": "https://arxiv.org/pdf/2309.11416",
+    "content_type": "application/pdf",
+    "bytes": 496816,
+    "sha256": "8112f3d169dba6cb0bd42a7bff4686d7fa4bff2983b6c8410ce9e8a253ee7a22"
+  },
+  {
+    "name": "lamadon_etal_2024.html",
+    "url": "https://www.nber.org/papers/w32687",
+    "retrieved_at": "2026-10-17T02:40:19.616593+00:00",
+    "tool": "python urllib.request",
+    "status": 200,
+    "final_url": "https://www.nber.org/papers/w32687",
+    "content_type": "text/html; charset=UTF-8",
+    "bytes": 91433,
+    "sha256": "2c5c62fdf80dfcf830ada270cfd7337672c6ca6aabffb8fc7e40200b82e38dd5"
+  },
+  {
+    "name": "lamadon_etal_2024.pdf",
+    "url": "https://www.nber.org/system/files/working_papers/w32687/w32687.pdf",
+    "retrieved_at": "2026-10-17T02:40:20.835695+00:00",
+    "tool": "python urllib.request",
+    "status": 200,
+    "final_url": "https://www.nber.org/system/files/working_papers/w32687/w32687.pdf",
+    "content_type": "application/pdf",
+    "bytes": 776404,
+    "sha256": "19ca15969ea633886da0de4cfe779a85f6156e88a0b535aa9c7c57e2c30b8e72"
+  }
+]

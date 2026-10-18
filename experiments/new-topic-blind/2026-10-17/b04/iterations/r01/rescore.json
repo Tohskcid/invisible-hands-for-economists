@@ -1,0 +1,89 @@
+{
+  "id": "b04-r01",
+  "phase": "post-feedback iteration",
+  "one_shot": false,
+  "iteration": "r01",
+  "score": 5,
+  "maximum": 10,
+  "criterion_scores": [2, 1, 1, 0, 1],
+  "scoring_rule": "The unchanged b04 preregistered five-criterion 0/1/2 rubric; no title or verbal-similarity credit.",
+  "rubric_path": "../../evaluation/unsealed/sealed/rubric.json",
+  "rubric_sha256": "35fdbae58d24bf5522d18648dfa42c46df1970f5b779438526f95fcdc9dcfd97",
+  "original_one_shot_score": {
+    "path": "../../evaluation/comparison-score.json",
+    "score": 4,
+    "sha256_at_rescore": "34ad7617b6dc160147202ab1a8ee3a11ca7c5822b36454e5419fb855420b83f7",
+    "preserved": true
+  },
+  "scientific_lock": {
+    "path": "scientific-lock.json",
+    "copy": "../../evaluation/r01-frozen",
+    "locked_utc": "2026-10-17T14:06:46.905666+00:00",
+    "manuscript": {
+      "path": "../../evaluation/r01-frozen/paper/manuscript/main.tex",
+      "expected_sha256": "6cc84bc7036aec8915674b4f1e935e149345c8961a0f548c1dcd0ea3ee69e31b",
+      "observed_sha256": "6cc84bc7036aec8915674b4f1e935e149345c8961a0f548c1dcd0ea3ee69e31b",
+      "matches": true
+    },
+    "pdf": {
+      "path": "../../evaluation/r01-frozen/paper/pdf/manuscript.pdf",
+      "expected_sha256": "4d31ea62c219df7efa735b07dc91bdd0eb70dcfc6c06ed71a6bbc41deea2ae58",
+      "observed_sha256": "4d31ea62c219df7efa735b07dc91bdd0eb70dcfc6c06ed71a6bbc41deea2ae58",
+      "matches": true
+    },
+    "input_feedback": "The iteration lock records the independent blind-review report as input, without target/rubric/comparison sent to the author or model agent.",
+    "isolation_caveat": "Instruction-only separation on a shared filesystem; coordinator had unsealed the target before r01."
+  },
+  "target_basis": {
+    "published_article_url": "https://www.journals.uchicago.edu/doi/full/10.1086/728111",
+    "author_pdf_path": "../../evaluation/unsealed/sealed/target-author-fulltext-2023.pdf",
+    "author_pdf_sha256": "e39b2a94217bf0bf0eb6b336a01902505b856bfa06a4f98b847b50ce5d96ba67",
+    "working_paper_path": "../../evaluation/unsealed/sealed/target-working-paper-2020.pdf",
+    "working_paper_sha256": "550006e5073bd8023988c5043ec67b47d26c7db3f338f6d09ae880d6b3bb8bc6",
+    "page_convention": "PDF page numbers count the cover as page 1; the 2023 author's printed main-text and Appendix A page numbers are one lower. Published section/equation locators take precedence where numbering differs."
+  },
+  "criteria": [
+    {
+      "id": "model_and_reduction",
+      "score": 2,
+      "target_evidence": "Published Section II.A-C, conditions (1)-(4), Claims 1-3, (OBJ)/(OBJ'); 2023 author PDF pp.8-12: observed labels, private WTP and welfare weights, one-dimensional qualities, quasilinear utility, feasible assignment/free disposal, IC, IR, nonnegative payments, envelope, conditional Pareto weight, and revenue-weighted virtual objective.",
+      "r01_evidence": "Frozen r01 main.tex lines 31-54 specify finite heterogeneous slots, observed groups, private (v,w), utility (1), objective (2), DSIC, ex post IR, nonnegative charges, and disposal; lines 60-93 derive conditional mean weights, envelope (3), score (4), and virtual identity (5); proofs lines 165-208; r01 PDF pp.2-4, 8-9.",
+      "reason": "The economic primitives and conditional-weight/envelope reduction are correctly established for the explicitly narrower finite-agent, independent-type model with WTP support starting at zero. The revised weight-report wording correctly distinguishes weak truthful talk from outcome equivalence."
+    },
+    {
+      "id": "within_group_optimum",
+      "score": 1,
+      "target_evidence": "Published Section III.A, Theorem 1 and (6); 2023 author PDF pp.15-17 and proof pp.40-44: Ψ, its concave and decreasing-concave closures, disposal, random quality pooling, assortative sorting, and lowest-type rent chosen by α versus the mean group weight.",
+      "r01_evidence": "Frozen r01 main.tex lines 78-113 give a virtual score, regular sorting/disposal, and bounded-subsidy comparison; lines 115-134 introduce the greatest convex minorant of the cumulative score and ironed-score allocation; proof lines 229-258; r01 PDF pp.4-6, 10-12.",
+      "reason": "The added convex-minorant construction is a substantive, justified analogue of score ironing: flat ironed intervals pool own-value reports, positive scores are sorted, and nonpositive scores can lead to disposal. It does not solve the target's within-group problem for an assigned quality CDF using both co(Ψ) and cd(Ψ), nor recover the target's positive-lower-WTP lowest-type rent choice under nonnegative payments. The manuscript's WTP support begins at zero, forcing baseline lowest-type rent to zero."
+    },
+    {
+      "id": "across_group_optimum",
+      "score": 1,
+      "target_evidence": "Published Section III.B, equations (7)-(8), Theorem 2; 2023 author PDF pp.17-18, proof p.45: optimize group quality CDFs subject to their aggregate CDF, then apply monotone ironed marginal values with a feasible CDF selection.",
+      "r01_evidence": "Frozen r01 main.tex lines 124-128 and 241-258 rank ironed group-specific scores against the fixed finite slot qualities at every profile, proving pointwise optimality, own-value monotonicity, and feasibility; lines 130-134 and 260-270 give a fully decreasing-score group-mean ranking; r01 PDF pp.5-6, 11-13.",
+      "reason": "The revision extends the finite-profile cross-group ranking to irregular scores and proves its implementation. This is still a partial finite-agent analogue: there is no target-domain split of the aggregate quality distribution into group CDFs, no resource-constrained program after separate within-group solutions, and no marginal-value CDF greedy theorem or tie-selection feasibility proof."
+    },
+    {
+      "id": "free_or_random_allocation_conditions",
+      "score": 0,
+      "target_evidence": "Published Section IV.A.1, Propositions 1-2 and (9); 2023 author PDF pp.19-21, proof p.46, Online Appendix B pp.48-49: positive lower WTP and average group weight above revenue weight force an initial zero-price random region; full free random provision needs α rbar_i ≤ ∫r λ_i(r)dG_i(r), sufficient under quasiconvex V_i.",
+      "r01_evidence": "Frozen r01 main.tex lines 31-37 still put every WTP support at zero; lines 130-134 and 144-148 prove free report-independent assignment only when all raw group scores are nonincreasing or in a special uniform/zero-revenue example; r01 PDF pp.2, 6-7.",
+      "reason": "The new decreasing-score theorem broadens the manuscript's free-assignment case, but does not establish the target's universally desired positive-lower-WTP initial random region, distinguish it through the target inequality (9), or prove the stated quasiconvex sufficiency for full free random provision."
+    },
+    {
+      "id": "private_information_and_market_boundary",
+      "score": 1,
+      "target_evidence": "Published Section IV.A.2, Proposition 3 and Section IV.B, Proposition 4; 2023 author PDF pp.22-24 and proof pp.46-47: under the boundary assumption, a nondegenerate random interval appears exactly when V_i is not nondecreasing; under full random within-group allocation, groups with higher mean weighted value receive higher quality ranges.",
+      "r01_evidence": "Frozen r01 main.tex lines 115-128 define the lower-quantile cumulative score, convex minorant, flat ironed intervals, and optimal ironed ranking; proof lines 229-258 gives the integration-by-parts bound and equality; lines 130-134 and 260-270 derive group-mean quality ranking when all scores decrease; r01 PDF pp.5-6, 10-13.",
+      "reason": "This supplies a correct partial analogue of the nonmonotone-value boundary: falling raw score regions can become value-independent pooled intervals, with a proved finite-agent optimum, and the fully decreasing case yields an across-group quality ordering. It does not state or prove the target's iff random-quality-interval theorem for the continuum within-group allocation, including the 'every optimal mechanism' claim, or its precise market/assortative and group-quality support conclusions."
+    }
+  ],
+  "separate_assessments": {
+    "proof_validity": "The r01 convex-minorant and ironed-ranking argument is coherent under its finite-agent assumptions on inspection: the integration-by-parts inequality uses nondecreasing own-value quality; fixed report-independent ties make quality constant on strict ironing intervals, attaining equality; sorting then attains the ironed pointwise bound. This is not a proof of the target's distinct continuum quality-CDF theorems.",
+    "historical_reconstruction": "Post-feedback partial reconstruction, 5/10. The improvement over the preserved 4/10 one-shot score comes from solving an irregular-score analogue and deriving the fully decreasing group-order implication, not from recovering the target's closure/CDF or free-region results.",
+    "historical_novelty": "Separate from the reconstruction score. The target metadata identifies a publicly verifiable 2020-06-18 version, and its 2020 working paper already contains its own closure and across-group theorems (PDF pp.14-16). This rescore does not establish novelty or priority of the r01 finite-agent ironing result.",
+    "modern_journal_readiness": "Not decided by this rubric or this rescore. The independent AI referee report applied to the pre-feedback manuscript, not the r01 revision; no new external peer review or acceptance assessment is inferred."
+  },
+  "contamination_audit": "The scientific lock reports feedback from the independent blind-review file only, with no target/rubric/comparison sent to the author or model agent. Isolation remained instruction-only on a shared filesystem, so this record cannot prove absence of unseen exposure. The r01 score is deliberately segregated from the original one-shot score."
+}

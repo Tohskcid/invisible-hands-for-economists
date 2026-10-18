@@ -1,0 +1,1240 @@
+DISCUSSION PAPER SERIES
+
+
+
+
+IZA DP No. 17246
+
+Competitive Search with Private
+Information: Can Price Signal Quality?
+
+
+James Albrecht
+Xiaoming Cai
+Pieter Gautier
+Susan Vroman
+
+
+
+AUGUST 2024
+DISCUSSION PAPER SERIES
+
+
+
+
+IZA DP No. 17246
+
+Competitive Search with Private
+Information: Can Price Signal Quality?
+
+
+James Albrecht                                                 Pieter Gautier
+Georgetown University and IZA                                  Vrije Universiteit Amsterdam, Tinbergen
+                                                               Institute and IZA
+Xiaoming Cai
+Peking University HSBC Business School                         Susan Vroman
+                                                               Georgetown University and IZA
+
+
+
+AUGUST 2024
+
+
+
+
+Any opinions expressed in this paper are those of the author(s) and not those of IZA. Research published in this series may
+include views on policy, but IZA takes no institutional policy positions. The IZA research network is committed to the IZA
+Guiding Principles of Research Integrity.
+The IZA Institute of Labor Economics is an independent economic research institute that conducts research in labor economics
+and offers evidence-based policy advice on labor market issues. Supported by the Deutsche Post Foundation, IZA runs the
+world’s largest network of economists, whose research aims to provide answers to the global labor market challenges of our
+time. Our key objective is to build bridges between academic research, policymakers and society.
+IZA Discussion Papers often represent preliminary work and are circulated to encourage discussion. Citation of such a paper
+should account for its provisional character. A revised version may be available directly from the author.
+
+                                                     ISSN: 2365-9793
+
+
+                                           IZA – Institute of Labor Economics
+Schaumburg-Lippe-Straße 5–9                      Phone: +49-228-3894-0
+53113 Bonn, Germany                             Email: publications@iza.org                                    www.iza.org
+IZA DP No. 17246                                                                                          AUGUST 2024
+
+
+
+
+            ABSTRACT
+            Competitive Search with Private
+            Information: Can Price Signal Quality?*
+            This paper considers competitive search equilibrium in a market for a good whose quality
+            differs across sellers. Each seller knows the quality of the good that he or she is offering
+            for sale, but buyers cannot observe quality directly. We thus have a “market for lemons”
+            with competitive search frictions. In contrast to Akerlof (1970), we prove the existence of
+            a unique equilibrium, which is separating. Higher-quality sellers post higher prices, so price
+            signals quality. The arrival rate of buyers is lower in submarkets with higher prices, but
+            this is less costly for higher-quality sellers given their higher continuation values. For some
+            parameter values, higher-quality sellers post the full-information price; for other values
+            these sellers have to post a higher price to keep lower-quality sellers from mimicking them.
+            In an extension, we show that if sellers compete with auctions, the reserve price can also
+            act as a signal.
+
+            JEL Classification:            C78, D82, D83
+            Keywords:                      competitive search, signaling
+
+
+
+            Corresponding author:
+            Susan Vroman
+            Department of Economics
+            Georgetown University
+            Washington, DC 20057
+            USA
+            E-mail: susan.vroman@georgetown.edu
+
+
+
+
+            * We thank Teddy Kim and various seminar and conference participants for valuable comments.
+1       Introduction
+This paper considers competitive search equilibrium in a market for a good whose
+quality di↵ers across sellers. Each seller knows the quality of the good that he or
+she is o↵ering for sale, but buyers cannot observe quality directly. We thus have
+a “market for lemons” (Akerlof, 1970) with competitive search frictions, and the
+question we address is whether the price a seller posts can signal quality in this
+environment.
+    Assuming that the value of retaining a high-quality good is greater than that
+of retaining a low-quality good,1 we prove the existence of a unique equilibrium.
+This unique equilibrium is separating. Higher-quality sellers post higher prices, so
+price signals quality. The arrival rate of buyers is lower in submarkets with higher
+prices, but this is less costly for higher-quality sellers given their higher continuation
+values. That is, sellers can use posted prices as a signaling device.
+    The existence of (competitive) search frictions is important for our result be-
+cause a seller who posts a higher price endogenously has a smaller trading proba-
+bility, which is the cost of signaling. In the absence of search frictions, there is no
+reason why firms with higher prices meet fewer buyers.
+    In our benchmark model, we assume that seller types are discrete, and meetings
+are bilateral (each agent can meet at most one counterparty). We show that when
+the di↵erence between the values of high-quality goods and low-quality goods is
+large, high-quality sellers post the full-information price. When the di↵erence is
+small, sellers of high-quality goods post a higher price to keep sellers of low-quality
+goods from mimicking them. There is an interesting technical challenge in proving
+the existence of the unique separating equilibrium, namely, the isoprofit curves in
+price - (perceived) quality space are non-monotonic. Nonetheless, we prove single-
+crossing.
+    We then extend our model to the case of a continuum of seller types and show
+that the equilibrium can be characterized by a di↵erential equation. In this case,
+sellers never post the full-information price. Finally, we relax the assumption that
+    1
+    Why would the value of retaining the good be higher for high-quality goods? First, in many
+markets, the seller continues to consume the good if it is not sold. Second, even if a seller does
+not consume the good, a characteristic that is hidden today can become public knowledge in the
+future and this makes the continuation value of carrying an unsold high-quality good larger than
+that of carrying an unsold low-quality good.
+
+
+                                                2
+sellers can meet at most one buyer and allow sellers to meet multiple buyers and
+compete with auctions. The separating equilibrium arises again: sellers of higher-
+quality goods post higher reserve prices and accept a lower trading probability.
+    There are several other papers that combine search and information frictions,
+but in most of these papers, the terms of trade are posted by agents on the un-
+informed side of the market. For example, Guerrieri et al. (2010) show that with
+bilateral meetings, when the uninformed party screens the other side by posting
+contracts, the unique equilibrium is separating.2 Auster and Gottardi (2019) show
+that with many-on-one (urn-ball, specifically) meetings, agents on the uninformed
+side all post the same contract, and a pooling equilibrium arises.
+    The nature of equilibrium when the terms of trade are posted on the informed
+side of the market is less well understood. For example, Guerrieri et al. (2010)
+conjecture in their conclusion that when the informed party can signal their type
+that, as in competitive markets, multiple equilibria exist. Their conjecture is in
+line with the literature on adverse selection without search frictions. Wilson (1980)
+and Hellwig (1987) show that the predictions of a model with asymmetric informa-
+tion and no search frictions depend on details such as the order of decisions and
+who posts prices.3 In contrast, in our competitive search setting, we get a unique
+separating equilibrium when the informed party sets the terms of trade.
+    There are also a few papers with search frictions and asymmetric information
+in which the informed side posts the terms of trade, but these are based on very
+di↵erent models than ours. Introducing search frictions, but using a random search
+model, Barsanetti and Camargo (2022) show that the outcome is similar to that
+of a frictionless model and that it matters whether the informed (signaling) or
+uninformed party (screening) sets the terms of trade. Delacroix and Shi (2013)
+analyze a model with competitive search in which all sellers choose between two
+qualities and have the same continuation value regardless of the quality of the good
+they o↵er. They show that there exists pooling equilibria, some in which all firms
+produce the low quality and some in which all produce the high quality. Menzio
+(2007), Kim (2012), and Kim and Kircher (2015) assume that the informed side
+   2
+     Similarly, Inderst and Muller (2002) assume that there exist a large number of market makers
+who compete in creating submarkets as in Moen (1997), which, they argue, is equivalent to the
+uninformed side posting the prices. Chang (2018) considers a screening model in which the
+informed side has two-dimensional private information.
+   3
+     Absent search frictions, equilibrium need not exist (Rothschild and Stiglitz, 1976).
+
+
+                                               3
+announces cheap talk messages about quality. Depending on the details of the
+setup, cheap-talk messages can be fully or partially informative.
+    In finance, there is a substantial literature starting with Leland and Pyle (1977)
+that shows that retention, i.e., the fraction of an asset that the seller wants to
+retain, can act as a signal for the quality of an asset. In Guerrieri and Shimer
+(2014), high-quality assets trade at higher prices but with a lower price-dividend
+ratio and a lower probability of trade. However, in these models there are no search
+frictions.4
+    Finally, there are papers that combine signaling and competitive search in which
+the uncertainty is not about the quality of the good, e.g., Albrecht et al. (2016)
+(uncertainty is about how eager the seller is to sell) and Moon (2023) (uncertainty
+is about seller advertising intensity and the corresponding queue length). There are
+also competitive models, e.g., Milgrom and Roberts (1986) in which introductory
+prices and advertising intensity can, in the presence of repeat sales, signal quality.
+    The paper is organized as follows. First, in Section 2 we present the model,
+define equilibrium and derive the (constrained) efficient Planner’s solution for the
+full-information case. Then, in Section 3, we prove that a unique separating equi-
+librium exists and derive conditions under which separation of high-quality sellers
+is efficient. We do this both for a finite number of seller types and for a continuum
+of types. In section 3.4, we show that our results also hold for many-on-one meet-
+ings in which sellers compete with auctions. In section 4, we discuss why a unique
+separating equilibrium exists in our model with search frictions, while absent search
+frictions, a separating equilibrium only exists in a very special knife-edge case, and
+then only among a continuum of other equilibria. Finally, Section 5 concludes.
+
+2       The Model
+Agents. We consider a static economy with a continuum of risk-neutral homo-
+geneous buyers and heterogeneous sellers. Each seller owns a single unit of an
+indivisible good, for which each buyer has unit demand. The good’s quality can
+di↵er, and a fraction zi of sellers are of type i, where type refers to the quality of
+the good they o↵er. A good with quality i has a value ci to the seller and a value
+    4
+     Williams (2021) presents a screening model of retention and liquidity (the probability of
+selling a security) in which there are search frictions.
+
+
+
+                                              4
+vi = ⌫(ci ) to the buyers, where ci 2 [c, c] and c1 < · · · < cI . We assume ⌫ 0 (c) > 0
+for all c.5 That is, both sellers and buyers prefer the high-quality goods over the
+low-quality goods. The quality of the good is a seller’s private information. The
+measure of sellers is 1, and the measure of buyers is determined by free entry in
+the sense that there is a large measure of buyers each of whom can participate in
+the market if and only if they pay a cost k > 0. We denote the gains from trade by
+si = vi ci and assume that si > k for each i, so there are always gains from trade.
+
+Search. In the first stage, each seller posts and commits to a price. After ob-
+serving all posted prices, each buyer chooses one seller to visit. We refer to all
+buyers and sellers who choose a particular price as a submarket. Within a submar-
+ket, meetings are bilateral; that is, a seller meets at most one buyer and a buyer
+meets at most one seller. The total number of meetings are given by a constant-
+returns-to-scale matching function M (Ns , Nb ) where Ns and Nb are respectively
+the measures of sellers and buyers within the submarket. Define = Nb /Ns as the
+queue length in the submarket. Then, m( ) ⌘ M (1, ) is the probability that a
+seller meets a buyer, and similarly, q( ) ⌘ m( )/ is the probability that a buyer
+meets a seller. We assume that m( ) is strictly increasing and strictly concave,
+which implies that q( ) is strictly decreasing.
+
+Payo↵s. Let ⇤(p) be the queue length and (p) = ( 1 (p), . . . , I (p)) be the ex-
+pected seller composition in submarket p, where i (p) is the expected fraction of
+type i sellers in the submarket.6 Buyers’ beliefs are then formally represented by
+ (p). Note that we require ⇤(p) and (p) to also be defined for prices that are not
+posted in equilibrium.
+   The problem of a seller with a good of quality i is given by
+
+                                  ⇡i⇤ = max m (⇤(p)) (p         ci ),                              (1)
+                                         p>ci
+
+
+where ⇡i⇤ is the equilibrium payo↵ of type i sellers.
+   5
+     We assume that ⌫(c) is strictly increasing to simplify the exposition. Our model also allows
+for constant ⌫(c). In that case, sellers’ private information is irrelevant for buyers’ decisions,
+and the equilibrium is the same as the one with complete information (see Example 1 after
+Proposition 1). Note also that in our benchmark model of discrete seller types, the values of ⌫(c)
+for c 2
+      / {c1 , . . . , cI } are irrelevant. However, later we consider the case of a continuum of seller
+types and therefore we introduce the function ⌫(c) from the start.
+   6
+                                                                          PI
+     Note that (p) is a probability simplex. That is, i (p) 0 and 1 i (p) = 1.
+
+
+                                                  5
+   Given beliefs (p), for each price p (both on and o↵ the equilibrium path), the
+queue length ⇤(p) is determined by the buyers’ free-entry condition.
+
+                                               I
+                                               X
+                              k = q (⇤(p)) (         i (p)vi   p),                        (2)
+                                               i=1
+
+            PI
+where v̂ =     i=1 i (p)vi is the expected value of the good associated with price
+                 P
+p. If k    q(0)( I1 i (p)vi p), then ⇤(p) = 0. Note that, for a given price, the
+queue length is longer if buyers believe that it is more likely that the seller o↵ers a
+high-quality good. Similarly, if we fix the buyers’ belief v̂ about the quality of the
+good, the queue length is shorter if a seller posts a higher price.
+
+Equilibrium Definition. Let Fi (p) be the distribution of prices posted by sellers
+of type i. Since the highest possible price is vI and the lowest possible price is ci ,
+we have Fi (ci ) = 0 and Fi (vI ) = 1 for each i.7
+    We can now formally define a competitive search equilibrium as follows.
+
+Definition 1. A competitive search equilibrium is a tuple (⇤(p), (p), Fi (p), ⇡i⇤ )
+with the following properties:
+
+   1. Optimal Search: Given beliefs (p), for each price p (both on and o↵ the
+      equilibrium path), the queue length ⇤(p) is determined by equation (2).
+
+   2. Profit Maximization: Each p in the support of Fi (p) solves the maximization
+      problem given in equation (1).
+
+   3. Beliefs: For prices that are posted in equilibrium, (p) is given by Bayes’ rule:
+
+                                                zi dFi (p)
+                                      i (p) = PI              ,
+                                               i=1 zi dFi (p)
+
+
+       where the numerator is the measure of type i sellers who post a price equal to
+       p, and the denominator is the corresponding measure for all sellers.8
+       For prices that are not posted in equilibrium, (p) is such that for each i,
+       ⇡i⇤ m (⇤(p)) (p ci ), with equality if ⇤(p) > 0 and i (p) > 0.
+   7
+     We assume that sellers always choose to be active by posting some price, which is without
+loss of generality since posting a price is costless.
+   8
+     Formally, i (p) is a Radon–Nikodym derivative.
+
+
+                                               6
+     Our definition of competitive search equilibrium is standard, except that we
+need to impose an additional assumption on how buyers’ beliefs are formed o↵ the
+equilibrium path. Note that, given ci , the expected profit of a type i seller who
+posts a deviant price p0 depends only on the queue length ⇤(p0 ). Hence, for each
+type of seller there exists a threshold queue length above which posting p0 will yield
+a profit strictly higher than their equilibrium payo↵.9 Then (p0 ) puts all weight
+on the seller type who has the lowest threshold. That is, ◆ (p) = 1 if ◆ minimizes
+⇡i⇤ /(p0 ci ) for i 2 {1, . . . , I} with p0 > ci .
+     Following Guerrieri et al. (2010), we can alternatively think of the following
+hypothetical adjustment process, which pins down buyers’ belief (p0 ) for some
+deviant price p0 . Suppose that a measure zero of sellers accidentally post p0 and a
+small, positive measure of buyers mechanically join the submarket. Then, we start
+with ⇤(p0 ) = 1. If no seller wants to post a price p0 even with ⇤(p0 ) = 1 (the most
+favorable situation for sellers), then (p0 ) is irrelevant. Otherwise, some additional
+sellers are willing to join this submarket, which then decreases the buyer-seller
+ratio ⇤(p0 ). As sellers join and ⇤(p0 ) decreases, some seller types will leave. We
+continue this process until only one type of seller is left in this submarket and is
+willing to o↵er p0 . Hence, this adjustment process ends with a degenerate (p0 ).
+Loosely speaking, (p0 ) puts all the weight on the seller type that can tolerate the
+lowest possible queue length at price p0 . As noted by Guerrieri et al. (2010), this is
+equivalent to the D1 refinement which is commonly used in signaling models (see
+Banks and Sobel (1987)).
+
+The Social Planner’s Problem. Before analyzing the decentralized market
+equilibrium, we now briefly write down and solve the social planner’s problem. The
+planner faces the same coordination frictions (that are standard in competitive
+search models) as the market participants but faces no information constraints
+about quality. The planner’s problem reduces to choosing an optimal queue length
+ p
+ i for each seller type i taking into account that the buyer participation cost is k.
+   9
+    Note that if p0 < ci + ⇡i⇤ for some i, then we can set this threshold to infinity for sellers of
+type i.
+
+
+
+
+                                                 7
+             p
+That is,     i , i = 1, . . . , I, solves the following maximization problem:
+
+                                          I
+                                          X                               I
+                                                                          X
+                             max                zi si m( i )          k         zi i .
+                              1 ,..., I
+                                          i=1                             i=1
+
+
+Note that the measure of buyers in submarket i is equal to the buyer-seller ratio
+times the measure of sellers, zi i , for each i. Since the above problem is strictly
+concave, the following first-order condition is both necessary and sufficient, and
+admits a unique solution: for all i,
+
+                                            si m0 ( pi ) = k.
+
+
+3       Market Equilibrium
+3.1       Competitive Search Equilibrium
+We start with a bird’s-eye view of the main force that drives equilibrium. Without
+loss of generality, we assume that ⇤(p) is strictly decreasing.10 Furthermore, given
+that buyers can only observe prices, it seems natural to require buyers’ beliefs to
+be such that ⇤(p) is strictly decreasing, which is also implied by the D1 refinement
+on beliefs. The sellers’ problem in equation (1) is supermodular in (p, c), which
+implies that sellers of a higher type always choose (weakly) higher prices. Below
+we show that sellers of di↵erent types will not choose the same price in equilibrium
+and therefore the equilibrium is always separating.
+    Consider a type i seller who posts a price p. If this seller’s good is believed to
+have value v̂, then his or her expected profit is
+                                                ✓        ✓                ◆◆
+                                                     1            k
+                          ⇡(ci , p, v̂) = m q                                  (p    ci )   (3)
+                                                             v̂       p
+
+where we used equation (2) to solve for the queue length associated with (p, v̂):
+   = q 1 ( v̂ k p ). Note that here the queue length is associated with a hypothetical
+situation in which the posted price is p and the perceived value of the good is v̂,
+and is not related to the equilibrium object ⇤(p). If the seller’s iso-profit curves
+satisfy the single-crossing condition in the p-v̂ plane, and if sellers of a higher type
+ 10
+      Suppose pa > pb and ⇤(pa )      ⇤(pb ), then no sellers would choose price pb .
+
+
+                                                     8
+have flatter iso-profit curves, then the least-cost separating equilibriun is the unique
+equilibrium and sellers of a higher type post a strictly higher price. 11 The seller’s
+profit function ⇡(ci , p, v̂) in equation (3) seems complicated. We now simplify the
+seller problem by treating queue length as the choice variable instead of price. For
+this purpose, we rewrite ⇡(ci , p, v̂) as a function of ci , , and v̂,
+
+                               e(ci , , v̂) = m( )(v̂
+                               ⇡                           ci )     k,                            (4)
+
+where we used q( )(v̂ p) = k and m( ) = q( ) to substitute out p in equation (2) .
+Intuitively, a higher posted price (both on and o↵ the equilibrium path) corresponds
+to a shorter queue length. Hence, we can think of sellers choosing queue length as a
+signaling device instead of the price. Below, we formally show that both approaches
+are equivalent.
+    To better understand equation (4), it is helpful to contrast it with the case
+in which a seller’s type is public information. In that case, equation (4) becomes
+m( )(vi ci )       k, where the first term is the expected surplus, the second term is
+the part of surplus attributed to the buyers (the cost of the queue), and the seller’s
+profit is then the di↵erence between the two terms.
+    When seller type is private information, the seller’s profit in equation (4) has a
+similar interpretation. The total gain from trade is v̂ ci instead of vi ci since
+when the transaction price is p, the seller’s gain is p ci and the buyer’s perceived
+gain is v̂ p. Here the queue only depends on the buyer’s perceived payo↵, not the
+actual payo↵.
+                        e(ci , , v̂) defined by equation (4) is strictly increasing in v̂,
+    The seller’s profit ⇡
+and is first increasing and then decreasing in . The slope of ⇡     e(ci , , v̂) in the -b
+                                                                                         v
+plane is given by
+
+                               e (ci , , v̂)
+                               ⇡                   m0 ( )(v̂ ci )        k
+                                               =                             ,                    (5)
+                               ev̂ (ci , , v̂)
+                               ⇡                         m( )
+
+                                            e(ci , , v̂) satisfies the single-crossing con-
+which is strictly increasing in ci . Hence, ⇡
+  11
+    That is, the equilibrium in which there is no distortion at the bottom and type i sellers choose
+a price to maximize their expected profit under the constraints that i) they are perceived to be
+type i sellers, and ii) type i 1 sellers find it not profitable to mimic type i sellers. In this case,
+asymmetric information imposes minimal cost on type i sellers’ expected profit assuming that the
+equilibrium is separating.
+
+
+                                                   9
+dition in the -b     v plane: If ⇡     e(ci , a , v̂a ) = ⇡ e(ci , b , v̂b ) for two points ( a , v̂a ) and
+( b , v̂b ) with a < b , then ⇡       e(cj , a , v̂a ) > ⇡
+                                                         e(cj , b , v̂b ) for cj > ci .
+     Since sellers choose p as the signal instead of , we still need to show that
+⇡(ci , p, v̂) also satisfies the single-crossing condition (in the p-v̂ plane).12 We first
+show that the iso-profit curves of a seller are well-defined functions in the p-v̂ plane.
+Holding p fixed, ⇡(ci , p, v̂) is strictly increasing in v̂, since a higher v̂ increases
+in equation (3). That is, for a fixed price, a seller’s expected profit is higher,
+the greater the likelihood that buyers attach to the seller o↵ering a high-quality
+good. Holding v̂ fixed, the price p a↵ects sellers’ expected profit solely through the
+queue length (see equation (4)). Since is strictly decreasing in p, ⇡(ci , p, v̂) is
+first increasing and then decreasing in p. Therefore, the iso-profit curves are first
+decreasing and then increasing in p.
+     Next, we show that ⇡(ci , p, v̂) also satisfies the single-crossing condition in the p-
+v̂ plane, which follows simply from the correspondence ⇡(c, p, v̂) = ⇡                      e(c, q 1 ( v̂ k p ), v̂).
+To see this formally, suppose that we have ⇡(ci , pa , v̂a ) = ⇡(ci , pb , v̂b ) for some
+seller type i and two points (pa , v̂a ) and (pb , v̂b ) with pa < pb . The corresponding
+queue lengths are j = q 1 ( v̂j k pj ) for j = a, b. Since pa < pb , by equation (3)
+we must have a > b for sellers of type ci to have the same profit between the
+two points. Since ⇡      e(ci , , v̂) satisfies the single-crossing condition and a > b ,
+e(ci , a , v̂a ) = ⇡
+⇡                  e(ci , b , v̂b ) implies that ⇡    e(cj , a , v̂a ) < ⇡e(cj , b , v̂b ) for cj > ci . Hence
+⇡(cj , pa , v̂a ) < ⇡(cj , pb , v̂b ). So if seller ci is indi↵erent between v̂a and v̂b with
+pa < pb , then seller cj > ci prefers v̂b with a corresponding higher pb and a shorter
+queue. Figure 1 illustrates the above results by showing the sellers’ iso-profit curves
+in the (p, v̂) plane, when there are just two types of goods: low and high quality.
+Note that in the p-v̂ plane, the iso-profit curves of sellers with a higher-quality
+product are flatter than the iso-profit curves of sellers with a lower-quality product.
+The opposite is true in the -v̂ plane, since a higher p corresponds to a lower .
+     By the standard logic of signaling models, single crossing of sellers’ iso-profit
+curves and the D1 criterion jointly imply that the equilibrium must be least-cost
+separating. Furthermore, the sellers of the lowest type c1 choose an optimal price as
+  12
+     In Appendix A.6. we give a direct, general proof that ⇡(ci , p, v̂) satisfies the single-crossing
+condition in the p-v̂ plane. The proof shows that our main result also applies to the case in which
+workers are risk-averse. We analyze our model in the       v̂ plane since the characterization of the
+seller problem is easier in this case. See equations (8) and (9) below.
+
+
+
+                                                        10
+1.20                                                           1.20
+       c                                                             c
+1.15                                                           1.15                                     high type
+                       high type
+1.10                                                           1.10
+
+1.05                                                           1.05
+
+1.00                                                           1.00
+
+0.95                                                           0.95
+
+0.90                   low type                                0.90               low type
+0.85                                                           0.85
+                                                        p                                                                       p
+0.80                                                           0.80
+            1.00         1.05        1.10               1.15               1.00    1.05   1.10   1.15    1.20   1.25     1.30   1.35
+
+
+            (a) Efficient equilibrium:      = 0.1                      (b) Inefficient equilibrium:                    = 0.5
+
+Figure 1: Illustration of the competitive search equilibrium with two types of sellers:
+m( ) = 1 e , k = 0.3, c1 = 0.8, c2 = 1, v1 = 1.5 and ⌫(c) = v1 + (c c1 ). To
+help compare figures (a) and (b), we set ĉ instead of v̂ as the y-axis where v̂ = ⌫(ĉ)
+so that the positions of the black dashed lines in the two figures are the same.
+
+
+if their type were publicly observable (no distortion at the bottom), and the sellers
+of type ci choose an optimal price subject to the constraint that the sellers of type
+ci 1 do not want to mimic them. Since it does not matter whether we assume that
+sellers choose p or choose as the signal, we can adopt the simpler case which is
+the latter.
+    Denote the sellers’ optimal queue length by ⇤i and their equilibrium payo↵ by
+⇡i⇤ for i 1. Since there are always no distortions at the bottom, the problem of
+the sellers with the lowest-quality product is
+
+                                         ⇡1⇤ ⌘ max s1 m( 1 )                      1 k,                                          (6)
+                                                    1
+
+
+                                                                                                  0
+where s1 = v1 c1 . The optimal solution                        1 is characterized by the FOC: s1 m ( 1 ) =
+
+k, which implies that
+
+                                                    ⇤        k
+                                                    1 = ⇤o (    ),                                                              (7)
+                                                             s1
+
+where ⇤o (·) is the inverse function of m0 (·) which represents the socially optimal .
+  The problem of sellers of type ci with i         2 is to choose a queue length that
+maximizes their profit subject to the constraint that it is not in the interest of
+
+
+
+
+                                                            11
+sellers of type ci 1 to mimic them. That is,
+
+                               ⇡i⇤ ⌘ max si m( i )              i k,                                    (8)
+                                          i
+
+
+
+subject to the incentive compatibility constraint (ICC) that                    i must be such that
+
+
+           ⇡i⇤ 1 = m( ⇤i 1 )(vi 1     ci 1 )    ⇤
+                                                i 1k      m( i )(vi           ci 1 )     i k,           (9)
+
+where the right-hand side of (9) is the payo↵ from mimicking for a seller of type
+i 1, which follows from equation (4).
+     We now analyze the solution to the sellers’ problem above. In typical signal-
+ing models, the iso-profit curves of sellers are monotonic and the ICC is binding.
+However, in our model the sellers’ iso-profit curves are first decreasing and then
+increasing (both in the (p, v̂) plane and the ( , v̂) plane), which implies that there
+are two solutions for i such that the ICC constraint is binding, i.e., such that
+equation (9) holds with equality. To see this, note that the payo↵ from mimicking
+by sellers of type i 1, the right-hand side of equation (9), is strictly concave in
+                      ⇤
+  i . When      i =   i 1 , the ICC is violated since vi > vi 1 , and when     i = 0 or
+
+greater than (vi ci 1 )/k, the ICC is satisfied trivially. Hence, the smaller solution
+is strictly between 0 and ⇤i 1 and the larger solution is strictly between ⇤i 1 and
+(vi ci 1 )/k. The smaller solution of i (that corresponds to a higher pi ) yields a
+higher profit for sellers of type i, since the slopes of their iso-profit curves (in the
+      v̂ plane) are steeper. From now on, we denote by ⇤iicc the smaller solution such
+that the ICC constraint (9) is binding. Then,
+
+  m( ⇤i 1 )(vi 1   ci 1 )   ⇤          i
+                            i 1 k = m(⇤icc )(vi        ci 1 )          ⇤iicc k, and ⇤iicc <     ⇤
+                                                                                                i 1.   (10)
+
+   Another consequence of sellers’ iso-profit curves being non-monotonic is that
+the ICC constraint may not be violated at ⇤o ( ski ), the optimal choice of i under
+complete information. That is, ⇤o ( ski )  ⇤iicc (see the proof of Proposition 1 for
+more details). In this case, ⇤i is simply ⇤o ( ski ).
+   To sum up, the solution to the problem of sellers of type i is given by
+
+                                    ⇤           k    i
+                                    i = min{⇤o ( ), ⇤icc }.                                            (11)
+                                                si
+
+
+                                               12
+Figure 1 illustrates the above issues in the p-v̂ plane (instead of in the -v̂ plane)
+with two types of sellers (I = 2). The two intersections between the blue line and
+the black dashed line are the two prices where the ICC constraint is binding. In
+Figure 1a, the ICC constraint is not violated even when high-type sellers choose
+their unconstrained optimal value ( ⇤2 = ⇤o ( sk2 )). In Figure 1b, the opposite is true,
+and ⇤2 = ⇤2icc , which corresponds to a price equal to 1.23 (the larger intersection
+point). Note also that the larger solution of 2 for which the ICC constraint is
+binding corresponds to a price equal to 0.98 (the smaller intersection point), which
+will yield a negative profit for the high-type sellers since c2 = 1.
+    Thus, the sellers’ problem can be solved recursively, starting from the prob-
+lem of c1 sellers where ⇤1 = ⇤o (k/s1 ). This can be summarized by the following
+proposition.
+Proposition 1. There exists a unique equilibrium, which is separating. In equilib-
+rium, all sellers of type i post the same price p⇤i and attract queue length ⇤i with
+  ⇤            ⇤            ⇤           ⇤           ⇤                           ⇤
+  1 > · · · > I > 0 and p1 < · · · < pI , where 1 is given by equation (7),     i is
+                                                               ⇤            ⇤
+recursively determined by equation (11) for 2  i  I, and pi = vi k/q( i ).
+Proof. See Appendix A.1.
+
+Signaling versus screening. Instead of having the informed side post prices to
+signal their quality, Guerrieri et al. (2010) analyze the case in which the uninformed
+side post contracts to screen di↵erent types of sellers. In the classic asymmetric
+information literature without search frictions, equilibrium outcomes can depend on
+which side posts trading arrangements. Notably, there is no separating equilibrium
+in the Akerlof (1970) lemons model. Thus, it is surprising that prices and allocations
+in equilibrium are the same in our signaling model and the screening model of
+Guerrieri et al. (2010).13 Hence, in competitive search models, it does not matter
+whether buyers, sellers, or some third party (market makers) post the prices; the
+equilibrium outcomes are the same.
+  13
+     Guerrieri et al. (2010) noted in their conclusion that “It may also be interesting to study the
+case opposite to the one analyzed here, where the informed instead of the uninformed parties post
+contracts.” One reason that the equivalence between the two models is not trivial a priori may
+be a technical one. To establish separating equilibrium in a large class of models, Guerrieri et al.
+(2010) adopted a sorting condition, which is di↵erent from the standard single-crossing condition
+used in our paper. One consequence of this di↵erence is that their characterizations are less sharp:
+the constraint faced by type i sellers in their model is that all lower types (from type 1 to i 1)
+will not mimic; in our model we only need to check that type i 1 sellers will not mimic.
+
+
+                                                13
+When is the ICC binding? We present two special cases to illustrate the issues
+at stake. In the first example, the ICC constraint is never binding while in the
+second example, it is always binding. In both examples, we fully characterize the
+equilibrium.
+
+Example 1: Constant vi . Things are particularly simple in the extreme case
+where vi is constant.14 Then, buyers’ values are the same across all sellers regardless
+of their ci , making buyers’ beliefs about sellers’ types irrelevant. Sellers who post
+the same price will have the same expected queue length, regardless of their types.
+The model is equivalent to the standard competitive search equilibrium without
+private information, where sellers can buy queues in a competitive market at a
+price equal to k. This implies that sellers of type i 1 will not mimic sellers of type
+i when the latter choose their unconstrained optimal price. To see this formally,
+consider the ICC constraint (9). Assume that ⇤i 1 = ⇤o (k/si 1 ), so sellers of type
+i 1 reach their unconstrained maximum profit. Then, the left-hand side of (9) is
+always greater than the right-hand side since vi = vi 1 , i.e., the ICC constraint is
+always satisfied. By continuity, the same conclusion holds when vi ’s are sufficiently
+close. Figure 1a illustrates this scenario for the case of two seller types.
+
+Example 2: Weakly increasing si . Suppose that the surplus from trade is
+weakly increasing in the type of sellers: s1  · · ·  sI . Consider the ICC con-
+straint (9) and assume that ⇤i = ⇤o (k/si ). The right-hand side of (9) can be
+rewritten as
+
+               (m( ⇤i )si      ⇤         ⇤
+                               i k) + m( i )(ci        ci 1 ) > max m( )si 1       k
+
+where the strict inequality follows from i) the first term on the left-hand side cor-
+responds to max m( )si        k and si si 1 , and ii) ci > ci 1 . Therefore, the ICC
+constraint (9) is violated at i = ⇤o (k/si ), which implies that the ICC constraint
+is always binding and ⇤i = ⇤iicc in equation (11).
+  14
+     This example is similar to the model of Albrecht et al. (2016) in which there are two types of
+sellers; low c (or high s) sellers, who are labeled motivated, and high c (or low s) sellers, and the
+value of the good to the buyers is independent of seller type.
+
+
+
+
+                                                  14
+3.2    The Case of Two Seller Types
+We now characterize in detail the equilibrium for the case of two seller types (I = 2).
+A byproduct of this analysis is that the ICC constraint is binding in equilibrium
+when c2 is sufficiently close to c1 , which greatly simplifies the analysis for the case
+of a continuum of seller types in the next subsection.
+    Below we solve the model by comparing ⇤o (k/s2 ) and ⇤2icc . Assume s1 > s2 ,
+since for the other case s1  s2 , the ICC constraint is always binding (see Example
+2 in the previous subsection). The proposition below confirms the insights from
+the two special examples above. For low-type sellers, the gain from mimicking
+high-type sellers is v2 v1 , while the cost is a lower matching probability. Hence,
+if v2 v1 is small, the ICC constraint is not binding. Sellers’ private information
+then does not matter, and the equilibrium is the same as the case without private
+information and is socially efficient. On the other hand, if v2 v1 is large, the ICC
+constraint is binding. In this case, high-quality sellers must charge a higher price
+than in the full-information case to distinguish themselves from low-quality sellers,
+resulting in a shorter queue length, i.e., ⇤2 < ⇤o (k/s2 ). The following proposition
+presents the formal statement of the above results.
+
+Proposition 2. Assume I = 2 and s1 > s2 , where si = vi                 ci for i = 1, 2. Define
+                                         Z s1 ✓                     ◆
+                                                  m(⇤o (k/s))
+                       (k, s1 , s2 ) ⌘                             1 ds.                  (12)
+                                          s2      m(⇤o (k/s2 ))
+
+                                                           ⇤                              ⇤
+If v2 v1        (k, s1 , s2 ), then in equilibrium        2   = ⇤o (k/s2 ); otherwise,   2   <
+⇤o (k/s2 ).
+
+Proof. See Appendix A.2.
+
+    The definition of (k, s1 , s2 ) seems complicated. However, it reduces to simple
+expressions for common meeting technologies. Normalize s1 = 1. When m( ) =
+1 e , (k, 1, s2 ) = s2k k (1 s2 + s2 log s2 ). Similarly, when m( ) = /(1 + ),
+                    p 2 p
+  (k, 1, s2 ) = (1   s2 ) /( s2 /k 1). Note that (k, s1 , s2 ) is homogeneous of
+degree 1, since doubling both the cost k and the match values s1 and s2 naturally
+double , the threshold of the value di↵erence (see Appendix A.2 for a detailed
+argument).
+
+
+                                               15
+    Next, we analyze what happens when seller types become arbitrarily close. Let
+c2 = c1 + c and s2 = s1      s. Since s1 > s2 and v2 v1 = c      s > 0, we have
+0 < s < c. As s ! 0 (because c ! 0), the integrand on the right-hand side
+of (12) approaches zero, which implies that
+
+                           (k, s1 , s2 )        m(⇤o (k/e
+                                                        s)))
+                    lim                  = lim                  1=0
+                     s!0        s           s!0 m(⇤o (k/s2 ))
+
+
+where the first equality follows from the mean value theorem with some se 2 [s2 , s1 ],
+and the second from continuity. As an example, let m( ) = 1 e . Then (k, 1, 1
+  s) ⇡ 2(1k k) s2 (second-order approximation), where we normalize s1 = 1.
+    The above result has a striking consequence. For the equilibrium to be efficient
+(non-binding ICC), we need v  (k, s1 , s1           s), which implies that v/ c 
+  (k, s1 , s1   s)/ c  (k, s1 , s1        s)/ s ! 0. Hence, for the ICC constraint
+to be non-binding when c is sufficiently small, v must be an order smaller than
+  c, which then contradicts ⌫ 0 (c1 ) > 0. The following proposition summarizes this
+result.
+
+Proposition 3. Assume I = 2 and let c2 = c1 + c. When c is sufficiently
+small, then the ICC constraint is binding for the high-type sellers, and hence the
+equilibrium is not socially efficient.
+
+Proof. See the above discussion.
+
+    Next, we analyze how the equilibrium varies with buyers’ entry cost k. Figure 2
+shows ⇤o (k/s2 ) (red solid line) and ⇤2icc (black dashed line) for the parameter values
+of Figure 1, except now we let k vary (x-axis). Note that ⇤o (k/s) crosses ⇤2icc exactly
+once and from above. That is, when k is small, ⇤o (k/s2 ) > ⇤2icc (the ICC constraint
+is binding) and the opposite holds when k is large. Note that when k = 0.3 (the
+value in Figure 1), ⇤o (k/s2 ) < ⇤2icc in Figure 2a and the opposite holds in Figure 2b.
+Thus, the equilibrium corresponds to the full-information equilibrium in Figure 1a
+and is inefficient in Figure 1b.
+    Below we show that the above results are true in general: The ICC constraint
+is binding if and only if k is small (so there are many buyers). For this we need to
+impose an assumption on the meeting technology, which is equivalent to assuming
+that (k, s1 , s2 ) is strictly increasing in k.
+
+                                           16
+3.5
+
+
+3.0                                                 2.5
+
+                Λo (k/s2 )                                          Λo (k/s2 )
+2.5
+                                                    2.0
+
+2.0
+                                                    1.5
+1.5
+      λ                                2
+                                     Λicc                 λ                         2
+                                                                                  Λicc
+                                                    1.0
+1.0
+
+                                                    0.5
+0.5
+                         k                                                  k
+          0.1      0.2         0.3     0.4   0.5              0.1   0.2          0.3      0.4   0.5   0.6
+
+
+                  (a)        = 0.1                                    (b)         = 0.5
+
+Figure 2: Illustration of ⇤o (k/s2 ) and ⇤2icc as functions of k; note ⌫(c) = v1 + (c c1 )
+
+
+Assumption 1. The ratio "m ( )/"2 ( ) is strictly decreasing in , where "m ( ) =
+  m0 ( )/m( ) and "2 ( ) = m00 ( )/m0 ( ), which is the absolute value of the elas-
+ticity of m0 ( ).
+
+    For common meeting technologies, "2 ( ) is strictly increasing. For example,
+when m( ) = 1 e (urn-ball), "2 ( ) = ; when m( ) = /(1 + ) (geometric),
+"2 ( ) = 2 /(1 + ). Since "m ( ) is strictly decreasing for these common meeting
+technologies, the above assumption holds trivially.
+
+Proposition 4. Under Assumption 1, (k, s1 , s2 ), which is defined by equation (12),
+is strictly increasing in k with limk!0 (k, s1 , s2 ) = 0 and limk!s2 (k, s1 , s2 ) = 1.
+
+Proof. See Appendix A.3.
+
+    Together with Proposition 2, the above result implies that the equilibrium is
+efficient if and only if k is above a certain threshold. Intuitively, when k is large,
+there are relatively few buyers. The queue length in the high-quality submarket is
+already small under full information, so low-quality sellers will choose not to join.
+
+3.3       Continuum of Seller Types.
+We now consider the case of a continuum of seller types and show that the equilib-
+rium can be characterized as a di↵erential equation. Define s(c) = ⌫(c) c (surplus)
+                                         ⇤     ⇤    ⇤
+with c 2 [c, c], vi = vi vi 1 , and      i = i      i 1 . Finally, set ci ci 1 = c
+(equal distance).
+
+
+
+                                                   17
+   The ICC constraint (9) is satisfied if and only if
+
+                     m( ⇤i 1 ) vi              ⇤
+                                                i       m0 ( ⇤i 1 )si 1          k ,
+
+where we applied a first-order approximation to the right-hand side of the ICC
+constraint (9). Dividing both sides above by c and letting c ! 0 yields
+
+                     m( (c))⌫ 0 (c)       0
+                                               (c) (m0 ( (c))s(c)                k) ,                       (13)
+
+                                                                       ⇤          0
+where (c) is the equilibrium queue length of type c sellers and        i/ c !       (c)
+as c ! 0. If the ICC constraint is not binding for sellers of type c, then
+m0 ( (c))s(c) = k, and the right-hand side above is zero. Therefore, if ⌫ 0 (c) > 0,
+then the ICC constraint is always binding, which we already saw for the case of two
+seller types. Since the ICC is always binding, (13) holds with equality, which yields
+equation (14) below, a di↵erential equation for (c). We thus have the following
+proposition.
+
+Proposition 5. Consider the case of a continuum of seller types. Define s(c) =
+⌫(c) c (trade surplus). The equilibrium queue length (c) is uniquely determined
+by the following di↵erential equation
+
+                              0            m( (c))⌫ 0 (c)
+                                  (c) =                   ,                                                 (14)
+                                          m0 ( (c))s(c) k
+
+with m0 ( (c))s(c) < k and the initial condition (c) = ⇤o (k/s(c)).
+
+Proof. See Appendix A.4.
+
+   In the special case where s(c) = s0 (a constant) or equivalently ⌫(c) = c + s0
+and the meeting rate is Poisson, m( ) = 1 e , we can solve the above di↵erential
+equation analytically. In this case, the right-hand side of equation (14) depends
+only on (c). We then use the inverse function of (c): c( ) (note c0 ( ) = 1/ 0 (c)).
+Solving the above di↵erential equation yields
+
+                                                                        s0                      k
+     c( ) = c + k      (s0   k) log(1     e         )     s0 log                 + k log                .   (15)
+                                                                   s0        k             s0       k
+
+The corresponding equilibrium price is then p(c) = ⌫(c)                                k/q( (c)). Figure 3
+
+                                               18
+below compares the equilibrium prices (blue sold line) to the optimal prices, i.e.,
+the prices that generate the socially optimal queue lengths (red dashed line). We
+see that there is no distortion at the bottom and that the distance between the
+market price that needs to satisfy the ICC and the socially optimal price under full
+information is increasing in seller type c.
+
+
+
+
+Figure 3: Comparison between equilibrium and socially optimal prices: s(c) = 0.7
+for c 2 [0, 1], k = 0.3, and m( ) = 1 e
+
+
+3.4    Competing Auctions
+In some markets, like the housing market, it is more reasonable to allow sellers to
+use auctions rather than posted prices, since sellers can gather multiple buyers. We
+now show that our insights and analysis continue to hold in this environment.
+    Assume that the probability that a seller meets n buyers is Pn ( ) for n       0.
+Again let m( ) = 1 P0 ( ), the probability that a seller meets at least one buyer.
+We assume that each seller posts a second-price auction with a reserve price r (since
+revenue equivalence holds, the exact format of the auction is irrelevant).
+    First, consider the counterpart of equation (3). The payo↵ of a seller who posts
+a reserve price r and is perceived to have value v̂ is then
+
+                ⇡(ci , r, v̂) = P1 ( )(r   c) + (m( )   P1 ( )) (v̂   c).       (16)
+
+With probability P1 ( ), the seller meets exactly one buyer, and the product is sold
+
+                                            19
+at the reserve price r; with probability m( ) P1 ( ), the seller meets two or more
+buyers and the product is sold at price v̂. Note that since in this section all buyers
+are homogeneous, only m( ) P1 ( ) matters; the individual values of Pn ( ) for
+n 2 are irrelevant here.
+    The (expected) queue length faced by the above seller is determined by the
+buyers’ indi↵erence condition
+
+                                        P1 ( )
+                                   k=            (v̂   r).                            (17)
+
+A buyer obtains a positive payo↵ if and only if this buyer is the only bidder in the
+auction, which happens with probability P1 ( )/ .
+    Combining the above two equations yields again equation (4). Hence the previ-
+ous analysis of sellers’ choice in the -v̂ plane is unchanged. Our previous analysis
+shows that we only need to show that the sellers’ iso-profit curves are well-defined
+in the r-v̂ plane. For this we need the following assumption.
+
+Assumption 2. P1 ( )/ is strictly decreasing, and P1 ( )/m( ) is weakly decreas-
+ing.
+
+    The above assumption states that when is higher, the probability that a buyer
+is the only bidder becomes smaller, and a seller is more likely to meet multiple
+buyers conditional on meeting at least one buyer.
+    By equation (4), ⇡(c, r, v̂) is first increasing and then decreasing in r. However,
+the e↵ect of v̂ on ⇡(c, r, v̂) is not clear immediately, since equation (16) is more
+complicated than equation (3). The following lemma shows that ⇡(c, r, v̂) is strictly
+increasing in v̂ so that the sellers’ iso-profit curves are well-defined in the r v̂ plane.
+
+Lemma 1. Under Assumption 2, ⇡(c, r, v̂) is strictly increasing in v̂.
+
+Proof. See Appendix A.5.
+
+    Therefore, ⇡(c, r, v̂) satisfies the single-crossing condition. The equilibrium fea-
+tures least-cost separation, and the allocation of buyers and sellers is exactly the
+same as before. The equilibrium queue lengths are determined recursively by equa-
+tions (7) and (11).
+                                                                        n
+    When the meeting technology is urn-ball where Pn ( ) = e              /n!, as is well-
+known in the literature, without private information sellers always post a reserve
+
+                                            20
+price equal to their reservation value ci . 15 With private information, when the ICC
+constraint is not binding, the equilibrium has ri⇤ = ci , otherwise ri⇤ > ci .
+    Instead of allowing the informed side (sellers) to post, Auster and Gottardi
+(2019) assumes that the uninformed side (buyers) can meet multiple counterparties
+and post general trading mechanisms. They find that all buyers post the same
+mechanism, resulting in a pooling equilibrium. When adverse selection is severe
+(the ICC is binding), the equilibrium mechanism is inefficient, meaning that trade
+is not realized even when a buyer is in contact with one or more sellers. In contrast,
+this type of inefficiency never arises in our model since sellers post auctions, which
+are always efficient ex post. However, the inefficiency in our model is ex ante: the
+queue lengths attracted by high-type sellers are inefficiently low.
+
+4      Understanding the role of search frictions
+In order to understand the role of search frictions, in this section, we compare our
+results with the case in which search frictions are absent. Suppose that sellers can
+post prices and that the measure of buyers is greater than that of sellers so that
+a buyer’s payo↵ is zero in equilibrium. Following Akerlof (1970), in the absence
+of search frictions, the most natural equilibrium is the single-price equilibrium in
+which supply equals demand.
+    However, there also exists a continuum of other equilibria in which sellers of type
+c post a price p = p(c) and a seller who posts price p is accepted with probability
+↵(p). Since a buyer’s payo↵ is always zero, buyers are indi↵erent across all ↵(p)
+between zero and one. In particular, we can construct an ↵(p) such that sellers of
+type c find it optimal to post p = ⌫(c) k. 16
+    We consider this to be an uninteresting equilibrium because there is no reason
+for buyers to choose ↵(p) 2 (0, 1) when their payo↵ is zero anyway, let alone the
+↵(p) that generates a separating equilibrium. Furthermore, it is unclear how to set
+up the (Walrasian) market so that sellers who post price p trade with probability
+↵(p). The least unreasonable case is when there is only one seller and one buyer,
+  15
+    See, for example, McAfee (1993), Albrecht et al. (2014), and Cai et al. (2023).
+  16
+    The seller’s problem is maxp (p c)↵(p), and the corresponding FOC is (p c)↵0 (p)+↵(p) = 0.
+Since we require p = ⌫(c) k in equilibrium, the FOC can be rewritten as (p ⌫ 1 (p + k))↵0 (p) +
+↵(p) = 0, from which we can solve ↵(p). Note that ↵(p) is not uniquely determined; we can
+multiply it by a scalar smaller than 1, and the same result holds.
+
+
+
+                                              21
+where the buyer accepts the good with probability ↵(p) even though this is still
+arbitrary. This case is analyzed by Kreps (2023, pp. 115–117), who constructs an
+example with a continuum of seller types in which trade surplus ⌫(c) c is constant
+in c. Kreps (2023) also argues that there is no good reason why in this case the
+separating equilibrium would be selected out of the continuum of equilibria. In
+contrast, in the competitive search equilibrium of the previous section, it follows
+from buyers’ optimal search that a higher price corresponds to a shorter buyer
+queue so that a unique ↵(p) arises endogenously.
+    Similar to Kreps (2023), Cai et al. (2007) studies a stand-alone auction with one
+seller and n buyers in which the seller posts a reserve price. However, they assume
+that each buyer has some idiosyncratic preference for the product, i.e., the value
+of a product with type i for buyer j is vi + "j where i = 1, . . . , I (as in our model)
+and j = 1, . . . , n. The idiosyncratic part "j is iid across buyers. If the dispersion of
+the idiosyncratic part is large enough, then the sellers’ optimal reserve price under
+complete information induces a trading probability strictly smaller than 1. Under
+asymmetric information, high-type sellers increase their reserve price even further
+so that low-type sellers will not mimic. Hence, the tradeo↵ is again that a higher
+reserve price leads to a lower trading probability (as in our model). However, their
+result depends crucially on the dispersion of the idiosyncratic part. If it is small,
+then their model is equivalent to the one in Kreps (2023), and there does not exist
+a separating equilibrium. With search frictions, there always is a probability that
+sellers do not sell and a separating equilibrium always exists even when buyers have
+no idiosyncratic preferences for the good.
+
+5     Conclusion
+In this paper, we consider a market for a good whose quality di↵ers across sellers
+and in which there is competitive search. There is asymmetric information in the
+sense that each seller knows the quality of the good that he or she is o↵ering for
+sale, but buyers cannot observe quality directly. In other words, we have a “market
+for lemons” with competitive search frictions.
+    We prove the existence of a unique equilibrium, which is separating unlike the
+case in (Akerlof, 1970). Price serves as a signal of quality in that higher-quality
+sellers post higher prices. This is shown in a market with a discrete number of
+
+
+                                           22
+sellers and also for one with a continuum of seller types. Finally, we also show that
+our model has a separating equilibrium in a market in which the sellers can post
+auctions.
+    Our results are in stark contrast with those of frictionless asymmetric informa-
+tion models. In those models, an equilibrum sometimes does not exist, or multiple
+equilibria can exist with properties that depend on the details of the model such
+as the order of decisions.
+
+Appendix A                       Proofs
+A.1       Proof of Proposition 1
+                 i
+Denote by ⇤icc the larger solution of i for which the ICC constraint (9) is binding.
+                                                                                               i
+Then we have ⇡i⇤ 1 = ⇡        e(ci 1 , ⇤iicc , vi ) = ⇡e(ci 1 , ⇤i 1 , vi 1 ) = ⇡    e(ci 1 , ⇤icc , vi ) with
+                     i
+⇤iicc < ⇤i 1 < ⇤icc (see the discussions before Proposition 1). Because the slope of
+the iso-profit curve of sellers with a higher type is steeper, we have ⇡                    e(ci , ⇤iicc , vi ) >
+                               i
+e(ci , ⇤i 1 , vi 1 ) > ⇡
+⇡                      e(ci , ⇤icc , vi ).
+                                                                                                       i
+     If the maximum of ⇡      e(ci , i , vi ) were reached on the right-hand side of ⇤icc , i.e.,
+               i                                                              i
+⇤o ( ski )   ⇤icc , then we would have ⇡        e(ci , ⇤iicc , vi ) < ⇡
+                                                                      e(ci , ⇤icc , vi ), since ⇡e(ci , i , vi )
+                                                                                                     i
+is strictly concave in          i.   This is a contradiction so we have ⇤o ( ski ) < ⇤icc . The
+                                                                                                         i
+ICC (9) implies that the sellers of type i need to choose i  ⇤iicc or i ⇤icc . If
+                                                                           i
+⇤o ( ski )  ⇤iicc , then ⇤i = ⇤o ( ski ); while if ⇤o ( ski ) 2 (⇤iicc , ⇤icc ), then ⇤i = ⇤iicc . Thus,
+ ⇤                                                            ⇤                             i         ⇤
+ i is given by equation (11), which implies i > 0. Moreover, since ⇤icc < i 1 ,
+we have ⇤i < ⇤i 1 . Finally, if p⇤i  p⇤i 1 , then sellers of type i would strictly prefer
+posting p⇤i 1 since ⇤i < ⇤i 1 , which contradicts the fact that the equilibrium is
+separating. Hence we have p⇤i > p⇤i 1 .
+
+A.2       Proof of Proposition 2
+Since the decentralized equilibrium is unique, we can first assume that the equilib-
+rium is efficient and then check for the configurations in which the low-type sellers
+do not have an incentive to mimic the high-type sellers.
+   The ICC constraint (9) is satisfied if and only if
+
+                                               ⇡1⇤ ⇡2⇤
+                                     v2   v1                   (s1     s2 ).                                (18)
+                                                m( ⇤2 )
+
+
+                                                      23
+Define ⇡e(s) = max (sm( )       k). Since the equilibrium is assumed to be efficient,
+⇡i⇤ = ⇡e(si ) and ⇤i = ⇤o (k/si ) for i = 1, 2. By the envelope theorem, ⇡  e0 (s) =
+m(⇤o (k/s)), which implies that ⇡1⇤ ⇡2⇤ can be rewritten in the integral form:
+R s1
+ s2
+     m(⇤o (k/s))ds. Substituting this for ⇡1⇤ ⇡2⇤ in the above inequality yields the
+expression for     in equation (12). Finally, note that doubling k, s1 , and s2 will
+double ⇡1⇤ and ⇡2⇤ without a↵ecting ⇤2 on the right-hand side of (18), which implies
+that is also doubled. Hence, (k, s1 , s2 ) is homogeneous of degree 1.
+
+A.3      Proof of Proposition 4
+Given the integral form of equation (12), we just need to show that m(⇤o (k/s))/m(⇤o (k/s2 )),
+or equivalently log m(⇤o (k/s)) log m(⇤o (k/s2 )), is strictly increasing in k. Note
+that
+                                                    Z s 2
+         @                                              @ log m(⇤o (k/s̃))
+            [log m(⇤o (k/s)) log m(⇤o (k/s2 ))] =                          ds̃
+         @k                                          s2       @k@s̃
+
+Hence, m(⇤o (k/s))/m(⇤o (k/s2 )) is strictly increasing in k if and only if log m(⇤o (k/s̃))
+is strictly supermodular. Next, we have
+
+      @ log m(⇤o (k/s̃))   m0 (⇤o (k/s̃)) 0      1  m0 (⇤o (k/s̃)) m0 (⇤o (k/s̃)) 1
+                         =               ⇤ (k/s̃) =
+             @k            m(⇤o (k/s̃)) o        s̃ m(⇤o (k/s̃)) m00 (⇤o (k/s̃)) k
+
+where for the last equality, we used s̃m0 (⇤o (k/s̃)) = k, which defines ⇤o (k/s̃).
+Hence, m(⇤o (k/s))/m(⇤o (k/s2 )) is strictly increasing in k if and only if the last
+term on the right-hand side is strictly decreasing in s, i.e., Assumption 1 holds.
+    Recall that on the right-hand side of equation (18), ⇡i⇤ = max (si m( )        k)
+       ⇤                                                                        ⇤
+and i is the optimal solution for this maximization problem. When k ! 0, 1 and
+ ⇤                                 ⇤       ⇤
+ 2 both converge to 1, and ⇡1 and ⇡2 converge to s1 and s2 , respectively. Thus,
+  (k, s1 , s2 ), the right-hand side of equation (18) converges to zero. When k ! s2 ,
+we have ⇤2 ! 0 and ⇤1 converges to some finite limit since s1 > s2 , which implies
+that the right-hand side of equation (18), (k, s1 , s2 ), converges to 1.
+
+A.4      Proof of Proposition 5
+The derivation of equation (11) follows from the discussion before Proposition 5.
+We still must show that a unique solution (c) to equation (11) exists. Since
+the right-hand side of equation (11) is continuous, existence and uniqueness follow
+
+
+                                           24
+from the Picard-Lindelöf theorem (see Theorem 1.3.1 of Coddington and Levinson
+(1955)). There is, however, one issue in applying the theorem, At the initial point
+  0
+    (c) = 1. To address this, we apply the Picard-Lindelöf theorem to its inverse
+function c( ), which is well-defined since (c) is strictly decreasing. At the initial
+point, c0 ( (c)) = 0 (thus bounded), so a unique function c( ) exists around the
+initial point (c), i.e., defined in [ (c), (c) "] with c + "0 = c( (c) "). From
+c+"0 onwards, we can apply the Picard-Lindelöf theorem to the di↵erential equation
+of (c).
+
+A.5      Proof of Lemma 1
+First, di↵erentiating equation (17) with respect to v̂ yields,
+
+                                                 P1 ( )
+                               v̂ =
+                                      (v̂   r) (P1 ( )  P10 ( ))
+
+Note that the denominator is strictly positive since P1 ( )/ is strictly decreasing.
+    Di↵erentiating equation (4) with respect to v̂ and substituting the above equa-
+tion into the resulting equation yields
+
+                                        P1 ( ) ((v̂    c) m0 ( ) + (r v̂)P1 ( ))
+              ⇡v̂ (c, r, v̂) = m( ) +
+                                               (v̂    r) (P1 ( )    P10 ( ))
+
+where we used equation (17) to substitute out k. Note that the above equation
+is strictly increasing in r (keeping v̂ and fixed). Since the smallest possible r is
+r = c m( P)1 (P)1 ( ) (v̂ c) at which ⇡(c, r, v̂) = 0, ⇡v̂ (c, r, v̂) > 0 if ⇡v̂ (c, r, v̂) 0,
+which is given by
+                                        ✓                                   ◆
+                                              P1 ( )2 (m( )      m0 ( ))
+                ⇡v̂ (c, r, v̂) = m( ) 1                                         0
+                                              m( )2 (P1 ( )      P10 ( ))
+
+where the inequality follows from i) m( )     P1 ( ), and ii) 1  P10 ( )/P1 ( )
+1   m0 ( )/m( ), which is equivalent to P1 ( )/m( ) being weakly decreasing.
+
+A.6      Direct Proof of Single-Crossing in the (p, v̂) Plane
+Suppose that the queue length associated with (p, v̂) is denoted by the func-
+tion e(p, v̂). Note that in our model, e(p, v̂) = q 1 ( v̂ k p ). Since ⇡(c, p, v̂) =
+
+
+
+                                                25
+m(e(p, v̂))(p   c),
+                      ✓                    ◆
+                 @        ⇡p (c, p, v̂)                       m(e(p, v̂))
+                                               =                                       ,
+                 @c       ⇡v̂ (c, p, v̂)            (p    c)2 m0 (e(p, v̂))ev̂ (p, v̂)
+
+which implies that the single-crossing condition holds whenever e(p, v̂) is strictly
+increasing in v̂, i.e., ev̂ (p, v̂) > 0.
+    Risk-averse Buyers. Suppose that buyers are risk averse and all have utility
+function u(·) with initial wealth W0 . Then e(p, v̂) is given by the following equation
+
+           q ( ) (u(v̂    p + W0           k)      u(W0     k)) = u(W0 )         u(W0      k)
+
+where u(W0 k) is the payo↵ from entering the market and failing to trade, and
+u(v̂ p + W0 k) is the utility from entering the market and purchasing the good
+with quality v̂ and price p. Clearly, e(p, v̂) is again strictly increasing in v̂. Hence,
+the equlibrium is again separating with risk-averse buyers.
+
+
+References
+Akerlof, G. A. (1970). The market for ”lemons”: Quality uncertainty and the
+  market mechanism. Quarterly Journal of Economics, 84:488–500.
+Albrecht, J. W., Gautier, P. A., and Vroman, S. B. (2014). Efficient entry with
+  competing auctions. American Economic Review, 104(10):3288–3296.
+Albrecht, J. W., Gautier, P. A., and Vroman, S. B. (2016). Directed search in the
+  housing market. Review of Economic Dynamics, 19:218–231.
+Auster, S. and Gottardi, P. (2019). Competing mechanisms in markets for lemons.
+ Theoretical Economics, 14(3):927–970.
+Banks, J. S. and Sobel, J. (1987). Equilibrium selection in signaling games. Econo-
+  metrica, pages 647–661.
+Barsanetti, B. and Camargo, B. (2022). Signaling in dynamic markets with adverse
+  selection. Journal of Economic Theory, 206:105558.
+Cai, H., Riley, J., and Ye, L. (2007). Reserve price signaling. Journal of Economic
+  Theory, 135(1):253–268.
+Cai, X., Gautier, P., and Woltho↵, R. (2023). Meetings and mechanisms. Interna-
+  tional Economic Review, 64(1):155–185.
+
+                                                    26
+Chang, B. (2018). Adverse Selection and Liquidity Distortion. The Review of
+ Economic Studies, 85(1):275–306.
+
+Coddington, A. and Levinson, N. (1955). Theory of Ordinary Di↵erential Equa-
+  tions. International series in pure and applied mathematics. McGraw-Hill.
+
+Delacroix, A. and Shi, S. (2013). Pricing and signaling with frictions. Journal of
+  Economic Theory, 148:1301–1332.
+
+Guerrieri, V. and Shimer, R. (2014). Dynamic adverse selection: A theory of illiq-
+ uidity, fire sales, and flight to quality. American Economic Review, 104(7):1875–
+ 1908.
+
+Guerrieri, V., Shimer, R., and Wright, R. (2010). Adverse selection in competitive
+ search equilibrium. Econometrica, 78(6):1823–1862.
+
+Hellwig, M. (1987). Some recent developments in the theory of competition in
+  markets with adverse selection. European Economic Review, 31(1):319–325.
+
+Inderst, R. and Muller, H. M. (2002). Competitive search markets for durable
+  goods. Economic Theory, 19:599–622.
+
+Kim, K. (2012). Endogenous market segmentation for lemons. The RAND Journal
+  of Economics, 43(3):562–576.
+
+Kim, K. and Kircher, P. (2015). Efficient competition through cheap talk: The
+  case of competing auctions. Econometrica, 83(5):1849–1875.
+
+Kreps, D. M. (2023). Microeconomic foundations II: Imperfect competition, infor-
+  mation, and strategic interaction. Princeton University Press.
+
+Leland, H. E. and Pyle, D. H. (1977). Informational asymmetries, financial struc-
+  ture, and financial intermediation. The Journal of Finance, 32(2):371–387.
+
+McAfee, R. P. (1993). Mechanism design by competing sellers. Econometrica,
+ 61(6):pp. 1281–1312.
+
+Menzio, G. (2007). A theory of partially directed search. Journal of Political
+ Economy, 115:748–769.
+
+Milgrom, P. and Roberts, J. (1986). Price and advertising signals of product quality.
+ Journal of Political economy, 94(4):796–821.
+
+Moen, E. R. (1997). Competitive search equilibrium. Journal of Political Economy,
+ 105:385–411.
+
+
+                                         27
+Moon, J.-W. (2023). Hidden advertisement, signaling, and directed search. Eco-
+ nomic Theory.
+
+Rothschild, M. and Stiglitz, J. (1976). Equilibrium in competitive insurance mar-
+  kets: An essay on the economics of imperfect information. Quarterly Journal of
+  Economics, 90(4):629–649.
+
+Williams, B. (2021). Search, Liquidity, and Retention: Screening Multidimensional
+ Private Information. Journal of Political Economy, 129(5):1487–1507.
+
+Wilson, C. (1980). Dynamic adverse selection: A theory of illiquidity, fire sales,
+ and flight to quality. Bell Journal of Economics, 11(1):108–130.
+
+
+
+
+                                       28
+

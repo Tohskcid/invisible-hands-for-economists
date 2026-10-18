@@ -1,0 +1,198 @@
+{
+  "status": "in-progress",
+  "spent_budget": 0.043,
+  "max_budget": 3600.0,
+  "contract": {
+    "version": "1.0",
+    "inputs": {
+      "question": "在雇主雇用不可分割的勞動者、政府可依雇用組合或薪資設計稅補的市場中，財政措施何時會保留或恢復需求替代性及其均衡基礎？",
+      "mode": "theory",
+      "deliverable": "manuscript",
+      "claim_scope": "research-only",
+      "mechanism_scope": "claimed",
+      "target_journal": "The Review of Economic Studies",
+      "max_budget": 3600,
+      "latex_main": "paper/manuscript/main.tex",
+      "latex_build_dir": "paper/build",
+      "latex_visual_review": "research/latex-visual-review.json",
+      "obligations": [
+        "定義不可分割勞動者、雇主需求、稅補與均衡",
+        "對需求替代性或均衡存在作出明確可反駁命題",
+        "完整證明、邊界及反例驗證",
+        "處理相關背景文獻、重複風險、限制",
+        "提交完整 LaTeX 主文、附錄、參考文獻及可編譯 PDF"
+      ],
+      "evaluation_mode": "post-unblinding-development",
+      "source_restrictions": "Authoring agent may use only the frozen public question, prior blind draft, blind referee and non-target literature; coordinator and independent overlap auditor may inspect the published target after authoring for an honest novelty decision. This revision is not a blind benchmark.",
+      "neutrality_obligation": "事前保持結果中立；允許正、負、零或條件性結論及反例，僅依明示假設、完整論證與可核查來源作答，不得把預期結論當作假設。",
+      "obstacles": [
+        {
+          "obstacle_id": "general-ex-equilibrium",
+          "blocked_claim_id": "CL-B03-P7",
+          "discriminating_test": "Find and verify an exact integrality theorem under the stated EX hypotheses or give a complete self-contained paper proof; otherwise retain unresolved status."
+        }
+      ]
+    },
+    "mode": "theory",
+    "deliverable": "manuscript",
+    "claim_scope": "research-only",
+    "mechanism_scope": "claimed",
+    "max_budget": 3600.0,
+    "budget_unit": "measured_wall_seconds",
+    "target_journal": "The Review of Economic Studies",
+    "question": "在雇主雇用不可分割的勞動者、政府可依雇用組合或薪資設計稅補的市場中，財政措施何時會保留或恢復需求替代性及其均衡基礎？",
+    "obligations": [
+      "定義不可分割勞動者、雇主需求、稅補與均衡",
+      "對需求替代性或均衡存在作出明確可反駁命題",
+      "完整證明、邊界及反例驗證",
+      "處理相關背景文獻、重複風險、限制",
+      "提交完整 LaTeX 主文、附錄、參考文獻及可編譯 PDF"
+    ]
+  },
+  "obstacles": [
+    {
+      "obstacle_id": "general-ex-equilibrium",
+      "blocked_claim_id": "CL-B03-P7",
+      "discriminating_test": "Find and verify an exact integrality theorem under the stated EX hypotheses or give a complete self-contained paper proof; otherwise retain unresolved status.",
+      "status": "unresolved",
+      "test_executed": false,
+      "outcome": "obstacle remains active",
+      "assessment_errors": [],
+      "reviewer": null,
+      "reviewer_kind": null
+    }
+  ],
+  "replication": null,
+  "latex_build": {
+    "check": {
+      "automated_passed": true,
+      "delivery_ready": false,
+      "visual_review_required": true,
+      "source_dir": "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project",
+      "input_hashes": {
+        "paper/manuscript/main.tex": "030490a14a8104ef737a8d2a358a29a2a0dfa22b1731bccccc50773bf751c62a",
+        "paper/manuscript/references.bib": "1f2d27cce41843e4a088e73fce613f9a8e08d91d0a4f4200831893f9e0513820"
+      },
+      "compilation": {
+        "engine": "pdflatex",
+        "commands": [
+          [
+            "pdflatex",
+            "-interaction=nonstopmode",
+            "-halt-on-error",
+            "-file-line-error",
+            "-no-shell-escape",
+            "-recorder",
+            "-output-directory=/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project/paper/build",
+            "main.tex"
+          ],
+          [
+            "bibtex",
+            "main"
+          ],
+          [
+            "pdflatex",
+            "-interaction=nonstopmode",
+            "-halt-on-error",
+            "-file-line-error",
+            "-no-shell-escape",
+            "-recorder",
+            "-output-directory=/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project/paper/build",
+            "main.tex"
+          ],
+          [
+            "pdflatex",
+            "-interaction=nonstopmode",
+            "-halt-on-error",
+            "-file-line-error",
+            "-no-shell-escape",
+            "-recorder",
+            "-output-directory=/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project/paper/build",
+            "main.tex"
+          ]
+        ],
+        "errors": [],
+        "warnings": [],
+        "pdf": "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project/paper/build/main.pdf"
+      },
+      "rendering": {
+        "errors": [],
+        "pages": [
+          "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project/paper/build/rendered/page-0001.png",
+          "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project/paper/build/rendered/page-0002.png",
+          "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project/paper/build/rendered/page-0003.png",
+          "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project/paper/build/rendered/page-0004.png",
+          "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project/paper/build/rendered/page-0005.png",
+          "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project/paper/build/rendered/page-0006.png",
+          "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project/paper/build/rendered/page-0007.png",
+          "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project/paper/build/rendered/page-0008.png",
+          "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project/paper/build/rendered/page-0009.png",
+          "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project/paper/build/rendered/page-0010.png"
+        ],
+        "page_count": 10,
+        "page_size": "612 x 792 pts (letter)",
+        "pdf_sha256": "2961cab85db3792c60d968799804f277afe27e6233cf4e8c4f2e836bbd5782ea"
+      },
+      "note": "delivery_ready remains false until an agent or researcher visually inspects every rendered page"
+    },
+    "finalize": {
+      "delivery_ready": false,
+      "errors": [
+        "visual review PDF hash does not match the compiled PDF",
+        "visual review status must be pass",
+        "pages_reviewed must be a list of page numbers",
+        "issues must be a list"
+      ],
+      "pdf_sha256": "2961cab85db3792c60d968799804f277afe27e6233cf4e8c4f2e836bbd5782ea"
+    }
+  },
+  "package_audit": null,
+  "next_tasks": [
+    {
+      "stage": "delivery",
+      "source": "check_latex.py",
+      "instruction": "Repair the manuscript build and review the exact rendered PDF",
+      "reason": [
+        "visual review PDF hash does not match the compiled PDF",
+        "visual review status must be pass",
+        "pages_reviewed must be a list of page numbers",
+        "issues must be a list"
+      ],
+      "requires_scientific_judgment": true
+    },
+    {
+      "stage": "scientific_obstacle",
+      "source": "general-ex-equilibrium",
+      "instruction": "Interpret a discriminating test or obtain missing evidence; record a hash-bound assessment",
+      "reason": "obstacle remains active",
+      "requires_scientific_judgment": true
+    },
+    {
+      "stage": "package",
+      "source": "research/package.json",
+      "instruction": "Declare the frozen delivery profile and required artifacts",
+      "reason": "package audit has not run",
+      "requires_scientific_judgment": false
+    }
+  ],
+  "rework_plan": {
+    "restart_from": "package",
+    "invalidate_stages": [
+      "package",
+      "literature",
+      "data",
+      "design",
+      "argument",
+      "analysis",
+      "replication",
+      "manuscript",
+      "review",
+      "delivery"
+    ],
+    "reason_sources": [
+      "check_latex.py",
+      "general-ex-equilibrium",
+      "research/package.json"
+    ]
+  }
+}

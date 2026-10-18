@@ -1,0 +1,52 @@
+{
+  "cutoff_exclusive": "2020-06-18",
+  "sources": [
+    {
+      "authors": ["Roger B. Myerson"],
+      "title": "Optimal Auction Design",
+      "journal": "Mathematics of Operations Research",
+      "volume": "6",
+      "issue": "1",
+      "pages": "58-73",
+      "publication_date": "1981-02-01",
+      "publication_date_basis": "INFORMS article page says Published Online: 1 Feb 1981; issue is February 1981",
+      "doi": "10.1287/moor.6.1.58",
+      "requested_url": "https://doi.org/10.1287/moor.6.1.58",
+      "primary_page_url": "https://pubsonline.informs.org/doi/10.1287/moor.6.1.58",
+      "summary": "The publisher abstract presents a seller's optimal auction problem for one object and multiple possible buyers when their willingness to pay is imperfectly known, with the seller maximizing expected utility.",
+      "relevance": "Background on allocation and payment mechanisms with privately known willingness to pay; the publisher keywords include direct revelation mechanisms.",
+      "limitations": "Only publisher metadata and abstract were accessible. The linked PDF redirected to the abstract page. The accessible text does not establish results for varying resource quality, observed group labels, hidden social welfare weights, or limits on payments to individuals."
+    },
+    {
+      "authors": ["Emmanuel Saez", "Stefanie Stantcheva"],
+      "title": "Generalized Social Marginal Welfare Weights for Optimal Tax Theory",
+      "journal": "American Economic Review",
+      "volume": "106",
+      "issue": "1",
+      "pages": "24-45",
+      "publication_date": "2016-01",
+      "publication_date_precision": "month",
+      "publication_date_basis": "AEA article page identifies volume 106, number 1, January 2016; no exact first-public day shown",
+      "doi": "10.1257/aer.20141362",
+      "requested_url": "https://pubs.aeaweb.org/doi/10.1257/aer.20141362",
+      "primary_page_url": "https://www.aeaweb.org/articles?id=10.1257/aer.20141362",
+      "summary": "The publisher abstract evaluates tax reforms by aggregating individuals' money-metric gains and losses with generalized social marginal welfare weights. Such weights can express fairness concerns without necessarily being tied to individual utilities.",
+      "relevance": "Background for explicitly specifying a social welfare objective using weights across people.",
+      "limitations": "Publisher metadata and abstract support claims about tax reform and optimal tax formulas, not a mechanism for assigning unequal-quality scarce resources, using group labels, or limiting payments to individuals."
+    }
+  ],
+  "excluded_requested_urls": [
+    {
+      "url": "https://www.aeaweb.org/articles?id=10.1257/aer.20131607",
+      "reason": "Exact requested page returned HTTP 404; date and substantive content were not verified from that primary page."
+    },
+    {
+      "url": "https://www.aeaweb.org/articles?id=10.1257/aer.68.1.8",
+      "reason": "Exact requested page returned HTTP 404; date and substantive content were not verified from that primary page."
+    },
+    {
+      "url": "https://www.jstor.org/stable/1809683",
+      "reason": "Corrected archive URL displayed a client challenge, so publication date and substantive content could not be verified from the allowed page."
+    }
+  ]
+}

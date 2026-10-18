@@ -41,6 +41,7 @@ Read [research_protocol.md](references/research_protocol.md), then exactly one a
 Load these only when triggered:
 
 - starting a new research question, including from one sentence: [topic_survey.md](references/topic_survey.md); run separate baseline and frontier discovery lanes without citation-count exclusion, use tool-acquired freshness-checked evidence, decompose the nearest work's field-changing move, and obtain the scope and contribution locks before method selection
+- testing reconstruction of an already-published paper: [historical benchmark protocol](experiments/new-topic-blind/PROTOCOL.md); freeze separate journal-publication and earliest-target-version dates before authoring, exclude later external work from historical novelty, and keep the target's own versions out of the author-visible corpus
 - material aggregation: [data_granularity_guide.md](references/data_granularity_guide.md)
 - selecting or reviewing an empirical design or estimator: [method_router.md](references/method_router.md); route from estimand and assignment mechanism before data shape or software
 - implementing an estimator or writing empirical code: [estimation_recipes.md](references/estimation_recipes.md); use modern heterogeneity-robust (CS, SA, BJS), SDiD, Bartik, or bias-corrected syntax across Stata, R, and Python with publication-ready output
@@ -63,7 +64,7 @@ Load these only when triggered:
 
 Build a claim-centered literature map and mathematical obligations; establish the fixed baseline; state one falsifiable hypothesis; make one attributable change; validate; record `keep`, `discard`, `inconclusive`, `blocked`, or `crash`; stop at the budget or milestone and report the best result, failures, uncertainty, and next decision. Keep changes only if they improve contract criteria without weakening identification, proof validity, numerical stability, or reproducibility.
 
-For one-shot projects, save `research/contract-input.json` with question, mode, deliverable, claim scope, and budget. Invoke this skill's `scripts/run_research_workflow.py` with `--root` and `--contract` before drafting. Follow `next_tasks` and `rework_plan`; invalidate dependent work, then rerun until `complete`, budget exhaustion, or a documented block. Record hash-bound scientific assessments; command success alone never resolves an obstacle. Follow [workflow execution](references/workflow_execution.md).
+For manuscripts, freeze the question, mode, claim scope, `publication_goal` (`original` or `replication`), and budget in `research/contract-input.json`. Run `scripts/run_research_team.py --root PROJECT --contract research/contract-input.json --max-rounds 2 --json`. For an original goal, signed replication/duplicate or referee novelty/overlap rejection triggers a bounded contribution branch before design; preserve the old candidate and test a distinct claim. Require package protocol 2, `prior_art_review`, and `exploration_ledger`. Follow `next_tasks` and `rework_plan`; see [workflow execution](references/workflow_execution.md).
 
 Do not optimize p-values, alter the harness, or pivot because results conflict with intuition. Audit data, code, assumptions, counterexamples, and competing mechanisms first.
 

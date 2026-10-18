@@ -1,0 +1,8 @@
+{
+  "valid": true,
+  "author_corpus_safe": true,
+  "source_count": 2,
+  "unsafe_author_material": [],
+  "source_manifest_sha256": "49645708bbb3dec68982eb4ed9026783b9db56738fd7da90ca9054b08827e499",
+  "note": "Coordinator ran check_historical_prior_art.py in memory; target metadata not written to author directory."
+}

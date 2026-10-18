@@ -1,0 +1,22 @@
+{
+  "version": "1.0",
+  "inputs": {
+    "question": "How did the 1992 New Jersey minimum wage increase affect employment at fast-food restaurants?",
+    "mode": "empirical",
+    "deliverable": "manuscript",
+    "claim_scope": "research-only",
+    "mechanism_scope": "not-claimed",
+    "target_journal": "American Economic Review",
+    "max_budget": 60.0,
+    "obligations": []
+  },
+  "mode": "empirical",
+  "deliverable": "manuscript",
+  "claim_scope": "research-only",
+  "mechanism_scope": "not-claimed",
+  "max_budget": 60.0,
+  "budget_unit": "measured_wall_seconds",
+  "target_journal": "American Economic Review",
+  "question": "How did the 1992 New Jersey minimum wage increase affect employment at fast-food restaurants?",
+  "obligations": []
+}

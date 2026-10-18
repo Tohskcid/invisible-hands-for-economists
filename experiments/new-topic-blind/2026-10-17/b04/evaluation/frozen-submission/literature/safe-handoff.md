@@ -1,0 +1,15 @@
+# Safe literature handoff
+
+Source cutoff: strictly before 2020-06-18. This handoff contains only works whose dates and relevant content were verified on the specified primary publisher pages. It does not establish a result for the public task's full setting.
+
+## Verified source
+
+Roger B. Myerson, “Optimal Auction Design,” *Mathematics of Operations Research* 6(1):58–73 (1981). Exact requested DOI URL: https://doi.org/10.1287/moor.6.1.58 . The DOI resolves to the [INFORMS article page](https://pubsonline.informs.org/doi/10.1287/moor.6.1.58), which states “Published Online: 1 Feb 1981” and identifies the February 1981 issue. This publisher-reported public issue date precedes the cutoff.
+
+The publisher abstract describes a seller assigning one object among possible buyers when their willingness to pay is imperfectly known, and deriving optimal auctions for a broad class of such problems. The page also lists direct revelation mechanisms among the keywords. This is relevant background for incentive-compatible allocation and payment under private willingness to pay. Its stated objective is the seller's expected utility. The available abstract does not establish an extension to unequal resource quality, group labels, unobservable welfare weights, or caps on payments to individuals. The linked PDF redirected to the abstract page during verification, so no claims from the full text are included.
+
+Emmanuel Saez and Stefanie Stantcheva, “Generalized Social Marginal Welfare Weights for Optimal Tax Theory,” *American Economic Review* 106(1):24–45 (January 2016). Corrected exact publisher URL supplied for verification: https://pubs.aeaweb.org/doi/10.1257/aer.20141362 . It resolved in a browser to the [AEA article page](https://www.aeaweb.org/articles?id=10.1257/aer.20141362), which identifies the January 2016 issue. The publisher abstract evaluates tax reforms by aggregating individuals' money-metric gains and losses with generalized social marginal welfare weights. It says suitable weights can express fairness concerns without being tied necessarily to individual utilities. This is relevant background for specifying a welfare objective when interpersonal weights matter. The accessible abstract treats tax reform and optimal tax formulas; it does not itself verify a mechanism for assigning unequal-quality scarce resources, using group labels, or limiting payments to individuals. No exact day of first public release was displayed, so only the month is recorded.
+
+## Access exclusions
+
+The originally requested AEA URLs for Saez and Stantcheva (https://www.aeaweb.org/articles?id=10.1257/aer.20131607) and Akerlof (https://www.aeaweb.org/articles?id=10.1257/aer.68.1.8) each returned HTTP 404. The corrected Saez–Stantcheva publisher URL above permitted verification. The corrected official archive URL for Akerlof, https://www.jstor.org/stable/1809683, displayed only a client challenge during direct access. Its date and substantive claims could not be verified from that page, so it remains excluded. No further pages were sought.

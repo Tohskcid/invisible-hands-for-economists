@@ -1,0 +1,22 @@
+{
+  "reviewer": "b03-r01-independent-referee",
+  "reviewed_at": "2026-10-17",
+  "pdf": "paper/build/main.pdf",
+  "pdf_sha256": "e4c5929b812dc2c309b4e5ced4dac4e75e07b147ad35f7c8aecfd617372bd8ee",
+  "status": "pass",
+  "pages_reviewed": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+  "issues": [],
+  "page_notes": [
+    "1: title, abstract, introduction, and page number readable",
+    "2: literature, model, exchange definition and equations readable",
+    "3: demand/equilibrium definitions and propositions 1–4 readable",
+    "4: propositions 5–8 and displayed adjusted-value equation readable",
+    "5: counterexamples, proposition 9, and limitations readable",
+    "6: conclusion and proofs A–C readable",
+    "7: proofs C–F and transition to general-equilibrium argument readable",
+    "8: convolution, intersection, dummy-price argument and LP primal readable",
+    "9: LP dual, rebate proof, and headcount proof readable",
+    "10: headcount proof conclusion and references readable"
+  ],
+  "note": "Personally inspected every newly rendered page of the exact PDF after source-only claim markers were added. No clipping, overlapping text, missing page, unresolved citation, or unreadable formula; generous whitespace on pages 4 and 10 is cosmetic. Visual pass does not imply substantive publication approval."
+}

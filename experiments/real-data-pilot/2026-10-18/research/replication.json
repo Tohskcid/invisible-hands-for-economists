@@ -1,0 +1,16 @@
+{
+  "commands": [["python3", "scripts/analyze.py"]],
+  "raw_inputs": [
+    "data/raw/bls-2001-2010.json",
+    "data/raw/bls-2011-2020.json",
+    "data/raw/bls-2021-2024.json"
+  ],
+  "generated": [
+    "data/analysis-panel.csv",
+    "research/results.json",
+    "output/tables/means.tex"
+  ],
+  "results": "research/results.json",
+  "tolerance": 0,
+  "clean": true
+}

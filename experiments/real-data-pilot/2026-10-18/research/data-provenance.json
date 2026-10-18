@@ -1,0 +1,47 @@
+{
+  "schema_version": "1",
+  "generated_at": "2026-10-17T18:53:56+00:00",
+  "datasets": [
+    {
+      "id": "bls-monthly-rates",
+      "kind": "real",
+      "name": "BLS national unemployment and job-openings rates, seasonally adjusted",
+      "producer": "U.S. Bureau of Labor Statistics",
+      "locator": "https://api.bls.gov/publicAPI/v2/timeseries/data/",
+      "version": "API snapshot retrieved 2026-10-18 Asia/Taipei; monthly observations 2001-2024",
+      "retrieved_at": "2026-10-17T18:52:48+00:00",
+      "license": "BLS published data are public domain; cite the Bureau of Labor Statistics",
+      "license_locator": "https://www.bls.gov/opub/copyright-information.htm",
+      "unit": "United States month, two published national rates in percentage points",
+      "coverage": "2001-01 to 2024-12, 288 paired months",
+      "source_evidence_artifact": "data/source-verification.md",
+      "source_evidence_sha256": "e5502a405d935bf285d285f1dcd582b5dee65066aac554d2b0aaf33b978a92c2",
+      "schema_artifact": "data/schema.json",
+      "schema_sha256": "1e84b1b266c4ee022b29872b92fa186b7c7d6b4e45fd5f13bc5aad9b2e92316d",
+      "acquisition": {
+        "method": "api",
+        "command": "python3 scripts/acquire.py",
+        "executed_at": "2026-10-17T18:52:46+00:00",
+        "artifact": "scripts/acquire.py",
+        "artifact_sha256": "cbddc391f980d44f13e761b5ce85563264ae23605d44fff55848439d7f48778d"
+      },
+      "files": [
+        {
+          "role": "raw",
+          "path": "data/raw/bls-2001-2010.json",
+          "sha256": "7b10ccb0ab22c824ca092ce7742732ee1de779dbfbd8d81f189a5d0d48c8ee62"
+        },
+        {
+          "role": "raw",
+          "path": "data/raw/bls-2011-2020.json",
+          "sha256": "a907e0fcd3ab406551d88bb5abca97d4221dbe9c2295fc1a146ddd7749f55db5"
+        },
+        {
+          "role": "raw",
+          "path": "data/raw/bls-2021-2024.json",
+          "sha256": "d67cddce377d045b6e89dbd248e77b45418333497fafbd7ff3baf6230c35feb7"
+        }
+      ]
+    }
+  ]
+}

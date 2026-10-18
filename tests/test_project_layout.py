@@ -27,6 +27,8 @@ class ProjectLayoutTests(unittest.TestCase):
                 "Final Project/docs/thesis.pdf",
                 "Final Project/src/estimate.py",
                 "literature/papers/cited-paper.pdf",
+                "literature/pages/official-source.html",
+                "review/agent-events.jsonl",
                 "tmp/main.aux",
             ]
             for name in files:

@@ -27,7 +27,7 @@ CATEGORIES = {
     },
     "document": {
         "extensions": {".doc", ".docx", ".html", ".odt", ".qmd", ".rtf"},
-        "directories": {"docs", "documents", "manuscript", "manuscripts", "paper", "papers", "report", "reports"},
+        "directories": {"docs", "documents", "literature", "manuscript", "manuscripts", "pages", "paper", "papers", "report", "reports"},
     },
     "figure": {
         "extensions": {".png", ".jpg", ".jpeg", ".svg", ".eps", ".tif", ".tiff", ".webp"},
@@ -35,7 +35,7 @@ CATEGORIES = {
     },
     "data/result": {
         "extensions": {".arrow", ".csv", ".db", ".dta", ".feather", ".geojson", ".gpkg", ".h5", ".hdf5", ".jsonl", ".nc", ".parquet", ".rds", ".sav", ".shp", ".sqlite", ".tsv", ".xls", ".xlsx"},
-        "directories": {"data", "dataset", "datasets", "evals", "fixtures", "library", "literature", "research", "result", "results", "table", "tables"},
+        "directories": {"data", "dataset", "datasets", "evals", "fixtures", "library", "literature", "research", "result", "results", "review", "table", "tables"},
     },
     "code/notebook": {
         "extensions": {".c", ".cpp", ".do", ".h", ".ipynb", ".jl", ".js", ".m", ".py", ".r", ".sh", ".sql", ".stan", ".ts"},

@@ -1,0 +1,27 @@
+{
+  "source_commit": "8704e3d6ee76372fcf77c4cbeeeb43630ce02a53",
+  "scope": "git archive of the committed 2026-10-12 one-shot experiment, extracted to a temporary directory",
+  "public_raw_acquisition": {
+    "command": "python3 attempt/scripts/acquire.py",
+    "exit_code": 0,
+    "raw_hashes_match_provenance": true
+  },
+  "data_provenance_after_acquisition": {
+    "valid": false,
+    "reason": "research/docs/source-author-data.html is referenced by provenance but excluded from Git"
+  },
+  "documented_master_command": {
+    "command": "python3 scripts/run_all.py",
+    "exit_code": 1,
+    "first_failure": "data/processed directory is absent from the committed archive"
+  },
+  "manual_diagnostic_after_creating_output_directories": {
+    "python_analysis_exit_code": 0,
+    "base_r_verification_exit_code": 0,
+    "primary_estimate_fte": 2.7500000000000004,
+    "n": 384,
+    "manuscript_builder_exit_code": 1,
+    "manuscript_builder_first_failure": "cited source PDF is absent from Git and has no acquisition step in the master command"
+  },
+  "conclusion": "Local historical replay can pass with retained files, but the committed experiment does not complete a clean-clone replay without manual restoration of directories and cited sources."
+}

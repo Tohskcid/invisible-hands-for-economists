@@ -1,0 +1,63 @@
+{
+  "id": "b03-r01",
+  "assessment_kind": "independent-post-unblind-reconstruction-rescore",
+  "historical_status": "r01 is a post-unblind development revision, not a second blind test. The original b03 score remains 4/10 and is not overwritten.",
+  "rubric_sha256": "df958a2eccc84286acec02e8eda39d7009d5c577c31b6b073fc4362ca69b6494",
+  "published_sha256": "87d138f3f49a9c0cb45941cf8ee2ec80290d8e032a9302622b9cab9bfb0f66c1",
+  "online_appendix_sha256": "ff7d33d0e15f6d7f354a6c10c6ffab7896b48d2cdc691f373d44f156b84ff1b6",
+  "revision_manuscript_sha256": "7a3dc698f06938c34ba50b66eec0e717c9e8a2203b40e4f1c395440961fec5ab",
+  "scoring_rule": "Unchanged preregistered five criteria, each 0/1/2. Two requires a correct, clearly justified result with scope and qualifications; one a correct but incomplete or weakly justified result; zero absent or materially wrong. No title matching or points for general equilibrium results outside the criterion.",
+  "original_score": 4,
+  "revision_score": 4,
+  "maximum": 10,
+  "delta": 0,
+  "criteria": [
+    {
+      "id": "model",
+      "b03": 2,
+      "r01": 2,
+      "delta": 0,
+      "published_anchor": "Main text §2 pp.7–9, Definition 1: profit R(A)+T(A)−sum of salaries, demand X(s;R+T), and retention under salary increases; p.8 n.12 links substitutes to competitive equilibrium.",
+      "revision_anchor": "main.tex lines 47–80: finite F,N, U_f(S;w), D_h(p), Definition Demand gross substitutes, and Definition Competitive equilibrium; lines 85–88 EX implies GS; lines 139–142 and 229–271 add an equilibrium argument.",
+      "comparison": "The full model/GS criterion was already met in b03. The new general-EX equilibrium proposition strengthens the manuscript but adds no rubric point to a criterion already at 2."
+    },
+    {
+      "id": "universal_simple",
+      "b03": 1,
+      "r01": 1,
+      "delta": 0,
+      "published_anchor": "Main text §3 p.9 Definition 2 defines preservation for every GS revenue; pp.10–11 Proposition 1 and Theorem 1: universal preservation iff additive worker-specific transfer plus cardinally concave transfer with weakly decreasing increments; p.9 gives two GS functions whose sum violates GS. Online Appendix OA.2.2 proves Theorem 1.",
+      "revision_anchor": "main.tex lines 91–94 prove modular preservation only on the EX domain; lines 167–170 and 279–292 characterize concave headcount increments only with additive baseline; lines 157–164 show submodularity alone is insufficient, not that GS of a transfer alone is insufficient.",
+      "comparison": "The same correct partial subclasses as b03 remain. r01 does not prove sufficiency of additive plus concave headcount transfers for every GS revenue, necessity of that entire universal class, or the distinction from a transfer merely being GS."
+    },
+    {
+      "id": "information_scope",
+      "b03": 0,
+      "r01": 0,
+      "delta": 0,
+      "published_anchor": "Main text §4.1 pp.13–14 Theorem 2: for group-separable GS revenue, additive plus group-concave (group-cardinal and GS) transfer iff preservation; §4.2 pp.15–16 Theorem 3: with at least three groups, group-separable plus cardinally concave transfer iff preservation; p.16 Proposition 2 gives only sufficiency for two groups. Online Appendix OA.2.6 contains proofs of Theorems 2–3.",
+      "revision_anchor": "main.tex lines 145–148 and 273–277 use only a common two-worker complementarity bound and a uniform singleton rebate; no partition of workers into groups, group-separable/group-concave production class, or group-count qualification appears in the manuscript.",
+      "comparison": "The information-limited rebate is a different information structure and does not reconstruct either group theorem."
+    },
+    {
+      "id": "salary_dependent",
+      "b03": 1,
+      "r01": 1,
+      "delta": 0,
+      "published_anchor": "Main text §5.1 pp.18–20 defines complex transfers using own-hire salaries and strictly increasing net hiring cost on all real salaries, then Proposition 3 gives the additive sufficient class; §5.2 p.21 Theorem 4 states universal preservation iff C-additively separable plus C-cardinally concave, including the disciplined salary-dependent all-workers boundary. Online Appendix OA.2.10 proves Theorem 4; p.21 explains the failure mechanism for a tax on joint salaries.",
+      "revision_anchor": "main.tex lines 116–124 and 215–221 retain the sufficient effective-price reparametrization q_fj(x)=x+t_fj(x), weakly increasing only on nonnegative wages; lines 152–154 concern a salary-independent bundle bonus.",
+      "comparison": "The correct sufficient own-worker result remains. r01 lacks the universal necessity theorem, C-cardinal all-workers exception, and a joint-salary-tax counterexample; its wage domain and monotonicity assumptions remain narrower than the published complex-transfer model."
+    },
+    {
+      "id": "restoration",
+      "b03": 0,
+      "r01": 0,
+      "delta": 0,
+      "published_anchor": "Main text §6.2 pp.24–25 Definitions 4–6 define exactly-constrained substitutes, chain-constrained substitutes, and scale concavity; Proposition 8 states their conjunction iff GS. §6.3 pp.25–26 Proposition 9 says cardinal transfers leave the first two invariant; Theorem 5 states a cardinally concave transfer restores GS iff both first two hold. Online Appendix OA.2.12–OA.2.13 proves the decomposition and Theorem 5.",
+      "revision_anchor": "main.tex lines 97–113 give a two-worker cross-difference threshold and unrestricted g=q−v correction; lines 145–148 and 273–277 add an iff budget threshold for uniform singleton rebates under a common bound; lines 167–170 and 279–292 analyze concavity with additive production only.",
+      "comparison": "The new two-worker rebate has cardinally concave increments r,−r and establishes a narrow budget result, but neither exact-cardinality substitutes nor nested demand chains are defined or characterized. It therefore does not rebuild Theorem 5's necessary-and-sufficient repairability class or identify scale concavity as the only missing component."
+    }
+  ],
+  "substantive_change": "No reconstruction-score change (4/10 to 4/10). r01 repairs a separate general-EX equilibrium proof obligation and adds a two-worker robust rebate/budget theorem; both lie outside the missing historical reconstruction criteria.",
+  "independence": "Assessment uses the sealed preregistered rubric, the original comparison score, the sealed published article and online appendix, and the r01 manuscript. It does not replace the historical blind score or treat the revision as blind."
+}

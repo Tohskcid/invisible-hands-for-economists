@@ -1,0 +1,83 @@
+{
+  "reviewer_id": "codex-independent-referee-01a14d30-0bad-75d1-a6f1-82aa78ede55f",
+  "author_agent_ids": ["/root/real_case", "real_case_agent"],
+  "review_date": "2026-10-18",
+  "status": "completed-independent-review",
+  "verdict": "reject",
+  "decision_scope": "Original article in a top economics journal; the frozen-data descriptive replication pilot is credible within its stated limits.",
+  "manuscript_sha256": "41ee5d506a9206afe69e7fc5ada30e77ea20bfe1081d5cafe3d7ca2cc0db9a35",
+  "release_pdf_sha256": "195e5e98c0dae40a3df1a152449cfe02c4266214996a43c4edde070d659053c5",
+  "topic_survey_sha256": "ee18431583b73634c263734732590c440b819bfb705fd894e393653151fb4ed8",
+  "manifest_sha256": "13177c49623d3623bb97814ea100400a92743340b29c6610c889b8ba294cf11a",
+  "reason": "The selected-month arithmetic and revised source tracing are sound, but the outward gap and subsequent narrowing are established in prior work. The paper adds a 2024 endpoint and an elementary conditional mean, without a new economic estimand, identification strategy, mechanism, or material empirical finding. It is not an original top-journal contribution.",
+  "dimensions": {
+    "novelty": {
+      "verdict": "reject",
+      "reason": "The exact 2024 frozen-vintage mean is new arithmetic, but the pandemic vacancy-unemployment separation and partial reversal were already described. The survey and signed prior-art matrix honestly classify this as a replicate.",
+      "evidence": [
+        {"path": "research/topic-survey.json", "sha256": "ee18431583b73634c263734732590c440b819bfb705fd894e393653151fb4ed8"},
+        {"path": "research/prior-art-review.json", "sha256": "78887c0118022b72ed8a0a6398111f7f47165db64168a0ccb7b446f10872ae13"},
+        {"path": "paper/main.tex", "sha256": "41ee5d506a9206afe69e7fc5ada30e77ea20bfe1081d5cafe3d7ca2cc0db9a35"}
+      ]
+    },
+    "overlap": {
+      "verdict": "reject",
+      "reason": "BLS 2013 establishes the descriptive curve; NBER 2023 shows the post-pandemic separation and subsequent decline; IMF 2024 examines causes and possible renormalization. The 2024 endpoint does not overcome this substantive overlap. IMF's vacancy denominator differs, so its magnitude is not numerically interchangeable with the pilot's.",
+      "evidence": [
+        {"path": "research/topic-survey.json", "sha256": "ee18431583b73634c263734732590c440b819bfb705fd894e393653151fb4ed8"},
+        {"path": "research/prior-art-review.json", "sha256": "78887c0118022b72ed8a0a6398111f7f47165db64168a0ccb7b446f10872ae13"},
+        {"path": "literature/pages/bls2013--job-openings-and-the-beveridge-curve-december-2000april-2013.html", "sha256": "cf8a9ed55096f2af1d8418b67a58ca84a06a219d78adb2ec6472057bd44670c0"},
+        {"path": "literature/papers/barlevyetal2023--the-shifting-reasons-for-beveridge-curve-shifts.pdf", "sha256": "1fe837b59c899fa602709a15601bf9fe003d5ff5da33bef231a9b8897090ddb1"},
+        {"path": "literature/papers/kindberggirard2024--what-caused-the-beveridge-curve-to-shift-higher-in-the-united-states-during-the.pdf", "sha256": "c4b6404dda6a5ecb2c8281ecaaf91954069c5b428ee7886f5ee55f3032e2a0da"}
+      ]
+    },
+    "research_design": {
+      "verdict": "revise",
+      "reason": "The ex-post 3.5-4.5% band yields an auditable descriptive comparison, but within-band unemployment differs by about 0.292 points between periods. Calendar selection, serial dependence, composition, and the eight-month alternative-band post sample limit interpretation. Exact-unemployment reweighting reduces the headline gap, without identifying a cause.",
+      "evidence": [
+        {"path": "paper/main.tex", "sha256": "41ee5d506a9206afe69e7fc5ada30e77ea20bfe1081d5cafe3d7ca2cc0db9a35"},
+        {"path": "research/results.json", "sha256": "41aeaf8dd7080f2a4e2c0abc9646ed5fd46db730c4acb59993148a1bf9aa807a"}
+      ]
+    },
+    "inference_or_proof": {
+      "verdict": "revise",
+      "reason": "The means recompute from the retained BLS data (48 baseline and 35 comparison months; 1.604167-point gap; 12 months in 2024 and 0.554167-point gap). They are descriptive point estimates without uncertainty analysis, a counterfactual, or causal identification. The manuscript appropriately disclaims structural inference, so its numeric claim is narrower than a curve-shift estimate.",
+      "evidence": [
+        {"path": "research/results.json", "sha256": "41aeaf8dd7080f2a4e2c0abc9646ed5fd46db730c4acb59993148a1bf9aa807a"},
+        {"path": "paper/main.tex", "sha256": "41ee5d506a9206afe69e7fc5ada30e77ea20bfe1081d5cafe3d7ca2cc0db9a35"},
+        {"path": "research/replication.json", "sha256": "ae6450ccd7f39319a1005ed1a875cbb658d6918711d85d28bd1b9599a1fdea29"}
+      ]
+    },
+    "logic": {
+      "verdict": "revise",
+      "reason": "The headline and 2024 conclusions follow arithmetically, and the self-limited final conclusion is coherent. The central c-limitations node cites only BLS definitions in the manifest, although the causal-identification limit is better supported by NBER p. 8 and IMF p. 9 and is discussed in the manuscript. The graph's evidence binding should reflect those sources.",
+      "evidence": [
+        {"path": "research/manifest.jsonl", "sha256": "13177c49623d3623bb97814ea100400a92743340b29c6610c889b8ba294cf11a"},
+        {"path": "paper/main.tex", "sha256": "41ee5d506a9206afe69e7fc5ada30e77ea20bfe1081d5cafe3d7ca2cc0db9a35"},
+        {"path": "research/prior-art-review.json", "sha256": "78887c0118022b72ed8a0a6398111f7f47165db64168a0ccb7b446f10872ae13"}
+      ]
+    },
+    "completeness": {
+      "verdict": "revise",
+      "reason": "The revised source/PDF build hashes align and the bounded calculation is replicable. A top-journal article still lacks a distinct economic contribution, formal uncertainty assessment, mechanism or identification test, and broader robustness. The project team report remains blocked; that status does not substitute for this independent judgment.",
+      "evidence": [
+        {"path": "paper/main.tex", "sha256": "41ee5d506a9206afe69e7fc5ada30e77ea20bfe1081d5cafe3d7ca2cc0db9a35"},
+        {"path": "paper/build/report.json", "sha256": "6199b2d38baa30355e9ae0c742dd607ebb6f9e78c51d707175969a3771d0b05c"},
+        {"path": "research/team-report.json", "sha256": "20f3720da5e336d16e8e1215504bc21021dba987e438b727c47dd6977b6d197b"}
+      ]
+    }
+  },
+  "limitations": [
+    {"text_anchor": "This is an ex-post descriptive choice.", "effect_on_claim": "The chosen years and unemployment interval may select the size of c-main and c-normalization; they cannot define an invariant structural shift.", "boundary_or_mitigation": "Present both as selected-sample estimates and report other intervals and periods before making a general claim."},
+    {"text_anchor": "Conditioning on a narrow unemployment interval does not make the unemployment distributions within that interval identical", "effect_on_claim": "The lower post-period mean unemployment can explain part of the higher openings mean along a downward-sloping relation.", "boundary_or_mitigation": "Do not interpret 1.6042 points as a fixed-unemployment vertical distance; report within-band balance or suitably qualified reweighting."},
+    {"text_anchor": "We do not attach conventional independent-month standard errors", "effect_on_claim": "No sampling-uncertainty statement or hypothesis test supports a population or structural effect.", "boundary_or_mitigation": "Keep inference descriptive or use a justified time-series uncertainty design."},
+    {"text_anchor": "The $[4.0,5.0]$ comparison has just eight post-period months.", "effect_on_claim": "The alternative-band result is too thin to establish robust generality.", "boundary_or_mitigation": "Label it exploratory and report cell counts with any robustness comparison."},
+    {"text_anchor": "BLS estimates can be revised", "effect_on_claim": "Later official vintages may change the exact conditional means and gaps.", "boundary_or_mitigation": "Archive and identify the frozen vintage and rerun on later vintages if the result is used beyond this replication."}
+  ],
+  "open_critical_issues": [
+    "No original economic contribution sufficient for a top-journal article: the main pattern and subsequent decline are prior art; the 2024 endpoint adds only a descriptive update.",
+    "The selected-band comparison does not identify a structural Beveridge-curve shift or causal mechanism, and within-band unemployment imbalance affects the headline magnitude.",
+    "The manifest should bind c-limitations to relevant identification-limit passages, rather than only to BLS variable definitions.",
+    "A journal-level empirical claim would need a justified estimand, uncertainty treatment, and materially broader design; these are absent from the current three-page pilot."
+  ]
+}

@@ -1,0 +1,959 @@
+Equilibrium in Competitive Insurance Markets: An Essay on the Economics of Imperfect
+Information
+Author(s): Michael Rothschild and Joseph Stiglitz
+Source: The Quarterly Journal of Economics, Vol. 90, No. 4, (Nov., 1976), pp. 629-649
+Published by: The MIT Press
+Stable URL: http://www.jstor.org/stable/1885326
+Accessed: 16/04/2008 12:46
+
+
+Your use of the JSTOR archive indicates your acceptance of JSTOR's Terms and Conditions of Use, available at
+http://www.jstor.org/page/info/about/policies/terms.jsp. JSTOR's Terms and Conditions of Use provides, in part, that unless
+you have obtained prior permission, you may not download an entire issue of a journal or multiple copies of articles, and you
+may use content in the JSTOR archive only for your personal, non-commercial use.
+
+
+Please contact the publisher regarding any further use of this work. Publisher contact information may be obtained at
+http://www.jstor.org/action/showPublisher?publisherCode=mitpress.
+
+
+Each copy of any part of a JSTOR transmission must contain the same copyright notice that appears on the screen or printed
+page of such transmission.
+
+
+
+
+JSTOR is a not-for-profit organization founded in 1995 to build trusted digital archives for scholarship. We enable the
+scholarly community to preserve their work and the materials they rely upon, and to build a common research platform that
+promotes the discovery and use of these resources. For more information about JSTOR, please contact support@jstor.org.
+
+
+
+
+                                                                                             http://www.jstor.org
+         EQUILIBRIUM IN COMPETITIVE INSURANCE
+        MARKETS: AN ESSAY ON THE ECONOMICS OF
+                IMPERFECT INFORMATION*
+             MICHAEL ROTHSCHILD AND JOSEPH STIGLITZ
+
+       Introduction, 629.-I. The basic model, 630.-Il. Robustness, 638-III. Conclusion,
+648.
+
+                                 INTRODUCTION
+     Economic theorists traditionally banish discussions of infor-
+mation to footnotes. Serious consideration of costs of communication,
+imperfect knowledge, and the like would, it is believed, complicate
+without informing. This paper, which analyzes competitive markets
+in which the characteristics of the commodities exchanged are not
+fully known to at least one of the parties to the transaction, suggests
+that this comforting myth is false. Some of the most important con-
+clusions of economic theory are not robust to considerations of im-
+perfect information.
+      We are able to show that not only may a competitive equilibrium
+not exist, but when equilibria do exist, they may have strange prop-
+erties. In the insurance market, upon which we focus much of our
+discussion, sales offers, at least those that survive the competitive
+process, do not specify a price at which customers can buy all the in-
+surance. they want, but instead consist of both a price and a quan-
+tity-a particular amount of insurance that the individual can buy
+at that price. Furthermore, if individuals were willing or able to reveal
+their information, everybody could be made better off. By their very
+being, high-risk individuals cause an externality: the low-risk indi-
+viduals are worse off than they would be in the absence of the high-risk
+individuals. However, the high-risk individuals are no better off than
+they would be in the absence of the low-risk individuals.
+      These points are made in the next section by analysis of a simple
+model of a competitive insurance market. We believe that the lessons
+gleaned from our highly stylized model are of general interest, and
+attempt to establish this by showing in Section II that our model is
+robust and by hinting (space constraints prevent more) in the con-
+clusion that our analysis applies to many other situations.
+     * This work was supported by National Science Foundation Grants SOC 74-22182
+at the Institute for Mathematical Studies in the Social Sciences, Stanford University
+and SOC 73-05510 at Princeton University. The authors are indebted to Steve Salop,
+Frank Hahn, and Charles Wilson for helpful comments, and to the participants in the
+seminars at the several universities at which these ideas were presented.
+
+
+? 1976 by the President and Fellows of Harvard College. Published by John Wiley
+& Sons, Inc.
+630              QUARTERLYJOURNAL OF ECONOMICS
+
+                             I. THE BASIC MODEL
+
+      Most of our argument can be made by analysis of a very simple
+example. Consider an individual who will have an income of size W
+if he is lucky enough to avoid accident. In the event an accident occurs,
+his income will be only W - d. The individual can insure himself
+against this accident by paying to an insurance company a premium
+ai, in return for which he will be paid '2 if an accident occurs. Without
+insurance his income in the two states, "accident," "no accident," was
+(W W - d); with insurance it is now (W - a1, W - d + a2), where a2
+= a2 - al. The vector a = (a,, a02) completely describes the insurance
+
+contract.'
+I.1 Demand for Insurance Contracts
+     On an insurance market, insurance contracts (the a's) are traded.
+To describe how the market works, it is necessary to describe the
+supply and demand functions of the participants in the market. There
+are only two kinds of participants, individuals who buy insurance and
+companies that sell it. Determining individual demand for insurance
+contracts is straightforward. An individual purchases an insurance
+contract so as to alter his pattern of income across states of nature.
+Let W1 denote his income if there is no accident and W2 his income
+if an accident occurs; the expected utility theorem states that under
+relatively mild assumptions his preferences for income in these two
+states of nature are described by a function of the form,
+(1)             fV(p, W1, W2) = (1 - p)U(WI)              + pU(W2),
+where U( ) represents the utility of money income2 and p the
+probability of an accident. Individual demands may be derived from
+(1). A contract a is worth V(p, a) = V(p, W - aI, W - d + a2). From
+     1. Actual insurance contracts are more complicated because a single contract will
+offer coverage against many potential losses. A formal generalization of the scheme
+above to cover this case is straightforward. Suppose that an individual will, in the ab-
+sence of insurance, have an income of Wi if state i occurs. An insurance contract is
+simply an n-tuple (a1, . . . , an) whose i-th coordinate describes the net payment of the
+individual to the insurance company if state i occurs. We confine our discussion to the
+simple case mentioned in the text, although it could be trivially extended to this more
+complicated case.
+     Many insurance contracts are not as complicated as the n-tuples described
+above-Blue Cross schedules listing maximum payments for specific illnesses and
+operations are an isolated example-but are instead resolvable into a fixed premium
+and a payment schedule that is in general a simple function of the size of the loss such
+as F(L) = Max [0, c(L-D)], where c X 100%is the co-insurance rate and D is the de-
+ductible. With such a contract when a loss occurs, determining its size is often a serious
+problem. In other words, finding out exactly what state of the world has occurred is
+not always easy. We ignore these problems. A large literature analyzes optimal insurance
+contracts. See, for example, Arrow (1971) and Borch (1968).
+     2. We assume that preferences are not state-dependent.
+            THE ECONOMICS OF IMPERFECT INFORMATION                                   631
+
+all the contracts the individual is offered, he chooses the one that
+maximizes V(p, a). Since he always has the option of buying no in-
+surance, an individual will purchase a contract a only if V(p, a) ?
+V(p, 0) = V(p, W, W - d). We assume that persons are identical in
+all respects save their probability of having an accident and that they
+are risk-averse (U" < 0); thus V(p, a) is quasi-concave.
+I.2 Supply of Insurance Contracts
+     It is less straightforward to describe how insurance companies
+decide which contracts they should offer for sale and to which people.
+The return from an insurance contract is a random variable. We as-
+sume that companies are risk-neutral, that they are concerned only
+with expected profits, so that contract a when sold to an individual
+who has a probability of incurring an accident of p, is worth
+(2)           7r(p, a) = (1 -p)ai       -pa2     = al -p(ai       + a2)-
+
+Even if firms are not expected profit maximizers, on a well-organized
+competitive market they are likely to behave as if they maximized
+(2).3
+     Insurance companies have financial resources such that they/are
+willing and able to sell any number of contracts that they think will
+make an expected profit.4 The market is competitive in that there is
+free entry. Together these assumptions guarantee that any contract
+that is demanded and that is expected to be profitable will be sup-
+plied.
+      3. Since the theory of the firm behavior under uncertainty is one of the more
+unsettled areas of economic theory, we cannot look to it for the sort of support of any
+assumption we might make, which the large body of literature devoted to the expected
+utility theorem provides for equation (1) above. Nonetheless, two arguments (and the
+absence of a remotely as attractive distinguishable alternative) justify (2): the first is
+the rather vaguely supported but widely held proposition that companies owned by
+stockholders who themselves hold diversified portfolios ought to maximize their ex-
+pected profits; management that does not follow this policy will be displaced. The
+second supposes that insurance companies are held by a large number of small share-
+holders each of whom receives a small share of the firm's profits. If the risks insured
+against are independent or otherwise diversifiable, then the law of large numbers
+guarantees that each shareholder's return will be approximately constant and any in-
+dividual insurance contract contributes to his profits only through its expected value.
+In this case stockholders' interests will be well served if, and only if, management
+maximizes expected profits.
+   A variant of the second argument is obtained by considering the case in which
+shareholders and policyholders are the same people, or in more familiar terms, when
+the insurance company is a mutual company. In this case the insurance company is
+just a mechanism for risk pooling. Under conditions where diversification is possible,
+each contract's contribution to the company's dividend (or loss) is proportional to its
+expected value.
+      4. The same kinds of arguments used to justify (2)-in particular the appeal to
+the law of large numbers-can be used to justify this assumption. Weaker conditions
+than independence will suffice. See Revesz (1960), p. 190, for a theorem that states
+roughly that, if insurance contracts can be arranged in space so that even though con-
+632              QUARTERLY JOURNAL OF ECONOMICS
+
+
+I.3 Information about Accident Probabilities
+      We have not so far discussed how customers and companies come
+to know or estimate the parameter p, which plays such a crucial role
+in the valuation formulae (1) and (2). We make the bald assumption
+that individuals know their accident probabilities, while companies
+do not. Since insurance purchasers are identical in all respects save
+their propensity to have accidents, the force of this assumption is that
+companies cannot discriminate among their potential customers on
+the basis of their characteristics. This assumption is defended and
+modified in subsection 11.1.
+      A firm may use its customers' market behavior to make infer-
+ences about their accident probabilities. Other things equal, those with
+high accident probabilities will demand more insurance than those
+who are less accident-prone. Although possibly accurate, this is not
+a profitable way of finding out about customer characteristics. In-
+surance companies want to know their customers' characteristics in
+order to decide on what terms they should offer to let them buy in-
+surance. Information that accrues after purchase may be used only
+to lock the barn after the horse has been stolen.
+      It is often possible to force customers-to make market choices in
+such a way that they both reveal their characteristics and make the
+choices the firm would have wanted them to make had their charac-
+teristics been publicly known. In their contribution to this symposium,
+Salop and Salop call a market device with these characteristics a
+self-selection mechanism. Analysis of the functioning of self-selection
+mechanisms on competitive markets is a major focus of this paper.
+I.4 Definition of Equilibrium
+      We assume that customers can buy only one insurance contract.
+This is an objectionable assumption. It implies, in effect, that the seller
+of insurance specifies both the prices and quantities of insurance
+purchased. In most competitive markets, sellers determine only price
+and have no control over the amount their customers buy. Nonethe-
+less, we believe that what we call price and quantity competition is
+more appropriate for our model of the insurance market than tradi-
+
+tracts that are close to one another are not independent, those that are far apart are
+approximately independent, then the average return from all contracts is equal to its
+expected value with probability one. Thus, an insurance company that holds a large
+number of health policies should be risk-neutral, even though the fact that propinquity
+carries illness implies that not all insured risks are independent. Some risks that cannot
+be diversified; i.e., the risk of nuclear war (or of a flood or a plague) cannot be spread
+by appeal to the law of large numbers. Our model applies to diversifiable risks. This
+class of risks is considerably larger than the independent ones.
+           THE ECONOMICS OF IMPERFECT INFORMATION                               633
+
+tional price competition. We defend this proposition at length in
+subsection 11.2 below.
+     Equilibrium in a competitive insurance market is a set of con-
+tracts such that, when customers choose contracts to maximize ex-
+pected utility, (i) no contract in the equilibrium set makes negative
+expected profits; and (ii) there is no contract outside the equilibrium
+set that, if offered, will make a nonnegative profit. This notion of
+equilibrium is of the Cournot-Nash type; each firm assumes that the
+contracts its competitors offer are independent of its own actions.
+I.5 Equilibrium with Identical Customers
+     Only when customers have different accident probabilities, will
+insurance companies have imperfect information. We examine this
+case below. To illustrate our, mainly graphical, procedure, we first
+analyze the equilibrium of a competitive insurance market with
+identical customers.5
+
+
+        W2
+
+
+                                    V
+
+
+
+
+                                    F      go
+
+
+
+
+                  450
+                                                                       W.
+                                        FIGURE I
+
+
+     In Figure I the horizontal and vertical axes represent income in
+
+    5. The analysis is identical if individuals have different p's, but companies know
+the accident probabilities of their customers. The market splits into several sub-
+markets-one for each different p represented. Each submarket has the equilibrium
+described here.
+634            QUARTERLY JOURNAL OF ECONOMICS
+
+
+the states: no accident, accident, respectively. The point E with
+coordinates (W1, VV2)is the typical customer's uninsured state. In-
+difference curves are level sets of the function of equation (1). Pur-
+chasing the insurance policy a = (al, a2) moves the individual from
+E to the point (V1 - al, W2+ a2).
+      Free entry and perfect competition will ensure that policies
+bought in competitive equilibrium make zero expected profits, so that
+if a is purchased,
+(3)                      al(l-p)-a2p        = 0.
+
+The set of all policies that break even is given analytically by (3) and
+diagrammatically by the line EF in Figure I, which is sometimes re-
+ferred to as the fair-odds line. The equilibrium policy a *maximizes
+the individual's (expected) utility and just breaks even. Purchasing
+a* locates the customer at the tangency of the indifference curve with
+the fair-odds line. a* satisfies the two conditions of equilibrium: (i)
+it breaks even; (ii) selling any contract preferred to it will bring in-
+surance companies expected losses.
+      Since customers are risk-averse, the point a* is located at the
+intersection of the 450-line (representing equal income in both states
+of nature) and the fair-odds line. In equilibrium each customer buys
+complete insurance at actuarial odds. To see this, observe that the
+slope of the fair-odds line is equal to the ratio of the probability of not
+having an accident to the probability of having an accident ((1 -
+p)/p), while the slope of the indifference curve (the marginal rate of
+substitution between income in the state no accident to income in the
+state accident) is [U'(W1) (1 - p)]/[U'(W2)p], which, when income
+in the two states is equal, is (1 - p)/p, independent of U.
+I.6 Imperfect Information: Equilibrium with Two Classes of
+Customers
+      Suppose that the market consists of two kinds of customers:
+low-risk individuals with accident probability pL, and high-risk in-
+dividuals with accident probability pH > p L. The fraction of high-ris'k
+customers is X, so the average accident probability is p = XpH + (1
+-  X)pL. This market can have only two kinds of equilibria: pooling
+equilibria in which both groups buy the same contract, and separating
+equilibria in which different types purchase different contracts.
+      A simple argument establishes that there cannot be a pooling
+equilibrium. The point E in Figure II is again the initial endowment
+of all customers. Suppose that a is a pooling equilibrium and consider
+7r(p, a). If ir(p, a) < 0, then firms offering a lose money, contradicting
+          THE ECONOMICS OF IMPERFECT INFORMATION                      635
+
+       w2
+
+
+                   -H
+                   U                UL
+
+
+
+
+                                                       U
+
+                                                   E
+
+
+
+                                                              WI
+                                FIGURE II
+
+
+
+the definition of equilibrium. If i-(p, a) > 0, then there is a contract
+that offers slightly more consumption in each state of nature, which
+still will make a profit when all individuals buy it. All will prefer this
+contract to a, so a cannot be an equilibrium. Thus, i-(p, a) = 0, and
+a lies on the market odds line EF (with slope (1 - p)/p).
+      It follows from (1) that at a the slope of the high-risk indifference
+curve through a, U[H, is (pL/l - pL) (1 - pH/pH) times the slope of
+ UL, the low-risk indifference curve through a. In this figure UH is a
+broken line, and UL a solid line. The curves intersect at a; thus there
+is a contract, A in Figure II, near a, which low-risk types prefer to a.
+The high risk prefer a to A. Since A is near a, it makes a profit when
+the less risky buy it, (r(pL, f)       (pL, a) > 7r(p, a) = 0). The exis-
+tence of A contradicts the second part of the definition of equilibrium;
+a cannot be an equilibrium.
+      If there is an equilibrium, each type must purchase a separate
+contract. Arguments, which are, we hope, by now familiar, demon-
+strate that each contract in the equilibrium set makes zero profits.
+In Figure III the low-risk contract lies on line EL (with slope (1 -
+pL)/pL),     and the high-risk contract on line EH (with slope (1 -
+pH)/pH).     As was shown in the previous subsection, the contract on
+EH most preferred by high-risk customers gives complete insurance.
+636              QUARTERLY JOURNAL OF ECONOMICS
+
+
+       WI
+                                L
+
+
+
+                                UL        1
+
+               OH
+       H
+
+
+
+
+                                                                    w2
+                                     FIGURE III
+
+
+
+ This is a'H in Figure III; it must be part of any equilibrium. Low-risk
+ customers would, of all contracts on EL, most prefer contract d which,
+ like aH, provides complete insurance. However, i3 offers more con-
+ sumption in each state than aH, and high-risk types will prefer it to
+ aH. If f and aH are marketed, both high- and low-risk types will
+ purchase A.The nature of imperfect information in this model is that
+ insurance companies are unable to distinguish among their customers.
+ All who demand ,3must be sold A. Profits will be negative; (aHfi) is
+ not an equilibrium set of contracts.
+      An equilibrium contract for low-risk types must not be more
+ attractive to high-risk types than aH; it must lie on the southeast side
+ of UH, the high-risk indifference curve through aH. We leave it to the
+ reader to demonstrate that of all such contracts, the one that low-risk
+ types most prefer is aoL,the contract at the intersection of EL and UH
+ in Figure III. This establishes that the set (aHH,aL) is the only possible
+ equilibrium for a market with low- and high-risk customers. 6 How-
+ ever, (aH, aL) may not be an equilibrium. Consider the contract y in
+ Figure III. It lies above UL, the low-risk indifference curve through
+ a L and also above UH. If y is offered, both low- and high-risk types
+
+     6. This largely heuristic argument can be made completely rigorous. See Wilson
+ (1976).
+          THE ECONOMICS OF IMPERFECT INFORMATION                      637
+
+will purchase it in preference to either aH or aL. If it makes a profit
+when both groups buy it, y will upset the potential equilibrium of (a H,
+aL). y's profitability depends on the composition of the market. If
+there are sufficiently many high-risk people that EF represents
+market odds, then y will lose money. If market odds are given by EF'
+(as they will be if there are relatively few high-risk insurance cus-
+tomers), then y will make a profit. Since (aH, aL) is the only possible
+equilibrium, in this case the competitive insurance market will have
+no equilibrium.
+      This establishes that a competitive insurance market may have
+no equilibrium.
+      We have not found a simple intuitive explanation for this non-
+existence; but the following observations, prompted by Frank Hahn's
+note (1974), may be suggestive. The information that is revealed by
+an individual's choice of an insurance contract depends on all the
+other insurance policies offered; there is thus a fundamental infor-
+mational externality that each company, when deciding on which
+contract it will offer, fails to take into account. Given any set of con-
+tracts that breaks even, a firm may enter the market using the infor-
+mational structure implicit in the availability of that set of contracts
+to make a profit; at the same time it forces the original contracts to
+make a loss. But as in any Nash equilibrium, the firm fails to take
+account of the consequences of its actions, and in particular, the fact
+that when those policies are no longer offered, the informational
+structure will have changed and it can no longer make a profit.
+      We can characterize the conditions under which an equilibrium
+does not exist. An equilibrium will not exist if the costs to the low-risk
+individual of pooling are low (because there are relatively few of the
+high-risk individuals who have to be subsidized, or because the
+subsidy per individual is low, i.e., when the probabilities of the two
+groups are not too different), or if their costs of separating are high.
+The costs of separating arise from the individual's inability to obtain
+complete insurance. Thus, the costs of separating are related to the
+individuals' attitudes toward risk. Certain polar cases make these
+propositions clear. If pL = 0, it never pays the low-risk individuals
+to pool, and by continuity, for sufficiently small pL it does not pay
+to pool. Similarly, if individuals are risk-neutral, it never pays to pool;
+if they are infinitely risk averse with utility functions
+
+(1')                V(p, W1, W2) = Min (W1, W2),
+
+it always pays to pool.
+638               QUARTERLYJOURNAL OF ECONOMICS
+
+I. 7 Welfare Economics of Equilibrium
+     One of the interesting properties of the equilibrium is that the
+presence of the high-risk individuals exerts a negative externality on
+the low-risk individuals. The externality is completely dissipative;
+there are losses to the low-risk individuals, but the high-risk indi-
+viduals are no better off than they would be in isolation.
+     If only the high-risk individuals would admit to their having high
+accident probabilities, all individuals would be made better off
+without anyone being worse off.
+     The separating equilibrium we have described may not be Pareto
+optimal even relative to the information that is available. As we show
+in subsection 11.3below, there may exist a pair of policies that break
+even together and that make both groups better off.
+
+                                II. ROBUSTNESS
+
+     The analysis of Section I had three principal conclusions: First,
+competition on markets with imperfect information is more complex
+than in standard models. Perfect competitors may limit the quantities
+their customers can buy, not from any desire to exploit monopoly
+power, but simply in order to improve their information. Second,
+equilibrium may not exist. Finally, competitive equilibria are not
+Pareto optimal. It is natural to ask whether these conclusions (par-
+ticularly the first, which was an assumption rather than a result of the
+analysis) can be laid to the special and possibly strained assumptions
+of our model. We think not. Our conclusions (or ones very like) must
+follow from a serious attempt to comprehend the workings of com-
+petition with imperfect and asymmetric information. We have ana-
+lyzed the effect of changing our model in many ways. The results were
+always essentially the same.
+      Our attempts to establish robustness took two tacks. First, we
+showed that our results did not depend on the simple technical
+specifications of the model. This was tedious, and we have excised
+most of the details from the present version. The reader interested
+in analysis of the effects (distinctly minor) of changing our assump-
+tions that individuals are alike in all respects save their accident
+probabilities, that there are only two kinds of customers, and that the
+insurance market lasts but a single period, is referred to earlier ver-
+sions of this paper.7 An assessment of the importance of the as-
+      7. See Rothschild and Stiglitz (1975). One curious result of these investigations
+ should be mentioned. In other areas of economic theory where existence of equilibrium
+ has been a problem, smoothing things by introducing a continuum of individuals of
+            THE ECONOMICS OF IMPERFECT INFORMATION                                  639
+
+sumption that individuals know their accident probabilities, while
+insurance companies do not (which raises more interesting issues),
+is given in subsection 11.1 below.
+      Another approach to the question of robustness is the subject
+of the next three subsections. In them we question the behavioral
+assumptions and the equilibrium concepts used in Section I.
+11.1 Information Assumptions
+      Suppose that there are two groups of customers and that not all
+individuals within each group have the same accident probability. The
+average accident probability of one group is greater than that of the
+other; individuals within each group know the mean accident prob-
+ability for members of their group, but do not know their own accident
+probabilities. As before, the insurance company cannot tell directly
+the accident probability of any particular individual, or even the group
+to which he belongs. For example, suppose that some persons occa-
+sionally drink too much, while the others almost never drink. Insur-
+ance firms cannot discover who drinks and who does not. Individuals
+know that drinking affects accident probabilities, but it affects dif-
+ferent people differently. Each individual does not know how it will
+affect him.
+      In such a situation the expected utility theorem states that in-
+dividuals make (and behave according to) estimates of their accident
+probabilities; if these estimates are unbiased in the sense that the
+average accident probability of those who estimate their accident
+probability to be p actually is p, then the analysis goes through as
+ before.
+      Unbiasedness seems a reasonable assumption (what is a more
+ attractive alternative?). However, not even this low level of correctness
+ of beliefs is required for our conclusions. Suppose, for example, that
+ individuals differ both with respect to their accident probabilities and
+ to their risk aversion, but they all assume that their own accident
+ probabilities are p. If low-risk individuals are less risk-averse on av-
+ erage, then there will not exist a pooling equilibrium; there may exist
+ no equilibrium at all; and if there does exist an equilibrium, it will
+ entail partial insurance for both groups. Figure IV shows that there
+
+different types can insure existence. Not so here. If there is a continuous distribution
+of accident probabilities (but customers are otherwise identical), then equilibrium never
+exists. There is an intuitive explanation for this striking result. We argued above that,
+if accident probabilities were close together, then equilibrium would not exist. When
+there is a continuum of probabilities, there always are individuals with close proba-
+bilities with whom it pays to "pool." For a proof of this result, which is not elementary,
+see Riley (1976).
+640           QUARTERLY JOURNAL OF ECONOMICS
+
+
+      W2
+
+
+
+
+                            F       H
+
+
+
+
+                                                E
+
+
+                                                         WI
+                             FIGURE IV
+
+will not exist a pooling equilibrium.If there were a pooling equilib-
+rium,it wouldclearlybe with completeinsuranceat the marketodds,
+since both groups'indifferencecurves have the slope of the market
+odds line there. If the low-riskindividuals are less risk-averse,then
+the two indifference curves are tangent at F, but elsewhere the
+high-riskindividuals'indifference curve lies above the low-risk in-
+dividuals' indifference curve. Thus, any policy in the shaded area
+betweenthe two curveswill be purchasedby the low-riskindividuals
+in preferenceto the pooling contract at F.
+     Othersuch cases can be analyzed,but we trust that the general
+principle is clear. Our pathologicalconclusions do not require that
+people have particularly good information about their accident
+probabilities.They will occurunder a wide variety of circumstances,
+includingthe appealingcase of unbiasedness.Neither insurancefirms
+nor their customershave to be perfectly informed about the differ-
+ences in riskpropertiesthat exist amongindividuals:What is required
+is that individualswith different risk propertiesdiffer in some char-
+acteristicthat can be linked with the purchaseof insuranceand that,
+somehow,insurancefirms discoverthis link.
+11.2 Price Competition Versus Quantity Competition
+     One can imagine our model of the insurancemarket operating
+in two distinct modes. The first, price competition, is familiarto all
+            THE ECONOMICS OF IMPERFECT INFORMATION                                  641
+
+students of competitive markets. Associated with any insurance
+contract axis a number q (a) = a/a2, which, since it is the cost per unit
+coverage, is called the price of insurance. Under price competition,
+insurance firms establish a price of insurance and allow their cus-
+tomers to buy as much or as little insurance as they want at that price.
+Thus, if contract a is available from a company, so are the contracts
+2a and (%/)a;the former pays twice as much benefits (and costs twice
+as much in premiums) as a; the latter is half as expensive and provides
+half as much coverage.
+      Opposed to price competition is what we call price and quantity
+competition. In this regime companies may offer a number of different
+contracts, say al, a2, ... , an. Individuals may buy at most one con-
+tract. They are not allowed to buy arbitrary multiples of contracts
+offered, but must instead settle for one of the contracts explicitly put
+up for sale. A particular contract specifies both a price and a quantity
+of insurance. Under price and quantity competition it is conceivable
+that insurance contracts with different prices of insurance will exist
+in equilibrium; people who want more insurance may be willing to pay
+a higher price for it (accept less favorable odds) than those who make
+do with shallower coverage. Under price competition customers will
+buy insurance only at the lowest price quoted in the market.
+      The argument of Section I depends heavily on our assumption
+that price and quantity competition, and not simply price competi-
+tion, characterizes the competitive insurance market. This assumption
+ is defended here. The argument is basically quite simple. Price
+ competition is a special case of price and quantity competition.
+ Nothing in the definition of price and quantity competition prevents
+ firms from offering for sale a set of contracts with the same price of
+ insurance. Since the argument above characterized all equilibria under
+ price and quantity competition, it also characterized all equilibria
+ when some firms set prices and others set prices and quantities. Thus,
+ it must be that price competition cannot compete with price and
+ quantity competition.8
+      This argument hinges on one crucial assumption: regardless of
+ the form of competition, customers purchase but a single insurance
+ contract or equivalently that the total amount of insurance purchased
+     8. We leave to the reader a detailed proof. A sketch follows. Suppose that there
+are two groups in the population. If lkheprice of insurance is q, high- and low-risk cus-
+tomers will buy axH(q) and aL(q), respectively. It is easy to figure out what total in-
+surance company profits, P(q), are. The equilibrium price q* is the smallest q such
+that P(q) = 0. Since P(q) is continuous in q and it is easy to find q such that P(q) >
+0 and P(q) < 0, such a q* exists. To show that price competition will not survive, it is
+only necessary to show that (a H(q*), a L(q*)) is not an equilibrium set of contracts as
+defined in subsection 1.4 above.
+642             QUARTERLYJOURNAL OF ECONOMICS
+
+by any one customer is known to all companies that sell to him. We
+think that this is an accurate description of procedures on at least
+some insurance markets. Many insurance policies specify either that
+they are not in force if there is another policy or that they insure
+against only the first, say, $1,000 of losses suffered. That is, instead
+of being a simple bet for or against the occurrence of a particular event,
+an insurance policy is a commitment on the part of the company to
+restore at least partially the losses brought about by the occurrence
+of that event. The person who buys two $1,000 accident insurance
+policies does not have $2,000 worth of protection. If an accident occurs,
+all he gets from his second policy is the privilege of watching his
+companies squabble over the division of the $1,000 payment. There
+is no point in buying more than one policy.
+      Why should insurance markets operate in this way? One simple
+and obvious explanation is moral hazard. Because the insured can
+often bring about, or at least make more likely, the event being insured
+against, insurance companies want to limit the amount of insurance
+their customers buy. Companies want to see that their customers do
+not purchase so much insurance that they have an interest in an ac-
+cident occurring. Thus, companies will want to monitor the purchases
+of their customers. Issuing contracts of the sort described above is the
+obvious way to do so.
+      A subtler explanation for this practice is provided by our argu-
+ment that price and quantity competition can dominate price com-
+petition. If the market is in equilibrium under price competition, a
+firm can offer a contract, specifying price and quantity, that will at-
+tract the low-risk customers away from the companies offering con-
+tracts specifying price alone. Left with only high-risk customers, these
+firms will lose money. This competitive gambit will successfully upset
+the price competition equilibria if the entering firm can be assured
+that those who buy its contracts hold no other insurance. Offering
+insurance that pays off only for losses not otherwise insured is a way
+to guarantee this.
+      It is sometimes suggested that the term "competitive" can be
+applied only to markets where there is a single price of a commodity
+and each firm is a price taker. This seems an unnecessarily restrictive
+use of the term competitive. The-basic idea underlying competitive
+markets involves free entry and noncollusive behavior among the
+participants in the market. In some economic environments price
+taking without quantity restrictions is a natural result of such mar-
+ kets. In the situations described in this paper, this is not so.
+          THE ECONOMICS OF IMPERFECT INFORMATION                     643
+
+1.3 Restrictions on Firm Behavior and Optimal Subsidies
+      An important simplification of the analysis of Section I was the
+assumption that each insurance company issued but a single contract.
+We once thought this constraint would not affect the nature of equi-
+librium. We argued that in equilibrium firms must make nonnegative
+profits. Suppose that a firm offers two contracts, one of which makes
+an expected profit of say, $S, per contract sold, the other an expected
+loss of $L per contract. The firm can make nonnegative expected
+profits if the ratio of the profitable to the-unprofitable contracts sold
+is at least A,where A = LIS. However, the firm can clearly make more
+profits if it sells only the contracts on which it makes a profit. It and
+its competitors have no reason to offer the losing contracts, and in
+competitive equilibrium, they will not be offered. Since only contracts
+that make nonnegative profits will be offered, it does not matter, given
+our assumptions about entry, that firms are assumed to issue only a
+single contract. If there is a contract that could make a profit, a firm
+will offer it.
+      This argument is not correct. The possibility of offering more
+than one contract is important to firms, and to the nature and exis-
+tence of equilibrium. Firms that offer several contracts are not de-
+pendent on the policies offered by other firms for the information
+generated by the choices of individuals. By offering a menu of policies,
+insurance firms may be able to obtain information about the accident
+probabilities of particular individuals. Furthermore, although there
+may not be an equilibrium in which the profits from one contract
+subsidize the losses of another contract, it does not follow that such
+a pair of contracts cannot break what would otherwise be an equi-
+librium.
+       Such a case is illustrated in Figure V. EF is again the market odds
+line. A separating equilibrium exists (&H, -L). Suppose that a firm
+ offered the two contracts, aHf and aLf; aH' makes a loss, aLf makes
+a profit. High-risk types prefer aH' to &H, and low-risk types prefer
+aL' to L. These two contracts, if offered by a single firm together,
+do not make losses. The profits from aLt subsidize the losses of aHf.
+Thus, (KHf, aLI) upsets the equilibrium (&H, -L).
+       This example points up another possible inefficiency of sepa-
+rating equilibria. Consider the problem of choosing two contracts (aH,
+ aL) such that aL maximizes the utility of the low-risk individual
+ subject to the constraints that (a) the high-risk individual prefers aH
+ to aL and (b) the pair of contracts aH and aL break even when bought
+ by high- and low-risk types, respectively, in the ratio Xto (1 - X). This
+644            QUARTERLY JOURNAL OF ECONOMICS
+
+
+      WI
+
+
+
+
+                                    F
+                               aH
+
+
+
+
+                                                          w2
+                                    FIGURE V
+
+
+
+is a kind of optimal subsidy problem. If the separating equilibrium,
+when it exists, does not solve this problem, it is inefficient. Figure V
+shows that the separating equilibrium can be inefficient in this sense.
+We now show that if there are enough high-risk people, then the
+separating equilibrium can be efficient.
+      The optimal subsidy problem always has a solution (a H*, aL*).
+The optimal high-risk contract aH* will always entail complete in-
+surance so that V(pH, aH*) = U(W - pHd + a), where a is the per
+capita subsidy of the high risk by the low risk. This subsidy decreases
+income for each low-risk person by zya (where My    = X/(1 - X)) in each
+state. Net of this charge aL* breaks even when low-risk individuals
+buy it. Thus, aL* = (a, + ya, a2 - ya), where a1 = a2pL/(l - pL).
+      To find the optimal contract, one solves the following problem:
+Choose a and a2 to maximize
+                        U(X)    (1 - pL) + U(Z)pL,
+subject to
+                 U(Y)    > U(X)      (1 - pH) + U(Z)pH
+
+                                     a >O
+ where
+              THE ECONOMICS OF IMPERFECT INFORMATION                                    645
+
+                        X = Wo - ya -         a2pL/(l         -    pL),
+
+                                     Y= Wo-pHd          + a,
+and
+                               Z = Wo - d - ya + a2.
+The solution to this problem can be analyzed by standard Kuhn-
+Tucker techniques. If the constraint a > 0 is binding at the optimum,
+then the solution involves no subsidy to the high-risk persons; (aH*,
+aL*) is the separating equilibrium. It is straightforward but tedious
+to show that a sufficient condition for this is that
+                 (pH     -
+                              pL)                             - U'(X)]
+                                       > U'(Y)[U'(Z)
+                 pL(1        -p)L)             U (X)U'(Z)
+
+where X, Y, and Z are determined by the optimal a*, a2*. The
+right-hand side of (4) is always less than
+                   U'(Wo-d)[U(Wo                 -d)      -       U'(Wo)]
+                                          U'(Wo)2
+so that there exist values of y (and thus of X) large enough to satisfy
+(4).
+11.4 Alternative Equilibrium Concepts
+     There are a number of other concepts of equilibrium that we
+might have employed. These concepts differ with respect to as-
+sumptions concerning the behavior of the firms in the market. In our
+model the firm assumes that its actions do not affect the market-the
+set of policies offered by other firms was independent of its own of-
+fering.
+     In this subsection we consider several other equilibrium concepts,
+implying either less or more rationality in the market. We could, for
+instance, call any set of policies that just break even given the set of
+individuals    who purchase them an informationally                       consistent   equi-
+librium. This assumes that the forces for the creation of new contracts
+are relatively weak (in the absence of profits). Thus, in Figure III, aH
+and any contract along the line EL below a L is a set of informationally
+consistent separating equilibrium contracts; any single contract along
+the line EF is an informationally consistent pooling equilibrium
+contract. This is the notion of equilibrium that Spence (1973) has
+employed in most of his work. The longer the lags in the system, the
+greater the difficulty of competing by offering different contracts, the
+more stable is an informationally consistent equilibrium. Thus, while
+646            QUARTERLYJOURNAL OF ECONOMICS
+
+this seems to us a reasonable equilibrium concept for the models of
+educational signaling on which Spence focused, it is less compelling
+when applied to insurance or credit markets (see Jaffee and Russell's
+contribution to this symposium).
+      A local equilibrium is a set of contracts such that there do not
+exist any contracts in the vicinity of the equilibrium contracts that
+will be chosen and make a positive profit. If we rule out the subsidies
+of the last subsection, then the set of separating contracts, which
+maximizes the welfare of low-risk individuals, is a local equilibri-
+um.
+      The notion that firms experiment with contracts similar to those
+already on the market motivates the idea of a local equilibrium. Even
+if firms have little knowledge about the shape of utility functions, and
+about the proportions of population in different accident probabilities,
+one would expect that competition would lead to small perturbations
+around the equilibrium. A stable equilibrium requires that such
+perturbations not lead to firms making large profits, as would be the
+case with some perturbations around a pooling point.
+      These two concepts of equilibrium imply that firms act less ra-
+tionally than we assumed they did in Section I. It is possible that firms
+exhibit a greater degree of rationality; that is, firms ought not to take
+the set of contracts offered by other firms as given, but ought to as-
+sume that other firms will act as they do, or at least will respond in
+some way to the new contract offered by the firm. Hence, in those
+cases where in our definition there was no equilibrium, because for
+any set of contracts there is a contract that will break even and be
+chosen by a subset of the population, given that the contracts offered
+by the other firms remain unchanged, those contracts that break the
+equilibrium may not break even if the other firms also change their
+contracts. The peculiar provision of many insurance contracts, that
+the effective premium is not determined until the end of the period
+ (when the individual obtains what is called a dividend), is perhaps
+a reflection of the uncertainty associated with who will purchase the
+policy, which in turn is associated with the uncertainty about what
+contracts other insurance firms will offer.
+      Wilson (1976) introduced and analyzed one such nonmyopic
+equilibrium concept. A Wilson equilibrium is a set of contracts such
+that, when customers choose among them so as to maximize profits,
+ (a) all contracts make nonnegative profits and (b) there does not exist
+a new contract (or set of contracts), which, if offered, makes positive
+profits even when all contracts that lose money as a result of this entry
+are withdrawn. In the simple model of Section I, such equilibria always
+          THE ECONOMICS OF IMPERFECT INFORMATION                   647
+
+exist. Comparing this definition with the one of subsection 1.4 above
+makes it clear that, when it exists, our separating equilibrium is also
+a Wilson equilibrium. When this does not exist, the Wilson equilib-
+rium is the pooling contract that maximizes the utility of the low-risk
+customers. This is A in Figure VI. 3 dominates the separating pair (aL,
+aH). Consider a contract like oy,which the low risk prefer to d. Under
+our definition of equilibrium it upsets F. Under Wilson's it does not.
+When the low risk desert f for -y, it loses money and is withdrawn.
+Then the high risk also buy oy.When both groups buy y, it loses money.
+Thus, My  does not successfully compete against F.
+      Although this equilibrium concept is appealing, it is not without
+its difficulties. It seems a peculiar halfway house; firms respond to
+competitive entry by dropping policies, but not by adding new policies.
+Furthermore, although counterexamples are very complicated to
+construct, it appears that a Wilson equilibrium may not exist if groups
+differ in their attitudes towards risk. Finally, in the absence of col-
+lusion or regulation, in a competitive insurance market, it is hard to
+see how or why any single firm should take into account the conse-
+quences of its offering a new policy. On balance, it seems to us that
+nonmyopic equilibrium concepts are more appropriate for models of
+monopoly (or oligopoly) than for models of competition.
+
+
+
+       WI
+
+
+
+
+                       DL O~L
+
+
+                UH
+
+
+
+
+                                FIGURE VI
+648               QUARTERLYJOURNAL OF ECONOMICS
+
+                                III. CONCLUSION
+     We began this research with the hope of showing that even a
+small amount of imperfect information could have a significant effect
+on competitive markets. Our results were more striking than we had
+hoped: the single price equilibrium of conventional competitive
+analysis was shown to be no longer viable; market equilibrium, when
+it existed, consisted of contracts which specified both prices and
+quantities; the high-risk (low ability, etc.) individuals exerted a
+dissipative externality on the low-risk (high ability) individuals; the
+structure of the equilibrium as well as its existence depended on a
+number of assumptions that, with perfect information, were incon-
+sequential; and finally, and in some ways most disturbing, under quite
+plausible conditions equilibrium did not exist.
+     Our analysis, and our conclusions, extend beyond the simple
+insurance market described above. The models of educational
+screening and signaling studied by, among others, Arrow (1973), Riley
+(1975), Spence (1973, 1974), and Stiglitz (1971, 1972, 1974a, 1975b),
+are obvious examples. The other papers in this symposium describe
+models that can be profitably studied using our techniques and our
+concepts. Models in which communities choose the level of public
+goods and individuals choose among communities on the basis of the
+menu of public goods and taxes that the different communities offer,
+provide a less obvious but, we think, important case.9
+     Do these theoretical speculations tell us anything about the real
+world? In the absence of empirical work it is hard to say. The market
+on which we focused most of our analysis, that for insurance, is
+probably not competitive; whether our model may partially explain
+this fact is almost impossible to say. But there are other markets,
+particularly financial and labor markets, which appear to be com-
+petitive and in which imperfect and asymmetric information play an
+important role. We suspect that many of the peculiar institutions of
+these labor markets arise as responses to the difficulties that they, or
+any competitive market, have in handling problems of information.
+Establishing (or refuting) this conjecture seems to provide a rich
+agenda for future research.
+UNIVERSITY OF WISCONSIN, MADISON
+STANFORD UNIVERSITY AND ALL SOULS COLLEGE, OXFORD
+
+     9. See F. Westhoff's dissertation (1974), and Stiglitz (1974b). A more complete
+discussion of these is in our earlier working paper referred to in footnote 7 above. Salop
+and Salop (1972) demonstrated, in an early draft of their symposium paper, that con-
+tingent loan plans for repayment of tuition, and their possible defects, can be analyzed
+along these lines.
+                THE ECONOMICS OF IMPERFECT INFORMATION                             649
+
+                                     REFERENCES
+
+Arrow, K. J., Essays in the Theory of Risk Bearing (Chicago: Markham, 1971).
+--,      "Higher Education as a Filter," Journal of Public Economics, II (July 1973),
+        193-216.
+
+Borch, K., The Economics of Uncertainty (Princeton, N.J.: Princeton University Press,
+    1968).
+Hahn, F. H., "Notes on R-S Models of Insurance Markets," mimeo, Cambridge Uni-
+   versity, 1974.
+
+Riley, J., "Competitive Signaling," Journal of Economic Theory, X (April 1975),
+     174-86.
+
+       -, "Informational Equilibrium," mimeo, Rand Corporation, 1976.
+Revesz, P., Laws of Large Numbers (New York: Academic Press, 1960).
+Rothschild, M., and J. E. Stiglitz, "Equilibrium in Competitive Insurance Markets,"
+    Technical Report No. 170, IMSSS Stanford University, 1975.
+
+Spence, M., "Job Market Signaling," this Journal, LXXXVII (Aug. 1973), 355-79.
+--,       Market Signaling (Cambridge: Harvard University Press, 1974).
+
+Stiglitz, J. E., "Perfect and Imperfect Capital Markets," paper presented to Econo-
+     metric Society Meeting, New Orleans, 1971.
+
+ --,      "Education as a Screening Device and the Distribution of Income," mimeo, Yale
+         University, 1972.
+
+         , "Demand for Education in Public and Private School Systems," Journal of Public
+         Economics, III (Nov. 1974a), 349-86.
+
+ --,      "Pure Theory of Local Public Goods," in M. Feldstein ed. IEA Conference Vol-
+         ume (Turin, 1974b.).
+ --,      "The Theory of Screening, Education, and Distribution of Income," American
+         Economic Review, LXV (June 1975), 283-300.
+
+Westhoff, Frank H., "The Theory of Local Public Goods," Ph.D. thesis, Yale University,
+    1974.
+
+Wilson, Charles A., "Equilibrium in a Class of Self-Selection Models," Ph.D. thesis,
+    University of Rochester, 1976.
+

@@ -1,0 +1,342 @@
+{
+  "schema_version": "1",
+  "generated_by": "scripts/search_literature.py",
+  "retrieved_at": "2026-10-16T17:05:40+00:00",
+  "searches": [
+    {
+      "source": "Crossref",
+      "query": "1992 New Jersey minimum wage fast food employment",
+      "retrieved_at": "2026-10-16",
+      "retrieval_tool": "scripts/search_literature.py",
+      "endpoint": "https://api.crossref.org/works?query.bibliographic=1992+New+Jersey+minimum+wage+fast+food+employment&rows=10",
+      "raw_artifact": "experiments/full-validation/2026-10-17/raw/crossref-debf4c5e95ce1ab1.json",
+      "raw_sha256": "debf4c5e95ce1ab11b25c91e4062399979432f7da98c20d0792f75767c29c1ac"
+    },
+    {
+      "source": "Crossref",
+      "query": "minimum wage employment difference in differences fast food restaurants",
+      "retrieved_at": "2026-10-16",
+      "retrieval_tool": "scripts/search_literature.py",
+      "endpoint": "https://api.crossref.org/works?query.bibliographic=minimum+wage+employment+difference+in+differences+fast+food+restaurants&rows=10",
+      "raw_artifact": "experiments/full-validation/2026-10-17/raw/crossref-2e42cee54e0f5af8.json",
+      "raw_sha256": "2e42cee54e0f5af8b8ac3c70356a2a2a7860db061a9987eb02a1adbff80c3aea"
+    }
+  ],
+  "sources": [
+    {
+      "title": "The Wage and Employment Effects of California's Fast-Food Minimum Wage",
+      "authors": [
+        "Naser Hamdi",
+        "David Sovich"
+      ],
+      "year": 2025,
+      "venue": "",
+      "doi": "10.2139/ssrn.5197571",
+      "canonical_locator": "https://doi.org/10.2139/ssrn.5197571",
+      "type": "posted-content",
+      "citation_count": 0,
+      "abstract": "",
+      "retrieval_tool": "scripts/search_literature.py",
+      "retrieved_at": "2026-10-16"
+    },
+    {
+      "title": "Phased Minimum Wage Increases and Fast-Food Employment: Evidence from New York in the 2010s–2020s",
+      "authors": [
+        "Jayden Ahn"
+      ],
+      "year": 2026,
+      "venue": "",
+      "doi": "10.31235/osf.io/chktv_v1",
+      "canonical_locator": "https://doi.org/10.31235/osf.io/chktv_v1",
+      "type": "posted-content",
+      "citation_count": 0,
+      "abstract": "This study examines whether phased minimum wage increases in New York during the 2010s–2020s were associated with changes in employment within the limited-service restaurant sector. Extending prior quasi-experimental research, the analysis applies a within-state difference-in-differences framework exploiting temporal variation in policy implementation. Using publicly available administrative employment data, quarterly employment trends were evaluated at the county level to assess short-run and medium-run responses. Although modest regional and temporal fluctuations were observed, employment levels remained broadly stable following phased wage increases, with no statistically significant or sustained declines detected. By extending the empirical framework of earlier fast-food studies into a contemporary policy environment, these findings contribute to ongoing debates regarding the labor market consequences of gradual state-level minimum wage policies in modern service-sector economies.",
+      "retrieval_tool": "scripts/search_literature.py",
+      "retrieved_at": "2026-10-16"
+    },
+    {
+      "title": "Minimum Wages and Employment: A Case Study of the Fast Food Industry in New Jersey and Pennsylvania",
+      "authors": [
+        "David Card",
+        "Alan Krueger"
+      ],
+      "year": 1993,
+      "venue": "",
+      "doi": "10.3386/w4509",
+      "canonical_locator": "https://doi.org/10.3386/w4509",
+      "type": "report",
+      "citation_count": 361,
+      "abstract": "",
+      "retrieval_tool": "scripts/search_literature.py",
+      "retrieved_at": "2026-10-16"
+    },
+    {
+      "title": "Did California's Fast Food Minimum Wage Reduce Employment?",
+      "authors": [
+        "Jeffrey Clemens",
+        "Olivia Edwards",
+        "Jonathan Meer"
+      ],
+      "year": 2025,
+      "venue": "",
+      "doi": "10.3386/w34033",
+      "canonical_locator": "https://doi.org/10.3386/w34033",
+      "type": "report",
+      "citation_count": 4,
+      "abstract": "",
+      "retrieval_tool": "scripts/search_literature.py",
+      "retrieved_at": "2026-10-16"
+    },
+    {
+      "title": "A Reanalysis of the Effect of the New Jersey Minimum Wage Increase on the Fast-Food Industry with Representative Payroll Data",
+      "authors": [
+        "David Card",
+        "Alan Krueger"
+      ],
+      "year": 1998,
+      "venue": "",
+      "doi": "10.3386/w6386",
+      "canonical_locator": "https://doi.org/10.3386/w6386",
+      "type": "report",
+      "citation_count": 21,
+      "abstract": "",
+      "retrieval_tool": "scripts/search_literature.py",
+      "retrieved_at": "2026-10-16"
+    },
+    {
+      "title": "The Effect of New Jersey's Minimum Wage Increase on Fast-Food Employment: A Re-Evaluation Using Payroll Records",
+      "authors": [
+        "David Neumark",
+        "William Wascher"
+      ],
+      "year": 1995,
+      "venue": "",
+      "doi": "10.3386/w5224",
+      "canonical_locator": "https://doi.org/10.3386/w5224",
+      "type": "report",
+      "citation_count": 34,
+      "abstract": "",
+      "retrieval_tool": "scripts/search_literature.py",
+      "retrieved_at": "2026-10-16"
+    },
+    {
+      "title": "Did California's Fast Food Minimum Wage Reduce Employment?",
+      "authors": [
+        "Jeffrey P. Clemens",
+        "Olivia Edwards",
+        "Jonathan Meer"
+      ],
+      "year": 2025,
+      "venue": "",
+      "doi": "10.2139/ssrn.5350363",
+      "canonical_locator": "https://doi.org/10.2139/ssrn.5350363",
+      "type": "posted-content",
+      "citation_count": 0,
+      "abstract": "We analyze the effect of California&amp;apos;s $20 fast food minimum wage, which was enacted in September 2023 and went into effect in April 2024, on employment in the fast food sector. In unadjusted data from the Quarterly Census of Employment and Wages, we find that employment in California&amp;apos;s fast food sector declined by 2.7 percent relative to employment in the fast food sector elsewhere in the United States from September 2023 through September 2024. Adjusting for pre-AB 1228 trends increases this differential decline to 3.2 percent, while netting out the equivalent employment changes in non-minimum-wage-intensive industries further increases the decline. Our median estimate translates into a loss of 18,000 jobs in California&amp;apos;s fast food sector relative to the counterfactual.&lt;br&gt;&lt;br&gt;Institutional subscribers to the NBER working paper series, and residents of developing countries may download this paper without additional charge at &lt;a href=\"http://www.nber.org/papers/&amp;#119;34033\" TARGET=\"_blank\"&gt;www.nber.org&lt;/a&gt;.&lt;br&gt;",
+      "retrieval_tool": "scripts/search_literature.py",
+      "retrieved_at": "2026-10-16"
+    },
+    {
+      "title": "Innovative Research on the Relationship between Minimum Wage and Employment in the United States — A Case Study about the Fast Food Industry in Pennsylvania and New Jersey",
+      "authors": [
+        "Siyang Liu"
+      ],
+      "year": 2021,
+      "venue": "2021 IEEE 6th International Conference on Cloud Computing and Big Data Analytics (ICCCBDA)",
+      "doi": "10.1109/icccbda51879.2021.9442507",
+      "canonical_locator": "https://doi.org/10.1109/icccbda51879.2021.9442507",
+      "type": "proceedings-article",
+      "citation_count": 0,
+      "abstract": "",
+      "retrieval_tool": "scripts/search_literature.py",
+      "retrieved_at": "2026-10-16"
+    },
+    {
+      "title": "The Effect of the Minimum Wage on the Fast Food Industry",
+      "authors": [
+        "Lawrence Katz",
+        "Alan Krueger"
+      ],
+      "year": 1992,
+      "venue": "",
+      "doi": "10.3386/w3997",
+      "canonical_locator": "https://doi.org/10.3386/w3997",
+      "type": "report",
+      "citation_count": 10,
+      "abstract": "",
+      "retrieval_tool": "scripts/search_literature.py",
+      "retrieved_at": "2026-10-16"
+    },
+    {
+      "title": "The Effect of Maryland's 2022 Minimum Wage Increase on Employment in the Fast-Food Industry",
+      "authors": [
+        "Ethan Broccolina",
+        "Kerry M. Tan"
+      ],
+      "year": 2024,
+      "venue": "",
+      "doi": "10.2139/ssrn.4869546",
+      "canonical_locator": "https://doi.org/10.2139/ssrn.4869546",
+      "type": "posted-content",
+      "citation_count": 0,
+      "abstract": "Economic theory suggests that increasing minimum wage could lead to a decrease in employment, especially for industries most sensitive to minimum wage laws. Using Pennsylvania as a control group, we study the labor implications of Maryland's increase in minimum wage in 2022 using a difference-indifferences approach. Although OLS regressions infer that the minimum wage hike had no effect on employment in the fast-food industry, our more rigorous fixed effects regressions indicate that the minimum wage law had a negative and statistically significant impact on employment, implying that higher minimum wage caused an increase in unemployment among fast-food workers.",
+      "retrieval_tool": "scripts/search_literature.py",
+      "retrieved_at": "2026-10-16"
+    },
+    {
+      "title": "The Wage and Employment Effects of California's Fast-Food Minimum Wage",
+      "authors": [
+        "Naser Hamdi",
+        "David Sovich"
+      ],
+      "year": 2025,
+      "venue": "",
+      "doi": "10.2139/ssrn.5197571",
+      "canonical_locator": "https://doi.org/10.2139/ssrn.5197571",
+      "type": "posted-content",
+      "citation_count": 0,
+      "abstract": "",
+      "retrieval_tool": "scripts/search_literature.py",
+      "retrieved_at": "2026-10-16"
+    },
+    {
+      "title": "Minimum-wage increases and employment in franchised fast-food restaurants",
+      "authors": [
+        "Bradley S. Wimmer"
+      ],
+      "year": 1996,
+      "venue": "Journal of Labor Research",
+      "doi": "10.1007/bf02685794",
+      "canonical_locator": "https://doi.org/10.1007/bf02685794",
+      "type": "journal-article",
+      "citation_count": 11,
+      "abstract": "",
+      "retrieval_tool": "scripts/search_literature.py",
+      "retrieved_at": "2026-10-16"
+    },
+    {
+      "title": "Did California's Fast Food Minimum Wage Reduce Employment?",
+      "authors": [
+        "Jeffrey Clemens",
+        "Olivia Edwards",
+        "Jonathan Meer"
+      ],
+      "year": 2025,
+      "venue": "",
+      "doi": "10.3386/w34033",
+      "canonical_locator": "https://doi.org/10.3386/w34033",
+      "type": "report",
+      "citation_count": 4,
+      "abstract": "",
+      "retrieval_tool": "scripts/search_literature.py",
+      "retrieved_at": "2026-10-16"
+    },
+    {
+      "title": "Did California's Fast Food Minimum Wage Reduce Employment?",
+      "authors": [
+        "Jeffrey P. Clemens",
+        "Olivia Edwards",
+        "Jonathan Meer"
+      ],
+      "year": 2025,
+      "venue": "",
+      "doi": "10.2139/ssrn.5350363",
+      "canonical_locator": "https://doi.org/10.2139/ssrn.5350363",
+      "type": "posted-content",
+      "citation_count": 0,
+      "abstract": "We analyze the effect of California&amp;apos;s $20 fast food minimum wage, which was enacted in September 2023 and went into effect in April 2024, on employment in the fast food sector. In unadjusted data from the Quarterly Census of Employment and Wages, we find that employment in California&amp;apos;s fast food sector declined by 2.7 percent relative to employment in the fast food sector elsewhere in the United States from September 2023 through September 2024. Adjusting for pre-AB 1228 trends increases this differential decline to 3.2 percent, while netting out the equivalent employment changes in non-minimum-wage-intensive industries further increases the decline. Our median estimate translates into a loss of 18,000 jobs in California&amp;apos;s fast food sector relative to the counterfactual.&lt;br&gt;&lt;br&gt;Institutional subscribers to the NBER working paper series, and residents of developing countries may download this paper without additional charge at &lt;a href=\"http://www.nber.org/papers/&amp;#119;34033\" TARGET=\"_blank\"&gt;www.nber.org&lt;/a&gt;.&lt;br&gt;",
+      "retrieval_tool": "scripts/search_literature.py",
+      "retrieved_at": "2026-10-16"
+    },
+    {
+      "title": "1. Beginnings: Fast-Food Restaurants, Gangsters, and the Minimum Wage",
+      "authors": [],
+      "year": 2023,
+      "venue": "Economics in America",
+      "doi": "10.1515/9780691247854-002",
+      "canonical_locator": "https://doi.org/10.1515/9780691247854-002",
+      "type": "book-chapter",
+      "citation_count": 0,
+      "abstract": "",
+      "retrieval_tool": "scripts/search_literature.py",
+      "retrieved_at": "2026-10-16"
+    },
+    {
+      "title": "Phased Minimum Wage Increases and Fast-Food Employment: Evidence from New York in the 2010s–2020s",
+      "authors": [
+        "Jayden Ahn"
+      ],
+      "year": 2026,
+      "venue": "",
+      "doi": "10.31235/osf.io/chktv_v1",
+      "canonical_locator": "https://doi.org/10.31235/osf.io/chktv_v1",
+      "type": "posted-content",
+      "citation_count": 0,
+      "abstract": "This study examines whether phased minimum wage increases in New York during the 2010s–2020s were associated with changes in employment within the limited-service restaurant sector. Extending prior quasi-experimental research, the analysis applies a within-state difference-in-differences framework exploiting temporal variation in policy implementation. Using publicly available administrative employment data, quarterly employment trends were evaluated at the county level to assess short-run and medium-run responses. Although modest regional and temporal fluctuations were observed, employment levels remained broadly stable following phased wage increases, with no statistically significant or sustained declines detected. By extending the empirical framework of earlier fast-food studies into a contemporary policy environment, these findings contribute to ongoing debates regarding the labor market consequences of gradual state-level minimum wage policies in modern service-sector economies.",
+      "retrieval_tool": "scripts/search_literature.py",
+      "retrieved_at": "2026-10-16"
+    },
+    {
+      "title": "BEGINNINGS:",
+      "authors": [],
+      "year": 2023,
+      "venue": "Economics in America",
+      "doi": "10.2307/jj.1895843.4",
+      "canonical_locator": "https://doi.org/10.2307/jj.1895843.4",
+      "type": "book-chapter",
+      "citation_count": 0,
+      "abstract": "",
+      "retrieval_tool": "scripts/search_literature.py",
+      "retrieved_at": "2026-10-16"
+    },
+    {
+      "title": "Employment Effects of Minimum Wage Indexing: Establishment Evidence from Oregon Restaurants",
+      "authors": [
+        "Stephen Miller",
+        "Gary A. Wagner",
+        "Alicia Plemmons"
+      ],
+      "year": 2025,
+      "venue": "",
+      "doi": "10.2139/ssrn.5115422",
+      "canonical_locator": "https://doi.org/10.2139/ssrn.5115422",
+      "type": "posted-content",
+      "citation_count": 0,
+      "abstract": "",
+      "retrieval_tool": "scripts/search_literature.py",
+      "retrieved_at": "2026-10-16"
+    },
+    {
+      "title": "The Effect of Maryland's 2022 Minimum Wage Increase on Employment in the Fast-Food Industry",
+      "authors": [
+        "Ethan Broccolina",
+        "Kerry M. Tan"
+      ],
+      "year": 2024,
+      "venue": "",
+      "doi": "10.2139/ssrn.4869546",
+      "canonical_locator": "https://doi.org/10.2139/ssrn.4869546",
+      "type": "posted-content",
+      "citation_count": 0,
+      "abstract": "Economic theory suggests that increasing minimum wage could lead to a decrease in employment, especially for industries most sensitive to minimum wage laws. Using Pennsylvania as a control group, we study the labor implications of Maryland's increase in minimum wage in 2022 using a difference-indifferences approach. Although OLS regressions infer that the minimum wage hike had no effect on employment in the fast-food industry, our more rigorous fixed effects regressions indicate that the minimum wage law had a negative and statistically significant impact on employment, implying that higher minimum wage caused an increase in unemployment among fast-food workers.",
+      "retrieval_tool": "scripts/search_literature.py",
+      "retrieved_at": "2026-10-16"
+    },
+    {
+      "title": "The Effect of Maryland's 2022 Minimum Wage Increase on Employment in the Fast-Food Industry",
+      "authors": [
+        "Ethan Broccolina",
+        "Kerry Tan"
+      ],
+      "year": 2024,
+      "venue": "",
+      "doi": "10.21203/rs.3.rs-4601059/v1",
+      "canonical_locator": "https://doi.org/10.21203/rs.3.rs-4601059/v1",
+      "type": "posted-content",
+      "citation_count": 0,
+      "abstract": "Abstract\n        Economic theory suggests that increasing minimum wage could lead to a decrease in employ- ment, especially for industries most sensitive to minimum wage laws. Using Pennsylvania as a control group, we study the labor implications of Maryland’s increase in minimum wage in 2022 using a difference-in-differences approach. Although OLS regressions infer that the minimum wage hike had no effect on employment in the fast-food industry, our more rigorous fixed effects regressions indicate that the minimum wage law had a negative and statistically significant impact on employment, implying that higher minimum wage caused an increase in unemployment among fast-food workers.\nJEL classifications: J20, K31",
+      "retrieval_tool": "scripts/search_literature.py",
+      "retrieved_at": "2026-10-16"
+    }
+  ]
+}

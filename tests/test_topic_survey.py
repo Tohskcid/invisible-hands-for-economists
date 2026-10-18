@@ -71,6 +71,14 @@ class TopicSurveyTests(unittest.TestCase):
         self.assertTrue(report["valid"], report["errors"])
         self.assertTrue(report["gate_passed"])
 
+    def test_month_precision_publication_date_is_accepted_without_inventing_a_day(self):
+        survey = self.survey()
+        survey["nearest_works"][0]["first_public_at"] = "2026-08"
+        self.assertTrue(MODULE.validate(survey)["valid"])
+        self.assertEqual(MODULE.latest_possible_publication_day("2026-08"), dt.date(2026, 8, 31))
+        survey["nearest_works"][0]["first_public_at"] = "2026-13"
+        self.assertFalse(MODULE.validate(survey)["valid"])
+
     def test_blocked_record_is_valid_but_cannot_enter_design(self):
         survey = self.survey()
         survey["decision"] = "blocked"

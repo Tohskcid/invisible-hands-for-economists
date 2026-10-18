@@ -1,0 +1,1795 @@
+                               NBER WORKING PAPER SERIES
+
+
+
+
+            ADVERSE SELECTION IN COMPETITIVE SEARCH EQUILIBRIUM
+
+                                        Veronica Guerrieri
+                                         Robert Shimer
+                                         Randall Wright
+
+                                       Working Paper 14915
+                               http://www.nber.org/papers/w14915
+
+
+                     NATIONAL BUREAU OF ECONOMIC RESEARCH
+                              1050 Massachusetts Avenue
+                                Cambridge, MA 02138
+                                     April 2009
+
+
+
+
+We are grateful for comments from Daron Acemoglu, Hector Chade, Guido Lorenzoni, Giuseppe
+Moscarini, Iván Werning, and numerous seminar participants. Shimer and Wright thank the National
+Science Foundation for research support. The views expressed herein are those of the author(s) and
+do not necessarily reflect the views of the National Bureau of Economic Research.
+
+NBER working papers are circulated for discussion and comment purposes. They have not been peer-
+reviewed or been subject to the review by the NBER Board of Directors that accompanies official
+NBER publications.
+
+© 2009 by Veronica Guerrieri, Robert Shimer, and Randall Wright. All rights reserved. Short sections
+of text, not to exceed two paragraphs, may be quoted without explicit permission provided that full
+credit, including © notice, is given to the source.
+Adverse Selection in Competitive Search Equilibrium
+Veronica Guerrieri, Robert Shimer, and Randall Wright
+NBER Working Paper No. 14915
+April 2009
+JEL No. D82,E24,J6
+
+                                              ABSTRACT
+
+We extend the concept of competitive search equilibrium to environments with private information,
+and in particular adverse selection. Principals (e.g. employers or agents who want to buy assets) post
+contracts, which we model as revelation mechanisms. Agents (e.g. workers, or asset holders) have
+private information about the potential gains from trade. Agents observe the posted contracts and decide
+where to apply, trading off the contracts' terms of trade against the probability of matching, which
+depends in general on the principals' capacity constraints and market search frictions. We characterize
+equilibrium as the solution to a constrained optimization problem, and prove that principals offer separating
+contracts to attract different types of agents. We then present a series of applications, including models
+of signaling, insurance, and lemons. These illustrate the usefulness and generality of the approach,
+and serve to contrast our findings with standard results in both the contract and search literatures.
+
+
+Veronica Guerrieri                                    Randall Wright
+University of Chicago                                 Department of Economics
+Booth School of Business                              University of Pennsylvania
+5807 South Woodlawn Avenue                            3718 Locust Walk
+Chicago, IL 60637                                     Philadelphia, PA 19104
+and NBER                                              and NBER
+vguerrie@chicagobooth.edu                             rwright@econ.upenn.edu
+
+Robert Shimer
+Department of Economics
+University of Chicago
+1126 East 59th Street
+Chicago, IL 60637
+and NBER
+shimer@uchicago.edu
+1     Introduction
+This paper studies equilibrium and efficiency in economies with adverse selection as well
+as the frictions modeled in competitive search theory. In our framework, a large number of
+uninformed principals compete to attract agents. For example, firms may compete to attract
+workers who have private information about their productivity or preferences, or buyers of
+assets may compete to attract sellers who have private information concerning the quality
+of their holdings. Principals post incentive-compatible contracts that specify actions if they
+match with particular agent types. Agents observe the posted contracts and direct their
+search, or apply, to the most attractive ones. Matching is limited by capacity constraints
+(each principal can match with at most one agent) and possibly by search frictions (it may
+be more difficult to contact a principal when more agents apply). Principals and agents form
+rational expectations about the market tightness for each contract—the ratio of the measure
+of principals posting that contract to the measure of agents who apply—as well as the types
+of agents who apply.
+  Part of our contribution is technical: we extend the standard competitive search model
+(Montgomery, 1991; Peters, 1991; Moen, 1997; Shimer, 1996; Acemoglu and Shimer, 1999;
+Burdett, Shi and Wright, 2001; Mortensen and Wright, 2002) to allow ex-ante heterogeneous
+agents with private information about their type. We prove that, under mild assumptions,
+including a single-crossing condition, equilibrium exists where principals offer separating
+contracts: each contract posted attracts only one type of agent, and different types direct
+their search to different contracts. The expected utility of each type of agent is uniquely
+determined in equilibrium. Moreover, equilibrium is easily found by sequentially solving a
+constrained optimization problem for each type. We also present a series of examples and
+applications to illustrate the generality and usefulness of our approach. These examples also
+show that some well-known results in contract theory and search theory change when we
+combine elements of both in the same model, and they allow us to explore the role of several
+key assumptions.
+   The first application is a classic signaling problem (Spence, 1973; Akerlof, 1976). Suppose
+that workers are heterogeneous with respect to both their productivity and their cost of
+working longer hours, where more productive workers find long hours less costly, and firms
+care about productivity but not the length of the workday. In equilibrium, firms require
+that more productive workers accept longer hours than they would under full information—
+a version of the rat race. In this example, although hours are distorted, the probability that
+any worker gets a job is not. The equilibrium is not generally efficient: a Pareto improvement
+is possible if there are sufficiently few low-productivity agents or the difference in the cost of
+
+
+                                                1
+working is small relative to the difference in productivity. We also consider the case where
+long workdays are less costly for low-productivity workers; in this case there is an equilibrium
+with pooling and no distortion in the workday (although other equilibria exist).
+  Our second example is a version of the Rothschild and Stiglitz (1976) insurance model.
+Consider a labor market interpretation, rather than pure insurance, as in the original model.1
+Risk-averse workers and risk-neutral firms match in pairs to produce output, but only some
+pairs are productive. Workers differ in the probability that they can form a productive match,
+and if a match is unproductive the worker is let go. In equilibrium, firms separate workers
+by only partially insuring them against the probability the match will be unproductive. This
+means that workers can be worse off if they lose their job than if they had never found a one.
+We interpret this as an explanation for the observation that firms do not fully insure workers
+against layoff risk: if they did, they would attract low-productivity applicants. In this
+example, we show that a partial-pooling allocation—pooling only some types of workers—
+may Pareto dominate the equilibrium.
+  Competitive search also offers a novel resolution to the famous nonexistence problem
+in Rothschild and Stiglitz (1976). When there are relatively few low productivity workers,
+equilibrium may not exist in the original model, for the following reason: given any separating
+contract, profit for an individual firm can be increased by a deviation to a pooling contract
+that cross subsidizes low-productivity workers. Here, such a pooling contract will not increase
+profit. The key difference is that, in our model, because firms are capacity constrained, a
+deviation cannot serve the entire population. Suppose a firm posts a contract designed to
+attract a representative cross section of agents. Because of capacity constraints, the more
+workers that apply for this contract the less likely it is that any one will match. This
+discourages some workers from applying. Critically, it is the most productive workers who
+are the first to withdraw their applications, because their outside option—trying to obtain
+a separating contract—is more attractive. Hence, only undesirable workers are attracted by
+such a deviation, making it unprofitable.
+   In the above applications, asymmetric information affects the contracts offered in equi-
+librium, but not market tightness. Our third example reverses this: adverse selection makes
+it harder for agents to find a partner, but it does not affect the terms of trade conditional on
+a match. Consider a market where agents want to sell a heterogeneous object with uncertain
+quality (Akerlof, 1970). Imagine these objects are apples, meant to represent assets, that
+could be high or low quality.2 Principals want to buy apples from agents, but some apples
+   1
+     We present the results in a labor market context because the assumption that a firm can only hire
+a fraction of the available workforce may seem more reasonable than the assumption that an insurance
+company can only serve a fraction of the potential customers.
+   2
+     In our static environment, apples stand in for the claims to trees bearing fruit as dividends in the
+
+
+                                                   2
+are bad—they are lemons. To make the case stark, assume there are no fundamental search
+frictions, so that everyone on the short side of the market can match. But since the short
+side of the market is endogenous, in equilibrium, agents with good apples only match proba-
+bilistically. This serves to screen out low quality. This is different from related results in the
+literature (e.g. Nosal and Wallace 2007), where lotteries are used to similar effect. Interest-
+ingly, screening through matching saves resources, since posting contracts and trading with
+lotteries is wasteful. Still, equilibrium here can be Pareto dominated by a pooling allocation
+if there are few bad apples. We also find that in some cases adverse selection completely
+shuts down the market—an extreme lemons problem that may have something to do with
+the recent collapse in credit markets.
+    Our paper is related to a growing literature exploring competitive search theory with
+informational frictions, including Faig and Jerez (2005), Guerrieri (2008), and Moen and
+Rosén (2006), who propose different extensions of the standard model to allow one-sided
+private information. However, in all those papers, agents are ex ante homogeneous, and
+heterogeneity is match-specific. Inderst and Müller (1999) provide a model that extends
+competitive search to an environment with ex ante heterogeneous agents; their model is a
+special case of our first example, where the single-crossing condition is satisfied. Inderst and
+Wambach (2001) explore a version of the Rothschild and Stiglitz (1976) model with a finite
+number of principals and agents, and capacity constraints; this model is related to our second
+example. Our paper is the first to develop a general framework for analyzing competitive
+search with adverse selection and present a variety of applications.
+    Many papers study adverse selection without search, of course. Driven by the nonex-
+istence issue in Rothschild and Stiglitz (1976), Miyazaki (1977), Wilson (1977), and Riley
+(1979) propose alternative notions of equilibrium. In contrast to those papers, we do not
+get cross subsidization in equilibrium. As we have mentioned above, the key difference with
+Rothschild and Stiglitz (1976) in our model is this: since no principal can serve all the agents,
+each must deduce which agents are most attracted to pooling contracts, and this eliminates
+the incentive to pool. Prescott and Townsend (1984) study adverse selection in competitive
+economies, concluding that “there do seem to be fundamental problems for the operation of
+competitive markets for economies or situations which suffer from adverse selection” (p. 44).
+This is consistent with our substantive findings, even though the models are very different.
+More recently, Bisin and Gottardi (2006) study adverse selection with competitive markets,
+where agents are restricted to trade incentive-compatible contracts, and also show that there
+standard asset-pricing model of Lucas (1978). Lester, Postlewaite and Wright (2007) review some related
+asset models with search and private information, but that literature does not analyze adverse selection and
+competitive search.
+
+
+
+                                                     3
+exists a separating equilibrium. Although our equilibrium concept is more strategic, some
+features are similar, and the incentive-compatibility condition they impose is analogous to
+one that we generate endogenously.
+   The rest of the paper is organized as follows. In Section 2, we develop the general
+environment, define equilibrium, and discuss some critical assumptions. In Section 3, we
+show how to find equilibrium by solving a constrained optimization problem, prove that
+a separating equilibrium always exists, and show that equilibrium payoffs are unique. In
+Section 4, we define a class of incentive-feasible allocations in order to discuss whether
+equilibrium outcomes are efficient within this class. In Sections 5–7, we present the series of
+applications discussed above, in each case characterizing equilibria and discussing efficiency.
+Section 8 concludes. All proofs are relegated to the Appendix.
+
+
+2       The Model
+There is a measure 1 of agents, a fraction πi > 0 of whom are of type i ∈ I ≡ {1, 2, . . . , I}.
+Type is an agent’s private information. There is a large set of ex ante homogeneous principals.
+A principal may post a contract, at cost k > 0, that provides an opportunity to match with
+an agent (we discuss the nature of a contract below). To keep the analysis focused, we
+consider a static environment, where principals and agents have a single opportunity to
+match.
+   There is a compact and nonempty set of feasible actions for principals and agents who
+are matched, Y, contained in a metric space with metric d(y, y ′) for y, y ′ ∈ Y. A typical
+element y ∈ Y may specify actions by the principal, actions by the agent, transfers between
+them, and other possibilities; as we make explicit in the applications, it can include lotteries.
+A principal who matches with a type i agent gets a payoff vi (y) − k if they undertake action
+y. A principal who does not post a contract gets a payoff normalized to 0, while one who
+posts a contract but fails to match gets −k. A type i agent matched with a principal gets a
+payoff ui(y) if they undertake y, while an unmatched agent gets a payoff also normalized to
+0. For all i, ui : Y 7→ R and vi : Y 7→ R are continuous.
+   By the revelation principle, without loss of generality we assume that contracts are rev-
+elation mechanisms. Precisely, a contract is a vector of actions, C ≡ {y1, . . . , yI } ∈ YI ,
+specifying that if a principal and agent match, the latter (truthfully) announces a type i and
+they implement yi. Contract C is incentive compatible if ui (yi) ≥ ui (yj ) for all i, j.3 Let
+C ⊂ YI denote the set of incentive compatible contracts. Principals only post contracts in
+    3
+    Since we are not concerned with moral hazard, here, we assume that y can be implemented by any
+principal and agent.
+
+
+                                                4
+C.
+   We turn now to the matching process. All agents observe the set of posted contracts and
+apply, or direct their search to the most attractive ones. Let Θ(C) denote the principal-agent
+ratio associated with contract C, defined as the measure of principals offering C over the
+measure of agents who apply to that contract, Θ : C 7→ [0, ∞]. Let γi (C) denote the share
+of agents that apply to C whose type is i, with Γ(C) ≡ {γ1 (C), . . . , γi(C), . . . , γI (C)} ∈ ∆I ,
+                                                                                      P
+the I-dimensional unit simplex. That is, Γ(C) satisfies γi (C) ≥ 0 for all i and i γi (C) = 1,
+and Γ : C 7→ ∆I . The functions Θ and Γ are determined endogenously in equilibrium,
+and are defined for all incentive compatible contracts, not only the ones that are posted in
+equilibrium.
+   An agent who applies to contract C matches with a principal with probability µ(Θ(C)),
+independent of type, where µ : [0, ∞] 7→ [0, 1] is nondecreasing. A principal offering C
+matches with a type i agent with probability η(Θ(C))γi(C), where η : [0, ∞] 7→ [0, 1] is
+nonincreasing. We impose µ(θ) = θη(θ) for all θ, since the left hand side is the matching
+probability of an agent and the right hand side is the matching probability of a principal
+times the principal-agent ratio. Together with the monotonicity of µ and η, this implies both
+functions are continuous. It is convenient to let η̄ ≡ η(0) > 0 denote the highest probability
+that a principal can match with an agent, obtained when the principal-agent ratio is 0.
+Similarly let µ̄ ≡ µ(∞) > 0 denote the highest probability that an agent can match with a
+principal. Conversely, µ(θ) = θη(θ) ensures that η(∞) = µ(0) = 0.
+   The expected utility of principals who post C = {y1 , . . . , yI } is
+
+                                             I
+                                             X
+                                   η(Θ(C))         γi (C)vi (yi ) − k.
+                                             i=1
+
+
+The expected utility of type i agents who apply to C and report type j if they match is
+
+                                          µ(Θ(C))ui(yj ).
+
+     We now have the following definition of equilibrium.
+Definition 1 A competitive search equilibrium is a vector Ū = {Ūi }i∈I ∈ RI+ , a measure
+λ on C with support C̄, a function Θ(C) : C 7→ [0, ∞], and a function Γ(C) : C 7→ ∆I
+satisfying:
+(i) principals’ profit maximization and free-entry: for any C = {y1 , . . . , yI } ∈ C,
+
+                                                I
+                                                X
+                                      η(Θ(C))            γi (C)vi (yi ) ≤ k,
+                                                   i=1
+
+
+                                                    5
+       with equality if C ∈ C̄;
+
+(ii) agents’ optimal search: let
+                                                                                                 
+                                 Ūi = max 0 ,             max                µ(Θ(C ))ui (yi′ )
+                                                                                     ′
+                                                    C ′ ={y1′ ,...,yI′ }∈C̄
+
+
+       and Ūi = 0 if C̄ = ∅; then for any C = {y1 , . . . , yI } ∈ C and i,
+
+                                                  Ūi ≥ µ(Θ(C))ui(yi),
+
+       with equality if Θ(C) < ∞ and γi (C) > 0; moreover, if ui (yi ) < 0, either Θ(C) = ∞
+       or γi(C) = 0;
+
+(iii) market clearing:
+                                             γi (C)
+                                        Z
+                                                    dλ({C}) ≤ πi for any i,
+                                          C̄ Θ(C)
+
+       with equality if Ūi > 0.
+
+    To understand our notion of equilibrium, first consider contracts that are actually posted
+in equilibrium, C ∈ C̄. Part (i) of the definition implies that principals earn zero profits
+from any such contract. Since η(∞) = 0 < k, it must be that Θ(C) < ∞. Part (ii) then
+implies that if type i agents apply for a contract, γi (C) > 0, they cannot earn a higher level
+of utility from any other posted contract. And part (iii) guarantees that all type i agents
+apply to some contract, unless they are indifferent about participating in the market, which
+gives them the outside option Ūi = 0.
+    Equilibrium also imposes restrictions on contracts that are not posted in equilibrium.
+Each principal anticipates that it cannot affect the utility of any type of agent, and so takes
+Ū = {Ūi }i∈I as given. Intuitively, when a principal considers posting a new contract C ∈ C,
+he initially imagines an infinite principal-agent ratio. Some contracts will not be able to
+attract agents even at that ratio, Ūi ≥ µ̄ui (yi ) for all i, in which case Θ(C) = ∞ and the
+choice of Γ(C) is arbitrary and immaterial. Otherwise, agents would be attracted to the
+contract, pulling down the principal-agent ratio. This process would stop at the value of
+Θ(C) such that Ūi = µ(Θ(C))ui(yi) for some i and Ūj ≥ µ(Θ(C))uj (yj ) for all j. Moreover,
+only type i agents with Ūi = µ(Θ(C))ui(yi) would be attracted to the contract, pinning
+down Γ(C). This is all captured by equilibrium condition (ii).4 Equilibrium condition (i)
+   4
+    The requirement that if ui (yi ) < 0 then either Θ(C) = ∞ or γi (C) = 0 rules out the possibility that type
+i agents earn zero utility, but apply for contract C = {y1 , . . . , yI } with the expectation they will not be able
+to get it, Θ(C) = 0. Other agents with Ūj > 0 would then not apply for the contract. Such a belief might
+
+
+                                                           6
+then imposes that, for principals not to post C, in equilibrium, they must not earn positive
+profit from it, given Θ(C) and Γ(C).
+   Let
+                               
+                          Ȳi ≡ y ∈ Y | η̄vi (y) ≥ k and ui(y) ≥ 0
+
+be the set of actions for a type i agent that deliver nonnegative utility while permitting the
+principal to make nonnegative profits if the principal-agent ratio is 0, and
+                                                          [
+                                                   Ȳ ≡       Ȳi .
+                                                          i
+
+
+In equilibrium, actions that are not in Ȳ are not implemented.
+    For the benchmark analysis, we make three assumptions on preferences over y ∈ Ȳ, as
+we now discuss.
+
+Assumption A1 Monotonicity: for all y ∈ Ȳ,
+
+                                        v1 (y) ≤ v2 (y) ≤ . . . ≤ vI (y).
+
+This mild assumption says that for any fixed action, principals weakly prefer higher types.
+   For the next assumption, let Bε (y) ≡ {y ′ ∈ Y|d(y, y ′) < ε} be a ball of radius ε.
+
+Assumption A2 Local non-satiation: for all i ∈ I, j < i, y ∈ Ȳi , and ε > 0, there exists a
+y ′ ∈ Bε (y) such that vi (y ′ ) > vi (y) and uj (y ′ ) ≤ uj (y).
+
+Another mild assumption, A2 is satisfied in any application where actions allow transfers.5
+   The next assumption guarantees that it is possible to design contracts that attract some
+agents without attracting less desirable agents.
+
+Assumption A3 Sorting: for all i ∈ I, y ∈ Ȳi , and ε > 0, there exists a y ′ ∈ Bε (y) such
+that
+            uj (y ′) > uj (y) for all j ≥ i and uj (y ′ ) < uj (y) for all j < i.
+
+One should interpret A3 as a generalized version of a standard single-crossing condition.
+Assume for illustration that: y ≡ (y1 , y2 ) ∈ R2 ; Ȳ is open; and the functions ui (y1 , y2) are
+make a deviation unprofitable, if η̄vi (yi ) < k, but we find it implausible. In particular, it is inconsistent with
+the adjustment process described in the text.
+   5
+     Moreover, we use A2 only in the proof of Proposition 2 below, and nowhere else. We use it to establish
+that it is possible to make a principal better off while not improving the well-being of agents. If η is strictly
+decreasing, we could do this by adjusting market tightness, but since for some examples it is interesting to
+have η only weakly decreasing, we introduce A2.
+
+
+                                                          7
+differentiable. Then A3 holds if the marginal rate of substitution between y1 and y2 is higher
+for higher types—i.e., if
+                                       ∂ui (y1 , y2 )/∂y1
+                                       ∂ui (y1 , y2 )/∂y2
+is monotone in i.6 Assumption A3 is important for the results: in Section 5.4 we show how
+the nature of equilibrium changes when A3 fails.
+
+
+3         Equilibrium Characterization
+We now show that equilibrium solves a set of optimization problems. For any type i, consider
+the following problem:
+
+                                                    max     µ(θ)ui(y)                                       (P-i)
+                                              θ∈[0,∞],y∈Y
+
+                                       s.t. η(θ)vi (y) ≥ k,
+                                      and µ(θ)uj (y) ≤ Ūj for all j < i.
+
+In terms of economics, (P-i) chooses market tightness θ and an action y to maximize the
+expected utility of type i subject to a principal at least breaking even when only type i
+agents apply, and subject to types lower than i not wanting to apply.
+   Now consider the larger problem (P) of solving (P-i) for all i. More precisely, we say that
+a set I∗ ⊂ I and three vectors {Ūi }i∈I , {θi }i∈I∗ , and {yi }i∈I∗ solve (P) if:
+
+    1. I∗ denotes the set of i such that the constraint set of (P-i) is non empty and the
+       maximized value is strictly positive, given (Ū1 , . . . , Ūi−1 );
+
+    2. for any i ∈ I∗ , the pair (θi , yi) solves problem (P-i) given (Ū1 , . . . , Ūi−1 ), and Ūi =
+       µ(θi )ui (yi)
+
+                 / I∗ , Ūi = 0.
+    3. for any i ∈
+    6
+        Actually, A3 is more general. For example, suppose
+
+                                                    1 ρi   1 ρi 1/ρi
+                                                                      y12 + y22  1
+                                  ui (y1 , y2 ) =    y
+                                                    2 1  +  y
+                                                           2 2       −           − .
+                                                                           2      8
+for ρi < 1, and ρi is higher for higher types. Then the elasticity of substitution between y1 and y2 , 1/(1 − ρi ),
+is increasing in i. Let Y = [0, 1]2 , a superset of the points where ui (y1 , y2 ) > 0. Any point (y1 , y2 ) on the
+boundary of Y is not in Ȳ since ui (y1 , y2 ) < 0. This example fails the single-crossing condition when y1 = y2 ,
+but satisfies A3, since it is possible to increase the spread between y1 and y2 and attract higher types while
+repelling lower ones.
+
+
+
+
+                                                             8
+   Proposition 1 below says that we can find any equilibrium by solving (P); conversely,
+Proposition 2 says that any solution to (P) generates an equilibrium. As a preliminary step,
+we prove that (P) has a solution and provide a partial characterization, by showing that the
+zero profit condition binds and that higher types are not attracted by (θ, y). This implies
+that only downward incentive constraints are relevant in equilibrium (while, in fact, in the
+primitive definition incentive compatibility requires no j > i or j < i would want to apply
+and pretend to be type i).
+
+Lemma 1 Assume A1-A3. There exists I∗ , {Ūi }i∈I , {θi }i∈I∗ , and {yi }i∈I∗ that solve (P). At
+any solution,
+
+                              η(θi )vi (yi ) = k for all i ∈ I∗ ,
+                              µ(θi )uj (yi ) ≤ Ūj for all j ∈ I and i ∈ I∗ .
+
+All formal proofs are in the Appendix, but the idea is to notice that (P) has a recursive
+structure. As a first step, (P-1) depends only on exogenous variables and thus determines
+Ū1 . In general, at step i, (P-i) depends on the previously determined values of Ūj for j < i
+and determines Ūi . Thus, we can solve (P) in I iterative steps.
+   We now show that a solution to (P) can be used to construct an equilibrium in which
+some principals offer a contract to attract type i ∈ I∗ , while keeping out other types. The
+relevant contract is suggested by the solution to (P), but we must also show that no other
+contract gives positive profit.
+
+Proposition 1 Assume A1-A3. Suppose I∗ , {Ūi }i∈I , {θi }i∈I∗ , and {yi}i∈I∗ solve (P). Then
+there exists a competitive search equilibrium {Ū , λ, C̄, Θ, Γ} with Ū = {Ūi }i∈I , C̄ = {Ci }i∈I∗
+where Ci = (yi , . . . , yi), Θ(Ci ) = θi , and γi(Ci ) = 1.
+
+   The next result establishes that any equilibrium can be characterized using (P). The
+proof is based on a variational argument, showing that if (θi , yi ) does not solve (P), it cannot
+be part of an equilibrium.
+
+Proposition 2 Assume A1-A3. Let {Ū , λ, C̄, Θ, Γ} be a competitive search equilibrium. Let
+{Ūi }i∈I = Ū and I∗ = {i ∈ I|Ūi > 0}. For each i ∈ I∗ , there exists a contract C ∈ C̄
+with Θ(C) < ∞ and γi (C) > 0. Moreover, take any {θi }i∈I∗ and {yi}i∈I∗ such that for each
+i ∈ I∗ , there exists a contract Ci = {y1, . . . , yi , . . . , yI } ∈ C̄ (so the ith element of Ci is yi )
+with θi = Θ(Ci) < ∞ and γi (Ci ) > 0. Then I∗ , {Ūi }i∈I , {θi }i∈I∗ , and {yi}i∈I∗ solve (P).
+
+    The above results imply that in equilibrium any contract C = {y1 , . . . , yi, . . . , yI } that
+attracts type i solves (P-i), in the sense that the solution to the problem has θ = Θ(C) and
+
+                                                     9
+y = yi . This does not necessarily mean that each contract attracts only one type of agent.
+In general, a contract could attract more than one type, or the same type could apply to
+more than one type of contract. But if a contract C = {y1 , . . . , yI } attracts two types, say i
+and j, then Θ(C) and yi solve (P-i) and Θ(C) and yj also solve (P-j).
+   The existence of equilibrium and uniqueness of equilibrium payoffs follow immediately
+from the above results.
+
+Proposition 3 Assume A1-A3. Then competitive search equilibrium exists, and the equi-
+librium Ū is unique.
+
+   The last result of this section shows that, when there are strict gains from trade for all
+types, all agents get strictly positive utility.
+
+Proposition 4 Assume A1-A3, and that for all i there exists y ∈ Y with η̄vi (y) > k and
+ui (y) > 0. Then in any competitive search equilibrium, Ūi > 0 for all i, and in particular
+there exists a contract C ∈ C with Θ(C) < ∞ and γi (C) > 0.
+
+The proof follows by showing that the maximized value of any (P-i) is positive as long as
+Ūj > 0 for j < i. One might imagine a stronger claim, that if there are strict gains from
+trade for any type i then Ūi > 0, but Section 7 shows that this may not be the case. In
+particular, if there are no gains from trade for some type j < i and Ūj = 0, it may be that
+Ūi = 0 even though there would be gains from trade for type i with full information.
+
+
+4     Incentive Feasible Allocations
+To set the stage for studying efficiency, we define an incentive feasible allocation. We begin
+by defining an allocation, by which we basically mean a description of the posted contracts
+together with the implied search behavior and payoffs of agents.
+
+Definition 2 An allocation is a vector Ū of expected utilities for the agents, a measure λ
+over the set of incentive-compatible contracts C with support C̄, a function Θ̃ : C̄ 7→ [0, ∞],
+and a function Γ̃ : C̄ 7→ ∆I .
+
+Note that Θ̃ and Γ̃ are different from the Θ and Γ in the definition of equilibrium, because
+the former are defined only over the set of posted contracts, while the latter are defined for
+all incentive compatible contracts.
+   An allocation is incentive feasible whenever: (1) each posted contract offers the maximal
+expected utility to agents who direct their search for that contract and no more to those
+
+                                               10
+who do not; (2) the economy’s resource constraint is satisfied; and (3) markets clear.7 More
+formally, we have:
+
+Definition 3 An allocation {Ū , λ, C̄, Θ̃, Γ̃} is incentive feasible if
+
+    1. for any C ∈ C̄ and i ∈ {1, . . . , I} such that γ̃i (C) > 0 and Θ̃(C) < ∞,
+
+                                                  Ūi = µ(Θ̃(C))ui (yi ),
+
+         and
+                                                Ūi ≡ max µ(Θ̃(C ′ ))ui (yi′ )
+                                                        C ′ ∈C̄
+
+         where C ′ = {y1′ , . . . , yI′ };
+
+    2.                                                                    !
+                                       Z                I
+                                                        X
+                                             η(Θ̃(C))         γ̃i vi (yi ) − k dλ(C) = 0;
+                                                        i=1
+
+    3. for all i ∈ {1, . . . , I},
+                                                        γ̃i (C)
+                                                  Z
+                                                                dλ(C) ≤ πi ,
+                                                        Θ̃(C)
+         with equality if Ūi > 0.
+
+The set of incentive feasible allocations provides a benchmark for what the economy could
+conceivably achieve, perhaps through legal or other restrictions on the contracts that can be
+offered.
+
+
+5        Application I: The Rat Race
+We now proceed with the first of our three main applications, a version of a classic signaling
+model (Akerlof, 1976). For concreteness, think of agents here as workers who are heteroge-
+neous in terms of both their productivity and their cost of working long hours, and principals
+as firms that are willing to pay more for high-productivity workers and can observe hours
+but not productivity. The main substantive result in this example is this: if the cost of a long
+workday is lower for more productive workers, equilibrium will separate types by distorting
+hours relative to the first best, but will not distort market tightness.8
+    7
+     The resource constraint in the formal definition to follow can be read as saying that principals’ profits
+are 0 on average, but this is not the only interpretation, since there may be different ways to implement the
+same outcome—e.g. we can imagine a planner posting the contracts directly.
+   8
+     This example is essentially a static version of Inderst and Müller (1999), although we also extend it to
+consider cases where the sorting assumption A3 fails.
+
+                                                              11
+5.1     Setup
+An action here is y = {t, x}, where t is a transfer from the firm to the worker and x ≥ 0 is
+the length of the workday. The payoff of a type i worker who undertakes {t, x} is
+
+                                                            x
+                                           ui(t, x) = t −      ,
+                                                            ai
+
+where higher values of ai imply that x is less costly. The payoff of a firm matched with type
+i who undertakes {t, x} is
+                                           vi (t, x) = bi − t,
+
+where bi is the productivity the worker. We assume I = 2 and b2 > b1 . We restrict the set of
+feasible actions to Y = {(t, x)|t ∈ [−ε, b2 ] and x ∈ [0, b2 max{a1 , a2 }]} for some ε > 0. This
+ensures Y is compact but is not otherwise important (although it is convenient to allow for
+the possibility of a small negative transfer).9
+   The space of actions that provide nonnegative utility to type i and nonnegative profit
+when the firm-worker ratio is 0 is
+
+                              Ȳi = {(t, x) ∈ Y|x/ai ≤ t ≤ bi − k/η̄}.
+
+The fact that b2 > b1 implies A1, and A2 holds because (t, x) ∈ Ȳi implies t ≥ 0, so t
+can be reduced to raise vi (t, x) and lower uj (t, x) (this is where it is convenient to allow
+negative transfers). In terms of A3, consider (t, 0) ∈ Ȳ. There are nearby points (t′ , x′ ) with
+u1 (t′ , x′ ) < u1 (t, 0) and u2 (t′ , x′ ) > u2(t, 0) if and only if a2 > a1 , so more productive workers
+find it less costly to have higher x. At any other {t, x} ∈ Ȳ, A3 holds for all a1 and a2 . We
+impose a2 > a1 , for now, and discuss later what happens if this is violated. Finally, assume
+η̄b1 > k, so that there are gains from trade for both types, and hence Proposition 4 implies
+Ū1 > 0 and Ū2 > 0.
+   9
+    A firm would never offer t > b2 and the worker would never accept t < 0. Also, a worker would never
+provide x > b2 max{a1 , a2 }, given that b2 ≤ t.
+
+
+
+
+                                                   12
+5.2     Equilibrium
+Based on Section 3, we characterize equilibrium by solving (P). In this example, (P-i) is
+                                                                   
+                                                                 x
+                                  Ūi =      max        µ(θ) t −
+                                        θ∈[0,∞],(t,x)∈Y          ai
+                                  s.t. η(θ)(bi − t) ≥ k,
+                                                    
+                                                  x
+                                  and µ(θ) t −         ≤ Ūj for j ≤ i.
+                                                  aj
+
+Let us assume µ is strictly concave and continuously differentiable. Then we have the
+following (again, all proofs are in the Appendix):
+
+Result 1 There exists a unique competitive search equilibrium with µ′ (θi )bi = k, for i = 1, 2,
+and so θ1 < θ2 . Moreover, we have
+                                                                                         
+                                   a1            µ(θ2 )                      µ(θ1 )
+                     x1 = 0; x2 =                         − θ2       −                − θ1        k > 0;
+                                  µ(θ2 )         µ′ (θ2 )                    µ′ (θ1 )
+                                                             
+                                              1     θi
+                                ti =        ′
+                                                  −               k, for i = 1, 2;
+                                           µ (θi ) µ(θi )
+
+                                                                               
+                  µ(θ1 )                     a1 µ(θ1 )              a1    µ(θ2 )
+      Ū1 =                − θ1 k and Ū2 =              − θ1 + 1 −                − θ2 k.
+                  µ′ (θ1 )                   a2 µ′ (θ1 )            a2    µ′ (θ2 )
+
+   In equilibrium, some firms post contracts to attract only type 1 workers, while others
+post contracts to attract only type 2 workers. To achieve separation, the contracts of type 1
+are undistorted, while those of type 2 are distorted by having them work (unproductively)
+long hours. Notice that market tightness is equal to the first-best or full-information level
+for both types, so matching and hence employment are not distorted in this example. Also,
+note that without additional assumptions we cannot rule out the possibility that t2 < t1 , so
+type 2 workers may actually receive less compensation in addition to working longer hours;
+they are compensated for this by a higher probability of being hired, θ2 > θ1 .
+
+
+5.3     Efficiency
+Equilibrium is not necessarily efficient. Consider an allocation that treats the two types
+identically, C̄ = {C}, where C = {(t, 0), (t, 0)}. Then let Θ̃(C) = θ∗ , with θ∗ solving
+µ′ (θ∗ )(π1 b1 + π2 b2 ) = k, γ̃i (C) = πi , and λ({C}) = 1/θ∗ . Note that θ1 < θ∗ < θ2 , so market
+tightness now is in between the levels for the different types in equilibrium. Then choose t
+
+                                                         13
+so profits are 0:
+                                                                   θ∗
+                                                                        
+                                                            1
+                                               t=                −         k
+                                                         µ′ (θ∗ ) µ(θ∗ )
+This contract is obviously incentive compatible, since types are treated identically. All
+workers want to apply, and get the same expected utility, so condition (1) of feasibility is
+satisfied. And the resource and market clearing conditions are satisfied by the choice of t
+and λ. Hence, this constitutes an incentive feasible allocation.
+    The expected utility for all workers is
+
+                                                             µ(θ∗ )
+                                                                          
+                                                                         ∗
+                                                  Ū =                − θ k.
+                                                             µ′ (θ∗ )
+
+Comparing this with equilibrium, Ū > Ū1 since θ∗ > θ1 , and Ū ≥ Ū2 if and only if
+
+                      µ(θ∗ )
+                                                                                                 
+                                    a1            µ(θ1 )                   a1            µ(θ2 )
+                       ′  ∗
+                             − θ∗ ≥                        − θ1       + 1−                        − θ2 .
+                      µ (θ )        a2            µ′ (θ1 )                 a2            µ′ (θ2 )
+
+This inequality holds if a1 /a2 is close to 1 (screening is very costly) or if π1 is close to zero
+(there are very few type 1 agents). The reason is that, in equilibrium, firms who want to
+attract type 2 need to screen out type 1, or they would be swamped by applications from
+low-productivity workers. Screening may not be socially optimal, however, if there are few
+type 1 workers or screening is costly. Thus it may be socially preferable to subsidize type 1
+workers and eliminate screening, but this is not consistent with equilibrium, any individual
+firm has incentive to deviate and try to screen.
+
+
+5.4        Pooling
+The sorting condition A3 plays a critical role. To understand this, consider a variant where
+signaling is cheaper for less productive workers, a1 ≥ a2 while b1 < b2 .10 Now firms would like
+to screen out low-productivity workers, but cannot: if they try to attract high-productivity
+types, the low-productive types would apply and claim to be high-productivity. In this case,
+we now show that there is a class of equilibria in which firms attract both types, and ask
+the low-productivity agents to work x ≥ 0 unproductive hours.
+   When A3 is violated, we cannot use the analysis in Section 3 to characterize the outcome,
+and we must go back to the primitive definition of equilibrium. Given this, we describe a
+  10
+       We claim this violates A3. Fix t and set x = 0. For any nearby contract (t′ , x′ ),
+
+                    u1 (t′ , x′ ) − u1 (t, 0) = t′ − t − x′ /a1 ≥ t′ − t − x′ /a2 = u2 (t′ , x′ ) − u2 (t, 0),
+
+since x′ ≥ 0. Hence, there is no (t′ , x′ ) with u1 (t′ , x′ ) < u1 (t, 0) and u2 (t′ , x′ ) > u2 (t, 0).
+
+
+                                                               14
+class of equilibria indexed by x1 ∈ [0, a1 (b2 − b1 )(1 − π1 )/π1 ]. All firms post the same
+contract C = {(t + x1 /a1 , x1 ), (t, 0)}, where t is chosen to make profit 0, all workers apply,
+and γi (C) = πi . Given this, suppose a firm considers offering a contract that attracts only
+one type. If it tries to attract type 1, it loses the benefit of cross-subsidization, and is unable
+to attract them while earning positive profits. If it tries to attract type 2 workers, it is unable
+to devise a contract that will exclude type 1, again making the deviation unprofitable.
+
+Result 2 Suppose a1 ≥ a2 . For any x1 ∈ [0, a1 (b2 −b1 )(1−π1 )/π1 ], there exists a competitive
+search equilibrium where C̄ = {C} with C = {(t + x1 /a1 , x1 ), (t, 0)} and
+                                             
+                                           x1              θ
+                               t = π1 b1 −      + π2 b2 −      k,
+                                           a1             µ(θ)
+
+where θ solves                                        
+                                ′            x1
+                               µ (θ) π1 b1 −      + π2 b2 = k.
+                                             a1
+The expected utility for all workers is Ū = µ(θ)t.
+
+    There are equilibria where x > 0, because if firms did not set x > 0 they would be stuck
+exclusively with type 1 workers. Clearly, x > 0 is socially wasteful, and these equilibria can
+be Pareto ranked, with x1 = 0 being the best. Moreover, if a1 > a2 , then not only do there
+exist the equilibria in Result 2, we can show that any equilibrium where all firms post the
+same contract must be in that class.
+
+Result 3 Suppose a1 > a2 . If there exists a competitive search equilibrium with C̄ = {C}
+where C = {(t1 , x1 ), (t2 , x2 )}, γi (C) = πi , and Θ(C) < ∞, then x2 = 0, and t1 = t2 + x1 /a1 .
+
+
+6     Application II: Insurance
+Our next application is based on Rothschild and Stiglitz (1976), where risk neutral prin-
+cipals offer insurance to risk averse agents who are heterogeneous in their probability of a
+loss. This illustrates several features. First, although we had linear utility in the previous
+section, this is not necessary in the general framework. Second, we show here that even if
+a pooling allocation does not Pareto dominate the equilibrium, a partial-pooling allocation
+may. Finally, to illustrate that traditional search frictions are not necessary, in this example
+we allow the short side of the market to match for sure: µ(θ) = min{θ, 1}.
+
+
+
+
+                                                15
+6.1        Setup
+We again specify the model in terms of worker-firm matching.11 Now the productivity of a
+match is initially unknown by both the worker and firm. Some workers are more likely than
+others to generate productive matches, but firms cannot observe this: type i produce 1 unit
+of output with probability pi and 0 otherwise, and pi is the agent’s private information. A
+contract specifies a transfer to the worker conditional on realized productivity and reported
+type. Workers are risk averse and firms are risk neutral. In the absence of adverse selection,
+full insurance equates the marginal utility of agents across states. We show that firms here
+do not provide full insurance, because incomplete insurance helps keep undesirable workers
+from applying.
+   An action consists of a pair of consumption levels, conditional on employment or unem-
+ployment after match productivity has been realized, y = {ce , cu }. The payoff of a matched
+type i worker given y is
+
+                                 ui (ce , cu ) = pi U(ce ) + (1 − pi )U(cu ),
+
+where p1 < p2 < · · · < pI < 1 and U : [c, ∞) → R is increasing and strictly concave with
+limc→c U(c) = −∞ for some c < 0 and U(0) = 0. The payoff of a firm matched with type i
+given y is
+                                 vi (ce , cu ) = pi (1 − ce ) − (1 − pi )cu .
+
+       To ensure A1 is satisfied, we restrict the set of feasible actions to Y = {(ce , cu )|cu + 1 ≥
+ce ≥ c and cu ≥ c}. The assumption limc→c U(c) = −∞ ensures that actions of the form
+{ce , c} yield negative utility for all types and so are not in Ȳ. Then, since a reduction in
+cu raises vi (y) and lowers ui(y), and is feasible for all y ∈ Ȳ, A2 is satisfied. To verify
+A3, consider an incremental increase in ce to ce + dce and an incremental reduction in cu
+to cu − dcu for some dce > 0 and dcu > 0. For a type i worker, this raises utility by
+approximately pi u′ (ce )dce − (1 − pi )u′ (cu )dcu , which is positive if and only if
+
+                                           dce   1 − pi u′ (cu )
+                                               >                 .
+                                           dcu     pi u′ (ce )
+
+Since (1 − pi )/pi is decreasing in i, an appropriate choice of dce /dcu yields an increase in
+utility if and only if j ≥ i, which verifies A3.
+    Finally, assume p1 ≤ k < pI , which ensures that there are no gains from employing the
+  11
+    Again, we frame the discussion in terms of labor markets, rather than general insurance, because it
+seems more reasonable to assume an employer can only hire a fraction of the available workforce than to
+assume an insurance company can only serve a fraction of its potential customers.
+
+
+                                                     16
+lowest type, even in the absence of asymmetric information, but there may be gains from
+trade for higher types, say by setting ce = cu = pI − k > 0. Let i∗ denote the lowest type
+without gains from trade, so pi∗ ≤ k < pi∗ +1 (the results extend to the case k < p1 by
+defining i∗ = 0).
+
+
+6.2     Equilibrium
+We can again characterize equilibrium using (P), leading to:
+
+Result 4 There exists a competitive search equilibrium where for all i ≤ i∗ , Ūi = 0; and for
+all i > i∗ , θi = 1, Ūi > 0, and ce,i > ce,i−1 and cu,i < cu,i−1 are the unique solution to
+
+                                     pi (1 − ce,i) − (1 − pi )cu,i = k
+           and pi−1 U(ce,i ) + (1 − pi−1 )U(cu,i ) = pi−1 U(ce,i−1 ) + (1 − pi−1 )U(cu,i−1 ),
+
+where ce,i∗ = cu,i∗ = 0.
+
+   One interesting feature of equilibrium here is that cu,i < 0 for all i > i∗ , and therefore a
+worker is worse off when he matches and turns out to be unproductive than when he does
+not match in the first place. If one interprets a bad match as a layoff, contracts give laid-off
+workers less utility than those who never match, because this keeps inferior workers from
+applying for the job.12
+
+
+6.3     Efficiency
+Again we show equilibrium may not be efficient. First note that a worker with pi close to 1
+suffers little from the distortions introduced by the information problem. At the extreme, if
+pI = 1, cu,I = c excludes other workers without distorting the type I contract at all. Gener-
+ally, adverse selection has the biggest impact on the utility of workers with an intermediate
+value of pi . We show that a Pareto improvement may result from partial pooling. Consider
+p1 = 1/4, p2 = 1/2, and p3 = 3/4 and suppose there are equal numbers of type 1 and 3,
+so that half of all matches are productive. Set U(c) = log(1 + c) and k = 3/8. Then in
+equilibrium, Ū1 = 0; ce,2 = 0.344, cu,2 = −0.094, and Ū2 = U(0.104); and ce,3 = 0.576,
+cu,3 = −0.227, and Ū3 = U(0.319).
+    Pooling all three types, the best incentive-feasible allocation involves ce = cu = 1/8 and
+Ūi = U(1/8). Compared to the equilibrium, this raises the utility of type 1 and type 2
+  12
+    To interpret a bad match as a layoff, it might help to imagine that an agent actually must work for some
+time before productivity is realized, as in Jovanovic (1979).
+
+
+                                                    17
+workers, but reduces the utility of type 3 workers. Now consider an allocation that pools
+types 1 and 2. If there are sufficiently few type 1 workers, it is feasible to set ce = cu > 0.104,
+delivering utility greater to types 1 and 2. For example, suppose π1 = π3 = 0.01 and
+π2 = 0.98. Then the utility of types 1 and 2 rises to U(0.122). By raising the utility of type
+2, it is easier to exclude them from type 3 contracts, reducing the requisite inefficiency of
+those contracts. This raises the utility of type 3, in this case, to U(0.325).
+
+
+6.4    Relationship to Rothschild-Stiglitz
+Rothschild and Stiglitz (1976, p. 630) “consider an individual who will have income of size
+W if he is lucky enough to avoid accident. In the event an accident occurs, his income will
+be only W − d. The individual can insure against this accident by paying to an insurance
+company a premium α1 in return for which he will be paid α̂2 if an accident occurs. Without
+insurance his income in the two states, ‘accident,’ ‘no accident,’ was (W, W − d); with
+insurance it is now (W − α1 , W − d + α2 ) where α2 = α̂2 − α1 .”
+   We can normalize the utility of an uninsured individual to zero and express the utility of
+one who anticipates an accident with probability pi as
+
+                  ui (α1 , α2 ) = pi U(W − α1 ) + (1 − pi )U(W − d + α2 ) − κi ,
+
+where κi ≡ pi U(W ) + (1 − pi )U(W − d). Setting W = d = 1 and defining ce = 1 − α1
+and cu = α2 , this is equivalent to our example. Our results apply to their setup, with one
+wrinkle: our fixed cost of posting contracts.
+   Rothschild and Stiglitz (1976) show that in any equilibrium, principals who attract type
+i agents, i > 1, offer incomplete insurance to deter type i − 1 agents, which is of course
+very similar to our finding. Under some conditions, however, their equilibrium does not
+exist. Starting from a configuration of separating contracts, suppose one principal deviates
+by offering a pooling contract to attract multiple types. In their setup, this is profitable if the
+least-cost separating contract is Pareto inefficient. But such a deviation is never profitable
+in our environment.
+    The key difference is that in the original model a deviating principal can capture all
+the agents in the economy, or at least a representative cross-section, while in our model a
+principal cannot serve all the agents who are potentially attracted to a contract. Instead,
+agents are rationed thorough the endogenous movement in market tightness θ. Whether
+such a deviation is profitable depends on which agents are most willing to accept a decline
+in θ. What we find is that high types are the first to give up on the pooling contract
+when applications get crowded by low types. A lower type, with an inferior outside option
+
+                                                18
+Ūi−1 < Ūi , is more inclined to stick it out. Hence, a principal who tries to offer a pooling
+contract will end up with a long queue of type 1 agents—the worst possible outcome. For this
+reason, a deviation to a pooling contract is not profitable, and equilibrium with separating
+contracts always exists.
+
+
+7      Application III: Asset Markets
+A feature of the previous two examples is that market tightness is not distorted: θi is at
+its full-information level for all i. We now present a model where tightness can be used to
+screen bad types. Although the results hold more generally, to stress the point, we again
+abstract from traditional search frictions and assume µ(θ) = min{θ, 1}, so that matching is
+determined by the short side of the market and η̄ = 1.
+
+
+7.1     Setup
+Consider an asset market with lemons, in the sense of Akerlof (1970). Buyers (principals)
+always value an asset more than sellers (agents) value it, but some assets are better than
+others and their values are private information to the seller. Market tightness, or probabilistic
+trading, seems in principle a good way to screen out low quality asset holders, since sellers
+with more valuable assets are more willing to accept a low probability of trade at any given
+price. This model shows how an illiquid asset market may have a useful role as a screening
+device.
+    Each type i seller is endowed with one indivisible asset, which call an apple, of type
+i, with value aSi > 0 to the seller and aB
+                                         i > 0 to the buyer, both expressed in units of a
+numeraire good. An action for type i sellers is a pair {αi , ti }, where αi is the probability
+that the seller gives the buyer the apple and ti is the transfer of the numeraire to the seller.13
+The payoff of a matched type i seller who reports type j is
+
+                                           ui (αj , tj ) = tj − αj aSi ,
+  13
+    Given that apples are indivisible, it may be efficient to use lotteries, with α the probability apples change
+hands, as e.g. in Prescott and Townsend (1984) and Rogerson (1988). Nosal and Wallace (2007) provide a
+related model of an asset (money) market where probabilistic trade is useful due to private information, but
+they use random and not directed search, leading to quite different results. It would actually be equivalent
+here to assume apples are perfectly divisible and preferences are linear, with α reinterpreted as the fraction
+traded, but we like the indivisibility since it allows us to contrast our results with models that use lotteries.
+
+
+
+
+                                                       19
+while the payoff of a buyer matched with a type i seller who reports truthfully is
+
+                                       vi (αi , ti ) = αi aB
+                                                           i − ti .
+
+
+Note that we have normalized the no-trade payoff to 0.
+    We set I = 2 and impose a number of restrictions on payoffs. First, both buyers and
+sellers prefer type 2 apples and both types of agents like apples:
+
+                                  aS2 > aS1 > 0 and aB    B
+                                                     2 > a1 > 0.
+
+
+Second, there would gains from trade, including the cost k of posting, if the buyer were sure
+to trade:
+                                 aSi + k < aB
+                                            i for i = 1, 2.
+
+The available actions are Y = [0, 1] × [0, 1], with Ȳi = {(α, t) ∈ Y|αaSi ≤ t ≤ αaB i − k}.
+Using these restrictions, we verify our three assumptions. As a preliminary step, note that
+(α, t) ∈ Ȳi implies α ≥ k/(aB     S                 S    B     S
+                             i − ai ) > 0 and t ≥ kai /(ai − ai ) > 0, so in any equilibrium
+contract, trades are bounded away from zero.
+   Since α > 0 whenever (α, t) ∈ Ȳi , the restriction aB    B
+                                                        1 < a2 implies A1. Also, A2 holds
+because for any (α, t) ∈ Ȳi , a movement to (α, t − ε) with ε > 0 is feasible and raises buyer
+utility. The important assumption is again A3, which is here guaranteed by aS1 < aS2 . Fix
+(α, t) ∈ Ȳ and ā ∈ (aS1 , aS2 ). For arbitrary δ > 0, consider (α′ , t′ ) = (α − δ, t − āδ). This is
+feasible for small δ because (α, t) ∈ Ȳ guarantees that α > 0 and t > 0. Then
+
+                               u2 (α′ , t′ ) − u2 (α, t) = δ(aS2 − ā) > 0
+
+                           u1 (α′ , t′ ) − u1 (α, t) = δ(aS1 − ā) < 0.
+                                     √
+Now for fixed ε > 0, choose δ ≤ ε/ 1 + ā2 . This ensures (α′ , t′ ) ∈ Bε (α, t), so A3 holds.
+
+
+7.2     Equilibrium
+We again use problem (P) to characterize the equilibrium.
+
+Result 5 There exists a unique competitive search equilibrium with αi = 1, ti = aB
+                                                                                 i − k,
+                                B     S
+                               a1 − a1 − k
+θ1 = 1, Ū1 = aB    S
+               1 − a1 − k, θ2 = B           < 1, and Ū2 = θ2 (aB    S
+                                                                2 − a2 − k).
+                               a2 − aS1 − k
+
+   With full information, θ2 = 1 and Ū2 = aB      S
+                                             2 − a2 − k. Relative to this benchmark, buyers
+post too few contracts designed to attract type 2 sellers, and hence too many of them fail to
+
+                                                   20
+trade. Since type 2 sellers have better apples than type 1, they are more willing to accept this
+in return for a better price when they do trade. Agents with inferior assets are less willing to
+accept a low probability of trade because they do not want to be stuck with their own apple,
+which is in fact a lemon. Note that the alternative of setting θ2 = 1 but rationing though the
+probability of trade in a match, α2 < 1, wastes resources, because it involves posting more
+contracts at cost k. In other words, reducing the matching rate is a cost-effective screening
+device compared to lotteries.
+
+
+7.3    Efficiency
+Consider a pooling contract, with α1 = α2 = 1 and t1 = t2 = t. That is, Ȳ = {C},
+where C = {(1, t), (1, t)}. Moreover, Θ̃(C) = 1, γ̃i (C) = πi , and λ({C}) = 1. Finally, set
+t = π1 aB       B
+        1 + π2 a2 − k. The choice of t ensures that the resource constraint holds and the
+choice of λ ensures that markets clear. All sellers apply and the contract is trivially incentive
+compatible. The expected payoff for type i sellers is
+
+                                 Ūi = π1 aB       B    S
+                                           1 + π2 a2 − ai − k.
+
+
+   With this pooling allocation, type 1 sellers are always better off than they were in equi-
+librium since aB    B
+               1 < a2 , and type 2 sellers are better off if and only if
+
+
+                                               (aB    S        B   S
+                                                 2 − a2 − k)(a1 − a1 − k)
+                    π1 aB       B    S
+                        1 + π2 a2 − a2 − k >                              .
+                                                      aB     S
+                                                        2 − a1 − k
+
+
+Since π2 = 1 − π1 , this reduces to
+
+                                          aB    S
+                                           2 − a2 − k   Ū2
+                                   π1 <    B    S
+                                                      =     .
+                                          a2 − a1 − k   Ū1
+
+Both the numerator and denominator are positive, but the numerator is smaller (gains from
+trade are smaller for type 2 sellers) because aS2 > aS1 . Thus type 2 sellers prefer the pooling
+allocation when there is not too much cross subsidization, or π1 is small, so that the cost of
+subsidizing type 1 sellers is worth the increased efficiency of trade.
+
+
+7.4    No Trade
+So far, we have assumed there are gains from trade for both types of sellers. Now suppose
+there are no gains from trade for type 1 apples, aB          S
+                                                      1 ≤ a1 + k. Then not only will type 1
+seller fail to trade, in equilibrium, the entire market will shut down:
+
+
+                                               21
+Result 6 If aB    S
+             1 ≤ a1 + k then, in any equilibrium, Ū1 = Ū2 = 0.
+
+
+   Notice that the market shuts down here even if there are still gains from trade in good
+apples, aB    S
+         2 > a2 + k. Intuitively, it is only possible to keep bad apples out of the market
+by reducing the probability of trade in good apples. If there is no market in bad apples,
+however, agents holding them would accept any probability of trade. Hence we cannot screen
+out bad apples, and this renders the good apple market inoperative. Whether this is related
+to the recent collapse in asset-backed securities markets seems worth further exploration.
+
+
+8     Conclusion
+We have developed a tractable general framework to analyze adverse selection in competitive
+search markets. Under our assumptions, there is a unique equilibrium, where principals post
+separating contracts. We characterized the equilibrium as the solution to a set of constrained
+optimization problems, and illustrated the use of the model through a series of examples.
+   We expect that one could extend the framework to dynamic situations, with repeated
+rounds of posting and search, as seems relevant in many applications—including labor and
+asset markets. It may also be interesting to study the case opposite to the one analyzed
+here, where the informed instead of the uninformed parties post contracts. In standard
+competitive search theory the outcome does not depend on who posts. With asymmetric
+information, contract posting by informed parties may introduce multiplicity of equilibrium
+through the usual signaling mechanism (see Delacroix and Shi (2007)). All of this is left for
+future work.
+
+
+                                      APPENDIX
+Proof of Lemma 1. In the first step, we prove that there exists a solution to (P). The
+second and third steps establish the stated properties of the solution.
+   Step 1: Consider i = 1. If the constraint set in (P-1) is empty, set Ū1 = 0. Otherwise,
+(P-1) is well-behaved, as the objective function is continuous and the constraint set compact.
+Hence, (P-1) has a solution and a unique maximum m1 . If m1 ≤ 0 set Ū1 = 0; otherwise set
+Ū1 = m1 and let (θ1 , y1) be one of the maximizers.
+    We now proceed by induction. Fix i > 1 and assume that we have found Ūj for all j < i
+and (θj , yj ) for all j ∈ I∗ , j < i. Consider (P-i). If the constraint set is empty, set Ūi = 0.
+Otherwise, (P-i) again has a solution and a unique maximum mi . If mi ≤ 0, set Ūi = 0;
+otherwise let Ūi = mi and let (θi , yi) be one of the maximizers.
+
+
+                                                22
+   Step 2: Suppose by way of contradiction that there exists i ∈ I∗ such that (θi , yi ) solves
+(P-i) but η(θi )vi (yi ) > k. This together with Ūi = µ(θi )ui (yi) > 0 implies that yi ∈ Ȳi and
+µ(θi ) > 0. Fix ε > 0 such that η(θi )vi (y) ≥ k for all y ∈ Bε (yi ). Then A3 ensures there
+exists a y ′ ∈ Bε (yi) such that
+
+                                    uj (y ′ ) > uj (yi ) for all j ≥ i,
+                                    uj (y ′ ) < uj (yi ) for all j < i.
+
+Then the pair (θi , y ′) satisfies all the constraints of problem (P-i):
+
+   1. η(θi )vi (y ′ ) ≥ k from the choice of ε;
+
+   2. µ(θi )uj (y ′) < µ(θi )uj (yi ) ≤ Ūj for all j < i, where the first inequality is by construction
+      of y ′ and µ(θi ) > 0, while the second holds since (θi , yi) solves (P-i).
+
+   Now (θi , y ′) achieves a higher value than (θi , yi ) for the objective function in (P-i), given
+µ(θi )ui (y ′) > µ(θi )ui(yi ). Hence, (θi , yi) does not solve (P-i), a contradiction.
+   Step 3: Fix i ∈ I∗ and suppose by way of contradiction that there exists j > i such that
+µ(θi )uj (yi ) > Ūj . Let h be the smallest such j. Since i ∈ I∗ , µ(θi )ui (yi ) = Ūi > 0, which
+implies µ(θi ) > 0 and ui (yi ) > 0. Also, from the previous step (θi , yi) satisfies η(θi )vi (yi ) = k,
+which ensures η(θi ) > 0 and vi (yi ) > 0. In particular, this implies that yi ∈ Ȳi .
+   The pair (θi , yi) satisfies the constraints of (P-h) since
+
+   1. η(θi )vh (yi ) ≥ η(θi )vi (yi ) = k, where the first inequality holds by A1 given h > i and
+      yi ∈ Ȳi ⊂ Ȳ, and the second comes from the previous step;
+
+   2. µ(θi )ul (yi) ≤ Ūl for all l < h, which holds for
+
+       (a) l < i because (θi , yi ) satisfy the constraints of (P-i),
+       (b) l = i because Ūi = µ(θi )ui(yi ) since i ∈ I∗ ,
+       (c) i < l < h by the choice of h as the smallest violation of µ(θi )uj (yi ) > Ūj .
+
+   Since µ(θi )uh (yi) > Ūh ≥ 0, (θi , yi ) is in the constraint set of (P-h) and delivers a strictly
+positive value for the objective function; hence h ∈ I∗ . But then the fact that Ūh is not the
+maximized value of (P-h) is a contradiction.
+
+Proof of Proposition 1. We proceed by construction.
+
+   • The vector of expected utilities is Ū = {Ūi }i∈I .
+
+                                                    23
+   • The set of posted contracts is C̄ = {Ci }i∈I∗ where Ci ≡ (yi, . . . , yi).
+
+   • λ is such that λ({Ci}) = πi Θ(Ci ) for any i ∈ I∗ .
+
+   • For i ∈ I∗ and Ci = (yi, . . . , yi ), Θ(Ci ) = θi . Otherwise, for any incentive compatible
+      C ′ = {y1′ , . . . , yI′ } ∈ C, let J(C ′ ) = {j|uj (yj′ ) > 0} denote the types that attain positive
+      utility from C ′ . If J(C ′ ) 6= ∅ and minj∈J(C ′ ) {Ūj /uj (yj′ )} < µ̄ then
+
+                                                                  Ūj
+                                         µ(Θ(C ′ )) = min′                .
+                                                        j∈J(C ) uj (yj′ )
+
+
+      If this equation is consistent with multiple values of Θ(C ′ ), pick the largest one. Oth-
+      erwise, if J(C ′ ) = ∅ or minj∈J(C ′ ) {Ūj /uj (yj′ )} ≥ µ̄, then Θ(C ′ ) = ∞.
+
+   • For i ∈ I∗ and Ci = (yi , . . . , yi ), let γi (Ci ) = 1 and so γj (Ci ) = 0 for j 6= i. For any
+     other C ′ , define Γ(C ′ ) such that γh (C ′ ) > 0 only if h ∈ arg minj∈J(C ′ ) {Ūj /uj (yj′ )}. If
+      there are multiple minimizers, let γh (C ′ ) = 1 for the smallest such h. If J(C ′ ) = ∅,
+      again choose Γ(C ′ ) arbitrarily, e.g. γ1 (C ′ ) = 1.
+
+We now verify that all of the equilibrium conditions hold.
+  Condition (i): For any i ∈ I∗ , (θi , yi ) solves (P-i), and Lemma 1 implies η(θi )vi (yi ) = k.
+Thus, profit maximization and free entry hold for any {Ci }i∈I∗ . Now consider an arbitrary
+incentive compatible contract; we claim that principals’ profit maximization and free-entry
+condition is satisfied. Suppose, to the contrary, that there exists C ′ = (y1′ , . . . , yI′ ) ∈ C
+with η(Θ(C ′)) i γi(C ′ )vi (yi′ ) > k. This implies η(Θ(C ′ )) > 0, so Θ(C ′ ) < ∞, and there
+               P
+
+exists some type j with γj (C ′ ) > 0 and η(Θ(C ′))vj (yj′ ) > k. Since γj (C ′ ) > 0 and
+Θ(C ′ ) < ∞, our construction of Θ(C ′ ) and Γ(C ′ ) implies that j is the smallest solution
+to minh∈J(C ′ ) {Ūh /uh (yh′ )} and hence uj (yj′ ) > 0 and Ūj = µ(Θ(C ′ ))uj (yj′ ). So for all h < j
+with uh (yh′ ) > 0,
+                                Ūh > µ(Θ(C ′ ))uh (yh′ ) ≥ µ(Θ(C ′ ))uh (yj′ ),
+
+where the first inequality is by construction and the second follows because C ′ is incentive
+compatible. Moreover, if uh (yh′ ) ≤ 0, Ūh ≥ µ(Θ(C ′ ))uh (yh′ ) since Ūh ≥ 0. This proves
+that (Θ(C ′ ), yj′ ) satisfies the constraints of (P-j). Then, since η(Θ(C ′ ))vj (yj′ ) > k and
+Ūh ≥ µ(Θ(C ′))uh (yj′ ) for all h < j, with strict inequality when uh (yh′ ) > 0, there exist a
+θ > Θ(C ′ ) such that (θ, yj′ ) satisfies all the constraints of (P-j) and achieves a higher value
+than (Θ(C ′ ), yj′ ). This implies Ūj is not the maximized value of (P-j), a contradiction.
+    Condition (ii): By construction, Θ and Γ ensure that Ūi ≥ µ(Θ(C ′ ))ui(yi′ ) for all contracts
+C ′ = {y1′ , . . . , yI′ }, with equality if Θ(C ′ ) < ∞ and γi(C ′ ) > 0. Moreover, for any i ∈ I∗ ,
+
+
+                                                   24
+Ūi = µ(θi )ui(yi ) > 0 where θi = Θ(Ci) and Ci = {yi, . . . , yi} is the equilibrium contract
+                                           / J(C ′ ), either J(C ′ ) = ∅, in which case Θ(C ′ ) = ∞,
+offered to i. Finally, if ui(yi ) < 0 so i ∈
+or J(C ′ ) 6= ∅, in which case γh (C ′ ) = 1 for some h ∈ J(C ′ ) and so γi (C ′ ) = 0.
+   Condition (iii): Market clearing obviously holds given the way we construct λ. Since all
+the equilibrium conditions are satisfied the proof is complete.
+
+Proof of Proposition 2.          From equilibrium condition (i), any C ∈ C̄ has η(Θ(C)) > 0,
+hence Θ(C) < ∞. From condition (iii), Ūi > 0 implies γi (C) > 0 for some C ∈ C̄. This
+proves that for each i ∈ I∗ , there exists a contract C ∈ C̄ with Θ(C) < ∞ and γi (C) > 0.
+   The remainder of the proof proceeds in five steps. The first four steps show that for any
+i ∈ I∗ and Ci ∈ C̄ with θi = Θ(Ci ) < ∞ and γi (Ci) > 0, (θi , yi) solves (P-i). First, we
+prove that the constraint η(θi )vi (yi ) ≥ k is satisfied. Second, we prove that the constraint
+µ(θi )uj (yi ) ≤ Ūj is satisfied for all j. Third, we prove that the pair (θi , yi ) delivers Ūi to
+type i. Fourth, we prove that (θi , yi) solves (P-i). The fifth and final step shows that for any
+i∈/ I∗ , either the constraint set of (P-i) is empty or the maximized value is nonpositive.
+   Step 1: Take i ∈ I∗ and Ci ∈ C̄ with θi = Θ(Ci ) < ∞ and γi (Ci ) > 0. We claim
+the constraint η(θi )vi (yi) ≥ k is satisfied in (P-i). Note first that i ∈ I∗ implies Ūi > 0. By
+equilibrium condition (ii), Ūi = µ(θi )ui (yi ), and µ(θi ) > 0. To derive a contradiction, assume
+                                                                P
+η(θi )vi (yi) < k. Equilibrium condition (i) implies η(θi ) j γj (C)vj (yj ) = k, so there is an
+h with γh (C) > 0 and η(θi )vh (yh ) > k. Since η(θi ) ≤ η̄, η̄vh (yh ) > k. Moreover, because
+θi = Θ(C) < ∞ and γh (C) > 0, optimal search implies uh (yh ) > 0. This proves yh ∈ Ȳh .
+    Next, fix ε > 0 such that η(θi )vh (y) > k for all y ∈ Bε (yh ). Then A3 together with
+yh ∈ Ȳ guarantees that there exists y ′ ∈ Bε (yh ) such that
+
+                                    uj (y ′) > uj (yh ) for all j ≥ h,
+                                    uj (y ′) < uj (yh ) for all j < h.
+
+Notice that y ′ ∈ Ȳh as well, given that uh (y ′) > uh (yh ) > 0 and η̄vh (y ′) ≥ η(θi )vh (y ′ ) > k.
+   Now consider C ′ = {y ′, . . . , y ′} and θ′ ≡ Θ(C ′ ). Note that
+
+                          µ(θ′ )uh (y ′ ) ≤ Ūh = µ(θi )uh (yh ) < µ(θi )uh (y ′ ),
+
+where the weak inequality follows from optimal search, the equality holds because θi < ∞
+and γh (C) > 0, and the strict inequality holds by the construction of y ′, since µ(θi ) > 0.
+This implies µ(θ′ ) < µ(θi ), and θ′ < θi . Next observe that for all j < h, either uj (y ′ ) < 0, in
+
+
+
+
+                                                     25
+which case γj (C ′ ) = 0 by equilibrium condition (ii), or
+
+                               µ(θ′ )uj (y ′ ) < µ(θi )uj (yh ) ≤ µ(θi )uj (uj ) ≤ Ūj ,
+
+where the first inequality uses µ(θ′ ) < µ(θi ), the second uses incentive compatibility, and the
+third follows from optimal search. Hence, γj (C ′ ) = 0 for all j < h.
+    Finally, profits from posting C ′ are
+
+                                I
+                                X
+                           ′
+                       η(θ )          γj (C ′ )vj (y ′) ≥ η(θ′ )vh (y ′) ≥ η(θi )vh (y ′ ) > k.
+                                j=1
+
+
+The first inequality follows because γj (C ′ ) = 0 if j < h and vh (y ′) is nondecreasing in h by
+A1 together with y ′ ∈ Ȳh ⊂ Ȳ, the second follows because θ′ < θi , and the last inequality
+uses the construction of ε. Posting C ′ is therefore strictly profitable, which is a contradiction,
+and this completes Step 1.
+   Step 2: Again take i ∈ I∗ and Ci ∈ C̄ with θi = Θ(Ci ) < ∞ and γi (Ci ) > 0. Equilibrium
+condition (ii) implies µ(θi )uj (yj ) ≤ Ūj for all j while incentive compatibility implies uj (yi ) ≤
+uj (yj ). Hence the constraint µ(θi )uj (yi ) ≤ Ūj in (P-i) is satisfied for all j.
+    Step 3: Again take i ∈ I∗ and Ci ∈ C̄ with θi = Θ(Ci ) < ∞ and γi (Ci ) > 0. Equilibrium
+condition (ii) implies Ūi = µ(θi )ui (yi ), since θi < ∞ and γi (Ci ) > 0. Hence(θi , yi ) delivers Ūi
+to type i.
+    Step 4: Again take i ∈ I∗ and Ci =∈ C̄ with θi = Θ(Ci ) < ∞ and γi (Ci ) > 0. To find a
+contradiction, suppose there exists (θ′ , y ′) that satisfies the constraints of (P-i) but delivers
+higher utility. That is, η(θ′ )vi (y ′ ) ≥ k, µ(θ′ )uj (y ′ ) ≤ Ūj for all j < i, and µ(θ′ )ui (y ′) > Ūi .
+We now use A2. Note that µ(θ′ )ui (y ′) > Ūi > 0 implies µ(θ′ ) > 0 and ui (y ′) > 0, while
+η(θ′ )vi (y ′ ) ≥ k implies vi (y ′) > 0 and so η̄vi (y ′ ) ≥ k. In particular, y ′ ∈ Ȳi . We can therefore
+fix ε′ > 0 such that for all y ∈ Bε′ (y ′), µ(θ′ )ui (y) > Ūi , and then choose y ′′ ∈ Bε′ (y ′)
+such that vi (y ′′ ) > vi (y ′) and uj (y ′′) ≤ uj (y ′ ) for all j < i. This ensures η(θ′ )vi (y ′′ ) > k,
+µ(θ′ )uj (y ′′ ) ≤ Ūj for all j < i, and µ(θ′ )ui (y ′′) > Ūi . Note that we still have y ′′ ∈ Ȳi .
+      We now use A3. Fix ε′′ > 0 such that for all y ∈ Bε′′ (y ′′), η(θ′ )vi (y) > k and µ(θ′ )ui(y) >
+Ūi . Choose y ′′′ ∈ Bε′′ (y ′′ ) such that
+
+                                         uj (y ′′′ ) > uj (y ′′ ) for all j ≥ i,
+                                         uj (y ′′′ ) < uj (y ′′ ) for all j < i.
+
+This ensures η(θ′ )vi (y ′′′) > k, µ(θ′ )uj (y ′′′ ) < Ūj for all j < i, and µ(θ′ )ui(y ′′′ ) > Ūi . Note
+that we still have y ′′′ ∈ Ȳi .
+
+
+                                                           26
+   Now consider C ′′′ ≡ {y ′′′ , . . . , y ′′′}. From equilibrium condition (ii), µ(θ′ )ui (y ′′′) > Ūi
+implies that µ(θ′ ) > µ(Θ(C ′′′ )), which guarantees η(Θ(C ′′′ ))vi (y ′′′ ) > k. This also implies
+Θ(C ′′′ ) < ∞.
+  We next claim γj (y ′′′ ) = 0 for all j < i. Suppose γj (y ′′′) > 0 for j < i. Since Θ(C ′′′ ) <
+∞, equilibrium condition (ii) implies uj (y ′′′ ) ≥ 0. We have already shown that µ(θ′ ) >
+µ(Θ(C ′′′ )), and uj (y ′′) > uj (y ′′′ ) by construction. Thus µ(θ′ )uj (y ′′) > µ(Θ(C ′′′ ))uj (y ′′′ ). The
+result follows from equilibrium condition (ii) and Ūj ≥ µ(θ′ )uj (y ′′); i.e., Ūj > µ(Θ(C ′′′ ))uj (y ′′′ )
+and Θ(C ′′′ ) < ∞ implies γj (C ′′′ ) = 0, a contradiction.
+    The profit from offering this contract is
+
+                                        I
+                                        X
+                         η(Θ(C ′′′ ))         γj (C ′′′ )vj (y ′′′ ) ≥ η(Θ(C ′′′ ))vi (y ′′′ ) > k,
+                                        j=1
+
+
+where the first inequality uses γj (C ′′′ ) = 0 for j < i and A1. This contradicts the first
+condition in the definition of equilibrium, and proves (θi , yi) solves (P-i).
+   Step 5: Suppose there is an i ∈    / I∗ for which the constraint set of (P-i) is nonempty and the
+maximized value is positive. That is, suppose there exists (θ′ , y ′) such that η(θ′ )vi (y ′ ) ≥ k,
+µ(θ′ )uj (y ′) ≤ Ūj for all j < i, and µ(θ′ )ui (y ′) > Ūi = 0. Replicating step 4, we can first find
+y ′′ such that η(θ′ )vi (y ′′) > k, µ(θ′ )uj (y ′′ ) ≤ Ūj for all j < i, and µ(θ′ )ui(y ′′ ) > 0. Then we
+find y ′′′ such that η(θ′ )vi (y ′′′) > k, uj (y ′′ ) > uj (y ′′′ ) for j < i, and uj (y ′′ ) < uj (y ′′′ ) for j ≥ i.
+Finally, C ′′′ = {y ′′′ , . . . , y ′′′ } only attracts type i or higher and hence must be profitable and
+deliver positive utility, a contradiction.
+
+Proof of Proposition 3. By Lemma 1 there is a solution to (P). Proposition 1 shows
+that if I∗ , {Ūi }i∈I , {θi }i∈I∗ , and {yi }i∈I∗ solve (P), there is an equilibrium {Ū, λ, C̄, Θ, Γ} with
+the same Ū , C̄ = {Ci}i∈I∗ , where Ci = (yi , . . . , yi), Θ(Ci ) = θi , and γi(Ci ) = 1. This proves
+existence. Proposition 2 shows that in any equilibrium {Ū , λ, C̄, Θ, Γ}, Ūi is the maximum
+value of (P-i) for all i ∈ I∗ , and Ūi = 0 otherwise. Lemma 1 shows there is a unique maximum
+value Ūi for (P-i) for all i ∈ I∗ . This proves that the equilibrium Ū is unique.
+
+Proof of Proposition 4. Consider i = 1. Fix y satisfying η̄v1 (y) > k and u1 (y) > 0.
+Then fix θ > 0 satisfying η(θ)v1 (y) = k. These points satisfy the constraints of (P-1) and
+deliver utility µ(θ)u1(y) > 0. This proves Ū1 > 0. Now suppose Ūj > 0 for all j < i. We
+claim Ūi > 0. Again fix y satisfying η̄vi (y) > k and ui (y) > 0. Then fix θ > 0 satisfying
+η(θ)v1 (y) ≥ k and µ(θ)uj (y) ≤ Ūj for all j < i; this is feasible since Ūj > 0 and µ(0) = 0.
+These points satisfy the constraints of (P-i) and deliver utility µ(θ)ui(y) > 0, which proves
+
+
+
+                                                             27
+Ūi > 0. By induction, the proof is complete.
+
+Proof of Result 1. Using η(θ) = µ(θ)/θ, write (P-1) as
+                                                      
+                                                    x         µ(θ)
+                     Ū1 =      max        µ(θ) t −      s.t.      (b1 − t) ≥ k.
+                           θ∈[0,∞],(t,x)∈Y          a1         θ
+
+By Lemma 1 the constraint is binding, so we can eliminate t and reduce the problem to
+                                                                  
+                                                                x
+                            Ū1 =       max           µ(θ) b1 −      − θk.
+                                  θ∈[0,∞],x∈[0,b2a2 ]           a1
+
+At the solution, x = 0 and θ = θ1 solves µ′ (θ1 )b1 = k. Using this to eliminate b1 from the
+objective function delivers Ū1 , and the constraint delivers t1 .
+   Next, solve (P-2) using the Ū1 derived in the previous step:
+                                                                  
+                                                               x
+                              Ū2 =      max        µ(θ) t −
+                                    θ∈[0,∞],(t,x)∈Y            a2
+                                    µ(θ)
+                               s.t.      (b2 − t) ≥ k,
+                                      θ                             
+                                                  x       µ(θ1 )
+                               and µ(θ) t −           ≤            − θ1 k.
+                                                 a1       µ′ (θ1 )
+
+Again we can eliminate t. It is easy to see that the second constraint binds, so we can
+eliminate x and then check that at the solution x ≥ 0. Thus, the problem reduces to
+                                                                                 
+                                     a1       µ(θ1 )                a1
+                 Ū2 = max                             − θ1 k + 1 −      (µ(θ)b2 − θk) .
+                       θ∈[0,∞]       a2       µ′ (θ1 )              a2
+
+Now θ = θ2 solves µ′ (θ2 )b2 = k, where the concavity of µ implies θ1 < θ2 . Substituting into
+the objective function gives Ū2 . Then the constraints give t2 and x2 . Concavity of µ ensures
+that µ(θ)/µ′ (θ) − θ is increasing in θ, which implies x2 > 0.
+
+Proof of Result 2. Fix x1 ≤ a1 (b2 − b1 )(1 − π1 )/π1 . We now construct an equilibrium.
+Assume C̄ = {C} where C = {(t + x1 /a1 , x1 ), (t, 0)}, and Ū1 = Ū2 = Ū = µ(θ)t, where t
+and θ are defined above. Moreover, Θ(C) = θ, γi (C) = πi for i = 1, 2, and λ({C}) = θ. For
+any other incentive compatible contract C ′ = {(t′1 , x′1 ), (t′2 , x′2 )} ∈ C, C ′ 6= C, suppose Θ(C ′ )
+solves
+                                                            x′1
+                                                               
+                                             ′       ′
+                                 Ū = µ(Θ(C )) t1 −
+                                                            a1
+if this defines Θ(C ′ ) < ∞; if Ū ≥ µ̄(t′1 − x′1 /a1 ), Θ(C ′ ) = ∞. And suppose γ1 (C ′ ) = 1 and
+γ2 (C ′ ) = 0 for all such contracts. By construction, profit maximization and free entry hold
+
+                                                         28
+for C, with t chosen so that firms break even.
+    For any other incentive-compatible C ′ 6= C, profit maximization and free entry reduce to
+
+                                       η(Θ(C ′))(b1 − t′1 ) ≤ k.
+
+Since η(∞) = 0, this holds if Θ(C ′ ) = ∞. Otherwise, use Θ(C ′ ) to eliminate t′1 . We need to
+show that
+                                            x′1
+                                               
+                                    ′
+                            µ(Θ(C )) b1 −         − Θ(C ′ )k ≤ Ū .
+                                            a1
+An upper bound on the left hand side is obtained setting x′1 = 0 and choosing Θ(C ′ )
+to maximize µ′ (Θ(C ′ ))b1 = k. The restriction x1 ≤ a1 (b2 − b1 )(1 − π1 )/π1 implies that
+b1 ≤ π1 b1 − xa11 + π2 b2 , from which it follows that Θ(C ′ ) ≤ θ. That is,
+                 
+
+
+                    x′1                µ(Θ(C ′ ))
+                                                                       
+             ′                 ′                         ′        µ(θ)
+      µ(Θ(C )) b1 −       − Θ(C )k ≤                − Θ(C ) k ≤          − θ k = Ū ,
+                    a1                 µ′ (Θ(C ′ ))               µ′ (θ)
+
+where the first inequality uses the preceding discussion, the second inequality holds because
+Θ(C ′ ) ≤ θ, and the third holds from the construction of Ū.
+   Next, optimal search holds by construction for type 1. For type 2, we need to verify
+
+                                                       x′2
+                                                          
+                                                 ′ ′
+                                    Ū ≥ µ(Θ(C )) t2 −       .
+                                                       a2
+
+To this end, note that t′1 − x′1 /a1 ≥ t′2 − x′2 /a1 ≥ t′2 − x′2 /a2 , where the first inequality comes
+from incentive compatibility of C ′ and the second from a1 ≥ a2 and x′2 ≥ 0. This implies
+the desired inequality:
+
+                                     x′2                   x′1
+                                                            
+                               ′ ′                ′    ′
+                       µ(Θ(C )) t2 −       ≤ µ(Θ(C )) t1 −       = Ū ,
+                                     a2                    a1
+
+   Finally, market clearing holds by construction.
+
+Proof of Result 3. Throughout this proof, we suppose there is an equilibrium character-
+ized by the single incentive compatible contract C = {(t1 , x1 ), (t2 , x2 )}. In the first step we
+prove that x2 = 0 and in the second that t1 = t2 + x1 /a1 .
+    Step 1: Suppose x2 > 0. Given that γi(C) = πi > 0 for i = 1, 2 and Θ(C) < ∞, optimal
+search requires                                           
+                                                        xi
+                                     Ūi = µ(Θ(C)) ti −      ,
+                                                        ai
+for i = 1, 2. Now consider C ′ = {(t2 − x2 /a2 , 0), (t2 − x2 /a2 , 0)}. Optimal search by type 2
+
+
+                                                  29
+requires                                                        
+                              ′       x2                        x2
+                        µ(Θ(C )) t2 −      ≤ Ū2 = µ(Θ(C)) t2 −      ,
+                                      a2                        a2
+which implies that Θ(C ′ ) ≤ Θ(C). Moreover, notice that
+
+                                         x1        x2       x2
+                                  t1 −      ≥ t2 −    > t2 − ,
+                                         a1        a1       a2
+
+where the first inequality follows from incentive compatibility and the second from a1 > a2
+and x2 > 0.
+    Together with Θ(C ′ ) ≤ Θ(C), this implies
+                                                                
+                                           x1          ′        x2
+                        Ū1 = µ(Θ(C)) t1 −      > µ(Θ(C )) t2 −      .
+                                           a1                   a2
+
+Thus, γ1 (C ′ ) = 0. Hence, given that Θ(C ′ ) ≤ Θ(C) < ∞, γ2 (C ′ ) = 1 and Θ(C ′ ) = Θ(C).
+Then expected profit for a firm posting C ′ is
+                                  
+                    ′           x2
+             η(Θ(C )) b2 − t2 +      > η(Θ(C))(π1 (b1 − t1 ) + π2 (b2 − t2 )) = k.
+                                a2
+
+The first inequality follows from b1 < b2 , t1 > t2 − x2 /a2 + x1 /a1 ≥ t2 − x2 /a2 , and Θ(C ′ ) =
+Θ(C), while the second follows from the fact that in the proposed equilibrium firms post C
+and break even. Hence, C ′ represents a profitable deviation, a contradiction.
+   Step 2: Incentive compatibility and x2 = 0 imply that t1 − x1 /a1 ≥ t2 . By way of
+contradiction, suppose t1 − x1 /a1 > t2 . Consider C ′ = {(t2 + x1 /a1 , x1 ), (t2 , 0)}. Then
+
+                                  µ(Θ(C ′ ))t2 ≤ Ū2 = µ(Θ(C))t2 ,
+
+where the first inequality follows from optimal search by type 2 for C ′ and the second from
+optimal search for C together with γ2 (C) = π2 > 0. This implies that Θ(C ′ ) ≤ Θ(C). Hence,
+                                                 
+                                               x1
+                            Ū1 = µ(Θ(C)) t1 −      > µ(Θ(C ′))t2 ,
+                                               a1
+
+where the first equality follows from optimal search by type 1 for C and γ1 (C) = π1 > 0,
+while the second comes from Θ(C ′ ) ≤ Θ(C) and t1 − x1 /a1 > t2 . Hence, γ1 (C ′ ) = 0, and,
+given that Θ(C ′ ) ≤ Θ(C) < ∞, γ2 (C ′ ) = 1 and Θ(C ′ ) = Θ(C). So the expected profit from
+C ′ is
+                η(Θ(C ′)))(b2 − t2 ) > η(Θ(C))(π1 (b1 − t1 ) + π2 (b2 − t2 )) = k,
+
+
+
+                                                30
+given that Θ(C ′ ) = Θ(C) and b2 − t2 > b1 − (t1 − x1 /a1 ) > b1 − t1 . Hence C ′ represents a
+profitable deviation, a contradiction.
+
+Proof of Result 4. For i ≤ i∗ , consider (P-i) without the constraint of keeping out lower
+types. This relaxed problem should yield a higher payoff
+                                                                                           
+                    Ūi ≤          max            min{θ, 1} pi U(ce ) + (1 − pi )U(cu )
+                            θ∈[0,∞],(ce ,cu )∈Y
+
+                     s.t. min{1, θ−1 }(pi(1 − ce ) − (1 − pi )cu ) ≥ k.
+
+At the solution, cu,i = ce,i = ci , so this reduces to
+
+                                      Ūi ≤        max        min{θ, 1}U(c)
+                                                θ∈[0,∞],c≥c
+
+                                       s.t. min{1, θ−1}(pi − c) ≥ k.
+
+Either the constraint set is empty (if pi < k + c) or there are no points in the constraint set
+that give positive utility (given that pi − k ≤ 0). In any case, this gives Ūi = 0.
+   Turn next to a typical problem (P-i), i > i∗ :
+                                                                                       
+                 Ūi =         max             min{θ, 1} pi U(ce ) + (1 − pi )U(cu )
+                         θ∈[0,∞],(ce ,cu )∈Y
+
+                  s.t. min{1, θ−1 }(pi (1 − ce ) − (1 − pi )cu ) ≥ k
+                                                              
+                  and min{θ, 1} pj U(ce ) + (1 − pj )U(cu ) ≤ Ūj for all j < i.
+
+We claim the solution sets θi ≤ 1 (if θi > 1, reducing θi to 1 relaxes the first constraint
+without otherwise affecting the problem). Hence, we can rewrite the problem as
+                                                                                 
+                      Ūi =        max           θ pi U(ce ) + (1 − pi )U(cu )
+                               θ≤1,(ce ,cu )∈Y
+
+                      s.t. pi (1 − ce ) − (1 − pi )cu ≥ k
+                                                         
+                      and θ pj U(ce ) + (1 − pj )U(cu ) ≤ Ūj for all j < i.
+
+Lemma 1 ensures the first constraint is binding, which proves pi (1 − ce,i ) − (1 − pi )cu,i = k.
+It remains to prove that θi = 1, ce,i > ce,i−1 , cu,i < cu,i−1 , and the constraint for j = i − 1
+binds.
+   We start by establishing these claims for i = i∗ + 1. In this case, ce,i = cu,i = 0 satisfies
+the constraints but leaves the first one slack. Lemma 1 implies that it is possible to do better,
+which proves Ūi > 0. On the other hand, consider any (ce,i , cu,i) that delivers positive utility
+
+
+                                                          31
+and satisfies the last constraint, so
+
+               pi U(ce,i ) + (1 − pi )U(cu,i ) > 0 and pj U(ce,i ) + (1 − pj )U(cu,i ) ≤ 0
+
+for all j < i. Subtracting inequalities gives
+
+                                  (pi − pj )(U(ce,i ) − U(cu,i )) > 0,
+
+which proves ce,i > cu,i . Now if ce,i > cu,i ≥ 0, pj U(ce,i ) + (1 − pj )U(cu,i ) > 0, so this is
+infeasible. If 0 ≥ ce,i > cu,i , pi U(ce,i ) + (1 − pi )U(cu,i ) < 0, so this is suboptimal. This proves
+ce,i > 0 > cu,i when i = i∗ + 1. Finally, since pj U(ce,i ) + (1 − pj )U(cu,i ) ≤ 0 for all j < i,
+setting θi = 1 raises the value of the objective function without affecting the constraints and
+so is optimal.
+   We now proceed by induction. Fix i > i∗ +1 and assume that for all j ∈ {i∗ +1, . . . , i−1},
+we have ce,j > ce,j−1, cu,j < cu,j−1 , θj = 1, and
+
+        pj−1 U(ce,j ) + (1 − pj−1)U(cu,j ) = pj−1U(ce,j−1 ) + (1 − pj−1)U(cu,j−1 ) = Ūj−1 .
+
+We establish the result for i. Setting ce,i = ce,i−1 , cu,i = cu,i−1, and θi = 1 satisfies the
+constraints in (P-i). Since it leaves the first constraint slack, Lemma 1 implies it is possible
+to do better. Thus
+                                                  
+                θi pi U(ce,i ) + (1 − pi )U(cu,i ) > pi U(ce,i−1 ) + (1 − pi )U(cu,i−1 ).
+
+On the other hand, incentive compatibility implies,
+                                             
+       θi pi−1 U(ce,i ) + (1 − pi−1 )U(cu,i ) ≤ Ūi−1 = pi−1 U(ce,i−1 ) + (1 − pi−1 )U(cu,i−1 ).
+                                                                                                  
+   Subtracting inequalities gives (pi − pi−1 ) θi U(ce,i ) − U(ce,i−1 ) − θi U(cu,i ) + U(cu,i−1 ) >
+0. Using pi > pi−1 , this implies θi U(ce,i ) − U(ce,i−1 ) > θi U(cu,i ) − U(cu,i−1 ). As before,
+we can rule out the possibility that θi U(cu,i ) ≥ U(cu,i−1 ), because this is infeasible. We
+can rule out the possibility that θi U(ce,i ) ≤ U(ce,i−1 ), because this is suboptimal. Hence
+θi U(ce,i ) − U(ce,i−1 ) > 0 > θi U(cu,i ) − U(cu,i−1 ). Now since U(ce,i−1 ) > 0 and θi ∈ [0, 1],
+the first inequality implies ce,i > ce,i−1. Since U(cu,i−1 ) < 0, the second inequality implies
+cu,i < cu,i−1 .
+   Next suppose θi < 1 and consider the following variation: raise θi to 1 and increase ce
+                                                              
+and reduce cu while keeping both θ pi U(ce ) + (1 − pi )U(cu ) and pi ce + (1 − pi )cu unchanged;
+
+
+
+                                                   32
+i.e. set ce > ce,i and cu < cu,i so that
+                                                      
+                    θi pi U(ce,i ) + (1 − pi )U(cu,i ) = pi U(ce ) + (1 − pi )U(cu )
+                            and pi ce,i + (1 − pi )cu,i = pi ce + (1 − pi )cu .
+                                                                     
+For all j < i, (pj − pi ) θi U(ce,i ) − U(ce ) + U(cu ) − θi U(cu,i ) > 0 since pj < pi , 0 < ce,i < ce ,
+                                                                        
+cu < cu,i < 0, and θi < 1. Add this to θi pi U(ce,i )+(1−pi)U(cu,i ) = pi U(ce )+(1−pi )U(cu ) to
+obtain θi (pj U(ce,i ) + (1 −pj )U(cu,i )) > pj U(cu ) + (1 −pj )U(ce ). This implies the perturbation
+relaxes the remaining constraints and so is feasible. This proves θi = 1.
+   Finally, we prove that the constraints for j < i − 1 are slack. If not then
+
+               pj U(ce,i ) + (1 − pj )U(cu,i ) = Ūj ≥ pj U(ce,i−1 ) + (1 − pj )U(cu,i−1 ),
+
+where the inequality uses the constraints in problem (P-(i − 1)). On the other hand,
+
+         pi−1 U(ce,i ) + (1 − pi−1 )U(cu,i ) ≤ Ūi−1 = pi−1 U(ce,i−1 ) + (1 − pi−1 )U(cu,i−1 ),
+
+where the inequality is a constraint in (P-i) and the equality is the definition of Ūi−1 . Sub-
+                                                                                    
+tracting these equations, (pi−1 − pj ) U(ce,i−1 ) − U(ce,i ) + U(cu,i ) − U(cu,i−1 ) ≥ 0. Since
+pi−1 > pj , ce,i > ce,i−1, and cu,i < cu,i−1 , we have a contradiction. The constraints for all
+j < i − 1 are slack, while the constraint for i − 1 binds, otherwise the solution to (P-i) would
+have ce,i = cu,i = pi − k.
+
+Proof of Result 5. Write (P-1) as
+
+                                                         min{θ, 1} t − αaS1
+                                                                              
+                               Ū1 =        max
+                                       θ∈[0,∞],(α,t)∈Y
+
+                                s.t. min{1, θ−1 } αaB
+                                                         
+                                                    1 − t ≥ k.
+
+
+By Lemma 1 we can rewrite the problem as
+
+                                                     min{θ, 1}α aB    S
+                                                                        
+                           Ū1 =       max                       1 − a1 − θk.
+                                   θ∈[0,∞],α∈[0,1]
+
+
+Since aB    S                                                             B    S
+       1 > a1 + k, it is optimal to set α = θ = 1. It follows that Ū1 = a1 − a1 − k.
+
+
+
+
+                                                         33
+   Now consider (P-2)
+
+                                                     min{θ, 1} t − αaS2
+                                                                          
+                           Ū2 =         max
+                                   θ∈[0,∞],(α,t)∈Y
+
+                            s.t. min{1, θ−1 } αaB
+                                                     
+                                                2 −t ≥ k
+
+                                 min{θ, 1} t − αaS1 ≤ aB    S
+                                                   
+                                                       1 − a1 − k.
+
+
+Again, we can eliminate t using the first constraint to write
+
+                                                 min{θ, 1}α aB    S
+                                                                    
+                       Ū2 =       max                       2 − a2 − θk
+                               θ∈[0,∞],α∈[0,1]
+
+                        s.t. min{θ, 1}α aB    S         B    S
+                                                
+                                         2 − a1 − θk = a1 − a1 − k.
+
+
+Then use the last constraint to eliminate α and write
+
+                                      aB    S
+                                       1 − a1 − (1 − θ)k      B    S
+                                                                     
+                        Ū2 = max                           a 2 − a2   − θk
+                              θ∈[0,∞]      aB
+                                            2 − a1
+                                                  S
+
+                              aB − aS1 − (1 − θ)k
+                         s.t. 1                     ∈ [0, 1],
+                             min{θ, 1}(aB      S
+                                          2 − a1 )
+
+
+where the constraint here ensures that α is a probability. Since aS1 < aS2 < aB 2 , the objective
+function is decreasing in θ, and we set it to the smallest value consistent with the constraints:
+
+                                                 aB    S
+                                                  1 − a1 − k
+                                         θ2 =                < 1.
+                                                 aB    S
+                                                  2 − a1 − k
+
+
+This implies α2 = 1, so the constraint binds. Then Ū2 is easy to compute.
+
+Proof of Result 6. Write problem (P-1) as
+
+                                                         min{θ, 1} t − αaS1
+                                                                              
+                               Ū1 =       max
+                                       θ∈[0,∞],(α,t)∈Y
+
+                                s.t. min{1, θ−1 } αaB
+                                                         
+                                                    1 − t ≥ k.
+
+
+Again we can eliminate t and rewrite this as
+
+                                                   min{θ, 1}α aB    S
+                                                                      
+                         Ū1 =         max                     1 − a1 − θk.
+                                 θ∈[0,∞],α∈[0,1]
+
+
+Since aB    S
+       1 ≤ a1 + k, Ū1 = 0, which is attained by θ = 0.
+
+
+
+
+                                                         34
+   Now consider (P-2):
+
+                                                       min{θ, 1} t − αaS2
+                                                                            
+                            Ū2 =         max
+                                     θ∈[0,∞],(α,t)∈Y
+
+                             s.t. min{1, θ−1 } αaB
+                                                      
+                                                 2 −t ≥ k
+
+                                  min{θ, 1} t − αaS1 ≤ 0.
+                                                    
+
+
+Eliminating t using the first constraint gives
+
+                                                   min{θ, 1}α aB    S
+                                                                      
+                         Ū2 =       max                       2 − a2 − θk
+                                 θ∈[0,∞],α∈[0,1]
+
+                         s.t. min{θ, 1}α aB    S
+                                                 
+                                          2 − a1 − θk = 0.
+
+
+Eliminating α using the last constraint gives
+
+                                               aS1 − aS2
+                                 Ū2 = max               θk
+                                       θ∈[0,∞] aB
+                                                2 − a1
+                                                       S
+
+                                                  θk
+                                  s.t.                        ∈ [0, 1].
+                                       min{θ, 1}(aB         S
+                                                     2 − a1 )
+
+
+Since aB     S    S
+        2 > a2 > a1 , the fraction in the objective function is negative. Hence θ = 0 and
+Ū2 = 0.
+
+
+
+
+                                                       35
+References
+Acemoglu, Daron and Robert Shimer, “Efficient Unemployment Insurance,” Journal
+ of Political Economy, 1999, 107 (5), 893–928.
+
+Akerlof, George A., “The Market for “Lemons”: Quality Uncertainty and the Market
+  Mechanism,” The Quarterly Journal of Economics, 1970, 84 (3), 488–500.
+
+  , “The Economics of Caste and of the Rat Race and Other Woeful Tales,” Quarterly
+  Journal of Economics, 1976, 90 (4), 599–617.
+
+Bisin, Alberto and Piero Gottardi, “Efficient Competitive Equilibria with Adverse Se-
+  lection,” Journal of Political Economy, 2006, 114 (3), 485–516.
+
+Burdett, Kenneth, Shouyong Shi, and Randall Wright, “Pricing and Matching with
+ Frictions,” Journal of Political Economy, 2001, 109 (5), 1060–1085.
+
+Delacroix, A. and S. Shi, “Pricing and Signaling with Frictions,” 2007. University of
+ Toronto Working Paper 298.
+
+Faig, Miguel and Belen Jerez, “A Theory of Commerce,” Journal of Economic Theory,
+  2005, 122 (1), 60–99.
+
+Guerrieri, Veronica, “Inefficient Unemployment Dynamics under Asymmetric Informa-
+  tion,” Journal of Political Economy, 2008, 116 (4), 667–708.
+
+Inderst, Roman and Achim Wambach, “Competitive Insurance Markets under Adverse
+  Selection and Capacity Constraints,” European Economic Review, 2001, 45 (10), 1981–
+  1992.
+
+  and Holger M. Müller, “Competitive Search Markets with Adverse Selection,” 1999.
+  mimeo.
+
+Jovanovic, Boyan, “Job Matching and the Theory of Turnover,” The Journal of Political
+  Economy, 1979, 87 (5), 972–990.
+
+Lester, Benjamin R., Andrew Postlewaite, and Randall Wright, “Liquidity, Asset
+  Prices, and Monetary Policy,” 2007. mimeo.
+
+Lucas, Robert E. Jr, “Asset Prices in an Exchange Economy,” Econometrica, 1978, 46
+ (6), 1429–1445.
+
+
+
+                                            36
+Miyazaki, Hajime, “The Rat Race and Internal Labor Markets,” Bell Journal of Eco-
+ nomics, 1977, 8 (2), 394–418.
+
+Moen, Espen R., “Competitive Search Equilibrium,” Journal of Political Economy, 1997,
+  105 (2), 385–411.
+
+   and Åsa Rosén, “Incentives in Competitive Search Equilibrium and Wage Rigidity,”
+  2006. mimeo.
+
+Montgomery, James D., “Equilibrium Wage Dispersion and Interindustry Wage Differ-
+ entials,” Quarterly Journal of Economics, 1991, 106 (1), 163–179.
+
+Mortensen, Dale T. and Randall Wright, “Competitive Pricing and Efficiency in Search
+ Equilibrium,” International Economic Review, 2002, 43 (1), 1–20.
+
+Nosal, Ed and Neil Wallace, “A Model of (the Threat of) Counterfeiting,” Journal of
+ Monetary Economics, 2007, 54 (4), 994–1001.
+
+Peters, Michael, “Ex Ante Price Offers in Matching Games: Non-Steady States,” Econo-
+  metrica, 1991, 59 (5), 1425–1454.
+
+Prescott, Edward C. and Robert M. Townsend, “Pareto Optima and Competitive
+  Equilibria with Adverse Selection and Moral Hazard,” Econometrica, 1984, 52 (1), 21–45.
+
+Riley, John G., “Informational Equilibrium,” Econometrica, 1979, 47 (2), 331–360.
+
+Rogerson, Richard, “Indivisible Labor, Lotteries and Equilibrium,” Journal of Monetary
+ Economics, 1988, 21 (1), 3–16.
+
+Rothschild, Michael and Joseph Stiglitz, “Equilibrium in Competitive Insurance Mar-
+  kets: An Essay on the Economics of Imperfect Information,” Quarterly Journal of Eco-
+  nomics, 1976, 90 (4), 629–649.
+
+Shimer, Robert, “Contracts in a Frictional Labor Market,” 1996. MIT mimeo.
+
+Spence, Michael, “Job Market Signaling,” Quarterly Journal of Economics, 1973, 87 (3),
+  355–374.
+
+Wilson, Charles, “A Model of Insurance Markets with Incomplete Information,” Journal
+ of Economic Theory, 1977, 16 (2), 167–207.
+
+
+
+
+                                           37
+

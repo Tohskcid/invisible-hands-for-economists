@@ -1,0 +1,100 @@
+{
+  "schema_version": "1",
+  "generated_at": "2026-10-17T02:44:23+00:00",
+  "papers": [
+    {
+      "citekey": "KelsoCrawford1982",
+      "authors": [
+        "Alexander S. Kelso, Jr.",
+        "Vincent P. Crawford"
+      ],
+      "title": "Job Matching, Coalition Formation, and Gross Substitutes",
+      "year": 1982,
+      "canonical_locator": "https://doi.org/10.2307/1913392",
+      "verified_at": "2026-10-17T02:40:12+00:00",
+      "access_basis": "Author-hosted article PDF, publicly downloadable for research; local archival copy only.",
+      "access_status": "downloaded",
+      "download_locator": "https://econweb.ucsd.edu/~vcrawfor/KelsoCrawford82EMT.pdf",
+      "retrieved_at": "2026-10-17T02:40:12+00:00",
+      "file": "literature/papers/kelsocrawford1982--job-matching-coalition-formation-and-gross-substitutes.pdf",
+      "sha256": "5de5e5dff2c1965de584a9c065a0f434de0d3deb049b29ec051fa4a43caeb0e6",
+      "version_note": "Local copy as retrieved 2026-10-17; see source URL and SHA."
+    },
+    {
+      "citekey": "HatfieldMilgrom2005",
+      "authors": [
+        "John William Hatfield",
+        "Paul R. Milgrom"
+      ],
+      "title": "Matching with Contracts",
+      "year": 2005,
+      "canonical_locator": "https://doi.org/10.1257/0002828054825466",
+      "verified_at": "2026-10-17T02:40:15+00:00",
+      "access_basis": "Author-hosted article PDF, publicly downloadable for research; local archival copy only.",
+      "access_status": "downloaded",
+      "download_locator": "https://milgrom.people.stanford.edu/wp-content/uploads/2005/09/Matching-with-Contracts-AER.pdf",
+      "retrieved_at": "2026-10-17T02:40:15+00:00",
+      "file": "literature/papers/hatfieldmilgrom2005--matching-with-contracts.pdf",
+      "sha256": "1ebc2b3ee2a0a410057d798a780b1e311c7ea8cba092634b0f11c3f629140a71",
+      "version_note": "Local copy as retrieved 2026-10-17; see source URL and SHA."
+    },
+    {
+      "citekey": "Murota2022",
+      "authors": [
+        "Kazuo Murota"
+      ],
+      "title": "Discrete Convex Analysis: A Tool for Economics and Game Theory",
+      "year": 2022,
+      "canonical_locator": "https://arxiv.org/abs/2212.03598",
+      "verified_at": "2026-10-17T02:40:18+00:00",
+      "access_basis": "Public arXiv full text; local archival copy only.",
+      "access_status": "downloaded",
+      "download_locator": "https://arxiv.org/pdf/2212.03598",
+      "retrieved_at": "2026-10-17T02:40:18+00:00",
+      "file": "literature/papers/murota2022--discrete-convex-analysis-a-tool-for-economics-and-game-theory.pdf",
+      "sha256": "785705146c280834f458e5dca243eff059c33661be9dc53cb9f74f47d1616e1a",
+      "version_note": "Local copy as retrieved 2026-10-17; see source URL and SHA."
+    },
+    {
+      "citekey": "ChenChooGalichonWeber2023",
+      "authors": [
+        "Liang Chen",
+        "Eugene Choo",
+        "Alfred Galichon",
+        "Simon Weber"
+      ],
+      "title": "Existence of a Competitive Equilibrium with Substitutes, with Applications to Matching and Discrete Choice Models",
+      "year": 2023,
+      "canonical_locator": "https://arxiv.org/abs/2309.11416",
+      "verified_at": "2026-10-17T02:40:19+00:00",
+      "access_basis": "Public arXiv full text; local archival copy only.",
+      "access_status": "downloaded",
+      "download_locator": "https://arxiv.org/pdf/2309.11416",
+      "retrieved_at": "2026-10-17T02:40:19+00:00",
+      "file": "literature/papers/chenchoogalichonweber2023--existence-of-a-competitive-equilibrium-with-substitutes-with-applications-to-mat.pdf",
+      "sha256": "8112f3d169dba6cb0bd42a7bff4686d7fa4bff2983b6c8410ce9e8a253ee7a22",
+      "version_note": "Local copy as retrieved 2026-10-17; see source URL and SHA."
+    },
+    {
+      "citekey": "LamadonLiseMeghirRobin2024",
+      "authors": [
+        "Thibaut Lamadon",
+        "Jeremy Lise",
+        "Costas Meghir",
+        "Jean-Marc Robin"
+      ],
+      "title": "Labor Market Matching, Wages, and Amenities",
+      "year": 2024,
+      "canonical_locator": "https://www.nber.org/papers/w32687",
+      "verified_at": "2026-10-17T02:40:20+00:00",
+      "access_basis": "NBER publicly downloadable working paper; local archival copy only.",
+      "access_status": "downloaded",
+      "download_locator": "https://www.nber.org/system/files/working_papers/w32687/w32687.pdf",
+      "retrieved_at": "2026-10-17T02:40:20+00:00",
+      "file": "literature/papers/lamadonlisemeghirrobin2024--labor-market-matching-wages-and-amenities.pdf",
+      "sha256": "19ca15969ea633886da0de4cfe779a85f6156e88a0b535aa9c7c57e2c30b8e72",
+      "version_note": "Local copy as retrieved 2026-10-17; see source URL and SHA."
+    }
+  ],
+  "coverage_note": "Provisional archive against research/literature/safe-bibliography.tex only. Actual manuscript bibliography coverage must be checked by the PI after citation keys are finalized. No restricted target work included."
+}

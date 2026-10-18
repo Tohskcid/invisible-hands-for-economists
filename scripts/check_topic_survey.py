@@ -2,6 +2,7 @@
 """Validate the pre-design survey and bounded contribution decision for a new question."""
 
 import argparse
+import calendar
 import datetime as dt
 import hashlib
 import json
@@ -43,6 +44,23 @@ def safe_relative(value: object) -> bool:
         return False
     path = PurePosixPath(value)
     return not path.is_absolute() and ".." not in path.parts
+
+
+def latest_possible_publication_day(value: object) -> dt.date | None:
+    """Use the latest day consistent with publisher-supported date precision."""
+    if not isinstance(value, str):
+        return None
+    try:
+        if re.fullmatch(r"\d{4}", value):
+            return dt.date(int(value), 12, 31)
+        if re.fullmatch(r"\d{4}-\d{2}", value):
+            year, month = map(int, value.split("-"))
+            return dt.date(year, month, calendar.monthrange(year, month)[1])
+        if DATE.fullmatch(value):
+            return dt.date.fromisoformat(value)
+    except (ValueError, calendar.IllegalMonthError):
+        return None
+    return None
 
 
 def validate(document: object, root: Path | None = None, as_of: dt.date | None = None) -> dict:
@@ -209,8 +227,8 @@ def validate(document: object, root: Path | None = None, as_of: dt.date | None =
             if not isinstance(work.get(field), bool):
                 errors.append(f"nearest work {index} requires boolean {field}")
         first_public_at = work.get("first_public_at")
-        if not isinstance(first_public_at, str) or not DATE.fullmatch(first_public_at):
-            errors.append(f"nearest work {index} first_public_at must use YYYY-MM-DD")
+        if latest_possible_publication_day(first_public_at) is None:
+            errors.append(f"nearest work {index} first_public_at must use YYYY, YYYY-MM, or YYYY-MM-DD")
         citation_key = work.get("citation_key")
         if not isinstance(citation_key, str) or not CITATION_KEY.fullmatch(citation_key):
             errors.append(f"nearest work {index} requires a valid citation_key")
@@ -270,9 +288,8 @@ def validate(document: object, root: Path | None = None, as_of: dt.date | None =
         oldest_year = dt.date.fromisoformat(cutoff).year - frontier_window_years
         recent_frontier = [
             work for work in frontier_works
-            if isinstance(work.get("first_public_at"), str)
-            and DATE.fullmatch(work["first_public_at"])
-            and dt.date.fromisoformat(work["first_public_at"]).year >= oldest_year
+            if (publication_day := latest_possible_publication_day(work.get("first_public_at"))) is not None
+            and publication_day.year >= oldest_year
         ]
         if not recent_frontier:
             errors.append("survey requires a verified work inside the frontier window")

@@ -26,3 +26,6 @@ test_output/
 *.xdv
 *.synctex.gz
 .DS_Store
+
+# Local agent transcripts can contain full tool output and machine-specific paths.
+experiments/**/review/cli-*

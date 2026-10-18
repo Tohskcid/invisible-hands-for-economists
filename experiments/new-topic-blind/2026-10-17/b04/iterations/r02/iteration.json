@@ -1,0 +1,46 @@
+{
+  "iteration": "r02",
+  "scope": "Separate blind-feedback repair of the two scientific gaps in the locked r01 manuscript. The timed one-shot submission and r01 science files remain unchanged.",
+  "input": {
+    "r01_tex_sha256": "6cc84bc7036aec8915674b4f1e935e149345c8961a0f548c1dcd0ea3ee69e31b",
+    "review_path": "iterations/r01/independent-review.md",
+    "review_used": "Only the conditional-law and endpoint-convention criticisms and their mathematical implications were used; no target, rubric, comparison, or unsealed material was consulted."
+  },
+  "started_at_utc": "2026-10-17T14:09:34Z",
+  "scientific_freeze_at_utc": "2026-10-17T14:12:41Z",
+  "recorded_at_utc": "2026-10-17T14:13:31Z",
+  "elapsed_seconds_to_scientific_freeze": 187,
+  "elapsed_seconds_to_record": 237,
+  "changes": [
+    "Strengthened the type assumption to the full conditional product law tensor_i P_{g_i} for every observed label vector, with each factor determined only by its agent's own label. All optimality results are conditional on that vector.",
+    "Defined lower and upper endpoint ironed scores by extended one-sided derivatives, with fixed-priority ranking of equal scores and envelope payments at every report, including endpoints.",
+    "Proved endpoint continuity of the greatest convex minorant from its mean-constrained distribution representation and a uniform Markov/modulus-of-continuity bound; justified closed-interval absolute continuity.",
+    "Qualified pointwise finite-score welfare maximization as an almost-sure argument while retaining DSIC, IR, and the payment formula on the full report domain."
+  ],
+  "scientific_artifacts": {
+    "tex": {
+      "path": "paper/manuscript/main.tex",
+      "sha256": "0ac1e0995a25c5b2e43aab5527db5013968a7277b7e0c5bda0f2b225cd04698b"
+    },
+    "pdf": {
+      "path": "paper/pdf/manuscript.pdf",
+      "sha256": "a35fa62fa29b7ec3e5ad1afb21f8b553059a18e98a3c3ad8e689c3c735303c7d",
+      "pages": 14
+    }
+  },
+  "checks": {
+    "latex_compile": "pass: pdflatex, zero reported errors or warnings; see research/writing/latex-report.json",
+    "latex_visual_finalize": "pass: all 14 rendered pages inspected; see research/latex-visual-review.json",
+    "research_package": "blocked before checks: research/mechanism-audit.json is absent; exit code 2 and exact output in research/writing/package-gate.txt"
+  },
+  "package_evidence": {
+    "visual_review_sha256": "130f8a4edce46ef05627cefb56cae0945da83411f0d1bbaf88edc3a723ad185c",
+    "package_config_sha256": "2ae60412697ebdb87a445257fa0946f9fc2fa10eb08dc5d1e2f177f0b6482be9",
+    "package_gate_output_sha256": "3ba58f98db72a98639cf09530291c84c8cb2b457d25e8f7d7dbc536b5333f87a"
+  },
+  "remaining_gates": [
+    "Independent substantive review and independent mechanism review of r02 have not been supplied or self-attested.",
+    "The declared claim manifest, topic survey, manuscript coverage, literature archive, logic review, team report, and mechanism audit remain uncompleted; the package checker cannot validate the manuscript until genuine evidence fills these paths.",
+    "No priority, novelty, journal-readiness, or external human peer-review claim is made."
+  ]
+}

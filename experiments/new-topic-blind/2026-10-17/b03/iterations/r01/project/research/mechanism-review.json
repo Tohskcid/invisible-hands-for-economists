@@ -1,0 +1,12 @@
+{
+  "schema_version": "1",
+  "reviewed_sha256": {
+    "mechanism_audit": "22dda1c5c271920b9e98865c3a06d25baec357272cfdbe49ae1f644401b2b30b"
+  },
+  "independent_context": true,
+  "verdict": "revise",
+  "weakest_link": "The algebraic repair mechanism is established for a worst-case valuation class, but the audit cannot attribute any particular observed market's substitution behavior to the rebate. The certified kappa bound is assumed, not measured.",
+  "observationally_equivalent_explanation": "All firms in a particular market may already have EX valuations at r=0 even though the information class permits a complementary witness. Both such a market and a repaired market can exhibit GS after a rebate.",
+  "discriminating_test_assessment": "The bound-saturating counterexample rejects universal baseline EX for kappa>0; modular invariance rules out modular repair of that witness. The observed-value-slack test is explicitly inconclusive without firm-level pre-policy values or demand. Thus two formal alternatives are distinguished but the actual-market alternative remains open.",
+  "required_revision": "Keep the conclusion explicitly as a robust class-level theorem. Any claim about a specific market's causal response needs verified pre-policy bundle values or demand and an independent comparison with its post-policy values. Do not mark the mechanism audit as passed while the declared actual-market alternative remains unresolved."
+}

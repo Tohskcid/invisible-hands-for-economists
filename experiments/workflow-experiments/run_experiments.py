@@ -762,7 +762,7 @@ def main() -> int:
     parser.add_argument("--output-dir", type=Path, help="new directory for this run; existing directories are rejected")
     args = parser.parse_args()
     stamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
-    base = args.output_dir or Path(__file__).resolve().parent / "runs" / stamp
+    base = (args.output_dir or Path(__file__).resolve().parent / "runs" / stamp).resolve()
     base.mkdir(parents=True, exist_ok=False)
 
     cases = [

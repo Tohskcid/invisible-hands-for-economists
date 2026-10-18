@@ -1,0 +1,50 @@
+{
+  "schema_version": "1",
+  "run_id": "bls-beveridge-001",
+  "source_sha256": {
+    "data/raw/bls-2001-2010.json": "7b10ccb0ab22c824ca092ce7742732ee1de779dbfbd8d81f189a5d0d48c8ee62",
+    "data/raw/bls-2011-2020.json": "a907e0fcd3ab406551d88bb5abca97d4221dbe9c2295fc1a146ddd7749f55db5",
+    "data/raw/bls-2021-2024.json": "d67cddce377d045b6e89dbd248e77b45418333497fafbd7ff3baf6230c35feb7",
+    "scripts/analyze.py": "0fba563b5d738405cacaedaf255f0ee17650aaffc5f9087b171cef1b00d83013"
+  },
+  "required_bindings": [
+    "primary.pre_n",
+    "primary.post_n",
+    "primary.pre_mean",
+    "primary.post_mean",
+    "primary.difference",
+    "check.difference",
+    "last_year_check.difference_from_pre"
+  ],
+  "results": {
+    "primary": {
+      "pre_n": 48,
+      "post_n": 35,
+      "pre_mean": 4.095833333333333,
+      "post_mean": 5.7,
+      "difference": 1.604166666666667,
+      "pre_median": 4.2,
+      "post_median": 5.6
+    },
+    "check": {
+      "pre_n": 75,
+      "post_n": 8,
+      "pre_mean": 3.5746666666666664,
+      "post_mean": 4.7875,
+      "difference": 1.2128333333333332,
+      "pre_median": 3.4,
+      "post_median": 4.5
+    },
+    "last_year_check": {
+      "n": 12,
+      "mean": 4.65,
+      "difference_from_pre": 0.5541666666666671
+    },
+    "sample": {
+      "months_all": 288,
+      "baseline_months": 228,
+      "comparison_months": 36,
+      "excluded_transition_months": 24
+    }
+  }
+}

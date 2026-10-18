@@ -1,0 +1,23 @@
+{
+  "status": "open",
+  "workflow_status": "blocked",
+  "rework_plan": {
+    "restart_from": "package",
+    "invalidate_stages": [
+      "package",
+      "literature",
+      "data",
+      "design",
+      "argument",
+      "analysis",
+      "replication",
+      "manuscript",
+      "review",
+      "delivery"
+    ],
+    "reason_sources": [
+      "research/package.json"
+    ]
+  },
+  "updated_at": "2026-10-17T02:33:56.531783+00:00"
+}

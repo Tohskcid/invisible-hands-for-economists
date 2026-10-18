@@ -1,0 +1,26 @@
+{
+  "audit_type": "posthoc-prewriting-evidence-check",
+  "source_manifest": "author/literature/sources.json",
+  "source_manifest_sha256": "49645708bbb3dec68982eb4ed9026783b9db56738fd7da90ca9054b08827e499",
+  "source_count": 2,
+  "sources": [
+    {
+      "title": "Optimal Auction Design",
+      "primary_page_url": "https://pubsonline.informs.org/doi/10.1287/moor.6.1.58",
+      "retained_full_text_artifact": null,
+      "source_limitations": "Only publisher metadata and abstract were accessible. The linked PDF redirected to the abstract page. The accessible text does not establish results for varying resource quality, observed group labels, hidden social welfare weights, or limits on payments to individuals."
+    },
+    {
+      "title": "Generalized Social Marginal Welfare Weights for Optimal Tax Theory",
+      "primary_page_url": "https://www.aeaweb.org/articles?id=10.1257/aer.20141362",
+      "retained_full_text_artifact": null,
+      "source_limitations": "Publisher metadata and abstract support claims about tax reform and optimal tax formulas, not a mechanism for assigning unequal-quality scarce resources, using group labels, or limiting payments to individuals."
+    }
+  ],
+  "gate_passed": false,
+  "errors": [
+    "No research/topic-survey.json or independent prior-art review was frozen in the author submission.",
+    "Both author-time sources are documented as abstract-level; no retained full-text artifact or claim-by-claim nearest-work comparison exists."
+  ],
+  "note": "This is a posthoc check of frozen author-time evidence, not a replayed author decision or a semantic novelty finding."
+}

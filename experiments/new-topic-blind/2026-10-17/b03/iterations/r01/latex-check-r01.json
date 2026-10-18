@@ -1,0 +1,71 @@
+{
+  "automated_passed": true,
+  "delivery_ready": false,
+  "visual_review_required": true,
+  "source_dir": "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project",
+  "input_hashes": {
+    "paper/manuscript/main.tex": "7a3dc698f06938c34ba50b66eec0e717c9e8a2203b40e4f1c395440961fec5ab",
+    "paper/manuscript/references.bib": "1f2d27cce41843e4a088e73fce613f9a8e08d91d0a4f4200831893f9e0513820"
+  },
+  "compilation": {
+    "engine": "pdflatex",
+    "commands": [
+      [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-no-shell-escape",
+        "-recorder",
+        "-output-directory=/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project/paper/build",
+        "main.tex"
+      ],
+      [
+        "bibtex",
+        "main"
+      ],
+      [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-no-shell-escape",
+        "-recorder",
+        "-output-directory=/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project/paper/build",
+        "main.tex"
+      ],
+      [
+        "pdflatex",
+        "-interaction=nonstopmode",
+        "-halt-on-error",
+        "-file-line-error",
+        "-no-shell-escape",
+        "-recorder",
+        "-output-directory=/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project/paper/build",
+        "main.tex"
+      ]
+    ],
+    "errors": [],
+    "warnings": [],
+    "pdf": "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project/paper/build/main.pdf"
+  },
+  "rendering": {
+    "errors": [],
+    "pages": [
+      "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project/paper/build/rendered/page-0001.png",
+      "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project/paper/build/rendered/page-0002.png",
+      "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project/paper/build/rendered/page-0003.png",
+      "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project/paper/build/rendered/page-0004.png",
+      "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project/paper/build/rendered/page-0005.png",
+      "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project/paper/build/rendered/page-0006.png",
+      "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project/paper/build/rendered/page-0007.png",
+      "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project/paper/build/rendered/page-0008.png",
+      "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project/paper/build/rendered/page-0009.png",
+      "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b03/iterations/r01/project/paper/build/rendered/page-0010.png"
+    ],
+    "page_count": 10,
+    "page_size": "612 x 792 pts (letter)",
+    "pdf_sha256": "e4c5929b812dc2c309b4e5ced4dac4e75e07b147ad35f7c8aecfd617372bd8ee"
+  },
+  "note": "delivery_ready remains false until an agent or researcher visually inspects every rendered page"
+}

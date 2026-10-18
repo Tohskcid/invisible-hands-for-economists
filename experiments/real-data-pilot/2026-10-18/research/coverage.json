@@ -1,0 +1,234 @@
+{
+  "schema_version": "1",
+  "mode": "descriptive",
+  "manuscript_sha256": "41ee5d506a9206afe69e7fc5ada30e77ea20bfe1081d5cafe3d7ca2cc0db9a35",
+  "sections": [
+    {
+      "id": "introduction",
+      "role": "introduction",
+      "status": "ready",
+      "headings": [
+        "Introduction"
+      ],
+      "claim_ids": [
+        "c-question"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/section-packet.md",
+          "sha256": "d03d63f116f44602908984ce1eafac4ea9e5a4741e9f7c518be4b0a0f9423c8e"
+        }
+      ]
+    },
+    {
+      "id": "literature",
+      "role": "literature",
+      "status": "ready",
+      "headings": [
+        "Related Evidence"
+      ],
+      "claim_ids": [
+        "c-question"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/section-packet.md",
+          "sha256": "d03d63f116f44602908984ce1eafac4ea9e5a4741e9f7c518be4b0a0f9423c8e"
+        },
+        {
+          "kind": "literature",
+          "path": "research/literature-search-evidence.json",
+          "sha256": "2c390665f04729b484c9d92957626e6051f49c691c2d1681fa36584efd3266bc"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "role": "data",
+      "status": "ready",
+      "headings": [
+        "Data and Measurement"
+      ],
+      "claim_ids": [
+        "c-design"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/section-packet.md",
+          "sha256": "d03d63f116f44602908984ce1eafac4ea9e5a4741e9f7c518be4b0a0f9423c8e"
+        },
+        {
+          "kind": "data_documentation",
+          "path": "research/data-provenance.json",
+          "sha256": "bb1b787001b687068df3ebfc7e987a54b45254f09b4556d681f0f3a80a22b9f7"
+        },
+        {
+          "kind": "analysis_code",
+          "path": "scripts/analyze.py",
+          "sha256": "0fba563b5d738405cacaedaf255f0ee17650aaffc5f9087b171cef1b00d83013"
+        }
+      ]
+    },
+    {
+      "id": "design",
+      "role": "design",
+      "status": "ready",
+      "headings": [
+        "Descriptive Design"
+      ],
+      "claim_ids": [
+        "c-design"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/section-packet.md",
+          "sha256": "d03d63f116f44602908984ce1eafac4ea9e5a4741e9f7c518be4b0a0f9423c8e"
+        },
+        {
+          "kind": "analysis_code",
+          "path": "scripts/analyze.py",
+          "sha256": "0fba563b5d738405cacaedaf255f0ee17650aaffc5f9087b171cef1b00d83013"
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "role": "results",
+      "status": "ready",
+      "headings": [
+        "Results"
+      ],
+      "claim_ids": [
+        "c-main"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/section-packet.md",
+          "sha256": "d03d63f116f44602908984ce1eafac4ea9e5a4741e9f7c518be4b0a0f9423c8e"
+        },
+        {
+          "kind": "result",
+          "path": "research/results.json",
+          "sha256": "41aeaf8dd7080f2a4e2c0abc9646ed5fd46db730c4acb59993148a1bf9aa807a"
+        },
+        {
+          "kind": "analysis_code",
+          "path": "scripts/analyze.py",
+          "sha256": "0fba563b5d738405cacaedaf255f0ee17650aaffc5f9087b171cef1b00d83013"
+        },
+        {
+          "kind": "table",
+          "path": "output/tables/means.tex",
+          "sha256": "8759480ba942af6c45d7f431147774dd91dbcb82c78ae0350d949a77018a589b"
+        },
+        {
+          "kind": "figure",
+          "path": "output/figures/beveridge.pdf",
+          "sha256": "0d79382b458a047c7d9aa2de780d8ed4eacef47657bbeb5ac94c8db530a2e14f"
+        }
+      ]
+    },
+    {
+      "id": "robustness",
+      "role": "robustness",
+      "status": "ready",
+      "headings": [
+        "Robustness and Failed Persistence Hypothesis"
+      ],
+      "claim_ids": [
+        "c-normalization"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/section-packet.md",
+          "sha256": "d03d63f116f44602908984ce1eafac4ea9e5a4741e9f7c518be4b0a0f9423c8e"
+        },
+        {
+          "kind": "result",
+          "path": "research/results.json",
+          "sha256": "41aeaf8dd7080f2a4e2c0abc9646ed5fd46db730c4acb59993148a1bf9aa807a"
+        },
+        {
+          "kind": "analysis_code",
+          "path": "scripts/analyze.py",
+          "sha256": "0fba563b5d738405cacaedaf255f0ee17650aaffc5f9087b171cef1b00d83013"
+        },
+        {
+          "kind": "table",
+          "path": "output/tables/means.tex",
+          "sha256": "8759480ba942af6c45d7f431147774dd91dbcb82c78ae0350d949a77018a589b"
+        }
+      ]
+    },
+    {
+      "id": "limitations",
+      "role": "limitations",
+      "status": "ready",
+      "headings": [
+        "Limitations and Interpretation"
+      ],
+      "claim_ids": [
+        "c-limitations"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/section-packet.md",
+          "sha256": "d03d63f116f44602908984ce1eafac4ea9e5a4741e9f7c518be4b0a0f9423c8e"
+        }
+      ]
+    },
+    {
+      "id": "conclusion",
+      "role": "conclusion",
+      "status": "ready",
+      "headings": [
+        "Conclusion"
+      ],
+      "claim_ids": [
+        "c-conclusion"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/section-packet.md",
+          "sha256": "d03d63f116f44602908984ce1eafac4ea9e5a4741e9f7c518be4b0a0f9423c8e"
+        }
+      ]
+    },
+    {
+      "id": "appendix",
+      "role": "appendix",
+      "status": "ready",
+      "headings": [
+        "Reproducibility Appendix"
+      ],
+      "claim_ids": [
+        "c-design"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/section-packet.md",
+          "sha256": "d03d63f116f44602908984ce1eafac4ea9e5a4741e9f7c518be4b0a0f9423c8e"
+        },
+        {
+          "kind": "appendix",
+          "path": "research/replication.json",
+          "sha256": "ae6450ccd7f39319a1005ed1a875cbb658d6918711d85d28bd1b9599a1fdea29"
+        },
+        {
+          "kind": "reproduction",
+          "path": "scripts/analyze.py",
+          "sha256": "0fba563b5d738405cacaedaf255f0ee17650aaffc5f9087b171cef1b00d83013"
+        }
+      ]
+    }
+  ]
+}

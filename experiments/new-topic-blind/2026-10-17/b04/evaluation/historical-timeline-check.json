@@ -1,0 +1,67 @@
+{
+  "valid": true,
+  "historical_cutoff_exclusive": "2024-05-10",
+  "strict_blind_cutoff_exclusive": "2020-06-18",
+  "comparators": [
+    {
+      "title": "Is the Price System or Rationing More Effective in Getting a Commodity to Those Who Need It Most?",
+      "first_public_at": "1977",
+      "historical_prior_art": true,
+      "author_visible_for_strict_blind": true,
+      "classification": "pre-publication-external-work"
+    },
+    {
+      "title": "Optimal Auction Design",
+      "first_public_at": "1981-02-01",
+      "historical_prior_art": true,
+      "author_visible_for_strict_blind": true,
+      "classification": "pre-publication-external-work"
+    },
+    {
+      "title": "Market and non-market mechanisms for the optimal allocation of scarce resources",
+      "first_public_at": "2013-09-04",
+      "historical_prior_art": true,
+      "author_visible_for_strict_blind": true,
+      "classification": "pre-publication-external-work"
+    },
+    {
+      "title": "Generalized Social Marginal Welfare Weights for Optimal Tax Theory",
+      "first_public_at": "2016-01",
+      "historical_prior_art": true,
+      "author_visible_for_strict_blind": true,
+      "classification": "pre-publication-external-work"
+    },
+    {
+      "title": "Redistribution through Markets (BFI working paper)",
+      "first_public_at": "2018-03-26",
+      "historical_prior_art": true,
+      "author_visible_for_strict_blind": true,
+      "classification": "pre-publication-external-work"
+    },
+    {
+      "title": "Redistributive Allocation Mechanisms (SSRN first posted version)",
+      "first_public_at": "2020-06-18",
+      "historical_prior_art": false,
+      "author_visible_for_strict_blind": false,
+      "classification": "target-version"
+    },
+    {
+      "title": "Redistributive Allocation Mechanisms (2023 author version)",
+      "first_public_at": "2023-06-22",
+      "historical_prior_art": false,
+      "author_visible_for_strict_blind": false,
+      "classification": "target-version"
+    },
+    {
+      "title": "Redistributive Allocation Mechanisms (Journal of Political Economy online version)",
+      "first_public_at": "2024-05-10",
+      "historical_prior_art": false,
+      "author_visible_for_strict_blind": false,
+      "classification": "target-version"
+    }
+  ],
+  "author_corpus_safe": true,
+  "unsafe_author_material": [],
+  "errors": [],
+  "note": "Date eligibility only; substantive overlap and novelty require source-based review."
+}

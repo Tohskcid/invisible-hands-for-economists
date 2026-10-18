@@ -1,0 +1,13 @@
+{
+  "sources": [
+    {
+      "title": "Job Matching with Subsidy and Taxation",
+      "canonical_locator": "https://academic.oup.com/restud/article/91/1/372/7056201",
+      "retrieval_tool": "browser",
+      "retrieved_at": "2026-10-17",
+      "source": "Oxford Academic publisher article page and full text",
+      "checked_claim": "The published article directly asks which set- and salary-dependent transfers preserve or restore substitutes in indivisible-worker markets; main text §§2–6 gives the classification theorems.",
+      "doi": "10.1093/restud/rdad032"
+    }
+  ]
+}

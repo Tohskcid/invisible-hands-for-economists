@@ -1,0 +1,10 @@
+{
+  "id": "b04",
+  "question": "當稀缺公共資源的品質有異，個人的支付意願及社會福利權重無法直接觀察，而設計者可觀察群組標籤並限制對個人的付款時，應如何設計分配與收費機制？",
+  "mode": "theory",
+  "target_journal": "Journal of Political Economy",
+  "budget_seconds": 1200,
+  "author_visible_source_cutoff": "Only sources verifiably public before 2020-06-18 (strictly earlier; same-day items require a verified earlier timestamp).",
+  "source_restrictions": "Do not search for, open, read, cite, or use any version, abstract, author page, presentation, or supplement directly corresponding to the hidden target, nor any file under this task's sealed/ directory. Use only independently verifiable background sources satisfying the cutoff. If exposure occurs, log contamination and cease use of that source.",
+  "neutrality_obligation": "Do not assume a preferred allocation form or policy conclusion. Positive, negative, conditional, and counterexample results are all admissible when justified under explicit assumptions."
+}

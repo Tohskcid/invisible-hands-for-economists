@@ -1,0 +1,55 @@
+{
+  "benchmark": "b04",
+  "coordination": "Manual coordinator dispatch; this is not a single-command autonomous harness run.",
+  "roles": [
+    {
+      "role": "target curator",
+      "agent": "b04_curator",
+      "output": "evaluation/unsealed/sealed/target.json and rubric.json",
+      "author_exposure": "sealed archive created before author dispatch"
+    },
+    {
+      "role": "theory model",
+      "agent": "b04_model",
+      "input": "public-task.json only for initial handoff",
+      "output": "author/research/model/handoff.md"
+    },
+    {
+      "role": "literature scout (discarded)",
+      "agent": "b04_literature",
+      "output": "evaluation/contamination-log.md",
+      "reason": "target title and URLs appeared in search results; no author handoff"
+    },
+    {
+      "role": "replacement literature scout",
+      "agent": "b04_safe_sources",
+      "input": "verified pre-cutoff seed URLs",
+      "output": "author/literature/safe-handoff.md and sources.json"
+    },
+    {
+      "role": "blind manuscript author",
+      "agent": "b04_writer",
+      "input": "public task, model handoff, safe literature handoff",
+      "output": "evaluation/frozen-submission/paper/manuscript/main.tex and paper/pdf/main.pdf"
+    },
+    {
+      "role": "target-blind AI referee",
+      "agent": "b04_blind_referee",
+      "input": "public task and frozen manuscript only",
+      "output": "evaluation/blind-review/independent-report.md"
+    },
+    {
+      "role": "post-lock rubric scorer",
+      "agent": "b04_scorer",
+      "input": "frozen submission and unsealed preregistered rubric/target",
+      "output": "evaluation/comparison-score.json and comparison-score.md"
+    },
+    {
+      "role": "historical prior-art auditor",
+      "agent": "b04_historical_audit",
+      "input": "frozen submission, dated target records, external primary sources",
+      "output": "evaluation/historical-prior-art.md and historical-timeline-check.json"
+    }
+  ],
+  "isolation": "Instruction-only agent separation on a shared filesystem; encrypted target sealed before authoring and decrypted after submission lock, but web/model-memory access not technically fenced."
+}

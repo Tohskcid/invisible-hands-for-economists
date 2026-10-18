@@ -70,6 +70,15 @@ class ManuscriptCoverageTests(unittest.TestCase):
         self.assertTrue(report["valid"], report["errors"])
         self.assertTrue(report["ready"])
 
+    def test_descriptive_coverage_does_not_require_identification_section(self):
+        roles = [role for role in self.roles if role != "identification"]
+        self.manuscript.write_text("\n".join(f"\\section{{{role.title()}}}" for role in roles), encoding="utf-8")
+        document = self.document()
+        document["mode"] = "descriptive"
+        document["sections"] = [self.section(i, role) for i, role in enumerate(roles)]
+        report = MODULE.validate(document, self.root, self.manuscript, self.manifest)
+        self.assertTrue(report["ready"], report["errors"])
+
     def test_quantitative_section_requires_code_result_and_exhibit(self):
         document = self.document()
         results = next(section for section in document["sections"] if section["role"] == "results")
@@ -82,6 +91,11 @@ class ManuscriptCoverageTests(unittest.TestCase):
         document = self.document()
         report = MODULE.validate(document, self.root, self.manuscript, self.manifest)
         self.assertTrue(any("Untracked" in error for error in report["errors"]))
+
+    def test_tex_heading_with_nested_reference_is_recognized(self):
+        self.manuscript.write_text(r"\section{Proof of Proposition~\ref{prop:one}}", encoding="utf-8")
+        self.assertEqual(MODULE.manuscript_headings(self.manuscript),
+                         {r"Proof of Proposition~\ref{prop:one}"})
 
     def test_blocked_section_is_valid_but_not_delivery_ready(self):
         document = self.document()

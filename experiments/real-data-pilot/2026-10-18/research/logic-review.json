@@ -1,0 +1,65 @@
+{
+  "reviewer_id": "codex-independent-referee-01a14d30-0bad-75d1-a6f1-82aa78ede55f",
+  "review_date": "2026-10-18",
+  "status": "completed-independent-review",
+  "reviewed_sha256": {
+    "manuscript": "41ee5d506a9206afe69e7fc5ada30e77ea20bfe1081d5cafe3d7ca2cc0db9a35",
+    "manifest": "13177c49623d3623bb97814ea100400a92743340b29c6610c889b8ba294cf11a"
+  },
+  "topic_survey_sha256": "ee18431583b73634c263734732590c440b819bfb705fd894e393653151fb4ed8",
+  "release_pdf_sha256": "195e5e98c0dae40a3df1a152449cfe02c4266214996a43c4edde070d659053c5",
+  "overall_verdict": "reject",
+  "decision_scope": "Original top-journal contribution; the central descriptive claims are mostly coherent within the frozen-snapshot scope.",
+  "global_gaps": [
+    "The four central nodes support a descriptive replication conclusion, not a novel economic finding or identified structural shift.",
+    "The causal-limits node c-limitations is linked only to BLS definitions in the manifest; the relevant NBER p. 8 and IMF p. 9 evidence should be linked directly.",
+    "The selected unemployment band leaves materially different unemployment distributions and no formal uncertainty analysis, so the 1.6042-point gap cannot be interpreted as a fixed-unemployment or population shift."
+  ],
+  "uncertainty": "The arithmetic is verified for the retained BLS vintage and selected months. Sampling error, serial dependence, ex-post period/band choice, changing composition, and later BLS revisions are not quantified; the exact gap and its structural interpretation remain uncertain.",
+  "claim_reviews": [
+    {
+      "claim_id": "c-main",
+      "verdict": "coherent",
+      "weakest_link": "The 1.6042-point difference is an unweighted selected-month mean, sensitive to the ex-post band and the different within-band unemployment distributions.",
+      "scope_or_number_mismatch": "None within the stated frozen BLS sample: 48 baseline months average 4.095833% and 35 comparison months average 5.700000%, giving 1.604167 points. It is not a vertical distance at identical unemployment rates.",
+      "competing_explanation": "Part of the gap may reflect the post-period's lower mean unemployment within the band (3.777% versus 4.069%), as well as composition, recruiting intensity, or measurement changes.",
+      "required_revision": "No correction to the stated descriptive arithmetic; retain the within-band imbalance and noncausal caveats. A structural interpretation would require a different design."
+    },
+    {
+      "claim_id": "c-normalization",
+      "verdict": "coherent",
+      "weakest_link": "The 2024 subset has only 12 months and shares the frozen-vintage and selection limits of c-main.",
+      "scope_or_number_mismatch": "None for the stated comparison: the 2024 mean is 4.650000% and its baseline gap is 0.554167 points, smaller than 1.604167. The gap remains positive, so narrowing is partial rather than full return.",
+      "competing_explanation": "A fall in measured openings could reflect cyclical movement, a changing labor-market composition, or changes in recruiting intensity rather than reversal of a single structural shock.",
+      "required_revision": "Keep the wording at 'smaller gap' or partial normalization for these selected months; do not claim complete or causally explained normalization."
+    },
+    {
+      "claim_id": "c-limitations",
+      "verdict": "revise",
+      "weakest_link": "The manifest cites only e-bls-def, which defines published rates but does not itself establish why an aggregate conditional mean cannot identify a structural or causal shift.",
+      "scope_or_number_mismatch": "The manuscript's noncausal caution is substantively correct; the mismatch is the claim-to-evidence link in the manifest, not a numeric contradiction.",
+      "competing_explanation": "Within-band unemployment imbalance, cyclical movement, composition, measurement, and unobserved flows can produce similar aggregate plots; NBER p. 8 and IMF p. 9 discuss the identification problem directly.",
+      "required_revision": "Bind this node to the retained NBER and IMF identification-limit passages and keep its scope limited to the aggregate descriptive comparison."
+    },
+    {
+      "claim_id": "c-conclusion",
+      "verdict": "coherent",
+      "weakest_link": "It depends on the modest prior-art assessment and the c-limitations node's presently weak manifest citation, as well as the selected-period arithmetic.",
+      "scope_or_number_mismatch": "The conclusion accurately says the gap narrowed by 2024 and disclaims novelty and causality; it should not be read as evidence of full normalization or a newly identified curve shift.",
+      "competing_explanation": "Existing BLS, NBER, and IMF work documents the core pattern and its potential explanations; this pilot cannot distinguish among them.",
+      "required_revision": "Retain the explicit replication and noncausal framing; repair c-limitations' evidence link. A top-journal originality claim would require new substantive evidence beyond this conclusion."
+    }
+  ],
+  "limitations": [
+    "Selected years and unemployment bands were chosen ex post.",
+    "Primary-band unemployment distributions differ across periods; an exact-rate reweighting check reduces the observed gap.",
+    "The 2024 comparison contains 12 months and the alternative-band post comparison only eight months.",
+    "No formal sampling or time-series uncertainty analysis, causal identification, or structural mechanism test is supplied.",
+    "The estimates are tied to an archived BLS vintage that may be revised."
+  ],
+  "open_critical_issues": [
+    "No original top-journal contribution follows from the coherent descriptive premises.",
+    "The c-limitations manifest evidence link is incomplete.",
+    "The conditional mean gap is not a fixed-unemployment structural estimand and has no quantified uncertainty."
+  ]
+}

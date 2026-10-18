@@ -1,0 +1,22 @@
+{
+  "mode": "theory",
+  "deliverable": "manuscript",
+  "claim_scope": "research-only",
+  "mechanism_scope": "claimed",
+  "manifest": "research/manifest.jsonl",
+  "topic_survey": "research/topic-survey.json",
+  "manuscript": "manuscript/main.tex",
+  "coverage": "research/coverage.json",
+  "bibliography": "manuscript/references.bib",
+  "literature_archive": "research/literature-archive.json",
+  "logic_review": "research/logic-review.json",
+  "mechanism_audit": "research/mechanism-audit.json",
+  "mechanism_review": "research/mechanism-review.json",
+  "team_report": "research/team.json",
+  "substantive_review": "research/substantive-review.json",
+  "latex_main": "manuscript/main.tex",
+  "latex_visual_review": "research/analysis/latex-visual-review.json",
+  "latex_build_dir": "research/analysis/latex-build",
+  "latex_engine": "pdflatex",
+  "release_pdf": "manuscript/main.pdf"
+}

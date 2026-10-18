@@ -1,0 +1,88 @@
+{
+  "id": "b04",
+  "score": 4,
+  "maximum": 10,
+  "rule": "Five preregistered substantive criteria, each scored 0, 1, or 2; no rubric changes or title matching.",
+  "rubric_sha256": "35fdbae58d24bf5522d18648dfa42c46df1970f5b779438526f95fcdc9dcfd97",
+  "lock_verification": {
+    "lock_path": "../submission-lock.json",
+    "frozen_copy": "frozen-submission",
+    "algorithm": "SHA-256",
+    "manuscript": {
+      "path": "frozen-submission/paper/manuscript/main.tex",
+      "expected": "deb717de94a350fe44e79d1006106b91bab978ad75e2eec1f6f96e6de5468bb4",
+      "observed": "deb717de94a350fe44e79d1006106b91bab978ad75e2eec1f6f96e6de5468bb4",
+      "matches": true
+    },
+    "pdf": {
+      "path": "frozen-submission/paper/pdf/main.pdf",
+      "expected": "04207ecf0f7deafb607a17507ff638c461138b7d8793c46d5ebb0d0e3cdb881f",
+      "observed": "04207ecf0f7deafb607a17507ff638c461138b7d8793c46d5ebb0d0e3cdb881f",
+      "matches": true
+    },
+    "locked_utc": "2026-10-17T13:57:55.180782+00:00",
+    "nominal_deadline_utc": "2026-10-17T14:10:55.976142+00:00"
+  },
+  "target_sources": {
+    "author_version_2023": {
+      "path": "unsealed/sealed/target-author-fulltext-2023.pdf",
+      "sha256": "e39b2a94217bf0bf0eb6b336a01902505b856bfa06a4f98b847b50ce5d96ba67",
+      "pages": 53
+    },
+    "working_paper_2020": {
+      "path": "unsealed/sealed/target-working-paper-2020.pdf",
+      "sha256": "550006e5073bd8023988c5043ec67b47d26c7db3f338f6d09ae880d6b3bb8bc6",
+      "pages": 40
+    },
+    "target_metadata_sha256": "262901a573a7c8ab36a870f67dac1013f98f19ad51e25df0c7652ab98765af22",
+    "page_convention": "PDF page numbers below count the cover as page 1; the 2023 PDF's printed page numbers are one lower through its main text and Appendix A."
+  },
+  "criteria": [
+    {
+      "id": "model_and_reduction",
+      "score": 2,
+      "target_evidence": "2023 author PDF pp.8-12, Sections 2.A-C: population labels, private WTP and weights, one-dimensional quality distribution, quasilinear utility, feasible CDF assignment and free disposal (2.1)-(2.2), IC/IR/nonnegative payments (2.3)-(2.4), envelope Claim 1 (2.5), conditional Pareto weights and revenue weight in (OBJ), Claim 3 (OBJ').",
+      "submission_evidence": "Frozen main.tex lines 31-54 (Section 2, model, utility, objective), 60-93 (Sections 3-4, conditional mean, envelope (3), score (4), virtual-welfare identity (5)); complete envelope and objective derivations at lines 144-187; rendered PDF pp.2-4 and 7-8.",
+      "reason": "All listed economic primitives and the conditional-weight/envelope reduction are derived correctly for the explicitly narrower finite-slot, independent-agent model with value support starting at zero. The target instead uses a continuum and allows a positive lower WTP bound; this difference becomes decisive for later criteria."
+    },
+    {
+      "id": "within_group_optimum",
+      "score": 1,
+      "target_evidence": "2023 author PDF pp.15-17, Section 3.1, Theorem 1: transformed Ψ, concave closure co(Ψ), decreasing concave closure cd(Ψ), discarded low qualities, random pooling on affine intervals, assortative sorting elsewhere, and lowest-type rent depending on α versus average group weight; proof pp.40-44, Appendix A.1.",
+      "submission_evidence": "Frozen main.tex lines 78-113 (score S, regular sorting and disposal, bounded-subsidy observation), 117-121 (falling-score example and explicit absence of general ironing), 189-206 (proofs); rendered PDF pp.4-5 and 8-9.",
+      "reason": "The score transformation and a proved regular subclass give sorting, possible disposal, and a limited transfer comparison. The manuscript supplies no concave or decreasing-concave closures, no solution for irregular scores, and no characterization of pooled random quality assignments. Its zero lower value forces the baseline lowest-type rent to zero, so it does not recover the target's positive-lower-WTP rent choice."
+    },
+    {
+      "id": "across_group_optimum",
+      "score": 1,
+      "target_evidence": "2023 author PDF pp.17-18, Section 3.2, equations (3.2)-(3.3) and Theorem 2: choose group quality CDFs subject to the fixed aggregate CDF, then assign qualities using monotone ironed marginal values; proof p.45, Appendix A.2, establishes a feasible nondecreasing CDF selection from the relaxed program.",
+      "submission_evidence": "Frozen main.tex lines 95-103 (Section 5, profilewise cross-group sorting of agents' regular virtual scores), 189-193 (swap and own-value monotonicity proof); rendered PDF pp.4-5 and 8.",
+      "reason": "Under its finite-agent regularity assumption, the manuscript correctly assigns the fixed slots across observed groups by ranking group-specific scores and proves feasibility and implementability. This is a partial analogue. It never solves group-specific within problems and then splits a population-level quality distribution, nor derives the target's CDF resource program, ironed marginal-value greedy rule, or its monotone-CDF selection argument."
+    },
+    {
+      "id": "free_or_random_allocation_conditions",
+      "score": 0,
+      "target_evidence": "2023 author PDF pp.19-21, Section 4.1.1, Propositions 1-2: when average group weight exceeds revenue weight and lower WTP is positive, an initial nondegenerate zero-price random region is optimal; full random provision requires α r̄_i ≤ ∫ r λ_i(r)dG_i(r) (4.1), sufficient if V_i is quasiconvex. Proof p.46, Appendix A.3; economic perturbation pp.48-49, Online Appendix B.",
+      "submission_evidence": "Frozen main.tex lines 31-37 fixes every group's lower value at zero; lines 123-127 and 208-222 prove a single uniform, λ=0 free-assignment benchmark; rendered PDF pp.2, 5-6, and 9.",
+      "reason": "The free-assignment example is valid in its own special case, but it is neither an initial free random region under universal desirability nor a necessary/sufficient condition for full free provision. The manuscript's zero-lower-WTP domain excludes the premise driving target Proposition 1, and it has no counterpart of inequality (4.1) or quasiconvex sufficiency."
+    },
+    {
+      "id": "private_information_and_market_boundary",
+      "score": 0,
+      "target_evidence": "2023 author PDF pp.22-24, Sections 4.1.2 and 4.2, Proposition 3 gives the random-interval iff nonmonotone social-value condition under its boundary assumption, and Proposition 4 gives an across-group quality ordering under fully random matching; proofs pp.46-47, Appendix A.3. The 2023 author version numbers the latter implication Proposition 4.",
+      "submission_evidence": "Frozen main.tex lines 117-121 supplies a two-agent counterexample to un-ironed score ranking and says the nonmonotone optimum is unresolved; lines 129-139 state model limits; rendered PDF pp.5-6.",
+      "reason": "The counterexample correctly shows that raw score sorting can violate IC, but it establishes no optimal random interval, no iff boundary between assortative and random matching, and no implication for the distribution of quality across groups. The submission expressly leaves general ironing unresolved."
+    }
+  ],
+  "separate_assessments": {
+    "proof_validity": "The manuscript's envelope, virtual-welfare identity, regular-score optimality, and two special examples have coherent proofs under the finite-slot assumptions on inspection. The absent closure, cross-group CDF, and random-region theorems are omissions, not identified contradictions of the proved narrow results.",
+    "historical_reconstruction": "Partial, 4/10. The result recovers the economic reduction and limited regular finite-agent analogues, but not the target's central within-group closure, general across-group, or non-market boundary results.",
+    "historical_novelty": "Separate from reconstruction. The supplied target metadata dates the earliest publicly verifiable version to 2020-06-18; the 2020 working paper already states the transformed within-group closure theorem, across-group greedy theorem, and initial free-random-region proposition (PDF pp.14-16). This score does not establish independent priority for the submission's narrower finite-agent propositions.",
+    "modern_journal_readiness": "Not established by this rubric or by any external peer review. The manuscript explicitly lacks the general ironing and cross-group characterizations central to the target; a 4/10 reconstruction score is not a journal acceptance prediction."
+  },
+  "source_contamination_audit": {
+    "author_visible_manifest": "The frozen source manifest lists only Myerson (1981) and Saez-Stantcheva (2016), both before the 2020-06-18 blind-source cutoff; source-preflight.json records author_corpus_safe=true.",
+    "exposure_caveat": "The submission lock records instruction-only isolation, not a technical access fence. The contamination log contains the target publisher DOI URLs from a scout search; the lock says the scout did not transmit target content to author agents. Absence of unseen exposure cannot be proved from these artifacts.",
+    "effect_on_score": "No title, author, DOI, or verbal-match points were awarded; criterion scores reflect manuscript substance only."
+  }
+}

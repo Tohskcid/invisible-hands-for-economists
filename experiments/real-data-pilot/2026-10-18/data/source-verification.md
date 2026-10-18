@@ -1,0 +1,7 @@
+# Source verification (2026-10-18 Asia/Taipei)
+
+Data were retrieved directly from the BLS Public Data API v2, `https://api.bls.gov/publicAPI/v2/timeseries/data/`, in three requests. The unmodified JSON responses and exact request bodies, retrieval times, and SHA-256 values are saved in `data/raw/` and `data/acquisition-log.json`. HTTP 200, `REQUEST_SUCCEEDED`, both expected series IDs, monthly keys, and complete 2001–2024 coverage were checked. The API documentation is https://www.bls.gov/developers/api_unix_v2.htm.
+
+The series identification was checked against BLS's own Beveridge-curve display, https://www.bls.gov/charts/job-openings-and-labor-turnover/job-openings-unemployment-beveridge-curve.htm, and BLS series pages https://data.bls.gov/timeseries/LNS14000000 and https://data.bls.gov/timeseries/JTS000000000000000JOR. The job-openings definition is at https://www.bls.gov/jlt/jltdef.htm. BLS says its published electronic material is public domain, apart from previously copyrighted photographs/illustrations, and requests attribution: https://www.bls.gov/opub/copyright-information.htm. Neither exception is used here.
+
+Official BLS pages were verified using browser search results on this date. Direct scripted GET access to `www.bls.gov` returned HTTP 403, so this file is a contemporaneous record of that verification, not an archived HTML response. The direct API response files are independently inspectable. Because BLS revises published histories, a later API request can differ from the frozen snapshot; `scripts/acquire.py` refuses to overwrite it.

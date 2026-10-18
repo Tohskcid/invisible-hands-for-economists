@@ -1,0 +1,110 @@
+{
+  "evidence_type": "curated transcription of actual web.run query results and directly fetched non-target primary-source files",
+  "searches": [
+    {
+      "axis": "question",
+      "lane": "baseline",
+      "source": "web.run search",
+      "query": "Kelso Crawford 1982 job matching coalition formation gross substitutes Journal of Political Economy",
+      "searched_at": "2026-10-17",
+      "retrieval_tool": "browser",
+      "observed_result": {
+        "title": "Job Matching, Coalition Formation, and Gross Substitutes",
+        "url": "https://econweb.ucsd.edu/~vcrawfor/KelsoCrawford82EMT.pdf"
+      },
+      "raw_result_excerpt": "Econometrica, Vol. 50, No. 6 (November, 1982); equilibrium exists and is stable when workers are gross substitutes.",
+      "retrieved_at": "2026-10-17"
+    },
+    {
+      "axis": "mechanism",
+      "lane": "baseline",
+      "source": "web.run search",
+      "query": "Hatfield Milgrom 2005 matching with contracts American Economic Review substitutes wages",
+      "searched_at": "2026-10-17",
+      "retrieval_tool": "browser",
+      "observed_result": {
+        "title": "Matching with Contracts",
+        "url": "https://www.aeaweb.org/articles?id=10.1257%2F0002828054825466"
+      },
+      "raw_result_excerpt": "American Economic Review 95(4), September 2005, pp. 913–935; law of aggregate demand and substitutes.",
+      "retrieved_at": "2026-10-17"
+    },
+    {
+      "axis": "method",
+      "lane": "frontier",
+      "channel": "preprint-repository",
+      "source": "web.run search",
+      "query": "arxiv 2023 gross substitutes demand indivisible goods competitive equilibrium discrete convexity",
+      "searched_at": "2026-10-17",
+      "retrieval_tool": "browser",
+      "observed_result": {
+        "title": "Existence of a Competitive Equilibrium with Substitutes, with Applications to Matching and Discrete Choice Models",
+        "url": "https://arxiv.org/abs/2309.11416"
+      },
+      "raw_result_excerpt": "arXiv 2309.11416, posted 2023-09-20; existence and uniqueness with substitutes.",
+      "retrieved_at": "2026-10-17"
+    },
+    {
+      "axis": "setting",
+      "lane": "frontier",
+      "channel": "working-paper-series",
+      "source": "web.run search",
+      "query": "site:nber.org/papers 2023 matching with contracts substitutes equilibrium wages",
+      "searched_at": "2026-10-17",
+      "retrieval_tool": "browser",
+      "observed_result": {
+        "title": "Labor Market Matching, Wages, and Amenities",
+        "url": "https://www.nber.org/papers/w32687"
+      },
+      "raw_result_excerpt": "NBER Working Paper 32687, issue date July 2024, revision January 2026; labor market model with worker and firm heterogeneity.",
+      "retrieved_at": "2026-10-17"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Job Matching, Coalition Formation, and Gross Substitutes",
+      "canonical_locator": "https://doi.org/10.2307/1913392",
+      "retrieval_tool": "browser",
+      "retrieved_at": "2026-10-17",
+      "acquired_file": "research/literature/kelso_crawford_1982.pdf",
+      "acquired_sha256": "5de5e5dff2c1965de584a9c065a0f434de0d3deb049b29ec051fa4a43caeb0e6"
+    },
+    {
+      "title": "Matching with Contracts",
+      "canonical_locator": "https://doi.org/10.1257/0002828054825466",
+      "retrieval_tool": "browser",
+      "retrieved_at": "2026-10-17",
+      "acquired_file": "research/literature/hatfield_milgrom_2005.pdf",
+      "acquired_sha256": "1ebc2b3ee2a0a410057d798a780b1e311c7ea8cba092634b0f11c3f629140a71"
+    },
+    {
+      "title": "Discrete Convex Analysis: A Tool for Economics and Game Theory",
+      "canonical_locator": "https://arxiv.org/abs/2212.03598",
+      "retrieval_tool": "browser",
+      "retrieved_at": "2026-10-17",
+      "acquired_file": "research/literature/docs/murota_2022_abs.html",
+      "acquired_sha256": "c308ee2724d0594628ea4da625110bf9c27d7af52f16fc9202d84c4fc1dc69e6"
+    },
+    {
+      "title": "Existence of a Competitive Equilibrium with Substitutes, with Applications to Matching and Discrete Choice Models",
+      "canonical_locator": "https://arxiv.org/abs/2309.11416",
+      "retrieval_tool": "browser",
+      "retrieved_at": "2026-10-17",
+      "acquired_file": "research/literature/docs/chen_etal_2023_abs.html",
+      "acquired_sha256": "7b6e46d8b992147c3c527b4ab84c2730e742367b706f4370db2c491ee8d71c4d"
+    },
+    {
+      "title": "Labor Market Matching, Wages, and Amenities",
+      "canonical_locator": "https://www.nber.org/papers/w32687",
+      "retrieval_tool": "browser",
+      "retrieved_at": "2026-10-17",
+      "acquired_file": "research/literature/docs/lamadon_etal_2024.html",
+      "acquired_sha256": "2c5c62fdf80dfcf830ada270cfd7337672c6ca6aabffb8fc7e40200b82e38dd5"
+    }
+  ],
+  "limitations": [
+    "web.run output was transcribed to this record; complete search-result pages were not exported",
+    "An official NBER query page was saved separately; official arXiv search-page retrieval timed out or rate-limited",
+    "No restricted-source result or content is included"
+  ]
+}

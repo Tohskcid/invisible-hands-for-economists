@@ -1,0 +1,168 @@
+{
+  "schema_version": "2",
+  "question": "At comparable U.S. unemployment rates, how did published job-openings rates differ between 2001–2019 and 2022–2024?",
+  "scope": "Descriptive replication pilot with frozen BLS national monthly aggregates; no causal or journal-novelty claim",
+  "contribution_statement": "Reproduce a familiar Beveridge-curve pattern with an auditable real-data pipeline; no scientific novelty claimed",
+  "cutoff": "2026-10-18",
+  "refresh_after_days": 30,
+  "frontier_window_years": 5,
+  "citation_policy": "never-exclude",
+  "searches": [
+    {
+      "axis": "question",
+      "lane": "baseline",
+      "source": "BLS official site",
+      "query": "Beveridge curve vacancies unemployment BLS 2001 2013",
+      "searched_at": "2026-10-18",
+      "retrieval_tool": "browser",
+      "source_evidence_artifact": "research/literature-search-evidence.json",
+      "source_evidence_sha256": "2c390665f04729b484c9d92957626e6051f49c691c2d1681fa36584efd3266bc"
+    },
+    {
+      "axis": "mechanism",
+      "lane": "frontier",
+      "source": "NBER working paper search",
+      "query": "Beveridge curve shifts pandemic NBER 2023",
+      "channel": "working-paper-series",
+      "searched_at": "2026-10-18",
+      "retrieval_tool": "browser",
+      "source_evidence_artifact": "research/literature-search-evidence.json",
+      "source_evidence_sha256": "2c390665f04729b484c9d92957626e6051f49c691c2d1681fa36584efd3266bc"
+    },
+    {
+      "axis": "setting",
+      "lane": "frontier",
+      "source": "SSRN preprint search",
+      "query": "Beveridge curve post-pandemic vacancies unemployment 2024 2025 working paper",
+      "channel": "preprint-repository",
+      "searched_at": "2026-10-18",
+      "retrieval_tool": "browser",
+      "source_evidence_artifact": "research/literature-search-evidence.json",
+      "source_evidence_sha256": "2c390665f04729b484c9d92957626e6051f49c691c2d1681fa36584efd3266bc"
+    },
+    {
+      "axis": "question",
+      "lane": "frontier",
+      "source": "BLS Monthly Labor Review site",
+      "query": "JOLTS post pandemic openings measurement 2026 BLS",
+      "channel": "journal-advance",
+      "searched_at": "2026-10-18",
+      "retrieval_tool": "browser",
+      "source_evidence_artifact": "research/literature-search-evidence.json",
+      "source_evidence_sha256": "2c390665f04729b484c9d92957626e6051f49c691c2d1681fa36584efd3266bc"
+    }
+  ],
+  "nearest_works": [
+    {
+      "title": "Job openings and the Beveridge curve, December 2000–April 2013",
+      "locator": "https://www.bls.gov/opub/ted/2013/ted_20130612.htm",
+      "verified_at": "2026-10-18",
+      "first_public_at": "2013-06-12",
+      "citation_key": "BLS2013",
+      "discovery_lane": "baseline",
+      "relation": "replication",
+      "nearest": true,
+      "question": "How did the U.S. openings–unemployment relation evolve through April 2013?",
+      "estimand_or_theorem": "Monthly published vacancies and unemployment",
+      "method_or_proof": "BLS descriptive chart",
+      "difference": "Our pilot supplies only a frozen national descriptive comparison and does not explain the curve.",
+      "prior_bottleneck": "Aggregate monthly points cannot identify causes of shifts.",
+      "innovation": "Established prior framing and evidence beyond the pilot.",
+      "why_field_cares": "The published result limits any novelty or causal interpretation of this pilot.",
+      "validation": "Publisher or agency page inspected in browser; access status recorded separately.",
+      "influence_or_reuse": "Cited as prior work; the pilot claims replication only.",
+      "source_evidence_artifact": "research/literature-search-evidence.json",
+      "source_evidence_sha256": "2c390665f04729b484c9d92957626e6051f49c691c2d1681fa36584efd3266bc",
+      "full_text_status": "checked",
+      "backward_checked": false,
+      "forward_checked": false,
+      "manuscript_action": "cite"
+    },
+    {
+      "title": "The Shifting Reasons for Beveridge-Curve Shifts",
+      "locator": "https://www.nber.org/papers/w31783",
+      "verified_at": "2026-10-18",
+      "first_public_at": "2023-10",
+      "citation_key": "BarlevyEtAl2023",
+      "discovery_lane": "frontier",
+      "relation": "replication",
+      "nearest": true,
+      "question": "What drives U.S. Beveridge-curve shifts?",
+      "estimand_or_theorem": "Labor-flow drivers through 2023",
+      "method_or_proof": "Flow-based synthesis",
+      "difference": "Our pilot supplies only a frozen national descriptive comparison and does not explain the curve.",
+      "prior_bottleneck": "Aggregate monthly points cannot identify causes of shifts.",
+      "innovation": "Established prior framing and evidence beyond the pilot.",
+      "why_field_cares": "The published result limits any novelty or causal interpretation of this pilot.",
+      "validation": "Publisher or agency page inspected in browser; access status recorded separately.",
+      "influence_or_reuse": "Cited as prior work; the pilot claims replication only.",
+      "source_evidence_artifact": "research/literature-search-evidence.json",
+      "source_evidence_sha256": "2c390665f04729b484c9d92957626e6051f49c691c2d1681fa36584efd3266bc",
+      "full_text_status": "checked",
+      "backward_checked": false,
+      "forward_checked": false,
+      "manuscript_action": "cite",
+      "quality_signals": [
+        "important-question",
+        "transparent-boundaries"
+      ],
+      "frontier_case": "Direct post-pandemic Beveridge-curve prior art",
+      "selection_reason": "Directly relevant official or working-paper source",
+      "date_precision": "NBER specifies October 2023; latest possible day recorded conservatively"
+    },
+    {
+      "title": "What Caused the Beveridge Curve to Shift Higher in the United States During the Pandemic?",
+      "locator": "https://www.imf.org/en/publications/wp/issues/2024/01/12/what-caused-the-beveridge-curve-to-shift-higher-in-the-united-states-during-the-pandemic-542870",
+      "verified_at": "2026-10-18",
+      "first_public_at": "2024-01-12",
+      "citation_key": "KindbergGirard2024",
+      "discovery_lane": "frontier",
+      "relation": "replication",
+      "nearest": true,
+      "question": "Why did the U.S. pandemic Beveridge curve shift outward?",
+      "estimand_or_theorem": "State-level associations and model shift",
+      "method_or_proof": "State data and search model",
+      "difference": "Our pilot supplies only a frozen national descriptive comparison and does not explain the curve.",
+      "prior_bottleneck": "Aggregate monthly points cannot identify causes of shifts.",
+      "innovation": "Established prior framing and evidence beyond the pilot.",
+      "why_field_cares": "The published result limits any novelty or causal interpretation of this pilot.",
+      "validation": "Publisher or agency page inspected in browser; access status recorded separately.",
+      "influence_or_reuse": "Cited as prior work; the pilot claims replication only.",
+      "source_evidence_artifact": "research/literature-search-evidence.json",
+      "source_evidence_sha256": "2c390665f04729b484c9d92957626e6051f49c691c2d1681fa36584efd3266bc",
+      "full_text_status": "checked",
+      "backward_checked": false,
+      "forward_checked": false,
+      "manuscript_action": "cite",
+      "quality_signals": [
+        "important-question",
+        "transparent-boundaries"
+      ],
+      "frontier_case": "Direct post-pandemic Beveridge-curve prior art",
+      "selection_reason": "Directly relevant official or working-paper source"
+    }
+  ],
+  "decision": "replicate",
+  "contribution_class": "replication",
+  "limitations": [
+    "This is a bounded search and cannot clear novelty.",
+    "Published BLS and academic work already studies the substantive pattern.",
+    "The official IMF full text was later retrieved from its direct public PDF URL and compared; this still does not establish novelty."
+  ],
+  "researcher_checkpoints": [
+    {
+      "id": "scope-lock",
+      "question": "May this be presented as descriptive replication only?",
+      "response": "Yes; no causal or publication-level novelty claims.",
+      "decided_at": "2026-10-18",
+      "status": "accepted"
+    },
+    {
+      "id": "contribution-lock",
+      "question": "Does prior art leave a new journal contribution?",
+      "response": "No. Treat this as a reproducibility and pipeline pilot.",
+      "decided_at": "2026-10-18",
+      "status": "accepted"
+    }
+  ]
+}

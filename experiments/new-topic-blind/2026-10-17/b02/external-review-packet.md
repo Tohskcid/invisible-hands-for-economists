@@ -1,0 +1,17 @@
+# External economics referee packet — historical reconstruction b02
+
+**Status:** Prepared, not sent; no unaffiliated economist has reviewed this manuscript yet.
+
+**Assignment:** Evaluate whether a fresh research team, given only the Chinese question below and no target paper, reconstructed a top-journal-level economic theory paper. This is a historical reconstruction experiment, not an original submission. The author's draft was frozen at 2026-10-16 17:15:19 UTC before the target was disclosed. The literature scout saw the target **title in a search-result list** but did not open or transmit its contents; the manuscript author reported no target-title/abstract/full-text exposure. Files share a host filesystem, so blindness was enforced by fresh agent context and instructions, not access controls.
+
+**Input question:** 在交易者具有私人品質資訊、可同時聯繫多個交易對手的市場中，增加可聯繫對象數量會如何影響分離或混同均衡、交易效率與福利？
+
+**Frozen submission:** [LaTeX](attempt/manuscript/main.tex), [7-page PDF](attempt/manuscript/main.pdf), [model and derivations](attempt/research/model/model.md), [literature survey](attempt/research/topic-survey-draft.md), [submission hashes](submission-lock.json). Manuscript SHA-256: `8c3b67bafc061cb616f5296f579fd0bf69e6de3b1cbf3ceb07c97b9b49c77965`; PDF SHA-256: `3c9d2f49bacbb2e98a09410ebf7c0cc8d2e47e5a09c0a3573f459fb98c770f1f`. The precise precommitted rubric is [here](preregistered-rubric.json), SHA-256 `21cde8109c55809e954ab7eb9558074b6402fd35293687d036acaed195628544`.
+
+**Published comparison:** Sarah Auster, Piero Gottardi, Ronald Wolthoff, “Simultaneous Search and Adverse Selection,” *Review of Economic Studies* 92(6), 3541–3573 (2025), DOI [10.1093/restud/rdaf014](https://doi.org/10.1093/restud/rdaf014). [Published open-access PDF](https://repository.essex.ac.uk/40026/1/rdaf014.pdf). The original publication is the benchmark, not a source the author was allowed to use before submission.
+
+Please first assess the submitted draft on its **own scientific merits** without looking at the published comparison. State whether its model, equilibrium definition, propositions, appendix proofs, welfare claims, and limitations hold under its exact assumptions. Then compare its research move and key results to the published paper. Record any precise theorem/proof gap, missing economic mechanism, duplicate result, and whether the paper as frozen would clear a serious field-journal review. Distinguish internal correctness from reconstruction fidelity and novelty. Do not treat a valid simplified model or a compiled PDF as evidence of top-journal quality.
+
+Please return a signed or attributable report covering: (1) model/assumption clarity; (2) equilibrium and proof correctness; (3) welfare and counterexample validity; (4) originality and overlap; (5) fidelity to the published target; (6) completeness, limitations, and reproducibility; (7) verdict: accept / minor revision / major revision / reject, with 3–5 highest-priority reasons and suggested discriminating checks. The review should state your field expertise and any conflicts of interest. We will preserve the report with its date and submission hash; we will not rewrite your verdict as a harness pass.
+
+**Experiment caveats:** The source survey flagged a likely duplicate at title level, so ordinary novelty approval was blocked. The independent AI referee attempt failed before producing a report due a platform usage limit. No human external review has been obtained. No empirical data are used; this is a theory task, and the example script is illustration only.

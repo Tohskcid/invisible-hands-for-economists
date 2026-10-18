@@ -1,0 +1,21 @@
+{
+  "reviewer": "independent AI referee",
+  "reviewed_at": "2026-10-17",
+  "pdf": "paper/build/main.pdf",
+  "pdf_sha256": "88c112eae123cf3a2ffed0b3de1abe9a975f1bbdfed673d0c1d30f5e1a9dec10",
+  "page_count": 8,
+  "all_pages_visually_inspected": true,
+  "pages": [
+    {"page": 1, "image": "paper/build/pages/page-0001.png", "status": "readable", "note": "Title, abstract, and opening introduction visible."},
+    {"page": 2, "image": "paper/build/pages/page-0002.png", "status": "readable", "note": "Literature, environment, and exchange equations visible."},
+    {"page": 3, "image": "paper/build/pages/page-0003.png", "status": "readable", "note": "Definitions and propositions 1–4, including threshold equation, visible."},
+    {"page": 4, "image": "paper/build/pages/page-0004.png", "status": "readable", "note": "Propositions 5–7, adjusted-value equation, and counterexamples visible."},
+    {"page": 5, "image": "paper/build/pages/page-0005.png", "status": "readable", "note": "Limitations, conclusion, and first proof page visible."},
+    {"page": 6, "image": "paper/build/pages/page-0006.png", "status": "readable", "note": "Proofs of propositions 1–3 and start of proposition 5 visible."},
+    {"page": 7, "image": "paper/build/pages/page-0007.png", "status": "readable", "note": "Additive equilibrium proof and configuration LP primal/dual visible."},
+    {"page": 8, "image": "paper/build/pages/page-0008.png", "status": "readable", "note": "Conditional LP statement, headcount proof, and references visible; ample lower-page whitespace."}
+  ],
+  "visual_defects": [],
+  "delivery_visual_check_passed": true,
+  "provenance_note": "The existing latex-report.json bibliography input hash differs from the current locked references.bib hash; visual inspection does not resolve that provenance discrepancy."
+}

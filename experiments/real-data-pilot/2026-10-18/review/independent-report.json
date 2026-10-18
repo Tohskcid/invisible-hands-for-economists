@@ -1,0 +1,222 @@
+{
+  "schema_version": "1",
+  "review_type": "independent_economics_referee",
+  "review_date": "2026-10-18",
+  "codex_thread_id": "01a14d30-0bad-75d1-a6f1-82aa78ede55f",
+  "independence": {
+    "author_files_or_data_modified": false,
+    "author_prior_art_review_signed_or_modified": false,
+    "prior_art_attestation_written": false,
+    "existing_placeholder_reviews_treated_as_unsigned": true
+  },
+  "object_reviewed": {
+    "release_pdf": "paper/pdf/manuscript.pdf",
+    "release_pdf_sha256": "54f80dc990b36af78371a809413a8531155773f6ad93603f8db0c62f66ae45ab",
+    "current_source": "paper/main.tex",
+    "current_source_sha256": "cf542230f447c8d61e787508d5d9d538c88d75f6174a9452a434d6a23174d1aa",
+    "build_record_source_sha256": "fdfa1479cc3535a5fe126f172118ccbc84311cff913399f35b01fdb092728a8c",
+    "source_pdf_version_match": false
+  },
+  "overall_verdict": "reject_as_original_top_journal_article",
+  "suitable_as": "descriptive frozen-data replication or teaching pilot after version repair",
+  "dimensions": {
+    "source_authenticity_and_date": {
+      "assessment": "mostly_verified_with_date_and_provenance_qualification",
+      "findings": [
+        "Local BLS 2013, NBER 2023, and IMF 2024 full-text hashes match both author prior-art and literature-archive records.",
+        "Official BLS and IMF pages confirm June 12, 2013 and January 12, 2024; NBER confirms October 2023 only.",
+        "The NBER first_public_at value 2023-10-31 is not verified as an exact day; the PDF has an October 9 draft footer.",
+        "The AEA lists a Spring 2024 Journal of Economic Perspectives version of Barlevy et al.; its full text was not reviewed here.",
+        "Raw BLS bodies and acquisition hashes agree, but the claimed API retrieval timestamp is supported by project logs rather than an independent signature."
+      ],
+      "evidence": [
+        "literature/pages/bls2013--job-openings-and-the-beveridge-curve-december-2000april-2013.html: article heading and date",
+        "literature/papers/barlevyetal2023--the-shifting-reasons-for-beveridge-curve-shifts.pdf: physical pp. 1-2",
+        "literature/papers/kindberggirard2024--what-caused-the-beveridge-curve-to-shift-higher-in-the-united-states-during-the.pdf: physical pp. 1-2",
+        "research/prior-art-review.json: works",
+        "research/literature-archive.json: papers",
+        "data/acquisition-log.json: downloads"
+      ]
+    },
+    "novelty_and_prior_art": {
+      "assessment": "no_substantive_novelty",
+      "finding": "The exact 2024 endpoint and selected-band mean are fresh arithmetic, while the underlying outward pattern, post-2022 decline, and inferential cautions are in the retained prior art.",
+      "published_version_found": "Barlevy et al., Journal of Economic Perspectives 38(2), 2024, 83-106",
+      "author_matrix_status": "author-complete-awaiting-independent-review",
+      "author_matrix_issue": "Several claim comparisons reuse opening excerpts that do not support normalization or causal-limit judgments at the cited pointer."
+    },
+    "numerical_validity": {
+      "assessment": "correct_for_frozen_raw_snapshot",
+      "independently_recomputed": {
+        "paired_months": 288,
+        "primary": {
+          "unemployment_interval_pct": [3.5, 4.5],
+          "baseline_n": 48,
+          "comparison_n": 35,
+          "baseline_openings_mean_pct": 4.095833333333333,
+          "comparison_openings_mean_pct": 5.7,
+          "difference_percentage_points": 1.604166666666667,
+          "baseline_unemployment_mean_pct": 4.06875,
+          "comparison_unemployment_mean_pct": 3.777142857142857
+        },
+        "alternative": {
+          "unemployment_interval_pct": [4.0, 5.0],
+          "baseline_n": 75,
+          "comparison_n": 8,
+          "difference_percentage_points": 1.2128333333333332
+        },
+        "year_2024": {
+          "n": 12,
+          "openings_mean_pct": 4.65,
+          "difference_from_full_baseline_percentage_points": 0.5541666666666671
+        },
+        "exploratory_exact_unemployment_reweighting": {
+          "pooled_gap_percentage_points": 1.2229251700680273,
+          "year_2024_gap_percentage_points": 0.2958333333333334,
+          "qualification": "Uses published one-decimal unemployment cells; thin support and no causal interpretation."
+        }
+      },
+      "evidence": [
+        "data/raw/bls-2001-2010.json",
+        "data/raw/bls-2011-2020.json",
+        "data/raw/bls-2021-2024.json",
+        "research/results.json: results.primary, results.check, results.last_year_check",
+        "paper/pdf/manuscript.pdf: physical pp. 1-3"
+      ]
+    },
+    "logic_and_inference": {
+      "assessment": "descriptive_claims_valid_causal_or_structural_claims_not_identified",
+      "findings": [
+        "The conclusion's narrowing language is supported by selected annual conditional means, but cannot establish a stable trend or full return to baseline.",
+        "A broad unemployment band leaves a 0.292 percentage-point difference in mean unemployment across periods.",
+        "The author correctly disclaims a treatment effect, matching-efficiency inference, and independent-month standard errors.",
+        "The IMF's vacancy denominator differs from the pilot's BLS openings-rate denominator."
+      ],
+      "evidence": [
+        "paper/pdf/manuscript.pdf: physical pp. 2-3, sections 4-8",
+        "literature/papers/kindberggirard2024--what-caused-the-beveridge-curve-to-shift-higher-in-the-united-states-during-the.pdf: physical p. 5, Figure 1 note",
+        "literature/papers/barlevyetal2023--the-shifting-reasons-for-beveridge-curve-shifts.pdf: physical pp. 8, 27"
+      ]
+    },
+    "reproducibility": {
+      "assessment": "raw_to_results_auditable_release_version_not_frozen_consistently",
+      "findings": [
+        "Raw JSON hashes match acquisition logs and independently recalculated headline values match results and manuscript rounding.",
+        "The current main.tex hash differs from the build and coverage input hash; the current source contains an IMF denominator sentence absent from the released PDF.",
+        "Replication and build pass records are author-side validation, not scientific acceptance or a current-source build certificate.",
+        "Placeholder logic and substantive reviews remain blocked."
+      ],
+      "evidence": [
+        "paper/main.tex: Limitations and Interpretation",
+        "paper/pdf/manuscript.pdf: physical p. 3, Limitations and Interpretation",
+        "paper/build/report.json: input_hashes.main.tex",
+        "research/coverage.json: manuscript_sha256",
+        "research/replication.json: clean",
+        "research/logic-review.json: status",
+        "research/substantive-review.json: status"
+      ]
+    },
+    "presentation_and_top_journal_quality": {
+      "assessment": "readable_pilot_not_top_journal_quality",
+      "findings": [
+        "Three-page PDF, table, and scatterplot are legible.",
+        "The manuscript has no new economic question, identified mechanism, counterfactual, or material empirical contribution beyond a date update.",
+        "Rendered bibliography does not give usable URLs or access dates for BLS web sources and omits the verified 2024 journal version of Barlevy et al."
+      ]
+    }
+  },
+  "claim_overlap": [
+    {
+      "claim_id": "c-question",
+      "judgment": "established_question",
+      "bls2013": "Main text and chart establish the vacancy-unemployment display and earlier outward shift.",
+      "barlevy2023": "Physical pp. 3-4, Figure 1, show national data through August 2023.",
+      "kindberg_girard2024": "Physical p. 5, Figure 1, shows the pandemic shift."
+    },
+    {
+      "claim_id": "c-design",
+      "judgment": "distinct_elementary_arithmetic_no_identification",
+      "bls2013": "Same published aggregate relation, no identical band-average design.",
+      "barlevy2023": "Physical p. 8 explains aggregate rates alone cannot reveal a mechanism.",
+      "kindberg_girard2024": "Physical pp. 9-11 use a different state-level design and acknowledge endogeneity."
+    },
+    {
+      "claim_id": "c-main",
+      "judgment": "exact_mean_unique_pattern_known",
+      "bls2013": "Predates pandemic; establishes earlier curve only.",
+      "barlevy2023": "Physical p. 3 Figure 1 directly displays the post-COVID national JOLTS separation.",
+      "kindberg_girard2024": "Physical p. 5 Figure 1 shows higher 2022 vacancies near 3.5% unemployment, using vacancies per labor force."
+    },
+    {
+      "claim_id": "c-normalization",
+      "judgment": "2024_update_not_new_dynamic_insight",
+      "bls2013": "No post-pandemic overlap.",
+      "barlevy2023": "Physical pp. 18-19 document falling openings since early 2022 with little unemployment increase.",
+      "kindberg_girard2024": "Physical pp. 27-28 predict possible partial renormalization; do not observe 2024."
+    },
+    {
+      "claim_id": "c-limitations",
+      "judgment": "known_inferential_caution",
+      "bls2013": "Main text offers multiple possible explanations without a discriminating test.",
+      "barlevy2023": "Physical pp. 8 and 27 explicitly require further labor-flow evidence.",
+      "kindberg_girard2024": "Physical pp. 9-11 state reduced-form and endogenous-covariate limitations."
+    },
+    {
+      "claim_id": "c-conclusion",
+      "judgment": "accurate_modest_synthesis_not_novel",
+      "bls2013": "Establishes earlier descriptive framework.",
+      "barlevy2023": "Physical pp. 3 and 18-19 cover pandemic separation and subsequent decline.",
+      "kindberg_girard2024": "Physical pp. 5-6 and 27-28 cover pandemic shift and possible partial reversal."
+    }
+  ],
+  "open_issues_for_replication_release": [
+    "Freeze one main.tex version and rebuild manuscript.pdf and corresponding hash records.",
+    "Correct NBER day-level first-publication claim or record only October 2023.",
+    "Use claim-specific prior-art pointers and distinguish IMF's denominator and forecast from observed 2024 results.",
+    "Update rendered bibliography with verifiable source locators and the 2024 published Barlevy version."
+  ],
+  "files_read": [
+    "paper/pdf/manuscript.pdf",
+    "paper/main.tex",
+    "paper/references.bib",
+    "literature/pages/bls2013--job-openings-and-the-beveridge-curve-december-2000april-2013.html",
+    "literature/papers/barlevyetal2023--the-shifting-reasons-for-beveridge-curve-shifts.pdf",
+    "literature/papers/kindberggirard2024--what-caused-the-beveridge-curve-to-shift-higher-in-the-united-states-during-the.pdf",
+    "research/manifest.jsonl",
+    "research/prior-art-review.json",
+    "research/results.json",
+    "research/topic-survey.json",
+    "research/literature-archive.json",
+    "research/literature-search-evidence.json",
+    "research/coverage.json",
+    "research/data-provenance.json",
+    "research/experiments.tsv",
+    "research/logic-review.json",
+    "research/substantive-review.json",
+    "research/replication.json",
+    "research/team-report.json",
+    "research/visual-review.json",
+    "research/package.json",
+    "research/section-packet.md",
+    "data/raw/bls-2001-2010.json",
+    "data/raw/bls-2011-2020.json",
+    "data/raw/bls-2021-2024.json",
+    "data/acquisition-log.json",
+    "data/source-verification.md",
+    "data/schema.json",
+    "scripts/analyze.py",
+    "scripts/acquire.py",
+    "output/tables/means.tex",
+    "paper/build/report.json",
+    "paper/build/rendered/page-0001.png",
+    "paper/build/rendered/page-0002.png",
+    "paper/build/rendered/page-0003.png",
+    "review/cli-events.jsonl",
+    "review/cli-stderr.txt",
+    "review/independent-report.md (pre-existing version before replacement)"
+  ],
+  "hash_or_metadata_only_files": [
+    "paper/build/main.pdf",
+    "data/analysis-panel.csv"
+  ]
+}

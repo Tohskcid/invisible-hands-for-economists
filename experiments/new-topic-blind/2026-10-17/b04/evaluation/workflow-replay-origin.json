@@ -1,0 +1,5 @@
+{
+  "source": "evaluation/frozen-submission",
+  "post_lock_addition": "research/package.json declares required gates with expected paths; no missing research evidence was fabricated",
+  "submission_lock": "submission-lock.json"
+}

@@ -1,0 +1,353 @@
+{
+  "schema_version": "1",
+  "mode": "theory",
+  "manuscript_sha256": "7a3dc698f06938c34ba50b66eec0e717c9e8a2203b40e4f1c395440961fec5ab",
+  "sections": [
+    {
+      "id": "S01",
+      "role": "introduction",
+      "status": "ready",
+      "headings": [
+        "Introduction"
+      ],
+      "claim_ids": [
+        "CL-B03-P2",
+        "CL-B03-P3",
+        "CL-B03-P7",
+        "CL-B03-P8"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/s01.md",
+          "sha256": "16dada2cffbbe6c5b72d5edcd0d456ff71384465e78def26987cdb429205e213"
+        }
+      ]
+    },
+    {
+      "id": "S02",
+      "role": "literature",
+      "status": "blocked",
+      "headings": [
+        "Related literature"
+      ],
+      "claim_ids": [],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/s02.md",
+          "sha256": "0db56c2b2db8d9b26b7b9eacb1eeb031bb472d207a5db51447dd5fbe1c93fa12"
+        },
+        {
+          "kind": "literature",
+          "path": "research/literature-archive.json",
+          "sha256": "4c558f3bbdfa6e7e637f927a83b8e91695e01923a032c73f2a8687184178a9d1"
+        }
+      ],
+      "gap": "Topic survey decision remains blocked/unresolved; literature contribution and overlap cannot be marked ready."
+    },
+    {
+      "id": "S03",
+      "role": "model",
+      "status": "ready",
+      "headings": [
+        "Environment and definitions"
+      ],
+      "claim_ids": [
+        "CL-B03-P1"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/s03.md",
+          "sha256": "ff4c741d3d4fbf0df6d1b18e910c70de8964f9bf041c02c574913940d006a045"
+        },
+        {
+          "kind": "model",
+          "path": "research/model/handoff.md",
+          "sha256": "6c2b11a74ad3d46dad3426bd438136826c5c6082606fe7e9b29fa1ba92834f4f"
+        }
+      ]
+    },
+    {
+      "id": "S04",
+      "role": "results",
+      "status": "ready",
+      "headings": [
+        "Results"
+      ],
+      "claim_ids": [
+        "CL-B03-P1",
+        "CL-B03-P2",
+        "CL-B03-P3",
+        "CL-B03-P4",
+        "CL-B03-P5",
+        "CL-B03-P6",
+        "CL-B03-P7",
+        "CL-B03-P8"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/s04.md",
+          "sha256": "deebae26093af5d1c6248cde03fb529e5e416d53854785c1772efb6d3047f4b8"
+        },
+        {
+          "kind": "proof",
+          "path": "paper/manuscript/main.tex",
+          "sha256": "7a3dc698f06938c34ba50b66eec0e717c9e8a2203b40e4f1c395440961fec5ab"
+        }
+      ]
+    },
+    {
+      "id": "S05",
+      "role": "results",
+      "status": "ready",
+      "headings": [
+        "Boundaries and counterexamples"
+      ],
+      "claim_ids": [
+        "CL-B03-C1",
+        "CL-B03-C2",
+        "CL-B03-C3"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/s05.md",
+          "sha256": "24f40ace7454b077ec22eba553bcf9fc3f1046ebb36b685f52e8ba0299666b41"
+        },
+        {
+          "kind": "proof",
+          "path": "paper/manuscript/main.tex",
+          "sha256": "7a3dc698f06938c34ba50b66eec0e717c9e8a2203b40e4f1c395440961fec5ab"
+        }
+      ]
+    },
+    {
+      "id": "S06",
+      "role": "limitations",
+      "status": "ready",
+      "headings": [
+        "Discussion and limitations"
+      ],
+      "claim_ids": [
+        "CL-B03-L1",
+        "CL-B03-L2",
+        "CL-B03-L3"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/s06.md",
+          "sha256": "3a9a0b4943163785f9c0db4810a9b110e13681266173eb1b8698484c27d99f65"
+        }
+      ]
+    },
+    {
+      "id": "S07",
+      "role": "conclusion",
+      "status": "ready",
+      "headings": [
+        "Conclusion"
+      ],
+      "claim_ids": [
+        "CL-B03-P2",
+        "CL-B03-P3",
+        "CL-B03-P7",
+        "CL-B03-P8"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/s07.md",
+          "sha256": "d8efb5878951c57601116c9f6341afaf05c2114655d8cdee86a26d706115c580"
+        }
+      ]
+    },
+    {
+      "id": "S08",
+      "role": "appendix",
+      "status": "ready",
+      "headings": [
+        "Proof of Proposition~\\ref{prop:exgs}"
+      ],
+      "claim_ids": [
+        "CL-B03-P1"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/s08.md",
+          "sha256": "0246f7137e3ff399eb2ab21d5958bf3bb05e806e9f76b3f6e8102c342cc205ce"
+        },
+        {
+          "kind": "appendix",
+          "path": "paper/manuscript/main.tex",
+          "sha256": "7a3dc698f06938c34ba50b66eec0e717c9e8a2203b40e4f1c395440961fec5ab"
+        }
+      ]
+    },
+    {
+      "id": "S09",
+      "role": "appendix",
+      "status": "ready",
+      "headings": [
+        "Proof of Proposition~\\ref{prop:modular}"
+      ],
+      "claim_ids": [
+        "CL-B03-P2"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/s09.md",
+          "sha256": "d4eee589a324018f4194f7ae073b1fa4efcf28e66240201d44d767601964ee3b"
+        },
+        {
+          "kind": "appendix",
+          "path": "paper/manuscript/main.tex",
+          "sha256": "7a3dc698f06938c34ba50b66eec0e717c9e8a2203b40e4f1c395440961fec5ab"
+        }
+      ]
+    },
+    {
+      "id": "S10",
+      "role": "appendix",
+      "status": "ready",
+      "headings": [
+        "Proof of Proposition~\\ref{prop:two}"
+      ],
+      "claim_ids": [
+        "CL-B03-P3"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/s10.md",
+          "sha256": "6b54993ccaa87b2a76240ac9bf25eb4c80498ee920cb2c277e64ae0e9c0af5ae"
+        },
+        {
+          "kind": "appendix",
+          "path": "paper/manuscript/main.tex",
+          "sha256": "7a3dc698f06938c34ba50b66eec0e717c9e8a2203b40e4f1c395440961fec5ab"
+        }
+      ]
+    },
+    {
+      "id": "S11",
+      "role": "appendix",
+      "status": "ready",
+      "headings": [
+        "Proof of Proposition~\\ref{prop:wagedemand}"
+      ],
+      "claim_ids": [
+        "CL-B03-P5"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/s11.md",
+          "sha256": "52420cc43ecb21b9f9453535db655fe93387c662f3d13add7c712ebfd516b187"
+        },
+        {
+          "kind": "appendix",
+          "path": "paper/manuscript/main.tex",
+          "sha256": "7a3dc698f06938c34ba50b66eec0e717c9e8a2203b40e4f1c395440961fec5ab"
+        }
+      ]
+    },
+    {
+      "id": "S12",
+      "role": "appendix",
+      "status": "ready",
+      "headings": [
+        "Proof of Proposition~\\ref{prop:additiveeq}"
+      ],
+      "claim_ids": [
+        "CL-B03-P6"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/s12.md",
+          "sha256": "3f1d46f502d5925ed8252d789ed5a62fd8b3b83952af00a8d9d261e1f271ffa4"
+        },
+        {
+          "kind": "appendix",
+          "path": "paper/manuscript/main.tex",
+          "sha256": "7a3dc698f06938c34ba50b66eec0e717c9e8a2203b40e4f1c395440961fec5ab"
+        }
+      ]
+    },
+    {
+      "id": "S13",
+      "role": "appendix",
+      "status": "ready",
+      "headings": [
+        "Proof of Proposition~\\ref{prop:generaleq} and configuration-LP integrality"
+      ],
+      "claim_ids": [
+        "CL-B03-P7"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/s13.md",
+          "sha256": "35ce6c81d3908674cf22b25d61710f0d7a034fcbbe9a9bd546f1c2b3dc7f230f"
+        },
+        {
+          "kind": "appendix",
+          "path": "paper/manuscript/main.tex",
+          "sha256": "7a3dc698f06938c34ba50b66eec0e717c9e8a2203b40e4f1c395440961fec5ab"
+        }
+      ]
+    },
+    {
+      "id": "S14",
+      "role": "appendix",
+      "status": "ready",
+      "headings": [
+        "Proof and counterexample for Proposition~\\ref{prop:rebate}"
+      ],
+      "claim_ids": [
+        "CL-B03-P8"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/s14.md",
+          "sha256": "30de4ef60e3725de4fd2e76d371bb367dbdf462edad03c46b5d844c8f6509f13"
+        },
+        {
+          "kind": "appendix",
+          "path": "paper/manuscript/main.tex",
+          "sha256": "7a3dc698f06938c34ba50b66eec0e717c9e8a2203b40e4f1c395440961fec5ab"
+        }
+      ]
+    },
+    {
+      "id": "S15",
+      "role": "appendix",
+      "status": "ready",
+      "headings": [
+        "Proof of Proposition~\\ref{prop:headcount}"
+      ],
+      "claim_ids": [
+        "CL-B03-C3"
+      ],
+      "artifacts": [
+        {
+          "kind": "section_packet",
+          "path": "research/sections/s15.md",
+          "sha256": "1c42356913a1776e17dcb2373a7bfe6a2dd51b235246f4d57e0cb00752c4e3b4"
+        },
+        {
+          "kind": "appendix",
+          "path": "paper/manuscript/main.tex",
+          "sha256": "7a3dc698f06938c34ba50b66eec0e717c9e8a2203b40e4f1c395440961fec5ab"
+        }
+      ]
+    }
+  ]
+}

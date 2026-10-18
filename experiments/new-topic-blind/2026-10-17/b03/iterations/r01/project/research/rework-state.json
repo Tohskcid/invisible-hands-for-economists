@@ -1,0 +1,27 @@
+{
+  "status": "open",
+  "workflow_status": "blocked",
+  "rework_plan": {
+    "restart_from": "package",
+    "invalidate_stages": [
+      "package",
+      "literature",
+      "data",
+      "design",
+      "argument",
+      "analysis",
+      "replication",
+      "manuscript",
+      "review",
+      "delivery"
+    ],
+    "reason_sources": [
+      "check_topic_survey.py",
+      "check_manuscript_coverage.py",
+      "check_substantive_review.py",
+      "check_logic_review.py",
+      "check_mechanism_audit.py"
+    ]
+  },
+  "updated_at": "2026-10-17T08:55:37.131152+00:00"
+}

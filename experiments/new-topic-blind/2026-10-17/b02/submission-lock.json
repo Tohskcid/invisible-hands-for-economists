@@ -1,0 +1,20 @@
+{
+  "submitted_utc": "2026-10-16T17:15:19.720749+00:00",
+  "project": "/Users/lixinzhe/Desktop/Econ/invisible-hands-for-economists/experiments/new-topic-blind/2026-10-17/b02/attempt",
+  "files_sha256": {
+    "manuscript/main.tex": "8c3b67bafc061cb616f5296f579fd0bf69e6de3b1cbf3ceb07c97b9b49c77965",
+    "manuscript/main.pdf": "3c9d2f49bacbb2e98a09410ebf7c0cc8d2e47e5a09c0a3573f459fb98c770f1f",
+    "research/model/model.md": "d47c8ee206c9faec0c43f49e7765a1aa2c4639ed1659a63ce84fe393c06fb47b",
+    "research/analysis/check_example.py": "829b2d14ab7819a75d47bd41eb585e500745df1d2852c218c696fde416db2fb7",
+    "research/analysis/latex-report.json": "b35e426a6b38cdf0c41b603801a610d39d6a5d9f807de9f009051c86f8d9dee6",
+    "research/analysis/latex-final.json": "6984a62b0fabebbcf7bf586fa516204d8c41ecbbcac6f98ee3e73d9bac69a326",
+    "research/topic-survey-draft.md": "6d419b27bc0eaf23463338a82823c9a26a445098d6c8ed3c7902dd7842a9d177",
+    "research/literature/search-log.md": "399faee25e38316b6ce3c57ff401fc44235e181b23920abc7ab8a52af8af2105",
+    "research/literature/source-manifest.json": "0aca9415a30bdb82a4e863dea158c976a41fcbfc488a7101d85ae88ba0afcea6",
+    "research/literature/contamination-log.md": "844a969fe2467ef5de71cd262c3a0f2b5ec6fe7b4b94febf9d638f6d69ac4d3d"
+  },
+  "author_agent": "/root/blind_theory_author",
+  "literature_agent": "/root/blind_literature",
+  "title_exposure_literature_only": true,
+  "target_access_author_reported": false
+}

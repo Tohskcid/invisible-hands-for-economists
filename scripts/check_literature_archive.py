@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate bibliography coverage, lawful download records, PDF files, and names."""
+"""Validate bibliography coverage, lawful retained papers/pages, hashes, and names."""
 
 import argparse
 import hashlib
@@ -35,6 +35,10 @@ def slug(value: str, limit: int) -> str:
 
 def expected_filename(citekey: str, title: str) -> str:
     return f"{slug(citekey, 60)}--{slug(title, 80)}.pdf"
+
+
+def expected_html_filename(citekey: str, title: str) -> str:
+    return f"{slug(citekey, 60)}--{slug(title, 80)}.html"
 
 
 def bibliography_keys(path: Path) -> set[str]:
@@ -114,6 +118,9 @@ def validate(document: object, root: Path, bibliography: Path) -> dict:
             errors.append(f"{prefix} requires license or lawful access_basis")
 
         status = paper.get("access_status")
+        source_kind = paper.get("source_kind", "paper")
+        if source_kind not in {"paper", "official-webpage"}:
+            errors.append(f"{prefix} source_kind must be paper or official-webpage")
         if status not in STATUSES:
             errors.append(f"{prefix} access_status must be one of {sorted(STATUSES)}")
             continue
@@ -128,16 +135,21 @@ def validate(document: object, root: Path, bibliography: Path) -> dict:
             file_value = paper.get("file")
             if nonempty(file_value):
                 posix = PurePosixPath(file_value)
-                if posix.parts[:2] != ("literature", "papers"):
-                    errors.append(f"{prefix} file must be below literature/papers")
-                if nonempty(title) and posix.name != expected_filename(citekey, title):
-                    errors.append(f"{prefix} filename must be {expected_filename(citekey, title)!r}")
+                folder = ("literature", "pages") if source_kind == "official-webpage" else ("literature", "papers")
+                filename = expected_html_filename(citekey, title) if source_kind == "official-webpage" else expected_filename(citekey, title)
+                if posix.parts[:2] != folder:
+                    errors.append(f"{prefix} file must be below {'/'.join(folder)}")
+                if nonempty(title) and posix.name != filename:
+                    errors.append(f"{prefix} filename must be {filename!r}")
             digest = paper.get("sha256")
             if not isinstance(digest, str) or not HASH.fullmatch(digest):
                 errors.append(f"{prefix} requires lowercase SHA-256")
             elif target is not None:
                 content = target.read_bytes()
-                if not content.startswith(b"%PDF-"):
+                if source_kind == "official-webpage":
+                    if b"<html" not in content[:4096].lower() and b"<!doctype html" not in content[:4096].lower():
+                        errors.append(f"{prefix} file is not an HTML page")
+                elif not content.startswith(b"%PDF-"):
                     errors.append(f"{prefix} file is not a PDF")
                 if hashlib.sha256(content).hexdigest() != digest:
                     errors.append(f"{prefix} checksum mismatch")
@@ -159,7 +171,7 @@ def main() -> int:
     parser.add_argument("archive", type=Path)
     parser.add_argument("--bibliography", type=Path, required=True)
     parser.add_argument("--root", type=Path, default=Path("."))
-    parser.add_argument("--require-complete", action="store_true", help="fail when a cited PDF is not downloaded")
+    parser.add_argument("--require-complete", action="store_true", help="fail when a cited paper/page is not retained")
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args()
     root = args.root.resolve()
