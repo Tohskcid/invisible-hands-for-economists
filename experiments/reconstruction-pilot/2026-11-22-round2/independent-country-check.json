@@ -1,0 +1,32 @@
+{
+  "decision": "pass",
+  "numeric_result": {
+    "input_sha256": "723e5649fe471aa9f469c4e7064f5b6ed8f4363a2e0927d04756d041760976de",
+    "n": 75,
+    "schooling_investment": 0.5892239351860158,
+    "schooling_population": -0.38073764898233436,
+    "printed_investment": 0.59,
+    "printed_population": -0.38
+  },
+  "execution_receipt": {
+    "model": "gpt-6.2-astra",
+    "reasoning": "medium",
+    "start_utc": "2026-11-21T20:41:35.979657+00:00",
+    "end_utc": "2026-11-21T20:43:06.310334+00:00",
+    "elapsed_seconds": 90.330677,
+    "deadline_seconds": 480,
+    "usage": {
+      "input_tokens": 368039,
+      "cached_input_tokens": 324096,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3188,
+      "reasoning_output_tokens": 56
+    },
+    "tool_calls": 11,
+    "events_sha256": "07bde50699d356539c8cb1aacd55502669b44ac35d5322d4f4a7de8ee5869940",
+    "session_sha256": "424343f9f7e6813ba24fd32fdf0fdebf279af0a0bde32619726054b10a222280",
+    "prompt_sha256": "41221911de4b84138ae68d3d0dcfdd99123dde9e2a71ea7ed81c554cccee7368"
+  },
+  "independent_check_sha256": "f25b966fd7606f3e88849ca0fe5a2b426baafceb703bbb3f2e85ac0e48824022",
+  "previous_review_sha256": "0fd53e20d054c282b5e5b7be46c9775033aa848eb2424b5a16ff0c28a52684f9"
+}

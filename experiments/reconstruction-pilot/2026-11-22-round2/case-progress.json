@@ -1,0 +1,902 @@
+{
+  "snapshot_utc": "2026-11-21T20:50:06.006865+00:00",
+  "scope": "Round 2 nominated cases with verified sources, plus development versions. Counts are from original-page notes, signed releases, and evaluator files. Group versions by target DOI. Discovery and source-intake coverage are reported separately.",
+  "distinct_nominated_originals": 41,
+  "distinct_originals_fully_read": 22,
+  "distinct_originals_scored": 4,
+  "scored_manuscripts": 8,
+  "version_stage_counts": {
+    "scored": 6,
+    "held-after-review": 17,
+    "read-awaiting-review": 7,
+    "queued-for-reading": 14,
+    "reading-in-progress": 5
+  },
+  "originals": [
+    {
+      "doi": "10.1093/qje/qjw022",
+      "title": "Worms at Work: Long-run Impacts of a Child Health Investment",
+      "versions": [
+        {
+          "case": "q037",
+          "pages": {
+            "main": 44,
+            "appendix": 43
+          },
+          "pages_with_reading_evidence": {
+            "main": 6,
+            "appendix": 0
+          },
+          "stage": "reading-in-progress"
+        }
+      ]
+    },
+    {
+      "doi": "10.1093/restud/rdaa069",
+      "title": "Balance Sheet Channel with Information-Trading Frictions in Secondary Markets",
+      "versions": [
+        {
+          "case": "q040",
+          "pages": {
+            "main": 47
+          },
+          "pages_with_reading_evidence": {
+            "main": 12
+          },
+          "stage": "reading-in-progress"
+        }
+      ]
+    },
+    {
+      "doi": "10.1093/restud/rdab047",
+      "title": "Rationalizability, Observability, and Common Knowledge",
+      "versions": [
+        {
+          "case": "q039",
+          "pages": {
+            "main": 28
+          },
+          "pages_with_reading_evidence": {
+            "main": 12
+          },
+          "stage": "reading-in-progress"
+        }
+      ]
+    },
+    {
+      "doi": "10.1093/restud/rdab057",
+      "title": "A Theory of Monetary Union and Financial Integration",
+      "versions": [
+        {
+          "case": "q042",
+          "pages": {
+            "main": 37
+          },
+          "pages_with_reading_evidence": {
+            "main": 0
+          },
+          "stage": "queued-for-reading"
+        }
+      ]
+    },
+    {
+      "doi": "10.1093/restud/rdac071",
+      "title": "Agenda-Manipulation in Ranking",
+      "versions": [
+        {
+          "case": "q043",
+          "pages": {
+            "main": 28,
+            "appendix": 15
+          },
+          "pages_with_reading_evidence": {
+            "main": 0,
+            "appendix": 0
+          },
+          "stage": "queued-for-reading"
+        }
+      ]
+    },
+    {
+      "doi": "10.1093/restud/rdac084",
+      "title": "A Network Solution to Robust Implementation: The Case of Identical but Unknown Distributions",
+      "versions": [
+        {
+          "case": "q041",
+          "pages": {
+            "main": 39
+          },
+          "pages_with_reading_evidence": {
+            "main": 0
+          },
+          "stage": "queued-for-reading"
+        }
+      ]
+    },
+    {
+      "doi": "10.1093/restud/rdaf014",
+      "title": "Simultaneous Search and Adverse Selection",
+      "versions": [
+        {
+          "case": "q005",
+          "pages": {
+            "main": 33,
+            "appendix": 18
+          },
+          "pages_with_reading_evidence": {
+            "main": 33,
+            "appendix": 18
+          },
+          "review_sha256": "485ad0df99bb39e7a0971fb1623107842430770cfd72adc1273ff55a2262afd9",
+          "hold_note": "Missing participation and equilibrium cases, alongside a proof-dependent historical scoring conflict.",
+          "stage": "held-after-review"
+        }
+      ]
+    },
+    {
+      "doi": "10.1111/1468-0262.00158",
+      "title": "Risk Aversion and Expected-utility Theory: A Calibration Theorem",
+      "versions": [
+        {
+          "case": "q003",
+          "pages": {
+            "main": 12
+          },
+          "pages_with_reading_evidence": {
+            "main": 12
+          },
+          "review_sha256": "2477d660d9ead25fabcca7534758ca825f33a85f5a1120165f9b0c3a9486e095",
+          "hold_note": "Required output specified the direction of a bound. The subsequent source-specific version is q013.",
+          "stage": "held-after-review"
+        },
+        {
+          "case": "q013",
+          "pages": {
+            "main": 12
+          },
+          "pages_with_reading_evidence": {
+            "main": 12
+          },
+          "review_sha256": "64b4417a466dfc87e21d2c2abbac7ac5ce53125dec024f554848ff23f4545a3a",
+          "hold_note": "The revised task passed the answer-leakage check, but published calibration notation and rounding conventions remained ambiguous.",
+          "stage": "held-after-review"
+        }
+      ]
+    },
+    {
+      "doi": "10.1111/1468-0262.00296",
+      "title": "Envelope Theorems for Arbitrary Choice Sets",
+      "versions": [
+        {
+          "case": "q001",
+          "pages": {
+            "main": 19
+          },
+          "pages_with_reading_evidence": {
+            "main": 19
+          },
+          "manuscripts_scored": 2,
+          "public_material": "q001/public-task.json",
+          "stage": "scored"
+        }
+      ]
+    },
+    {
+      "doi": "10.1257/aer.20141727",
+      "title": "Group Strategy-Proofness in Private Good Economies",
+      "versions": [
+        {
+          "case": "q008",
+          "pages": {
+            "main": 27
+          },
+          "pages_with_reading_evidence": {
+            "main": 27
+          },
+          "review_sha256": "f41ce034cee50c8523e7e2648749cebc25f76c57a73d5adba6f7baaeea12943b",
+          "hold_note": "A discrete appendix example and the retained historical condition require reconciliation.",
+          "stage": "held-after-review"
+        }
+      ]
+    },
+    {
+      "doi": "10.1257/aer.20180998",
+      "title": "Liquidity Sentiments",
+      "versions": [
+        {
+          "case": "q009",
+          "pages": {
+            "main": 36
+          },
+          "pages_with_reading_evidence": {
+            "main": 36
+          },
+          "review_sha256": "bde18f8595242e003d6b069e9545acdc1605e10405fc6c0ff279958944e3acde",
+          "hold_note": "Output requests signaled qualitative coexistence and numerical interpretations.",
+          "stage": "held-after-review"
+        }
+      ]
+    },
+    {
+      "doi": "10.1257/aer.20190687",
+      "title": "Methods Matter: p-Hacking and Publication Bias in Causal Analysis in Economics",
+      "versions": [
+        {
+          "case": "q020",
+          "pages": {
+            "main": 28,
+            "appendix": 63,
+            "documentation": 2
+          },
+          "pages_with_reading_evidence": {
+            "main": 28,
+            "appendix": 63,
+            "documentation": 2
+          },
+          "stage": "read-awaiting-review"
+        }
+      ]
+    },
+    {
+      "doi": "10.1257/aer.89.3.564",
+      "title": "The Market for Evaluations",
+      "versions": [
+        {
+          "case": "q007",
+          "pages": {
+            "main": 22
+          },
+          "pages_with_reading_evidence": {
+            "main": 22
+          },
+          "review_sha256": "154164945b4fb910367f5c209b5c48cb886465cc1430f9d8360018e57a1ac19b",
+          "hold_note": "Continuation rules and two transfer proofs could not be fully supported, and output instructions pointed to conclusions.",
+          "stage": "held-after-review"
+        }
+      ]
+    },
+    {
+      "doi": "10.1257/aer.90.4.765",
+      "title": "Mentoring and Diversity",
+      "versions": [
+        {
+          "case": "q006",
+          "pages": {
+            "main": 24
+          },
+          "pages_with_reading_evidence": {
+            "main": 24
+          },
+          "review_sha256": "000fd6da09154e8173766d10ec7b15b1657dfe09b7ca4c484545637e078faf73",
+          "hold_note": "Recruitment behavior and market clearing were underdefined; public output instructions directed particular diagnoses.",
+          "stage": "held-after-review"
+        }
+      ]
+    },
+    {
+      "doi": "10.1257/aer.99.3.608",
+      "title": "Incentives and Stability in Large Two-Sided Matching Markets",
+      "versions": [
+        {
+          "case": "q004",
+          "pages": {
+            "main": 20,
+            "appendix": 41
+          },
+          "pages_with_reading_evidence": {
+            "main": 20,
+            "appendix": 41
+          },
+          "review_sha256": "3dec4c14114a9b73824328a95f6a63be6497ee8878c0cc9bd2104056e29ff97d",
+          "hold_note": "The packet omitted positivity of the threshold and pointed to a counterexample.",
+          "stage": "held-after-review"
+        },
+        {
+          "case": "q0041",
+          "pages": {
+            "main": 20,
+            "appendix": 41
+          },
+          "pages_with_reading_evidence": {
+            "main": 20,
+            "appendix": 41
+          },
+          "review_sha256": "4ea93d35af37e5611c6bae820a872a1dc05382cbee362859ec022069da1bca11",
+          "hold_note": "After correcting the threshold, some source maps still referred to removed output instructions; a subsequent version rechecks the corrections.",
+          "stage": "held-after-review"
+        },
+        {
+          "case": "q0042",
+          "pages": {
+            "main": 20,
+            "appendix": 41
+          },
+          "pages_with_reading_evidence": {
+            "main": 20,
+            "appendix": 41
+          },
+          "review_sha256": "5072f44929c182f1fd419bfb673b65e3cac115a111b358c9e41af0261787b7ec",
+          "hold_note": "The revised public task did not disclose the answer, but some historical scope and proof obligations still failed the independent release review.",
+          "stage": "held-after-review"
+        }
+      ]
+    },
+    {
+      "doi": "10.2307/2118477",
+      "title": "A Contribution to the Empirics of Economic Growth",
+      "versions": [
+        {
+          "case": "q010",
+          "pages": {
+            "main": 31,
+            "documentation": 1
+          },
+          "pages_with_reading_evidence": {
+            "main": 31,
+            "documentation": 1
+          },
+          "review_sha256": "e1d27d41f2e7d5e727456d1e601d890117d8176755c745f2fc12014da38c0669",
+          "hold_note": "Schooling codebook omitted the product used to construct the measure; historical figure requirements were confused with independent quality.",
+          "stage": "held-after-review"
+        },
+        {
+          "case": "q0101",
+          "pages": {
+            "main": 31,
+            "documentation": 1
+          },
+          "pages_with_reading_evidence": {
+            "main": 31,
+            "documentation": 1
+          },
+          "manuscripts_scored": 1,
+          "quality": [
+            8,
+            8
+          ],
+          "fidelity": [
+            19,
+            28
+          ],
+          "public_material": "q0101/public-task.json",
+          "stage": "scored"
+        },
+        {
+          "case": "q0160",
+          "pages": {
+            "main": 31,
+            "documentation": 1
+          },
+          "pages_with_reading_evidence": {
+            "main": 31,
+            "documentation": 1
+          },
+          "review_sha256": "3df2cf8ba421542fab74be22a264a289a11265ee1fc0127fbe969595000bd9bf",
+          "hold_note": "A reviewer reported inconsistent sample correlations. Two independent computations subsequently refuted the numerical premise. See country-data-audit.json.",
+          "stage": "held-after-review"
+        },
+        {
+          "case": "q0161",
+          "pages": {
+            "main": 31,
+            "documentation": 1
+          },
+          "pages_with_reading_evidence": {
+            "main": 31,
+            "documentation": 1
+          },
+          "review_sha256": "0fd53e20d054c282b5e5b7be46c9775033aa848eb2424b5a16ff0c28a52684f9",
+          "hold_note": "Independent page reviewers disagreed on a numeric claim. Version q0162 includes independent executable adjudication on the same data.",
+          "stage": "held-after-review"
+        },
+        {
+          "case": "q0162",
+          "pages": {
+            "main": 31,
+            "documentation": 1
+          },
+          "pages_with_reading_evidence": {
+            "main": 31,
+            "documentation": 1
+          },
+          "manuscripts_scored": 1,
+          "quality": [
+            8,
+            8
+          ],
+          "fidelity": [
+            10,
+            28
+          ],
+          "public_material": "q0162/public-task.json",
+          "stage": "scored"
+        }
+      ]
+    },
+    {
+      "doi": "10.2307/2938326",
+      "title": "Random Paths to Stability in Two-Sided Matching",
+      "versions": [
+        {
+          "case": "q002",
+          "pages": {
+            "main": 7
+          },
+          "pages_with_reading_evidence": {
+            "main": 7
+          },
+          "manuscripts_scored": 2,
+          "public_material": "q002/public-task.json",
+          "stage": "scored"
+        },
+        {
+          "case": "q0140",
+          "pages": {
+            "main": 7
+          },
+          "pages_with_reading_evidence": {
+            "main": 7
+          },
+          "manuscripts_scored": 1,
+          "quality": [
+            8,
+            8
+          ],
+          "fidelity": [
+            14,
+            16
+          ],
+          "public_material": "q0140/public-task.json",
+          "stage": "scored"
+        }
+      ]
+    },
+    {
+      "doi": "10.3982/ecta15847",
+      "title": "Learning From Reviews: The Selection Effect and the Speed of Learning",
+      "versions": [
+        {
+          "case": "q026",
+          "pages": {
+            "main": 43,
+            "appendix": 38
+          },
+          "pages_with_reading_evidence": {
+            "main": 0,
+            "appendix": 0
+          },
+          "stage": "queued-for-reading"
+        }
+      ]
+    },
+    {
+      "doi": "10.3982/ecta16801",
+      "title": "The Empirical Content of Binary Choice Models",
+      "versions": [
+        {
+          "case": "q014",
+          "pages": {
+            "main": 18,
+            "appendix": 10
+          },
+          "pages_with_reading_evidence": {
+            "main": 18,
+            "appendix": 10
+          },
+          "review_sha256": "6570074a6bd93201f27e34c9812a25501aa6e7008be9dd2934772d03c0133741",
+          "hold_note": "Continuity of a probability model did not follow from the private scoring assumptions.",
+          "stage": "held-after-review"
+        }
+      ]
+    },
+    {
+      "doi": "10.3982/ecta17051",
+      "title": "Persuasion Meets Delegation",
+      "versions": [
+        {
+          "case": "q022",
+          "pages": {
+            "main": 34,
+            "appendix": 17
+          },
+          "pages_with_reading_evidence": {
+            "main": 34,
+            "appendix": 17
+          },
+          "stage": "read-awaiting-review"
+        }
+      ]
+    },
+    {
+      "doi": "10.3982/ecta17564",
+      "title": "Graphon Games: A Statistical Framework for Network Games and Interventions",
+      "versions": [
+        {
+          "case": "q030",
+          "pages": {
+            "main": 35,
+            "appendix": 19
+          },
+          "pages_with_reading_evidence": {
+            "main": 0,
+            "appendix": 0
+          },
+          "stage": "queued-for-reading"
+        }
+      ]
+    },
+    {
+      "doi": "10.3982/ecta18119",
+      "title": "The Converse Envelope Theorem",
+      "versions": [
+        {
+          "case": "q011",
+          "pages": {
+            "main": 25,
+            "appendix": 9
+          },
+          "pages_with_reading_evidence": {
+            "main": 25,
+            "appendix": 9
+          },
+          "review_sha256": "ab592591c3e2224d6a249568f6ffd517a321bae9a3071fbeb9dbe26fff7ecb6a",
+          "hold_note": "Several public conditions, taken together, identified parts of the historical answers.",
+          "stage": "held-after-review"
+        }
+      ]
+    },
+    {
+      "doi": "10.3982/ecta18312",
+      "title": "Extreme Points and Majorization: Economic Applications",
+      "versions": [
+        {
+          "case": "q015",
+          "pages": {
+            "main": 38,
+            "appendix": 4
+          },
+          "pages_with_reading_evidence": {
+            "main": 38,
+            "appendix": 4
+          },
+          "review_sha256": "0fcc95d18eef8cac4c11e5eb7002cc61b9ff5642b4513a394e4b308daeaa639b",
+          "hold_note": "Some application conditions cued the expected answer and the private assessment needed qualifications.",
+          "stage": "held-after-review"
+        }
+      ]
+    },
+    {
+      "doi": "10.3982/ecta18707",
+      "title": "An Adversarial Approach to Structural Estimation",
+      "versions": [
+        {
+          "case": "q032",
+          "pages": {
+            "main": 23,
+            "appendix": 15
+          },
+          "pages_with_reading_evidence": {
+            "main": 0,
+            "appendix": 0
+          },
+          "stage": "queued-for-reading"
+        }
+      ]
+    },
+    {
+      "doi": "10.3982/ecta18742",
+      "title": "Relational Contracts: Public versus Private Savings",
+      "versions": [
+        {
+          "case": "q023",
+          "pages": {
+            "main": 51,
+            "appendix": 3
+          },
+          "pages_with_reading_evidence": {
+            "main": 0,
+            "appendix": 0
+          },
+          "stage": "queued-for-reading"
+        }
+      ]
+    },
+    {
+      "doi": "10.3982/ecta19149",
+      "title": "Implementation via Information Design in Binary‐Action Supermodular Games",
+      "versions": [
+        {
+          "case": "q024",
+          "pages": {
+            "main": 39,
+            "appendix": 19
+          },
+          "pages_with_reading_evidence": {
+            "main": 0,
+            "appendix": 0
+          },
+          "stage": "queued-for-reading"
+        }
+      ]
+    },
+    {
+      "doi": "10.3982/ecta19466",
+      "title": "Bias‐Aware Inference in Fuzzy Regression Discontinuity Designs",
+      "versions": [
+        {
+          "case": "q017",
+          "pages": {
+            "main": 25,
+            "appendix": 20
+          },
+          "pages_with_reading_evidence": {
+            "main": 25,
+            "appendix": 20
+          },
+          "review_sha256": "fe3e1e79a46ead7a1fe19d6c74f1012a6dcb0d8ff7ea86da8f850010fedf235b",
+          "stage": "held-after-review"
+        }
+      ]
+    },
+    {
+      "doi": "10.3982/ecta19797",
+      "title": "Contractual Chains",
+      "versions": [
+        {
+          "case": "q025",
+          "pages": {
+            "main": 40,
+            "appendix": 11
+          },
+          "pages_with_reading_evidence": {
+            "main": 6,
+            "appendix": 0
+          },
+          "stage": "reading-in-progress"
+        }
+      ]
+    },
+    {
+      "doi": "10.3982/ecta20240",
+      "title": "On the Structure of Informationally Robust Optimal Mechanisms",
+      "versions": [
+        {
+          "case": "q029",
+          "pages": {
+            "main": 48,
+            "appendix": 21
+          },
+          "pages_with_reading_evidence": {
+            "main": 0,
+            "appendix": 0
+          },
+          "stage": "queued-for-reading"
+        }
+      ]
+    },
+    {
+      "doi": "10.3982/ecta20460",
+      "title": "A Comment on: “Invidious Comparisons: Ranking and Selection as Compound Decisions” by Jiaying Gu and Roger Koenker",
+      "versions": [
+        {
+          "case": "q012",
+          "pages": {
+            "main": 8
+          },
+          "pages_with_reading_evidence": {
+            "main": 8
+          },
+          "manuscripts_scored": 1,
+          "quality": [
+            8,
+            8
+          ],
+          "fidelity": [
+            13,
+            16
+          ],
+          "public_material": "q012/public-task.json",
+          "stage": "scored"
+        }
+      ]
+    },
+    {
+      "doi": "10.3982/ecta20574",
+      "title": "People Are More Moral in Uncertain Environments",
+      "versions": [
+        {
+          "case": "q036",
+          "pages": {
+            "main": 24,
+            "appendix": 88
+          },
+          "pages_with_reading_evidence": {
+            "main": 24,
+            "appendix": 88
+          },
+          "stage": "read-awaiting-review"
+        }
+      ]
+    },
+    {
+      "doi": "10.3982/ecta20797",
+      "title": "Price Setting With Strategic Complementarities as a Mean Field Game",
+      "versions": [
+        {
+          "case": "q034",
+          "pages": {
+            "main": 35,
+            "appendix": 22
+          },
+          "pages_with_reading_evidence": {
+            "main": 0,
+            "appendix": 0
+          },
+          "stage": "queued-for-reading"
+        }
+      ]
+    },
+    {
+      "doi": "10.3982/ecta21442",
+      "title": "Double Robust Bayesian Inference on Average Treatment Effects",
+      "versions": [
+        {
+          "case": "q038",
+          "pages": {
+            "main": 31,
+            "appendix": 25
+          },
+          "pages_with_reading_evidence": {
+            "main": 31,
+            "appendix": 6
+          },
+          "stage": "reading-in-progress"
+        }
+      ]
+    },
+    {
+      "doi": "10.3982/ecta21748",
+      "title": "Caution and Reference Effects",
+      "versions": [
+        {
+          "case": "q028",
+          "pages": {
+            "main": 35,
+            "appendix": 7
+          },
+          "pages_with_reading_evidence": {
+            "main": 0,
+            "appendix": 0
+          },
+          "stage": "queued-for-reading"
+        }
+      ]
+    },
+    {
+      "doi": "10.3982/ecta22144",
+      "title": "A Quest for Knowledge",
+      "versions": [
+        {
+          "case": "q019",
+          "pages": {
+            "main": 37,
+            "appendix": 20
+          },
+          "pages_with_reading_evidence": {
+            "main": 37,
+            "appendix": 20
+          },
+          "stage": "read-awaiting-review"
+        }
+      ]
+    },
+    {
+      "doi": "10.3982/ecta22257",
+      "title": "Non‐Stationary Search and Assortative Matching",
+      "versions": [
+        {
+          "case": "q027",
+          "pages": {
+            "main": 28,
+            "appendix": 6
+          },
+          "pages_with_reading_evidence": {
+            "main": 0,
+            "appendix": 0
+          },
+          "stage": "queued-for-reading"
+        }
+      ]
+    },
+    {
+      "doi": "10.3982/ecta22351",
+      "title": "Adaptive Maximization of Social Welfare",
+      "versions": [
+        {
+          "case": "q033",
+          "pages": {
+            "main": 32,
+            "appendix": 24
+          },
+          "pages_with_reading_evidence": {
+            "main": 0,
+            "appendix": 0
+          },
+          "stage": "queued-for-reading"
+        }
+      ]
+    },
+    {
+      "doi": "10.3982/ecta22474",
+      "title": "The Political Economy of Zero‐Sum Thinking",
+      "versions": [
+        {
+          "case": "q031",
+          "pages": {
+            "main": 30,
+            "appendix": 18
+          },
+          "pages_with_reading_evidence": {
+            "main": 0,
+            "appendix": 0
+          },
+          "stage": "queued-for-reading"
+        }
+      ]
+    },
+    {
+      "doi": "10.3982/ecta22687",
+      "title": "Ambiguous Contracts",
+      "versions": [
+        {
+          "case": "q018",
+          "pages": {
+            "main": 26,
+            "appendix": 9
+          },
+          "pages_with_reading_evidence": {
+            "main": 26,
+            "appendix": 9
+          },
+          "stage": "read-awaiting-review"
+        }
+      ]
+    },
+    {
+      "doi": "10.3982/ecta22749",
+      "title": "Running Primary Deficits Forever in a Dynamically Efficient Economy: Feasibility and Optimality",
+      "versions": [
+        {
+          "case": "q035",
+          "pages": {
+            "main": 33,
+            "appendix": 3
+          },
+          "pages_with_reading_evidence": {
+            "main": 33,
+            "appendix": 3
+          },
+          "stage": "read-awaiting-review"
+        }
+      ]
+    },
+    {
+      "doi": "10.3982/ecta22923",
+      "title": "Cap‐and‐Trade and Carbon Tax Meet Arrow–Debreu",
+      "versions": [
+        {
+          "case": "q021",
+          "pages": {
+            "main": 37,
+            "appendix": 17
+          },
+          "pages_with_reading_evidence": {
+            "main": 37,
+            "appendix": 17
+          },
+          "stage": "read-awaiting-review"
+        }
+      ]
+    }
+  ]
+}

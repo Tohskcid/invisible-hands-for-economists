@@ -69,7 +69,16 @@ def write(frozen, packet, output, condition, model, timeout):
             prompt += ('\nRead and write only inside this directory. Reconstruct the analysis from inputs, run it, '
                        'save self-contained Python analysis.py and numeric results.json, and write the final paper '
                        'to manuscript.tex. Use the provided filenames and assemble all publishable tables in the TeX.')
-            run, trace = data_turn(prompt, work, model, timeout)
+            try:
+                run, trace = data_turn(prompt, work, model, timeout)
+            except (OSError, ValueError, RuntimeError, subprocess.SubprocessError):
+                partial = output / 'incomplete'
+                partial.mkdir(mode=0o700)
+                for name in ('manuscript.tex', 'analysis.py', 'results.json'):
+                    path = work / name
+                    if path.is_file() and not path.is_symlink():
+                        shutil.copyfile(path, partial / name)
+                raise
             (output/'events.private.jsonl').write_text(trace)
             require(all(not (work/n).is_symlink() and sha(work/n)==v for n,v in expected.items()), 'input changed')
             for name in ['manuscript.tex','analysis.py','results.json']:

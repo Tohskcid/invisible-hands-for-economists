@@ -1,0 +1,69 @@
+{
+  "reference": "Printed page 414, Table I, unrestricted income-level regression, and an independent OLS fit of the rounded country appendix. Historical observations in 1960\u20131985. Coefficients in order: constant, log investment share, log population growth plus dilution (log(n+0.05)).",
+  "author_results_sha256": "50b802aa8ac778d81341497128fc6e9c8e8b37e306f70604782e16ee95698e83",
+  "independent_reference_code_sha256": "fb65d4eeb8519a12bb8c2af15f62f8ac6f41c8143b167378f489cc02136b0ebd",
+  "numeric_tolerance": 1e-05,
+  "rows": {
+    "sample_nonoil": {
+      "sample_size": 98,
+      "submitted": [
+        5.429883095781653,
+        1.4240142833694203,
+        -1.9897744846061882
+      ],
+      "independent_rounded_data": [
+        5.429883095781653,
+        1.4240142833694203,
+        -1.9897744846061882
+      ],
+      "printed": [
+        5.48,
+        1.42,
+        -1.97
+      ],
+      "max_difference_from_independent": 0.0,
+      "maximum_absolute_discrepancy_with_printed": 0.05011690421834736
+    },
+    "sample_intermediate": {
+      "sample_size": 75,
+      "submitted": [
+        5.345865207015041,
+        1.317552655186007,
+        -2.0171994952350376
+      ],
+      "independent_rounded_data": [
+        5.345865207015041,
+        1.317552655186007,
+        -2.0171994952350376
+      ],
+      "printed": [
+        5.36,
+        1.31,
+        -2.01
+      ],
+      "max_difference_from_independent": 0.0,
+      "maximum_absolute_discrepancy_with_printed": 0.0141347929849589
+    },
+    "sample_oecd": {
+      "sample_size": 22,
+      "submitted": [
+        8.020606756250078,
+        0.4998895374530704,
+        -0.7419214591715587
+      ],
+      "independent_rounded_data": [
+        8.020606756250078,
+        0.4998895374530704,
+        -0.7419214591715587
+      ],
+      "printed": [
+        7.97,
+        0.5,
+        -0.76
+      ],
+      "max_difference_from_independent": 0.0,
+      "maximum_absolute_discrepancy_with_printed": 0.05060675625007871
+    }
+  },
+  "published_scope": "Full results remain private because they include country-by-country plotting coordinates; the original output hash is published."
+}

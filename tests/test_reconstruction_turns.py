@@ -12,9 +12,29 @@ from run_reconstruction_batch import run as run_batch
 from score_reconstruction import adjudicate, rubric_rows
 from curate_benchmarks import sha
 from verify_reconstruction_output import verify
+from write_from_packet import write
 
 
 class ReconstructionTurns(unittest.TestCase):
+    def test_incomplete_data_author_keeps_work_without_a_submission(self):
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            packet = root / 'q001'
+            (packet / 'inputs').mkdir(parents=True)
+            (packet / 'public-task.json').write_text('{}')
+            (packet / 'inputs/input-1.csv').write_text('x\n1\n')
+            names = ['public-task.json', 'inputs/input-1.csv']
+            frozen = {'files': {'public/' + name: sha(packet / name) for name in names}}
+            def interrupted(prompt, work, model, timeout):
+                (work / 'analysis.py').write_text('partial work')
+                raise subprocess.TimeoutExpired([], timeout)
+            with patch('write_from_packet.verify_freeze', return_value=(frozen, 'id', names)), \
+                    patch('write_from_packet.data_turn', side_effect=interrupted):
+                with self.assertRaises(subprocess.TimeoutExpired):
+                    write(root / 'frozen', packet, root / 'output', 'standard', 'model', 10)
+            self.assertEqual((root / 'output/incomplete/analysis.py').read_text(), 'partial work')
+            self.assertFalse((root / 'output/receipt.json').exists())
+
     def test_quota_stop_leaves_next_paper_pending(self):
         with TemporaryDirectory() as tmp:
             root = Path(tmp)

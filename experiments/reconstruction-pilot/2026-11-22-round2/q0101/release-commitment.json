@@ -1,0 +1,13 @@
+{
+  "id": "q0101",
+  "frozen_at": "2026-11-21T20:38:51.329696+00:00",
+  "files": {
+    "public/inputs/input-1.csv": "723e5649fe471aa9f469c4e7064f5b6ed8f4363a2e0927d04756d041760976de",
+    "public/inputs/input-2.txt": "e783d646ab7bc9b2125e5d1f4f4c0ea3aeb4eeaf1fdbf2d3051708a23e9372dd",
+    "public/public-task.json": "6b573d5076e6c1087357caa02e8ca96ad7b87f4983591e919a4c9ef43e76b8ab",
+    "sealed/curation.json": "1035b0001aec32169b7c156ae39011fea0cd0854703609c7053856c6a6ee58fc",
+    "sealed/review.json": "8fcd8df640682a9dbb82485860745b3d2826035c09b9a60952e939d524fc5314",
+    "sealed/sources/article.pdf": "1bd560f2d4c6bc80f72557fff2f03e785b04aacd7f032c41ef210faaf830c80f",
+    "sealed/sources/documentation.pdf": "dee773c99b11c26a1691dd14ff42d6d88275bf317134a510bf9f27d06fcd1ef7"
+  }
+}

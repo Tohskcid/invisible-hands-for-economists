@@ -1,0 +1,320 @@
+\documentclass[11pt]{article}
+% Recognition disclosure: I recognize the general augmented growth-model exercise. All evidence and estimates here come from the supplied observations and stated primitives.
+\usepackage[margin=0.85in]{geometry}
+\usepackage{amsmath,amssymb,longtable,booktabs}
+\newcommand{\e}[2]{\ensuremath{#1\,(#2)}}
+\newcommand{\ptat}[3]{\put(#1,#2){\makebox(0,0){#3}}}
+\title{Capital accumulation, schooling, and international income differences, 1960--1985}
+\author{Working paper}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+Across 98 non-oil economies, investment and working-age population growth explain 59 percent of the cross-sectional variation in log 1985 output per working-age person on an adjusted basis. Adding secondary schooling raises this to 78 percent and lowers the inferred physical share from 0.60 to 0.31. Conditional catch-up is slower than the physical-capital benchmark. An augmented technology comes closer to explaining its pace, although growth and level regressions do not give identical shares. Across 22 OECD economies, levels are much less predictable and unconditional catch-up is much stronger. The same technology can reduce predicted international return gaps, but observed returns and capital movements are unavailable.
+\end{abstract}
+
+\section{What is being compared?}
+Each economy contributes one observation. Write $Q=Y/L$ and use the population aged 15--64 for $L$. Participation, hours and unemployment can therefore enter the residual. The dependent variables are $\log Q_{85}$ and $D=\log(Q_{85}/Q_{60})$. The latter measures the entire 25-year change. Dividing by 25 gives an annual continuously compounded rate. The supplied aggregate GDP growth series answers a different question.
+
+The non-oil sample (N) excludes oil-dominated economies and Lesotho, where income from abroad was unusually important. The intermediate sample (I) further removes low-quality income observations and countries with fewer than a million people in 1960. O uses the supplied historical OECD flag and population threshold. Their sizes are 98, 75 and 22. The groups overlap. Selection changes income dispersion, data quality and potentially the relation between accumulation and efficiency. Estimates are equally country-weighted descriptions of these groups. Investment includes government investment. I divide percent observations by 100 before taking logs or adding the common $g+\delta=0.05$ to population growth.
+
+\section{Stationary income and the mechanism of amplification}
+Put $k=K/(AL)$, $h=H/(AL)$, $y=Q/A$, $m=\alpha+\beta$, $d=1-m$, and $q=n+g+\delta>0$. Write $s,u$ for the constant output fractions devoted to physical and human investment. For $\beta=0$ omit $h$ and $u$. Differentiating the effective stocks gives
+\[
+ y=k^\alpha h^\beta,\qquad \dot k=sy-qk,\qquad \dot h=uy-qh .
+\]
+For $d>0$ a stationary economy has
+\[
+ y^*=\left[(s/q)^\alpha(u/q)^\beta\right]^{1/d},
+ \qquad k^*=sy^*/q,\qquad h^*=uy^*/q.
+\]
+These conditions give a unique interior allocation. To establish global convergence, normalize the stocks by their investment fractions. For $v=k/s,w=h/u$, the dynamics simplify to $\dot v=y-qv$, $\dot w=y-qw$. Their difference decays as $e^{-qt}$. Let $C=s^\alpha u^\beta$. At the smaller normalized stock $a$, $y\ge C a^m$, and at the larger $b$, $y\le C b^m$. Scalar solutions of $\dot z=Cz^m-qz$ starting at these bounds enclose both stocks and approach $(C/q)^{1/d}$, since $z^d$ solves a stable linear equation. This also proves positivity and covers the single-stock case with coincident bounds. In balanced growth, per-worker income grows at $g$ and aggregate income at $n+g$.
+
+Competitive payments to $K,H,L$ are respectively $\alpha Y,\beta Y,dY$. If human services are embodied in workers, total labor earnings include both of the last two payments. A physical share of one third leaves two thirds for earnings. Pricing raw labor at an unskilled wage of 30--50 percent of the average manufacturing wage suggests a raw share of 0.20--0.33 and a human share of about 0.33--0.47. This extrapolates a manufacturing wage decomposition to the economy and attributes the premium to productive skills.
+
+At a given $h$, maintaining physical accumulation at stationarity gives
+\[
+ \log y={\alpha\over1-\alpha}\log(s/q)+{\beta\over1-\alpha}\log h .
+\]
+Holding $u$ fixed instead lets higher output finance more human capital, yielding the larger elasticity $\alpha/d$. Likewise faster dilution depresses both stocks, giving elasticity $-m/d$ with respect to $q$. At shares of one third each these elasticities are 1 and $-2$, versus $1/2$ and $-1/2$ with physical capital alone. At fixed stocks the instantaneous output elasticities are simply the factor shares. Ignoring human inputs also changes measured productivity: $Y/(K^\alpha L^{1-\alpha})=(H/L)^\beta A^d$. Some apparent productivity differences can thus represent accumulated skills.
+
+\paragraph{Education and output measurement.}
+The annual enrollment proxy multiplies the secondary enrollment proportion at ages 12--17 by the 15--19 population relative to ages 15--64, then averages over the period. It approximates a time input. Age mismatch, school quality, forgone earnings, direct costs, primary and higher education, and training on the job all separate it from a resource share. Let $E$ denote the proxy as a fraction and $\log u=c+\eta\log E+\nu$. Proportionality sets $\eta=1$, with $c$ absorbed by the intercept. Under the general link the schooling slope is $\eta\beta/d$, while dilution still has slope $-m/d$. The usual zero-sum slope test then has discrepancy $(\eta-1)\beta/d$. With independent proxy errors in this mapping, a free dilution coefficient can in principle identify $m$ and the investment slope can identify $\alpha$; schooling alone identifies only a product. Noise in observed enrollment as a regressor can attenuate its coefficient and affect the others.
+
+If the entire $uY$ flow escapes GDP, measured income is $Q^r=(1-u)Q$ and the measured investment fraction is $s^r=s/(1-u)$. Expressed in measured units, the stationary income equation acquires $(1+\alpha/d)\log(1-u)$ in addition to the usual terms in $s^r,u,q$. This reduces the apparent schooling elasticity by $(1+\alpha/d)u/(1-u)$ for a proportional proxy. The same physical payment divided by recorded GDP gives $\alpha/(1-u)$. Constant country-specific omission cancels in endpoint log growth but shifts the measured target and initial income. The size of the correction requires an actual resource share.
+
+\section{The 1985 cross section}
+Let $X=\log s$, $Z=\log q$, $S=\log E$, $J=\log Q_{60}$. With $\log A(0)=a+\epsilon_i$, stationary log income is
+\[
+ a+25g+\epsilon_i+{\alpha\over d}(X-Z)+{\beta\over d}(\log u-Z).
+\]
+The level interpretation requires near-stationarity or conditionally mean-independent departures, common technology parameters, a valid proxy link and mean independence of the persistent efficiency component from the regressors. Investment, demography and education may respond to productivity or policy. Period averages serve as proxies for enduring rates. These are strong conditions for a causal or structural reading.
+
+Tables 1 and 2 give unrestricted fits (U) and fits imposing that the input slopes sum to zero (R). R uses $X-Z$ and, where present, $S-Z$. Entries in parentheses are standard errors. The final columns give adjusted $R^2$, residual standard deviation in log points, and the one-restriction $F$ statistic with its upper-tail probability. OLS uncertainty conditions on the designs and assumes independent, homoskedastic country errors. Exact reference probabilities additionally assume Gaussian errors. Shared shocks, selection and measurement error are outside these standard errors.
+
+\begin{center}\small
+Table 1. Physical accumulation and final income\\[3pt]
+\begin{tabular}{llrrrrrrr}\toprule
+ & & Constant & $X$ & $Z$ & $\bar R^2$ & SD & $F$ ($p$)\\\midrule
+N&U&5.430 (1.584)&1.424 (.143)&$-1.990$ (.563)&.592&.689&.834 (.363)\\
+I&U&5.346 (1.543)&1.318 (.171)&$-2.017$ (.534)&.588&.611&1.293 (.259)\\
+O&U&8.021 (2.518)&.500 (.434)&$-.742$ (.852)&.012&.377&.060 (.809)\\
+N&R&6.872 (.121)&1.488 (.125)&&.593&.688&\\
+I&R&7.093 (.146)&1.431 (.139)&&.586&.612&\\
+O&R&8.624 (.533)&.554 (.365)&&.058&.368&\\\bottomrule
+\end{tabular}
+
+\medskip
+Table 2. Physical and human accumulation and final income\\[3pt]
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llrrrrrrr}\toprule
+&&Constant&$X$&$S$&$Z$&$\bar R^2$&SD&$F$ ($p$)\\\midrule
+N&U&6.844 (1.177)&.697 (.133)&.654 (.073)&$-1.745$ (.416)&.779&.508&.744 (.390)\\
+I&U&7.791 (1.192)&.700 (.151)&.731 (.095)&$-1.500$ (.403)&.771&.455&.022 (.883)\\
+O&U&8.637 (2.214)&.276 (.389)&.768 (.293)&$-1.076$ (.756)&.244&.330&.001 (.970)\\
+N&R&7.853 (.140)&.738 (.124)&.657 (.073)&&.779&.507&\\
+I&R&7.966 (.154)&.709 (.138)&.733 (.093)&&.775&.452&\\
+O&R&8.716 (.466)&.283 (.334)&.769 (.284)&&.284&.321&\\\bottomrule
+\end{tabular}\end{center}
+
+For restricted slopes $b_j$, the implied shares are $b_j/(1+\sum b_j)$. With only physical capital these are .598 (.020), .589 (.024) and .356 (.151) in N, I and O. Thus the slope restriction can pass even though the investment sensitivity in the larger groups is far above the one-third-share prediction. With both stocks the physical and human shares respectively are .308 (.043) and .274 (.033) in N, .290 (.048) and .300 (.040) in I, and .138 (.147) and .375 (.120) in O. The physical estimates in the larger samples are close to one third and the human estimates somewhat below the rough earnings benchmark. OECD physical effects are particularly imprecise. A small residual SD in this group coexists with weak explained variation.
+
+The omitted-variable calculation is observable. In the auxiliary regression of $S$ on $1,X,Z$, the $X$ slopes are 1.111 (.149), .845 (.158), .292 (.297), and the $Z$ slopes are $-.374$ (.586), $-.708$ (.492), .435 (.583). Multiplying these by the corresponding unrestricted schooling slope gives the exact changes on dropping schooling, up to rounding. For example, in N, $.654(1.111)=.727$ explains the jump from .697 to 1.424. O has the opposite dilution shift. These projections describe covariation; schooling can also proxy for omitted institutions or efficiency.
+
+\section{Adjustment and the constant-returns boundary}
+Around the interior fixed point let $v_j$ now denote log stock deviations from stationarity and $\ell=\alpha v_k+\beta v_h=\log(y/y^*)$. Linearization gives $\dot v_j=q(\ell-v_j)$, hence $\dot\ell=-qd\ell$. The other mode changes the capital mix at rate $q$. For $T=25$, $W_i=1-\exp(-Tq_i d)$, integration gives
+\[
+ D_i\simeq gT+W_i\left[a+\epsilon_i+{\alpha\over d}(X_i-Z_i)
+             +{\beta\over d}(\log u_i-Z_i)-J_i\right].
+\]
+This is local in stock deviations, finite in elapsed time. On the stationary mix the scalar solution is exact:
+\[
+ (y(t)/y^*)^{d/m}=1+[(y(0)/y^*)^{d/m}-1]e^{-qdt}.
+\]
+Off that mix, initial income alone need not summarize the exact nonlinear transition. The local log-gap half-life is $\log(2)/(qd)$. At $q=.06$ the one-stock model closes 4 percent continuously per year, half-life 17.3 years, and removes 63.2 percent of the gap in 25 years. Two one-third shares give 2 percent, 34.7 years and 39.3 percent respectively.
+
+At $m=1$ consider $Y=BK^\alpha H^{1-\alpha}$. With $0<\alpha<1$ let $V=K/s,U=H/u$ in aggregate units and $C=B s^\alpha u^{1-\alpha}$. Their difference satisfies $V-U=(V_0-U_0)e^{-\delta t}$. After multiplying both by $e^{\delta t}$ the smaller grows at least at rate $C$, so their ratio tends to one even if the original stocks shrink. On the balanced ray $H/K=u/s$, the aggregate net growth rate is $C-\delta$ and growth per worker is $C-\delta-n$. Saving now changes permanent growth; for example $\partial C/\partial s=\alpha C/s$ at fixed $u$. With a fixed total investment fraction, $C$ is maximized by allocating fraction $\alpha$ to physical investment. On an off-ray path the initial mix affects output growth and the eventual scale: in depreciation-adjusted units both stocks receive the same absolute normalized increment, while their initial difference persists. The smaller adjusted stock grows at least exponentially, so its proportional growth differs from $C$ by an integrable, exponentially vanishing error. The asymptotic growth rate is independent of that initial mix. In effective units the balanced growth rate is $C-q$; there is a continuum of stationary scales only at $C=q$, none otherwise. Under constant technology $g=0$ here. If $\beta=0,\alpha=1$, $Y=BK$ gives the same conclusions with $C=Bs$ and no mix adjustment. There is no half-life to a unique income target at the boundary.
+
+\section{Catch-up in the endpoint observations}
+A regression of $D$ on $J$ alone asks whether initially poorer countries grew faster regardless of their targets. Its slope combines gap closure with the covariance of initial income and long-run income. Adding the inputs allows the target to differ. For a common effective $W$, the initial-income coefficient $b_J=-W$, annual speed $\lambda=-\log(1+b_J)/25$, and restricted shares are $b_j/(-b_J+\sum b_j)$. An intercept absorbs common efficiency, schooling scale and trend. Structural interpretation requires the growth disturbance, including $W\epsilon_i$, to have zero conditional mean given initial income as well as inputs. Persistent efficiency can itself raise initial income, biasing catch-up toward zero. Initial income measurement error enters the growth outcome with opposite sign and can bias the slope downward. Common trends, sustained rates and local approximation accuracy also matter.
+
+\begin{center}\scriptsize
+Table 3. Unrestricted 25-year growth regressions\\[3pt]
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{llrrrrrrrr}\toprule
+&Stocks&Constant&$J$&$X$&$S$&$Z$&$\bar R^2$&SD&$F$ ($p$)\\\midrule
+N&none&$-.267$ (.380)&.094 (.050)&&&&.026&.440&\\
+I&none&.588 (.433)&$-.004$ (.055)&&&&$-.014$&.408&\\
+O&none&3.686 (.685)&$-.341$ (.079)&&&&.460&.183&\\
+N&$K$&1.919 (.834)&$-.141$ (.052)&.647 (.087)&&$-.302$ (.304)&.383&.351&1.161 (.284)\\
+I&$K$&2.250 (.855)&$-.228$ (.057)&.646 (.104)&&$-.457$ (.307)&.353&.326&.317 (.575)\\
+O&$K$&2.140 (1.181)&$-.350$ (.066)&.390 (.176)&&$-.766$ (.345)&.623&.153&.887 (.359)\\
+N&$K,H$&3.022 (.827)&$-.288$ (.062)&.524 (.087)&.231 (.059)&$-.506$ (.289)&.463&.327&.693 (.407)\\
+I&$K,H$&3.709 (.909)&$-.366$ (.067)&.538 (.102)&.270 (.080)&$-.545$ (.288)&.435&.304&.703 (.404)\\
+O&$K,H$&2.755 (1.201)&$-.398$ (.070)&.332 (.173)&.228 (.145)&$-.863$ (.338)&.651&.147&.617 (.443)\\\bottomrule
+\end{tabular}
+
+\medskip
+Table 4. Growth with the dilution restriction\\[3pt]
+\begin{tabular}{llrrrrrr}\toprule
+&Stocks&Constant&$J$&$X-Z$&$S-Z$&$\bar R^2$&SD\\\midrule
+N&$K$&1.106 (.354)&$-.151$ (.051)&.618 (.082)&&.382&.351\\
+I&$K$&1.823 (.392)&$-.234$ (.056)&.622 (.094)&&.359&.324\\
+O&$K$&3.097 (.601)&$-.352$ (.066)&.474 (.151)&&.625&.152\\
+N&$K,H$&2.457 (.473)&$-.298$ (.060)&.501 (.082)&.235 (.059)&.465&.326\\
+I&$K,H$&3.090 (.530)&$-.372$ (.067)&.506 (.095)&.266 (.080)&.437&.304\\
+O&$K,H$&3.554 (.634)&$-.402$ (.069)&.395 (.152)&.241 (.142)&.659&.145\\\bottomrule
+\end{tabular}
+
+\medskip
+Table 5. Adjustment rates (percent per year) and growth-implied shares\\[3pt]
+\begin{tabular}{llrrrrr}\toprule
+&Stocks&Speed U&Speed R&$\alpha$ R&$\beta$ R&Benchmark $F$ ($p$)\\\midrule
+N&none&$-.360$ (.181)&&&&\\
+I&none&.017 (.220)&&&&\\
+O&none&1.669 (.477)&&&&\\
+N&$K$&.607 (.242)&.653 (.241)&.804 (.043)&&75.426 ($<.001$)\\
+I&$K$&1.034 (.297)&1.067 (.292)&.727 (.037)&&51.534 ($<.001$)\\
+O&$K$&1.723 (.405)&1.736 (.404)&.574 (.088)&&8.555 (.002)\\
+N&$K,H$&1.361 (.346)&1.415 (.344)&.484 (.067)&.228 (.049)&2.514 (.063)\\
+I&$K,H$&1.823 (.425)&1.863 (.426)&.442 (.073)&.232 (.058)&1.268 (.292)\\
+O&$K,H$&2.028 (.466)&2.058 (.463)&.381 (.126)&.232 (.115)&.622 (.610)\\\bottomrule
+\end{tabular}\end{center}
+
+The negative unconditional speed in N is a descriptive divergence coefficient. There is no positive catch-up half-life for that estimate. The near-zero I estimate likewise gives little information on a half-life. OECD catch-up is visible even before conditioning. Figure 1 shows why pooling economies with different long-run incomes changes the inference. In N the initially richest quarter grew more than the poorest quarter on average, yet the quarter furthest above its predicted initial income had the weakest residual growth. Slopes use individual observations throughout.
+
+\begin{center}\small
+Figure 1. Mean log growth against mean initial log income within four rank groups\\[6pt]
+\setlength{\unitlength}{1pt}
+\begin{picture}(365,109)
+\put(8,18){\line(1,0){145}}\put(8,18){\line(0,1){74}}
+\put(205,18){\line(1,0){140}}\put(205,18){\line(0,1){74}}
+\ptat{81}{102}{Raw}\ptat{275}{102}{Net of $X,S,Z$}
+\ptat{8}{9}{6.4}\ptat{150}{9}{9.3}\ptat{0}{18}{0}\ptat{0}{88}{1}
+\ptat{205}{9}{$-.7$}\ptat{345}{9}{.7}\ptat{188}{18}{$-.35$}\ptat{188}{88}{.35}
+\ptat{15}{40}{$\bullet$}\ptat{46}{40}{$\bullet$}\ptat{79}{66}{$\bullet$}\ptat{129}{52}{$\bullet$}
+\ptat{26}{57}{$+$}\ptat{63}{57}{$+$}\ptat{94}{61}{$+$}\ptat{135}{53}{$+$}
+\ptat{86}{85}{$\circ$}\ptat{124}{69}{$\circ$}\ptat{134}{64}{$\circ$}\ptat{146}{51}{$\circ$}
+\ptat{210}{67}{$\bullet$}\ptat{256}{63}{$\bullet$}\ptat{292}{54}{$\bullet$}\ptat{345}{28}{$\bullet$}
+\ptat{211}{78}{$+$}\ptat{259}{56}{$+$}\ptat{292}{55}{$+$}\ptat{342}{22}{$+$}
+\ptat{214}{79}{$\circ$}\ptat{277}{48}{$\circ$}\ptat{294}{45}{$\circ$}\ptat{327}{35}{$\circ$}
+\end{picture}\\
+$\bullet$ N\qquad $+$ I\qquad $\circ$ O
+\end{center}
+Each panel orders countries within sample by its own horizontal variable and forms four nearly equal groups. On the right both axes are residuals from separate regressions on a constant and the three inputs. Binning suppresses within-group dispersion; the right-hand individual slope equals the unrestricted two-stock coefficient on $J$.
+
+Common-speed coefficients summarize heterogeneous transitions. Mean $q$ is .0720, .0717 and .0601 in N, I and O. Even identical shares imply different $W_i$ within each sample; in general a fitted common slope need not correspond to the speed at mean $q$. Table 5 reports delta-method standard errors using the entire coefficient covariance matrix for each transformation. For example the speed derivative with respect to $b_J$ is $-1/[25(1+b_J)]$. Structural transformations impose the proportional proxy and the input restriction. The N restricted two-stock speed implies a 49-year half-life, versus 106 years with one stock; corresponding I values are 37 and 65, O values 34 and 40.
+
+The last column tests the benchmark transition directly, retaining $q_i$. Fix every active share at one third and subtract $gT+W_i[\sum_j (X_{ji}-Z_i)/(3d)-J_i]$ from $D_i$, with $X_{ji}$ the active investment logs including the schooling proxy. Under the benchmark only a coefficient on $W_i$ remains. The alternative adds $J_i$ and the active normalized inputs to that regression. The nested $F$ test has numerator degrees of freedom two or three and denominator degrees of freedom $N_s-3$ or $N_s-4$ for sample size $N_s$. It tests specified systematic departures, conditional on the local approximation and the error assumptions. All groups reject the physical benchmark at one percent. The augmented benchmark is more consistent with the data, with the closest call in N. Efficiency heterogeneity scaled by $W_i$ could itself induce heteroskedasticity, so these probabilities are conditional reference values.
+
+Even the free-share common-speed equations only partially align. At mean $q$ the two-stock growth shares predict speeds exceeding their corresponding fitted speeds by .66, .47 and .27 percentage points (delta standard errors .20, .32 and .50). This diagnostic treats observed $q$ as fixed. The physical-only growth shares are higher still than the level shares, and increasing the accumulated share slows predicted convergence. Adding schooling gives more credible levels and speeds together, without establishing that a single exact parameter vector explains both.
+
+\section{What does an investment earn?}
+With a common output price for capital goods, the gross physical marginal product is $\alpha Y/K$. The stationary capital-output ratio is $s/q$, giving net annual return $r_K=\alpha q/s-\delta$. Likewise $r_H=\beta q/u-\delta$ at stationarity. The rules fixing investment fractions do not require these returns to coincide. In I, using $\alpha=1/3$, $g=.02$, $\delta=.03$, the unweighted mean of country net physical returns is 12.26 percent and the sample standard deviation is 8.47 percentage points (75 countries). The calculation averages ratios and subtracts depreciation once. It uses no income or observed yield. Introducing human capital leaves this conditional calculation intact at the same physical share.
+
+For a separate off-steady-state comparison, equal gross marginal products within each country imply $H/K=\beta/\alpha$ with both stocks active. At common efficiency this gives $Q=A^d(\beta/\alpha)^\beta(K/L)^m$. Since the gross physical return equals $\alpha Q/(K/L)$, it varies as $Q^{-d/m}$. With physical capital alone the same power applies with $m=\alpha$. A tenfold richer economy implies a poor-to-rich gross return ratio of 100 at $m=1/3$ and $\sqrt{10}$ at $m=2/3$. These are gross ratios; common depreciation is subtracted in levels. At $m=1$ the predicted return is independent of scale on the equal-return mix. Holding common technology and the mix fixed is essential. Different efficiency or skill scarcity can reverse comparisons based on income alone.
+
+\paragraph{Financial claims and international flows.}
+A comparison to financial history would match net marginal products to risk-, tax-, inflation- and depreciation-comparable yields, then ask whether investment flows toward high predicted returns. A yield on a liquid claim need not measure the social product of installing capital. Domestic investment can be financed at home; investment rates alone do not reveal net foreign inflows. Yields, domestic saving, flows, financing constraints and annual investment paths are unavailable, so neither return equalization nor the direction of capital movements is observed here.
+
+\paragraph{Productive assets and payments.}
+One could independently measure $K/Y$, gross operating income and depreciation to compare realized productive yields and factor shares across income levels. A high marginal product at low capital intensity can coexist with a constant physical share because the stock earning it is small. An estimate of productive capital from cumulated investment would need initial stocks and investment histories. Current data supply investment fractions and GDP endpoints only. The steady-state imputation cannot independently corroborate the share used to construct it.
+
+\paragraph{Expropriation and compensation.}
+A wedge between the social marginal product and the private expected payoff could discourage foreign investment. A quantitative comparison requires the probability and timing of nationalization, compensation relative to asset value, and losses of income before settlement. Compensation may offset part or all of a seizure; incidence alone does not measure expected loss. There are no such records with which to price this wedge or attribute a predicted return gap to it.
+
+\paragraph{Earnings and schooling.}
+A private education return compares the discounted increment in after-tax lifetime earnings with tuition and forgone earnings. A social return also includes resource costs borne by others, external effects and any difference between wages and marginal products. Selection on ability or family resources can affect observed wage premiums. The manufacturing benchmark apportions earnings at one point in time; it gives neither an earnings history nor an incremental investment cost. Enrollment supplies neither side of that lifetime comparison. No estimates of private or social schooling yields follow directly from the schooling regression.
+
+\section{Conclusion}
+Physical accumulation alone captures a sizable income gradient outside the OECD but requires a large share to do so and predicts unusually steep gross return differences under common efficiency. Accumulating skills allows an investment increase to raise both stocks. This accounts for more of the dispersion with a smaller physical share and slows adjustment toward country-specific targets. The OECD evidence puts relatively more weight on catch-up and less on a precise physical elasticity. Productivity levels and their determinants, endogenous saving and fertility, education quality, institutions, labor utilization and investment risk remain outside the fitted mechanism. The observations permit conditional accounting and tests of slope restrictions. Direct tests using stock quantities, historical working files, market returns, capital flows or lifetime earnings remain open.
+
+\appendix
+\section{Country observations}
+Flags are the three supplied binary digits in order N, I, O. Columns 60 and 85 give comparable real dollars per person aged 15--64. Columns $G,n,I,E$ are period averages in percent: aggregate real GDP growth, working-age population growth, real investment/GDP and the enrollment proxy. Empty cells are missing. Labels, flags and numeric precision follow the supplied cross section.
+\small
+\begin{longtable}{lcrrrrrr}
+\toprule Country&Flags&60&85&$G$&$n$&$I$&$E$\\\midrule\endhead
+Algeria&110&2485&4371&4.8&2.6&24.1&4.5\\
+Angola&100&1588&1171&0.8&2.1&5.8&1.8\\
+Benin&100&1116&1071&2.2&2.4&10.8&1.8\\
+Botswana&110&959&3671&8.6&3.2&28.3&2.9\\
+Burkina Faso&100&529&857&2.9&0.9&12.7&0.4\\
+Burundi&100&755&663&1.2&1.7&5.1&0.4\\
+Cameroon&110&889&2190&5.7&2.1&12.8&3.4\\
+Central Afr. Rep.&100&838&789&1.5&1.7&10.5&1.4\\
+Chad&100&908&462&-0.9&1.9&6.9&0.4\\
+Congo, Peop. Rep.&100&1009&2624&6.2&2.4&28.8&3.8\\
+Egypt&100&907&2160&6.0&2.5&16.3&7.0\\
+Ethiopia&110&533&608&2.8&2.3&5.4&1.1\\
+Gabon&000&1307&5350&7.0&1.4&22.1&2.6\\
+Gambia, The&000&799&&3.6&&18.1&1.5\\
+Ghana&100&1009&727&1.0&2.3&9.1&4.7\\
+Guinea&000&746&869&2.2&1.6&10.9&\\
+Ivory Coast&110&1386&1704&5.1&4.3&12.4&2.3\\
+Kenya&110&944&1329&4.8&3.4&17.4&2.4\\
+Lesotho&000&431&1483&6.8&1.9&12.6&2.0\\
+Liberia&100&863&944&3.3&3.0&21.5&2.5\\
+Madagascar&110&1194&975&1.4&2.2&7.1&2.6\\
+Malawi&110&455&823&4.8&2.4&13.2&0.6\\
+Mali&110&737&710&2.1&2.2&7.3&1.0\\
+Mauritania&100&777&1038&3.3&2.2&25.6&1.0\\
+Mauritius&100&1973&2967&4.2&2.6&17.1&7.3\\
+Morocco&110&1030&2348&5.8&2.5&8.3&3.6\\
+Mozambique&100&1420&1035&1.4&2.7&6.1&0.7\\
+Niger&100&539&841&4.4&2.6&10.3&0.5\\
+Nigeria&110&1055&1186&2.8&2.4&12.0&2.3\\
+Rwanda&100&460&696&4.5&2.8&7.9&0.4\\
+Senegal&110&1392&1450&2.5&2.3&9.6&1.7\\
+Sierra Leone&100&511&805&3.4&1.6&10.9&1.7\\
+Somalia&100&901&657&1.8&3.1&13.8&1.1\\
+S. Africa&110&4768&7064&3.9&2.3&21.6&3.0\\
+Sudan&100&1254&1038&1.8&2.6&13.2&2.0\\
+Swaziland&000&817&&7.2&&17.7&3.7\\
+Tanzania&110&383&710&5.3&2.9&18.0&0.5\\
+Togo&100&777&978&3.4&2.5&15.5&2.9\\
+Tunisia&110&1623&3661&5.6&2.4&13.8&4.3\\
+Uganda&100&601&667&3.5&3.1&4.1&1.1\\
+Zaire&100&594&412&0.9&2.4&6.5&3.6\\
+Zambia&110&1410&1217&2.1&2.7&31.7&2.4\\
+Zimbabwe&110&1187&2107&5.1&2.8&21.1&4.4\\
+Afghanistan&000&1224&&1.6&&6.9&0.9\\
+Bahrain&000&&&&&30.0&12.1\\
+Bangladesh&110&846&1221&4.0&2.6&6.8&3.2\\
+Burma&110&517&1031&4.5&1.7&11.4&3.5\\
+Hong Kong&110&3085&13372&8.9&3.0&19.9&7.2\\
+India&110&978&1339&3.6&2.4&16.8&5.1\\
+Iran&000&3606&7400&6.3&3.4&18.4&6.5\\
+Iraq&000&4916&5626&3.8&3.2&16.2&7.4\\
+Israel&110&4802&10450&5.9&2.8&28.5&9.5\\
+Japan&111&3493&13893&6.8&1.2&36.0&10.9\\
+Jordan&110&2183&4312&5.4&2.7&17.6&10.8\\
+Korea, Rep. of&110&1285&4775&7.9&2.7&22.3&10.2\\
+Kuwait&000&77881&25635&2.4&6.8&9.5&9.6\\
+Malaysia&110&2154&5788&7.1&3.2&23.2&7.3\\
+Nepal&100&833&974&2.6&2.0&5.9&2.3\\
+Oman&000&&15584&&3.3&15.6&2.7\\
+Pakistan&110&1077&2175&5.8&3.0&12.2&3.0\\
+Philippines&110&1668&2430&4.5&3.0&14.9&10.6\\
+Saudi Arabia&000&6731&11057&6.1&4.1&12.8&3.1\\
+Singapore&110&2793&14678&9.2&2.6&32.2&9.0\\
+Sri Lanka&110&1794&2482&3.7&2.4&14.8&8.3\\
+Syrian Arab Rep.&110&2382&6042&6.7&3.0&15.9&8.8\\
+Taiwan&000&&&8.0&&20.7&\\
+Thailand&110&1308&3220&6.7&3.1&18.0&4.4\\
+U. Arab Emirates&000&&18513&&&26.5&\\
+Yemen&000&&1918&&2.5&17.2&0.6\\
+Austria&111&5939&13327&3.6&0.4&23.4&8.0\\
+Belgium&111&6789&14290&3.5&0.5&23.4&9.3\\
+Cyprus&000&2948&&5.2&&31.2&8.2\\
+Denmark&111&8551&16491&3.2&0.6&26.6&10.7\\
+Finland&111&6527&13779&3.7&0.7&36.9&11.5\\
+France&111&7215&15027&3.9&1.0&26.2&8.9\\
+Germany, Fed. Rep.&111&7695&15297&3.3&0.5&28.5&8.4\\
+Greece&111&2257&6868&5.1&0.7&29.3&7.9\\
+Iceland&000&8091&&3.9&&29.0&10.2\\
+Ireland&111&4411&8675&3.8&1.1&25.9&11.4\\
+Italy&111&4913&11082&3.8&0.6&24.9&7.1\\
+Luxembourg&000&9015&&2.8&&26.9&5.0\\
+Malta&000&2293&&6.0&&30.9&7.1\\
+Netherlands&111&7689&13177&3.6&1.4&25.8&10.7\\
+Norway&111&7938&19723&4.3&0.7&29.1&10.0\\
+Portugal&111&2272&5827&4.4&0.6&22.5&5.8\\
+Spain&111&3766&9903&4.9&1.0&17.7&8.0\\
+Sweden&111&7802&15237&3.1&0.4&24.5&7.9\\
+Switzerland&111&10308&15881&2.5&0.8&29.7&4.8\\
+Turkey&111&2274&4444&5.2&2.5&20.2&5.5\\
+United Kingdom&111&7634&13331&2.5&0.3&18.4&8.9\\
+Barbados&000&3165&&4.8&&19.5&12.1\\
+Canada&111&10286&17935&4.2&2.0&23.3&10.6\\
+Costa Rica&110&3360&4492&4.7&3.5&14.7&7.0\\
+Dominican Rep.&110&1939&3308&5.1&2.9&17.1&5.8\\
+El Salvador&110&2042&1997&3.3&3.3&8.0&3.9\\
+Guatemala&110&2481&3034&3.9&3.1&8.8&2.4\\
+Haiti&110&1096&1237&1.8&1.3&7.1&1.9\\
+Honduras&110&1430&1822&4.0&3.1&13.8&3.7\\
+Jamaica&110&2726&3080&2.1&1.6&20.6&11.2\\
+Mexico&110&4229&7380&5.5&3.3&19.5&6.6\\
+Nicaragua&110&3195&3978&4.1&3.3&14.5&5.8\\
+Panama&110&2423&5021&5.9&3.0&26.1&11.6\\
+Trinidad \& Tobago&110&9253&11285&2.7&1.9&20.4&8.8\\
+United States&111&12362&18988&3.2&1.5&21.1&11.9\\
+Argentina&110&4852&5533&2.1&1.5&25.3&5.0\\
+Bolivia&110&1618&2055&3.3&2.4&13.3&4.9\\
+Brazil&110&1842&5563&7.3&2.9&23.2&4.7\\
+Chile&110&5189&5533&2.6&2.3&29.7&7.7\\
+Colombia&110&2672&4405&5.0&3.0&18.0&6.1\\
+Ecuador&110&2198&4504&5.7&2.8&24.4&7.2\\
+Guyana&000&2761&&1.1&&32.4&11.7\\
+Paraguay&110&1951&3914&5.5&2.7&11.7&4.4\\
+Peru&110&3310&3775&3.5&2.9&12.0&8.0\\
+Surinam&000&3226&&4.5&&19.4&8.1\\
+Uruguay&110&5119&5495&0.9&0.6&11.8&7.0\\
+Venezuela&110&10367&6336&1.9&3.8&11.4&7.0\\
+Australia&111&8440&13409&3.8&2.0&31.5&9.8\\
+Fiji&000&3634&&4.2&&20.6&8.1\\
+Indonesia&110&879&2159&5.5&1.9&13.9&4.1\\
+New Zealand&111&9523&12308&2.7&1.7&22.5&11.9\\
+Papua New Guinea&100&1781&2544&3.5&2.1&16.2&1.5\\
+\bottomrule\end{longtable}
+\end{document}

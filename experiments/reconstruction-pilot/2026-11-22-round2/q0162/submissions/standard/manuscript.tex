@@ -1,0 +1,136 @@
+\documentclass[11pt]{article}
+% Recognition disclosure: I recognize the general growth-model exercise. All empirical evidence below comes from calculations on the supplied observations.
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,booktabs}
+\title{Capital accumulation, schooling, and catch-up across countries, 1960--1985}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+Among 98 countries and economies, investment predicts higher output per working-age person in 1985 and faster working-age population growth predicts lower output, conditional on investment. Adding secondary schooling nearly halves the investment elasticity and raises adjusted $R^2$ from 0.59 to 0.78. Under a steady-state interpretation, the estimated physical capital elasticity falls from 0.60 to 0.31, with another 0.27 attributed to human capital. Poorer countries in this sample did not generally grow faster. At comparable investment, schooling and population growth, however, a lower initial output level predicts faster subsequent growth. The historical OECD group exhibits catch-up even without controls. These findings concern cross-country associations. The data measure enrollment only indirectly and leave the human investment share and country productivity unobserved.
+\end{abstract}
+
+\section{Country comparisons}
+Why do investment and schooling matter for interpreting catch-up? If two countries accumulate capital at different rates, the poorer one may be close to its own long-run output path while the richer one is still climbing toward a higher path. A regression of growth on initial output alone combines differences in those paths with adjustment toward them. I estimate both relationships, giving each country equal weight throughout.
+
+The supplied cross section contains 121 historical countries or economies. I use the recorded indicators. The broad non-oil group excludes oil-dominated economies and Lesotho, where income earned abroad was unusually important. The intermediate group excludes the lowest-rated real income data and countries with populations below one million in 1960. The OECD comparison uses the recorded historical membership and a population threshold above one million. All 22 OECD observations belong to the intermediate group of 75, itself contained in the broad group of 98. Of the remaining rows, 23 lie outside all three groups. Blanks denote missing data. All observations within the indicators have complete data for the regressions. The subgroup results describe sensitivity to composition and are statistically dependent.
+
+Write $y_t$ for real GDP in comparable dollars per person aged 15--64. This denominator includes people outside employment. My level outcome is $\log y_{1985}$ and my growth outcome is $G=\log y_{1985}-\log y_{1960}$, the cumulative change over 25 years. The supplied annual aggregate GDP growth series measures a different outcome. I divide each percentage input by 100. Thus $s$ is average real investment (including government investment) as a share of GDP, $n$ is annual working-age population growth, $d=n+0.05$, and $p$ is the secondary schooling proxy. All logarithms are natural. Table~\ref{desc} distinguishes growth of the average country's output per person from changes in the dispersion of log output.
+
+\begin{table}[ht]
+\centering
+\caption{Annual log growth and cross-sectional dispersion}\label{desc}
+\begin{tabular}{lrrrr}
+\toprule
+&Countries&Mean $100G/25$&SD $\log y_{1960}$&SD $\log y_{1985}$\\
+\midrule
+Broad&98&1.80&0.901&1.079\\
+Intermediate&75&2.22&0.864&0.951\\
+OECD&22&2.86&0.508&0.380\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{From accumulation to an estimating equation}
+Let $L$ be working-age population and $A$ labor efficiency growing at rate $g$. Under competitive factor pricing and the common technology
+\[
+ Y=K^\alpha H^\beta(AL)^{1-\alpha-\beta},
+ \qquad \alpha>0,\quad \beta\geq0,\quad D=1-\alpha-\beta>0,
+\]
+the exponents give marginal-product income shares when the inputs earn their marginal products. The physical-only case sets $\beta=0$. Assume constant country investment fractions $s$ and $s_h$, a common depreciation rate $\delta$ for the two stocks, and constant $n$. In continuous time $g+\delta=0.05$. In units per effective person, $k=K/(AL)$, $h=H/(AL)$ and $f=k^\alpha h^\beta$ satisfy
+\[
+ \dot k=sf-dk,\qquad \dot h=s_h f-dh .
+\]
+At an interior steady state $k^*=sf^*/d$ and $h^*=s_h f^*/d$. Substitution and taking logs give a balanced-growth level in observed units,
+\begin{equation}
+ \log y_t^*=\log A_t+a\log(s/d)+b\log(s_h/d),\qquad
+ a=\alpha/D,\quad b=\beta/D.\label{level}
+\end{equation}
+Faster working-age population growth dilutes both stocks. Holding investment rates fixed, the elasticity with respect to $d$ is $-(a+b)$. Conversely $\alpha=a/(1+a+b)$ and $\beta=b/(1+a+b)$.
+
+The codebook constructs $p$ from the enrollment rate at ages 12--17 and the share aged 15--19 in the working-age population. It measures neither a stock of acquired skills nor the resources spent acquiring them. Translating the level slopes into production elasticities requires, for example, $s_h=Cp$ with a common $C>0$. The units then affect only the intercept. If instead $s_h=Cp^\eta$, the schooling slope is $\eta b$ and the imposed adding-up restriction on observed slopes need no longer hold. School quality, time costs, tertiary education and age composition can all alter the mapping. Demographics can therefore enter through both $p$ and $d$.
+
+I fit ordinary least squares with an intercept, first allowing separate coefficients on the logs of investment, dilution and (where included) schooling, then imposing equation~(\ref{level}) using log ratios. Treating end-period output as a steady-state observation requires remaining transitional gaps and country efficiency differences to be uncorrelated with the regressors for the slopes to have their structural interpretation. Common efficiency growth does not ensure this condition. Tables report leverage-adjusted heteroskedasticity-robust standard errors (HC3), treating countries as independent for uncertainty calculations. Regional dependence and common shocks with differing country exposures could affect their accuracy.
+
+\section{Output levels}
+\begin{table}[ht]
+\centering\small
+\caption{Unrestricted regressions of log 1985 output per working-age person}\label{levtab}
+\begin{tabular}{llrrrrr}
+\toprule
+Group&Stocks&$\log s$&$\log d$&$\log p$&Adj. $R^2$&$z_{\Sigma}$\\
+\midrule
+Broad&Physical&1.424 (.135)&$-1.990$ (.557)& &.592&$-.90$\\
+&Both&.697 (.154)&$-1.745$ (.353)&.654 (.077)&.779&$-.98$\\
+Intermediate&Physical&1.318 (.171)&$-2.017$ (.497)& &.588&$-1.17$\\
+&Both&.700 (.163)&$-1.500$ (.352)&.731 (.103)&.771&$-.17$\\
+OECD&Physical&.500 (.415)&$-.742$ (1.460)& &.012&$-.20$\\
+&Both&.276 (.481)&$-1.076$ (1.143)&.768 (.682)&.244&$-.04$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+In Table~\ref{levtab}, the broad-sample schooling coefficient of 0.654 means that a one percent relative increase in the enrollment proxy is associated with about 0.65 percent higher output at fixed investment and dilution. The smaller investment slope after conditioning on schooling is consistent with physical investment partly standing in for human accumulation when the latter is omitted. The dilution coefficient is an elasticity with respect to $n+0.05$, so the output difference associated with a given percentage-point increase in $n$ depends on the starting $n$. The intermediate sample yields similar slopes. Within the OECD, schooling increases fitted explanatory power, but its slope has a standard error almost as large as its estimate. The sample is small and spans a narrower range of output.
+
+The last column divides the sum of the included input coefficients by its HC3 standard error. None of the absolute statistics reaches 1.96. This permits the model restriction as a parsimonious summary, with limited discrimination in the OECD group. Table~\ref{shares} translates the restricted slopes into implied shares. In the broad group the two-stock equation assigns about the same total elasticity to accumulated factors as the one-stock equation, but splits it almost evenly between physical and human capital. This accounts for much of the change in the physical investment coefficient without requiring a large change in combined diminishing returns. There are no factor-payment data here against which to verify the split.
+
+\begin{table}[ht]
+\centering
+\caption{Implied production elasticities under the dilution restriction}\label{shares}
+\begin{tabular}{llrrr}
+\toprule
+&&Physical only&\multicolumn{2}{c}{Physical and human}\\
+Group&Outcome&$\alpha$&$\alpha$&$\beta$\\
+\midrule
+Broad&Level&.598&.308&.274\\
+&Growth&.804&.484&.228\\
+Intermediate&Level&.589&.290&.300\\
+&Growth&.727&.442&.232\\
+OECD&Level&.356&.138&.375\\
+&Growth&.574&.381&.232\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Adjustment over 25 years}
+Close to steady state, let $u$ and $v$ be the log deviations of $k$ and $h$ from their steady states and $w=\alpha u+\beta v$ the log output gap in effective units. Linearizing accumulation gives $\dot u=d(w-u)$ and $\dot v=d(w-v)$, hence $\dot w=-Dd\,w$. The local annual convergence speed is $\lambda=Dd$. For fixed physical elasticity and dilution, accumulating human capital slows adjustment because the combined marginal returns to accumulation diminish more slowly. With $T=25$ and $q=1-e^{-\lambda T}$, integration gives
+\begin{equation}
+ G\simeq gT+q\{\log A_{1960}+a\log(s/d)+b\log(s_h/d)-\log y_{1960}\}.\label{trans}
+\end{equation}
+I approximate $q$ by a common slope within each regression, although the theory allows $d$ to vary by country. The estimated initial-output coefficient $c$ implies $\widehat\lambda=-\log(1+c)/25$. A negative speed describes divergence under this transformation. Under the restricted growth regression the two log-ratio slopes estimate $qa$ and $qb$; I divide by $-c$ before applying the level inversion in Table~\ref{shares}.
+
+\begin{table}[ht]
+\centering\footnotesize
+\caption{Regressions of cumulative growth on initial output and accumulation}\label{grtab}
+\begin{tabular}{llrrrrrr}
+\toprule
+Group&Controls&$\log y_{1960}$&$\log s$&$\log d$&$\log p$&Adj. $R^2$&$100\widehat\lambda$\\
+\midrule
+Broad&None&.094 (.045)&&&&.026&$-.36$\\
+&Physical&$-.141$ (.052)&.647 (.107)&$-.302$ (.257)&&.383&.61\\
+&Both&$-.288$ (.057)&.524 (.112)&$-.506$ (.246)&.231 (.069)&.463&1.36\\
+Intermediate&None&$-.004$ (.050)&&&&$-.014$&.02\\
+&Physical&$-.228$ (.062)&.646 (.143)&$-.457$ (.256)&&.353&1.03\\
+&Both&$-.366$ (.062)&.538 (.145)&$-.545$ (.243)&.270 (.092)&.435&1.82\\
+OECD&None&$-.341$ (.114)&&&&.460&1.67\\
+&Physical&$-.350$ (.093)&.390 (.317)&$-.766$ (.420)&&.623&1.72\\
+&Both&$-.398$ (.095)&.332 (.281)&$-.863$ (.330)&.228 (.155)&.651&2.03\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Unconditionally, initially richer countries grew somewhat faster in the broad group. The intermediate slope is near zero. Only the OECD group shows clear unconditional catch-up, alongside a decline in log-output dispersion (Table~\ref{desc}). Conditional on all three inputs, a country starting one log point lower in the broad group gained an estimated 0.288 additional log points over the period. This closes about 29 percent of the initial difference at equal fitted determinants. Conditional catch-up can coexist with widening dispersion when countries head toward different output paths.
+
+Adding schooling changes the broad-sample conditional speed from 0.61 to 1.36 percent per year, and the intermediate estimate from 1.03 to 1.82. The OECD estimate changes less. Delta-method standard errors for the three fully controlled annual speeds, in table order, are 0.32, 0.39 and 0.63 percentage points. These pooled estimates increase when schooling is added even though the theoretical speed falls if $\beta$ alone rises at fixed $\alpha,d$. The regressions change which initial income differences count as gaps and reestimate the other slopes. They do not implement that comparative static.
+
+Imposing the dilution restriction in the two-stock broad growth regression gives coefficients of 0.501 (0.096) on $\log(s/d)$ and 0.235 (0.068) on $\log(p/d)$, and $c=-0.298$ (0.055). These yield a larger combined capital share than the level estimates (Table~\ref{shares}). There is also a quantitative tension in the speed. At an illustrative $n=0.02$, the broad two-stock level shares imply $100Dd\simeq2.93$ percent per year, compared with the unrestricted transition estimate of 1.36. This comparison depends on the benchmark population growth rate, proximity to steady state and the common-speed approximation. The separate level and transition fits do not establish a single set of structural parameters.
+
+\section{What the evidence can sustain}
+Schooling improves the description of both output levels and conditional growth in the two larger groups. The main gain is an account of why economies with similar physical investment and dilution can occupy different output paths. A country with more productive institutions or higher initial efficiency could both sustain more schooling and produce more output. Likewise income growth during the observation window can finance education and physical investment, so the period averages are potentially joint outcomes of growth. Measurement error in initial output enters the growth outcome with the opposite sign, potentially exaggerating estimated catch-up. The intermediate-group comparison addresses sample composition, but cannot remove these sources of bias.
+
+The rounded cross section provides no annual paths, initial capital stocks, direct human investment expenditures, independent productivity measures or individual earnings and schooling records. It cannot test the timing of adjustment, estimate the return to another year of schooling, separate education quality from enrollment, or identify a causal effect of raising an investment rate. The estimated shares and speeds quantify what the accumulation interpretation requires; the conditional associations and the differences in dispersion are the more direct findings.
+
+\paragraph{Reproduction.}
+\raggedright With Python 3 and NumPy installed, run \texttt{python3 analysis.py}. Keep the supplied CSV in the \texttt{inputs} directory beside the script. The script writes \texttt{results.json} with unrounded calculation results from the rounded inputs, including intercepts, complete coefficient covariance matrices, fit statistics, restriction statistics and transformed estimates. Matrix rows and columns follow the order of the coefficient entries. Definitions and sample rules follow \texttt{inputs/input-2.txt}. Parentheses in the tables give HC3 standard errors; the speed column reports percent per year.
+\end{document}

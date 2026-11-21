@@ -17,6 +17,12 @@ def write(path, record):
 
 
 class BenchmarkCurationTests(unittest.TestCase):
+    def test_nested_file_findings_preserve_each_section(self):
+        review = {'decision': 'hold', 'sufficiency': 'missing primitive', 'leakage': 'no answer',
+                  'input_findings': {'public-task.json': {'question': 'clear', 'model': 'missing distribution'}}}
+        actual = reader.decision(review, ['public-task.json'])
+        self.assertEqual(actual['input_findings']['public-task.json'], 'question: clear\nmodel: missing distribution')
+
     def test_entire_large_numeric_input_is_reviewed_and_copied(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
@@ -240,6 +246,25 @@ class BenchmarkCurationTests(unittest.TestCase):
             result = reader.run(manifest, 'model')['q002']
         self.assertIn('different observations', result['reason'])
         ask.assert_not_called()
+        self.assertFalse((self.case.parent / 'q002').exists())
+
+    def test_absent_observations_still_allow_a_private_sourced_question(self):
+        candidate = {k: self.curation[k] for k in ('target', 'appendix_check')}
+        candidate.update(id='q002', mode='empirical', sources=[self.source], appendix_status='unresolved',
+                         pending_materials=['The underlying survey was not obtained.'])
+        manifest = self.root / 'candidates.json'
+        write(manifest, {'cases': [candidate]})
+        pages = [('main', {1: 'text'}, ['image'])]
+        loc = {'source': 'main', 'pages': [1, 1]}
+        answers = [({'pages': [{'page': 1, 'readable': True, 'appendix': False, 'note': 'Survey population.'}]}, {}),
+                   ({'question': 'How does employment vary?', 'conditions': {'population': 'Sampled workers.'},
+                     'field_sources': {'question': loc, 'conditions.population': loc}, 'blocked_work':['Estimation.']}, {})]
+        with patch.object(reader, 'page_batches', return_value=pages), patch.object(reader, 'ask', side_effect=answers) as ask:
+            result = reader.run(manifest, 'model')['q002']
+            self.assertEqual(reader.run(manifest, 'model')['q002'], result)
+            self.assertEqual(ask.call_count, 2)
+        self.assertEqual(result['status'], 'source-read-awaiting-materials')
+        self.assertTrue((self.root / result['private_draft']).is_file())
         self.assertFalse((self.case.parent / 'q002').exists())
 
     def test_mixed_batch_finishes_good_cases(self):

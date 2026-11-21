@@ -1,0 +1,32 @@
+{
+  "model": "gpt-6.2-astra",
+  "reasoning": "medium",
+  "start_utc": "2026-11-21T20:43:06.367859+00:00",
+  "end_utc": "2026-11-21T20:46:44.711644+00:00",
+  "elapsed_seconds": 218.343785,
+  "deadline_seconds": 480,
+  "usage": {
+    "input_tokens": 174705,
+    "cached_input_tokens": 159744,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 9151,
+    "reasoning_output_tokens": 50
+  },
+  "tool_calls": 7,
+  "events_sha256": "a24d80063c7001aa43f4e6c28c26e16d9ebaab722ffbef3e3272d163cb7f4e48",
+  "session_sha256": "5c4d4f73d479a6b1956757e6712df4c470e5af50c52eb2c97bce067f072a0b11",
+  "prompt_sha256": "4845a995bbb3ccaa2412b79c0e08240ecdef34e51c9900e61a43a2a75955fd92",
+  "condition": "standard",
+  "release_receipt_sha256": "bfd92c25bb7e55ed85543a00a75ce5a4499067ff893da1e093df7330d7f2ae22",
+  "author_input_sha256": {
+    "public-task.json": "9b3f451fce0ccd5b7927e8dd23ccce2572b5d3d1925f999ed4e24b2c811e9ca3",
+    "inputs/input-1.csv": "723e5649fe471aa9f469c4e7064f5b6ed8f4363a2e0927d04756d041760976de",
+    "inputs/input-2.txt": "6ae9644265f8f558b234b6f470fd432e6bc5cef98574e3f79fbbb392cbe7b9ed"
+  },
+  "guidance_sha256": null,
+  "output_sha256": {
+    "analysis.py": "bbaae3d665c8d445a6a576a89ab9055c0db4060c3e25a9e2467381d54727df9c",
+    "manuscript.tex": "27506c09881c4bbb50b79120d8d333466e016114d48766ab863f6d1c49cb7ae9",
+    "results.json": "e303aff31fa730cd7a0740272880ebfacd4eeb18598e9f014541d99201a8943b"
+  }
+}

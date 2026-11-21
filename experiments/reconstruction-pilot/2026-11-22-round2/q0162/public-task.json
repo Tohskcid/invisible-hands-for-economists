@@ -1,0 +1,20 @@
+{
+  "id": "q0162",
+  "mode": "empirical",
+  "question": "Across the countries in the supplied data, how are investment, schooling and working-age population growth related to international differences in output per working-age person and to convergence over 1960–1985? Assess how allowing both physical and human capital accumulation changes the account that can be given of these observations.",
+  "conditions": {
+    "observations": "Use the supplied country cross section for 1960–1985. Output is measured per person aged 15–64. Use the recorded historical country groupings and recognize their nested or overlapping membership. The codebook defines units, sample membership and blanks.",
+    "production": "Consider competitive economies with a common Cobb–Douglas technology in physical capital, effective labor and, where accumulated, human capital. Physical and human investment are country-specific fractions of output. Labor efficiency grows at a common constant rate. For calculations involving labor efficiency growth plus depreciation use 0.05 per year.",
+    "schooling": "The available schooling measure proxies the fraction of the working-age population enrolled in secondary school. Consider what this measurement permits one to learn about investment in human capital."
+  },
+  "available_inputs": [
+    "inputs/input-1.csv",
+    "inputs/input-2.txt"
+  ],
+  "required_outputs": [
+    "Write a self-contained empirical paper on the stated country comparison, with assumptions, uncertainty and interpretation. Supply executable analysis and the numeric results used in the paper."
+  ],
+  "data_access_status": "The files contain rounded country observations and their definitions. Underlying annual series, individual records, historical analysis code and unrounded observations are unavailable. Restrict empirical claims to the evidence supplied.",
+  "source_restrictions": "Use only the supplied observations, their codebook and the stated setting. No external sources or search.",
+  "neutrality_obligation": "Choose and justify your empirical analysis independently. Distinguish associations, model implications and limitations. Report the results you obtain."
+}

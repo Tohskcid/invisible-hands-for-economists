@@ -83,6 +83,8 @@ Use a private directory outside every author workspace. The batch reader uses in
 
 Use `embedded`, `external`, or `both` for articles with appendices. Add each separately verified PDF with role `appendix` or `documentation`. Record any unresolved material in the inventory. The reader accepts theory, empirical, structural and mixed tasks.
 
+An authenticated journal text can be read even when its data or an appendix are missing. List the specific gaps in the candidate's `pending_materials`; use `appendix_status: "unresolved"` when the appendix inventory itself is open. The same reader examines each available page and stores a private question, necessary conditions, page locators and blocked analyses under `reader-work/<id>/pending-materials.json`. It does not release this preliminary question. When the missing files are verified, a complete manifest can reuse the page readings and proceed to the independent release review.
+
 ```bash
 python3 scripts/read_benchmarks.py /private/collection/candidates.json
 ```
@@ -95,7 +97,7 @@ The commands preserve existing case directories and frozen versions. `reader-wor
 
 ### Author inputs and research scope
 
-For empirical and mixed cases, add an `inputs` object to the private candidate. Each key is a neutral author filename such as `inputs/input-001.csv`. Each value supplies a private relative `file`, its `sha256`, and a specific `provenance` statement covering the data, vintage, availability and intended use. The gate streams UTF-8 CSV, TSV, TXT and DAT files for identifier checks. The automatic reviewer receives the complete contents within a limit of 200,000 bytes per input and 200,000 characters per prompt. Larger datasets stay in the inventory for supervised review. An independent reviewer can inspect them with appropriate data tools and sign the same full-file hash and file-specific findings. For other file formats, prepare and validate a neutral, reviewable representation, preserving the source and the conversion receipt privately. Keep unsupported or infeasible inputs recorded as gaps.
+For empirical and mixed cases, add an `inputs` object to the private candidate. Each key is a neutral author filename such as `inputs/input-001.csv`. Each value supplies a private relative `file`, its `sha256`, and a specific `provenance` statement covering the data, vintage, availability and intended use. The gate streams UTF-8 CSV, TSV, TXT and DAT files for identifier checks. The automatic reviewer receives small text files in full. Declared numeric tables use the whole-file checks described below. Each request uses the actual context limit of the installed model. Preserve page receipts if a large review must be split. An independent reviewer can inspect them with appropriate data tools and sign the same full-file hash and file-specific findings. For other file formats, prepare and validate a neutral, reviewable representation, preserving the source and the conversion receipt privately. Keep unsupported or infeasible inputs recorded as gaps.
 
 Use the appropriate `track` in private records.
 

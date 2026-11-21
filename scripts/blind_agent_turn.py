@@ -26,6 +26,8 @@ def check_completion(result):
         failure = (result.stdout + result.stderr).lower()
         if any(token in failure for token in ('usage limit', 'insufficient_quota', 'usage_limit_reached')):
             raise RuntimeError(PLAN_LIMIT)
+        if any(token in failure for token in ('context_length_exceeded', 'maximum context length', 'context window exceeded')):
+            raise RuntimeError('source evidence exceeded the installed model context; split the review and retain page receipts')
         raise RuntimeError(f'Codex exited {result.returncode}; no usable submission')
 
 
