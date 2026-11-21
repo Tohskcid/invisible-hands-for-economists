@@ -1,0 +1,10 @@
+{
+  "recorded_utc": "2026-11-21T20:17:37.051946+00:00",
+  "prior_scored_case": "q002",
+  "new_case": "q0140",
+  "intervention": "Add one open institutional-comparison condition informed by missing scope; otherwise reuse the prior packet, standard author instructions, model and budget. One fresh author. This is a development-set diagnostic, not prospective out-of-sample improvement.",
+  "prediction": "The extra question may improve the institution and interpretation rows. Preserve their weights and report all other rows in case they regress.",
+  "public_sha256": "3772a7a3f1c24a49f758a0b2092d059b3df66ca34c93b8cf86e2228666c4509d",
+  "curation_sha256": "9bf831815caf671f70e147b118f4ead292ee3537a7cc8e291bbd2a68cdd54e68",
+  "rubric_identical": true
+}

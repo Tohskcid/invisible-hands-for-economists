@@ -1,0 +1,46 @@
+{
+  "request_sha256": "5d0abe9ee5c289836acf984073215bfb6a0860e9f83a2237e63a9ed9badff8ce",
+  "locked_utc": "2026-11-21T20:22:38.179983+00:00",
+  "judge": {
+    "start_utc": "2026-11-21T20:22:21.466097+00:00",
+    "end_utc": "2026-11-21T20:22:38.179580+00:00",
+    "elapsed_seconds": 16.71,
+    "deadline_seconds": 480,
+    "model": "gpt-6.2-astra",
+    "reasoning": "medium",
+    "tool_calls": 0,
+    "usage": {
+      "input_tokens": 19374,
+      "cached_input_tokens": 13952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 542,
+      "reasoning_output_tokens": 46
+    },
+    "session_sha256": "b0f56a46ae03a9653930675b50e6f173f0a96b1660d2b682db78feed407aa9ec",
+    "prompt_sha256": "3aa37f2a98e3764e9a22343c075d9bcf05cd64d6250c83e3f49423b91b1581a1",
+    "events_sha256": "e56049e4aeb2d508874081549caae12c486fe9db5a5fcd8ac0f73e160657224f"
+  },
+  "items": {
+    "1": {
+      "score": 2,
+      "evidence": "§1 defines both moves, including what happens to displaced partners, for finite sides of possibly unequal size. It distinguishes weak acceptability from the strict gain required to move, so a terminal matching is exactly a weakly stable one. §§3–4 distinguish the initial matching from the rule that selects opportunities."
+    },
+    "2": {
+      "score": 2,
+      "evidence": "§2 proves existence of a finite path by tracking which blocking pairs can reappear when a single participant chooses a best available partner. §3 proves both directions of the characterization from solitude. §4 uses finiteness and stationary full support to bound the probability of continued nonabsorption and identifies exactly which endpoints have positive probability. §5 supports proposer optimality and truthful reporting with separate rejection and truncation arguments."
+    },
+    "3": {
+      "score": 2,
+      "evidence": "§3 gives a one-pair tie example, a four-person improvement cycle with an exit at each state, and an unstable initial matching from which one stable outcome is unreachable. §4 reuses the cycle to show precisely how convergence can fail: positive but shrinking exit probabilities leave at least a one-half chance of cycling forever."
+    },
+    "4": {
+      "score": 2,
+      "evidence": "§4 shows how meeting frequencies can make either stable outcome arbitrarily likely from the same start. §5 distinguishes coalitions that change partners from individuals who change reports, and gives a profitable receiver misreport. §6 identifies the missing inputs for numerical forecasts and explains why immediate gains alone cannot establish that accepting a move is strategically optimal."
+    }
+  },
+  "summary": "The paper answers both parts of the question. The starting arrangement determines which stable outcomes are reachable. Stationary full-support selection gives each reachable stable outcome positive probability and yields absorption almost surely, even though a permitted sequence can cycle forever. The finite graph search in §3 is a defensible exact answer for an arbitrary start. The paper claims neither a simpler structural characterization nor numerical probabilities without a specified meeting rule.",
+  "critical_errors": [],
+  "recognition": "I recognize the general matching and deferred-acceptance framework. I assessed the manuscript from the supplied question and arguments, without tools or reference comparison.",
+  "total": 8,
+  "denominator": 8
+}

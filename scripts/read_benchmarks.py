@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
 """Read verified originals page by page and independently review blind tasks using installed Codex."""
 import argparse
+from concurrent.futures import ThreadPoolExecutor
+import csv
 import fcntl
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
+import re
+import shutil
 import subprocess
 import tempfile
 
@@ -73,20 +78,60 @@ def page_batches(root, sources, tmp):
     return batches
 
 
+def numeric_csv_evidence(path, columns):
+    """Inspect every cell; reviewers judge whether the documented columns expose an answer."""
+    with path.open(encoding='utf-8', newline='') as stream:
+        rows = csv.reader(stream, strict=True)
+        header = next(rows, [])
+        require(header and len(set(header)) == len(header) and
+                all(re.fullmatch(r'[A-Za-z][A-Za-z_0-9]*', k) for k in header), 'invalid numeric CSV header')
+        require(isinstance(columns, dict) and set(columns) == set(header) and all(words(v) for v in columns.values()),
+                'large CSV needs original field provenance and role for every column')
+        stats = {name: {'role_and_provenance': columns[name], 'missing': 0, 'min': None, 'max': None} for name in header}
+        levels = {name: set() for name in header}
+        count = 0
+        for count, row in enumerate(rows, 1):
+            require(len(row) == len(header), f'inconsistent numeric CSV at row {count}')
+            for name, value in zip(header, row):
+                column = stats[name]
+                if value == '':
+                    column['missing'] += 1
+                    continue
+                try:
+                    number = float(value)
+                except ValueError:
+                    raise ValueError(f'non-numeric value in row {count}, column {name}') from None
+                require(math.isfinite(number), f'non-finite value in row {count}, column {name}')
+                if column['min'] is None or number < column['min']:
+                    column['min'] = number
+                if column['max'] is None or number > column['max']:
+                    column['max'] = number
+                if len(levels[name]) <= 12:
+                    levels[name].add(number)
+        require(count > 0, 'empty numeric CSV')
+        for name, values in levels.items():
+            if len(values) <= 12:
+                stats[name]['levels'] = sorted(values)
+    return {'evidence_type': 'All cells machine-checked as finite numbers or blanks. The reviewer sees column '
+            'provenance and summaries, not all individual rows. The author receives the full file.',
+            'sha256': sha(path), 'rows': count, 'columns': stats}
+
+
 def input_evidence(root, candidate, stage):
     checks, texts = {}, {}
     for name, asset in candidate.get('inputs', {}).items():
         require(INPUT.fullmatch(name), 'unsupported input filename; prepare neutral reviewable UTF-8 data')
         src = safe_path(root, asset['file'])
-        require(src.stat().st_size <= MAX_PROMPT_CHARS, f'{name}: needs separate large-input review')
-        data = file_bytes(src)
-        require(hashlib.sha256(data).hexdigest() == asset['sha256'] and words(asset['provenance']),
-                f'{name}: invalid input provenance or checksum')
         out = safe_path(stage, name)
         out.parent.mkdir(exist_ok=True)
-        out.write_bytes(data)
+        shutil.copyfile(src, out)
+        require(sha(out) == asset['sha256'] and words(asset['provenance']), f'{name}: invalid input provenance or checksum')
         checks[name] = asset['provenance']
-        texts[name] = data.decode('utf-8')
+        if out.stat().st_size > MAX_PROMPT_CHARS:
+            require(out.suffix == '.csv', f'{name}: needs separate large-input review')
+            texts[name] = numeric_csv_evidence(out, asset.get('columns'))
+        else:
+            texts[name] = file_bytes(out).decode('utf-8')
     return checks, texts
 
 
@@ -97,16 +142,27 @@ equations, tables, figures, methods, proof steps, results and limitations on THI
 and physical numbering; explain what's on a cover or bibliography page"}]}. If any material cannot be
 read at this resolution, mark that page unreadable and explain; do not guess. These notes are PRIVATE."""
 
+DELIVERABLE = 'Write a complete, self-contained economics paper answering the released question across the stated settings. Justify substantive claims and state any unresolved limitations.'
+DATA_DELIVERABLE = 'Provide rerunnable analysis for the supplied observations and connect the reported numbers to the code.'
+
 DRAFT = """You are the private curator. Below are verified source identities, complete page-level reading
 notes, available data, and curator-supplied appendix evidence. Prepare a minimal answer-free packet for an
 independent author to reconstruct the FULL paper. Write a concrete question with enough design constraints
 or primitives for a researcher to work independently. Check feasibility of each required goal, including
 proofs, from disclosed primitives or inputs. Omit results, privileged intermediate claims, proof or estimator
 choices, target title, identifying names, citations and URLs. Do not silently narrow difficult blocks.
+Check the wording of the QUESTION, conditions and REQUIRED OUTPUTS separately. If the direction of a
+bound, sign, monotonicity, convergence, particular recurrence, or identifying specification is an original
+finding, ask what can be established under the primitives. Do not instruct the author to prove it.
+Put all necessary subquestions in the question or page-mapped conditions, including the scope of secondary
+applications. State each as an open economic question. The host supplies a common deliverable instruction.
+Never use public required_outputs for case-specific scope, grading items or conclusions. Keep targets,
+numeric answers, proof routes, and historically underdetermined conventions in the private rubric.
 Include exact available filenames. No outside search or source retrieval by authors. Keep curation history,
 review and withheld solution in the private record. Research quality and fidelity are distinct.
 Return {"public":{"id":...,"mode":...,"question":"...","conditions":{"short_field":"one concrete
-necessary setting, primitive or boundary"},"available_inputs":[...],"required_outputs":["..."],
+necessary setting, primitive or boundary"},"available_inputs":["exact filename from author_data"],
+"required_outputs":["..."],
 "source_restrictions":"...","neutrality_obligation":"..."}, "private":{"field_sources":{"question":
 {"source":"SOURCE_ID","pages":[first,last],"reason":"why necessary"},"conditions.EACH_KEY":{...}},
 "withheld":["specific answer or privileged step"],"rubric":[{"id":"r1","criterion":"source-specific
@@ -115,7 +171,9 @@ scoring requirement","max_score":2,"scoring":"0/1/2 scoring anchors","source":"S
 "gaps":["unresolved necessary input or missing appendix/documentation"]}}.
 For calibration also put data_access_status in public, and put calibration={feasible_scope:string,
 missing_blocks:{exact_gap_text:rubric_id}} in private when there are gaps. This track must keep unavailable
-blocks in the scoring denominator. Do not claim a missing input is available. Never put private findings in public."""
+blocks in the scoring denominator. List only the keys of author_data in available_inputs, using [] when
+there are no files. Put necessary source-mapped primitives in conditions. Do not claim a missing input is
+available. Never put private findings in public."""
 
 REVIEW = """You are an independent reviewer, distinct from curator and future author. Inspect the exact
 public packet and all supplied data, sealed source mappings, withheld answers and rubric against the
@@ -156,12 +214,17 @@ def review_packet(work, public, record, inputs, batches, names, checked, model, 
                       'Inspect enough to identify any remaining leakage after the curator revised the draft.'
                       if revised else '')
     joint = encode({'public-task.json': public, 'curation.json': record, 'inputs': inputs})
-    parts, review_turns = [], []
-    for sid, pages, images in batches:
+    def assess(group):
+        sid, pages, images = group
         result, turn = ask(work, f'review-{sid}-{min(pages)}', REVIEW + revision_scope + '\n' + joint + page_prompt(sid, pages),
                            images, model)
-        parts.append(decision(result, names))
-        review_turns.append(turn)
+        return decision(result, names), turn
+
+    # Page groups use independent contexts; preserve physical page order in the final review.
+    with ThreadPoolExecutor(max_workers=2) as workers:
+        checked_groups = list(workers.map(assess, batches))
+    parts = [findings for findings, _ in checked_groups]
+    review_turns = [turn for _, turn in checked_groups]
     final = parts[0]
     if len(parts) > 1:
         final, turn = ask(work, 'review-final', REVIEW + '\nDecide across all independently reviewed page groups. '
@@ -217,7 +280,8 @@ def prepare(root, candidate, cases, work, model):
         for attempt in range(2):
             draft, turn = ask(work, 'revise' if attempt else 'extract', prompt, [], model)
             read_turns.append(turn)
-            public, private = draft['public'], draft['private']
+            public, private = dict(draft['public']), draft['private']
+            public['required_outputs'] = [DELIVERABLE] + ([DATA_DELIVERABLE] if inputs else [])
             require(public['id'] == case_id and public['mode'] == candidate['mode']
                     and sorted(public['available_inputs']) == sorted(inputs), 'draft changed case, mode or available files')
             record = {k: private[k] for k in ('field_sources', 'withheld', 'rubric', 'contamination', 'gaps')}
@@ -273,7 +337,7 @@ def run(manifest, model):
                 fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
                 status = prepare(root, candidate, cases, work, model)
             results[case_id] = {'status': status, 'case': 'cases/' + case_id}
-        except (OSError, ValueError, KeyError, TypeError, RuntimeError, StopIteration, subprocess.SubprocessError) as exc:
+        except (OSError, ValueError, KeyError, TypeError, RuntimeError, StopIteration, csv.Error, subprocess.SubprocessError) as exc:
             results[case_id] = {'status': 'blocked', 'reason': str(exc)}
     return results
 

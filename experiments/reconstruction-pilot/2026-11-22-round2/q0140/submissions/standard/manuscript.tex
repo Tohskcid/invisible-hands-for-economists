@@ -1,0 +1,119 @@
+\documentclass[11pt]{article}
+% Recognition disclosure: I recognize the general matching and deferred-acceptance problems. I do not rely on recollection of a particular target paper or use recollection as evidence.
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newcommand{\sg}{\varnothing}
+\title{Which Partnerships Survive Decentralized Adjustment?\\
+Reachability, Selection, and the Initial Matching}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+With strict rankings, starting with everyone single makes every stable matching attainable. A particular initial matching can rule out some stable outcomes, even when that initial matching is unstable. Under the stipulated stationary random selection rule, the limiting distribution gives positive probability to exactly the stable matchings reachable from the initial state. The proof constructs a finite path to stability while allowing other paths to cycle. With indifference, the same convergence argument applies, but starting single excludes partnerships that one party ranks equal to being single. A comparison with deferred acceptance shows how a central procedure can select a particular reachable outcome and give one side a truthful reporting incentive. Stability itself describes incentives to change partners at a given allocation and does not establish incentives to report preferences or to take an available move.
+\end{abstract}
+
+\section{The market and the meaning of an outcome}
+
+Let \(A\) and \(B\) be finite disjoint sets. Each person \(i\) has a complete and transitive ranking \(\succeq_i\) over the other side and the single option \(\sg\), with strict part \(\succ_i\). A matching \(m\) is a set of disjoint cross-side pairs. Write \(m(i)\) for the partner of \(i\), or \(\sg\) if single. A partner is weakly acceptable if ranked at least as high as \(\sg\), and strictly acceptable if ranked above it. Comparisons always use the person's own ranking. There are no transfers or preferences over other people's partnerships.
+
+A leave move dissolves the pair of a person \(i\) with \(\sg\succ_i m(i)\). A pair move creates \((a,b)\) if \(b\succ_a m(a)\) and \(a\succ_b m(b)\). Such a pair is called blocking. Both moves delete the displaced links and preserve every other link. In particular, displaced people have no veto. A matching is individually rational if all its partners are weakly acceptable. Call it \emph{stable} if it is individually rational and has no blocking pair. Under ties this is weak stability: indifference does not authorize a move. The stable states are exactly the states with no eligible move, directly by the two parts of the definition.
+
+Draw a directed edge for every eligible move. Write \(R(m)\) for the stable states reachable from \(m\) by finite paths, including a path of length zero. Membership in \(R(m)\) asks whether a particular sequence of meetings could deliver an outcome. It attaches no likelihood to that sequence.
+
+\section{A path out of every unstable state}
+
+\begin{proposition}
+From every matching there is a finite path to a stable matching, including with ties and unequal side sizes.
+\end{proposition}
+
+\begin{proof}
+First exercise leave moves until the matching is individually rational. Subsequent pair moves preserve individual rationality. While there is a blocking pair whose members are both matched, execute such a move. Two links disappear and one appears, so this stage ends. At its end there is no blocking pair between two matched people.
+
+For the rest of the construction, use the following observation. Let a single person \(i\) choose a best partner among those with whom \(i\) forms a blocking pair. Executing this move preserves the absence of blocking pairs between matched people. Indeed, the chosen partner improves, any discarded partner becomes single, and the other continuing partners keep their positions. A new block between matched people would therefore have to involve \(i\). Any continuing matched person whom \(i\) strictly prefers to the choice and who now strictly wants \(i\) was already available. This contradicts the choice. Ties between best partners can be settled arbitrarily.
+
+Now repeatedly let single members of \(A\) make such best choices until none can move. Each move strictly improves one member of \(B\), and no member of \(B\) loses a partner. Finiteness ends this stage. There is now no block involving a single member of \(A\), and no block between two matched people.
+
+Finally let single members of \(B\) make best choices until none can move. This stage ends by the same argument, with the sides reversed. We verify one extra invariant: no single member of \(A\) blocks with a \emph{matched} member of \(B\). The set of single members of \(A\) only shrinks in this stage. The only newly matched member of \(B\) at a move is the chooser. If she strictly preferred a remaining single member of \(A\) who strictly wanted her, he was available at her choice. Every other still-matched member of \(B\) kept her partner. This proves the invariant. At the end, blocks involving single members of \(B\) are exhausted, and the two invariants exclude every other block. Individual rationality still holds.
+\end{proof}
+
+The construction exploits the fact that a single chooser can take a best available partner, although the underlying rule permits any strict improvement. The successive stages are a certificate of reachability. Participants need not coordinate on those stages for the random result below.
+
+\section{What the initial matching permits}
+
+\begin{proposition}
+Let \(e\) denote the empty matching. Then \(R(e)\) consists exactly of the stable matchings in which every link is strictly acceptable to both endpoints. In particular, under strict preferences every stable matching belongs to \(R(e)\). From unrestricted initial states the union of possible stable endpoints is the entire stable set.
+\end{proposition}
+
+\begin{proof}
+From \(e\), everyone always has a situation weakly as good as being single: a mover improves, and a displaced person becomes single. Thus every newly formed link is strictly acceptable to both endpoints. Conversely, take a stable matching with that property and form its links in any order. At each step the intended endpoints are still single, and both strictly gain. The last statement follows by initializing at the desired stable state.
+\end{proof}
+
+The issue with ties already arises with one person on each side. If one is indifferent between partnership and solitude and the other strictly wants the partnership, both initial states are stable. The paired state cannot be built from solitude. More generally, the existence proof applied at \(e\) guarantees at least one stable matching all of whose links are strictly acceptable, even when other stable matchings contain indifferent partners.
+
+One small market illustrates both multiplicity and cycling. Let \(A=\{a,b\}\), \(B=\{x,y\}\), with strict rankings
+\[
+\begin{array}{ll}
+ a:\ y\succ x\succ\sg, & b:\ x\succ y\succ\sg,\\
+ x:\ a\succ b\succ\sg, & y:\ b\succ a\succ\sg .
+\end{array}
+\]
+Both \(M=\{ay,bx\}\) and \(N=\{ax,by\}\) are stable: in \(M\) everyone in \(A\) has a first choice, and in \(N\) everyone in \(B\) does. These exhaust the stable states because in any partial matching a single person on each side would agree to pair. Both are reachable from \(e\), yet the following cycle of one-link states is also reachable:
+\[
+ \{ax\}\longrightarrow\{ay\}\longrightarrow\{by\}
+ \longrightarrow\{bx\}\longrightarrow\{ax\}.
+\]
+At each arrow the person changing partners obtains a first choice, and the incoming partner leaves solitude. Each state also has an exit: the two singles can pair and finish the market. Thus a possible infinite sequence can leave mutually acceptable singles waiting at every step.
+
+Even an \emph{unstable} start can constrain selection. Append an independent pair \(c,z\) who rank each other above solitude, and rank all cross-component partners below solitude on both sides. Start with \(M\) in the original market and \(c,z\) single. The only move is \(cz\); the stable matching \(N\cup\{cz\}\) is unreachable. From an arbitrary specified start an exact finite test is to mark that state, repeatedly mark all successors of marked states, and stop when the marked set stops growing. Intersecting it with the stable set gives \(R(m)\), since each marking round adds precisely the states newly accessible within one additional step.
+
+\section{What random meetings predict}
+
+Suppose selection is Markovian and time homogeneous. At any nonterminal state every eligible move has positive probability; terminal states stay put. Let \(P\) be the induced transition matrix, \(X_t\) the matching after \(t\) steps, and \(T\) the first time a stable state is reached.
+
+\begin{proposition}
+For every \(m\), \(T\) is almost surely finite and has finite expectation. The support of the law of \(X_T\) from \(m\) is exactly \(R(m)\).
+\end{proposition}
+
+\begin{proof}
+If there are nonterminal states, choose one finite path to stability from each. Let \(L\geq1\) be the largest chosen length and \(\epsilon>0\) the smallest product of transition probabilities along a chosen path. These bounds exist because the state space is finite. Conditional on survival to a block boundary, the probability of absorption within the next \(L\) steps is at least \(\epsilon\). Hence
+\[
+ \Pr_m(T>kL)\leq(1-\epsilon)^k,\qquad
+ \mathbb E_m T\leq L/\epsilon .
+\]
+If all states are terminal the result is immediate. Any finite path to a given stable state has positive probability, while absorption at that state requires traversing some finite path to it. This gives the support claim.
+\end{proof}
+
+Consequently \(X_t\) converges almost surely to a constant along each realized path, though this constant can differ across realizations. For a specified stable state \(s\), its probability \(h_s(m)\) equals one at \(s\), zero at other stable states, and elsewhere satisfies
+\[
+ h_s(m)=\sum_n P(m,n)h_s(n).
+\]
+First-step conditioning gives the equation. For uniqueness, the difference of two solutions vanishes at the boundary; after \(t\) iterations its absolute value is bounded by its maximum absolute value times \(\Pr_m(T>t)\), which tends to zero. Thus meeting frequencies matter quantitatively even with identical support. In the example, a full-support rule can give the two successive moves \(ay,bx\) from solitude probabilities arbitrarily close to one at their respective states, making \(M\) arbitrarily likely. It can instead favor \(ax,by\) and make \(N\) arbitrarily likely.
+
+Permanently excluding the exits on the displayed cycle sustains churn. Even positivity at every date can be insufficient if probabilities depend on time without a uniform lower bound. Starting on the cycle at date \(t=1\), give its exit probability \(2^{-t-1}\) and its continuing arrow the remaining probability. These are the only two eligible moves at each cycle state. The probability of ever exiting is at most \(\sum_{t\geq1}2^{-t-1}=1/2\). Conversely, a history-dependent rule that gives every currently eligible move probability at least a common \(\delta>0\) retains the block proof with \(\epsilon=\delta^L\). Economically, persistent access to opportunities justifies eventual stability; it gives neither equal chances to stable allocations nor a market-size-independent speed guarantee.
+
+\section{Central allocation, coalitions, and reports}
+
+For the institutional comparison assume strict rankings, allow unacceptable partners, and allow reports of arbitrary strict lists with truncation. Consider \(A\)-proposing deferred acceptance. A free proposer applies to the best as-yet-untried partner listed above solitude. A receiver keeps the best acceptable proposal among the new proposal and any currently held one, rejecting the rest. Continue until no free proposer has an untried acceptable receiver. Held proposals then become final. Each possible application occurs at most once.
+
+The output is individually rational under the submitted rankings. A proposer who prefers a receiver to the final situation must have applied and been rejected. A receiver's held option only improves, so that pair cannot block. Moreover, no rejected pair can belong to a stable matching under those rankings. To see this, consider the first rejection violating the assertion, and a stable matching \(S\) containing the rejected pair \(a b\). Rejection for unacceptability contradicts rationality of \(S\). Otherwise \(b\) keeps a proposer \(d\) preferred to \(a\). Every receiver whom \(d\) prefers to \(b\) already rejected \(d\), so none can be \(S(d)\) by the first-rejection choice. Since \(S(b)=a\), proposer \(d\) strictly prefers \(b\) to \(S(d)\). Then \(d,b\) block \(S\), a contradiction. Each proposer therefore obtains the best situation attainable in any stable matching. This also makes the output independent of application order. Under truthful reports it is reachable bilaterally from solitude. In the four-person example centralized proposal by \(A\) selects \(M\); proposal by \(B\) selects \(N\).
+
+\paragraph{Joint changes of partners.}
+Suppose a coalition may sever its members' existing links and make new links internally, without the consent of discarded outsiders. With strict preferences, stable allocations are exactly those immune to a coalition making every member weakly better off and at least one strictly better off. At a stable allocation an improving member cannot gain by becoming single. Thus that member needs a new partner in the coalition. The new partner also changes situation and must strictly gain under strict preferences, producing a blocking pair. Conversely, a blocking pair or a profitable exit is itself a coalition improvement. The same reasoning with ties gives equivalence for deviations requiring \emph{every} coalition member to gain strictly. Immunity to weak gains with one strict gain is stronger under ties, as the indifferent-party example starting from solitude demonstrates.
+
+\paragraph{Individual reports.}
+We give the incentive argument because immunity to changes of partners addresses a different choice from submitting a ranking. First, at a fixed strict reported profile, the same proposers are matched in every stable matching. Let \(D\) be the proposer-optimal output and \(S\) any stable matching. Every proposer matched in \(S\) is matched in \(D\) by proposer optimality. Every receiver matched in \(D\) must be matched in \(S\): otherwise her \(D\)-partner strictly prefers her to his different situation in \(S\), and she prefers him to solitude, blocking \(S\). Counting links in the two matchings gives equal counts and hence equality of the matched proposer sets.
+
+Fix all other reports. Suppose a proposer could gain by misreporting, receiving a partner \(w\) strictly preferable to the truthful outcome. The misreport output is stable for the reported profile. It stays stable if this proposer lists only \(w\), because the assigned link remains acceptable and he cannot introduce a new block. In this singleton-list profile every stable matching must therefore match him, by the matched-set result.
+
+Now let him list his true ranking down through \(w\), truncating just below \(w\). In the truthful run he was rejected by every receiver down through \(w\). Use the same application order up to his rejection by \(w\) (including a later displacement if she initially held him). This prefix is feasible with the truncated list. He is then free with the list exhausted and finishes unmatched. The resulting stable allocation stays stable if he shortens his list to \(w\) alone: he was single and only removed acceptable links. This contradicts the singleton-list conclusion. Truthful reporting is thus a weakly dominant strategy for each proposer.
+
+A receiver can have a different incentive. In the example with \(A\) proposing, \(x\) can report that only \(a\) is acceptable. Then \(b\)'s application to \(x\) fails, \(b\) applies to \(y\), and \(y\) prefers \(b\) to \(a\). Proposer \(a\) ends up with \(x\), giving \(x\) her true first choice. Thus a central procedure can select a stable outcome under truthful reports while giving a receiver a profitable individual misreport. The coalition result concerns rematching at a fixed allocation; its proof supplies no claim about coordinated false reports.
+
+\section{Boundaries}
+
+The bilateral model specifies eligibility and a rule for selecting moves. It supplies no discount factors, beliefs, proposal costs, or ability to commit to refuse a future meeting. A strict immediate gain may be short-lived, as each change on the cycle illustrates. Consequently neither the reachability construction nor the absorption theorem is an equilibrium analysis of strategic waiting. The central reporting result uses a specified mechanism and strict rankings; the dynamic results allow indifference without imposing a central tie-breaking policy. Finally, the packet supplies no meeting frequencies or observed initial arrangements from which to estimate absorption probabilities or adjustment times. The support and conditional equations identify what can be inferred without those inputs.
+\end{document}

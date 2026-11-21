@@ -43,6 +43,7 @@ def verify(frozen, submission, output):
                 result = subprocess.run(command, cwd=root, env=env, capture_output=True, timeout=90)
                 checked['tex_exit'] = result.returncode
             except (OSError, subprocess.TimeoutExpired) as exc:
+                checked['tex_exit'] = None
                 checked['tex_error'] = type(exc).__name__
                 break
             if result.returncode:
@@ -50,6 +51,8 @@ def verify(frozen, submission, output):
         if checked.get('tex_exit') == 0 and (root / 'manuscript.pdf').is_file():
             shutil.copyfile(root / 'manuscript.pdf', output / 'manuscript.pdf')
             checked['pdf_sha256'] = sha(output / 'manuscript.pdf')
+        else:
+            (output / 'manuscript.pdf').unlink(missing_ok=True)
     (output / 'verification.json').write_text(json.dumps(checked, indent=2) + '\n')
     return checked
 

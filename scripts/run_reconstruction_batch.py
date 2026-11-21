@@ -48,7 +48,10 @@ def process(root, candidate, folder, model):
                 'existing submission used a different freeze')
         checks = verify(frozen, submitted, safe_path(folder, 'verification'))
         scores = score(frozen, submitted, safe_path(folder, 'review'), model=model)
-        return {'status': 'scored', 'scores': scores, 'verification': checks}
+        complete = (scores['met_frozen_rubric'] and bool(checks.get('pdf_sha256'))
+                    and ('analysis.py' not in receipt['output_sha256'] or checks['clean_data_replay'] is True))
+        return {'status': 'scored', 'scores': scores, 'verification': checks,
+                'verified_full_rubric_and_artifacts': complete}
 
 
 def run(manifest, results, model):

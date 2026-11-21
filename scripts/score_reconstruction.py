@@ -25,8 +25,11 @@ def rubric_rows(rows):
         for j, part in enumerate(row.get('criteria', [row]), 1):
             name = f'{key}.{j}' if 'criteria' in row else key
             maximum = part.get('points', part.get('max_points', part.get('max_score', 2)))
-            allowed = [0, maximum/2, maximum] if 'criteria' in row else list(range(maximum+1))
             require(name not in items and maximum > 0, 'invalid or duplicate rubric item')
+            if 'criteria' in row or int(maximum) != maximum:
+                allowed = [0, maximum / 2, maximum]
+            else:
+                allowed = list(range(int(maximum) + 1))
             items[name] = {'criterion':part.get('criterion',part.get('dimension',row.get('title',name))),
                            'detail':part.get('evidence',row.get('scoring','')),
                            'allowed_scores':allowed}

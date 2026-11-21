@@ -1,0 +1,19 @@
+{
+  "id": "q0140",
+  "mode": "theory",
+  "question": "When participants in a two-sided market adjust their own partnerships one move at a time, how do the starting arrangement and the way opportunities are selected affect the possible long-run arrangements?",
+  "conditions": {
+    "market": "There are two finite sets, possibly of different sizes. A participant can have at most one partner on the other side, or remain alone. Each ranks these alternatives completely and transitively. State how indifference and acceptability are handled.",
+    "transition": "At a step, a participant who strictly prefers being alone may leave, or two people on opposite sides who each strictly prefer one another to their current situations may pair. The abandoned partners are left alone and every other partnership is retained.",
+    "selection": "Study possible move sequences as well as random selection. In the benchmark random process every currently eligible move has positive probability determined by the current arrangement. If none is eligible the process stays put.",
+    "initialization": "Examine unrestricted initial arrangements and the special case in which everyone begins alone.",
+    "institutional_comparison": "In the same one-to-one environment, compare bilateral adjustment with a centrally organized allocation procedure. Consider joint deviations by groups as well as individual incentives to report rankings. Choose the comparison procedure and explain which relationships can be derived in this setting."
+  },
+  "available_inputs": [],
+  "required_outputs": [
+    "Develop a self-contained paper about the dynamics, with definitions, arguments or counterexamples. Distinguish what the process permits from what it predicts.",
+    "Discuss how the result depends on meeting rules, its economic interpretation, and what it leaves open about participants’ incentives."
+  ],
+  "source_restrictions": "Use only this packet and your own reasoning. Disclose any prior recognition; do not retrieve external materials.",
+  "neutrality_obligation": "The task prescribes no direction of the result or proof method. State restrictions needed for each claim."
+}

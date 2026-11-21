@@ -9,9 +9,34 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'scripts'))
 from blind_agent_turn import run_turn
 from score_reconstruction import adjudicate, rubric_rows
+from curate_benchmarks import sha
+from verify_reconstruction_output import verify
 
 
 class ReconstructionTurns(unittest.TestCase):
+    def test_fractional_rubric_weights(self):
+        rows = rubric_rows([{'id': 'A', 'max_score': 2.0}, {'id': 'B', 'max_score': 1.5}])
+        self.assertEqual(rows['A']['allowed_scores'], [0, 1, 2])
+        self.assertEqual(rows['B']['allowed_scores'], [0, 0.75, 1.5])
+
+    def test_incomplete_second_pass_cannot_leave_a_verified_pdf(self):
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manuscript = root / 'manuscript.tex'
+            manuscript.write_text('example')
+            receipt = {'release_receipt_sha256': 'lock', 'output_sha256': {manuscript.name: sha(manuscript)}}
+            (root / 'receipt.json').write_text(json.dumps(receipt))
+            output = root / 'verified'
+            output.mkdir()
+            (output / 'manuscript.pdf').write_bytes(b'previous build')
+            with patch('verify_reconstruction_output.verify_freeze', return_value=({}, 'lock', [])), \
+                    patch('verify_reconstruction_output.subprocess.run',
+                          side_effect=[subprocess.CompletedProcess([], 0), subprocess.TimeoutExpired([], 90)]):
+                checks = verify(root / 'frozen', root, output)
+            self.assertEqual(checks['tex_error'], 'TimeoutExpired')
+            self.assertIsNone(checks['tex_exit'])
+            self.assertFalse((output / 'manuscript.pdf').exists())
+
     def test_tool_activity_cannot_be_scored_as_blind(self):
         events = [{'type':'thread.started','thread_id':'test'},
                   {'type':'item.started','item':{'type':'command_execution'}}]

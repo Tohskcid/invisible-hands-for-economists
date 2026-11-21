@@ -17,6 +17,27 @@ def write(path, record):
 
 
 class BenchmarkCurationTests(unittest.TestCase):
+    def test_entire_large_numeric_input_is_reviewed_and_copied(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            csv = root / 'observations.csv'
+            csv.write_text('group,x\n' + '1,0\n' * 50000 + '2,\n')
+            stage = root / 'staging'
+            stage.mkdir()
+            name = 'inputs/input-1.csv'
+            asset = {'file': csv.name, 'sha256': gate.sha(csv), 'provenance': 'Original observation rows.',
+                     'columns': {'group': 'Original study ID.', 'x': 'Observed value.'}}
+            _, evidence = reader.input_evidence(root, {'inputs': {name: asset}}, stage)
+            self.assertEqual((stage / name).read_bytes(), csv.read_bytes())
+            self.assertEqual(evidence[name]['rows'], 50001)
+            self.assertEqual(evidence[name]['columns']['group']['levels'], [1, 2])
+            self.assertEqual(evidence[name]['columns']['x']['missing'], 1)
+            with csv.open('a') as stream:
+                stream.write('3,hidden-text\n')
+            asset['sha256'] = gate.sha(csv)
+            with self.assertRaisesRegex(ValueError, 'row 50002'):
+                reader.input_evidence(root, {'inputs': {name: asset}}, stage)
+
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
@@ -232,6 +253,8 @@ class BenchmarkCurationTests(unittest.TestCase):
         with patch.object(reader, 'page_batches', return_value=batches), patch.object(reader, 'ask', side_effect=ask):
             first = reader.run(manifest, 'model')['q001']
             self.assertEqual(first['status'], 'review-pass', first)
+            released_task = json.loads((self.case / 'public-task.json').read_bytes())
+            self.assertEqual(released_task['required_outputs'], [reader.DELIVERABLE])
             self.assertEqual(first, reader.run(manifest, 'model')['q001'])
         self.assertEqual(seen, ['read-main-1', 'extract', 'review-main-1'])
         self.assertEqual(self.run_gate('freeze')['status'], 'frozen')
