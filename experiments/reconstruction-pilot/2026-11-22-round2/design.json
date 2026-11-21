@@ -1,0 +1,39 @@
+{
+  "prespecified_utc": "2026-11-21T19:55:31.647477+00:00",
+  "predecessor_git": "823c7f6fabb02d3440898f4d8bd5e86b88e04495",
+  "selection": "Two newly curated final journal texts already matched to the five-journal catalog. Purposive tests of breadth across applications (q001) and of a compact theorem with distinct quantifiers and endpoints (q002). A third eligible new paper will exercise the automatic reader/reviewer prospectively, outside the paired comparison.",
+  "unit": "One fresh author per case and condition. Four separate GPT-6.2 Astra medium sessions. 480 seconds each. No reference materials, tools, revision, or historical answer key for theory authors.",
+  "assignment": {
+    "q001": {
+      "X": "standard",
+      "Y": "coverage"
+    },
+    "q002": {
+      "X": "coverage",
+      "Y": "standard"
+    }
+  },
+  "intervention": "Identical bounded task and common writing instructions. Only the coverage arm also gets the frozen general writing guidance. No individual manuscript-specific scoring criterion is supplied.",
+  "guidance_sha256": "ab654b2e6689cf2f8a146dafd4606a964f4c44c8689584b304a2e3bdb90013e8",
+  "outcomes": "Compare source-specific mathematical and economic coverage item by item. One different rubric per paper. Lock independent manuscript quality before original fidelity. Full substantive reconstruction requires every target item fully supported and no unresolved critical error. Text, historical choices and authorial wording are not uniquely determined by the question. No statistical effect inference from these two pairs.",
+  "fault_attribution": [
+    "input unavailable",
+    "multiple defensible choices",
+    "omitted supplied scope",
+    "unsupported or incorrect deduction",
+    "uncued historical detail",
+    "recognition or uncertain attribution"
+  ],
+  "cases": {
+    "q001": {
+      "public_sha256": "c8e6cbe30d44d143bdbce74d9708048be2504c901168fbce1ae48fd13bf4af10",
+      "curation_sha256": "b452ef2573c09d88aaea5d13b9d22af818b4f90ff7ed1d3f6f7eda04fecc8199",
+      "standalone_quality_sha256": "52e8ac8fcf60b7be86e7cdd7ae26e5bf5a3e843f54da08c147feca2c09685206"
+    },
+    "q002": {
+      "public_sha256": "4600d9a70f19480042ad006508d68099253303348139550d4da9b6f0929503a8",
+      "curation_sha256": "e6c6e8746a2e5ca712dd40e318679a237ae99817eec3edcd1899e9cb23dcd591",
+      "standalone_quality_sha256": "e6c6e8746a2e5ca712dd40e318679a237ae99817eec3edcd1899e9cb23dcd591"
+    }
+  }
+}

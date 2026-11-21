@@ -1,0 +1,16 @@
+{
+  "id": "q001",
+  "mode": "theory",
+  "question": "A decision maker chooses the highest payoff available at a given economic parameter. What can we learn about how the best attainable payoff changes, locally or over a finite interval, when the available actions have no natural geometry?",
+  "conditions": {
+    "decision": "The parameter ranges over [0,1]. Each action in a nonempty fixed set specifies a real payoff at each parameter. The supremum is finite. The best action can change or be tied. Specify where attainment and additional assumptions on payoffs are needed.",
+    "menus": "An agent's private type affects preferences over outcomes. Messages select outcomes from a fixed menu. Consider what the implemented choices tell us about the agent's welfare, including when type has several coordinates or is a costly investment chosen beforehand.",
+    "optimization": "Compare with problems having joint concavity in actions and the parameter, and with problems on a compact set with suitable continuity. Identify which additional conclusions each setting allows.",
+    "strategic_and_feasible_choices": "Consider also a two-player zero-sum decision problem with a saddle point, and a single decision maker facing inequality constraints that move with the parameter. Allow nonunique optimal choices.",
+    "timing": "A decision maker observing a continuous-time Markov state can stop for a state-dependent payment or continue earning a flow payoff. Study how the value responds to the initial state in the region where immediate stopping is optimal."
+  },
+  "available_inputs": [],
+  "required_outputs": ["A self-contained theory manuscript deriving the local and finite-change results and addressing the specified economic settings.", "Give proofs or explicit qualifications for substantive claims. Use examples to distinguish assumptions and explain what breaks when they are relaxed.", "Disclose any recognition, recalled results, and unresolved steps."],
+  "source_restrictions": "Use this packet and independent reasoning. Background known by 1998-12-31 may be recalled with attribution. Do not search for an original treatment or consult outside files or sources.",
+  "neutrality_obligation": "Choose and justify your own sufficient conditions, proof methods and conclusions. Distinguish assumptions in an application from consequences of optimization."
+}

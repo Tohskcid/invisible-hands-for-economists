@@ -1,0 +1,46 @@
+{
+  "request_sha256": "3cc3f5ee1c98862e2054e8d482e6d7e1c7aa7a24dde1b585e11e066fb341d1b0",
+  "locked_utc": "2026-11-21T19:59:01.468297+00:00",
+  "judge": {
+    "start_utc": "2026-11-21T19:58:45.536315+00:00",
+    "end_utc": "2026-11-21T19:59:01.467266+00:00",
+    "elapsed_seconds": 15.93,
+    "deadline_seconds": 480,
+    "model": "gpt-6.2-astra",
+    "reasoning": "medium",
+    "tool_calls": 0,
+    "usage": {
+      "input_tokens": 19142,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 520,
+      "reasoning_output_tokens": 0
+    },
+    "session_sha256": "1997fb188df7540c0ed67db993bf7fb990c1b8f3f64677c1f8f6378261df1695",
+    "prompt_sha256": "5d9bf05c0b066820385dae21c9f652c93551a5f477924a0fa8e0a26ffc4ecc5e",
+    "events_sha256": "3cbde39f9329a0470d808d3e2bb6c792ab01600ac58c723233a6bd9140d7a070"
+  },
+  "items": {
+    "1": {
+      "score": 2,
+      "evidence": "Section 1 allows finite sides of unequal size, ranks singlehood alongside potential partners, and specifies whose strict consent each move requires. Its definition of weak stability is exactly the condition for no eligible move. Sections 2 and 3 cover arbitrary inherited partnerships, including unacceptable ones, and the all-single start."
+    },
+    "2": {
+      "score": 2,
+      "evidence": "In the Section 2 lemma, choosing a most-preferred blocking receiver leaves only the displaced proposer able to block internally. Each step strictly raises a bounded sum of receiver ranks, so the displacement sequence ends. Section 3 proves both directions of the singlehood characterization. Section 5 obtains a positive lower bound on absorption within a fixed number of steps from every unstable state, establishing almost-sure absorption and finite expected time. Positive probability along each finite path then gives the claimed support."
+    },
+    "3": {
+      "score": 2,
+      "evidence": "Section 3's one-couple example shows exactly how indifference to singlehood can preserve an inherited link that cannot form from scratch. Every arrow in Section 4's four-state cycle is eligible, and each state also has an exit to stability. Section 5 shows why date-by-date positivity alone is insufficient: the probabilities of first exiting the cycle sum to at most one half under its history-dependent rule."
+    },
+    "4": {
+      "score": 2,
+      "evidence": "Sections 4 and 5 show that the two stable outcomes favor opposite sides and that changing meeting probabilities can make either arbitrarily likely from singlehood. Section 6 identifies a continuation on which refusing an immediate gain benefits the participant. It correctly makes that conclusion conditional on later offers and acceptances and identifies the missing payoffs, beliefs, and refusal protocol needed for an equilibrium claim."
+    }
+  },
+  "summary": "The paper answers both parts of the question. For arbitrary starts, the backward-reachability test is a defensible exact characterization, though it requires searching the matching graph. For singlehood, the paper gives a direct preference test. It correctly distinguishes a feasible infinite cycle from convergence with probability one under fixed, full-support selection.",
+  "critical_errors": [],
+  "recognition": "I recognize the general decentralized matching problem. I assessed the manuscript from the supplied question and its arguments, without consulting or comparing it with a reference paper.",
+  "total": 8,
+  "denominator": 8
+}

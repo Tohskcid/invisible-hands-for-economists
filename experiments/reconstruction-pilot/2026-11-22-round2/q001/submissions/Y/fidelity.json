@@ -1,0 +1,250 @@
+{
+  "request_sha256": "8ea2b72a09880918261351006d5e1ac2024535eb3bd2061fa4568f785548b5e4",
+  "locked_utc": "2026-11-21T20:00:54.372845+00:00",
+  "judge": {
+    "start_utc": "2026-11-21T19:59:38.049167+00:00",
+    "end_utc": "2026-11-21T20:00:54.370404+00:00",
+    "elapsed_seconds": 76.32,
+    "deadline_seconds": 480,
+    "model": "gpt-6.2-astra",
+    "reasoning": "medium",
+    "tool_calls": 0,
+    "usage": {
+      "input_tokens": 43034,
+      "cached_input_tokens": 13952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3594,
+      "reasoning_output_tokens": 0
+    },
+    "session_sha256": "e2c6a0bb857f8f25dc31cc579df386098cf29ad36259910ed20b48f26d7a2b68",
+    "prompt_sha256": "8389ad723331a1c8e88b6cd45c89e8a8d4ab006120e3a43c7fb6e0ac19245ee5",
+    "events_sha256": "756236359063910af461563cdc5b08726497cccc43ceed3bd662c7fd021b417f"
+  },
+  "items": {
+    "A1.1": {
+      "score": 2,
+      "evidence": "§2 defines finite V as the supremum and M(t) as its attainment set. The endpoint comparison allows ε-optimal choices, and the examples distinguish a tie from a supremum approached only as n tends to infinity."
+    },
+    "A1.2": {
+      "score": 2,
+      "evidence": "§2, Propositions 1–2, use a fixed action solely to index a payoff function of t. Both proofs compare scalar payoffs without ordering actions, taking limits in action space, or differentiating a policy."
+    },
+    "A2.1": {
+      "score": 2,
+      "evidence": "§2, Proposition 1, bounds even the left limsup of the signed value quotient above by the derivative of each differentiable attaining branch."
+    },
+    "A2.2": {
+      "score": 2,
+      "evidence": "§2, Proposition 1, bounds the right liminf below by the active partial. Its proof retains only the right comparison at 0 and the left comparison at 1."
+    },
+    "A2.3": {
+      "score": 1,
+      "evidence": "§2, Proposition 1, explicitly identifies every differentiable optimal branch's derivative with V′ at an interior differentiability point."
+    },
+    "A2.4": {
+      "score": 2,
+      "evidence": "§2, proof of Proposition 1, subtracts the common base payoff from the comparison with the same feasible branch and reverses the inequality upon division by a negative increment."
+    },
+    "A3.1": {
+      "score": 2,
+      "evidence": "§2, paragraph preceding Proposition 2, gives the common integral increment bound and derives it from branchwise absolute continuity and a common integrable bound on derivative magnitudes. Branch-specific exceptional sets are handled explicitly."
+    },
+    "A3.2": {
+      "score": 2,
+      "evidence": "§2, proof of Proposition 2, takes suprema in the branch increment inequality in both directions, giving |V(t)−V(s)| ≤ ∫ b without attainment."
+    },
+    "A3.3": {
+      "score": 2,
+      "evidence": "§2, proof of Proposition 2, sums the bound over disjoint intervals, invokes absolute continuity of the integral of b, and applies the fundamental theorem to V."
+    },
+    "A3.4": {
+      "score": 2,
+      "evidence": "§2, Proposition 2, applies contact wherever V and the selected attaining branch are differentiable. It permits any selection when the optimal branches are differentiable almost everywhere at the points of selection. The −|t−a| example explains the quantifier."
+    },
+    "A3.5": {
+      "score": 1,
+      "evidence": "§5, “Inequalities and prices,” explicitly restricts the increment bound to crossed optimal choices and justifies it by the security comparison. With a singleton opponent this is exactly the sufficient bound on the two endpoint optimizers in §2, and it can be checked using only actions optimal somewhere."
+    },
+    "A4.1": {
+      "score": 1,
+      "evidence": "§4, “Compactness and continuity,” assumes a jointly continuous partial on a compact action–parameter product and notes its boundedness. These conditions give uniform first-order control by the mean value theorem in this compact setting. The manuscript gives no action-indexed uniform linearization condition for the arbitrary-set result."
+    },
+    "A4.2": {
+      "score": 0,
+      "evidence": "§4's compact derivative display identifies extrema over M(t). Its proof takes a convergent subsequence of displaced optimizers for an upper bound. It does not identify either slope as the full one-sided limit of base-parameter partials along any nearby optimal selection."
+    },
+    "A4.3": {
+      "score": 1,
+      "evidence": "§4, proof of the compact derivative display, proves one-sided existence in the compact continuous case by bounding the limsup using optimizer stability and the liminf using contact. It gives no existence proof when optimizers need not have cluster points."
+    },
+    "A4.4": {
+      "score": 0,
+      "evidence": "§4's compact formula concerns slopes on the base optimizer set. Neither §2 nor §4 gives the differentiability criterion in terms of coincident nearby-selection limits or continuity of the selected base-parameter partial."
+    },
+    "A5.1": {
+      "score": 2,
+      "evidence": "§2, example after Proposition 2, constructs disjoint C¹ peaks. The envelope equals one at 2⁻ⁿ and zero at zero. Its discontinuity also rules out a common integrable derivative majorant by Proposition 2."
+    },
+    "A5.2": {
+      "score": 0,
+      "evidence": "§2's affine tie has both one-sided derivatives. Its moving peaks have unbounded slopes, and neither example exhibits bounded branch slopes with a missing one-sided value derivative."
+    },
+    "B1.1": {
+      "score": 2,
+      "evidence": "§3, opening paragraph, maps each message m to a fixed outcome q(m), defines the implemented outcome through a best message, and requires optimality against additional messages outside the reported choice rule."
+    },
+    "B1.2": {
+      "score": 2,
+      "evidence": "§3 identifies W(t)−W(0) with the integral of the type partial at implemented outcomes under Proposition 2. The bounded-quantity example expressly allows jumps in allocation."
+    },
+    "B1.3": {
+      "score": 2,
+      "evidence": "§3, quasilinear example, derives p(t)=t x(t)−W(0)−∫₀ᵗ x(r)dr and verifies both incentive inequalities using endpoint rectangles. This pins transfers down given allocations and base utility."
+    },
+    "B2.1": {
+      "score": 1,
+      "evidence": "§3, vector-type paragraph, composes payoffs with a C¹ path and gives a uniform bound on type gradients along the path as a sufficient scalar increment condition."
+    },
+    "B2.2": {
+      "score": 2,
+      "evidence": "§3's path display integrates the selected type gradient dotted with γ′. It identifies endpoint welfare differences along every eligible path, gives zero around closed paths, and explains why relative levels across disconnected components are undetermined."
+    },
+    "B3.1": {
+      "score": 1,
+      "evidence": "§3, investment paragraph, states marginal equality at an already differentiable interior optimum. Together with Proposition 1 this gives active-payoff stationarity when the relevant derivatives exist. It does not establish differentiability of optimized net welfare at the investment optimum."
+    },
+    "B3.2": {
+      "score": 0,
+      "evidence": "§3 proves a global integral test for investment under the original menu. It neither squeezes the sided slopes at an interior maximum nor explains why a concave fixed-outcome net payoff sustains the investment."
+    },
+    "B4.1": {
+      "score": 0,
+      "evidence": "§3 formulates a single agent's message problem. It does not condition the menu and the dominant-strategy comparison on each fixed profile of other agents' messages."
+    },
+    "B4.2": {
+      "score": 0,
+      "evidence": "§3's lottery changes the distribution of the agent's type through investment. It supplies neither an interim menu of outcome lotteries induced by others' fixed behavior and beliefs nor an argument passing payoff regularity through expectation."
+    },
+    "C1.1": {
+      "score": 2,
+      "evidence": "§4, “Joint concavity,” mixes ε-optimal feasible actions at two parameters, evaluates the mixture at the mixed parameter, and sends ε to zero. The proof covers nonattainment."
+    },
+    "C1.2": {
+      "score": 2,
+      "evidence": "§4, “Joint concavity,” obtains V′₋ ≥ V′₊ from concave secants. Proposition 1 places the attained partial between those derivatives in the opposite order, proving equality."
+    },
+    "C1.3": {
+      "score": 1,
+      "evidence": "§4 explicitly states that one differentiable optimal branch suffices for the concavity argument even if many actions optimize."
+    },
+    "C2.1": {
+      "score": 2,
+      "evidence": "§4, “Compactness and continuity,” uses a nonempty compact metric action space and jointly continuous payoffs for attainment and stability. Joint continuity of the partial gives boundedness and the mean-value control used in the proof."
+    },
+    "C2.2": {
+      "score": 2,
+      "evidence": "§4's compact derivative display gives the right maximum and signed left minimum over all base optimizers, on the available sides. The subsequent proof gives the right comparison and reverses the parameter for the left."
+    },
+    "C2.3": {
+      "score": 2,
+      "evidence": "§4 takes optimizers along a sequence approaching the upper limit, extracts a subsequence converging to a base optimizer, and passes the branch quotient to its partial by the mean value theorem and joint continuity. Contact supplies the reverse bound."
+    },
+    "C2.4": {
+      "score": 1,
+      "evidence": "§4's two exact slope formulas give a substantively equivalent criterion at an interior point. The one-sided derivatives agree exactly when the maximum and minimum active slopes agree, including when M(t) contains several actions."
+    },
+    "C3.1": {
+      "score": 1,
+      "evidence": "§2, Proposition 1, obtains the value derivative by holding one optimizer fixed. §3 explicitly explains that welfare integration imposes no smoothness on the implemented allocation and illustrates this with quantity jumps."
+    },
+    "C3.2": {
+      "score": 2,
+      "evidence": "§2 adds branches t−1/2−1/n to the zero action. At 1/2 only zero attains, yet the value is max(0,t−1/2). Nonattainment to the right is compatible with the requested uniqueness at the base."
+    },
+    "D1.1": {
+      "score": 1,
+      "evidence": "§5, “Security comparisons,” defines the saddle inequalities and explains that the two security strategies each guarantee v against every opponent. These opposite guarantees give the same lower and upper game value."
+    },
+    "D1.2": {
+      "score": 1,
+      "evidence": "§5, marginal-identification paragraph, explicitly justifies pairing any maximizing security strategy with any minimizing security strategy because each guarantees the value against every opponent."
+    },
+    "D1.3": {
+      "score": 1,
+      "evidence": "§5's crossed-increment display uses (x_s,y_t) for the lower bound and (x_t,y_s) for the upper bound. The explanation verifies the lower bound from the two security inequalities."
+    },
+    "D2.1": {
+      "score": 2,
+      "evidence": "§5 bounds the value increment on both sides by crossed fixed-profile increments. Applying the common integral bound to those two profiles gives absolute continuity by the disjoint-interval argument of §2."
+    },
+    "D2.2": {
+      "score": 1,
+      "evidence": "§5 integrates d(r) when every saddle pair has that partial almost everywhere, with compact metric strategy spaces and joint continuity. This permits any selection under a stronger common-slope hypothesis and leaves the general selection identity uncovered."
+    },
+    "D2.3": {
+      "score": 1.5,
+      "evidence": "§5 proves the narrower identification by taking cluster points of displaced saddle pairs, applying saddle stability and rectangularity to the crossed pairs, and using their common partial. Without that common-partial assumption the proof gives no return sequence to the specified selected pair and no equally general identification."
+    },
+    "D3.1": {
+      "score": 3,
+      "evidence": "§5's F=(t−1/2)xy example has value zero because either player can guarantee zero. At 1/2, (1,1) is a saddle, its fixed-profile partial is one, and v′ is zero. This verifies the requested disagreement at a point. The example makes no claim of failure of an almost-everywhere integral."
+    },
+    "D4.1": {
+      "score": 0,
+      "evidence": "§5 establishes a derivative under the common-partial condition. It does not formulate a derivative game on the two base security-strategy sets when active partials differ."
+    },
+    "D4.2": {
+      "score": 0,
+      "evidence": "§5 gives neither order of optimization for the right derivative of the game value. The common-slope argument does not establish the asserted max–min and min–max characterization."
+    },
+    "D4.3": {
+      "score": 0,
+      "evidence": "§5 gives no min–max and max–min characterization of the signed left derivative over the base saddle strategies."
+    },
+    "D4.4": {
+      "score": 1,
+      "evidence": "§5 proves the crossing bounds and passes to limits using saddle stability, completing the squeeze when all active partials coincide. It does not optimize the limiting bounds over base strategies or use weak minimax to close the general squeeze."
+    },
+    "E1.1": {
+      "score": 1,
+      "evidence": "§5, “Inequalities and prices,” proves the Lagrangian saddle inequalities from primal attainment, global Lagrangian maximization, feasibility and complementarity. This conditional representation is valid. It assumes a supporting price and does not obtain one from convexity and strict feasibility."
+    },
+    "E1.2": {
+      "score": 0,
+      "evidence": "§5 assumes supporting prices selectable in a common compact set. No strictly feasible test point is used to derive a uniform bound on all optimal multipliers."
+    },
+    "E1.3": {
+      "score": 1,
+      "evidence": "§5 identifies the integrand f_t−λ·g_t and invokes the preceding game argument to integrate it under almost-everywhere common slopes. The two-cap example checks the change directly. The general primal-dual selection formula without the common-slope condition is missing."
+    },
+    "E1.4": {
+      "score": 0,
+      "evidence": "§5 gives a common-slope formula and computes a particular kink. Neither gives the two differently ordered saddle optimizations of the partial Lagrangian over active primal and dual sets."
+    },
+    "E1.5": {
+      "score": 0.5,
+      "evidence": "§5's two-cap example gives P(t)=min(t,1/2) and a first multiplier ranging over [0,1] at the tie. Thus its right slope is the smallest price, zero, and its left slope the largest, one. The general scalar relaxation rule is absent."
+    },
+    "F1.1": {
+      "score": 1,
+      "evidence": "§6's opening display defines J(x,τ) by the discounted flow up to τ and discounted terminal payment, with a convention at infinity, and takes the supremum over stopping times for each initial state."
+    },
+    "F1.2": {
+      "score": 2,
+      "evidence": "§6 uses the globally feasible time τ=0 to get U≥G. It attains on S, where U=G, so the fixed-branch contact argument gives equality of derivatives when both exist at an interior state."
+    },
+    "F1.3": {
+      "score": 2,
+      "evidence": "§6 explicitly includes edges of S interior to the state space under differentiability. The deterministic translation-to-a-cap example has signed slopes 1/4 and 5/4 at the interior edge zero, demonstrating why contact alone cannot establish smooth fit."
+    },
+    "G1.1": {
+      "score": 1,
+      "evidence": "§2 proves contact using a fixed payoff branch on an arbitrary set, and §4 explains how extra geometry provides regularity. §7 summarizes that distinction but does not explicitly explain that a bijective relabeling preserves the entire payoff family and hence all value sensitivities."
+    }
+  },
+  "summary": "The supplied manuscript proves the contact and absolute-continuity results, the menu and path formulas, the concave and compact optimization results, and stopping contact. Its compact optimizer argument, common-slope saddle theorem, and two-cap price example are valid at their stated scopes. The main historical omissions are the arbitrary-set nearby-selection theorem, the bounded-slope oscillation example, the general saddle-selection integral, and the derivative-game formulas. Only one manuscript and a quality-lock digest were supplied, so the independent quality grades for two branches cannot be verified here.",
+  "critical_errors": [],
+  "recognition": "The manuscript's opening TeX comment discloses recognition of the envelope-theorem problem and recall of envelope, incentive-compatibility, and smooth-fit principles. The author reports no recollection of a particular target manuscript.",
+  "total": 69.0,
+  "denominator": 100
+}

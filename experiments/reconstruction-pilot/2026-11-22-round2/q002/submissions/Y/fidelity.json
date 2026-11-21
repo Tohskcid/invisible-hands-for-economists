@@ -1,0 +1,62 @@
+{
+  "request_sha256": "b94b13ea84219a7bea92b2c8d4a183b8603408eb5546b23af1889c9f9b71090f",
+  "locked_utc": "2026-11-21T19:59:25.808973+00:00",
+  "judge": {
+    "start_utc": "2026-11-21T19:59:04.276824+00:00",
+    "end_utc": "2026-11-21T19:59:25.808163+00:00",
+    "elapsed_seconds": 21.53,
+    "deadline_seconds": 480,
+    "model": "gpt-6.2-astra",
+    "reasoning": "medium",
+    "tool_calls": 0,
+    "usage": {
+      "input_tokens": 20201,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 785,
+      "reasoning_output_tokens": 0
+    },
+    "session_sha256": "e5332b12e103d7c30f6faa2b179d83ee2cba2ac9f9e8a1a3a66fa4c775919497",
+    "prompt_sha256": "185b3e4e47bf8534e40e3f069abf6f53e0d3589edbc3fa59e4934b6b152926c5",
+    "events_sha256": "2f88e52466303cd19e88a18f01f354d36b800a265d72ca6b64434e7376c0b7d1"
+  },
+  "items": {
+    "model": {
+      "score": 2,
+      "evidence": "§1 defines finite disjoint sides without requiring equal sizes, weak rankings including singlehood, and individual acceptability. Its move definitions require strict gains, leave displaced partners single, and retain other couples. Stability is exactly the absence of an eligible departure or pair."
+    },
+    "cycle": {
+      "score": 2,
+      "evidence": "§4 verifies the cycle {11} → {12} → {22} → {21} → {11}. At each arrow the switching participant gets a first choice and the single participant gets a strictly acceptable partner. At every cycle state the two singles can instead complete A or B. This four-person example is a valid alternative to the original three-by-three example."
+    },
+    "path": {
+      "score": 2,
+      "evidence": "The §2 theorem covers every initial matching. Its proof first dissolves couples through eligible departures until the matching is individually rational, then grows a closed, internally stable group until no pair blocks anywhere."
+    },
+    "proof": {
+      "score": 2,
+      "evidence": "The §2 lemma shows why choosing a most-preferred blocking receiver leaves only the newly displaced proposer capable of an internal block. Each repair strictly raises a bounded sum of receiver ranks. The theorem also justifies adding two blocking outsiders when no cross-boundary block exists. Each enlargement increases group size, giving finite termination."
+    },
+    "stochastic": {
+      "score": 2,
+      "evidence": "The §5 theorem takes a maximum path length and a positive minimum path probability over finitely many states, yielding a geometric bound on nonabsorption. The final paragraph gives a nonstationary rule with positive probability of cycling forever and explains why a uniform positive lower bound on conditional move probabilities restores absorption."
+    },
+    "support": {
+      "score": 2,
+      "evidence": "The §3 proposition proves that every couple formed from singlehood is strictly acceptable to both members and constructs each qualifying stable target by forming its disjoint couples in any order. §5 proves that each such finite path has positive probability. The one-couple example in §3 shows why even one partner tied with singlehood can make a stable target unreachable."
+    },
+    "institution": {
+      "score": 0,
+      "evidence": "§2 uses proposers to repair displacements, and §4 identifies a stable matching giving each man his first choice in that example. Neither passage connects a move schedule from singlehood to deferred acceptance or establishes its proposer-optimal outcome. The manuscript also omits the relationship between one-to-one stability and the core and the assumptions for that relationship."
+    },
+    "interpretation": {
+      "score": 1,
+      "evidence": "§§4–5 show how meeting opportunities affect decentralized outcomes. In §6, the conditional refusal example explains why an immediate gain need not serve a participant’s interest in a final partner. This is a valid strategic observation, but it does not address preference reports, incentives for truthful reporting, or whether strategic reports yield an equilibrium outcome stable under true preferences. The original medical-placement motivation is also absent."
+    }
+  },
+  "summary": "The manuscript covers the path theorem, cycling, random absorption, and attainable outcomes. Its smaller cycle and its qualification for ties with singlehood are mathematically justified. Historical coverage falls short on deferred acceptance, the core, and strategic reporting.",
+  "critical_errors": [],
+  "recognition": "The opening LaTeX comment discloses prior recognition of the general decentralized matching problem and states that the arguments were derived from the supplied task without using recollection of a target paper as evidence.",
+  "total": 13,
+  "denominator": 16
+}

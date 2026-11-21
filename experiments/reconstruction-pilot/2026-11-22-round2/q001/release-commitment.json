@@ -1,0 +1,10 @@
+{
+  "id": "q001",
+  "frozen_at": "2026-11-21T19:56:31.326002+00:00",
+  "files": {
+    "public/public-task.json": "c8e6cbe30d44d143bdbce74d9708048be2504c901168fbce1ae48fd13bf4af10",
+    "sealed/curation.json": "b452ef2573c09d88aaea5d13b9d22af818b4f90ff7ed1d3f6f7eda04fecc8199",
+    "sealed/review.json": "7a5faca1945041359950ff9e9c000e51f915d728eee7ef816198ffab2e521b36",
+    "sealed/sources/article.pdf": "224834cf7a6d088c4320c3104101d8e961d556f7c43d611e6d13e95d0a82faa4"
+  }
+}

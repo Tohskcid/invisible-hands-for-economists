@@ -1,0 +1,137 @@
+\documentclass[11pt]{article}
+% Recognition disclosure: I recognize the general problem of decentralized adjustment in matching markets. I use no recollection of a target paper or its results as evidence.
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[T1]{fontenc}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newcommand{\alone}{\varnothing}
+\title{Starting Partnerships and the Selection of Moves in a Two-Sided Market}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+From every initial arrangement there is a finite sequence of voluntary departures and mutually improving partnerships that reaches a stable matching, even with indifference. Some eligible sequences nevertheless cycle. A random rule giving every eligible move positive probability as a function of the current matching reaches stability almost surely. Its possible final outcomes are exactly the stable matchings reachable from the initial state. Starting with everyone alone makes this set particularly simple: it consists of all stable matchings in which both members of every partnership strictly prefer it to being alone. An initially endowed partnership can survive even when it would never form from that starting point. A four-person example separates reachability, convergence, and the probabilities of the individual stable outcomes.
+\end{abstract}
+
+\section{Questions and obligations}
+
+The question is how the initial arrangement and the selection of individual opportunities affect long-run partnerships. The following inventory specifies what would establish each part of an answer.
+
+\begin{enumerate}
+\item For two finite populations, including unequal sizes, the outcome to define is a feasible set of bilateral partnerships with the option to remain alone. Complete and transitive rankings permit ties, including ties with being alone. Section~\ref{sec:model} identifies the stability test implied by the specified strict moves.
+\item For arbitrary initial partnerships, including unacceptable ones, the questions are whether some path terminates, whether every path does, and which terminal arrangements are accessible. Sections~\ref{sec:path} and~\ref{sec:start} give a construction and a finite reachability test. Section~\ref{sec:example} tests universal termination by following individual moves.
+\item For an initially single population, the comparison is between outcomes creatable by strict consent and outcomes sustainable once endowed. Section~\ref{sec:start} gives necessary and sufficient conditions and checks indifference, empty populations, and absence of acceptable partners.
+\item For opportunities selected at random, the outcomes are the probability of eventual stability and the distribution across final matchings. Section~\ref{sec:random} derives both from the transition rule. Sections~\ref{sec:example} and~\ref{sec:limits} compare different probabilities, excluded opportunities, and probabilities that vary with time.
+\item For economic interpretation, Section~\ref{sec:limits} asks whose consent matters and what a profitable current move implies about the participant's eventual position. The packet supplies no observations, cardinal payoffs, or numerical meeting rates. Numerical probabilities below are deductions for specified examples. Empirical frequencies and strategic incentives would require additional inputs.
+\end{enumerate}
+
+\section{States, consent, and stability}\label{sec:model}
+
+Let \(A\) and \(B\) be finite disjoint sets. A matching \(x\) is a set of edges in \(A\times B\) with no shared endpoints. Write \(x(i)\) for \(i\)'s partner, using \(\alone\) for being alone. Each person \(i\) has a complete transitive weak preference \(\succeq_i\) on the opposite population and \(\alone\), with strict part \(\succ_i\). An alternative is weakly acceptable if it ranks at least as high as \(\alone\), and strictly acceptable if it ranks higher.
+
+A person can dissolve an edge if \(\alone\succ_i x(i)\). An absent edge \(ab\) is a blocking pair if \(b\succ_a x(a)\) and \(a\succ_b x(b)\). Its formation deletes precisely the existing edges incident to \(a\) or \(b\). Abandoned partners have no veto. Call \(x\) \emph{stable} if every partner is weakly acceptable to its holder and there is no blocking pair. These two tests exhaust the move list, so stability is equivalent to having no eligible move. In particular, a person indifferent to leaving cannot dissolve an edge, and a pair with just one strict gainer cannot form if the other is indifferent. A stability definition that allows such a pair to block would answer a different question.
+
+Construct a directed graph \(G\) on the finite set of matchings, with an arc for each change permitted by these rules. A terminal matching stays put. We distinguish a possible terminal outcome, a state visited infinitely often on a possible path, and the outcome reached with probability one under a given selection rule. The distinctions matter even with strict rankings.
+
+\section{A finite path from any arrangement}\label{sec:path}
+
+\begin{lemma}\label{lem:insert}
+Suppose a set \(C\) has a stable matching when preferences and moves are restricted to \(C\). A single newcomer can be incorporated into a stable matching on the enlarged set by eligible moves. Furthermore, if the newcomer currently holds a weakly acceptable partner outside \(C\) and has a blocking pair with someone in \(C\), incorporation can begin by exercising such a block and leaving the outside partner single. In both statements all initial edges of \(C\) are internal.
+\end{lemma}
+
+\begin{proof}
+Take the newcomer to be on side \(A\), interchanging sides if necessary. For a single newcomer, consider the people in \(C\cap B\) who strictly prefer the newcomer to their current situation and whom the newcomer strictly prefers to being alone. If this set is empty the enlargement is already stable. Otherwise the newcomer takes a most preferred member of the set. For a partnered newcomer in the second statement, use the current partner as the threshold for this first choice. The set is nonempty by hypothesis, and the choice is also strictly preferable to being alone.
+
+Every person on side \(B\) in the enlarged set now has a weakly improved situation. The newcomer cannot be in a blocking pair after the choice: anyone strictly preferred to the chosen partner would have cleared the newcomer's original threshold, and willingness on side \(B\) could only have decreased. An incumbent on side \(A\) whose situation was unchanged cannot acquire a block either. Thus only the person just displaced, if any, can be in a blocking pair. That person is single. Let this person take a most preferred strictly acceptable, strictly willing partner if there is one. The same argument again confines any block to the newly displaced person. All retained and newly made edges are weakly acceptable. Each step strictly raises one person's rank on side \(B\) and lowers none on that side within the enlarged set. Finiteness bounds the number of steps. At termination there is no block, proving stability on the enlarged set. The abandoned outside partner in the second statement has no role in these subsequent moves.
+\end{proof}
+
+\begin{theorem}\label{thm:path}
+From every matching there exists a finite eligible path to a stable matching.
+\end{theorem}
+
+\begin{proof}
+First dissolve edges with an endpoint that strictly prefers being alone. This takes at most one move per original edge. Thereafter every current edge is weakly acceptable to both endpoints.
+
+Maintain a set \(C\) whose members are matched internally or single and whose restriction is stable. Start with \(C\) empty. If there is a single outsider, apply Lemma~\ref{lem:insert} to add that person. Otherwise choose an outside couple. If one of its members has a blocking pair with someone in \(C\), incorporate that member by the partnered case of the lemma. The former partner becomes a single outsider. If there is no such block involving either member, include the whole couple without a move. Indeed, all pairs inside the old \(C\) still pass the stability test, all cross pairs pass by the case assumption, and the couple already hold one another.
+
+Each enlargement preserves the internal-edge property and increases the size of \(C\). Moves selected during an enlargement are eligible in the whole market because their endpoints' current situations are the same there. Other eligible moves may wait. When \(C=A\cup B\), restricted stability is market stability.
+\end{proof}
+
+The monotonicity in the lemma holds during one enlargement. Later enlargements can reverse earlier gains. The proof supplies a way to select moves and establishes existence of a stable matching as a consequence. It does not supply a common improving objective along all paths.
+
+\section{What the starting point permits}\label{sec:start}
+
+Let \(S\) denote the stable matchings and \(R(x)\) the states reachable from \(x\), including \(x\). For arbitrary initialization the exact set of possible final matchings is \(S\cap R(x)\). This gives a finite test from rankings alone. Start with \(D_0=\{x\}\); form \(D_{k+1}\) by adjoining to \(D_k\) every successor of each member, checking the two move tests of Section~\ref{sec:model}. Stop at equality and retain the stable members. Induction identifies \(D_k\) with reachability in at most \(k\) moves, so the test omits no outcome. Its cost can be large: for side sizes \(m,n\) the number of states is
+\[
+ N=\sum_{j=0}^{\min(m,n)}{m\choose j}{n\choose j}j!,
+\]
+by choosing and pairing the matched endpoints. Any reachable state has a simple path of at most \(N-1\) moves. If the start is itself stable, the only reachable outcome is the start. Across unrestricted starts every stable matching is attainable, since it may be endowed initially.
+
+\begin{proposition}\label{prop:empty}
+From the all-single matching \(e\), a matching \(y\) is reachable if and only if each of its edges is strictly acceptable to both endpoints. Consequently the possible terminal outcomes from \(e\) are precisely the stable matchings with this property.
+\end{proposition}
+
+\begin{proof}
+Initially everyone has the outside option. Inductively, if every current edge strictly exceeds that option for both members, an entrant to a new edge strictly improves on a situation at least as good as being alone. Abandonment returns someone to the outside option. This proves necessity. For sufficiency, form the edges of \(y\) in any order. Their endpoints are single when selected because the edges are disjoint. Both endpoints strictly gain at that step. Stability then decides whether the path can end permanently at \(y\).
+\end{proof}
+
+With strict rankings every stable matching satisfies the proposition. Ties between partners alone do not change that implication if nobody ties a partner with being alone. For the boundary where the distinction matters, take a single feasible couple. One member is indifferent between pairing and being alone, and the other strictly prefers pairing. Both states are stable. From either start the initial state persists. If both strictly prefer pairing, the paired state is the unique terminal outcome. If an endpoint strictly prefers being alone, the endowed edge can dissolve and cannot form from the empty state. More generally, if no edge is strictly acceptable to both members, \(e\) is absorbing even though some endowed edges may survive. With an empty side there is just one state. Unequal positive sizes require no change to the construction: unpaired persons are explicitly included at every stability test.
+
+\section{Random selection}\label{sec:random}
+
+Let \(P(x,z)\) be the transition probabilities of a time-homogeneous Markov chain. At a nonterminal state every eligible move receives positive probability and the probabilities sum to one; at a stable state \(P(x,x)=1\). Probabilities of moves with identical successors are added. The kernel can otherwise depend arbitrarily on the matching.
+
+\begin{theorem}\label{thm:random}
+Under this rule absorption occurs almost surely and has finite expected time. From \(x\), a stable matching has positive absorption probability exactly when it belongs to \(R(x)\).
+\end{theorem}
+
+\begin{proof}
+If every state is stable the claim is immediate. Otherwise let \(p>0\) be the smallest positive transition probability in the finite chain and let \(L=N-1\geq1\). By Theorem~\ref{thm:path} each state has a path of length at most \(L\) to stability. Hence, conditional on any current state, the probability of absorption within \(L\) steps is at least \(\delta=p^L\). For absorption time \(T\), iteration gives
+\[
+ \Pr_x(T>kL)\leq (1-\delta)^k,\qquad
+ \mathbb E_x T\leq L/\delta .
+\]
+Each particular finite eligible path has positive probability, the product of its transition probabilities. This proves positivity for each reachable stable outcome. A positive probability of reaching an unreachable state is impossible since every change follows an arc.
+\end{proof}
+
+For given meeting rates one can also recover the distribution. For each \(s\in S\) let \(h_s(x)\) denote the probability of absorption at \(s\). Conditioning on the first step gives
+\[
+ h_s(t)=\mathbf{1}_{\{s=t\}}\quad(t\in S),\qquad
+ h_s(x)=\sum_z P(x,z)h_s(z)\quad(x\notin S).
+\]
+These equations have a unique solution: the difference of two solutions is zero at the boundary, and after \(kL\) iterations its absolute value is bounded by its maximum absolute value times \(\Pr_x(T>kL)\). This tends to zero. Without specified rates the equations identify support, but generally leave the numerical distribution undetermined.
+
+\section{One market, several long-run predictions}\label{sec:example}
+
+Take \(A=\{a,b\}\) and \(B=\{u,v\}\). All partners strictly exceed being alone. The orders from best to second best are
+\[
+ a:\ v,u \qquad b:\ u,v \qquad u:\ a,b \qquad v:\ b,a .
+\]
+Write \(D=\{au,bv\}\) and \(F=\{av,bu\}\), abbreviating an edge by its endpoints. In \(D\) side \(B\) receives its first choices, and in \(F\) side \(A\) receives its first choices. Both are stable. An incomplete matching leaves a single on each side who would pair, so these are the only stable matchings.
+
+From the singleton state \(\{au\}\) the following switches can repeat forever:
+\[
+ \{au\}\longrightarrow\{av\}\longrightarrow\{bv\}
+ \longrightarrow\{bu\}\longrightarrow\{au\}.
+\]
+The respective continuing endpoints \(a,v,b,u\) each switch from second to first choice. Each new partner was single. In every singleton state the alternative eligible move pairs the two singles, completing the unique perfect matching containing the current edge. These are exactly the two opportunities: the endpoint already holding its first choice will not switch, and neither endpoint will leave. From \(e\) any of the four initial edges can form. Thus even from everyone alone an infinite cycling path is possible; from an endowed \(D\) or \(F\) it is impossible.
+
+For a numerical comparison suppose each singleton state selects its two moves with equal probability. Let \(d\) and \(f\) be the probabilities of eventual \(D\) starting with a singleton edge of \(D\) and of \(F\), respectively. A switch changes the type of the singleton, giving
+\[
+ d=\tfrac12+\tfrac12 f,\qquad f=\tfrac12 d,\qquad
+ d=\tfrac23,\quad f=\tfrac13 .
+\]
+Let the total first-edge probability assigned at \(e\) to edges in \(D\) be \(q\), divided positively within each type, with \(0<q<1\). Then \(\Pr_e(D)=(1+q)/3\). Uniform first-edge selection gives \(1/2\); setting \(q=3/4\) gives \(7/12\). Alternatively, holding the singleton rule fixed and starting with \(au\) gives \(2/3\), while starting with \(D\) gives one. This calculation separates a change of meeting probabilities at the same start from a change of start under the same kernel.
+
+\section{Boundaries of the meeting rule and of the incentive claim}\label{sec:limits}
+
+If the rule assigns zero probability to completing a perfect matching in every singleton state of the example, the four singletons form a closed cycle. Randomizing the first edge does nothing to restore absorption. Even positivity at every date may be too weak if selection can depend on time. Start from a singleton and, at step \(t=1,2,\ldots\), give completion probability \(2^{-(t+1)}\) conditional on still cycling. The probability of ever completing is at most \(\sum_{t\geq1}2^{-(t+1)}=1/2\), by summing the probabilities of first completion. Both moves are always available with positive conditional probability before absorption. The benchmark rules out this decay by making probabilities functions of the current matching in a finite market. More generally the block argument still works under history dependence if every eligible move has a common positive conditional lower bound.
+
+The formation rule protects the consent of the two new partners and permits a loss to a third person. In the example, \(u\) holds its first choice at \(\{au\}\) and becomes single when \(a\) takes \(v\). Even the mover's gain can disappear: \(a\) obtains its first choice in that move and is abandoned at the very next switch. For \(a\), immediate completion at \(\{au\}\) would instead lock in its second choice. The eventual ranking of acting now versus waiting depends on the subsequent meetings and on how \(a\) values interim and future situations. The given rankings compare current partners; they specify neither preferences over such streams nor a participant's power to delay or influence an opportunity.
+
+Thus the finite construction answers the existence question for voluntary myopic moves, and the probability argument answers convergence under the stated random selection. The support test and the all-single characterization locate the role of the initial endowment. What remains open from these inputs is which meeting rates describe an actual market, how long adjustment would take there, and whether forward-looking participants would choose to implement the eligible moves on which those predictions depend.
+\end{document}

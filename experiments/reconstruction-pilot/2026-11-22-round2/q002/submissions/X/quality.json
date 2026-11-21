@@ -1,0 +1,46 @@
+{
+  "request_sha256": "de4f60f92596ad01fe8acc9919015e1dd1e738387cb9498b780333b04decd8d4",
+  "locked_utc": "2026-11-21T19:59:04.155636+00:00",
+  "judge": {
+    "start_utc": "2026-11-21T19:58:45.536281+00:00",
+    "end_utc": "2026-11-21T19:59:04.154558+00:00",
+    "elapsed_seconds": 18.62,
+    "deadline_seconds": 480,
+    "model": "gpt-6.2-astra",
+    "reasoning": "medium",
+    "tool_calls": 0,
+    "usage": {
+      "input_tokens": 19552,
+      "cached_input_tokens": 10752,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 487,
+      "reasoning_output_tokens": 0
+    },
+    "session_sha256": "b39757138937e73a1233675f495890430e43a3ed93603cfb72877cf225b27b44",
+    "prompt_sha256": "b7e4b9afac9a6e0b59ed003b4ce2c365cc2b18a0602963b45f3dbba24ffbdd87",
+    "events_sha256": "3ad72d31dd67d81423a06f12822dde289786f687508be7626465708c6b15e0b3"
+  },
+  "items": {
+    "1": {
+      "score": 2,
+      "evidence": "Section 2 allows unequal finite populations, ties with being alone, and initially unacceptable partnerships. It defines both moves, specifies which edges survive a switch, and shows why stability requires weakly acceptable current partners and no pair whose members both strictly gain."
+    },
+    "2": {
+      "score": 2,
+      "evidence": "In Section 3’s insertion lemma, choosing a most-preferred willing partner confines any new block to the displaced person. Each switch strictly improves one receiving-side member while preserving the others’ positions within the enlarged set, ensuring termination. Section 4 proves the all-single characterization in both directions. Section 5 uses a uniform positive chance of absorption within N−1 steps to establish almost-sure absorption and finite expected time."
+    },
+    "3": {
+      "score": 2,
+      "evidence": "Section 4’s one-couple tie shows how an endowed edge can persist even though it cannot form from singles. Section 6 verifies every switch in a four-state cycle and computes how changing the first-meeting probabilities changes the final distribution. Section 7 shows that even positive completion probabilities at every date can leave a positive chance of cycling forever when those probabilities decay."
+    },
+    "4": {
+      "score": 2,
+      "evidence": "Section 7 traces both the loss to the abandoned partner and the reversal of the mover’s immediate gain. It identifies the missing inputs for a strategic prediction, including preferences over time and the ability to delay a move. Section 5 specifies how given meeting rates determine absorption probabilities, while Section 7 acknowledges that actual rates and adjustment times remain unknown."
+    }
+  },
+  "summary": "The paper answers how initialization determines reachable stable outcomes and how opportunity selection determines convergence and outcome probabilities. For arbitrary starts, Section 4’s finite graph search is a defensible exact characterization, although it can be costly. The four-state cycle refutes termination along every eligible sequence. Inferring that it also refutes almost-sure absorption under the benchmark would be incorrect, and the manuscript avoids that inference.",
+  "critical_errors": [],
+  "recognition": "I recognize the general matching-market problem. I assessed the supplied arguments independently and used no tools or reference comparison.",
+  "total": 8,
+  "denominator": 8
+}

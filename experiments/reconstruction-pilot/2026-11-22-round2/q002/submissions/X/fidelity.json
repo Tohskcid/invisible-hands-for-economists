@@ -1,0 +1,62 @@
+{
+  "request_sha256": "62f5937113cdcb17dbff0edade01abd5cd35f5f920deebb31c53817ff1481027",
+  "locked_utc": "2026-11-21T19:59:27.009694+00:00",
+  "judge": {
+    "start_utc": "2026-11-21T19:59:04.276824+00:00",
+    "end_utc": "2026-11-21T19:59:27.009080+00:00",
+    "elapsed_seconds": 22.73,
+    "deadline_seconds": 480,
+    "model": "gpt-6.2-astra",
+    "reasoning": "medium",
+    "tool_calls": 0,
+    "usage": {
+      "input_tokens": 20624,
+      "cached_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 859,
+      "reasoning_output_tokens": 0
+    },
+    "session_sha256": "6a4e6b271767469d239f3ba36eee7fdbaf41a1b0dee0eb7f53e97fc5ea63c2b1",
+    "prompt_sha256": "a42304643eaf6b110875c13c1f63da59ffb90f08f06462c303fb75feaa115f47",
+    "events_sha256": "551402ddc9b474c92884866902ffca5416cf081dc4210c192191cc429880e629"
+  },
+  "items": {
+    "model": {
+      "score": 2,
+      "evidence": "§2 defines matchings on arbitrary finite sides, ranks being single alongside potential partners, and distinguishes weak from strict acceptability. It defines unilateral departure and strict bilateral improvement, specifies exactly which edges are deleted, and shows that stability is equivalent to having no eligible move."
+    },
+    "cycle": {
+      "score": 2,
+      "evidence": "§6 traces the singleton edges au → av → bv → bu → au. At each switch the continuing endpoint moves from second to first choice and the incoming partner strictly prefers pairing to being single. Pairing the two singles instead exits to a stable matching at every stage. This 2-by-2 example is a valid alternative to the original 3-by-3 example."
+    },
+    "path": {
+      "score": 2,
+      "evidence": "§3, Theorem 1, starts from any matching, dissolves edges with an endpoint that strictly prefers being single, and grows an internally stable set. It incorporates a single outsider, incorporates a partnered outsider through a block, or adds an intact outside couple when neither member blocks with the set."
+    },
+    "proof": {
+      "score": 2,
+      "evidence": "§3, Lemma 1, chooses a most-preferred willing partner above the entrant’s current threshold. The receiving side only improves, so only the newly displaced single can have a block. Each repair strictly improves one receiver’s rank, ensuring finite termination even with ties. Theorem 1 keeps any abandoned outside partner single, verifies that the selected moves are globally eligible, and terminates because each enlargement adds a person."
+    },
+    "stochastic": {
+      "score": 2,
+      "evidence": "§5, Theorem 2, uses the finite chain’s minimum positive transition probability p and a path-length bound L to obtain absorption probability at least p^L per block of L steps. Iteration gives almost-sure absorption. §7 shows why date-by-date positivity can fail using summable exit probabilities and explains why a common positive conditional lower bound suffices even under history dependence."
+    },
+    "support": {
+      "score": 2,
+      "evidence": "§4, Proposition 1, proves that every edge formed from all single strictly exceeds being single for both endpoints, and constructs any target satisfying that condition by forming its disjoint edges in any order. §5 gives each such finite path positive probability. The one-couple example in §4 correctly qualifies the historical support claim under ties: even one endpoint indifferent to being single can sustain an endowed stable edge that cannot form from all single."
+    },
+    "institution": {
+      "score": 0,
+      "evidence": "§3’s insertion lemma repairs displacements, and §6 exhibits two stable outcomes that give opposite sides their first choices. Neither passage identifies an all-single deferred-acceptance schedule or derives its proposer-optimal outcome. The manuscript also omits the one-to-one core relationship and its preference and coalition-blocking assumptions."
+    },
+    "interpretation": {
+      "score": 1,
+      "evidence": "§7 explains decentralized consent and uses a’s immediate gain followed by abandonment to show why a myopic improvement need not be strategically desirable. It identifies missing preferences over time and limits on participants’ control of meetings. The original’s strategic-reporting caveat remains uncovered: the manuscript does not distinguish stability under given preferences from truthful reporting or equilibrium under strategic reports."
+    }
+  },
+  "summary": "The manuscript establishes the dynamic results, including finite reachability, possible cycling, almost-sure absorption, and the exact support from all single. Its smaller cycle and qualification for ties are defensible. Historical coverage is incomplete on deferred acceptance, proposer optimality, the core, and strategic reporting.",
+  "critical_errors": [],
+  "recognition": "The manuscript’s opening LaTeX comment discloses prior recognition of the general decentralized matching problem and says that recollection of a target paper or its results was not used as evidence.",
+  "total": 13,
+  "denominator": 16
+}

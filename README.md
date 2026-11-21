@@ -175,6 +175,8 @@ Repeat to resume. Public PDFs can be acquired separately with `acquire --doi DOI
 
 The [November 2026 reconstruction pilot](experiments/reconstruction-pilot/2026-11-22/README.md) reports two published-paper tasks, the agent submissions, independent scores, and [additional research questions from quantitative syntheses](experiments/reconstruction-pilot/2026-11-22/research-directions.md).
 
+The [next reconstruction round](experiments/reconstruction-pilot/2026-11-22-round2/README.md) tests a revised author workflow on new papers and provides the repeatable full-text-to-manuscript pipeline.
+
 ## Research roadmap
 
 See the [harness optimization research plan](docs/research/harness-optimization-plan.md) (Traditional Chinese) for the proposed implementation work packages, controlled evaluation, milestones, and acceptance criteria grounded in the reconstruction pilot.

@@ -1,0 +1,184 @@
+\documentclass[11pt]{article}
+% Recognition disclosure: I recognize the question as an envelope-theorem problem and recall the standard envelope, incentive-compatibility, and smooth-fit principles. I do not recall a particular target manuscript. The arguments below are derived from the stated models.
+\usepackage{amsmath,amssymb,amsthm,array}
+\usepackage[margin=1in]{geometry}
+\newtheorem{proposition}{Proposition}
+\newtheorem{example}{Example}
+\newcommand{\R}{\mathbb R}
+\newcommand{\V}{V}
+\title{Marginal and Finite Changes in the Best Attainable Payoff}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A payoff comparison that holds for a single fixed action gives an exact marginal welfare formula at every interior point where the value and that action's payoff are differentiable and the action is optimal. No topology on actions is needed. An integrable bound on changes, uniform over actions, converts the local formula into a finite-change identity, even when the maximizing action switches infinitely often. Under different assumptions, concavity gives supporting prices and compactness gives one-sided derivatives at switches. I derive the implications for private information, investment, saddle points, moving constraints, and stopping. In the stopping problem, equality with the stopping payment determines the slope inside the stopping region, while fit at its edge requires a separate argument.
+\end{abstract}
+
+\section{Questions, comparisons, and proof obligations}\label{sec:plan}
+
+The population of decision problems in the question is specified by primitives, with no sample of agents, observed payoffs, transition estimates, or other data. The following inventory fixes the objects to be compared and what would establish a conclusion in each domain.
+
+\begin{enumerate}
+\item For one maximizer on an arbitrary nonempty action set, compare the value at an interior parameter with nearby values and with the value at the other end of an interval. Section~\ref{sec:base} seeks a marginal formula by holding an action fixed and a finite formula by controlling increments. It checks ties, switches, unattained suprema, endpoints, and failure of uniform control.
+\item For agents of different private types facing one message menu, compare implemented welfare across reports and across true types. Section~\ref{sec:menu} uses incentive inequalities and known preference derivatives. It checks several type coordinates, indistinguishable choices with different welfare implications, and endpoints and interior optima of costly prior investment.
+\item For convex action domains with jointly concave payoffs and for compact action domains with continuous payoffs, compare the extra conclusions with those available without action geometry. Section~\ref{sec:reg} uses feasible mixtures in the first case and limits of optimizers in the second. Ties, corners, missing maximizers, and irregular endpoint slopes distinguish these arguments.
+\item For two opponents and for a single constrained maximizer, compare values when the game payoff or the feasible set changes. Section~\ref{sec:games} requires security inequalities or a supporting multiplier. It checks nonunique choices and prices, including a constraint with a degenerate gradient.
+\item For a stopper who observes a continuous-time Markov state, compare initial states inside and at the edge of the immediate-stopping region. Section~\ref{sec:stop} uses contact with the payment, then tests whether a nearby optimal waiting policy can be compared across initial states. A continuous-path example checks the limit of the boundary claim.
+\end{enumerate}
+
+All estimates below are symbolic. The scalar parameter is in $[0,1]$ unless a type domain or a Markov state space is specified separately. No distribution of private information or parametric law of motion is implicit in the question.
+
+\section{A fixed action as a comparison}\label{sec:base}
+
+Let $A$ be a nonempty set, let $f(a,t)$ be real, and put
+\[
+ V(t)=\sup_{a\in A}f(a,t)<\infty,\qquad
+ M(t)=\{a:f(a,t)=V(t)\}.
+\]
+These definitions require no measurable structure on $A$. If $s<t$ and both endpoint optima exist, feasibility of using either choice at the other parameter gives
+\begin{equation}\label{eq:bracket}
+ f(a_s,t)-f(a_s,s)\ \le V(t)-V(s)\
+ \le f(a_t,t)-f(a_t,s),\qquad a_i\in M(i).
+\end{equation}
+The two bounds need only their respective endpoint optimum. With choices within $\epsilon$ of the endpoint suprema the lower bound loses $\epsilon$ and the upper bound gains $\epsilon$. Thus the comparison survives even when ``highest'' means only a limiting payoff.
+
+\begin{proposition}\label{prop:touch}
+At any interior $t$, if $a\in M(t)$ and $f(a,\cdot)$ has derivative $d$ at $t$, then
+\[
+ \limsup_{h\uparrow0}\frac{V(t+h)-V(t)}h
+ \ \le d\le\
+ \liminf_{h\downarrow0}\frac{V(t+h)-V(t)}h .
+\]
+In particular, when $V'(t)$ exists, every differentiable optimal branch has derivative $V'(t)$.
+\end{proposition}
+\begin{proof}
+Subtract the common payoff at $t$ from $V(t+h)\ge f(a,t+h)$ and divide by $h$, reversing the inequality on the left. At $0$ only the right inequality survives, and at $1$ only the left survives.
+\end{proof}
+
+For example, $V(t)=\max\{0,t-1/2\}$ has optimal slopes zero and one at the tie. The proposition bounds both and supplies no two-sided derivative there. Even equality of all attained optimal slopes need not imply differentiability. Add to the zero action the actions $f(n,t)=t-1/2-1/n$, $n\ge1$. The value is the same, but at $1/2$ only the zero action attains it. Almost optimal actions matter to the right. At an endpoint the two actions $0,t$ already give a right value derivative of one even though zero is an optimal slope at $0$.
+
+For integration use the following condition, stated in increments to keep its uniformity unambiguous. There is a nonnegative $b\in L^1[0,1]$ such that
+\begin{equation}\label{eq:ac}
+ |f(a,t)-f(a,s)|\le \int_s^t b(u)\,du
+ \qquad(a\in A,\ s<t).
+\end{equation}
+Absolutely continuous branches with $|\partial_t f(a,u)|\le b(u)$ almost everywhere for each $a$ satisfy this condition by the fundamental theorem of calculus. The exceptional sets in that verification can depend on $a$.
+
+\begin{proposition}\label{prop:int}
+Under \eqref{eq:ac}, $V$ is absolutely continuous. Suppose in addition that almost everywhere there is an attaining action whose branch is differentiable at the parameter of attainment. Choose any such $a_u$ there. Then
+\begin{equation}\label{eq:int}
+ V(t)-V(s)=\int_s^t \partial_t f(a_u,u)\,du .
+\end{equation}
+Where every optimal branch is differentiable, any implemented choice can be used.
+\end{proposition}
+\begin{proof}
+Taking suprema in $f(a,t)\le f(a,s)+\int_s^t b$, and interchanging $s,t$ for the reverse bound, gives \eqref{eq:ac} for $V$. Summing over disjoint intervals proves absolute continuity by absolute continuity of the integral of $b$. An absolutely continuous real function is differentiable almost everywhere and equals its initial level plus the integral of its derivative. Proposition~\ref{prop:touch} identifies that derivative almost everywhere. The scalar integrand agrees with a measurable function off a null set, so Lebesgue integration requires no measurable action selector here.
+\end{proof}
+
+The distinction between branchwise and on-choice differentiability is material. For $a\in[0,1]$ let $f(a,t)=-|t-a|$. All branches are Lipschitz and almost everywhere differentiable, but the unique optimal branch at each interior $t$ has a corner there. The value is identically zero. Smoothness of each branch alone also gives little finite-change control. Take a zero action and actions $n\ge2$ with payoffs
+\[
+ f(n,t)=\bigl(\max\{1-16^n(t-2^{-n})^2,0\}\bigr)^2 .
+\]
+Each is continuously differentiable. Their positive supports have radii $4^{-n}$ and are disjoint. The attained value is one at $2^{-n}$ and zero at zero. Its discontinuity precludes an absolutely continuous representation on the whole interval. Condition \eqref{eq:ac} is sufficient, not necessary. If absolute continuity of $V$ is known independently, the identification step in Proposition~\ref{prop:int} still applies. Knowing differentiability almost everywhere alone would omit any singular change.
+
+\section{What a menu reveals}\label{sec:menu}
+
+Let $q(m)$ denote the outcome selected by message $m$ from a fixed message set. Utility $u(q,t)$ is evaluated at the agent's true type $t$. If $m(t)$ is a best message, write $q_t=q(m(t))$ and $W(t)=u(q_t,t)$. In a direct description the required incentive inequalities are $u(q_t,t)\ge u(q_s,t)$ for all $s,t$, together with optimality against any additional messages in the actual menu. The welfare comparison is
+\[
+ u(q_s,t)-u(q_s,s)\le W(t)-W(s)
+ \le u(q_t,t)-u(q_t,s).
+\]
+Thus an analyst who knows the utility increments at the implemented endpoints has finite bounds without observing every rejected outcome. Under the hypotheses of Proposition~\ref{prop:int} for the menu, with differentiability of the implemented branches almost everywhere,
+\[
+ W(t)=W(0)+\int_0^t u_t(q_r,r)\,dr .
+\]
+This calculation holds the outcome, including any payment, fixed inside the partial derivative. Optimization does not assert that the allocation itself is smooth.
+
+For instance, if $u((x,p),t)=tx-p$, where $x$ is bounded, these formulas give $(t-s)x_s\le W(t)-W(s)\le(t-s)x_t$ for $s<t$. Hence $x_s\le x_t$, and the integral of allocated quantity gives the change in surplus, including across jumps in quantity. Conversely a bounded nondecreasing schedule $x_t$ and a chosen level $W(0)$ yield an implementable transfer schedule
+\[
+ p_t=t x_t-W(0)-\int_0^t x_r\,dr .
+\]
+Indeed the integral of a nondecreasing function between $s$ and $t$ lies between the two endpoint rectangles, which gives both incentive inequalities. A common transfer adjustment changes the surplus level. More fundamentally, replacing $u$ by $u+k(t)$ leaves every message ranking intact while adding $k(t)-k(s)$ to the welfare change. Thus choices alone identify differences only with restrictions on cardinal type dependence.
+
+For a vector type $\theta$ in a domain $D\subset\R^d$, take a continuously differentiable path $\gamma:[0,1]\to D$. Apply the scalar analysis to $u(q,\gamma(r))$. For example, differentiability in type and a uniform bound on $\|\nabla_\theta u\|$ along the path suffice for \eqref{eq:ac} by the mean value theorem. For optimal outcomes along it,
+\[
+ W(\gamma(1))-W(\gamma(0))=
+ \int_0^1\nabla_\theta u(q_{\gamma(r)},\gamma(r))
+                    \cdot\gamma'(r)\,dr .
+\]
+This gives path independence for implementable choices wherever the hypotheses hold along each path. It also gives a zero integral on eligible closed paths. At a point of full differentiability of $W$ in an open domain, contact in every coordinate gives $\nabla W=\nabla_\theta u$ for each differentiable optimal branch. At a tie, the path identity need not yield a full gradient at the tie itself. In the linear case $u=\theta\cdot x-p$, adding the incentive inequalities around any finite cycle $\theta_1,\ldots,\theta_k,\theta_{k+1}=\theta_1$ gives
+\[
+ \sum_{i=1}^k x_{\theta_i}\cdot(\theta_{i+1}-\theta_i)\le0 .
+\]
+This finite restriction compares even types in disconnected components. Integration within components alone cannot recover their relative welfare levels.
+
+Suppose now the agent first buys a type $t$ at known cost $C(t)$ and then chooses a message. For absolutely continuous $C$ under the scalar integral hypotheses, $t^*$ is globally optimal exactly when, for every feasible $z$,
+\[
+ \int_{t^*}^z [u_t(q_r,r)-C'(r)]\,dr\le0
+\]
+with oriented integration. An interior differentiable optimum equates the two marginal returns. At a lower endpoint the right net derivative, if it exists, is nonpositive, and at an upper endpoint the left derivative is nonnegative. The global test includes ties and requires no concavity. The local equality alone could describe a minimum, as a single outcome with utility $t^2$ and cost $t$ demonstrates at $1/2$. If investment $e$ instead selects a lottery over types, a distinct objective is $\int W(t)\,dF_e(t)-C(e)$. For a finite support with differentiable probabilities $\pi_j(e)$ its derivative is $\sum_j\pi'_j(e)W(t_j)-C'(e)$. The appropriate marginal incentive therefore depends on the investment technology, which the packet does not specify.
+
+\section{What additional geometry buys}\label{sec:reg}
+
+\paragraph{Joint concavity.}
+Suppose $A$ is convex in a vector space and $f$ is jointly concave. At $s,t$ choose $\epsilon$-optimal actions, mix them with weights $\lambda,1-\lambda$, and evaluate the mixture at $\lambda s+(1-\lambda)t$. Joint concavity gives at least $\lambda V(s)+(1-\lambda)V(t)-\epsilon$. Taking $\epsilon$ to zero proves concavity of $V$ without attainment. In particular the interior left and right derivatives are finite and $V'_-\ge V'_+$, by the ordering of secant slopes. A supporting slope $p$ at an interior $t$ satisfies $V(z)\le V(t)+p(z-t)$ globally, and precisely the slopes between $V'_+$ and $V'_-$ do so, again by secant ordering. If one optimal branch has a parameter derivative there, Proposition~\ref{prop:touch} gives the opposite ordering through that derivative. Consequently $V$ is differentiable there even if many actions optimize. On closed interior subintervals concavity bounds secant slopes by outer secants, giving Lipschitz continuity and the integral formula when optimal derivatives are available.
+
+Concavity in the parameter action by action does not establish this result, as the maximum of the two affine branches in Section~\ref{sec:base} shows. Joint concavity permits an infinite endpoint slope, as with a single payoff $\sqrt t$. It even permits an endpoint jump, as with a single payoff equal to one for $t>0$ and zero at zero. Interior secants alone cannot justify integration through such an endpoint.
+
+\paragraph{Compactness and continuity.}
+Instead let $A$ be a compact metric space and $f$ jointly continuous. A maximizing sequence has a convergent subsequence whose limit attains the value. Uniform continuity on $A\times[0,1]$ implies continuity of $V$, since $|V(t)-V(s)|\le\sup_a|f(a,t)-f(a,s)|$. If $t_n\to t$, any cluster point of choices $a_n\in M(t_n)$ belongs to $M(t)$ by continuity. In particular optimizers converge to the current choice when it is unique. If $f_t$ also exists and is jointly continuous (one-sided at the domain endpoints), then
+\begin{equation}\label{eq:compact}
+ V'_+(t)=\max_{a\in M(t)} f_t(a,t),\qquad
+ V'_-(t)=\min_{a\in M(t)} f_t(a,t)
+\end{equation}
+on the available sides. To see the upper bound on the right derivative, take a sequence approaching its upper limit and maximizing choices at the displaced parameters. Along a convergent subsequence the choices limit to an optimizer at $t$. The upper bound in \eqref{eq:bracket}, divided by the displacement, tends on its right side to that optimizer's slope by the mean value theorem and continuity. Holding any current optimizer fixed gives the reverse bound. Reversing the parameter proves the left formula. Boundedness of $f_t$ also supplies \eqref{eq:ac}. Compactness thus identifies both marginal returns at a corner, while joint concavity supplied a supporting slope without a compact action set. Compact continuity by itself gives no derivative, even for a singleton with payoff $|t-1/2|$ at its corner (and a singleton with payoff $\sqrt{|t-1/2|}$ lacks finite one-sided slopes there).
+
+\section{Opponents and moving constraints}\label{sec:games}
+
+\paragraph{Security comparisons.}
+Let $x$ maximize and $y$ minimize $F(x,y,t)$. At each parameter used, assume a saddle $(x_t,y_t)$ with value $v(t)$, meaning
+\[
+ F(x,y_t,t)\le v(t)\le F(x_t,y,t)\quad\text{for all }x,y.
+\]
+The spaces may themselves be strategy spaces of lotteries if $F$ is expected payoff. Define $\Delta F(x,y)=F(x,y,t)-F(x,y,s)$ for $s<t$. Directly crossing the two security guarantees yields
+\begin{equation}\label{eq:game}
+ \Delta F(x_s,y_t)\le v(t)-v(s)\le \Delta F(x_t,y_s).
+\end{equation}
+For example $F(x_s,y_t,t)\le v(t)$ while $F(x_s,y_t,s)\ge v(s)$. This explains why merely differentiating the payoff at an arbitrary pair of equilibrium choices can fail. An integrable uniform increment bound as in \eqref{eq:ac} implies absolute continuity of $v$ by \eqref{eq:game}.
+
+For a marginal identification condition, suppose strategy spaces are compact metric, and $F,F_t$ jointly continuous. Limits of saddle pairs are saddles by passing to limits in the security inequalities. Every maximizing security strategy at $t$ forms a saddle with every minimizing security strategy there, since each guarantees the value against every opponent. If $F_t$ is the same number $d(t)$ on all these pairs, both crossed difference quotients in \eqref{eq:game} approach $d(t)$ by compactness and the mean value theorem, on either available side. Thus $v'=d$ in the interior under this condition, including at a unique saddle. If it holds almost everywhere, bounded $F_t$ and absolute continuity give $v(t)-v(s)=\int_s^t d(r)\,dr$. This is sufficient and need not be necessary. For $F=(t-1/2)xy$, $x,y\in[-1,1]$, either player guarantees zero by choosing zero, so $v$ is constant. At $1/2$ every pair is a saddle and its partial derivative $xy$ ranges from $-1$ to $1$. Even differentiability of the game value does not validate every saddle slope.
+
+\paragraph{Inequalities and prices.}
+Let $P(t)=\sup\{f(x,t):x\in X,\ g_j(x,t)\le0,\ j=1,\ldots,k\}$. Feasibility of a previous optimizer at a new parameter is no longer assured. Put $L(x,\lambda,t)=f(x,t)-\lambda\cdot g(x,t)$ with $\lambda\ge0$. Assume primal attainment and a supporting multiplier at each parameter considered, in the explicit sense that $x_t$ is feasible, $\lambda_t\cdot g(x_t,t)=0$, and $x_t$ globally maximizes $L(\cdot,\lambda_t,t)$. Then
+\[
+ L(x,\lambda_t,t)\le P(t)\le L(x_t,\lambda,t)
+\]
+for all $x,\lambda\ge0$ (with $x\in X$ understood for the first argument). This follows from the assumed maximization on the left and feasibility on the right. Hence \eqref{eq:game} applies with $F=L$; the underlying strategy sets are fixed. In particular a common integrable bound on increments over the crossed choices suffices for absolute continuity. With compact $X$, continuous primitives and parameter derivatives, and supporting prices selectable in a common compact set, limiting pairs still satisfy the full saddle inequalities. If $f_t-\lambda\cdot g_t$ has a common value on the limiting and current saddle pairs at a parameter (in particular if it is common on all saddles there), the compactness argument gives that marginal value. Under the common-slope condition almost everywhere, integration yields the finite change. For $g_j=h_j(x)-b_j(t)$ the constraint contribution is $+\lambda_j b'_j(t)$. The sign reflects the value of relaxing an upper bound.
+
+For a direct check, maximize $x$ on $[0,1]$ subject to $x\le t$ and $x\le1/2$. Then $P(t)=\min(t,1/2)$. In the interior below $1/2$ the supporting prices are $(1,0)$ and above it $(0,1)$, as verified by maximizing the affine Lagrangian and imposing complementarity. At the tie any nonnegative split summing to one supports the optimum. The first price ranges between the two one-sided slopes, and integrating it away from the tie gives the exact change. Adding an unused decision coordinate in $[0,1]$ makes primal choices nonunique throughout with the same calculation. For a failure of support, maximize $x$ on $[0,1]$ subject to $x^2\le t$. At zero no finite price supports $x=0$, since $x-\lambda x^2>0$ for sufficiently small positive $x$. The value $\sqrt t$ has an infinite right derivative there. A saddle representation and bounded prices are substantive assumptions.
+
+\section{Initial state and the decision to stop}\label{sec:stop}
+
+Let $X^x$ be an observed time-homogeneous Markov process starting at a scalar state $x$. With discount rate $\rho>0$, flow $r$, and stopping payment $G$, define
+\[
+ J(x,\tau)=\mathbb E_x\!\left[\int_0^\tau e^{-\rho s}r(X_s)\,ds+
+ e^{-\rho\tau}G(X_\tau)\mathbf 1_{\{\tau<\infty\}}\right],
+ \qquad U(x)=\sup_\tau J(x,\tau).
+\]
+The terminal term is taken to be zero at infinity. Assume well-defined expectations and finite value. Stopping at zero gives $U\ge G$, and on $S=\{x:U(x)=G(x)\}$ it attains the value. Therefore for any two points of $S$ the value difference equals the payment difference. On an open interval in $S$, $U'=G'$ wherever $G$ is differentiable. At an interior state of the state space in $S$, differentiability of both functions also implies equal slopes by contact, even if the state is a boundary point of $S$. With only $G$ differentiable, contact gives the one-sided inequalities of Proposition~\ref{prop:touch}. These conclusions allow ties between stopping and continuation. They use neither a generator equation nor a differentiation of the optimal time.
+
+Here is one sufficient condition for an actual two-sided slope at an edge $b$. Specify a translation model $X_s^x=x+Z_s$ on the line, with $Z_0=0$, paths right-continuous at zero, and a common observed filtration for all starts. For example $Z$ may have stationary independent increments. Assume $G,r$ bounded continuously differentiable with bounded derivatives. Suppose $b\in S$ and for nearby starts $x$ there are optimal times $\tau_x$ on this common process with $\tau_x\to0$ in probability as $x\to b$. For starts in $S$ take zero. Holding a stopping time fixed now means using the same random time in the common filtration. Optimality at the two starts gives
+\[
+ G(x)-G(b)\le U(x)-U(b)\le J(x,\tau_x)-J(b,\tau_x).
+\]
+In the upper comparison the absolute flow difference divided by $|x-b|$ is at most $\|r'\|_\infty\mathbb E[(1-e^{-\rho\tau_x})/\rho]$, which tends to zero by boundedness and convergence in probability. Right continuity at zero implies $Z_{\tau_x}\to0$ in probability on finite times: for any small $\delta>0$ control the displacement by $\sup_{s\le\delta}|Z_s|$ except on $\{\tau_x>\delta\}$. The latter probability vanishes and the former supremum tends to zero almost surely as $\delta\downarrow0$. The terminal difference quotient with signed denominator $x-b$ therefore converges in probability to $G'(b)$ by the mean value theorem. Discounting leaves the same limit and boundedness gives convergence of expectations. Both comparisons consequently equal $G'(b)(x-b)+o(|x-b|)$, proving smooth fit. The convergence of optimal times is an assumption about access to the stopping region. Markovianity alone gives no such convergence.
+
+Indeed let $X_s^x=\min(x+s,1)$ on $[0,1]$, $\rho=1$, $r=0$, and $G(x)=e^x[1+(x-1/2)^2]$. Waiting beyond the time to reach one reduces discounted payment. Before then the discounted reward for stopping at state $y\ge x$ equals $e^x[1+(y-1/2)^2]$. Maximizing over $[x,1]$ gives $U(x)=5e^x/4$ for all $x$, with $S=\{0,1\}$. At zero the right value slope is $5/4$ while $G'(0)=1/4$. An interior edge with a stopping interval follows by extending the state domain to $[-1,1]$ with the same primitives. For $x<0$ the left endpoint of $[x,1]$ now maximizes the squared distance, so $U(x)=G(x)$ up to zero and $U(x)=5e^x/4$ immediately to its right. The edge has unequal one-sided slopes despite continuous deterministic Markov paths and smooth payment. Nearby positive starts wait until one, taking time approaching one. The missing short-time condition has a direct economic interpretation in this example.
+
+\section{Scope of identification}
+
+The fixed-menu conclusions determine a marginal return through contact and a finite return through absolute continuity. Section~\ref{sec:base} leaves the slope at a switch unresolved when displaced near-maximizers escape, and Section~\ref{sec:reg} resolves its one-sided values under compact regularity. Section~\ref{sec:menu} identifies welfare changes conditional on cardinal preferences and the investment technology. Section~\ref{sec:games} retains finite bounds when equilibrium slopes or shadow prices disagree. Section~\ref{sec:stop} identifies welfare throughout the stopping set but requires information about nearby continuation to infer a boundary slope. The packet supplies no allocation observations, payoff functions for an empirical population, supporting prices, or transition law from which to calculate numerical welfare changes, locate a stopping boundary, or verify its regularity in a particular economy. Those quantities remain open.
+
+\end{document}

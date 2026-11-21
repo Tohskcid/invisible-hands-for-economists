@@ -50,3 +50,84 @@ For full-paper reconstruction, keep all required research blocks in the rubric. 
 “Read these papers completely and curate benchmark tasks using benchmark_curation.md. Preserve the concrete research question and resource constraints. Write the public task and private source mappings separately, check sufficiency and answer leakage, and stop before starting an author agent.”
 
 The collector automates acquisition and provenance. Full reading, extraction and semantic review are agent work under this protocol; downloading a PDF does not perform them.
+
+## Batch reading and release
+
+Use a private directory outside every author workspace. The batch reader uses installed Codex with its existing account and Poppler’s `pdfinfo`, `pdftotext`, and `pdftoppm`. Each entry in `candidates.json` represents an identified original whose version and appendix inventory a curator has checked. The catalog and download receipts alone do not establish these facts. Use relative paths inside the private directory and choose a neutral ID such as `q001`.
+
+```json
+{
+  "cases": [{
+    "id": "q001",
+    "mode": "theory",
+    "target": {"title": "Verified title", "authors": ["Full author name"], "doi": "10.…"},
+    "sources": [{
+      "id": "article", "role": "main", "file": "originals/q001.pdf",
+      "sha256": "<64 hex digits from the verified PDF>", "url": "https://example.org/article.pdf",
+      "version": "<edition and pagination>",
+      "identity_check": "<how the title, byline, edition, body and end were verified>"
+    }],
+    "appendix_status": "none",
+    "appendix_check": "<where appendices and supplements were checked and what was found>"
+  }]
+}
+```
+
+Use `embedded`, `external`, or `both` for articles with appendices. Add each separately verified PDF with role `appendix` or `documentation`. Record any unresolved material in the inventory. The reader accepts theory, empirical, structural and mixed tasks.
+
+```bash
+python3 scripts/read_benchmarks.py /private/collection/candidates.json
+```
+
+For each case the reader sends every physical page as a rendered image, together with its complete text layer, to reading sessions in groups of six. It checks for a readable, page-specific note on every page and uses those notes to draft the task, private question-to-page mappings and scoring rubric. Independent review sessions compare the entire packet and rubric with the original pages and every author input. Any page-group hold carries into the aggregate decision. The runner archives the held draft, attempts one source-grounded correction, then obtains fresh page-by-page reviews. A second hold blocks release. Sessions use distinct empty directories without file or search tools. The same model can share prior knowledge across contexts. The substantive judgments and any recognition remain review evidence.
+
+The commands preserve existing case directories and frozen versions. `reader-work/<id>/` caches exact-prompt and rendered-image commitments, responses and turn receipts. Resume an interrupted model call by repeating the reader command. A reviewed draft lives in `cases/<id>/`. Inspect the recorded findings before revising a held draft. Changed frozen cases need a new ID.
+
+### Author inputs and research scope
+
+For empirical and mixed cases, add an `inputs` object to the private candidate. Each key is a neutral author filename such as `inputs/input-001.csv`. Each value supplies a private relative `file`, its `sha256`, and a specific `provenance` statement covering the data, vintage, availability and intended use. The gate streams UTF-8 CSV, TSV, TXT and DAT files for identifier checks. The automatic reviewer receives the complete contents within a limit of 200,000 bytes per input and 200,000 characters per prompt. Larger datasets stay in the inventory for supervised review. An independent reviewer can inspect them with appropriate data tools and sign the same full-file hash and file-specific findings. For other file formats, prepare and validate a neutral, reviewable representation, preserving the source and the conversion receipt privately. Keep unsupported or infeasible inputs recorded as gaps.
+
+Use the appropriate `track` in private records.
+
+| Track | Release evidence |
+| --- | --- |
+| `packet-only` | Default for a packet with no external inputs. The task must contain the primitives needed for its requested derivations. Any historical priority claim requires separate date evidence. |
+| `strict-historical` | Default when data files are supplied. Provide the existing historical protocol’s `timeline` object with both sourced target dates. Every delivered input needs exactly one comparator with `title` equal to its neutral filename and `author_material: true`. Its documented first public date must precede the earliest target date, and it must be independent of the target. |
+| `calibration` | Name this track explicitly when using retrospective inputs or only partly feasible data. State data availability in the public `data_access_status`. For each private gap, `calibration.missing_blocks` maps the exact gap string to a retained rubric ID. Record the feasible work in `calibration.feasible_scope`. This keeps unavailable blocks in the full-paper denominator. |
+
+### Independent sign-off and author export
+
+A separate `batch.json` lists the case directories, for example `{"cases":["cases/q001","cases/q002"]}`. It can include manually curated cases. Each contains `public-task.json`, `curation.json`, `review.json`, and the explicitly named author inputs. The public task uses `id`, `mode`, `question`, a flat `conditions` object, `available_inputs`, `required_outputs`, `source_restrictions`, and `neutrality_obligation`. The optional `data_access_status` explains delivered coverage. Free-form extra public fields require a review of the release format.
+
+```bash
+python3 scripts/curate_benchmarks.py inspect /private/collection/batch.json
+python3 scripts/curate_benchmarks.py freeze /private/collection/batch.json
+python3 scripts/curate_benchmarks.py export /private/collection/batch.json --author-root /separate/new-handoff
+```
+
+For manual curation, give every source a `reading` array of `{"pages":[first,last],"note":"page-specific reading evidence"}` entries. Use one-based physical PDF pages, including covers and references, and mark embedded appendix entries `"appendix":true`. The union must cover the page count in the actual PDF. In `field_sources`, map `question` and every `conditions.<field>` to `source`, a two-element `pages` span and a concrete `reason` for making that condition public. Include `curator`, `target`, `sources`, `appendix_status`, `appendix_check`, `withheld`, `rubric`, `contamination`, `gaps` and `input_checks` in the private curation. Key `input_checks` by exact author filename. Prefer point-bearing rubric rows with `id`, `criterion`, `max_score`, `scoring`, `source` and `pages` for reproducible fidelity evaluation.
+
+The `inspect` command reports actual SHA-256 digests. After inspecting these exact originals, private record, public task and inputs, the independent reviewer records their actual identity in `reviewer`, a `decision` of `pass` or `hold`, and the digest map in `checked_sha256`. Write concrete `sufficiency` and `leakage` findings and an `input_findings` entry for `public-task.json` and every author input. Check which proofs or estimates can actually be completed from the released information. The gate checks that the bytes still match that review. It cannot establish reviewer independence or judge semantic leakage by itself.
+
+Freeze stores a timestamped receipt, originals, private records and public bytes under `frozen/<id>/`. Repeating freeze accepts identical bytes and rejects changes. Retain the reported receipt hash outside curator write authority to establish an independent commitment. Export verifies the freeze and copies only the public task and its declared inputs to `<author-root>/<id>/`. The author root must be dedicated and outside the checkout and private collection. Give each author access only to their own case through a separate execution environment. A directory on the same unrestricted account provides procedural separation. Batch commands report each case separately and exit nonzero if any case is blocked; eligible siblings can still complete.
+
+## Write, compare, and revise
+
+When the user also asks for a manuscript and comparison, use the verified candidate manifest as the entry point. Keep all working directories private. This runs the reader, independent review, immutable freeze and export, author, then two distinct evaluation sessions for each eligible case.
+
+```bash
+python3 scripts/run_reconstruction_batch.py output/study/candidates.json output/study/results
+```
+
+The model stages use the existing ChatGPT account. They check its login status and remove API-key environment variables for the subprocess. A blocked run preserves its private checkpoints. The default author sees the task and released files. A paper with no data files gets a single tool-free session in an empty directory. A data-backed paper uses a workspace-write session to run analysis against copies of its inputs. Mount only the exported case on a separate worker for technical read isolation when using research tools. Review the private execution trace and independently replay numerical results before making a replication claim. Finished submissions include their exact inputs and outputs by hash. Repeat the command after remedying a source or resource failure. Existing signed submissions and scores are checked before reuse.
+
+For an experiment, use `scripts/write_from_packet.py FROZEN_CASE EXPORTED_CASE OUTPUT --condition coverage` to add the [coverage instructions](reconstruction_coverage.md). Keep ordinary authoring as the default. In the paired November trial, these instructions alone yielded lower or equal historical coverage on both new tasks. Use a fresh held-out paper to test any proposed author change.
+
+Classify each substantive gap before changing the project. Record the original locator, submitted locator, exact missing claim, and one concrete reason:
+
+- If an essential population, domain, or application was absent from the question, ask the neutral subquestion and independently review a **new** packet.
+- If multiple designs, example values, mechanisms or expositions fit the released conditions, retain the historical target in the denominator and record the alternative. Adding the original choice to a prompt requires an independent justification as a necessary condition.
+- If a file or appendix is unavailable, document what cannot be recovered. Add a genuine verified input in a new frozen version when it becomes available.
+- If the public scope was clear and an author omitted it or made an invalid deduction, test a generic reasoning change separately. Preserve the original author submission, including failures.
+
+Lock standalone quality before revealing original-specific obligations. Compare the resulting manuscript to the journal version and supplements, accepting equivalent correct arguments. Preserve the exact full denominator, critical errors, eligibility, tool exposure and recognition. Only report full substantive recovery for the assessed scope when every item passes, every essential artifact is independently verified, and no critical issue remains. A finite rubric cannot establish that every feature of a paper was uniquely determined by its question.

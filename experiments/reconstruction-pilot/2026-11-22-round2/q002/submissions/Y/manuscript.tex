@@ -1,0 +1,136 @@
+\documentclass[11pt]{article}
+% Recognition disclosure: I recognize the general problem of decentralized matching and stability. I use no recollection of a target paper as evidence; the arguments below are derived from the supplied task.
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\title{Starting Partnerships, Meeting Opportunities, and Stability in a Two-Sided Market}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+A mutually profitable new partnership may leave two former partners worse off, so individual improvement does not guarantee convergence along every sequence of moves. Nevertheless, from every initial arrangement there is a finite path to stability. The proof builds an internally stable group and expands it by resolving the displacements caused by entry. Under a fixed random rule giving every eligible move positive probability, the process reaches stability almost surely, and its possible final arrangements are exactly the reachable stable ones. Starting with everyone alone makes this support particularly simple: it includes every stable arrangement in which both members of every couple strictly prefer their partnership to being alone. An inherited partnership can restrict the support and, with indifference, can also sustain a stable outcome that could never be built from singlehood. Meeting probabilities govern the distribution within the support.
+\end{abstract}
+
+\section{The market and the question of selection}
+
+Let \(M\) and \(W\) be finite disjoint sets. Each participant \(i\) has a complete, transitive weak preference over the opposite side and the option \(i\) of being alone. Write \(\succ_i\) for strict preference and \(\succeq_i\) for weak preference. A matching \(\mu\) consists of disjoint cross-side pairs. Write \(\mu(i)\) for \(i\)'s partner, with \(\mu(i)=i\) for a single participant. A partner is weakly acceptable if ranked at least as high as being alone, and strictly acceptable if ranked higher. These definitions are individual: acceptability need not be reciprocal.
+
+There are two eligible moves. A matched participant \(i\) can leave if \(i\succ_i\mu(i)\). A pair \(m,w\) can form if \(w\succ_m\mu(m)\) and \(m\succ_w\mu(w)\). A departure dissolves one couple. Pair formation dissolves the participants' previous couples, if any, leaving their displaced partners single. Each move retains all other couples. Indifference never suffices for an initiator's strict improvement. A displaced partner has no veto.
+
+A matching is \emph{individually rational} if \(\mu(i)\succeq_i i\) for all \(i\). A \emph{blocking pair} is a pair eligible to form. Call a matching \emph{stable} if it is individually rational and has no blocking pair. With ties, this is the strict-improvement, or weak stability, convention. It follows directly that stable matchings are precisely the states with no eligible move.
+
+Draw a directed edge between matchings for each eligible move. Reachability permits a path of length zero. The graph answers which histories the market permits. A meeting rule adds a prediction by specifying which edges are taken. This distinction matters even in a market of four people.
+
+\section{Every initial arrangement admits a path to stability}
+
+The construction uses a group \(S\subseteq M\cup W\) with two properties. It is \emph{closed} if every matched member has a partner in \(S\), and it is \emph{internally stable} if its members are individually rational and no pair of members blocks. Internal stability allows profitable opportunities with outsiders. During the construction these opportunities can wait.
+
+\begin{lemma}
+Suppose the market is individually rational and \(S\) is closed and internally stable. If an outsider \(x\) has a blocking pair with a member of \(S\), there is a finite sequence of eligible moves after which \(S\cup\{x\}\) is closed and internally stable.
+\end{lemma}
+
+\begin{proof}
+Call the side of \(x\) the proposing side for this proof. Among the members of \(S\) who form a blocking pair with \(x\), let \(x\) take a most preferred one, breaking ties arbitrarily. The new group \(S\cup\{x\}\) is now closed. Any former partner of \(x\) is outside and single. The member who took \(x\) strictly improved. If that member had a former partner, this displaced proposer is single inside the group.
+
+Immediately after this move, every internal blocking pair must involve the displaced proposer, if there is one. Indeed, each other original proposer has the same partner as before, and every original participant on the receiving side has the same partner or a better one. No such original proposer can have acquired a block. Nor can \(x\) now have one: any receiver strictly preferred to the chosen partner who would take \(x\) now would also have been willing before, and would have been a better eligible choice.
+
+If the displaced proposer has an internal block, let this proposer take a most preferred internally blocking receiver. The same argument applies. The moving proposer has no block immediately after choosing, receivers only improve, and the only proposer who might acquire a block is the newly displaced one. If nobody is displaced or the displaced proposer has no block, the procedure stops. Otherwise it continues. At each move one receiver in the group strictly improves and the others retain their situations. The sum of the receivers' ranks, assigning larger integers to better indifference classes, therefore strictly increases and is bounded. The procedure ends. Individual rationality is preserved because both movers strictly improve and displaced partners become single. At termination the enlarged group is internally stable.
+\end{proof}
+
+\begin{theorem}
+From every initial matching, including one with unacceptable partnerships, a finite sequence of eligible moves reaches a stable matching.
+\end{theorem}
+
+\begin{proof}
+First choose departures until no participant strictly prefers being alone. Each departure removes a couple and creates none, so this takes finitely many moves. The resulting matching is individually rational, a property preserved by all subsequent moves.
+
+Begin with \(S=\varnothing\). If there is a block between \(S\) and its complement, apply the lemma to enlarge \(S\) by one. If there is no such block but two outsiders block, form that pair and add both to \(S\). The enlarged group is closed because the entrants are now paired to each other. The original members retain their partners. Neither entrant can now block with an original member: the entrant has improved, and the original member's situation is unchanged, so such a block would already have existed across the boundary. Thus the enlarged group is internally stable.
+
+If neither enlargement applies, no pair blocks anywhere, since the pairs within \(S\) have already been accounted for. Individual rationality then gives stability in the whole market. Each enlargement is finite and raises the group's size, so this stopping condition must be reached.
+\end{proof}
+
+The proof gives existence of a stable matching as well as a path to one. It uses neither balanced sides nor strict rankings of all alternatives. Its monotonicity argument applies to receivers during a particular entry procedure. Over an unrestricted market history, a receiver can be abandoned and lose earlier gains.
+
+\section{Which stable arrangements can be reached?}
+
+Write \(R(\mu)\) for the stable matchings reachable from \(\mu\), and \(0\) for the all-single matching. For arbitrary \(\mu\) there is an exact finite test. For a candidate stable matching \(\sigma\), start with \(D_0=\{\sigma\}\) and iterate
+\[
+ D_{k+1}=D_k\cup\{\nu:\text{some eligible move from }\nu
+                              \text{ leads to a state in }D_k\}.
+\]
+Induction gives that \(D_k\) consists precisely of states from which \(\sigma\) is reachable in at most \(k\) moves. Finiteness gives a fixed point \(D_*\), and \(\sigma\in R(\mu)\) exactly when \(\mu\in D_*\). In particular, a stable initial matching has singleton support. From singlehood there is a preference-based characterization that requires no graph search.
+
+\begin{proposition}
+\(R(0)\) consists exactly of the stable matchings whose paired participants all strictly prefer their partners to being alone.
+\end{proposition}
+
+\begin{proof}
+From \(0\), every existing couple at every date is strictly acceptable to both members. This holds initially. A newly paired participant strictly improves from either singlehood or a strictly acceptable partnership, retained couples keep the property, and a displaced participant is single. This proves necessity.
+
+Conversely, fix a stable \(\sigma\) with the stated property. Form its couples in any order. Since they are disjoint, each new couple meets while both members are single and both strictly gain. After exactly as many moves as there are couples in \(\sigma\), the state is \(\sigma\) and has no eligible move.
+\end{proof}
+
+With strict preferences, every stable matching satisfies the proposition. The same conclusion holds if there are ties among partners but no ties with singlehood. Ties with singlehood yield a different economic role for inherited links. With just one person on each side, suppose one is indifferent between the partnership and singlehood and the other strictly prefers the partnership. Both arrangements are stable. The couple persists if inherited, while starting alone leaves both single forever. The distinction follows from the consent required to create a link and the strict gain required to leave it.
+
+\section{A cycle and two possible destinations}
+
+Take two participants on each side. All partners are strictly acceptable, with rankings
+\[
+\begin{array}{c@{\quad}l@{\qquad}c@{\quad}l}
+ m_1 & w_2\succ w_1 & w_1 & m_1\succ m_2\\
+ m_2 & w_1\succ w_2 & w_2 & m_2\succ m_1 .
+\end{array}
+\]
+Write \(ij\) for the couple \(m_i,w_j\). The matching \(A=\{11,22\}\) gives each woman her first choice, and \(B=\{12,21\}\) gives each man his first choice. Both are stable. From singlehood either can be built in two moves. Starting instead at \(A\) or \(B\) fixes the destination. The two stable arrangements distribute the benefits of selection differently across the sides.
+
+The following cycle consists entirely of matchings with one couple:
+\[
+ \{11\}\longrightarrow\{12\}\longrightarrow\{22\}
+ \longrightarrow\{21\}\longrightarrow\{11\}.
+\]
+At the four arrows respectively, \(m_1,w_2,m_2,w_1\) switch to a first choice, each with a willing single participant. The former partner becomes single. This cycle is reachable from \(0\) and can be repeated indefinitely by a selector. At each of its states the two singles could instead pair and complete \(A\) or \(B\). Thus the existence of a path to stability says neither that every feasible history settles nor that stability identifies a unique destination.
+
+\section{Random opportunities}
+
+Suppose the selection probabilities depend only on the current matching and are fixed over time. Every eligible move has positive probability, and a stable state stays put. Write \(P(\mu,\nu)\) for the resulting transition probabilities and \(T\) for the first date at a stable matching.
+
+\begin{theorem}
+From every initial \(\mu\), \(T\) is finite almost surely and has finite expectation. The support of the final matching is exactly \(R(\mu)\).
+\end{theorem}
+
+\begin{proof}
+If every state is stable the claim is immediate. Otherwise, choose one finite path to stability from each unstable state. Let \(L\geq1\) be their maximum length and let \(\delta>0\) be the minimum, over these finitely many paths, of the product of their transition probabilities. Conditional on any current unstable state, absorption within the next \(L\) moves has probability at least \(\delta\). Iterating at block boundaries gives
+\[
+ \Pr_\mu(T>kL)\leq(1-\delta)^k,\qquad
+ \mathbb E_\mu[T]\leq L\sum_{k\geq0}(1-\delta)^k=L/\delta .
+\]
+Every finite path to a stable state has positive probability, after which the state persists. Conversely, arrival requires a path from the initial state. These facts give the support assertion.
+\end{proof}
+
+For a specified rule, the probability \(h_\sigma(\mu)\) of finishing at a particular stable matching \(\sigma\) is determined by
+\[
+ h_\sigma(\tau)=\mathbf{1}_{\{\tau=\sigma\}}\quad(\tau\text{ stable}),
+ \qquad
+ h_\sigma(\mu)=\sum_{\nu}P(\mu,\nu)h_\sigma(\nu)
+                       \quad(\mu\text{ unstable}).
+\]
+Conditioning on the first move proves the equations. For uniqueness, the difference of two solutions vanishes on stable states. After iterating the equations \(t\) times its absolute value at any initial state is at most its maximum absolute value times \(\Pr_\mu(T>t)\), which tends to zero.
+
+Full support alone supplies no numerical weights. In the four-person example, assign probability \(1-\varepsilon\) to forming \(11\) at \(0\) and to forming \(22\) at \(\{11\}\), dividing each residual probability positively among the other eligible moves. For \(0<\varepsilon<1\), the probability of \(A\) is at least \((1-\varepsilon)^2\). Giving analogous priority to \(12\) and then \(21\) makes \(B\) arbitrarily likely. Thus even when the support from singlehood is known from preferences, outcome probabilities can depend strongly on who meets whom.
+
+Two changes in meeting rules illustrate the boundaries of the prediction. First, a rule that always takes the displayed cycle arrow when on the cycle excludes absorption there. Second, even positive probabilities at every date can fail to ensure convergence if they vary with the history. Starting at \(\{11\}\), on the \(t\)-th consecutive cycle decision, \(t=1,2,\ldots\), assign probability \(1-2^{-t-1}\) to continuing the cycle and distribute the remainder positively among all other eligible moves. Use any full-support rule off this history. The probability of departing at decision \(t\) for the first time is at most \(2^{-t-1}\). Summing gives probability at most \(1/2\) of ever departing. The benchmark's fixed state-dependent probabilities prevent this progressive disappearance of exit opportunities. A uniform positive lower bound on conditional move probabilities would also suffice, by the same finite-path argument, even with history dependence.
+
+\section{Incentives and limits}
+
+Stability here is a statement about current partners and immediate consent. A stable matching offers no strictly profitable unilateral exit and no pair willing to replace its current situations with each other. The construction leading to stability gives no participant the power to schedule the moves it uses. Nor does a participant's strict gain at the instant of pairing value the possibility of being left later.
+
+For example, at \(\{11\}\) the single \(m_2\) strictly gains immediately by accepting \(w_2\), which completes \(A\). Suppose instead that offers can be declined, a refusal is followed by an opportunity for \(12\), and then the singles can form \(21\). If the later offers are accepted, declining leads \(m_2\) to his first choice in \(B\). Both later pairs strictly gain when they form. A participant who cares only about his final partner would prefer refusal on that continuation. This calculation is conditional on a schedule and subsequent acceptances. It illustrates the missing information needed to infer behavior from current rankings.
+
+The model specifies neither payoffs over histories, the cost of waiting, beliefs about future offers, nor a protocol for strategic refusal. It therefore supplies no equilibrium analysis of those choices or welfare ranking across stable outcomes. The finite-path bound also gives no market-independent prediction of rapid adjustment, since its probability bound depends on the meeting rule. What the primitives do pin down is the distinction among an available route to stability, absorption under the benchmark rule, and the set of destinations that the starting partnerships allow.
+
+\end{document}
