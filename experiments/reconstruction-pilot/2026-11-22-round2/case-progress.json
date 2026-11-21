@@ -1,16 +1,17 @@
 {
-  "snapshot_utc": "2026-11-21T20:56:55.749746+00:00",
+  "snapshot_utc": "2026-11-21T21:05:56.329336+00:00",
   "scope": "Round 2 nominated cases with verified sources, plus development versions. Counts are from original-page notes, signed releases, and evaluator files. Group versions by target DOI. Discovery and source-intake coverage are reported separately.",
   "distinct_nominated_originals": 143,
-  "distinct_originals_fully_read": 26,
+  "distinct_originals_fully_read": 32,
   "distinct_originals_scored": 4,
   "scored_manuscripts": 8,
   "version_stage_counts": {
     "scored": 6,
-    "held-after-review": 20,
-    "read-awaiting-review": 8,
-    "reading-in-progress": 7,
-    "queued-for-reading": 110
+    "held-after-review": 24,
+    "read-awaiting-review": 6,
+    "reading-in-progress": 5,
+    "queued-for-reading": 105,
+    "private-question-awaiting-materials": 5
   },
   "originals": [
     {
@@ -23,9 +24,10 @@
             "main": 74
           },
           "pages_with_reading_evidence": {
-            "main": 24
+            "main": 74
           },
-          "stage": "reading-in-progress"
+          "pending_materials_count": 1,
+          "stage": "private-question-awaiting-materials"
         }
       ]
     },
@@ -39,9 +41,10 @@
             "main": 57
           },
           "pages_with_reading_evidence": {
-            "main": 24
+            "main": 57
           },
-          "stage": "reading-in-progress"
+          "pending_materials_count": 1,
+          "stage": "private-question-awaiting-materials"
         }
       ]
     },
@@ -55,9 +58,10 @@
             "main": 45
           },
           "pages_with_reading_evidence": {
-            "main": 30
+            "main": 45
           },
-          "stage": "reading-in-progress"
+          "pending_materials_count": 1,
+          "stage": "private-question-awaiting-materials"
         }
       ]
     },
@@ -71,9 +75,10 @@
             "main": 53
           },
           "pages_with_reading_evidence": {
-            "main": 0
+            "main": 52
           },
-          "stage": "queued-for-reading"
+          "pending_materials_count": 1,
+          "stage": "private-question-awaiting-materials"
         }
       ]
     },
@@ -87,9 +92,9 @@
             "main": 54
           },
           "pages_with_reading_evidence": {
-            "main": 0
+            "main": 36
           },
-          "stage": "queued-for-reading"
+          "stage": "reading-in-progress"
         }
       ]
     },
@@ -103,9 +108,9 @@
             "main": 56
           },
           "pages_with_reading_evidence": {
-            "main": 0
+            "main": 48
           },
-          "stage": "queued-for-reading"
+          "stage": "reading-in-progress"
         }
       ]
     },
@@ -120,10 +125,10 @@
             "appendix": 30
           },
           "pages_with_reading_evidence": {
-            "main": 0,
+            "main": 30,
             "appendix": 0
           },
-          "stage": "queued-for-reading"
+          "stage": "reading-in-progress"
         }
       ]
     },
@@ -139,9 +144,10 @@
           },
           "pages_with_reading_evidence": {
             "main": 44,
-            "appendix": 6
+            "appendix": 43
           },
-          "stage": "reading-in-progress"
+          "pending_materials_count": 3,
+          "stage": "private-question-awaiting-materials"
         }
       ]
     },
@@ -205,7 +211,8 @@
           "pages_with_reading_evidence": {
             "main": 28
           },
-          "stage": "read-awaiting-review"
+          "review_sha256": "4439278a02482faf2570afde6fd7c460ac076d2168b93719cc886819b24b7565",
+          "stage": "held-after-review"
         }
       ]
     },
@@ -301,9 +308,9 @@
             "main": 39
           },
           "pages_with_reading_evidence": {
-            "main": 0
+            "main": 18
           },
-          "stage": "queued-for-reading"
+          "stage": "reading-in-progress"
         }
       ]
     },
@@ -669,7 +676,8 @@
             "appendix": 63,
             "documentation": 2
           },
-          "stage": "read-awaiting-review"
+          "review_sha256": "927df7ca3c0803a342944b232125742ab1cb56df35ce4505a88309ae9d11da9c",
+          "stage": "held-after-review"
         }
       ]
     },
@@ -1032,8 +1040,8 @@
             "appendix": 38
           },
           "pages_with_reading_evidence": {
-            "main": 6,
-            "appendix": 0
+            "main": 43,
+            "appendix": 24
           },
           "stage": "reading-in-progress"
         }
@@ -1481,10 +1489,10 @@
             "appendix": 3
           },
           "pages_with_reading_evidence": {
-            "main": 36,
-            "appendix": 0
+            "main": 51,
+            "appendix": 3
           },
-          "stage": "reading-in-progress"
+          "stage": "read-awaiting-review"
         }
       ]
     },
@@ -1607,10 +1615,10 @@
             "appendix": 19
           },
           "pages_with_reading_evidence": {
-            "main": 12,
-            "appendix": 0
+            "main": 39,
+            "appendix": 19
           },
-          "stage": "reading-in-progress"
+          "stage": "read-awaiting-review"
         }
       ]
     },
@@ -2625,7 +2633,8 @@
             "main": 33,
             "appendix": 3
           },
-          "stage": "read-awaiting-review"
+          "review_sha256": "bd4985781641ed3c25a70111a9d75ef74d2218ed9275c85e41f3c901dcaecc92",
+          "stage": "held-after-review"
         }
       ]
     },
@@ -2661,7 +2670,8 @@
             "main": 37,
             "appendix": 17
           },
-          "stage": "read-awaiting-review"
+          "review_sha256": "07aed2bc2a439e2e3de309c8ddcfc52b62ecbb6cd7efd798b3029cf2a916ad8e",
+          "stage": "held-after-review"
         }
       ]
     }

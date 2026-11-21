@@ -269,6 +269,23 @@ class BenchmarkCurationTests(unittest.TestCase):
         self.assertTrue((self.root / result['private_draft']).is_file())
         self.assertFalse((self.case.parent / 'q002').exists())
 
+    def test_intake_repair_keeps_prior_draft_and_independent_finding(self):
+        path = self.root / 'pending-materials.json'
+        loc = {'source':'main', 'pages':[1,1]}
+        draft = {'question':'How do measured outcomes vary?', 'conditions':{'sample':'Observed workers.'},
+                 'field_sources':{'question':loc, 'conditions.sample':loc}, 'blocked_work':['Estimation.']}
+        write(path, {'draft':{**draft, 'question':'Why do outcomes rise?'}, 'reading':{'main':[{}]},
+                     'intake_receipt':{}, 'pending_materials':['Survey missing.'],
+                     'preliminary_leakage_review':{'decision':'hold', 'finding':'Direction revealed.'}})
+        with patch.object(reader, 'ask', side_effect=[(draft, {}), ({'decision':'clear','finding':'No direction asserted.'}, {})]) as ask:
+            reader.review_intake(path, self.root, 'model')
+            reader.review_intake(path, self.root, 'model')
+            self.assertEqual(ask.call_count, 2)
+        intake = gate.read_record(path)
+        self.assertEqual(intake['held_first_draft']['review']['decision'], 'hold')
+        self.assertEqual(intake['draft'], draft)
+        self.assertEqual(intake['preliminary_leakage_review']['decision'], 'clear')
+
     def test_mixed_batch_finishes_good_cases(self):
         self.review()
         write(self.manifest, {'cases': ['cases/q002', 'cases/q001']})

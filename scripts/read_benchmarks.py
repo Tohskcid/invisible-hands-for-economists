@@ -239,17 +239,45 @@ def decision(value, names):
     return result
 
 
+def validate_intake(draft, notes):
+    conditions = draft.get('conditions')
+    require(words(draft.get('question')) and isinstance(conditions, dict) and conditions and
+            all(words(k) and words(v) for k, v in conditions.items()) and strings(draft.get('blocked_work')),
+            'incomplete private intake draft')
+    mapping = draft.get('field_sources')
+    require(isinstance(mapping, dict) and set(mapping) == {'question', *('conditions.' + k for k in conditions)},
+            'private intake draft lacks field locators')
+    for loc in mapping.values():
+        require(isinstance(loc, dict) and loc.get('source') in notes, 'unverified intake source')
+        pages = loc.get('pages')
+        require(isinstance(pages, list) and len(pages) == 2 and all(type(n) is int for n in pages)
+                and 1 <= pages[0] <= pages[1] <= len(notes[loc['source']]), 'invalid intake pages')
+
+
 def review_intake(path, work, model):
     intake = read_record(path)
-    if 'preliminary_leakage_review' not in intake:
+    for _ in range(2):
         evidence = {k: intake[k] for k in ('draft', 'reading', 'pending_materials')}
-        finding, receipt = ask(work, 'intake-leakage', 'Independently compare the proposed research question and '
-            'conditions with the page-specific source notes. Check for identifying bibliographic details, '
-            'historical results, a privileged method, and unsupported conditions. The observations or appendix '
-            'are incomplete. Judge the wording only. Return {"decision":"clear|hold","finding":"specific '
-            'reasons"}. This private check never releases the task.\n' + encode(evidence), [], model)
-        require(finding.get('decision') in ('clear', 'hold') and words(finding.get('finding')), 'invalid intake review')
-        intake['preliminary_leakage_review'] = {**finding, 'receipt': receipt}
+        if 'preliminary_leakage_review' not in intake:
+            finding, receipt = ask(work, 'intake-leakage', 'Independently compare the proposed research question and '
+                'conditions with the page-specific source notes. Check for identifying bibliographic details, '
+                'historical results, a privileged method, and unsupported conditions. The observations or appendix '
+                'are incomplete. Judge the wording only. Return {"decision":"clear|hold","finding":"specific '
+                'reasons"}. This private check never releases the task.\n' + encode(evidence), [], model)
+            require(finding.get('decision') in ('clear', 'hold') and words(finding.get('finding')), 'invalid intake review')
+            intake['preliminary_leakage_review'] = {**finding, 'receipt': receipt}
+            write(path, intake)
+        finding = intake['preliminary_leakage_review']
+        if finding['decision'] == 'clear' or 'held_first_draft' in intake:
+            return
+        prompt = ('Correct the concrete source and neutrality problems in this private draft. Preserve its '
+                  'question, conditions, field_sources and blocked_work schema. Withhold results and chosen historical '
+                  'specifications. Return the revised draft only.\n' + encode({**evidence, 'review': finding['finding']}))
+        revised, receipt = ask(work, 'intake-revise', prompt, [], model)
+        validate_intake(revised, intake['reading'])
+        intake['held_first_draft'] = {'draft': intake['draft'], 'review': intake.pop('preliminary_leakage_review'),
+                                      'receipt': intake['intake_receipt']}
+        intake['draft'], intake['intake_receipt'] = revised, receipt
         write(path, intake)
 
 
@@ -359,18 +387,7 @@ def prepare(root, candidate, cases, work, model):
                       'Do not give results, methods chosen to obtain the historical answer, or identifying '
                       'bibliographic information in the question or conditions.\n' + encode(evidence))
             draft, turn = ask(work, 'intake', prompt, [], model)
-            conditions = draft.get('conditions')
-            require(words(draft.get('question')) and isinstance(conditions, dict) and conditions and
-                    all(words(k) and words(v) for k, v in conditions.items()) and strings(draft.get('blocked_work')),
-                    'incomplete private intake draft')
-            mapping = draft.get('field_sources')
-            require(isinstance(mapping, dict) and set(mapping) == {'question', *('conditions.' + k for k in conditions)},
-                    'private intake draft lacks field locators')
-            for loc in mapping.values():
-                require(isinstance(loc, dict) and loc.get('source') in notes, 'unverified intake source')
-                pages = loc.get('pages')
-                require(isinstance(pages, list) and len(pages) == 2 and all(type(n) is int for n in pages)
-                        and 1 <= pages[0] <= pages[1] <= len(notes[loc['source']]), 'invalid intake pages')
+            validate_intake(draft, notes)
             write(pending_file, {'status': 'source-read-awaiting-materials', 'case': case_id,
                   'candidate_sha256': identity, 'pending_materials': pending, 'draft': draft, 'reading': notes,
                   'reading_receipts': read_turns, 'intake_receipt': turn})
