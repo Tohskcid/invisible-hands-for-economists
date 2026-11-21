@@ -224,6 +224,24 @@ class BenchmarkCurationTests(unittest.TestCase):
         self.assertIn('requires visual review', result['reason'])
         self.assertFalse((self.case.parent / 'q002').exists())
 
+    def test_numeric_audit_must_use_the_released_observations(self):
+        table = self.root / 'observations.csv'
+        table.write_text('x\n1\n')
+        audit = self.root / 'calculation.json'
+        write(audit, {'input_sha256': 'older edition'})
+        candidate = {k: self.curation[k] for k in ('target', 'appendix_status', 'appendix_check')}
+        name = 'inputs/input-1.csv'
+        candidate.update(id='q002', mode='empirical', sources=[self.source],
+                         inputs={name: {'file': table.name, 'sha256': gate.sha(table), 'provenance': 'Observed counts.'}},
+                         numeric_audits=[{'input': name, 'file': audit.name, 'sha256': gate.sha(audit)}])
+        manifest = self.root / 'candidates.json'
+        write(manifest, {'cases': [candidate]})
+        with patch.object(reader, 'ask') as ask:
+            result = reader.run(manifest, 'model')['q002']
+        self.assertIn('different observations', result['reason'])
+        ask.assert_not_called()
+        self.assertFalse((self.case.parent / 'q002').exists())
+
     def test_mixed_batch_finishes_good_cases(self):
         self.review()
         write(self.manifest, {'cases': ['cases/q002', 'cases/q001']})

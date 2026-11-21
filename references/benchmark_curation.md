@@ -4,6 +4,14 @@ Use when asked to read economics papers and automatically prepare bounded resear
 
 ## Collect before reading
 
+With a collected catalog, build a private list of licensed PDF locations and record what each provider actually supplies. The first command queries Crossref/OpenAlex metadata, the second checks NIH/NLM PubMed Central, and the third fetches the eligible PDFs. Repeating the commands reuses local receipts. PubMed Central author manuscripts, journal editions and supplemental files have separate version records.
+
+```sh
+python3 scripts/queue_open_papers.py --catalog /private/catalog.json --out /private/acquisition index
+python3 scripts/collect_pmc_sources.py --catalog /private/catalog.json --acquisition /private/acquisition
+python3 scripts/queue_open_papers.py --catalog /private/catalog.json --out /private/acquisition acquire
+```
+
 Start with the five general economics journals in `scripts/collect_papers.py`; do not restrict subject areas or citation counts. This is an initial source list, not a claim to cover all economics journals. Crossref journal-article records include corrections and other non-research items: verify article identity, publication status, and amendments before admitting a benchmark.
 
 ```bash
@@ -134,6 +142,8 @@ Classify each substantive gap before changing the project. Record the original l
 
 Lock standalone quality before revealing original-specific obligations. Compare the resulting manuscript to the journal version and supplements, accepting equivalent correct arguments. Preserve the exact full denominator, critical errors, eligibility, tool exposure and recognition. Only report full substantive recovery for the assessed scope when every item passes, every essential artifact is independently verified, and no critical issue remains. A finite rubric cannot establish that every feature of a paper was uniquely determined by its question.
 
+When a numerical discrepancy affects release or scoring, independently run the calculation on the exact delivered observations and retain the program, file digest, sample definition, published values and recomputed values. In a candidate, an optional private `numeric_audits` entry has `input` (the neutral filename), `file` (the private JSON result) and `sha256` (its digest). The result must contain the exact `input_sha256`. These checks reach the curator, independent release review and historical comparison. They are excluded from the author's packet and standalone quality review.
+
 Automated extraction places target-specific scope only in the research question and source-mapped conditions. The pipeline supplies common deliverable instructions after drafting. This prevents a hidden result from reappearing as an instruction to prove a particular sign, bound or convergence claim. Review the exported bytes and the sealed full-paper rubric for omitted scope after this transformation. Previously frozen packets retain their original instructions.
 
-For a numeric CSV larger than 200,000 bytes, include a private `columns` dictionary documenting the original field, observational role and reason for releasing each column. Keep the neutral codebook among the actual author inputs. The reader checks every cell, row width, header and file hash. Reviewers see the dictionary, row count, missingness, ranges and small categorical domains, together with the original pages. They assess whether the observations and coding expose published answers. The complete, unchanged CSV goes to the author after release. Large free-text or mixed-format tables require separate review.
+For a numeric CSV, include a private `columns` dictionary to document the original field, observational role and reason for releasing each column. Tables larger than 200,000 bytes require this dictionary. Keep the neutral codebook among the actual author inputs. The reader checks every cell, row width, header and file hash in a declared numeric table. Reviewers see the dictionary, row count, missingness, ranges and small categorical domains, together with the original pages. They assess whether the observations and coding expose published answers. The complete, unchanged CSV goes to the author after release. Large free-text or mixed-format tables require separate review.

@@ -14,6 +14,7 @@ import shutil
 import subprocess
 import tempfile
 
+from blind_agent_turn import PLAN_LIMIT
 from curate_benchmarks import (CASE_ID, INPUT, file_bytes, inspect_case, physical_pages, read_json, read_record, require,
                                review_case, safe_path, sha, strings, words)
 
@@ -127,7 +128,7 @@ def input_evidence(root, candidate, stage):
         shutil.copyfile(src, out)
         require(sha(out) == asset['sha256'] and words(asset['provenance']), f'{name}: invalid input provenance or checksum')
         checks[name] = asset['provenance']
-        if out.stat().st_size > MAX_PROMPT_CHARS:
+        if 'columns' in asset or out.stat().st_size > MAX_PROMPT_CHARS:
             require(out.suffix == '.csv', f'{name}: needs separate large-input review')
             texts[name] = numeric_csv_evidence(out, asset.get('columns'))
         else:
@@ -259,6 +260,14 @@ def prepare(root, candidate, cases, work, model):
         stage = tmp / 'case'
         stage.mkdir()
         checks, inputs = input_evidence(root, candidate, stage)
+        audits = []
+        for evidence in candidate.get('numeric_audits', []):
+            table = evidence['input']
+            path = safe_path(root, evidence['file'])
+            require(table in inputs and sha(path) == evidence['sha256'], 'unverified private numeric audit')
+            audit = read_record(path)
+            require(audit.get('input_sha256') == sha(stage / table), 'numeric audit used different observations')
+            audits.append(audit)
         batches = page_batches(root, sources, tmp)
         notes = {s['id']: [] for s in sources}
         read_turns = []
@@ -275,6 +284,8 @@ def prepare(root, candidate, cases, work, model):
                 notes[sid].append({'pages': [n, n], 'note': entry['note'], 'appendix': entry['appendix']})
             read_turns.append(turn)
         evidence = {'candidate': candidate, 'page_notes': notes, 'author_data': inputs}
+        if audits:
+            evidence['private_numeric_audits'] = audits
         base_prompt = DRAFT + '\n' + encode(evidence)
         prompt = base_prompt
         for attempt in range(2):
@@ -285,6 +296,8 @@ def prepare(root, candidate, cases, work, model):
             require(public['id'] == case_id and public['mode'] == candidate['mode']
                     and sorted(public['available_inputs']) == sorted(inputs), 'draft changed case, mode or available files')
             record = {k: private[k] for k in ('field_sources', 'withheld', 'rubric', 'contamination', 'gaps')}
+            if audits:
+                record['numeric_audits'] = audits
             for k in ('track', 'timeline', 'target', 'appendix_check', 'appendix_status'):
                 if k in candidate:
                     record[k] = candidate[k]
@@ -339,6 +352,8 @@ def run(manifest, model):
             results[case_id] = {'status': status, 'case': 'cases/' + case_id}
         except (OSError, ValueError, KeyError, TypeError, RuntimeError, StopIteration, csv.Error, subprocess.SubprocessError) as exc:
             results[case_id] = {'status': 'blocked', 'reason': str(exc)}
+            if str(exc) == PLAN_LIMIT:
+                break
     return results
 
 

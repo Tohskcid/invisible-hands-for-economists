@@ -1,0 +1,118 @@
+\documentclass[11pt]{article}
+% Recognition disclosure: I have no specific recollection of the target paper or its numerical results. I use only the released question and supplied observations.
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,booktabs}
+\title{Selecting at the Extremes with Noisy Economic Measurements}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+A distributional standard asks whether a population clears a common cutoff. A rank standard asks how many actual competitors it beats. Under a common distribution, posterior qualification probabilities price the gains and errors from expanding a list. For a fixed roster, simultaneous bounds on strict pairwise comparisons can certify membership while leaving close cases undecided. Among 100 commuting zones, a fitted distributional rule with a 10 percent false-selection allowance selects eleven areas. A simultaneous rank procedure at the same nominal level certifies five as outside the bottom ninety. The first calculation concerns average risk under a fitted distribution. The second protects every choice from its list under repeated sampling at fixed area characteristics and the assumed sampling variances.
+\end{abstract}
+
+\section{The object of a decision}
+Consider equally weighted populations indexed by $i$. High values of $\theta_i$ are initially desirable. For $0<\alpha<1$, let $q=\inf\{x:G(x)\ge 1-\alpha\}$, where $G$ is the marginal distribution of $\theta$. Write $A_i=1\{\theta_i\ge q\}$. If $G$ is continuous at a unique crossing, the qualifying share is $\alpha$ in the distribution. Even then, the number qualifying in an independent sample fluctuates. An atom at $q$ can raise the qualifying mass above $\alpha$. Including the whole atom is part of the specified standard. A rule that demands exactly $\alpha n$ names answers a different question.
+
+For a fixed roster, $r_i=1+\sum_j1\{\theta_i>\theta_j\}$ counts the position from the low end, giving tied features their smallest shared rank. Whether $r_i>\lfloor(1-\alpha)n\rfloor$ depends on the competitors as well as on $\theta_i$. A change of roster can change qualification even with perfect measurements and an unchanged external standard. These distinctions matter when the action is costly, such as dismissing an incumbent, or indivisible, such as choosing a single destination.
+
+\section{Information and the distributional decision}
+Let $X_i=\bar Y_i$, $s_i^2=\sigma_i^2/T_i$, and $D_i=\sum_t(Y_{it}-X_i)^2$. With known variances the likelihood for $\theta_i$ is proportional to $\exp[-(X_i-\theta_i)^2/(2s_i^2)]$. Each additional observation supplies $1/\sigma_i^2$ of Fisher information. With independent parameters drawn from known $G$ and a fixed variance design independent of the draws, other populations contribute no further information about this draw. Writing $\phi_s$ for the centered normal density of standard deviation $s$, its posterior qualification probability is
+\[
+ u_i=\frac{\int_{[q,\infty)}\phi_{s_i}(X_i-a)\,dG(a)}
+ {\int\phi_{s_i}(X_i-a)\,dG(a)}.
+\]
+Learning $G$ from other units changes both the predictive prior and the standard used in this integral. With bounded replication, even precise learning of the prior generally leaves uncertainty about the individual draw.
+
+For independent draws $(a,v)=(\theta,\sigma^2)$ from a joint law $H$ on $v>0$, the corresponding weight in both integrals against $dH(a,v)$ is
+\[
+ w_i(a,v)=v^{-T_i/2}\exp\{-[D_i+T_i(X_i-a)^2]/(2v)\}.
+\]
+Restrict the numerator to $a\ge q$, using the quantile of the first marginal. The residual sum of squares informs the variance, which can itself inform the mean through $H$. If $v$ is observed, use the conditional law of $a$ given $v$ in the likelihood update and retain the marginal cutoff. These formulas presume replication counts fixed by design or otherwise ignorable. In a Bayesian analysis of unknown $H$, the probability is an integral over its posterior given all data, updating the individual's probability with the cutoff appropriate to each candidate law. In a plug-in analysis, estimating the tail probability while treating the estimated quantile as known omits one source of finite-sample uncertainty. Re-estimating both objects across independent samples of populations would probe the stability of that calculation.
+
+\subsection{Loss and constraints}
+With actions $\delta_i\in\{0,1\}$, define $R=\sum_i\delta_i$, $V=\sum_i\delta_i(1-A_i)$, and $M=\sum_i(1-\delta_i)A_i$. In the conditional expectation of
+$M+\tau_1(V-\gamma R)+\tau_2(R-\alpha n)$, changing $\delta_i$ from zero to one adds
+\[
+ -u_i+\tau_1(1-u_i-\gamma)+\tau_2 .
+\]
+Thus select when $u_i>[\tau_1(1-\gamma)+\tau_2]/(1+\tau_1)$, with either action optimal at equality. The rule includes empty and full lists when warranted. For the lower tail one may apply the derivation to $-\theta$ with a suitably defined upper cutoff. If the action targets the complement of a specified upper tail, its probability is exactly $1-u_i$, including the prescribed treatment of equality.
+
+The penalties are multipliers for upper bounds on $E(V-\gamma R)$ and $E(R-\alpha n)$. If nonnegative multipliers yield feasibility and complementary slackness, loss optimality proves optimality for minimizing $EM$ under the constraints by subtraction of the penalty terms. A specified multiplier alone does not certify feasibility. With $\tau_2=0$ one can calibrate a common threshold on $u$ to control $EV/ER$, randomizing at a boundary if needed. This tests nonqualification, trading false discoveries for recovered qualifiers without a capacity limit.
+
+A related implementation imposes $\sum\delta_i(1-u_i)\le\gamma R$ \emph{conditional on the observed data}. For a list of given length, the largest $u_i$ maximize expected discoveries and minimize expected errors by pairwise exchange. Take the longest feasible prefix, including the empty prefix. Its expected discoveries are maximal since the sum of the leading probabilities increases with length. The constraint prices errors within each list, so the implicit threshold can depend on the entire sample. It need not yield the optimum that can trade errors across samples at a single ex ante price. We use this conditional implementation in the application. It specifies the calibration left open by $\tau_2=0$.
+
+\subsection{What increasing the number of populations buys}
+Here is one sufficient argument for oracle approximation. Suppose the mixing support is a known compact interval, the known $s_i$ lie in a compact subset of $(0,\infty)$, and draws and measurement errors are independent across units. For each fixed real frequency $t$,
+\[
+ n^{-1}\sum_i \exp(itX_i+t^2s_i^2/2)
+ \ \longrightarrow\ \int e^{ita}\,dG(a)
+\]
+in mean square by unbiasedness and a variance bound of order $1/n$. For example, fit a law minimizing the weighted sum of discrepancies at an enumeration of rational frequencies, truncating each absolute discrepancy at one and using weights $2^{-k}$ at frequency $k$. The objective at truth tends to zero in probability by truncating the sum. Compactness of the set of laws and uniqueness of a characteristic function from its values on a dense set then give weak consistency of an approximate minimizer with vanishing optimization error. This identification does not require repeated measurements. High frequencies incur exponentially large variance, so the argument supplies no fast rate.
+
+Assume further a unique strict quantile crossing and no atom there. Weak consistency implies cutoff consistency by bracketing $q$ between two continuity points. Integrals over the moving tail then converge by squeezing between nearby fixed tails. The likelihood denominator is positive, uniformly bounded away from zero on compact observation and standard-error ranges. Continuity of the kernels there gives uniform convergence of scores on such ranges by a finite cover. Gaussian tightness controls the remaining fraction of observations. Hence the average absolute plug-in score error vanishes in probability. For fixed finite multipliers, the oracle loss increment is linear in $u_i$. On a mistaken threshold decision its magnitude is bounded by $(1+\tau_1)|\hat u_i-u_i|$, yielding vanishing expected excess loss per population. Vanishing disagreement also requires negligible mass near the decision boundary. For the prefix rule the same average error bounds the excess conditional error sum divided by $n$; translating this into a fraction requires a selected share bounded away from zero with high probability. Convergence of a calibrated threshold or list size further needs a stable crossing of its constraint.
+
+For an unknown joint law a parallel consistency claim requires identification of the joint mixing model. For example, with two observations per unit, $X=(Y_1+Y_2)/2$ and $B=(Y_1-Y_2)/2$ have joint characteristic function $\int e^{ita}e^{-v(t^2+b^2)/4}\,dH(a,v)$ at $(t,b)$. Varying $b$ identifies, for each $t$, a Laplace transform on an interval and hence on its positive domain by analyticity. Uniqueness of Laplace and Fourier transforms identifies $H$. On compact supports with variance bounded away from zero, minimum distance on a dense set of joint frequencies gives the same compactness argument, and the posterior and cutoff reasoning extends to fixed replication. With only one observation and unrestricted unknown variance, $N(0,2)$ data can arise from $a=0,v=2$ or from $a\sim N(0,1),v=1$. Neither the cutoff nor the posterior is then generally identified. These are sufficient regimes and a failure case. No asymptotic oracle theorem follows merely from having many populations or from estimating a discrete cutoff at an atom.
+
+\section{Simultaneous decisions about the actual roster}
+For $p=\lfloor\alpha n\rfloor$, consider the claim $r_i\le p$. Test every ordered null $\theta_i\le\theta_j$, $j\ne i$. Under independent normal estimates and known standard errors the one-sided $p$-value is $1-\Phi((X_i-X_j)/\sqrt{s_i^2+s_j^2})$. It is super-uniform under its null. In increasing order, compare the $k$th of $m=n(n-1)$ values to $\gamma/(m-k+1)$, rejecting up to the first failure. If any true null is rejected, the smallest true-null value is at most $\gamma/m_0$ for $m_0$ true nulls. A union bound therefore controls the probability of any false strict comparison by $\gamma$ for every vector, without independence of tests.
+
+Let $W_i$ and $L_i$ count certified wins and losses. Simultaneously,
+\[
+ 1+W_i\le r_i\le n-L_i
+\]
+except on an event of probability at most $\gamma$. Classify inside the lower group if $n-L_i\le p$, outside if $1+W_i>p$, and otherwise leave unresolved. Inside and outside assertions have joint protection. Looking at overlapping ordinary marginal rank intervals without simultaneous calibration would lack this justification. The family can use the outside assertions with $p=90$. For a top group defined directly from the high end, use the ascending rank of $-\theta_i$ and $p=\lfloor\alpha n\rfloor$. With distinct features its rank is $n+1-r_i$. At ties the two ranks sum to $n+2-d_i$, where $d_i$ is the size of the tie block. A block straddling a boundary can all qualify under the direct top convention and all fail exclusion from the bottom group. The rank inequalities remain valid for minimum ranks, though a strict comparison cannot certify equality.
+
+At fixed $n$ and fixed nonzero gaps, as $\min_iT_i\to\infty$ every correctly oriented separated pair is detected with probability tending to one for fixed positive variances. Thus full classification is consistent at a distinct vector. Near ties on the scale of the standard errors retain ambiguity, and ties need not resolve. At a fixed level, erroneous strict declarations at a tie can persist. Under independent normal replication, exact intervals for individual means using Student quantiles with simultaneous Bonferroni coverage also give finite-sample comparisons by endpoint separation for $T_i\ge2$. For pairwise normal tests with estimated variances, consistent relative standard errors and a normal limit justify the step-down bound asymptotically at fixed $n$ by marginal validity and the union bound. Pointwise approximations alone imply neither uniform coverage over designs nor control with growing $n$. Correlated area estimates require the correct variance of each difference or an approach based on simultaneous marginal mean intervals.
+
+\section{What an error rate entitles the decision maker to say}
+Errors follow the action. For a positive list a false decision selects a nonqualifier. For dismissal the false decision dismisses a protected teacher. For a list of certified exclusions it excludes someone truly inside the reference group. Denote the number of actions and errors in the relevant list by $R,V$. Set $F=V/(R\vee1)$, so an empty list has realized false fraction zero, and set $EV/ER=0$ if $ER=0$. Within any specified probability experiment,
+\[
+ E F\le P(V>0),\qquad
+ P(F>c)\le\min\{P(V>0),EF/c\},\qquad
+ EF\le c+(1-c)P(F>c).
+\]
+These follow from $0\le F\le1$, Markov's inequality and splitting at $c$. Also $P(V>0)\le nEF$ since a nonzero fraction is at least $1/n$. The ratio $EV/ER=E(RF)/ER$ weights experiments by list size. For example, with equal probability there is one false action alone or nine correct actions alone. Then $EF=1/2$ and $EV/ER=1/10$. Reversing correctness gives $EF=1/2$ and $EV/ER=9/10$. In particular, a bound on the ratio alone does not license a Markov bound using that ratio for a randomly drawn list. Familywise control implies $EF\le\gamma$ and $P(F>c)\le\gamma$ for every $c>0$, while variation in $R$ still matters for the ratio.
+
+Given data and a correct known distribution, $R$ is fixed for a deterministic rule, and the conditional expected false fraction equals the list average of $1-u_i$ for a nonempty qualifier list. The prefix rule therefore controls both $EF$ and $EV/ER$ after integrating over data and features. Its bound on $P(F>c)$ is at most $\min(1,\gamma/c)$, also conditionally. Its conditional probability of even one error is at most $\min(1,\sum_{i:\delta_i=1}(1-u_i))$; under independent posteriors it equals $1-\prod_{i:\delta_i=1}u_i$. A common uncertain cutoff can induce posterior dependence. The expected-count identities use linearity alone. Plug-in scores give fitted analogues, with limiting interpretations under consistency conditions, without exact finite-sample calibration. Conversely, the simultaneous rank bound conditions on the feature vector and ranges over fresh measurement noise. Since it holds for every vector, it also survives averaging over any law of those vectors for which the sampling assumptions hold. It supplies no posterior probability conditional on the observed list.
+
+For a school protecting the direct top $p$ by value added, reverse the sign and dismiss only teachers certified outside that group. With probability at least $1-\gamma$ over assessments, every dismissal is justified under the rank standard, including when the authority chooses a subset of those certified. The chance that the wrongful share exceeds even a small positive $c$ is at most $\gamma$. Under a distributional protection standard, instead order dismissal candidates by decreasing probability of falling below $q$ and charge each selected teacher their posterior probability of being protected. A list-average allowance of $0.05$ yields at best the generic Markov bound $0.25$ at $c=0.20$ and a vacuous bound at $c=0.05$. These interpretations concern repeated experiments or posterior averages as specified above. A teacher who regards their own value added as fixed can invoke the simultaneous rank protection under repeated assessments if they truly have protected rank. Knowing one's own value added may still leave the competitors or external cutoff uncertain. A guarantee averaged over draws from a teacher distribution need not bound the dismissal probability of that particular teacher. Neither interpretation establishes the economic merits of using value added as the dismissal criterion.
+
+\section{A family's choice among commuting zones}
+The input comprises the 100 largest US commuting zones by 2000 population. The outcome is mean child household-income percentile on a zero-to-one scale for parents at the 25th percentile, pooling race and gender. Population selects the roster; each zone receives one vote in the distribution. Treat the supplied estimates and sampling standard errors as independent normal measurements with known errors. The inputs provide neither sampling covariances nor repeated estimates for validating that approximation.
+
+We fit a continuous one-dimensional prior, independently choosing a common smoothing scale $h=0.006$ on the outcome scale. Assign mass $1/100$ to each normal component with mean $X_j$ and variance $b_j^2=h^2-s_j^2>0$. Conditional on the latent mean of unit $j$, the expected kernel density is its normal kernel with variance $h^2$, since measurement and kernel variances add. Thus the correction puts all units on a common smoothing scale. This convenient positive density estimates a smoothed law and fixed $h$ can leave bias. The preceding consistency argument is for a different, consistent fitting scheme. Gaussian tails outside the logical outcome range are an approximation. The fitted 90th percentile by bisection is $0.44434983$. For observation $i$ component $j$ has posterior weight proportional to $\phi_{\sqrt{b_j^2+s_i^2}}(X_i-X_j)$, posterior mean $(s_i^2 X_j+b_j^2 X_i)/(b_j^2+s_i^2)$ and variance $s_i^2 b_j^2/(b_j^2+s_i^2)$. Average its normal upper-tail probabilities with normalized weights and apply the feasible-prefix rule. The same observations fit the prior and score its members.
+
+\begin{table}[ht]
+\centering
+\caption{List membership in descending order of estimated mobility}
+\small
+\begin{tabular}{lrrrrcc}
+\toprule
+Zone & Estimate & SE & $\hat u_i$ & & Distribution & Fixed rank\\
+\midrule
+San Francisco & .45662 & .00082 & 1.0000 && ABC & ABC\\
+Salt Lake City & .45658 & .00130 & 1.0000 && ABC & ABC\\
+Honolulu & .45602 & .00164 & 1.0000 && ABC & ABC\\
+Boston & .45302 & .00091 & 1.0000 && ABC & ABC\\
+Minneapolis & .45173 & .00117 & 1.0000 && ABC & BC\\
+Toms River & .45014 & .00185 & .9989 && ABC & --\\
+Des Moines & .44865 & .00223 & .9689 && ABC & --\\
+San Jose & .44851 & .00104 & 1.0000 && ABC & --\\
+Scranton & .44603 & .00175 & .8187 && ABC & --\\
+Newark & .44578 & .00075 & .9706 && ABC & --\\
+Madison & .44205 & .00245 & .1556 && BC & --\\
+Pittsburgh & .44154 & .00108 & .0043 && C & --\\
+\bottomrule
+\end{tabular}
+\par\smallskip
+\parbox{.92\linewidth}{A, B and C indicate selection at $\gamma=.05,.10,.20$, respectively. All other 88 zones are absent from all six lists. Scores and inputs shown are rounded after selection.}
+\end{table}
+
+The fixed rule tests 9,900 ordered comparisons. Minneapolis has lower rank bounds 90, 91 and 91 as the level rises, explaining its entry. San Jose reaches 90 at all three levels and misses the strict exclusion threshold. The distributional lists coincide here with prefixes in estimated mobility even though precision changes the posterior order, as Newark and Scranton illustrate. Their fitted mean false fractions are respectively .02429, .09885 and .17359 for the three lists. Expanding a list can admit an individually unlikely qualifier because the constraint averages over several nearly certain selections.
+
+For a family insisting on the actual top ten, simultaneous exclusion from the bottom ninety certifies that target for distinct mobilities, with the boundary convention above at ties. Any data-dependent choice from the certified list inherits the unconditional bound on choosing a wrong area at the fixed vector. Conditional on seeing this particular list the bound has no such repeated-sampling interpretation. For the fitted distributional rule, a uniform random choice from the list has fitted error probability equal to the mean false fraction. A family picking a specific area faces its own posterior risk relative to the fitted cutoff, for example about .8444 for Madison despite its inclusion at .10. Clearing that cutoff does not ensure actual top-ten membership. The estimates describe a correlation; they supply no causal forecast of the income gain from moving.
+
+\section{Reproduction and limits}
+Run \texttt{python3 analysis.py} beside the supplied \texttt{inputs} directory. The script uses the Python standard library, reads \texttt{input-001.csv} using the definitions in \texttt{input-002.txt}, and writes \texttt{results.json} with the cutoff, full-precision scores, both membership indicators and simultaneous rank bounds for every zone at every level. It sorts displays by decreasing estimate, breaking exact estimate ties by zone identifier. Prefix selection uses unrounded probabilities. The smoothing choice, conditional calibration and ordered step-down comparisons define the reported reconstruction. The original implementations, their tuning and their numerical lists are unavailable for an exact comparison. The supplied roster is defined by size, and its exchangeability under a common marginal law is a modeling assumption. No true ranks, true distributional cutoff, or realized false fractions are observed.
+\end{document}

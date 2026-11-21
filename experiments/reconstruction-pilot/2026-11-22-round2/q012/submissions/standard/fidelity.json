@@ -1,0 +1,62 @@
+{
+  "request_sha256": "3010a597b1a313031893d98a147e7f49c5d0e1618c68680aa3695c0e4ae5a783",
+  "locked_utc": "2026-11-21T20:31:59.253177+00:00",
+  "judge": {
+    "start_utc": "2026-11-21T20:31:31.997125+00:00",
+    "end_utc": "2026-11-21T20:31:59.252538+00:00",
+    "elapsed_seconds": 27.26,
+    "deadline_seconds": 480,
+    "model": "gpt-6.2-astra",
+    "reasoning": "medium",
+    "tool_calls": 0,
+    "usage": {
+      "input_tokens": 54440,
+      "cached_input_tokens": 13952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1141,
+      "reasoning_output_tokens": 0
+    },
+    "session_sha256": "64f1b748352ae33bb231fdb1b1fc5877a050459c4044d19e7d516d568d7c4883",
+    "prompt_sha256": "428a59ca5e7026a4c46bacc661195cd4aa83a04d0fba7d066a27c384f703862f",
+    "events_sha256": "8ca3378f8f82f8916da887eee8c0a89e5d6853f6b5744735713f580c46f29949"
+  },
+  "items": {
+    "r1": {
+      "score": 2,
+      "evidence": "§2 uses the marginal quantile of θ in both the known-variance and joint-law posterior integrals. §2.1 derives the selection threshold [τ₁(1−γ)+τ₂]/(1+τ₁) from the conditional loss increment. With τ₂=0, feasibility and complementary slackness connect a suitably chosen τ₁ to minimizing expected misses subject to E[V]≤γE[R]. The manuscript separately identifies its empirical prefix rule as a conditional calibration."
+    },
+    "r2": {
+      "score": 2,
+      "evidence": "§2 gives the conditional Gaussian likelihood for the sample mean, centered at θᵢ with variance σᵢ²/Tᵢ, and the information per replicate. §2.2 explains how increasing n can identify G with bounded replication and gives support, quantile and consistency conditions for vanishing excess loss. §3 explains why increasing minᵢ Tᵢ resolves fixed nonzero gaps. §5 expressly limits the consistency argument to a different estimator from its fixed-bandwidth fit."
+    },
+    "r3": {
+      "score": 2,
+      "evidence": "§3 tests the equivalent rank claim rᵢ≤⌊αn⌋. Its Holm argument controls every false strict comparison jointly at each fixed vector, so the bounds 1+Wᵢ≤rᵢ≤n−Lᵢ protect all classifications made from them. The section handles minimum ranks at ties, sign reversal, unresolved near ties, finite-sample Gaussian or simultaneous Student bounds, and pointwise asymptotic validity for estimated standard errors."
+    },
+    "r4": {
+      "score": 1,
+      "evidence": "§4 sets the empty-list false fraction F to zero, identifies E[V]/E[R] as E[RF]/E[R], gives counterexamples to equality with E[F], and derives the γ/c exceedance bound from E[F]≤γ. It distinguishes averaging over features from protection at each vector, and §3 handles dependent comparisons. It omits a sufficient condition for the historical large-n approximation, such as E|R/E[R]−1|→0, and does not discuss directly controlling P(F>c) as a separate design objective."
+    },
+    "r5": {
+      "score": 2,
+      "evidence": "§4’s school paragraph identifies the wrongful action as firing a genuinely protected top teacher. Joint rank coverage gives probability at least 1−γ of no wrongful dismissal over repeated assessments. The false share uses all dismissals as its denominator. At γ=.05, the paragraph computes an exceedance bound of .25 for c=.20 and a vacuous bound for c=.05, then explains why a teacher with fixed value added cares about conditional risk."
+    },
+    "r6": {
+      "score": 1,
+      "evidence": "§5’s membership table and the paragraph on Minneapolis report a justified Holm alternative selecting estimated ranks 1–4, 1–5 and 1–5 at γ=.05, .10 and .20. Historical Table I (p. 58) uses DP and selects San Francisco, Salt Lake City, Honolulu, Boston and Minneapolis at every level. Minneapolis is the sole membership discrepancy: its alternative lower rank bound of 90 at .05 falls short of the required 91."
+    },
+    "r7": {
+      "score": 1,
+      "evidence": "§5’s prior-fit paragraph specifies h=.006, and its table reports posterior-tail selections at estimated ranks 1–10, 1–11 and 1–12. Historical Table I and footnote 2 (p. 58) use KWs with bandwidth .02. Relative to that record, the manuscript omits Madison at .05, Pittsburgh at .10, and Manchester and Santa Barbara (ranks 16–17) at .20. It correctly leaves New York, Seattle and Reading (13–15) blank throughout."
+    },
+    "r8": {
+      "score": 2,
+      "evidence": "§5’s opening paragraph defines the correlational outcome as mean child household-income percentile for parents at the 25th percentile. Its final paragraph explains why joint protection over repeated samples at fixed mobilities extends to any choice from the certified list. For distributional selection, §4 and §5 distinguish the expected false share over samples and feature draws from a chosen area's risk. Madison's fitted .8444 error probability concerns the marginal cutoff, which differs from the family's actual top-ten target. The manuscript makes no causal claim about moving."
+    }
+  },
+  "summary": "The manuscript reconstructs the decision rules, rank guarantees and practical interpretations. Its main theoretical omissions concern when mFDR approximates FDR and how to target exceedance risk directly. Both empirical columns earn partial historical credit. The released estimates support the disclosed alternative procedures, while the frozen Table I establishes where their memberships differ from the published results.",
+  "critical_errors": [],
+  "recognition": "The manuscript's opening LaTeX comment discloses no specific recollection of the target paper or its numerical results. §6 identifies the empirical procedures as independently chosen. Their departures from DP and KWs are historical coverage gaps, with no claim that the alternatives recovered the published columns.",
+  "total": 13,
+  "denominator": 16
+}

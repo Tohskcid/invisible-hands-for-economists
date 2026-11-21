@@ -8,6 +8,7 @@ from pathlib import Path
 import subprocess
 import tempfile
 
+from blind_agent_turn import PLAN_LIMIT
 from collect_papers import save
 from curate_benchmarks import CASE_ID, batch, read_record, require, safe_path, sha
 from read_benchmarks import run as read_candidates
@@ -78,6 +79,8 @@ def run(manifest, results, model):
             save(safe_path(folder, 'status.json'), status)
             statuses[key] = status
             print(json.dumps({key: status}), flush=True)
+            if status.get('reason') == PLAN_LIMIT:
+                break
     return statuses
 
 

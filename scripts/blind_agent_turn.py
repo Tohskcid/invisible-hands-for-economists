@@ -7,6 +7,8 @@ from pathlib import Path
 import subprocess
 import time
 
+PLAN_LIMIT = 'existing account usage limit reached; preserve progress without purchasing credits'
+
 
 def account_environment():
     """Use the existing plan for this workflow; do not fall back to a metered API key."""
@@ -23,7 +25,7 @@ def check_completion(result):
     if result.returncode:
         failure = (result.stdout + result.stderr).lower()
         if any(token in failure for token in ('usage limit', 'insufficient_quota', 'usage_limit_reached')):
-            raise RuntimeError('existing account usage limit reached; preserve progress without purchasing credits')
+            raise RuntimeError(PLAN_LIMIT)
         raise RuntimeError(f'Codex exited {result.returncode}; no usable submission')
 
 

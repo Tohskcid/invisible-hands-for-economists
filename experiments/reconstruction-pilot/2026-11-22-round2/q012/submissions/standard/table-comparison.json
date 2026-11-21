@@ -1,0 +1,167 @@
+{
+  "reference": "Published Table I, printed p. 58 of DOI 10.3982/ecta20460. Rank is descending observed mobility among 100 zones.",
+  "data_credit": "Mogstad, Romano, Shaikh and Wilhelm. Prior empirical replication archive, CC BY 4.0, https://zenodo.org/records/7481903. Selected top 100 by 2000 population. Zone identifiers, names, mobility estimates and sampling errors were preserved in neutral fields.",
+  "full_results_sha256": "d5f676a4bad7952ffbafcb477c88194c2f6bcf82f409928e4d9306627f4a302a",
+  "public_scope": "Full submitted results repeat the 100 underlying observations. This comparison publishes selection ranks; original output remains in the private run.",
+  "comparisons": [
+    {
+      "gamma": "0.05",
+      "approach": "fixed",
+      "published_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "submitted_ranks": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "overlap_count": 4,
+      "identical_membership": false
+    },
+    {
+      "gamma": "0.05",
+      "approach": "distribution",
+      "published_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "submitted_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "overlap_count": 10,
+      "identical_membership": false
+    },
+    {
+      "gamma": "0.1",
+      "approach": "fixed",
+      "published_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "submitted_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "overlap_count": 5,
+      "identical_membership": true
+    },
+    {
+      "gamma": "0.1",
+      "approach": "distribution",
+      "published_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "submitted_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "overlap_count": 11,
+      "identical_membership": false
+    },
+    {
+      "gamma": "0.2",
+      "approach": "fixed",
+      "published_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "submitted_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "overlap_count": 5,
+      "identical_membership": true
+    },
+    {
+      "gamma": "0.2",
+      "approach": "distribution",
+      "published_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        16,
+        17
+      ],
+      "submitted_ranks": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "overlap_count": 12,
+      "identical_membership": false
+    }
+  ]
+}

@@ -2,6 +2,7 @@
 """Collect journal metadata and explicitly selected public PDFs for benchmark curation."""
 import argparse
 import datetime as dt
+from email.utils import parsedate_to_datetime
 import fcntl
 import hashlib
 import json
@@ -28,22 +29,50 @@ def save(path, value):
     os.replace(temporary, path)
 
 
-def request(url):
+PDF_BYTE_LIMIT = 50 * 1024 * 1024
+
+
+def request(url, max_bytes=PDF_BYTE_LIMIT, *, defer_denials=False, redirect_check=None):
     parsed = urllib.parse.urlsplit(url)
     if parsed.scheme != 'https' or not parsed.hostname or parsed.username or parsed.password:
         raise ValueError('Only public HTTPS URLs without credentials are supported')
     req = urllib.request.Request(url, headers={'User-Agent': 'econ-benchmark-collector/1.0'})
+    open_url = urllib.request.urlopen
+    if redirect_check is not None:
+        class CheckedRedirect(urllib.request.HTTPRedirectHandler):
+            def redirect_request(self, req, fp, code, msg, headers, newurl):
+                target = urllib.parse.urlsplit(newurl)
+                if target.scheme != 'https' or target.username or target.password or not redirect_check(newurl):
+                    fp.close()
+                    raise ValueError('Redirect disallowed by source access policy')
+                return super().redirect_request(req, fp, code, msg, headers, newurl)
+        open_url = urllib.request.build_opener(CheckedRedirect).open
     for attempt in range(3):
         try:
-            with urllib.request.urlopen(req, timeout=30) as response:
-                raw = response.read(50 * 1024 * 1024 + 1)
-                if len(raw) > 50 * 1024 * 1024:
-                    raise ValueError('Response exceeds 50 MiB')
+            with open_url(req, timeout=30) as response:
+                if int(response.headers.get('Content-Length') or 0) > max_bytes:
+                    raise ValueError('Response exceeds byte limit')
+                raw = response.read(max_bytes + 1)
+                if len(raw) > max_bytes:
+                    raise ValueError('Response exceeds byte limit')
                 return raw
         except urllib.error.HTTPError as exc:
-            if exc.code not in (429, 500, 502, 503, 504) or attempt == 2:
+            if (defer_denials and exc.code in (429, 503)) or exc.code not in (429, 500, 502, 503, 504) or attempt == 2:
                 raise
-            time.sleep(min(30, 2 ** (attempt + 1)))
+            delay = 2 ** (attempt + 1)
+            retry_after = exc.headers.get('Retry-After')
+            if retry_after:
+                try:
+                    delay = max(delay, int(retry_after))
+                except ValueError:
+                    try:
+                        delay = max(delay, parsedate_to_datetime(retry_after).timestamp() - time.time())
+                    except (TypeError, ValueError, OverflowError):
+                        pass
+            if delay > 30:
+                raise
+            exc.close()
+            time.sleep(delay)
 
 
 def collect(root, journals, first, last, pages, rows):
@@ -96,7 +125,7 @@ def collect(root, journals, first, last, pages, rows):
             'queries': len(state['queries'])}
 
 
-def acquire(root, doi, url):
+def acquire(root, doi, url, max_bytes=PDF_BYTE_LIMIT, *, defer_denials=False, expected_md5=None, redirect_check=None):
     """An explicit source URL is not a license or an identity verification."""
     folder = root / 'papers' / digest(doi.lower().encode())
     folder.mkdir(parents=True, exist_ok=True)
@@ -106,11 +135,14 @@ def acquire(root, doi, url):
         pdf = folder / receipt['file']
         if receipt['url'] != url:
             raise ValueError('Source already recorded; use a separate collection for another version')
-        if digest(pdf.read_bytes()) != receipt['sha256']:
+        cached = pdf.read_bytes()
+        if digest(cached) != receipt['sha256'] or (expected_md5 and hashlib.md5(cached).hexdigest() != expected_md5):
             raise ValueError('Cached PDF hash mismatch')
         return {'status': 'cached', 'file': str(pdf)}
     try:
-        raw = request(url)
+        raw = request(url, max_bytes=max_bytes, defer_denials=defer_denials, redirect_check=redirect_check)
+        if expected_md5 and hashlib.md5(raw).hexdigest() != expected_md5:
+            raise ValueError('PDF differs from provider checksum')
         if not raw.startswith(b'%PDF-'):
             raise ValueError('Source is not a PDF (possibly a login or access-denied page)')
     except (OSError, ValueError) as exc:

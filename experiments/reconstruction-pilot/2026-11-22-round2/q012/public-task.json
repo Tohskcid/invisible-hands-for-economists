@@ -1,0 +1,25 @@
+{
+  "id": "q012",
+  "mode": "mixed",
+  "question": "How should a decision maker use noisy measurements to select populations at either extreme of an unknown economic characteristic? Compare qualification relative to a population distribution with qualification by rank among the populations actually under consideration. What error guarantees can support a teacher dismissal or a family's choice of where to move, and whose uncertainty does each guarantee describe?",
+  "conditions": {
+    "measurements": "For population i observe Y_it = θ_i + σ_i ε_it for t = 1,…,T_i, with independent standard normal measurement errors independent of the parameters. How much information about θ_i comes from repeated measurements within i, and how much can come from observing other populations?",
+    "distribution": "Consider both independent draws θ_i from an unknown common distribution G with known measurement variances and independent draws of the pairs (θ_i,σ_i²) from a common joint distribution. A population qualifies at the upper end when θ_i is at least the marginal (1−α)-quantile. How does uncertainty about this cutoff enter a selection decision?",
+    "decision": "Let δ_i indicate selection, R count selections, V count selected nonqualifiers, and M count unselected qualifiers. For an allowance γ and nonnegative weights τ₁ and τ₂, consider loss M + τ₁(V−γR) + τ₂(R−αn). What rule minimizes expected loss when the distribution is known? What can be established when it must be learned as n grows, possibly with bounded T_i? How does removing the selection-count penalty affect the relation to constrained testing?",
+    "ranks": "Alternatively hold the n features fixed and consider increasing min_i T_i. Define ascending rank by r_i = 1 + Σ_j 1{θ_i > θ_j}, including when features tie. For p = floor(αn), how could a decision maker use the data to classify populations relative to r_i/n ≤ α simultaneously? How do reversal of the preferred end, ties, near ties, dependence across rank decisions and estimation of variances affect the interpretation and validity of that classification?",
+    "errors": "For each action define which decision counts as an error. What relationships can be justified among the probability of any error, the ratio of expected false decisions to expected decisions, the expected realized false fraction, and the probability that this fraction exceeds a tolerance 0 < c < 1? Specify the treatment of an empty decision set. Which statements apply at a given feature vector, for every vector, or after averaging over vectors, and under what finite-sample or limiting assumptions?",
+    "dismissal": "A school authority may dismiss teachers classified outside the top α fraction by value added. What can the authority say about making even one wrongful dismissal, or about the share of its dismissals that are wrongful? How do the tolerance c, the allowance γ and a teacher's view of their own value added affect the force of those statements?",
+    "relocation": "A family seeks one of the ten highest-mobility areas among the 100 largest US commuting zones by 2000 population. Using the supplied correlational estimates and sampling standard errors, which areas would each approach select at γ in {0.05, 0.10, 0.20}, and how does membership compare in order of estimated mobility? For distribution-based selection use the known-standard-error, one-dimensional model, α = 0.10 and τ₂ = 0. For fixed-feature selection consider exclusion from the bottom 90. What does each resulting guarantee mean for the whole list and for a family choosing one area?"
+  },
+  "available_inputs": [
+    "inputs/input-001.csv",
+    "inputs/input-002.txt"
+  ],
+  "required_outputs": [
+    "Write a complete, self-contained economics paper answering the released question across the stated settings. Justify substantive claims and state any unresolved limitations.",
+    "Provide rerunnable analysis for the supplied observations and connect the reported numbers to the code."
+  ],
+  "data_access_status": "All 100 area estimates, sampling standard errors and field definitions are supplied. The exact implementations of the two empirical procedures are unavailable.",
+  "source_restrictions": "Use only the disclosed conditions and listed inputs. Do not search for or retrieve other sources, code or results.",
+  "neutrality_obligation": "Justify each conclusion under explicit assumptions. Identify implementation conventions you choose and distinguish independently reproducible results from comparisons the inputs leave undetermined."
+}

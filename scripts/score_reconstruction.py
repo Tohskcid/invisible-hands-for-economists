@@ -93,6 +93,9 @@ def score(frozen, submission, output, quality_file=None, model='gpt-6.2-astra', 
     c=read_record(frozen/'sealed/curation.json')
     context['source_reading']={s['id']:s['reading'] for s in c['sources']}
     context['source_limits']=c.get('source_limit',c.get('gaps',[]))
+    if 'numeric_audits' in c:
+        context['private_numeric_audits'] = c['numeric_audits']
+        context['calibration_scope'] = c.get('calibration', {})
     context['quality_lock_sha256']=sha(output/'quality.json')
     order='Score historical coverage against the frozen original reading record and rubric. '+str(c.get('scoring',''))
     context['original_text'] = {}

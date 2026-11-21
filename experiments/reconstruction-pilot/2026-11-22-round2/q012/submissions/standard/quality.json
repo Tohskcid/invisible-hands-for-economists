@@ -1,0 +1,46 @@
+{
+  "request_sha256": "d90ccb642cc5d8c457a3db3ce6adf125f6e326f8d8dd76a67a0cb3c2b526450b",
+  "locked_utc": "2026-11-21T20:31:31.953750+00:00",
+  "judge": {
+    "start_utc": "2026-11-21T20:31:12.821942+00:00",
+    "end_utc": "2026-11-21T20:31:31.952791+00:00",
+    "elapsed_seconds": 19.13,
+    "deadline_seconds": 480,
+    "model": "gpt-6.2-astra",
+    "reasoning": "medium",
+    "tool_calls": 0,
+    "usage": {
+      "input_tokens": 42703,
+      "cached_input_tokens": 13952,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 669,
+      "reasoning_output_tokens": 51
+    },
+    "session_sha256": "0c598129a7a7c33b4a196c39deef161459716c7114a3a3e02ba6b5041ef7b82e",
+    "prompt_sha256": "f5bcf14b45ee4516f78c0384fb4714a72c250f9172feacd8035d62b4f7b46aee",
+    "events_sha256": "f667a0e68dfc55dd678d1f8ca7ae5b196f6f97364fcb4c93f01275084810d77b"
+  },
+  "items": {
+    "1": {
+      "score": 2,
+      "evidence": "Sections 1–2 define qualification at the inclusive marginal quantile and minimum rank on the actual roster. Section 2 quantifies the information in each replicate, explains how other populations inform the prior and cutoff, and uses the residual sum of squares when the mean and variance are jointly distributed."
+    },
+    "2": {
+      "score": 2,
+      "evidence": "Section 2.1 derives the selection threshold from the incremental expected loss and distinguishes the ex ante ratio constraint from the conditional prefix rule used in the application. Section 2.2 gives sufficient conditions for vanishing excess loss. Section 3 proves simultaneous rank coverage using Holm’s procedure. Table 1 and the supplied results agree on list sizes of 10, 11 and 12 for the distributional rule and 4, 5 and 5 for ranks. The corresponding decisions are traceable to posterior_scores and evaluate in analysis.py."
+    },
+    "3": {
+      "score": 2,
+      "evidence": "Sections 1–4 address cutoff atoms, rank reversal at ties, gaps comparable to sampling error, dependent comparisons, estimated variances and empty lists. Section 4 gives a counterexample showing why a bound on E[V]/E[R] alone cannot be substituted into Markov’s inequality for the realized false fraction. One minor omission in Section 3 is that, even with distinct features, excluding the bottom floor((1−α)n) leaves ceil(αn) features, which can exceed the direct top floor(αn) by one. The 100-zone application has no rounding discrepancy."
+    },
+    "4": {
+      "score": 2,
+      "evidence": "Section 4 explains what repeated assessments guarantee a protected teacher at a fixed roster and how γ/c limits a claim about the wrongful dismissal share. Section 5 makes the family’s choice concrete: Madison enters the 10% distributional list despite a fitted individual error probability of 84.44%. Sections 5–6 disclose the fixed bandwidth, assumed independent sampling errors, exchangeability assumption and correlational outcome. Sensitivity of borderline membership to bandwidth is left unquantified."
+    }
+  },
+  "summary": "The paper answers the public question with two defensible procedures. Simultaneous rank coverage protects a family’s data-dependent choice from the certified list over repeated measurements at each fixed roster. The distributional prefix rule controls posterior average error when the law is known. Its commuting-zone results are fitted estimates, and the paper correctly limits their interpretation. The conditional prefix rule solves a different constraint from calibration at a common ex ante threshold, a distinction the paper explicitly justifies.",
+  "critical_errors": [],
+  "recognition": "Assessed solely against the public question and supplied manuscript, code and reported output. No tools or reference comparison were used, and the code was not rerun.",
+  "total": 8,
+  "denominator": 8
+}

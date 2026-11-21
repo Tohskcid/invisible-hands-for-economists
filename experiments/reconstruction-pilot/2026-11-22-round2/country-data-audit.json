@@ -1,0 +1,45 @@
+{
+  "input_sha256": "723e5649fe471aa9f469c4e7064f5b6ed8f4363a2e0927d04756d041760976de",
+  "code_sha256": "fb65d4eeb8519a12bb8c2af15f62f8ac6f41c8143b167378f489cc02136b0ebd",
+  "article": "10.2307/2118477",
+  "table_I_columns": [
+    "intercept",
+    "log investment share",
+    "log(n + 0.05)"
+  ],
+  "table_I_recomputed": {
+    "sample_nonoil": {
+      "n": 98,
+      "coefficients": [
+        5.429883095781653,
+        1.4240142833694203,
+        -1.9897744846061882
+      ]
+    },
+    "sample_intermediate": {
+      "n": 75,
+      "coefficients": [
+        5.345865207015041,
+        1.317552655186007,
+        -2.0171994952350376
+      ]
+    },
+    "sample_oecd": {
+      "n": 22,
+      "coefficients": [
+        8.020606756250078,
+        0.4998895374530704,
+        -0.7419214591715587
+      ]
+    }
+  },
+  "page_420_intermediate_n": 75,
+  "page_420_pearson_correlation_with_schooling": {
+    "investment_pct": 0.5892239351860159,
+    "working_age_growth_pct": -0.3807376489823344
+  },
+  "page_420_printed": {
+    "investment_pct": 0.59,
+    "working_age_growth_pct": -0.38
+  }
+}

@@ -7,13 +7,26 @@ import unittest
 from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'scripts'))
-from blind_agent_turn import run_turn
+from blind_agent_turn import PLAN_LIMIT, run_turn
+from run_reconstruction_batch import run as run_batch
 from score_reconstruction import adjudicate, rubric_rows
 from curate_benchmarks import sha
 from verify_reconstruction_output import verify
 
 
 class ReconstructionTurns(unittest.TestCase):
+    def test_quota_stop_leaves_next_paper_pending(self):
+        with TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            manifest = root / 'candidates.json'
+            manifest.write_text(json.dumps({'cases': [{'id':'q001'}, {'id':'q002'}]}))
+            output = root / 'runs'
+            with patch('run_reconstruction_batch.process', side_effect=RuntimeError(PLAN_LIMIT)) as process:
+                statuses = run_batch(manifest, output, 'model')
+            self.assertEqual(process.call_count, 1)
+            self.assertEqual(statuses['q001']['reason'], PLAN_LIMIT)
+            self.assertFalse((output / 'q002').exists())
+
     def test_fractional_rubric_weights(self):
         rows = rubric_rows([{'id': 'A', 'max_score': 2.0}, {'id': 'B', 'max_score': 1.5}])
         self.assertEqual(rows['A']['allowed_scores'], [0, 1, 2])
