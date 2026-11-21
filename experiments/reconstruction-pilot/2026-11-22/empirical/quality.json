@@ -1,0 +1,56 @@
+{
+  "review_mode": "Independent scientific-quality review, arm labels X/Y only. Binary criteria applied to the public assignment, manuscripts, inputs, code and results. Scores finalized before historical-fidelity review.",
+  "recognition": "I recognized the 1992 New Jersey/eastern Pennsylvania fast-food minimum-wage study from the public design. I did not consult a reference paper, external information, or experimental-condition identities, and did not award points for agreement with remembered findings.",
+  "arms": {
+    "X": {
+      "items": [
+        {
+          "criterion": "Clear scope and defensible estimand",
+          "score": 1,
+          "evidence": "X/manuscript.tex:25–61 and 63–95 define the equally weighted location, the two waves, the state exposure and the paired NJ-minus-PA change. They target post-period employment at the observed NJ incumbents, explicitly requiring additional assumptions for stores with missing changes. Confirmed permanent closures contribute zero employment. Operating outcomes condition on reporting and survival, which the policy itself could affect."
+        },
+        {
+          "criterion": "Reproducible evidence and transparent measurement",
+          "score": 1,
+          "evidence": "X/analysis.py:10–60, 92–107 parses the fixed-width data, retains both state-distinct records numbered 407, applies explicit status and component rules, and checks the same-sample FTE decomposition. I reran the script and the entire serialized X/results.json matched byte for byte. A separate calculation from raw rows confirmed 309 NJ and 75 PA employment pairs, the 2.750 FTE contrast, and the three-item price contrast of $0.1011 (287 NJ and 68 PA pairs). The paper documents wage, tax-inclusive price and staffing units and flags inconsistent first-raise time units (X/manuscript.tex:43–61, 171–192)."
+        },
+        {
+          "criterion": "Identification, inference and uncertainty match evidence",
+          "score": 1,
+          "evidence": "X/manuscript.tex:77–95 expresses the estimate as a policy effect plus the differential untreated trend. An unobserved NJ advantage of 2.75 FTEs would explain it in full. Lines 116–134 correctly treat the 0.12 to 5.38 interval as conditional on independent restaurants within the two realized state environments. One treated state, one control state, and one pre-period prevent a policy-level significance claim. Closure assumptions and PA-region comparisons (lines 194–210) put magnitudes on additional uncertainty: the two PA controls separately give 4.33 and 1.44. The internal wage groups are descriptive and vulnerable to endogenous baseline wages and regression to the mean (lines 136–148)."
+        },
+        {
+          "criterion": "Careful interpretation and disclosure of unsupported blocks",
+          "score": 1,
+          "evidence": "X/manuscript.tex:171–192, 212–233 distinguishes tax-inclusive menu prices from a pass-through rate and establishment counts from worker hours, discusses competing mechanisms without selecting one, and attributes much of the contrast to the PA decline. Lines 222–233 explicitly leave entry and aggregate employment unfinished and specify openings, payroll and population coverage needed. Missing sales, labor costs and worker flows preclude a mechanism decomposition."
+        }
+      ],
+      "total": 4
+    },
+    "Y": {
+      "items": [
+        {
+          "criterion": "Clear scope and defensible estimand",
+          "score": 1,
+          "evidence": "Y/manuscript.tex:14–24 and 27–49 identify the four chains, the dates and comparison area, the equally weighted baseline location, the short-run incumbent employment target, and the different reporting sample for operating outcomes. The formula identifies a paired NJ-minus-PA change. The intended broader incumbent interpretation depends on representative observed changes; 309 of 331 NJ stores and 75 of 79 PA stores contribute to the main estimate, including eligible permanent closures."
+        },
+        {
+          "criterion": "Reproducible evidence and transparent measurement",
+          "score": 1,
+          "evidence": "Y/analysis.py:8–58, 60–78 and 94–104 reads the codebook positions, handles missing components and status, varies part-time weights and implements the reported HC1 regressions. I reran the script with NumPy; Y/results.json matched byte for byte. A separate calculation from the raw rows confirmed the main employment and price differences (2.750 FTE and $0.1011), their restaurant-level standard errors (1.3423 and $0.0437) and their different denominators. Y/manuscript.tex:28–52, 60–80 and 87 give enough information to reproduce the main outcomes. The 'Daily hours open' label is less specific than the questionnaires, which obtain hours separately for a typical weekday and Saturday; the script clearly identifies HRSOPEN."
+        },
+        {
+          "criterion": "Identification, inference and uncertainty match evidence",
+          "score": 1,
+          "evidence": "Y/manuscript.tex:17–24 distinguishes a descriptive comparison from a causal reading requiring parallel untreated trends, no anticipation or spillovers, and representative observations. Its simple 95% interval (0.12 to 5.38) describes independent-restaurant uncertainty, conditional on these states. It cannot capture a common PA downturn. Lines 45–54 show that closure treatment can move the lower endpoint below zero and that the adjusted NJ exposure gradient is imprecise and open to confounding. The latter HC1 interval measures regression sampling uncertainty, not uncertainty about assigning the state-level policy."
+        },
+        {
+          "criterion": "Careful interpretation and disclosure of unsupported blocks",
+          "score": 1,
+          "evidence": "Y/manuscript.tex:45–54, 80–85 separates the small NJ increase from the larger PA decline, identifies coupling of wage change and starting-wage shortfall, and qualifies price pass-through in light of taxes, unobserved costs and sales. The paper presents recruitment, turnover, demand and market power as possible explanations. Lines 83–85 explicitly leave entry and industry-wide employment incomplete and identify the needed sources. The survey cannot establish actual hours worked, profits or a particular mechanism."
+        }
+      ],
+      "total": 4
+    }
+  }
+}

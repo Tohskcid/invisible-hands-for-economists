@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-21T19:17:06.878977+00:00",
+  "arms": {
+    "empirical": {
+      "X": "mode-reference",
+      "Y": "generic"
+    },
+    "theory": {
+      "X": "generic",
+      "Y": "mode-reference"
+    }
+  },
+  "treatment": "One unchanged repo mode reference (empirical.md or theory.md) in addition to identical task, model, budget, inputs and tools. Tests document guidance only.",
+  "primary": "Whole-paper recovery per prewritten source-specific rubric and standalone quality. One run per arm per paper. No causal success-rate estimate.",
+  "requested_deliverable": "Complete self-contained LaTeX paper, analysis when applicable, actual uncertainty and gaps, recognition disclosure.",
+  "model": "use same installed Codex CLI default and reasoning medium; verify actual run records",
+  "budget": "480 wall seconds per author; deadline failures count. No author rerun after viewing scores.",
+  "selection": "Two purposively selected accessible AER papers. One already-used empirical calibration with later raw survey access; one theory RQ and model primitives only. No open search or external files for authors. Both run pairs in fresh contexts.",
+  "review": "Review anonymized papers for scientific quality before seeing arms and reference answers, then assess historical fidelity. Funding/API charge unobserved; log duration and tokens when available."
+}

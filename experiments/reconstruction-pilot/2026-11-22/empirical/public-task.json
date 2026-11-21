@@ -1,0 +1,27 @@
+{
+  "id": "demo-001",
+  "status": "calibration",
+  "mode": "empirical",
+  "question": "1992年紐澤西州提高最低工資，如何影響當地速食餐廳的就業及其他營運調整？",
+  "conditions": {
+    "geography": "美國紐澤西州與賓州東部。",
+    "period": "1992年；兩波餐廳訪查涵蓋2月15日至3月4日及11月5日至12月31日。",
+    "population": "Burger King、KFC、Wendy’s、Roy Rogers的既有餐廳；另需區分既有店調整與新店進入。",
+    "institution": "紐澤西州最低時薪於1992年4月1日由4.25美元提高至5.05美元；賓州同期維持4.25美元。",
+    "data_scope": "餐廳訪查包含就業、起薪、商品價格與營運特徵。若要評估新店進入及較廣泛就業變化，需另外取得適用資料。"
+  },
+  "available_inputs": [
+    "input/observations.dat",
+    "input/codebook",
+    "input/wave1",
+    "input/wave2"
+  ],
+  "data_access_status": "本輪提供兩波餐廳資料、欄位說明與空白問卷。外部資料未隨附。",
+  "required_outputs": [
+    "提出並說明研究設計與識別限制，產生可重跑分析及完整稿件。",
+    "評估就業、營運調整與可能的經濟解釋；必要資料未取得的部分須列為未完成。"
+  ],
+  "source_restrictions": "僅使用此工作目錄交付的資料；不要搜尋目標、後續文獻或其他檔案。",
+  "neutrality_obligation": "不預設效果方向、顯著性或機制；結論須由資料與論證支持。",
+  "budget_seconds": 480
+}

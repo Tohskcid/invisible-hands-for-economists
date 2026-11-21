@@ -1,0 +1,61 @@
+{
+  "condition": "mode-reference",
+  "start": "2026-11-21T19:21:35.840978+00:00",
+  "input_sha256": {
+    "public-task.json": "1d0255abb6a5c11951b720d3f92767ad09b66370c133b09977c71adaf3429188",
+    "guidance.md": "7411306b8d8d242dfcf73470b73026dbc2e1ac40e3c65d4db7e569fdc63510a5"
+  },
+  "model": "gpt-6.2-astra",
+  "reasoning": "medium",
+  "timeout_s": 480,
+  "prompt": "Read public-task.json. Independently answer the question in a complete economical working paper in English, manuscript.tex with defensible proofs or runnable analysis as applicable. Bound unsupported conclusions. First write recognition.txt reporting any recognition or prior memory, without using it as evidence; append any accidental exposure later. Only read supplied materials within this directory. No network, other directories, other agents, target search or external literature. Use input files when present. If guidance.md exists follow its advice as applicable within these limits, with no lookup of linked files. Work directly in this directory. Put code in analysis.py and numerical results in results.json for an empirical task. Aim to finish in 5 minutes and return; enforced limit 480 seconds. Do not create git commits. No revision round.",
+  "end": "2026-11-21T19:25:24.929432+00:00",
+  "elapsed_s": 229.09,
+  "exit_code": 0,
+  "outputs": {
+    "manuscript.tex": "6bc0cc9939cdb739782147161ff5094346e92e375da06a90fe1b0ae5715a42f1",
+    "recognition.txt": "fc9345d81c6b08357dfe2b31ccaea14afd799fb766414f8ba7ee0827ba7e8024"
+  },
+  "inputs_unchanged": true,
+  "usage": {
+    "input_tokens": 144595,
+    "cached_input_tokens": 115712,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 7340,
+    "reasoning_output_tokens": 1140
+  },
+  "clean_replay": {
+    "clean_tex_build_exit_code": 0,
+    "clean_pdf_pages": 6
+  },
+  "published_artifacts_sha256": {
+    "manuscript.pdf": "da66bca367b63b2847e96b25c6c564ca7b8f1c6992434a03f3f631c2309d2e59",
+    "manuscript.tex": "6bc0cc9939cdb739782147161ff5094346e92e375da06a90fe1b0ae5715a42f1",
+    "recognition.txt": "fc9345d81c6b08357dfe2b31ccaea14afd799fb766414f8ba7ee0827ba7e8024"
+  },
+  "cli_args": [
+    "codex",
+    "exec",
+    "--ephemeral",
+    "--skip-git-repo-check",
+    "--json",
+    "-s",
+    "workspace-write",
+    "-m",
+    "gpt-6.2-astra",
+    "-c",
+    "model_reasoning_effort=\"medium\"",
+    "-c",
+    "web_search=\"disabled\"",
+    "-C",
+    "<author-workspace>",
+    "-"
+  ],
+  "observed_completed_item_types": {
+    "agent_message": 3,
+    "command_execution": 5
+  },
+  "local_event_log_sha256": "2c36ebfe71ef7425c4f9e8ca6d0fda3d0e52bb2165ff589f8f253c4764054dc8",
+  "pdf_origin": "coordinator compilation of unchanged author TeX",
+  "session_id_sha256": "1472a6ba2407ed57257e9a999aaedb90850a57df165c35471ca8c43ec0bbfe10"
+}

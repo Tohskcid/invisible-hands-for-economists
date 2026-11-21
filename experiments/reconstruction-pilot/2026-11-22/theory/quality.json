@@ -1,0 +1,66 @@
+{
+  "review_mode": "Independent anonymized scientific-quality review against the public task and five supplied dimensions. Only the task, rubric and the two anonymous manuscripts were consulted.",
+  "recognition": "I recognized the matching-with-contracts and applicant-proposing deferred-acceptance problem family. I did not use a reference solution or infer arm identities. The proofs and examples were checked against each manuscript's own definitions.",
+  "arms": {
+    "X": {
+      "items": [
+        {
+          "criterion": "Q1",
+          "score": 20,
+          "evidence": "X lines 15–28 specify agent-specific contracts, outside options, fixed feasible portfolios, strict choice, consent to new terms, dismissal and team recruitment. The willing menu contains exactly the available contracts for a one-employer deviation. Lines 37, 60–69 distinguish the rule on submitted rankings, true individual welfare with arbitrary fixed other reports, and the need for accurate organizational choices to claim true stability."
+        },
+        {
+          "criterion": "Q2",
+          "score": 20,
+          "evidence": "X lines 31–45: substitutes prevent revival, so each new hold is feasible and each offer is made once. A proposal below a worker's stable contract requires an earlier rejection of that contract. At the first supposed rejection the current menu is contained in the stable willing menu, so substitutes retain the disputed contract. This proves optimality and order independence. Lines 53–67: inclusion of willing menus and aggregate demand bound employer counts in one direction; applicant optimality bounds total employment in the other. A successful misreport gives a stable singleton-profile placement employing the reporter, so the equal-matched-set lemma excludes an unmatched truncated outcome. Restoring the true lower tail preserves the realized execution. The proof only claims individual applicant incentives."
+        },
+        {
+          "criterion": "Q3",
+          "score": 20,
+          "evidence": "X lines 24–48 and 50–69 derive the unrestricted finite existence test, reduction to a single new signer under substitutes, a constructive applicant-optimal placement, and conditional dominant-strategy truthfulness and employment invariance. The objects preserved by rejection are individual contracts, so the proof distinguishes terms at the same employer. The reported-outcome gain and subsequent recontracting at lines 83–87 demonstrate the economic difference between receiving and keeping an assignment."
+        },
+        {
+          "criterion": "Q4",
+          "score": 20,
+          "evidence": "X lines 71–87: in the team market the employer must hire both or neither; a move to G blocks the first case and the team blocks the second, although one new signer cannot block the specified G-only assignment. In the manipulation example H chooses k, else i, else the available subset of a,b; deleting offers retains surviving choices, while adding i to a,b cuts employment. Replaying the offers gives i unmatched under truth and at Y when listing Y alone, with H then willing to recontract. Lines 87 and 92 explicitly limit the necessity claim."
+        },
+        {
+          "criterion": "Q5",
+          "score": 20,
+          "evidence": "X lines 37–45 and 73–90 give executable proposal instructions, portfolios, priorities and traces. The quota example computes both survivor priority and distinct-applicant counts even with multiple salaries or shifts. Lines 69, 89–95 identify institutional assumptions, excluded bargaining and organizational incentives, disclose recognition, and distinguish the displayed derivations from prior familiarity."
+        }
+      ],
+      "total": 100
+    },
+    "Y": {
+      "items": [
+        {
+          "criterion": "Q1",
+          "score": 20,
+          "evidence": "Y lines 17–35 define finite bilateral contracts, unit demand, strict preferences, arbitrary fixed feasible portfolios and consent rights. A feasible employer improvement is equivalent to choosing a better subset of the willing menu, including pure dismissals. Simultaneous public-rule reporting and the distinction between reported stability and incentives under actual applicant preferences are explicit."
+        },
+        {
+          "criterion": "Q2",
+          "score": 20,
+          "evidence": "Y lines 89–102: permanent rejections preserve feasible holds and give the offer bound. The terminal willing menu lies between the held and cumulative menus. Before the first rejection from a putative stable placement all offers are weak improvements on it, so consistency and substitutes preclude this rejection. At lines 106–122 singleton reporting shrinks willing menus while retaining the purported contract. If truth could be improved, its truncation through that contract leaves the reporter unmatched. Induction propagates each other worker's singleton-run rejections into the truncated run, giving the stated menu and matched-worker inclusions. Aggregate demand makes one additional hire impossible. Lines 124–126 derive employer-by-employer equality by comparing total hires with the inclusion of matched workers. Each argument has the claimed domain and direction."
+        },
+        {
+          "criterion": "Q3",
+          "score": 20,
+          "evidence": "Y lines 24–59 provide a finite implementation test and a constructive applicant-optimal assignment. Even without aggregate demand, at most one singleton run per contract identifies exactly the applicant's attainable terms, a substantive answer when manipulation is possible. Lines 61–64 and 124–126 establish employment invariance under the stronger restriction. Lines 79–82 explicitly carry these conclusions to multi-slot, multi-term placement."
+        },
+        {
+          "criterion": "Q4",
+          "score": 20,
+          "evidence": "Y lines 67–77: H's choice of s if present and all others otherwise preserves surviving choices under deletions but shrinks from two hires to one when s is added. Truth triggers displacement n from H, then m from K; m's singleton H report instead gives m and n at H and s at K. Under truth m and K block that result. For complementary F, both employees invite a block at G, a singleton violates IR, and empty F invites a team block after G takes a. Lines 74 and 85 delimit what these examples show about sufficiency and necessity."
+        },
+        {
+          "criterion": "Q5",
+          "score": 20,
+          "evidence": "Y lines 35–43, 67–82 and 89–129 make the rules, counterexample traces and proofs reproducible. The multiple-term quota benchmark both rationalizes the choice with contract weights and derives its hire-count formula. Lines 59, 74 and 85 distinguish the actual durability of a misreport, unresolved strategic questions and recollected admissions background from the self-contained derivations."
+        }
+      ],
+      "total": 100
+    }
+  }
+}

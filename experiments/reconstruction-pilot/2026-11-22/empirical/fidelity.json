@@ -1,0 +1,105 @@
+{
+  "review_mode": "Historical-fidelity review after resolving and locking independent scientific-quality scores. Experimental assignments stayed hidden. All nine frozen items scored once per arm; no denominator adjustment. The sealed holdout and feasibility report were compared with the manuscripts, submitted executable analyses and outputs. I separately verified Table 4(ii) feasibility on both raw files. With an intercept, NJ indicator, three chain indicators and ownership, require a measured FTE change and baseline wage in both states, and a follow-up wage unless permanently closed. The 357 stores comprise 290 NJ and 67 PA, including all six permanent closures at zero follow-up FTE. The NJ coefficient is 2.303860 and conventional OLS SE is 1.195532 (1.20); HC1 would give 1.450319. Requiring both wages with no closure exception gives N=351; requiring only the baseline wage gives N=365. These reviewer checks establish feasibility and earn neither manuscript credit.",
+  "arms": {
+    "X": {
+      "items": [
+        {
+          "criterion": "Correct two-state/two-wave store population and exposure",
+          "score": 1,
+          "evidence": "X/manuscript.tex:11–33, 35–60 and 63–80 identifies the $4.25 to $5.05 NJ increase on April 1, unchanged eastern PA floor, 331 NJ and 79 PA incumbent restaurants across four chains, and the February–March and November–December waves. Equal-weighted outlet changes distinguish these incumbents from new entrants."
+        },
+        {
+          "criterion": "Derive Table 3 balanced employment DID N=384 and coefficient 2.75 FTE, tolerance .01 and .5 observations; require executable regeneration",
+          "score": 1,
+          "evidence": "X/analysis.py:22–60 and 72–74 reconstructs FTE from all three components, assigns zero follow-up FTE only to permanent closures in its main estimate, and requires both waves. The script reproduced X/results.json (estimates.fte). There are 309 NJ + 75 PA = 384 stores; changes +0.4667 vs −2.2833 yield +2.7500 FTE and conditional SE 1.3423 (X/manuscript.tex:100–116). This matches the balanced Table 3 estimand."
+        },
+        {
+          "criterion": "Match both sample and conventional SE of published Table 4 model ii (N=357, 2.30 and 1.20, tolerance .01)",
+          "score": 0,
+          "evidence": "X/analysis.py:76–82 and X/manuscript.tex:202–205 compare within-chain contrasts weighted by the NJ share; the resulting 2.50 FTE is a different estimator. There is no 357-store common wage sample, chain-and-ownership model, or conventional 1.20 regression SE in X/results.json. The 384-store 2.75 and 1.34 refer to Table 3. The Table 4(ii) target was feasible on these bytes, as separately checked above."
+        },
+        {
+          "criterion": "Estimate within-NJ treatment intensity or low vs high initial wage",
+          "score": 1,
+          "evidence": "X/analysis.py:83–90 and X/results.json (wage_groups_NJ) estimate mean NJ FTE changes at the old floor (+1.205; n=94), between floors (+0.405; n=174), and at or above the new floor (−4.850; n=25); X/manuscript.tex:138–148 discusses selection on baseline wages. These are genuine within-NJ comparisons. The chosen cutoffs and resulting differences should not be credited as exact recovery of the paper's Table 3 wage-group values."
+        },
+        {
+          "criterion": "Implement at least two defensible sensitivity variants covering weighting, missingness or closure",
+          "score": 1,
+          "evidence": "X/analysis.py:22–38 and 72–82 implements full headcount in place of the half part-time weight (+2.412 employees per store), operating outlets only (+2.722 FTE), and setting temporary closures to zero (+2.509 FTE). See X/results.json (estimates.head, sensitivity.open/all) and X/manuscript.tex:108–123, 194–205."
+        },
+        {
+          "criterion": "Investigate compensation, hours or benefits plus product prices, with generated results",
+          "score": 1,
+          "evidence": "X/results.json (estimates.WAGE_ST, meal, HRSOPEN, free, discount and FIRSTINC) and X/manuscript.tex:150–192 show a relative starting-pay gain of $0.497/hour, tax-inclusive basket gain of $0.1011 (355 pairs), weekday hours change of −0.108 and free-meal change of +3.08 percentage points. These jointly satisfy the operating-margins item, without recovering the exact historical Table 7 price sample of 315."
+        },
+        {
+          "criterion": "Reconstruct 1986–91 entry exercise; missing files score 0",
+          "score": 0,
+          "evidence": "X/manuscript.tex:227–233 explicitly leaves entry unfinished; X/analysis.py reads only the incumbent survey. The packet lacks the state restaurant directories and covariates for the 1986–91 McDonald's entry exercise (holdout Table 8, p.790). Six observed incumbent closures are not an opening series."
+        },
+        {
+          "criterion": "Reconstruct 1991–92 CPS check; missing files score 0",
+          "score": 0,
+          "evidence": "X/manuscript.tex:228–233 identifies the broader employment evidence as unfinished. X/results.json has no monthly 1991–92 Current Population Survey analysis, and the sealed feasibility review confirms those records are absent (holdout Section VII, pp.789–791)."
+        },
+        {
+          "criterion": "Compare mechanisms against employment and price evidence; state identification limits",
+          "score": 1,
+          "evidence": "X/manuscript.tex:171–179, 212–233 considers payroll-cost adjustment through prices and competitive labor demand, improved recruitment/retention or demand shifts given higher wages, higher relative FTE and a higher menu basket. It identifies worker flows, sales, profits and hours as missing, and explains that an untreated trend gap of 2.75 FTE would explain the observed contrast (lines 77–95)."
+        }
+      ],
+      "total": 6
+    },
+    "Y": {
+      "items": [
+        {
+          "criterion": "Correct two-state/two-wave store population and exposure",
+          "score": 1,
+          "evidence": "Y/manuscript.tex:10–21 identifies the April 1 NJ wage increase from $4.25 to $5.05, unchanged eastern PA floor, 331 versus 79 baseline outlets from four named chains, both 1992 interview windows, and equal weighting of incumbent stores. The outcome for operating stores is distinguished from employment allowing permanent exit."
+        },
+        {
+          "criterion": "Derive Table 3 balanced employment DID N=384 and coefficient 2.75 FTE, tolerance .01 and .5 observations; require executable regeneration",
+          "score": 1,
+          "evidence": "Y/analysis.py:22–46 produces Y/results.json (employment) directly from paired FTE counts including permanent closures. Its rerun reproduced the submitted JSON. There are 309 NJ + 75 PA = 384 stores; the +0.4667 and −2.2833 FTE changes give +2.7500 FTE and conditional SE 1.3423 (Y/manuscript.tex:28–45), matching the balanced Table 3 contrast."
+        },
+        {
+          "criterion": "Match both sample and conventional SE of published Table 4 model ii (N=357, 2.30 and 1.20, tolerance .01)",
+          "score": 0,
+          "evidence": "Y/analysis.py:60–78 and Y/results.json (adjusted.employment) use the correct regressors but all 384 employment pairs and HC1 inference. The submitted coefficient is 2.784585 and its HC1 SE is 1.341441 (Y/manuscript.tex:49). Model ii requires both states to meet the baseline and follow-up wage rule, with the permanent-closure exception, and conventional OLS inference. Neither the published sample nor the coefficient/SE pair is recovered in the submission."
+        },
+        {
+          "criterion": "Estimate within-NJ treatment intensity or low vs high initial wage",
+          "score": 1,
+          "evidence": "Y/analysis.py:61–79 estimates the actual within-NJ fitted relationship with positive dollar wage shortfall, chain and ownership. Y/results.json (adjusted.NJ_gap_employment) gives n=293, +3.036 FTE per dollar of shortfall, or +0.304 per $0.10; the corresponding wage gradient is +$0.105 per $0.10 (Y/manuscript.tex:51–54). The item permits an intensity test, though the historical relative wage gap divided by starting wage and used a different sample."
+        },
+        {
+          "criterion": "Implement at least two defensible sensitivity variants covering weighting, missingness or closure",
+          "score": 1,
+          "evidence": "Y/manuscript.tex:45–49 and Y/analysis.py:36–46 change part-time weights to 0.25, 0.75 and 1 (contrasts 2.919, 2.581 and 2.412), restrict to responding outlets (2.722), and set temporary closures to zero (2.509). Each appears in Y/results.json (sensitivity)."
+        },
+        {
+          "criterion": "Investigate compensation, hours or benefits plus product prices, with generated results",
+          "score": 1,
+          "evidence": "Y/manuscript.tex:60–80 and Y/results.json (operations) report relative starting pay +$0.497/hour, tax-inclusive three-item basket +$0.1011 (355 pairs, +2.921 log points), opening hours −0.108, and free meals +3.08 percentage points. The script generates these outcomes (Y/analysis.py:47–58). The breadth criterion is satisfied; the price sample differs from historical Table 7 (315)."
+        },
+        {
+          "criterion": "Reconstruct 1986–91 entry exercise; missing files score 0",
+          "score": 0,
+          "evidence": "Y/manuscript.tex:83–85 leaves entry incomplete and describes the need for openings data. Y/analysis.py and Y/results.json contain only incumbent-survey outcomes. The state establishment counts and covariates needed for 1986–91 entry (Table 8, p.790) were absent from the packet."
+        },
+        {
+          "criterion": "Reconstruct 1991–92 CPS check; missing files score 0",
+          "score": 0,
+          "evidence": "Y/manuscript.tex:85 identifies aggregate employment as incomplete. Y/analysis.py does not ingest CPS microdata and Y/results.json contains no 1991–92 CPS comparison. The sealed feasibility review confirms that the monthly CPS records for Section VII (pp.789–791) were absent."
+        },
+        {
+          "criterion": "Compare mechanisms against employment and price evidence; state identification limits",
+          "score": 1,
+          "evidence": "Y/manuscript.tex:80–85 relates the rise in meal prices to tentative cost pass-through and relative FTE growth to competitive demand, possible wage-setting power and recruitment responses. It explains that hours worked, quantities, total labor costs and productivity are unavailable. Lines 19–24 and 45–54 identify the untested counterfactual, PA decline, and noncausal exposure gradient."
+        }
+      ],
+      "total": 6
+    }
+  }
+}

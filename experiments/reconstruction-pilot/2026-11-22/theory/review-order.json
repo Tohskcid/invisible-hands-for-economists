@@ -1,0 +1,11 @@
+{
+  "reviewer_role": "theory_blind_review",
+  "conditions_visible_to_reviewer": false,
+  "reviewer_received_historical_rubric_after_quality_lock": true,
+  "quality_sha256": "b76648b7a94f884cb80e2f865326052a3ced802ee1ff13511fc593f588d9f358",
+  "quality_locked_utc": "2026-11-21T19:26:54.302666+00:00",
+  "fidelity_sha256": "cb0f358c2590bf4e4a86deff7e8e4820bd7834ef814dbcd4d792bf95edbf375f",
+  "fidelity_received_utc": "2026-11-21T19:28:34.474201+00:00",
+  "fidelity_timestamp_source": "local output modification time; recorded after handoff",
+  "assessors_per_field": 1
+}

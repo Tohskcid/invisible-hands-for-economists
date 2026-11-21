@@ -1,0 +1,275 @@
+{
+  "review_mode": "Whole-paper historical fidelity against sealed obligations F1–F10, two ordered five-point parts each, with blind arm labels and a fixed 100-point denominator. Partial awards reflect explicitly recognizable portions of the historical obligations.",
+  "arms": {
+    "X": {
+      "items": [
+        {
+          "id": "F1",
+          "parts": [
+            {
+              "score": 5,
+              "evidence": "Lines 15–28 define bilateral contracts, unit demand, the outside option, organizational maximization, IR and deviations recruiting several willing signers. Lines 45–48 derive the reduction to a single new signer under substitutes."
+            },
+            {
+              "score": 2.5,
+              "evidence": "Lines 89–90 construct priority admissions with a fixed quota and explain how salaries or shifts enter applicants' and employers' rankings. They give no bidder/package/price contracts or seller portfolio feasibility for a package auction."
+            }
+          ]
+        },
+        {
+          "id": "F2",
+          "parts": [
+            {
+              "score": 2.5,
+              "evidence": "Lines 20–28 establish the nonblocking direction from the organization's choice of the assignment on the willing menu. This captures the organizational half of the opportunity-set test, but no two rejection-complement equations, equality of both sides' choices, or intersection representation appear."
+            },
+            {
+              "score": 2.5,
+              "evidence": "Lines 20–28 construct the organizational opportunity menu from improvements to applicants' assigned contracts and infer its choice from stability without substitutes. They do not construct a second opportunity set for applicants or recover the two equations."
+            }
+          ]
+        },
+        {
+          "id": "F3",
+          "parts": [
+            {
+              "score": 2.5,
+              "evidence": "Lines 30–35 define substitutes exactly by survival under contraction, equivalently persistence of rejection. The salary discussion at line 90 does not derive the cross-wage equivalence, least available wages or the prohibitive-wage convention."
+            },
+            {
+              "score": 2.5,
+              "evidence": "Lines 50–57 define aggregate demand for expanded menus and use it to bound headcounts; line 90 verifies it for fixed-priority hiring. There is no general quasi-linear wage-profit implication or wage-perturbation argument."
+            }
+          ]
+        },
+        {
+          "id": "F4",
+          "parts": [
+            {
+              "score": 2.5,
+              "evidence": "Lines 35–45 justify feasibility and finite termination and reach the applicant-best outcome. They contain neither the fixed-point lattice in opposed inclusion order nor iteration to the employer-best endpoint."
+            },
+            {
+              "score": 2.5,
+              "evidence": "Lines 37–45 prove simultaneous applicant optimality and order independence, and line 90 connects the rule to priority admissions. Employer pessimism at this endpoint and the reverse-proposing extreme are not established."
+            }
+          ]
+        },
+        {
+          "id": "F5",
+          "parts": [
+            {
+              "score": 2.5,
+              "evidence": "Lines 71–73 give a verified two-employer complementarity example with no stable assignment. Line 92 calls substitutes sufficient. There is no examination of the stronger claim fixing an arbitrary nonsubstitutable employer and varying the other preferences, or of the obstacle to that converse."
+            },
+            {
+              "score": 0,
+              "evidence": "No retirement or reduced-market transition appears. Lines 60–69 change one worker's report to compare her own incentives, with no iteration from old stable opportunities or comparison for all remaining parties."
+            }
+          ]
+        },
+        {
+          "id": "F6",
+          "parts": [
+            {
+              "score": 5,
+              "evidence": "Lines 53–58 use applicant optimality to nest willing menus, bound each institution's headcount using aggregate demand, and obtain the reverse total bound from inclusion of matched workers. Equality gives the claimed headcounts and employed identities."
+            },
+            {
+              "score": 0,
+              "evidence": "Lines 83–87 compare stable results at different reports and explicitly exhibit a true-preference block of the second outcome. They neither verify two different headcounts under a single specified profile nor develop the quantified construction for other agents' preferences."
+            }
+          ]
+        },
+        {
+          "id": "F7",
+          "parts": [
+            {
+              "score": 2.5,
+              "evidence": "Lines 63–66 show that an assignment obtaining y remains stable when only y is reported. They use matched-set invariance under aggregate demand to infer employment, rather than establishing singleton attainability for the applicant-optimal rule throughout the substitutes-only domain."
+            },
+            {
+              "score": 5,
+              "evidence": "Lines 60–69 handle arbitrary fixed other reports, reduce an alleged gain to a singleton profile, use matched-set invariance, then replay a truthful truncation under the full ranking. Organizational truthfulness is explicitly outside that result."
+            }
+          ]
+        },
+        {
+          "id": "F8",
+          "parts": [
+            {
+              "score": 5,
+              "evidence": "Lines 75–87 supply complete choices and a trace: H choosing i over a,b reduces employment, yet substitutes holds. Truth leaves i unmatched, while listing only Y gives her Y, which she ranks above unemployment."
+            },
+            {
+              "score": 2.5,
+              "evidence": "Lines 83–87 explicitly show the operative distinct-worker displacement: adding i ejects both a and b; their offers at other firms start a chain reaching i. This verifies one instance only. There is no harmless multiple-term violation or result covering every employer satisfying the distinct-worker condition."
+            }
+          ]
+        },
+        {
+          "id": "F9",
+          "parts": [
+            {
+              "score": 0,
+              "evidence": "Line 90 uses additive scores over contracts. It does not assign new and endowed workers to distinct heterogeneous jobs or derive valuations by aggregation and endowment net of a baseline."
+            },
+            {
+              "score": 2.5,
+              "evidence": "Line 90 rationalizes responsive fixed-quota hiring and proves both restrictions directly. It provides neither the general endowed-assignment proof nor a nontrivial specialty or group reserve."
+            }
+          ]
+        },
+        {
+          "id": "F10",
+          "parts": [
+            {
+              "score": 2.5,
+              "evidence": "Lines 35–43 retain full offer histories, rechoose on them, and terminate within the finite contract bound. They explain why rejection persists under substitutes. They do not compare two independently defined update laws round by round or analyze unrestricted cumulative convergence."
+            },
+            {
+              "score": 0,
+              "evidence": "Lines 71–90 give multi-employer failure and restricted priority hiring. There is no theorem for general rational choices with a single organization, no analysis separating cumulative convergence from feasibility with several, and no proxy auction."
+            }
+          ]
+        }
+      ],
+      "total": 50.0
+    },
+    "Y": {
+      "items": [
+        {
+          "id": "F1",
+          "parts": [
+            {
+              "score": 5,
+              "evidence": "Lines 17–32 specify bilateral agreements, unit demand and outside option, strict portfolio choices, IR, and a blocking feasible portfolio with consent from every new signer. This explicitly permits multi-applicant deviations."
+            },
+            {
+              "score": 2.5,
+              "evidence": "Lines 79–82 construct priority admissions and a placement rule with several salaries or shifts per pair, explaining how those terms enter choice. The paper does not construct package bids, seller feasibility or bidder/package/price contracts."
+            }
+          ]
+        },
+        {
+          "id": "F2",
+          "parts": [
+            {
+              "score": 2.5,
+              "evidence": "Lines 24–32 characterize absence of blocking by the employer choosing its incumbents on the menu of willing workers. This establishes one side of the opportunity logic, but the coupled rejection-complement equations, their intersection and equality with both choices are absent."
+            },
+            {
+              "score": 2.5,
+              "evidence": "Lines 24–32 construct organizational opportunities from strict worker improvements plus incumbents and derive the organizational choice from nonblocking without substitutes. The applicants' counterpart opportunity set and the two equations are not constructed."
+            }
+          ]
+        },
+        {
+          "id": "F3",
+          "parts": [
+            {
+              "score": 2.5,
+              "evidence": "Lines 37–41 give the exact substitutes definition and permanent-rejection interpretation on arbitrary contract menus. No least-wage representation, prohibitive wage or two-way cross-wage comparative static is developed."
+            },
+            {
+              "score": 2.5,
+              "evidence": "Lines 52–59 define aggregate demand by hire counts and lines 79–82 verify the law in priority examples. They do not derive it for quasi-linear profit-maximizing substitutes preferences over the relevant wage domain."
+            }
+          ]
+        },
+        {
+          "id": "F4",
+          "parts": [
+            {
+              "score": 2.5,
+              "evidence": "Lines 43–48 and 89–102 justify finite proposal iteration and its worker-best endpoint. There is no lattice in opposed inclusion order or derivation of its opposite endpoint."
+            },
+            {
+              "score": 2.5,
+              "evidence": "Lines 45–48 and 98–102 establish optimality for every applicant, and line 80 identifies the admissions reduction. No employer-pessimism proof or employer-proposing counterpart is given."
+            }
+          ]
+        },
+        {
+          "id": "F5",
+          "parts": [
+            {
+              "score": 2.5,
+              "evidence": "Lines 76–77 exhaust assignments in a two-employer complementary-hiring example, and line 85 leaves the weakest domain open. The failed historical universal converse about an arbitrary nonsubstitutable employer and the choice of all other preferences is not formulated or tested."
+            },
+            {
+              "score": 0,
+              "evidence": "There is no retirement transition starting from a stable outcome and no resulting welfare comparison for remaining workers and firms. The report comparisons at lines 104–122 concern incentives at a fixed roster."
+            }
+          ]
+        },
+        {
+          "id": "F6",
+          "parts": [
+            {
+              "score": 5,
+              "evidence": "Lines 61–64 and 124–126 compare terminal and stable opportunity menus, use aggregate demand to bound hires at each firm, then use worker optimality and the total count to prove both invariances."
+            },
+            {
+              "score": 0,
+              "evidence": "Lines 68–74 give employment differences under different reports and state that the second placement is blocked at the true profile. No common-profile pair with different headcounts is verified and no general Theorem 9 construction is supplied."
+            }
+          ]
+        },
+        {
+          "id": "F7",
+          "parts": [
+            {
+              "score": 5,
+              "evidence": "Lines 50–59 and 104–109 isolate the substitutes-only claim: the old outcome is stable under the singleton report because opportunities shrink, and applicant optimality then gives the reporter her sole acceptable contract."
+            },
+            {
+              "score": 5,
+              "evidence": "Lines 104–122 use truthful truncation, inclusion of singleton-run menus in truncated-run menus, persistence of other workers' rejections and aggregate-demand counts to preclude any profitable report. Lines 35 and 57 specify fixed arbitrary reports and the applicant-side scope."
+            }
+          ]
+        },
+        {
+          "id": "F8",
+          "parts": [
+            {
+              "score": 5,
+              "evidence": "Lines 67–74 verify substitution, the two-to-one size drop, and both proposal outcomes. Under truth m is unmatched; reporting only H assigns her there, a strict improvement under the stated ranking."
+            },
+            {
+              "score": 2.5,
+              "evidence": "Lines 68–74 isolate a contraction in hiring when s is added to the menu with m,n, both distinct other workers, and give a manipulation with a second firm. This is a specific instance. The harmless off-path multi-term case and a quantified construction from a general such drop are missing."
+            }
+          ]
+        },
+        {
+          "id": "F9",
+          "parts": [
+            {
+              "score": 0,
+              "evidence": "Lines 79–82 attach positive weights to priority listings, without constructing worker-by-job assignments, endowments, aggregation or the incremental-valuation baseline."
+            },
+            {
+              "score": 2.5,
+              "evidence": "Lines 79–82 derive substitutes and headcount monotonicity for responsive top-quota hiring with contract priorities. They do not prove either property for the full endowed valuation class or construct group or specialty reserves."
+            }
+          ]
+        },
+        {
+          "id": "F10",
+          "parts": [
+            {
+              "score": 2.5,
+              "evidence": "Lines 41–46 and 89–96 keep cumulative menus, allow rechoice over them, and bound the number of offers. Old rejects cannot return under substitutes. No distinct update systems are shown to yield identical round-by-round sequences, and unrestricted convergence is not analyzed."
+            },
+            {
+              "score": 0,
+              "evidence": "Lines 76–82 treat nonexistence with complementary firms and restricted priority benchmarks. They give no general single-organization stability theorem, multi-organization cumulative feasibility comparison or proxy-auction interpretation."
+            }
+          ]
+        }
+      ],
+      "total": 52.5
+    }
+  }
+}

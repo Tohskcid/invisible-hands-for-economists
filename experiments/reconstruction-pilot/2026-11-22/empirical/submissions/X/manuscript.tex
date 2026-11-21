@@ -1,0 +1,244 @@
+\documentclass[11pt]{article}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,booktabs}
+\title{Staffing and prices after New Jersey's 1992 minimum wage increase}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+On April 1, 1992, New Jersey raised its hourly minimum wage from
+\$4.25 to \$5.05. Eastern Pennsylvania restaurants faced the same
+federal floor of \$4.25 as before. Across 384 incumbent fast-food
+restaurants with paired staffing data, New Jersey gained 0.47
+full-time equivalents per store while Pennsylvania lost 2.28. The
+difference of 2.75 came chiefly from full-time nonmanagement staff.
+Starting pay rose by a relative \$0.50 per hour and the price of a
+three-item basket by \$0.10. Weekday opening hours in New Jersey were
+almost unchanged. The estimates describe short-run adjustments at
+existing locations. With one pre-policy observation and one state on
+each side, the comparison cannot distinguish the policy from a
+differential state employment trend.
+\end{abstract}
+
+\section{Restaurants, timing, and measurement}
+The unit is a location operating at the first survey, with each
+location weighted equally. Managers or assistant managers at Burger King,
+KFC, Roy Rogers, and Wendy's reported staffing and operating conditions.
+The two interview windows were February 15--March 4 and November
+5--December 31, 1992. The increase was 18.8 percent. It was scheduled
+before the first interviews, which explicitly asked New Jersey managers
+whether they had heard of it. The baseline can therefore already
+reflect adjustments in anticipation.
+
+The supplied file has 331 New Jersey and 79 eastern Pennsylvania
+locations. In chain order as listed above, the counts are
+136, 68, 82, and 45 in New Jersey and 35, 12, 17, and 15 in Pennsylvania.
+Each row contains both waves. Sheet 407 occurs once in each state,
+at different chains. State and sheet jointly identify all 410 rows.
+One New Jersey follow-up (sheet 178) has a recorded year of 1991.
+I use the wave designation in the main analysis and check its exclusion.
+
+The primary outcome is staffing in full-time equivalents (FTE), the
+sum of full-time nonmanagers, managers and assistants, and half the
+part-time nonmanager count. The survey asks for these groups separately.
+The half-weight approximates work hours, which the data do not record.
+Headcount gives each employee unit weight. Both measures count positions
+at a location and cannot track individual workers.
+
+I assign zero post-period employment to the six permanent closures
+(five in New Jersey and one in Pennsylvania). Both states include them
+in the incumbent cohort. Four New Jersey stores closed for renovations,
+highway construction, or a mall fire, and one refused the follow-up.
+Temporary closure leaves payroll status uncertain, so these five stores
+contribute no post-period outcome in the main comparison. The other
+321 New Jersey and 78 Pennsylvania restaurants answered. A dot in the
+file means missing. Each outcome requires all its components at both
+waves, with no imputation for item nonresponse. By state, usable
+baseline/follow-up FTE counts are 321/319 and 77/77, yielding 309
+and 75 complete pairs. Wage and operating outcomes require a completed
+second interview and describe reporting restaurants still in operation.
+
+\section{Design and interpretation}
+The state sets the policy, and initial location assigns exposure.
+Let $D_i$ denote a New Jersey store and $Y_{it}(d)$ its outcome at
+wave $t$ under policy regime $d$. For the observed pairs $S$ of a
+given outcome I estimate
+\[
+ \widehat\delta=\overline{(Y_1-Y_0)}_{D=1,S}
+               -\overline{(Y_1-Y_0)}_{D=0,S}.
+\]
+This is the interaction coefficient in a two-wave regression with
+restaurant and wave fixed effects. Differencing removes fixed
+location attributes, and the Pennsylvania change measures the common
+time effect. There are no post-policy control variables.
+
+The intended causal quantity for employment is the average policy effect
+on post-period staffing at the New Jersey incumbents represented by the
+pairs. With a stable comparison sample, no anticipation, and no spillover
+to Pennsylvania, adding and subtracting New Jersey's untreated change gives
+\[
+ \delta=E[Y_1(1)-Y_1(0)\mid D=1,S]+
+ \underbrace{E[\Delta Y(0)\mid D=1,S]-
+ E[\Delta Y(0)\mid D=0,S]}_{B}.
+\]
+Parallel untreated trends set $B=0$. A relative untreated New Jersey gain
+of 2.75 FTE per store would explain the entire estimate. Local demand,
+different winter trading patterns, or an unusually strong Pennsylvania
+baseline could produce such a gap. Cross-border customer or worker
+movement could also change the control outcome. Only one pre-policy
+wave is available. Neither pre-trends nor the absence of spillovers
+can be tested here. Extending the estimate to all incumbents requires
+an assumption about missing changes. For prices and benefits,
+policy-dependent survival or reporting can also change which stores have
+two meaningful measurements.
+
+\section{Staffing and pay}
+\begin{table}[ht]
+\centering
+\caption{Paired changes per incumbent restaurant}
+\small
+\begin{tabular}{lrrrrrr}
+\toprule
+& \multicolumn{2}{c}{Paired stores} & \multicolumn{2}{c}{Mean change}
+& & \\
+Outcome & NJ & PA & NJ & PA & Difference & SE\\
+\midrule
+FTE &309&75&0.47&$-2.28$&2.75&1.34\\
+Headcount &309&75&0.19&$-2.23$&2.41&1.49\\
+FTE excluding managers &315&76&0.45&$-2.49$&2.94&1.32\\
+Starting wage (\$/hour)&301&68&0.47&$-0.03$&0.50&0.05\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Mean FTE rose from 20.43 to 20.90 in New Jersey and fell from
+23.38 to 21.10 in Pennsylvania. Most of the contrast comes from the
+comparison state's decline. The relative gain equals about 13.5 percent
+of initial New Jersey staffing. Within the identical 384 pairs, the
+relative changes were $+3.16$ full-time nonmanagers, $-0.68$ part-time
+nonmanagers, and $-0.07$ managers. Half-weighting the second component
+recovers the FTE difference. Thus shifting the assumed part-time weight
+anywhere between one-half and one preserves a positive estimate.
+Changes in actual hours within employment categories remain unmeasured.
+
+Standard errors (SE) in both tables are
+$\sqrt{s^2_{\Delta,NJ}/n_{NJ}+s^2_{\Delta,PA}/n_{PA}}$, with
+$s^2$ the sample variance of paired changes. They summarize precision
+under independent sampling of restaurants conditional on the two state
+environments. The corresponding normal-reference 95 percent interval for
+FTE is $[0.12,5.38]$. Restaurants may share chain, local, or state
+shocks. There are only two policy clusters, one treated. The interval
+does not quantify uncertainty over state-level counterfactual trends,
+and a policy-level significance claim would be unwarranted.
+
+New Jersey starting pay rose from \$4.61 to \$5.08 versus \$4.65 to
+\$4.62 in Pennsylvania (levels rounded independently). The bite of the
+law differed across stores. Among New Jersey stores reporting baseline
+pay, 101 started at \$4.25, 185 strictly between the two floors, and 28
+at or above \$5.05. In that order, mean paired starting-pay changes were
+\$0.81, \$0.38, and $-$\$0.16 (95, 179, and 27 pairs). Their FTE changes
+were $+1.20$, $+0.41$, and $-4.85$ (94, 174, and 25 pairs).
+Stores facing the largest required increases therefore show no average
+staffing contraction. Initial pay reflects local conditions, however,
+and grouping on a noisy baseline wage can itself generate convergence.
+High-wage stores are few and can face competitive wage responses even
+without a statutory shortfall. This comparison supplies a check on
+exposure, not an independent experiment.
+
+\section{Operating adjustments}
+\begin{table}[ht]
+\centering
+\caption{Changes among reporting restaurants operating at follow-up}
+\small
+\begin{tabular}{lrrrrrr}
+\toprule
+& \multicolumn{2}{c}{Paired stores} & \multicolumn{2}{c}{Mean change} & & \\
+Outcome & NJ & PA & NJ & PA & Difference & SE\\
+\midrule
+Three-item price (\$)&287&68&0.067&$-0.034$&0.101&0.044\\
+Weekday hours open &320&78&0.001&0.109&$-0.108$&0.103\\
+Registers open at 11 a.m.&298&74&$-0.040$&$-0.216$&0.176&0.102\\
+Installed registers &306&76&$-0.042$&0.132&$-0.174$&0.108\\
+Free meal offered (pp)&321&78&4.36&1.28&3.08&4.68\\
+Discounted meal offered (pp)&321&78&$-8.72$&$-6.41$&$-2.31$&4.02\\
+First raise (\$/hour)&241&55&$-0.010$&$-0.017$&0.008&0.019\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The basket sums the tax-inclusive price of one medium soda, small
+fries, and regular hamburger (two pieces of chicken or equivalent at
+KFC). Its New Jersey baseline was \$3.36. The relative increase of ten
+cents is about 3.0 percent of that price. Within-chain price contrasts
+are positive for all four chains. Weighting those contrasts by their
+shares of New Jersey price pairs gives \$0.103. Higher consumer prices
+are consistent with some adjustment to payroll costs. Starting wages
+do not give the wage bill, and sales volumes, input costs, and net
+prices before tax are unavailable for a pass-through calculation.
+
+Weekday hours barely moved in New Jersey. The relative increase in
+registers open at 11 a.m. reflects a larger Pennsylvania reduction.
+Neither that snapshot nor the installed register count measures sales
+or service quality. Meal indicators overlap where both benefits are
+offered (pp denotes percentage points). Their mixed changes and the
+small first-raise contrast give little evidence of a broad offset in
+these measured benefits. First-raise amounts have fewer respondents.
+The paired first-raise delay contrast is $+2.51$ in recorded units
+(SE 2.16), but the forms ask for weeks and the codebook says months,
+so its duration is ambiguous. The baseline recruitment field records a
+cash bounty while follow-up records any special program. Their difference
+would mix a change in definition with a change in practice.
+
+\section{Robustness, mechanisms, and scope}
+Excluding permanent closures gives a relative FTE change of 2.72.
+Counting all four temporary closures as having zero staff gives 2.51.
+Removing the anomalously dated follow-up gives 2.79, and excluding
+New Jersey shore stores gives 2.97. Permanent closure rates themselves
+were 5/331 and 1/79. These few events give limited information about
+a policy effect on exit.
+
+Comparing stores within the same chain and averaging contrasts with New
+Jersey FTE-pair shares gives 2.50. The chain-specific contrasts are
+4.39 (Burger King), $-1.59$ (KFC), 2.49 (Roy Rogers), and 3.42
+(Wendy's). The aggregate pattern is not shared by every chain.
+Keeping New Jersey fixed and using only the Pennsylvania northeast
+Philadelphia suburbs (34 pairs) gives 4.33, versus 1.44 using the
+Easton-area group (41 pairs). The sign survives these choices, but
+the size depends materially on which local employment trend represents
+New Jersey's counterfactual.
+
+A competitive labor-demand response to higher wages can include reduced
+hours per worker, substitution toward other inputs, or lower hiring at
+new locations. None requires an immediate decline in measured incumbent
+headcount if demand is also growing. Alternatively, when recruitment or
+retention improves with pay, a higher wage floor can sustain or increase
+staffing even as starting pay rises. The surveys lack linked worker flows,
+vacancies, productivity, profits, and transaction volumes to discriminate
+among these explanations. The observed price increase and staffing mix
+are adjustment margins, not a decomposition of the policy's costs.
+
+\paragraph{Conclusion.}
+By late 1992 these New Jersey incumbents had raised starting wages and
+menu prices relative to their Pennsylvania counterparts, with modest
+absolute staffing growth and nearly unchanged weekday hours. A causal
+reading of the larger relative staffing gain rests primarily on the
+untested Pennsylvania counterfactual. New restaurants never enter this
+baseline cohort. Estimating entry requires dated establishment openings
+and a consistent geographic sampling frame. Measuring net industry or
+statewide employment requires staffing for entrants and exits as well
+as representative coverage beyond these chains, for example through an
+establishment payroll panel. Those estimates remain unfinished because
+the required data were not supplied.
+
+\paragraph{Sources and replication.}
+The institutional amounts, geography, and field windows come from
+\texttt{public-task.json}. The only observations are
+\texttt{input/observations.dat}. The supplied codebook gives fixed-width
+columns, status codes, and units, and the two blank questionnaires give
+the wording and item definitions. From the task directory, running
+\texttt{python3 analysis.py} with standard-library Python regenerates
+\texttt{results.json}, including unrounded estimates, denominators,
+conditional precision measures, and sensitivity comparisons.
+\end{document}

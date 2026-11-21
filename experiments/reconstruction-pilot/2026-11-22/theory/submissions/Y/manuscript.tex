@@ -1,0 +1,146 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,booktabs,geometry}
+\geometry{margin=1in}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\out}{\varnothing}
+\title{Placement with Negotiable Terms\\\large Voluntary assignments and the value of changing an application}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+An offer specifies both an organization and the terms on which an applicant would join. I give an exact finite test for an assignment to survive withdrawals and joint offers, then study a service that processes applications in preference order. If organizational choices satisfy substitutes, permanent rejection implements the applicants' favorite stable assignment. An applicant's attainable contracts under unilateral misreporting can be tested one contract at a time. If expanding the menu also weakly increases the number hired, none of these reports can improve the applicant's terms or placement. A three-applicant market separates the existence and incentive conclusions. With complementary hires even existence can fail.
+\end{abstract}
+
+\section{The agreement and the deviation}
+Consider a placement office that lists shifts, salaries or training tracks along with vacancies. Two listings at one organization can give an applicant quite different reasons to stay. Counting employees alone therefore cannot identify a voluntary assignment.
+
+Let $D,H,X$ be finite sets of applicants, organizations and contracts. Each $x\in X$ names one $d(x)$ and one $h(x)$. Write $X_j$ for contracts naming party $j$, and $S_j=S\cap X_j$. An assignment $A\subseteq X$ names each applicant at most once. Write $a_d$ for her contract or $0$ (outside). Each $d$ strictly orders $X_d\cup\{0\}$. Each $h$ strictly orders its feasible subsets of $X_h$, including the empty set, each containing at most one contract per applicant. The feasible family is fixed across menus. Write $C_h(S)$ for the unique highest-ranked feasible subset of $S_h$; an unavailable or infeasible portfolio cannot be chosen. An assignment is feasible if each $A_h$ is feasible. Individual rationality (IR) requires $a_d\succeq_d0$ and $C_h(A_h)=A_h$ for all parties. Thus a firm can drop contracts unilaterally whenever the resulting portfolio is feasible.
+
+A block at $h$ is a feasible portfolio $B\subseteq X_h$ strictly preferred by $h$ to $A_h$ such that every $x\in B\setminus A_h$ has $x\succ_{d(x)}a_{d(x)}$. Incumbents may stay on unchanged terms, new signers may leave an old employer, and dropped workers have no veto. The organization can replace a worker's terms only with her consent. Stability means IR and absence of such a block. This permits simultaneous recruitment of several workers, even when none is wanted alone. Utilities depend only on one's own assignment. Deviations involving side payments outside $X$, binding cross-firm deals, or consent rights over departures are outside the model.
+
+Define the menu of willing counterparties, including incumbents, by
+\[
+ U_h(A)= A_h\cup\{x\in X_h:x\succ_{d(x)}a_{d(x)}\}.
+\]
+For any feasible, applicant-IR assignment the exact stability test is
+\begin{equation}
+ C_h(U_h(A))=A_h\quad\text{for every }h. \label{eq:test}
+\end{equation}
+Indeed $A_h$ is available and any preferred feasible subset of this menu is a block, including a profitable dismissal; a maximizing $A_h$ also maximizes on its own menu. Thus exhaustive enumeration gives a necessary and sufficient implementation test for any particular primitive profile. A service with accurate inputs can select any passing assignment by a fixed tie rule; an empty list certifies impossibility under these deviation rights.
+
+\section{A service based on permanent rejection}
+Only applicants' submitted strict rankings and organizations' submitted strict portfolio rankings enter the rule. Reports are simultaneous, the rule deterministic and public, and applicants can reorder, truncate or declare every listing unacceptable. A fixed order breaks scheduling ties. Voluntary retention is evaluated at actual preferences. The incentive comparisons hold for every fixed profile of others' reports in the stated domain, without a prior or an information advantage. Organizational rankings can alternatively be administrative rules fixed in advance; we give no organizational truth-telling guarantee.
+
+Impose \emph{substitutes} (S) on each organizational choice: for $S\subseteq T\subseteq X_h$,
+\[
+ C_h(T)\cap S\subseteq C_h(S).
+\]
+A rejected listing stays rejected as offers accumulate. This restriction applies even to menus with several terms for one worker. Strict maximization separately gives menu consistency: if $C_h(T)\subseteq S\subseteq T$, then $C_h(S)=C_h(T)$, since its unique maximizer remains available.
+
+Start with empty cumulative menus $P_h$. An applicant currently held by no organization who still has an unoffered contract above $0$ offers her favorite such contract. Add it to the relevant $P_h$ and hold $C_h(P_h)$ there. Other holds persist. Stop when nobody can offer. Cumulative menus record old offers for bookkeeping; a rejected offer cannot revive under (S).
+
+\begin{theorem}\label{th:da}
+For every reported profile satisfying (S), the procedure ends within $|X|$ offers at a stable assignment for those reports. Every applicant weakly prefers it to her position at every other stable assignment for the reports. The assignment is independent of the order of eligible applicants.
+\end{theorem}
+The proof in Appendix~\ref{app:da} identifies the economic content of rejection: an offer once turned down cannot belong to any stable assignment. Applicant optimality is a welfare comparison within the stable set. Organizations and applicants need not share an objective, and no interpersonal surplus measure has been imposed.
+
+\section{What one applicant can obtain}
+Fix others' reports and let $i$ evaluate outcomes with her true order. For $y\in X_i$ the \emph{singleton report} lists only $y$ above $0$. Below-outside rankings never affect a proposal.
+\begin{theorem}\label{th:sp}
+Under (S), a contract $y$ is attainable by some report of $i$ if and only if her singleton report for $y$ obtains it. The outside option is always attainable. Suppose in addition each organization obeys the law of aggregate demand (LAD):
+\[
+ S\subseteq T\subseteq X_h\quad\Longrightarrow\quad |C_h(S)|\leq |C_h(T)|.
+\]
+Then for every applicant, every true order and every admissible profile of others' reports, truthful reporting weakly dominates every unilateral report.
+\end{theorem}
+Appendix~\ref{app:sp} proves the result by comparing an applicant who exhausts a truncated list with one who submits just a single listing. LAD counts people because every chosen portfolio contains at most one contract per applicant. It does not require an organization to prefer every larger portfolio. Even on this domain a report can hurt: with one mutually acceptable vacancy, declaring it unacceptable gives the worker $0$. A report changing only rankings below $0$ gives the same outcome. Outside the LAD guarantee, the singleton tests compute the entire individual opportunity set with at most $|X_i|$ reruns. A profitable report need only improve on the truthful outcome according to the actual order. Stability for submitted orders alone does not ensure the misreported placement will survive recontracting.
+
+\begin{proposition}\label{prop:size}
+Under (S) and LAD, every stable assignment for a fixed profile employs the same set of workers and fills the same number of slots at each organization.
+\end{proposition}
+Thus alternative stable selections can change terms or partners, while their employment totals are pinned down. Appendix~\ref{app:size} proves the claim without assuming identical contracts for a given pair.
+
+\section{Boundaries and applications}
+\paragraph{Substitutes without demand monotonicity.}
+There are two firms $H,K$ and three workers $s,m,n$, with one contract per pair. Workers $s,m$ rank $K$ above $H$; $n$ ranks $H$ above $K$; all put $0$ last. Firm $K$ takes its highest available worker in order $n,m,s$, leaving its single vacancy empty only if necessary. At $H$ the full portfolio order begins
+\[
+ \{s\}\succ\{m,n\}\succ\{m\}\succ\{n\}\succ\emptyset ,
+\]
+with every remaining portfolio below empty in any strict order. Hence $H$ takes $s$ alone if available and otherwise takes all available workers. Removing alternatives retains every previously chosen worker who remains, so (S) holds. Adding $s$ to $\{m,n\}$ reduces employment from two to one.
+
+With truthful reports, process $m,n,s$ first: $K$ holds $m$, $H$ holds $n$, and $K$ rejects $s$. Then $s$ offers to $H$, displacing $n$; $n$ goes to $K$, displacing $m$; $H$ rejects $m$. Worker $m$ ends unmatched. If $m$ lists only $H$, the first offers place $m,n$ at $H$ and $s$ at $K$ without a rejection. The gain from $0$ to $H$ is strict. In fact this latter allocation is blocked under the truth by $m$ and $K$. Thus universal individual strategy-proofness under (S) alone is \emph{disproved} for this rule. LAD is a sufficient domain restriction; the example does not make it necessary for every market.
+
+\paragraph{Complementary hires and nonexistence.}
+Use two workers $a,b$ and two firms $F,G$. Firm $F$ ranks the pair above empty and either singleton below empty. Firm $G$ takes one worker, preferring $a$ to $b$ to empty. Both jobs are acceptable to both workers, with $F\succ_a G$ and $G\succ_b F$. If $F$ hires both, $b$ and empty $G$ block. If $F$ hires exactly one, it violates IR. If $F$ is empty, stability at $G$ requires it to hire $a$ (otherwise unmatched $a$ and $G$ block). Then $a$ prefers $F$ and unmatched $b$ will join her, so the pair blocks at $F$. These cases exhaust the feasible assignments. Testing only one new signer at a time would miss the last block. The pair reverses a singleton rejection, violating (S).
+
+\paragraph{Two institutional benchmarks.}
+In admissions with one listing per student and school, a quota $q$ and a fixed strict priority over acceptable students yield a choice of the highest $q$ available acceptable students, or all if fewer. Removing offers cannot worsen a survivor's priority position; chosen size is the smaller of $q$ and the number acceptable. Thus both restrictions hold, including $q=0$. Such choices can be rationalized by a strict portfolio order, for example additive distinct powers of two in priority order for acceptable students, with unacceptable students excluded from desirable portfolios and the quota enforced by feasibility. The procedure specializes to student-proposing deferred acceptance and Theorems~\ref{th:da}--\ref{th:sp} give existence, optimality and unilateral incentives in that benchmark.
+
+With one vacancy but many possible salaries or shifts per pair, a firm takes its highest-ranked acceptable available contract or none. A surviving chosen contract stays best on a smaller menu and employment is the indicator of a nonempty acceptable menu. The same results follow without ranking applicants independently of terms. With multiple slots a firm can use a fixed strict priority over acceptable listings: keep the best available listing for each applicant, then take the highest $q$ of those finalists. A chosen listing that survives menu contraction remains its worker's best, and the number of rival workers with a better finalist can only fall. Size is the minimum of $q$ and the number of distinct workers with acceptable offers. This rule therefore meets (S) and LAD even when the ranking interleaves different workers' terms. It is rationalized on feasible portfolios by the same powers-of-two construction, assigning weights to listings.
+
+\paragraph{Scope and lineage.}
+From recollection, the fixed-terms proposal benchmark is associated with Gale and Shapley's college-admissions model. Substitutes express the same rejection principle for a chooser of portfolios. Here the rejected object and the applicant's welfare comparison are both contract-specific. All results used below are derived from the primitives. The paper gives a profile test and sufficient domain guarantees, leaving a characterization of the weakest uniform domain, coordinated misreports, and organizational incentives open in this treatment.
+
+\appendix
+\section{Rejections and stable assignments}\label{app:da}
+\paragraph{Complete paper proof of Theorem~\ref{th:da}.}
+Fix any finite reported profile as specified in Section 1 with (S) at every organization. We prove termination, stability, applicant optimality, and order independence for every eligible schedule.
+
+\textit{1. Feasibility and termination.}
+On adding $x$ to $P_h$, (S) implies that the new hold lies in the old hold union $\{x\}$. All previously held contracts can therefore only persist or disappear, except for the newly proposed contract. The proposer was free and all holds within a firm are feasible. Induction from empty holds gives global feasibility after each offer. There are at most $|X|$ distinct offers. At termination an applicant holds an acceptable contract or has exhausted all acceptable contracts. This includes empty lists.
+
+\textit{2. Terminal stability.}
+Let $A$ be the terminal holds. At each firm $A_h=C_h(P_h)$ and menu consistency gives $C_h(A_h)=A_h$. Every contract an applicant prefers to her terminal outcome was proposed: the proposal sequence descends her order and an unmatched applicant exhausted her list. Thus $A_h\subseteq U_h(A)\subseteq P_h$ and menu consistency proves (\ref{eq:test}). All held contracts were acceptable.
+
+\textit{3. Rejection lemma.}
+Fix any stable assignment $B$ for these reports. Suppose a contract of $B$ is rejected (newly turned down or removed from hold), and consider the first such step. Every contract offered up through this step is weakly preferred by its proposer to her position at $B$: if that position is $0$, proposals are acceptable; if a proposal ranks lower than her contract in $B$, she must already have offered that contract and been rejected at an earlier step before she could propose again. At the rejecting firm $h$, then, $P_h\cup B_h\subseteq U_h(B)$, and this sub-menu contains $B_h$. Equation (\ref{eq:test}) and menu consistency yield $C_h(P_h\cup B_h)=B_h$. A rejected $x\in B_h\cap P_h$ must consequently belong to $C_h(P_h)$ by (S), a contradiction.
+
+\textit{4. Dominance and uniqueness of the applicant vector.}
+If someone preferred her stable position at $B$ to her terminal position, it would be a contract, would have been offered by step 2, and would have been rejected. Step 3 excludes this. Every schedule gives a stable assignment dominating every stable assignment applicant by applicant, hence two terminal vectors weakly dominate each other. Strict orders give identical contracts or $0$ for every worker. This determines the entire assignment.\hfill$\square$
+
+\section{Individual reports}\label{app:sp}
+\paragraph{Complete paper proof of Theorem~\ref{th:sp}.}
+Fix any worker $i$ and arbitrary fixed reports of all other parties satisfying the hypotheses. Compare allocations using $i$'s specified true strict order. Unmatched is secured by an empty acceptable list.
+
+\textit{1. Singleton attainability under (S).}
+If some report yields $y$ for $i$, let $B$ be that reported stable outcome from Theorem~\ref{th:da}. Under the singleton report for $y$, $B$ stays IR and $U_h(B)$ can only shrink while retaining $B_h$: $i$ still accepts $y$ and prefers no alternative contract to it. Menu consistency preserves (\ref{eq:test}). At this new profile applicant optimality therefore yields $y$ for $i$, since it is her unique acceptable contract. The converse follows by using that report itself.
+
+\textit{2. Truncating the truth.}
+Suppose $y$ strictly improves on $i$'s truthful outcome. Then $y$ is above $0$. Let profile $L$ keep exactly the contracts at least as good as $y$ acceptable to $i$, in true order. If $i$ finishes matched under $L$, her position is at least $y$. Restoring her full true list leaves all improvements on that position unchanged, hence preserves IR and (\ref{eq:test}) at the resulting assignment. This contradicts optimality at the truthful profile. Thus $i$ ends unmatched at $L$ and offers all contracts down to and including $y$.
+
+\textit{3. Comparing the terminal menus.}
+Let $P_h$ now denote terminal menus at $L$, and let $Q_h$ be terminal menus under the singleton report for $y$. We show $Q_h\subseteq P_h$ by induction over the singleton run. Worker $i$ can only offer $y$, already offered at $L$. For another worker $j$ about to offer $x$, all her more preferred acceptable contracts were rejected earlier in the singleton run. By induction those earlier menus were subsets of the corresponding $P_h$. Each such rejection persists in $P_h$ by (S). Hence $j$ at $L$ cannot finish holding a better contract than $x$. If she finishes holding $x$ or a worse contract she must have offered $x$; if unmatched she exhausted her list. This proves the inclusion starting from empty menus. Moreover any $j\ne i$ unmatched at the singleton profile had every acceptable contract rejected there, so by inclusion and (S) all remain rejected at $L$. Consequently every other worker matched at $L$ is also matched in the singleton run.
+
+\textit{4. Counting hires.}
+Under LAD the inclusion yields
+\[
+ \sum_h |C_h(Q_h)|\ \leq\ \sum_h |C_h(P_h)|.
+\]
+Each sum counts distinct matched workers by feasibility. If $i$ obtained $y$ in the singleton run, its workforce would contain all those matched at $L$ and in addition $i$, contrary to this inequality. Thus singleton reporting cannot attain any strictly improving $y$, and step 1 rules out every profitable report. Truth yields at least $0$, which disposes of the only other possible outcome. The reasoning includes empty markets and menus by the same set inclusions and zero counts.\hfill$\square$
+
+\section{Employment across stable assignments}\label{app:size}
+\paragraph{Complete paper proof of Proposition~\ref{prop:size}.}
+Fix any reported profile satisfying (S) and LAD and any stable $B$. Let $A$ and $P_h$ be the proposal outcome and its terminal menus. Every offer is weakly preferred by its proposer to her terminal position (offers descend in her order), which in turn weakly dominates her position at $B$ by Theorem~\ref{th:da}. Thus $P_h\cup B_h\subseteq U_h(B)$ and $C_h(P_h\cup B_h)=B_h$ by stability and menu consistency. LAD on the expansion of $P_h$ gives $|A_h|\leq |B_h|$ for each $h$. Yet every worker matched at $B$ ranks her position above outside and must be matched at $A$ by applicant optimality. Unit demand gives $\sum_h |B_h|\leq\sum_h |A_h|$. Both inequalities bind in total, hence at every firm, and the finite nested sets of matched workers coincide. Since $B$ was arbitrary the result holds across the entire stable set.\hfill$\square$
+
+\paragraph{Proof dependencies.}
+No external theorem enters the arguments. The status of both theorems and the proposition is \emph{complete paper proof}.
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Obligation & Premise or location & Status\\
+\midrule
+Willing-menu test and consistency & Strict portfolio maximization, Sections 1--2 & discharged\\
+Termination and stability & Finiteness, (S), Appendix A.1--2 & discharged\\
+Rejection and optimality & Stability test, (S), Appendix A.3--4 & discharged\\
+Attainable contracts & Optimality, consistency, Appendix B.1 & discharged\\
+Menu comparison & Optimality, (S), Appendix B.2--3 & discharged\\
+Individual dominance & Unit demand, LAD, Appendix B.4 & discharged\\
+Employment invariance & Optimality, LAD, Appendix C & discharged\\
+Boundary cases & Explicit portfolios and offers, Section 4 & discharged\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{document}

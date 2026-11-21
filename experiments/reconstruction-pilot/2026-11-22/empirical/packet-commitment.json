@@ -1,0 +1,14 @@
+{
+  "author_packet_sha256": "e66e277dc502d8a39f81b9bec48bc9d34725514e26d11add4075ddbb6882627e",
+  "design_sha256": "1584fb8bc3e11d0f7d28456cf7262ef00ed8f1d0b411a05186fff4304d55787e",
+  "curator_frozen_utc": "2026-11-21T19:18:17.012528+00:00",
+  "private_file_sha256": {
+    "freeze.json": "baaeb276e6cc0cea41a09e58f84c3686314fd210b231fb032e7b802d807687f7",
+    "packet-review-addendum.json": "73101ad59cd47acfa97c371834501525973532b4ed2fb27298b1443620b31625",
+    "packet-review.json": "ddd6967c679eb9169c740de3855cbf7ce7f795b4e431e4dd7985d6a1f75a19f5",
+    "reading.json": "aa2de9873a810ed899143a7ed86c1a66404e667465bf4e6e0b019e45eb2dd48e",
+    "rubric.json": "4571537be5df7403a9c949c265ca2bcdadbcd4f62da265f0c9abaac788993880"
+  },
+  "release_review_utc": "2026-11-21T19:18:13.746775+00:00",
+  "release_decision": "approved_for_data_assisted_calibration"
+}

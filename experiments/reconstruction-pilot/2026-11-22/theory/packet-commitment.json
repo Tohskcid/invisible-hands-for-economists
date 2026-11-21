@@ -1,0 +1,12 @@
+{
+  "author_packet_sha256": "1d0255abb6a5c11951b720d3f92767ad09b66370c133b09977c71adaf3429188",
+  "design_sha256": "1584fb8bc3e11d0f7d28456cf7262ef00ed8f1d0b411a05186fff4304d55787e",
+  "curator_frozen_utc": "2026-11-21T19:19:55+00:00",
+  "private_file_sha256": {
+    "curation.json": "63f25c66c822cb43509e6e672234efc570d8649c0097911bcabb3e76e7524a15",
+    "packet-review.json": "6cf8326698da0dc376504ded8e3d585f20a5b313a7a1bf5b1dc2177a9a8c41f5",
+    "rubric.json": "cbb7f2cc105e5ebd6f2d8a2a6738bd16ff8e56c82b4de54201a115f6ca5093b0"
+  },
+  "release_review_utc": "2026-11-21T19:21:25.290583+00:00",
+  "release_decision": "approved_for_restricted_theory_reconstruction_and_standalone_exercise"
+}

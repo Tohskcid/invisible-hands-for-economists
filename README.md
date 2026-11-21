@@ -173,6 +173,8 @@ python3 scripts/collect_papers.py --out output/paper-corpus discover \
 
 Repeat to resume. Public PDFs can be acquired separately with `acquire --doi DOI --url URL`. See [paper collection and benchmark curation](references/benchmark_curation.md) for source checks, full-text reading, bounded answer-free tasks, and private answer records. The collector does not itself read papers or certify that tasks are free of answer leakage. Keep the collection outside author workspaces; no HPC credentials belong in this repository.
 
+The [November 2026 reconstruction pilot](experiments/reconstruction-pilot/2026-11-22/README.md) reports two published-paper tasks, the agent submissions, independent scores, and [additional research questions from quantitative syntheses](experiments/reconstruction-pilot/2026-11-22/research-directions.md).
+
 ## Research roadmap
 
 See the [harness optimization research plan](docs/research/harness-optimization-plan.md) (Traditional Chinese) for the proposed implementation work packages, controlled evaluation, milestones, and acceptance criteria grounded in the reconstruction pilot.

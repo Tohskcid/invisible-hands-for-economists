@@ -1,0 +1,11 @@
+{
+  "reviewer_role": "empirical_blind_review",
+  "conditions_visible_to_reviewer": false,
+  "reviewer_received_historical_rubric_after_quality_lock": true,
+  "quality_sha256": "8e403abebc431ce2dc9cb79bd4f9065ce16fb752cd5d06630a2a59db5c2c0949",
+  "quality_locked_utc": "2026-11-21T19:23:43.685934+00:00",
+  "fidelity_sha256": "87a9fb01b48fd4ee1ca989067cb43fb9ab3dced6d8a3ab30090e348376371fe2",
+  "fidelity_received_utc": "2026-11-21T19:25:02.594592+00:00",
+  "fidelity_timestamp_source": "local output modification time; recorded after handoff",
+  "assessors_per_field": 1
+}

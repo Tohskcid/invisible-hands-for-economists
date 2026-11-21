@@ -1,0 +1,11 @@
+{
+  "packet_id": "theory-01",
+  "question": "A placement service allows applicants and organizations to agree on terms as well as on whom to work with. When can the service implement an assignment that participants would voluntarily keep, and what can applicants gain or lose by changing the preferences they report?",
+  "conditions": [
+    "There are finitely many applicants, organizations and possible bilateral agreements. More than one agreement can name the same two parties. Each applicant can take at most one agreement and can decline all of them.",
+    "Applicants strictly rank their own possible agreements and the outside option. Each organization strictly ranks its feasible portfolios, including the empty portfolio, and takes its favorite available portfolio. A portfolio can include at most one agreement with any one applicant.",
+    "A service may take submitted preferences as inputs. Participants may decline assignments or make mutually acceptable alternatives outside the service. Specify precisely which deviations your analysis allows. Terms may be fixed, monetary or otherwise. All preferences, market rules and restrictions beyond these primitives are yours to justify."
+  ],
+  "scope": "Write a self-contained theory paper. Develop the economic question from these primitives. Choose the form of any mechanism, state when its conclusions apply, and investigate where they can fail. Connect the framework to relevant institutions or special cases. Prioritize fully supported claims and state which questions remain open in your treatment.",
+  "evidence": "The intended historical information horizon ends on 2002-12-31. Use this packet and independent reasoning. You may identify pre-horizon background from memory and must distinguish any such recollection from derivations. Do not retrieve outside sources, inspect other files or look for an originating paper. Disclose recognition or recollection of an existing treatment and distinguish it from independent work."
+}

@@ -29,3 +29,6 @@ test_output/
 
 # Local agent transcripts can contain full tool output and machine-specific paths.
 experiments/**/review/cli-*
+
+# Source mappings and answer keys stay with the reconstruction curator.
+experiments/reconstruction-pilot/**/sealed/

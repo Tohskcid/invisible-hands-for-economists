@@ -1,0 +1,96 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\title{Voluntary Placement When the Terms Are Part of the Match}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+A placement clears a market only if the parties will keep their agreements. I give a finite test for this property with unrestricted portfolio preferences. When an organization continues to choose a contract as competing offers disappear, an applicant-proposing service finds a stable placement that every applicant weakly prefers to every other stable placement. If larger menus also preserve or increase the number hired, truth telling is a dominant strategy for each applicant. A counting argument explains the role of this second condition. Two small markets distinguish the failure of existence from profitable manipulation of an otherwise stable procedure.
+\end{abstract}
+
+\section{What the service must accomplish}
+Let $X$ be a finite set of contracts. Each $x$ specifies an applicant $i(x)$, an organization $h(x)$, and all relevant terms. Subscripts on a set select its contracts incident to the subscripted party. An assignment $A\subseteq X$ has at most one contract per applicant and a feasible portfolio $A_h$ at each organization. Write $A(i)$ for $i$'s contract or $0$ (declining). Applicants strictly rank their incident contracts and $0$. For any menu $S$ of its contracts, $C_h(S)$ is $h$'s most preferred feasible subset of $S$. The strict portfolio ranking and availability of the empty set make choice unique everywhere. A portfolio never employs an applicant twice. Preferences depend only on one's own outcome. Feasible agreements and any restrictions on portfolios are fixed independently of reports. Prices, if present, are terms in $X$.
+
+I use the following voluntary-deviation rule. An applicant can quit. An organization can dismiss any collection of its hires provided the resulting portfolio is feasible. One organization can also arrange a new feasible portfolio using some incumbents on existing terms and some new contracts. Each applicant signing a new contract must strictly prefer it to her current outcome. The organization must strictly gain. Displaced parties have no veto, an incumbent kept on existing terms needs no inducement, and a switch of terms with the same employer requires consent. This permits a team to approach one employer together. The test concerns enforceable individual contracts and such one-employer deviations. It assumes neither side payments beyond the contracts nor coordinated exchanges requiring several employers' participation.
+
+Call $A$ individually rational if each assigned applicant prefers her contract to $0$ and $C_h(A_h)=A_h$ for all $h$. Stability is individual rationality plus absence of the deviations just described. Define the organization's menu of available improvements at $A$ by
+\[
+ U_h(A)=A_h\cup\{x\in X_h:x\succ_{i(x)} A(i(x))\}.
+\]
+For an individually rational assignment,
+\begin{equation}
+ A\text{ is stable}\quad\Longleftrightarrow\quad C_h(U_h(A))=A_h\quad\text{for all }h. \label{eq:test}
+\end{equation}
+Indeed, every deviating portfolio lies in this menu. If its favorite differs from $A_h$, the organization strictly gains by taking it and its new signers consent. Thus enumeration of feasible assignments and this test give an exact existence decision for any supplied finite profile. With known preferences the service can select a passing assignment whenever one exists. Selecting a stable assignment on submitted lists alone says little about the incentive to submit a true list.
+
+\section{An offer procedure and its guarantee}
+Impose \emph{substitutability} on each organization's choice. For $S\subseteq T\subseteq X_h$ require
+\[
+ C_h(T)\cap S\subseteq C_h(S).
+\]
+Rejection therefore persists when a menu expands. One other property follows directly from maximization: if $C_h(T)\subseteq S\subseteq T$, then $C_h(S)=C_h(T)$, since the larger menu's unique favorite remains available. These properties concern menus, including menus with multiple terms for the same pair.
+
+Start with empty offer histories $P_h$. Select any applicant without a held offer who has an untried contract above $0$. She proposes the highest such contract $x$; add it to $P_{h(x)}$. The recipient holds $C_h(P_h)$ and rejects the other offers in its history. Repeat until no such applicant remains. Only a new proposer can enter the held set, since earlier rejections persist. Each proposer was free, so the held portfolios are jointly feasible throughout. There are at most $|X|$ proposals, independent of the cost of evaluating a portfolio choice.
+
+\begin{proposition}
+With substitutable choices, the final holds $D$ are stable. Each applicant weakly prefers $D(i)$ to her outcome at any stable assignment. The result is independent of proposal order.
+\end{proposition}
+\begin{proof}
+Applicants only propose acceptable terms. At termination the history at $h$ equals $U_h(D)$: every contract strictly preferred to a final hold was tried first, a free applicant exhausted her acceptable list, and no applicant proposed below her eventual hold. Thus $D_h=C_h(U_h(D))$. Contraction to $D_h$ preserves choice and gives individual rationality. Equation~\eqref{eq:test} proves stability.
+
+Fix a stable assignment $A$. Suppose some contract in $A$ is rejected, and take the first such rejection, of $x$ at $h$. At that instant every proposal in $P_h$ belongs to $U_h(A)$. Indeed, proposing below an assigned $A(i)$ would already have required rejection of that contract, while someone unmatched at $A$ only proposes above $0$. Stability gives $x\in C_h(U_h(A))$. Since $x\in P_h$, substitutability requires $x\in C_h(P_h)$, a contradiction. Ending below $A(i)$ would require exactly such a rejection. This proves dominance among stable assignments. Any two executions dominate one another applicant by applicant, and strict preferences then identify every assigned contract.
+\end{proof}
+
+With substitutes, checking individual new contracts also suffices for blocking at an individually rational $A$. If $C_h(U_h(A))$ differs from $A_h$, it contains a new $x$. Substitutability retains $x$ in $C_h(A_h\cup\{x\})$, so the employer gains even when only that applicant signs. Without substitutes the coalition size in the deviation rule can matter.
+
+\section{Why an applicant can safely reveal her ranking}
+Add the \emph{law of aggregate demand}: $S\subseteq T$ implies $|C_h(S)|\leq |C_h(T)|$. This constrains the number of contracts, while substitutability constrains their identities. First consider two placements under the \emph{same} reports.
+
+\begin{lemma}
+Under both restrictions, all stable assignments match the same set of applicants and fill the same number of positions at each organization.
+\end{lemma}
+\begin{proof}
+For any stable $A$, applicant optimality gives $U_h(D)\subseteq U_h(A)$: each proposed contract is at least as good as $D(i)$ and hence as $A(i)$, with equality to an assigned contract possible only for that very contract. Stability and aggregate demand imply $|D_h|\leq |A_h|$ for each $h$. Yet everyone matched at $A$ is matched at $D$ by applicant optimality and individual rationality. Counting contracts on the two sides forces equality in every organizational inequality and equality of the matched sets.
+\end{proof}
+
+\begin{proposition}
+Fix any reports of the other applicants and any organizational choices satisfying both restrictions. No unilateral change of an applicant's reported ordering, including its acceptability cutoff, gives her a strictly better contract by her true ordering than reporting truthfully.
+\end{proposition}
+\begin{proof}
+Fix applicant $i$. Her truthful outcome is individually rational, so a strict gain would have to be a truly acceptable contract $y$. Suppose a report obtains $y$. The resulting assignment is also stable when $i$ lists only $y$ as acceptable: she keeps $y$ and this removes every possible new signature from her. By the lemma, every stable assignment of this single-contract profile matches her.
+
+Next let her list her true ordering down through $y$, with all lower contracts unacceptable, and run the procedure. If she ended unmatched, this stable assignment would still be stable upon shortening her list to $y$ alone: she is free and her willing deviations only shrink. That contradicts the preceding paragraph. Hence the truncated truthful list obtains $y$ or better. Replay this execution with her full true list. Every proposal remains the highest available untried acceptable choice of the selected free applicant. The execution still terminates because $i$ finishes held and everyone else's options are unchanged. Order independence identifies this as the truthful result. Thus truth attains at least $y$.
+\end{proof}
+
+The guarantee is individual weak dominance against fixed reports. A change below all terms reached in a run can leave the outcome identical. Concealing a desirable term can lose it: with one applicant and one mutually acceptable agreement, declaring it unacceptable changes employment to unemployment. In general the service honors the submitted cutoff, so overstating willingness can also produce terms the applicant would subsequently decline. At truthful applicant reports and fixed true organizational choices the procedure therefore implements a voluntarily sustainable placement. If organizations submit strategic rankings, the stability conclusion refers to their reported rankings unless these accurately describe their choices. The argument establishes neither a dominant strategy for organizations nor immunity to joint misreports.
+
+\section{Two distinct limits}
+\paragraph{A team can prevent clearing.}
+There are two applicants $a,b$, two employers $H,G$, and one contract per pair. Applicants rank $H\succ_a G\succ_a0$ and $G\succ_b H\succ_b0$. Employer $G$ takes one and ranks $a$ above $b$ above a vacancy. Employer $H$ ranks the pair $\{a,b\}$ above a vacancy, and a vacancy above either singleton (break the singleton tie in either strict order). Individual rationality requires $H$ to employ both or neither. If both, $b$ and the empty $G$ block. If neither, $G$ must employ $a$, since otherwise $a$ is free and can displace anyone there. Then $a$ and the free $b$ would both join $H$ and the team blocks. No stable assignment exists. With only one new signer allowed per deviation, placing $a$ at $G$ and leaving $H$ empty would survive. The ability to recruit the team changes the economic conclusion.
+
+\paragraph{Substitutes alone can leave a profitable report.}
+There are employers $H,G,Y$ and applicants $i,a,b,k$. Each entry in the table is one contract with the named employer, in descending order. There are no other contracts.
+\[
+\begin{array}{c|l}
+\text{applicant}&\text{acceptable employers}\\ \hline
+ i&H,\ Y\\ a&H,\ G\\ b&H,\ Y\\ k&G,\ H
+\end{array}
+\]
+At $H$ the feasible portfolios are the subsets of $\{a,b\}$ and the singletons $\{k\},\{i\}$. Its strict order is
+$\{k\}\succ\{i\}\succ\{a,b\}\succ\{a\}\succ\{b\}\succ\varnothing$.
+Employer $G$ has one position and ranks $a$ above $k$; $Y$ has one and ranks $b$ above $i$; both prefer any listed hire to a vacancy. At $H$ the choice is $k$ if available, otherwise $i$ if available, otherwise all available members of $\{a,b\}$. Every retained hire survives deletions of other offers. All three employers thus satisfy substitutes, but adding $i$ to $\{a,b\}$ cuts employment at $H$ from two to one.
+
+Let $a,b$ first propose to $H$ and $k$ to $G$. When $i$ proposes to $H$, both $a$ and $b$ lose their holds. They go to $G$ and $Y$, respectively; $k$ loses $G$, proposes to $H$ and displaces $i$. Applicant $i$ is rejected at $Y$ and finishes unmatched. If she lists only $Y$, the first three holds survive and she obtains $Y$. Both executions yield stable assignments for the submitted lists. In the latter assignment $i$ and $H$ would recontract at the true rankings. Thus the reporting gain is an improvement in the service's assignment, with its durability a separate question. This counterexample defeats an unconditional incentive guarantee for this procedure; it does not establish necessity of aggregate demand in every particular market.
+
+\section{Institutional interpretation and scope}
+A fixed quota with distinct priority scores on contracts gives a concrete placement rule. Discard unacceptable offers, keep the best remaining term for each applicant, and take the highest scoring applicants by those terms up to the quota. Such choice can be rationalized by additive positive scores on acceptable contracts with generic tie breaking across portfolios (or by powers of two in score order). Deleting rival offers cannot unseat a retained term: it remains its applicant's best, and no rival's best improves. Employment equals the smaller of the quota and the number of distinct acceptable applicants available. Both restrictions follow. With one term per pair this describes priority-based admissions under a fixed capacity. With several terms, a hospital might offer different shifts or salaries; an applicant ranks contract terms directly, and an employer's score can reflect its evaluation of the whole contract. A monetary term alone implies neither choice restriction. Team production or a staffing rule that exchanges two junior positions for one senior position calls for checking portfolio demand itself.
+
+The existence test applies to any finite profile. The behavioral restrictions give a sufficient domain for a constructive guarantee, not a characterization of every domain admitting stable or truthful implementation. The analysis leaves open coordinated reporting, organizational incentive design, and implementation when wages can be negotiated outside the finite contract menu.
+
+\paragraph{Basis of the analysis.}
+The question and primitives come from the supplied packet. I recognized the general matching-with-contracts and deferred-acceptance framework from prior familiarity. The formal conclusions here rest on the displayed tests, proofs and constructed examples; no historical attribution or empirical claim is needed.
+\end{document}
