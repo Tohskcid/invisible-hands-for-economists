@@ -52,7 +52,7 @@ class ZenodoFiles(HTMLParser):
 
 
 def select_file(files, genre=''):
-    if genre.lower() in ('dataset', 'software', 'figure', 'poster', 'presentation', 'other'):
+    if genre.lower() in ('dataset', 'software', 'figure', 'poster', 'presentation'):
         return dict(status='repository_non_article_record', resource_type=genre, file_count=len(files))
     links = {u for name, url in files if name.lower().endswith('.pdf')
              and not re.search(r'appendi[xc]|supplement|codebook|readme|documentation', name, re.I)

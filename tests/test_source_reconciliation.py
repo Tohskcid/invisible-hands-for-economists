@@ -70,6 +70,34 @@ class SourceInventoryTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'Unexpected PMC'):
                 pmc.object_location(change, 'PMC123.2', 'xml')
 
+    def test_jats_content_evidence_needs_byline_body_and_ending(self):
+        xml = (b'<article><front><article-meta><title-group><article-title>Market Design</article-title></title-group>'
+               b'<contrib-group><contrib contrib-type="author"><name><surname>Lee</surname></name></contrib>'
+               b'</contrib-group></article-meta></front><body><sec><p>Body</p></sec></body>'
+               b'<back><ref-list><ref>A reference</ref></ref-list></back></article>')
+        paper = {'title': 'Market Design', 'authors': ['A. Lee']}
+        self.assertTrue(reconcile.jats_evidence(xml, paper)['matched'])
+        self.assertFalse(reconcile.jats_evidence(xml, {**paper, 'authors': ['A. Lee', 'B. Lee']})['matched'])
+        self.assertFalse(reconcile.jats_evidence(xml.replace(b'<ref>A reference</ref>', b''), paper)['matched'])
+
+    def test_checked_manifest_must_match_cached_hash_role_and_doi(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            file = root / 'main.pdf'
+            file.write_bytes(b'%PDF-example')
+            sha = collect_papers.digest(file.read_bytes())
+            manifest = root / 'read-only-candidates.json'
+            rec = dict(role='main', file='main.pdf', sha256=sha)
+            manifest.write_text(json.dumps({'cases': [dict(target={'doi': '10.1/a'}, sources=[rec])]}))
+            known = {sha: dict(doi='10.1/a', role='main')}
+            dois, _, new_reviews, counts = reconcile.import_checked_manifests(root, [manifest], known)
+            self.assertEqual((dois, new_reviews, counts), ({'10.1/a'}, {}, {manifest.name: 1}))
+            with self.assertRaisesRegex(ValueError, 'Conflicting'):
+                reconcile.import_checked_manifests(root, [manifest], {sha: dict(doi='10.1/a', role='supplement')})
+            file.write_bytes(b'changed')
+            with self.assertRaisesRegex(ValueError, 'missing or changed'):
+                reconcile.import_checked_manifests(root, [manifest], known)
+
     def test_designated_supplement_cannot_become_primary_from_receipt(self):
         paper = dict(title='Econometrics Example Paper', authors=['A. Smith'], journal_id='econometrica', year=2020)
         with tempfile.TemporaryDirectory() as folder:
@@ -157,6 +185,8 @@ class OpenLocationTests(unittest.TestCase):
         loc = dict(is_oa=True, license='cc-by-nc-nd', version='acceptedVersion', pdf_url='http://example.org/file.pdf')
         self.assertEqual(queue.openalex_locations({'locations': [loc]})[0]['url'], 'https://example.org/file.pdf')
         self.assertEqual(queue.public_pdf_url('https://example.org/pd f.pdf'), 'https://example.org/pd%20f.pdf')
+        for local in ('https://localhost/file', 'https://127.0.0.1/file', 'https://[::1]/private', 'https://10.0.0.1/file'):
+            self.assertIsNone(queue.public_pdf_url(local))
         for change in [{'is_oa': False}, {'license': None}, {'pdf_url': 'https://example.org/file?token=123'}]:
             self.assertFalse(queue.openalex_locations({'locations': [{**loc, **change}]}))
 

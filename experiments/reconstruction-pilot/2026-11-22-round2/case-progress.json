@@ -1,17 +1,17 @@
 {
-  "snapshot_utc": "2026-11-21T21:05:56.329336+00:00",
+  "snapshot_utc": "2026-11-21T21:11:09.874179+00:00",
   "scope": "Round 2 nominated cases with verified sources, plus development versions. Counts are from original-page notes, signed releases, and evaluator files. Group versions by target DOI. Discovery and source-intake coverage are reported separately.",
   "distinct_nominated_originals": 143,
-  "distinct_originals_fully_read": 32,
+  "distinct_originals_fully_read": 36,
   "distinct_originals_scored": 4,
   "scored_manuscripts": 8,
   "version_stage_counts": {
     "scored": 6,
-    "held-after-review": 24,
-    "read-awaiting-review": 6,
+    "held-after-review": 29,
+    "read-awaiting-review": 3,
+    "queued-for-reading": 101,
     "reading-in-progress": 5,
-    "queued-for-reading": 105,
-    "private-question-awaiting-materials": 5
+    "private-question-awaiting-materials": 7
   },
   "originals": [
     {
@@ -92,9 +92,10 @@
             "main": 54
           },
           "pages_with_reading_evidence": {
-            "main": 36
+            "main": 54
           },
-          "stage": "reading-in-progress"
+          "pending_materials_count": 1,
+          "stage": "private-question-awaiting-materials"
         }
       ]
     },
@@ -108,9 +109,10 @@
             "main": 56
           },
           "pages_with_reading_evidence": {
-            "main": 48
+            "main": 56
           },
-          "stage": "reading-in-progress"
+          "pending_materials_count": 1,
+          "stage": "private-question-awaiting-materials"
         }
       ]
     },
@@ -125,8 +127,8 @@
             "appendix": 30
           },
           "pages_with_reading_evidence": {
-            "main": 30,
-            "appendix": 0
+            "main": 48,
+            "appendix": 24
           },
           "stage": "reading-in-progress"
         }
@@ -163,7 +165,8 @@
           "pages_with_reading_evidence": {
             "main": 47
           },
-          "stage": "read-awaiting-review"
+          "review_sha256": "8a0dd0bdfa1e3f2bbcf36f85b6b4b535f40c38d6c475bd4a3cf3738023748b26",
+          "stage": "held-after-review"
         }
       ]
     },
@@ -177,9 +180,9 @@
             "main": 43
           },
           "pages_with_reading_evidence": {
-            "main": 0
+            "main": 18
           },
-          "stage": "queued-for-reading"
+          "stage": "reading-in-progress"
         }
       ]
     },
@@ -193,9 +196,9 @@
             "main": 39
           },
           "pages_with_reading_evidence": {
-            "main": 0
+            "main": 24
           },
-          "stage": "queued-for-reading"
+          "stage": "reading-in-progress"
         }
       ]
     },
@@ -226,9 +229,9 @@
             "main": 37
           },
           "pages_with_reading_evidence": {
-            "main": 0
+            "main": 24
           },
-          "stage": "queued-for-reading"
+          "stage": "reading-in-progress"
         }
       ]
     },
@@ -308,9 +311,9 @@
             "main": 39
           },
           "pages_with_reading_evidence": {
-            "main": 18
+            "main": 39
           },
-          "stage": "reading-in-progress"
+          "stage": "read-awaiting-review"
         }
       ]
     },
@@ -1041,9 +1044,9 @@
           },
           "pages_with_reading_evidence": {
             "main": 43,
-            "appendix": 24
+            "appendix": 38
           },
-          "stage": "reading-in-progress"
+          "stage": "read-awaiting-review"
         }
       ]
     },
@@ -1492,7 +1495,8 @@
             "main": 51,
             "appendix": 3
           },
-          "stage": "read-awaiting-review"
+          "review_sha256": "87db840e9c98b8003db1bef3ba6b3f1debd7830e155344abbadfe6c80b8f92ed",
+          "stage": "held-after-review"
         }
       ]
     },
@@ -1781,7 +1785,8 @@
             "main": 40,
             "appendix": 11
           },
-          "stage": "read-awaiting-review"
+          "review_sha256": "089688e154460c4d456967d072762f36e65f6fd1846edcb5af5862aed5b850fe",
+          "stage": "held-after-review"
         }
       ]
     },
@@ -1886,10 +1891,10 @@
             "appendix": 21
           },
           "pages_with_reading_evidence": {
-            "main": 0,
+            "main": 6,
             "appendix": 0
           },
-          "stage": "queued-for-reading"
+          "stage": "reading-in-progress"
         }
       ]
     },
@@ -2005,7 +2010,8 @@
             "main": 24,
             "appendix": 88
           },
-          "stage": "read-awaiting-review"
+          "review_sha256": "f3a0e3d05a172f59523d5beb0e721bee54fb55b715e3e47631ee337eb78ffc84",
+          "stage": "held-after-review"
         }
       ]
     },
@@ -2399,7 +2405,8 @@
             "main": 31,
             "appendix": 25
           },
-          "stage": "read-awaiting-review"
+          "review_sha256": "1cd7c515456a7e69672d326e16f7fafcab4c75d881a55405dcb18bf069ea7911",
+          "stage": "held-after-review"
         }
       ]
     },

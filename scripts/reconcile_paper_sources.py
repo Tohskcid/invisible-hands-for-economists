@@ -14,16 +14,38 @@ import re
 import shutil
 import subprocess
 import unicodedata
+import xml.etree.ElementTree as ET
 
 from urllib.parse import unquote, urlsplit
 
 from collect_papers import PDF_BYTE_LIMIT, digest, save
-from queue_open_papers import landing_evidence
+from queue_open_papers import landing_evidence, public_pdf_url
 
 
 def normalize(value):
     text = unicodedata.normalize('NFKD', html.unescape(re.sub('<[^>]+>', '', value))).lower()
     return ' '.join(re.findall(r'\w+', ''.join(c for c in text if not unicodedata.combining(c))))
+
+
+def jats_evidence(raw, paper):
+    article = ET.fromstring(raw)
+    meta = article.find('./front/article-meta')
+    if meta is None:
+        raise ValueError('PMC article lacks front-matter metadata')
+    title_node = meta.find('./title-group/article-title')
+    title = normalize(''.join(title_node.itertext())) if title_node is not None else ''
+    authors = []
+    for byline in meta.findall('./contrib-group/contrib[@contrib-type="author"]'):
+        for surname in byline.findall('./name/surname') + byline.findall('./string-name/surname'):
+            authors.append(normalize(''.join(surname.itertext())))
+    catalog_authors = Counter(parts[-1] for author in paper['authors'] if (parts := normalize(author).split()))
+    title_matches = bool(title) and title == normalize(paper['title'])
+    surnames_match = bool(catalog_authors) and catalog_authors == Counter(name.split()[-1] for name in authors if name)
+    paragraphs = len(article.findall('./body//p'))
+    references = len(article.findall('./back//ref'))
+    return dict(title_matches=title_matches, byline_surname_multiset_matches=surnames_match,
+                body_paragraphs=paragraphs, ending_references=references,
+                matched=title_matches and surnames_match and paragraphs > 0 and references > 0)
 
 
 def opening_pages(pdf):
@@ -169,15 +191,22 @@ def location_outcomes(queue, attempts, today, landing_events=()):
                 state = 'host_deferred_http_' + str(denied[host])
             else:
                 state = 'pending'
-            by_doi[doi].append(dict(url=url, status=state, events=len(history)))
+            item = dict(url=url, status=state, events=len(history))
+            if history and history[-1].get('http_host'):
+                item['reported_http_host'] = history[-1]['http_host']
+            by_doi[doi].append(item)
     return by_doi
 
 
 def import_checked_manifests(root, manifests, reviews):
+    root = root.resolve()
     targets = set()
     versions = {}
     added = {}
+    cohorts = {}
     for manifest in manifests:
+        cohort = set()
+        cohorts[manifest.name] = cohort
         for case in json.loads(manifest.read_text())['cases']:
             doi = case['target']['doi'].lower()
             for source in case['sources']:
@@ -190,6 +219,7 @@ def import_checked_manifests(root, manifests, reviews):
                     raise ValueError(f'Checked source file missing or changed for {doi}')
                 if role == 'main':
                     targets.add(doi)
+                    cohort.add(doi)
                 if sha in reviews:
                     if (reviews[sha]['doi'], reviews[sha]['role']) != (doi, role):
                         raise ValueError(f'Conflicting source role or DOI in checked manifest for {sha}')
@@ -214,7 +244,7 @@ def import_checked_manifests(root, manifests, reviews):
                 issue = re.match(r'(?:published (?:econometrica|aer|qje)|econometrica, vol\.|the quarterly journal of economics \(|review of economic studies \(|american economic review (?:19|20)\d\d)', source['version'], re.I)
                 if role == 'main' and issue:
                     versions[sha] = 'published_journal'
-    return targets, versions, added
+    return targets, versions, added, {name: len(dois) for name, dois in cohorts.items()}
 
 
 def public_snapshot(out, rows, summary, discovery, hashes):
@@ -222,7 +252,7 @@ def public_snapshot(out, rows, summary, discovery, hashes):
     buffer = io.StringIO()
     writer = csv.writer(buffer, delimiter='\t', lineterminator='\n')
     writer.writerow(['doi', 'journal', 'year', 'reported_oa_locations', 'licensed_pdf_urls', 'source_status',
-                     'acquisition_status', 'case_readiness', 'data_reason', 'local_pdf_status', 'pmc_jats_versions', 'local_supplement_pdfs', 'publisher_pair_status', 'open_access_lead', 'reviewed_pdf_versions', 'local_documentation_pdfs'])
+                     'acquisition_status', 'case_readiness', 'data_reason', 'local_pdf_status', 'pmc_jats_versions', 'local_supplement_pdfs', 'publisher_pair_status', 'open_access_lead', 'reviewed_pdf_versions', 'local_documentation_pdfs', 'licensed_landing_pages', 'resolved_landing_pdf_urls', 'pmc_jats_content_matches', 'location_status_by_sha256'])
     doi_set = set()
     statuses = Counter()
     for row in rows:
@@ -249,13 +279,26 @@ def public_snapshot(out, rows, summary, discovery, hashes):
         for code in (case.get('status', 'unassessed'), case.get('data_reason', 'unassessed')):
             if not re.fullmatch('[a-z][a-z0-9_-]*', code):
                 raise ValueError('Public snapshot disposition must be a short reason code')
+        location_tokens = {}
+        for kind, field in (('pdf', 'location_outcomes'), ('landing', 'licensed_landing_outcomes')):
+            for loc in row.get(field, []):
+                location_tokens[(kind, loc['url'])] = loc['status']
+        for kind, url in row.get('crossref_endpoint_uris', []):
+            state = location_tokens.get(('pdf', url), 'provider_rights_or_entitlement_unverified')
+            location_tokens[(kind, url)] = state
+        for kind, url in row.get('reported_oa_uris', []):
+            location_tokens.setdefault((kind, url), 'reported_outside_eligible_queue')
+        coded_locations = '|'.join('/'.join((kind, digest(url.encode()), state)) for (kind, url), state in sorted(location_tokens.items()))
         writer.writerow([doi, row['journal'], row['year'], row['provider_oa_location_count'], options,
                          row['source_status'], state, case.get('status', 'unassessed'),
                          case.get('data_reason', 'unassessed'), row.get('local_pdf_status', row['source_status']),
                          len(row.get('pmc_jats_sources', [])), sum(s.get('role') == 'supplement' for s in row.get('sources', [])),
                          row.get('publisher_pair_status', 'not_in_pair_queue'), row['open_access_lead'],
                          ','.join(row.get('reviewed_pdf_versions', [])) or 'none',
-                         sum(s.get('role') == 'documentation' for s in row.get('sources', []))])
+                         sum(s.get('role') == 'documentation' for s in row.get('sources', [])),
+                         len(row.get('licensed_landing_outcomes', [])),
+                         len({l['url'] for l in row['licensed_pdf_locations'] if l.get('provider') == 'OpenAlex-landing'}),
+                         sum(j['document_evidence']['matched'] for j in row.get('pmc_jats_sources', [])), coded_locations])
     out.mkdir(parents=True, exist_ok=True)
     snapshot = out / 'source-status.tsv.gz'
     packed = gzip.compress(buffer.getvalue().encode(), mtime=0)
@@ -266,6 +309,7 @@ def public_snapshot(out, rows, summary, discovery, hashes):
         'observed_at_utc': datetime.now(timezone.utc).isoformat(), 'doi_rows': len(doi_set),
         'inventory': snapshot.name, 'inventory_sha256': digest(packed), 'input_sha256': hashes,
         'checked_manifest_dois': summary.get('checked_manifest_dois', 0),
+        'checked_manifest_cohorts': summary.get('checked_manifest_cohorts', {}),
         'source_status_counts': summary['source_status_counts'], 'acquisition_status_counts': dict(statuses),
         'source_status_by_journal': {j: dict(Counter(r['source_status'] for r in rows if r['journal'] == j))
                                      for j in sorted({r['journal'] for r in rows})},
@@ -282,12 +326,14 @@ def public_snapshot(out, rows, summary, discovery, hashes):
         'catalog_with_any_crossref_fulltext_link': sum(bool(r['crossref_fulltext_link_count']) for r in rows),
         'attempt_outcomes': summary['attempt_outcomes'], 'retained_pdf_bytes': summary['queue_downloaded_bytes'],
         'distinct_downloaded_locations': summary['queue_downloaded_urls'],
+        'dois_with_queue_pdf_bytes': statuses['pdf_acquired'],
         'licensed_landing_pair_outcomes': dict(Counter(l['status'] for r in rows for l in r.get('licensed_landing_outcomes', []))),
         'open_access_lead_counts': dict(Counter(r['open_access_lead'] for r in rows)),
         'publisher_pair_outcomes': dict(Counter(r['publisher_pair_status'] for r in rows if 'publisher_pair_status' in r)),
         'local_supplement_only_pdf_dois': sum(r.get('local_pdf_status') == 'metadata_only' and any(s.get('role') == 'supplement' for s in r['sources']) for r in rows),
         'local_pdf_status_counts': dict(Counter(r.get('local_pdf_status', r['source_status']) for r in rows)),
         'reviewed_pdf_version_dois': dict(Counter(v for r in rows for v in r.get('reviewed_pdf_versions', []))),
+        'pmc_jats_automated_content_matches': sum(j['document_evidence']['matched'] for r in rows for j in r.get('pmc_jats_sources', [])),
         'pmc_provider_resolution': summary.get('pmc_provider_resolution', {}),
         'pmc_jats_version_counts': dict(Counter(j['version'] for r in rows for j in r.get('pmc_jats_sources', []))),
         'pmc_jats_only_candidate_dois': sum(bool(r.get('pmc_jats_sources')) and r.get('local_pdf_status') == 'metadata_only' for r in rows),
@@ -304,14 +350,18 @@ def public_snapshot(out, rows, summary, discovery, hashes):
             'source_verified': 'A curator inspected the title/byline, version, article body and ending of the exact hashed local bytes. Full reading, readiness, and reconstruction have separate records.',
             'licensed_pdf_urls': 'Distinct direct locations carrying active version-matched Crossref CC metadata an OA location-specific recognized license in OpenAlex, or NIH PubMed Central version-level CC/TDM or explicit dataset TDM access. NIH/NLM PubMed Central supplied the versioned research-dataset sources. A link alone does not establish identity.',
             'reported_oa_locations': 'Number of provider location records; a location may be a landing page without a PDF. Counts can include multiple copies.',
+            'location_status_by_sha256': 'Every distinct reported URL is represented per DOI and role as role/SHA-256(normalized exact URL)/status, separated by vertical bars. This allows verification against a known URL without publishing query parameters. The outside-queue state indicates a lead whose terms or available file need separate review.',
+            'resolved_landing_pdf_urls': 'Distinct PDF links found by inspecting explicitly licensed OpenAlex landing pages or their official repository file listings. A link can duplicate an earlier discovery.',
             'reviewed_pdf_versions': 'Versions of hash-bound primary PDFs recorded in the curator assessment. Multiple kinds can coexist for a DOI.',
             'open_access_lead': 'Discovery status. A reported direct PDF outside the eligible queue or an OA landing page remains a source-review lead.',
             'publisher_pair_status': 'Separate official journal main-article acquisition from a supplement landing page. A collected PDF still needs independent inspection.',
             'acquisition_status': 'Outcome for the explicit licensed PDF queue. Other primary PDFs and NIH XML also contribute to source_status.',
+            'deferred_locations_by_host': 'A host returned an access or rate-limit response to a document, redirect check, or robots request. Untried locations on that host were held. This records an access condition at this checkpoint, not a licensing ruling.',
             'pdf_transfer_events': 'Recorded acquisition attempts that reached a PDF URL. A response can be HTML or a supplement; internal transport retries are not separately logged.',
             'local_documentation_pdfs': 'PDFs identified as data documentation or readme files using their supplied path and opening content. These do not count as primary articles.',
             'local_supplement_pdfs': 'Number of distinct local PDF hashes identified as supplementary by curator review or an explicit supplier path and opening heading. The publisher-designated Econometric Society supplement directory is also sufficient to exclude a file from the primary-article count.',
             'local_pdf_status': 'Source status from the PDF inventory alone.',
+            'pmc_jats_content_matches': 'Automatic comparison of the actual JATS file: normalized article title and author surname counts match the catalog, and the body and ending reference list are present. This records a stricter candidate signal and does not substitute for independent content review.',
             'pmc_jats_versions': 'Locally stored NIH full-article XML versions with provider checksum, matching front-matter DOI and body. A paper can also have a local PDF.',
             'case_readiness': 'Source-intake disposition at this checkpoint; downstream review and execution are recorded in individual case packages.',
             'data_reason': 'Known reason for limited input access or readiness. Unassessed means no specific input finding was recorded.'}}
@@ -321,7 +371,13 @@ def public_snapshot(out, rows, summary, discovery, hashes):
     save(out / 'source-status-summary.json', evidence)
     counts = evidence['source_status_counts']
     oa = evidence['open_access_discovery']
-    languages = {'interim': '查找進行中的快照', 'final': '本輪查找完成的快照', 'observed': '來源快照'}
+    pairs = evidence['publisher_pair_outcomes']
+    pair_note = ''
+    if pairs:
+        pair_note = (f"另從 {sum(pairs.values()):,} 個期刊補充資料頁追查正文，"
+                     f"已由期刊直接取得 {pairs.get('downloaded-unread', 0):,} 篇，由作者或機構補得 "
+                     f"{pairs.get('alternate_published_copy_acquired', 0):,} 篇。此批來源可與授權佇列重疊。")
+    languages = {'interim': '查找進行中的快照', 'operational': '本輪操作檢查點', 'final': '本輪查找完成的快照', 'observed': '來源快照'}
     lines = [
         '# 期刊論文來源與資料可用性', '',
         f"外部查找紀錄封存於 {captured}，本地檔案清查完成於 {evidence['observed_at_utc']}。這份{languages.get(phase, '來源快照')}涵蓋目錄內全部 {len(rows):,} 個相異 DOI。"
@@ -333,8 +389,8 @@ def public_snapshot(out, rows, summary, discovery, hashes):
         f"OpenAlex 查詢了 {oa.get('openalex_queried_dois') or 0:,} 個 DOI，精確匹配 {oa.get('openalex_matched_dois') or 0:,} 個，"
         f"其中 {oa.get('openalex_reported_oa_dois') or 0:,} 個帶有開放取用線索。"
         f"Crossref、OpenAlex 與 PMC 的授權和版本資料目前支持 {oa.get('eligible_dois') or 0:,} 個 DOI 的 "
-        f"{oa.get('distinct_eligible_doi_urls') or 0:,} 個 PDF 位置。已從 {evidence['distinct_downloaded_locations']:,} 個位置取得 PDF。"
-        '同篇文章可以有多個位置，取得的檔案也可能是附錄或資料說明。', '',
+        f"{oa.get('distinct_eligible_doi_urls') or 0:,} 個 PDF 位置。已從 {evidence['distinct_downloaded_locations']:,} 個位置取得 PDF，關聯 {evidence['dois_with_queue_pdf_bytes']:,} 個 DOI。"
+        '同篇文章可以有多個位置，取得的檔案也可能是附錄或資料說明。' + pair_note, '',
         f"NIH/NLM/NCBI PubMed Central Article Datasets 提供 {oa.get('pmc_jats_dois') or 0:,} 篇有本地 JATS 全文的文章，"
         f"其中 {evidence['pmc_jats_version_counts'].get('author-manuscript', 0):,} 份為作者稿，"
         f"{evidence['pmc_jats_version_counts'].get('published-article', 0):,} 份為出版版。研究檔保存來源授權、提供者校驗碼與本地 SHA-256。"
@@ -342,7 +398,7 @@ def public_snapshot(out, rows, summary, discovery, hashes):
         ' [PMC 官方資料說明](https://pmc.ncbi.nlm.nih.gov/tools/pmcaws/) · [資料條款](https://pmc-oa-opendata.s3.amazonaws.com/README.txt)', '',
         '逐篇檢索時，可用 local_pdf_status 和 pmc_jats_versions 查找不同格式，'
         '用 local_supplement_pdfs 和 local_documentation_pdfs 辨別附件，用 case_readiness 和 data_reason 檢查已知的研究前提。'
-        '實驗判定以各案的盲測與獨立評閱紀錄為準。未評估的資料可用性保留為 unassessed。', '',
+        'location_status_by_sha256 逐一記錄已發現網址的用途、雜湊與狀態。實驗判定以各案的盲測與獨立評閱紀錄為準。未評估的資料可用性保留為 unassessed。', '',
         '[下載完整 DOI 表](source-status.tsv.gz) · [統計、主機回應與來源雜湊](source-status-summary.json)', '']
     tmp = out / 'source-status.md.tmp'
     tmp.write_text('\n'.join(lines), encoding='utf-8')
@@ -365,7 +421,7 @@ def main():
     args = parser.parse_args()
     catalog_bytes = args.catalog.read_bytes()
     reviews = json.loads(args.reviews.read_text()) if args.reviews else {}
-    target_manifest_dois, inferred_versions, added_reviews = import_checked_manifests(args.root.resolve(), args.checked_manifest, reviews)
+    target_manifest_dois, inferred_versions, added_reviews, checked_cohorts = import_checked_manifests(args.root.resolve(), args.checked_manifest, reviews)
     catalog = json.loads(catalog_bytes)['papers']
     rows, summary = inventory(args.root.resolve(), catalog, reviews)
     if args.acquisition:
@@ -400,8 +456,10 @@ def main():
                 if item['status'] != 'jats_candidate':
                     continue
                 file = pmc_manifest.parent / item['file']
-                if item['doi'] not in catalog or not file.is_file() or digest(file.read_bytes()) != item['sha256']:
+                raw = file.read_bytes() if file.is_file() else b''
+                if item['doi'] not in catalog or digest(raw) != item['sha256']:
                     raise ValueError('PMC source DOI or local article checksum mismatch')
+                item['document_evidence'] = jats_evidence(raw, catalog[item['doi']])
                 pmc[item['doi']].append(item)
         for row in rows:
             doi = row['doi']
@@ -412,8 +470,12 @@ def main():
             row['location_outcomes'] = outcomes.get(doi, [])
             links = catalog[doi].get('fulltext_candidates', [])
             row['crossref_fulltext_link_count'] = len(links)
+            row['crossref_endpoint_uris'] = sorted({('crossref_tdm' if item.get('intended-application') == 'text-mining' else 'crossref_fulltext', url)
+                                                  for item in links if (url := public_pdf_url(item.get('URL')))})
             row['crossref_reports_tdm_endpoint'] = any(link.get('intended-application') == 'text-mining' for link in links)
             row['provider_oa_location_count'] = len(prospects.get(doi, []))
+            row['reported_oa_uris'] = sorted({(kind, item[key]) for item in prospects.get(doi, [])
+                                             for kind, key in (('pdf', 'pdf_url'), ('landing', 'landing_page')) if item.get(key)})
             row['licensed_pdf_locations'] = queue.get(doi, [])
             row['licensed_landing_outcomes'] = [latest_landing.get(url, {'url': url, 'status': 'pending'})
                                               for url in sorted({l['url'] for l in landing_queue.get(doi, [])})]
@@ -437,7 +499,7 @@ def main():
         for locations in outcomes.values():
             for loc in locations:
                 if loc['status'].startswith('host_deferred_') or loc['status'] in ('http_401', 'http_403', 'http_429', 'http_503'):
-                    deferrals[urlsplit(loc['url']).hostname][loc['status']] += 1
+                    deferrals[loc.get('reported_http_host') or urlsplit(loc['url']).hostname][loc['status']] += 1
         summary['deferred_locations_by_host'] = dict(sorted(deferrals.items()))
         summary['queue_not_yet_attempted_dois'] = len(set(queue) - attempts.keys())
         summary['queue_attempts_with_no_download_dois'] = len(attempts.keys() - downloaded_dois)
@@ -481,6 +543,7 @@ def main():
         if row['doi'] in target_manifest_dois and 'case_disposition' not in row:
             row['case_disposition'] = {'status': 'source_checked_readiness_pending'}
     summary['checked_manifest_dois'] = len(target_manifest_dois)
+    summary['checked_manifest_cohorts'] = checked_cohorts
     summary['catalog_sha256'] = digest(catalog_bytes)
     args.out.mkdir(parents=True, exist_ok=True)
     if args.checked_manifest:

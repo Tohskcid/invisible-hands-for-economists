@@ -18,7 +18,7 @@ from urllib.error import HTTPError
 from urllib.robotparser import RobotFileParser
 from urllib.parse import parse_qsl, quote, urlencode, urlsplit
 
-from collect_papers import PDF_BYTE_LIMIT, acquire, digest, request, save
+from collect_papers import PDF_BYTE_LIMIT, acquire, digest, public_host, request, save
 
 
 CC = r'(?:cc-by(?:-nc)?(?:-nd|-sa)?|cc0|public-domain)'
@@ -27,7 +27,7 @@ CC_URL = re.compile(r'https?://creativecommons\.org/(?:licenses/by(?:-nc)?(?:-nd
 
 def public_pdf_url(url):
     p = urlsplit(url or '')
-    if (p.scheme not in ('http', 'https') or not p.hostname or p.username or p.password or p.fragment
+    if (p.scheme not in ('http', 'https') or not public_host(p.hostname) or p.username or p.password or p.fragment
             or any(re.search(r'token|key|signatur|credential|password|x-amz|expires', k, re.I)
                    for k, _ in parse_qsl(p.query))):
         return None
@@ -92,7 +92,12 @@ def landing_evidence(acquisition):
     for name in ('resolution.jsonl', 'repository-records.jsonl'):
         log = out / name
         if log.is_file():
-            events.extend(json.loads(line) for line in log.read_text().splitlines())
+            for line in log.read_text().splitlines():
+                event = json.loads(line)
+                if event.get('status') == 'pdf_link' and not public_pdf_url(event.get('pdf_url')):
+                    event = {**event, 'status': 'unusable_pdf_locator'}
+                    event.pop('pdf_url', None)
+                events.append(event)
     return events
 
 

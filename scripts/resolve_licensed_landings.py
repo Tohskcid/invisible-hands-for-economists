@@ -113,7 +113,7 @@ class Resolver:
         return dict(status='unusable_redirect')
 
 
-def run(acquisition, workers, limit):
+def run(acquisition, workers, limit, retry_transient=False):
     out = acquisition / 'licensed-landings'
     out.mkdir(exist_ok=True)
     queue = licensed_queue(json.loads((acquisition / 'oa-prospects.json').read_text()))
@@ -127,7 +127,14 @@ def run(acquisition, workers, limit):
         if e['at'].startswith(today) and e.get('http_status') in DENIAL_CODES:
             denied[e.get('host') or e.get('http_host') or urlsplit(e['url']).hostname] = e['http_status']
     resolver = Resolver(denied)
-    done = {e['url'] for e in old if e['status'] != 'host_deferred' or e['at'].startswith(today)}
+    latest = {e['url']: e for e in old}
+    done = set()
+    for url, e in latest.items():
+        deferred_before_today = e['status'] == 'host_deferred' and not e['at'].startswith(today)
+        transient = e['status'] == 'resolution_error' or e.get('http_status') in (500, 502, 504)
+        retried_today = e.get('transient_retry') and e['at'].startswith(today)
+        if not deferred_before_today and not (retry_transient and transient and not retried_today):
+            done.add(url)
     hosts = defaultdict(list)
     urls = {l['url'] for ls in queue.values() for l in ls}
     for url in sorted(urls - done):
@@ -140,6 +147,8 @@ def run(acquisition, workers, limit):
         for future in as_completed(futures):
             url = futures[future]
             e = dict(at=datetime.now(timezone.utc).isoformat(), url=url, **future.result())
+            if retry_transient:
+                e['transient_retry'] = True
             print(json.dumps(e), file=records, flush=True)
             old.append(e)
     latest = {e['url']: e for e in old}
@@ -154,11 +163,12 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--acquisition', type=Path, required=True)
     parser.add_argument('--workers', type=int, default=5)
+    parser.add_argument('--retry-transient', action='store_true', help='Retry connection errors once per UTC day')
     parser.add_argument('--limit', type=int, default=10000)
     args = parser.parse_args()
     with (args.acquisition / '.landing-resolution.lock').open('a') as lock:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-        print(json.dumps(run(args.acquisition, args.workers, args.limit), indent=2))
+        print(json.dumps(run(args.acquisition, args.workers, args.limit, args.retry_transient), indent=2))
 
 
 if __name__ == '__main__':

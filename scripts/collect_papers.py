@@ -5,6 +5,7 @@ import datetime as dt
 from email.utils import parsedate_to_datetime
 import fcntl
 import hashlib
+import ipaddress
 import json
 import os
 from pathlib import Path
@@ -32,9 +33,19 @@ def save(path, value):
 PDF_BYTE_LIMIT = 50 * 1024 * 1024
 
 
+def public_host(hostname):
+    host = (hostname or '').lower().rstrip('.')
+    if not host or host in ('localhost', 'localhost.localdomain') or host.endswith(('.localhost', '.local', '.localdomain', '.internal')):
+        return False
+    try:
+        return ipaddress.ip_address(host).is_global
+    except ValueError:
+        return '.' in host and not all(part.isdigit() for part in host.split('.'))
+
+
 def request(url, max_bytes=PDF_BYTE_LIMIT, *, defer_denials=False, redirect_check=None):
     parsed = urllib.parse.urlsplit(url)
-    if parsed.scheme != 'https' or not parsed.hostname or parsed.username or parsed.password:
+    if parsed.scheme != 'https' or not public_host(parsed.hostname) or parsed.username or parsed.password:
         raise ValueError('Only public HTTPS URLs without credentials are supported')
     req = urllib.request.Request(url, headers={'User-Agent': 'econ-benchmark-collector/1.0'})
     open_url = urllib.request.urlopen
@@ -42,7 +53,7 @@ def request(url, max_bytes=PDF_BYTE_LIMIT, *, defer_denials=False, redirect_chec
         class CheckedRedirect(urllib.request.HTTPRedirectHandler):
             def redirect_request(self, req, fp, code, msg, headers, newurl):
                 target = urllib.parse.urlsplit(newurl)
-                if target.scheme != 'https' or target.username or target.password or not redirect_check(newurl):
+                if target.scheme != 'https' or not public_host(target.hostname) or target.username or target.password or not redirect_check(newurl):
                     fp.close()
                     raise ValueError('Redirect disallowed by source access policy')
                 return super().redirect_request(req, fp, code, msg, headers, newurl)

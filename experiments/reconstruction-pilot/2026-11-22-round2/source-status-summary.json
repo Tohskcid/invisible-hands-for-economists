@@ -1,67 +1,71 @@
 {
-  "observed_at_utc": "2026-11-21T20:59:32.795712+00:00",
+  "observed_at_utc": "2026-11-21T21:12:58.226049+00:00",
   "doi_rows": 15168,
   "inventory": "source-status.tsv.gz",
-  "inventory_sha256": "d4e7af6ed710e52a76de3a5cda1701cdfdc75b05831b18528e98584c921f0c4f",
+  "inventory_sha256": "201c8f45e6d27c8f187d4f275028d5b9d4356e5fb7e69534fff7d10e982f9807",
   "input_sha256": {
     "catalog": "9f9311c16f185d664923e7731cb7dc35de0bebc693356736c72b80abc1b82834",
-    "queue": "e011559a98313e26c2047cdea17c07ca806f9899edfd84fa4f6cb7b83c20507f",
-    "attempts": "1d4038a25303edcf53d4633db8f314d37e6b39abc32d6cc34951db3e5ad23575",
+    "queue": "021a253670711fbe3391f886512bb002c95b0bb4f78a9ecc197d423beb56ac9b",
+    "attempts": "53602378c0bd89de85ddd1a6a42dbe05a507fc33e1210e2b8212c4987f97457b",
     "oa_locations": "3595903b7a4e5e0d5ef0a21eb3514b587a55ffd4b978e98f11758fc5586419ad",
-    "queue_summary": "0694df8f0ed8d085539579440ba2c40c3779db89e1cdc732324a96d962c030ce",
-    "reviews": "bb8af8b4cce52caa2e607b52d583dc7ef33bbdbb883e1ccd89146572fbc7e111",
-    "location_status": "dfbfffb37e7804bb52262e87d97144c8ad540b86d904ba3ae299190d13292407",
-    "case_dispositions": "35abf9f3292e3533b9e8901c26e1d81235a27371ad48c72deda2ab73e091320b",
+    "queue_summary": "f5e91c578056aee9bd367d88f80f4ba2fee215eb277f9bc0b584690cac514776",
+    "reviews": "366c4e09db6818d77b970deb3c60066e4bf51253b9aeb3bd432897bc473174f7",
+    "location_status": "6be774f623b11806a1d09a5f48a823a278d1b017ba46e16f4131373db11cd514",
+    "case_dispositions": "827fa5b421a619b25ce13ee74182c0d091422a3097d6eb46121df1b18efc5aba",
     "publisher_pairs": "4453e1b1882dc958be86d5ca412ec9fba70a062166c91de3b2967eb00ba78170",
-    "classified_versions": "b4adf08198717ca83002cd796b474b62308653ac094bd40073ec988e72c0d346",
+    "classified_versions": "c7a5f2435dc65a19a5cb613d2e3aa105897a68882987cfd2f8f0ba94c1e91290",
     "checked_manifest_1": "f8c336a337232ff4e3d07859f714be6ae496d5a224e89872c1fbc8e24056f567",
     "checked_manifest_2": "65e824f10fa23de61379c76237cbeec861913815a86e8c4322dfbe8b4ccc49a2",
     "publisher_alternates": "4631deec39fea3bbf8a0bf1995c06673695f93bcf48047a9364ad6dc72ff283c",
     "pmc": "22ffe1d967c03e57441d703d12b615e9def97f3dceb64f229ab371feb9e3969a",
-    "checkpoint": "42ac3f3439b9c0345d3a32a9c4124706c0bf357f4467d3c8b3ffbe1a85ff60f1",
+    "checkpoint": "8fbc6099eba8852f0514efad314bfdfffdd6ea97ff29b0c97a0d4f5e94b228b2",
     "licensed_landing_queue": "d0c5af76182a7e9da4ecb25ae088f4165d8659bb7bf33a83e1595d9e2fdae61d",
-    "landing_resolution": "59dfb871820ef24abab85d23de0359c5fe27d3ceb0ab065bedcfcc7248802671",
-    "repository_record_resolution": "dff2188dd8c8d9ba703994904e0b96afa23e2a0c4033920ccfa5b123a1f0ed89",
-    "scanned_pdf_hash_set": "4792f444e962abc354d58757aa26eb4dbde100038a67c9f311f6084e8334cee7",
-    "matched_pdf_evidence": "bc30b9aa735b09e879a78affa550e623ed9d5136e4227bf0ff2bbd82efb46f73"
+    "landing_resolution": "13942174c7e5fa7d4c26c5f75f14e29a500e188c6ae8a915721f61438a0539d3",
+    "repository_record_resolution": "4ef62cdb446aa609cbe37c52b2b645d664417d053f69800e08b084e129862774",
+    "scanned_pdf_hash_set": "ef2b19c2799b95094423c3e8d0aa3f8577c575ee3799ebdc4f452604e18839fa",
+    "matched_pdf_evidence": "e674949d527e67a777c5949e7458db51c9992c89a57cd129f6179b237a12156f"
   },
   "checked_manifest_dois": 131,
+  "checked_manifest_cohorts": {
+    "read-only-candidates.json": 102,
+    "bulk-verified-candidates.json": 29
+  },
   "source_status_counts": {
-    "metadata_only": 14572,
-    "local_candidate": 427,
-    "source_verified": 169
+    "metadata_only": 14511,
+    "local_candidate": 487,
+    "source_verified": 170
   },
   "acquisition_status_counts": {
-    "no_licensed_pdf_in_queue": 14080,
-    "host_access_deferred": 487,
-    "attempted_without_pdf": 117,
-    "queued": 168,
-    "pdf_acquired": 316
+    "no_licensed_pdf_in_queue": 14076,
+    "host_access_deferred": 514,
+    "attempted_without_pdf": 127,
+    "queued": 38,
+    "pdf_acquired": 413
   },
   "source_status_by_journal": {
     "aer": {
-      "metadata_only": 5316,
-      "local_candidate": 178,
+      "metadata_only": 5303,
+      "local_candidate": 191,
       "source_verified": 38
     },
     "econometrica": {
-      "metadata_only": 2968,
-      "source_verified": 99,
-      "local_candidate": 51
+      "metadata_only": 2958,
+      "source_verified": 100,
+      "local_candidate": 60
     },
     "jpe": {
-      "metadata_only": 2578,
-      "local_candidate": 69,
+      "metadata_only": 2571,
+      "local_candidate": 76,
       "source_verified": 3
     },
     "qje": {
-      "metadata_only": 1671,
-      "local_candidate": 66,
+      "metadata_only": 1661,
+      "local_candidate": 76,
       "source_verified": 10
     },
     "restud": {
-      "metadata_only": 2039,
-      "local_candidate": 63,
+      "metadata_only": 2018,
+      "local_candidate": 84,
       "source_verified": 19
     }
   },
@@ -69,7 +73,7 @@
     "unassessed": 14992,
     "compare-editions": 1,
     "version-and-controlled-data": 1,
-    "working_paper_only": 2,
+    "working_paper_only": 3,
     "published-layout-needs-input-and-appendix-audit": 16,
     "published-original-needs-input-and-supplement-audit": 4,
     "blocked_input": 4,
@@ -91,7 +95,6 @@
     "paired-original-needs-design-and-input-audit": 31,
     "appendix-complete-numerical-code-unlocated": 1,
     "publisher-discloses-restricted-inputs": 22,
-    "journal-main-link-unresolved": 1,
     "restricted-real-inputs": 2,
     "large-real-inputs-need-supervised-review": 1,
     "large-real-inputs-need-source-linkage": 1,
@@ -104,78 +107,81 @@
     "openalex_reported_oa_dois": 6775,
     "crossref_version_licensed_pdf_dois": 228,
     "openalex_location_licensed_pdf_dois": 865,
-    "eligible_dois": 1088,
-    "distinct_eligible_doi_urls": 1477,
+    "eligible_dois": 1092,
+    "distinct_eligible_doi_urls": 1486,
     "pmc_licensed_pdf_dois": 8,
     "pmc_jats_dois": 238,
     "openalex_licensed_landing_dois": 1313,
     "openalex_licensed_landing_doi_urls": 1683,
-    "openalex_landing_resolved_pdf_dois": 267
+    "openalex_landing_resolved_pdf_dois": 276
   },
-  "pdf_transfer_events": 533,
-  "workspace_pdf_files": 687,
-  "workspace_distinct_pdf_hashes": 600,
-  "queue_events": 557,
+  "pdf_transfer_events": 712,
+  "workspace_pdf_files": 786,
+  "workspace_distinct_pdf_hashes": 679,
+  "queue_events": 736,
   "catalog_with_tdm_endpoint": 1633,
   "catalog_with_any_crossref_fulltext_link": 13881,
   "attempt_outcomes": {
-    "403": 27,
-    "downloaded-unread": 350,
+    "403": 29,
+    "downloaded-unread": 515,
     "429": 2,
-    "non_pdf": 62,
-    "URLError": 21,
+    "non_pdf": 72,
+    "URLError": 22,
     "redirect_disallowed": 32,
     "cached": 1,
     "404": 19,
     "over_byte_limit": 41,
     "recovered_receipt": 1,
-    "401": 1
+    "401": 2
   },
-  "retained_pdf_bytes": 545680735,
-  "distinct_downloaded_locations": 352,
+  "retained_pdf_bytes": 749333911,
+  "distinct_downloaded_locations": 517,
+  "dois_with_queue_pdf_bytes": 413,
   "licensed_landing_pair_outcomes": {
-    "host_deferred": 441,
-    "pending": 660,
-    "no_advertised_pdf": 134,
-    "pdf_link": 320,
+    "host_deferred": 1032,
+    "no_advertised_pdf": 161,
+    "pdf_link": 329,
+    "resolution_error": 43,
     "repository_http_error": 1,
-    "resolution_error": 30,
-    "http_error": 33,
+    "unusable_pdf_locator": 4,
+    "http_error": 48,
     "ambiguous_pdf_links": 14,
-    "no_primary_pdf_attachment": 10,
+    "no_primary_pdf_attachment": 30,
     "unusable_redirect": 3,
-    "repository_robots_disallow": 21,
-    "robots_disallow": 3,
-    "repository_lookup_error": 9,
+    "robots_disallow": 4,
+    "repository_data_files_present": 1,
+    "repository_attachments_unavailable": 8,
     "invalid_pdf": 1,
     "repository_multiple_pdf_attachments": 2,
+    "repository_lookup_error": 1,
     "other_media": 1
   },
   "open_access_lead_counts": {
     "no_reported_oa_location": 8391,
-    "reported_oa_location_without_direct_pdf": 2228,
-    "reported_pdf_requires_source_review": 3461,
-    "licensed_pdf_route": 1088
+    "reported_oa_location_without_direct_pdf": 2225,
+    "reported_pdf_requires_source_review": 3460,
+    "licensed_pdf_route": 1092
   },
   "publisher_pair_outcomes": {
     "downloaded-unread": 78,
     "alternate_published_copy_acquired": 4,
     "no-unique-public-main-link": 1
   },
-  "local_supplement_only_pdf_dois": 1,
+  "local_supplement_only_pdf_dois": 0,
   "local_pdf_status_counts": {
-    "metadata_only": 14796,
-    "local_candidate": 203,
-    "source_verified": 169
+    "metadata_only": 14735,
+    "local_candidate": 263,
+    "source_verified": 170
   },
   "reviewed_pdf_version_dois": {
-    "working_paper": 12,
+    "working_paper": 13,
     "accepted_manuscript": 4,
     "author_manuscript": 14,
     "published_journal": 142,
     "publisher_advance": 2,
     "alternative_reprint": 1
   },
+  "pmc_jats_automated_content_matches": 214,
   "pmc_provider_resolution": {
     "journal_search_records": 705,
     "pmc_ids_checked": 265,
@@ -192,22 +198,22 @@
   },
   "pmc_jats_only_candidate_dois": 224,
   "eligible_location_outcomes": {
-    "host_deferred_http_403": 596,
+    "host_deferred_http_403": 600,
     "host_deferred_http_429": 110,
-    "http_403": 27,
-    "pending": 258,
-    "pdf_acquired": 352,
+    "http_403": 29,
+    "pending": 55,
+    "host_deferred_http_401": 37,
+    "pdf_acquired": 517,
     "http_404": 19,
-    "non_pdf": 62,
-    "host_deferred_http_401": 8,
+    "non_pdf": 72,
     "redirect_disallowed": 32,
     "dns_resolution": 2,
-    "TimeoutError": 2,
+    "TimeoutError": 3,
     "certificate_validation": 1,
     "ConnectionResetError": 3,
     "SSLEOFError": 1,
     "URLError": 1,
-    "http_401": 1,
+    "http_401": 2,
     "http_429": 2
   },
   "deferred_locations_by_host": {
@@ -241,6 +247,10 @@
       "host_deferred_http_429": 45,
       "http_429": 1
     },
+    "dukespace.lib.duke.edu": {
+      "host_deferred_http_401": 29,
+      "http_401": 1
+    },
     "durham-repository.worktribe.com": {
       "http_403": 1
     },
@@ -262,9 +272,6 @@
     "iris.univpm.it": {
       "http_403": 1
     },
-    "ndownloader.figshare.com": {
-      "http_403": 1
-    },
     "nottingham-repository.worktribe.com": {
       "host_deferred_http_403": 22,
       "http_403": 1
@@ -284,11 +291,22 @@
     "research.aalto.fi": {
       "http_403": 1
     },
+    "research.cbs.dk": {
+      "host_deferred_http_403": 2,
+      "http_403": 1
+    },
     "researchdatabase.minneapolisfed.org": {
       "host_deferred_http_403": 125,
       "http_403": 1
     },
+    "researchprofiles.ku.dk": {
+      "host_deferred_http_403": 2,
+      "http_403": 1
+    },
     "run.unl.pt": {
+      "http_403": 1
+    },
+    "s3-eu-west-1.amazonaws.com": {
       "http_403": 1
     },
     "scholarship.law.bu.edu": {
@@ -332,20 +350,24 @@
     "source_verified": "A curator inspected the title/byline, version, article body and ending of the exact hashed local bytes. Full reading, readiness, and reconstruction have separate records.",
     "licensed_pdf_urls": "Distinct direct locations carrying active version-matched Crossref CC metadata an OA location-specific recognized license in OpenAlex, or NIH PubMed Central version-level CC/TDM or explicit dataset TDM access. NIH/NLM PubMed Central supplied the versioned research-dataset sources. A link alone does not establish identity.",
     "reported_oa_locations": "Number of provider location records; a location may be a landing page without a PDF. Counts can include multiple copies.",
+    "location_status_by_sha256": "Every distinct reported URL is represented per DOI and role as role/SHA-256(normalized exact URL)/status, separated by vertical bars. This allows verification against a known URL without publishing query parameters. The outside-queue state indicates a lead whose terms or available file need separate review.",
+    "resolved_landing_pdf_urls": "Distinct PDF links found by inspecting explicitly licensed OpenAlex landing pages or their official repository file listings. A link can duplicate an earlier discovery.",
     "reviewed_pdf_versions": "Versions of hash-bound primary PDFs recorded in the curator assessment. Multiple kinds can coexist for a DOI.",
     "open_access_lead": "Discovery status. A reported direct PDF outside the eligible queue or an OA landing page remains a source-review lead.",
     "publisher_pair_status": "Separate official journal main-article acquisition from a supplement landing page. A collected PDF still needs independent inspection.",
     "acquisition_status": "Outcome for the explicit licensed PDF queue. Other primary PDFs and NIH XML also contribute to source_status.",
+    "deferred_locations_by_host": "A host returned an access or rate-limit response to a document, redirect check, or robots request. Untried locations on that host were held. This records an access condition at this checkpoint, not a licensing ruling.",
     "pdf_transfer_events": "Recorded acquisition attempts that reached a PDF URL. A response can be HTML or a supplement; internal transport retries are not separately logged.",
     "local_documentation_pdfs": "PDFs identified as data documentation or readme files using their supplied path and opening content. These do not count as primary articles.",
     "local_supplement_pdfs": "Number of distinct local PDF hashes identified as supplementary by curator review or an explicit supplier path and opening heading. The publisher-designated Econometric Society supplement directory is also sufficient to exclude a file from the primary-article count.",
     "local_pdf_status": "Source status from the PDF inventory alone.",
+    "pmc_jats_content_matches": "Automatic comparison of the actual JATS file: normalized article title and author surname counts match the catalog, and the body and ending reference list are present. This records a stricter candidate signal and does not substitute for independent content review.",
     "pmc_jats_versions": "Locally stored NIH full-article XML versions with provider checksum, matching front-matter DOI and body. A paper can also have a local PDF.",
     "case_readiness": "Source-intake disposition at this checkpoint; downstream review and execution are recorded in individual case packages.",
     "data_reason": "Known reason for limited input access or readiness. Unassessed means no specific input finding was recorded."
   },
   "source_checkpoint": {
-    "phase": "interim",
-    "captured_at_utc": "2026-11-21T20:54:51.534001+00:00"
+    "phase": "operational",
+    "captured_at_utc": "2026-11-21T21:11:53.708079+00:00"
   }
 }
