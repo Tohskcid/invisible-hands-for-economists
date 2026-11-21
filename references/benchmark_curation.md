@@ -83,7 +83,7 @@ Use a private directory outside every author workspace. The batch reader uses in
 
 Use `embedded`, `external`, or `both` for articles with appendices. Add each separately verified PDF with role `appendix` or `documentation`. Record any unresolved material in the inventory. The reader accepts theory, empirical, structural and mixed tasks.
 
-An authenticated journal text can be read even when its data or an appendix are missing. List the specific gaps in the candidate's `pending_materials`; use `appendix_status: "unresolved"` when the appendix inventory itself is open. The same reader examines each available page and stores a private question, necessary conditions, page locators and blocked analyses under `reader-work/<id>/pending-materials.json`. It does not release this preliminary question. When the missing files are verified, a complete manifest can reuse the page readings and proceed to the independent release review.
+An authenticated journal text can be read even when its data or an appendix are missing. List the specific gaps in the candidate's `pending_materials`; use `appendix_status: "unresolved"` when the appendix inventory itself is open. The same reader examines each available page and stores a private question, necessary conditions, page locators and blocked analyses under `reader-work/<id>/pending-materials.json`. An independent wording review records possible answer leaks or unsupported conditions. The preliminary question stays in the private collection. When the missing files are verified, a complete manifest can reuse the page readings and proceed to the independent release review.
 
 ```bash
 python3 scripts/read_benchmarks.py /private/collection/candidates.json

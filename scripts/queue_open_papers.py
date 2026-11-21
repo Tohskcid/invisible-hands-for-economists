@@ -86,6 +86,16 @@ def cached_response(url, cache):
     return response
 
 
+def landing_evidence(acquisition):
+    out = acquisition / 'licensed-landings'
+    events = []
+    for name in ('resolution.jsonl', 'repository-records.jsonl'):
+        log = out / name
+        if log.is_file():
+            events.extend(json.loads(line) for line in log.read_text().splitlines())
+    return events
+
+
 def index(catalog, out):
     cache = out / 'openalex'
     cache.mkdir(exist_ok=True)
@@ -144,8 +154,7 @@ def index(catalog, out):
                 break
     landings = out / 'licensed-landings'
     landing_queue = json.loads((landings / 'queue.json').read_text()) if (landings / 'queue.json').is_file() else {}
-    resolution_log = landings / 'resolution.jsonl'
-    resolved = {e['url']: e for line in resolution_log.read_text().splitlines() if (e := json.loads(line))} if resolution_log.is_file() else {}
+    resolved = {e['url']: e for e in landing_evidence(out)}
     for doi, locs in landing_queue.items():
         for loc in locs:
             result = resolved.get(loc['url'], {})
@@ -244,7 +253,7 @@ def download_one(out, doi, url, allowance, expected_md5=None, denied_hosts=None)
     return record
 
 
-def download(out, attempts, byte_budget, retry, retry_transient=False):
+def download(out, attempts, byte_budget, retry, retry_transient=False, hosts=None):
     queue = json.loads((out / 'queue.json').read_text())
     checksums = {(d, l['url']): l['md5'] for d, locs in queue.items() for l in locs if l.get('md5')}
     attempts_path = out / 'attempts.jsonl'
@@ -283,13 +292,14 @@ def download(out, attempts, byte_budget, retry, retry_transient=False):
             if not temporary_limit and not (retry_transient and transient and not retried_today):
                 visited.add((e['doi'], e['url']))
     denial_codes = {401, 403, 429, 503}
-    landing_log = out / 'licensed-landings/resolution.jsonl'
-    landing_denials = [json.loads(line) for line in landing_log.read_text().splitlines()] if landing_log.is_file() else []
+    landing_denials = landing_evidence(out)
     deferred = {e.get('http_host') or urlsplit(e['url']).hostname for e in old if e['at'].startswith(today)
                 and e.get('http_status') in denial_codes}
     deferred.update(e['host'] for e in landing_denials if e.get('host') and e['at'].startswith(today)
                     and e.get('http_status') in denial_codes)
     candidates = [(doi, l['url'], urlsplit(l['url']).hostname) for doi, locs in queue.items() for l in locs]
+    if hosts:
+        candidates = [c for c in candidates if c[2] in hosts]
     newly_downloaded = used = n = 0
     budget_full = False
     # Only one in-flight request per host and DOI. Reserve bytes before starting each transfer.
@@ -342,6 +352,7 @@ def main():
     get = sub.add_parser('acquire')
     get.add_argument('--attempts', type=int, default=50)
     get.add_argument('--max-mib', type=int, default=128, help='Maximum new PDF bytes retained in this invocation (MiB)')
+    get.add_argument('--hosts', nargs='+', help='Limit a checkpoint to named hosts while other providers are resolving')
     get.add_argument('--retry-transient', action='store_true', help='Retry connection errors once per UTC day')
     get.add_argument('--retry', action='store_true', help='Retry previously failed URLs')
     args = parser.parse_args()
@@ -359,7 +370,7 @@ def main():
         else:
             if args.attempts < 1 or args.max_mib < 1:
                 parser.error('Budgets must be positive')
-            result = download(args.out, args.attempts, args.max_mib * 1024**2, args.retry, args.retry_transient)
+            result = download(args.out, args.attempts, args.max_mib * 1024**2, args.retry, args.retry_transient, args.hosts)
     print(json.dumps(result, indent=2))
 
 

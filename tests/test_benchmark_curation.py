@@ -225,7 +225,8 @@ class BenchmarkCurationTests(unittest.TestCase):
         write(manifest, {'cases': [candidate]})
         batches = [('main', {1: ''}, ['image1'])]
         response = ({'pages': [{'page': 1, 'readable': False, 'appendix': False, 'note': 'table indiscernible'}]}, {})
-        with patch.object(reader, 'page_batches', return_value=batches), patch.object(reader, 'ask', return_value=response):
+        with patch.object(reader, 'page_batches', return_value=batches), patch.object(reader, 'ask', return_value=response), \
+                patch.object(reader, 'reread_page', return_value=(response[0]['pages'][0], {})):
             result = reader.run(manifest, 'model')['q002']
         self.assertIn('requires visual review', result['reason'])
         self.assertFalse((self.case.parent / 'q002').exists())
@@ -258,11 +259,12 @@ class BenchmarkCurationTests(unittest.TestCase):
         loc = {'source': 'main', 'pages': [1, 1]}
         answers = [({'pages': [{'page': 1, 'readable': True, 'appendix': False, 'note': 'Survey population.'}]}, {}),
                    ({'question': 'How does employment vary?', 'conditions': {'population': 'Sampled workers.'},
-                     'field_sources': {'question': loc, 'conditions.population': loc}, 'blocked_work':['Estimation.']}, {})]
+                     'field_sources': {'question': loc, 'conditions.population': loc}, 'blocked_work':['Estimation.']}, {}),
+                   ({'decision':'clear','finding':'The employment question gives no numerical or sign information.'}, {})]
         with patch.object(reader, 'page_batches', return_value=pages), patch.object(reader, 'ask', side_effect=answers) as ask:
             result = reader.run(manifest, 'model')['q002']
             self.assertEqual(reader.run(manifest, 'model')['q002'], result)
-            self.assertEqual(ask.call_count, 2)
+            self.assertEqual(ask.call_count, 3)
         self.assertEqual(result['status'], 'source-read-awaiting-materials')
         self.assertTrue((self.root / result['private_draft']).is_file())
         self.assertFalse((self.case.parent / 'q002').exists())

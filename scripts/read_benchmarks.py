@@ -11,6 +11,7 @@ import os
 from pathlib import Path
 import re
 import shutil
+import struct
 import subprocess
 import tempfile
 
@@ -195,6 +196,31 @@ def page_prompt(sid, pages):
         [{'page': n, 'text': t} for n, t in pages.items()])
 
 
+def reread_page(work, pdf, sid, number, text, folder, model):
+    stem = folder / f'zoom-{sid}-{number}'
+    args = ['pdftoppm', '-f', str(number), '-l', str(number), '-singlefile', '-scale-to', '3600']
+    subprocess.run([*args, '-png', str(pdf), str(stem)], capture_output=True, check=True, timeout=120)
+    frame = stem.with_suffix('.png')
+    with frame.open('rb') as stream:
+        header = stream.read(24)
+    require(header[:8] == b'\x89PNG\r\n\x1a\n', 'invalid high-resolution review image')
+    width, height = struct.unpack('>II', header[16:24])
+    tiles = []
+    for i, (x, y) in enumerate(((0, 0), (width//2, 0), (0, height//2), (width//2, height//2))):
+        tile = folder / (stem.name + f'-{i}')
+        subprocess.run([*args, '-x', str(x), '-y', str(y), '-W', str(min(width-x, width//2+48)),
+                        '-H', str(min(height-y, height//2+48)), '-jpeg', str(pdf), str(tile)],
+                       capture_output=True, check=True, timeout=120)
+        tiles.append(tile.with_suffix('.jpg'))
+    reply, receipt = ask(work, f'zoom-{sid}-{number}', READ + '\nThese four overlapping images show the same '
+                         'physical page, in reading order by quadrant. Return one page entry.' +
+                         page_prompt(sid, {number: text}), tiles, model)
+    entries = reply.get('pages')
+    require(isinstance(entries, list) and len(entries) == 1 and entries[0].get('page') == number,
+            'zoom review did not identify the page')
+    return entries[0], receipt
+
+
 def decision(value, names):
     require(value.get('decision') in ('pass', 'hold') and words(value.get('sufficiency')) and words(value.get('leakage')),
             'review response lacks decision or specific findings')
@@ -211,6 +237,20 @@ def decision(value, names):
     if set(findings) - set(names):
         result['other_evidence_findings'] = {k: v for k, v in findings.items() if k not in names}
     return result
+
+
+def review_intake(path, work, model):
+    intake = read_record(path)
+    if 'preliminary_leakage_review' not in intake:
+        evidence = {k: intake[k] for k in ('draft', 'reading', 'pending_materials')}
+        finding, receipt = ask(work, 'intake-leakage', 'Independently compare the proposed research question and '
+            'conditions with the page-specific source notes. Check for identifying bibliographic details, '
+            'historical results, a privileged method, and unsupported conditions. The observations or appendix '
+            'are incomplete. Judge the wording only. Return {"decision":"clear|hold","finding":"specific '
+            'reasons"}. This private check never releases the task.\n' + encode(evidence), [], model)
+        require(finding.get('decision') in ('clear', 'hold') and words(finding.get('finding')), 'invalid intake review')
+        intake['preliminary_leakage_review'] = {**finding, 'receipt': receipt}
+        write(path, intake)
 
 
 def review_packet(work, public, record, inputs, batches, names, checked, model, revised):
@@ -267,6 +307,7 @@ def prepare(root, candidate, cases, work, model):
         require(read_record(pending_file).get('candidate_sha256') == identity and
                 all(sha(safe_path(root, s['file'])) == s['sha256'] for s in sources),
                 'existing intake draft belongs to different source evidence')
+        review_intake(pending_file, work, model)
         return 'source-read-awaiting-materials'
     with tempfile.TemporaryDirectory(dir=work) as scratch:
         tmp = Path(scratch)
@@ -282,6 +323,7 @@ def prepare(root, candidate, cases, work, model):
             require(audit.get('input_sha256') == sha(stage / table), 'numeric audit used different observations')
             audits.append(audit)
         batches = page_batches(root, sources, tmp)
+        originals = {s['id']: safe_path(root, s['file']) for s in sources}
         notes = {s['id']: [] for s in sources}
         read_turns = []
         for sid, pages, images in batches:
@@ -292,12 +334,21 @@ def prepare(root, candidate, cases, work, model):
                     f'{sid} at {start}: incomplete page-by-page reading')
             for entry in entries:
                 n = entry['page']
-                require(entry.get('readable') is True and words(entry.get('note')) and type(entry.get('appendix')) is bool,
-                        f'{sid} page {n}: requires visual review; {entry.get("note", "")}')
-                notes[sid].append({'pages': [n, n], 'note': entry['note'], 'appendix': entry['appendix']})
+                if entry.get('readable') is False:
+                    entry, zoom_turn = reread_page(work, originals[sid], sid, n, pages[n], tmp, model)
+                    read_turns.append(zoom_turn)
+                require(type(entry.get('readable')) is bool and words(entry.get('note')) and type(entry.get('appendix')) is bool,
+                        f'{sid} page {n}: incomplete reading record')
+                note = {'pages': [n, n], 'note': entry['note'], 'appendix': entry['appendix']}
+                if not entry['readable']:
+                    require(pending, f'{sid} page {n}: requires visual review; {entry["note"]}')
+                    note['readable'] = False
+                notes[sid].append(note)
             read_turns.append(turn)
         evidence = {'candidate': candidate, 'page_notes': notes, 'author_data': inputs}
         if pending:
+            pending = pending + [f'{sid} physical page {entry["pages"][0]}: unresolved after high-resolution review.'
+                                 for sid, entries in notes.items() for entry in entries if entry.get('readable') is False]
             prompt = ('Using the complete reading of the supplied pages, draft a private intake record. '
                       'Give an answer-free research question and the minimum setting, population, geography, '
                       'period, data coverage or theoretical primitives. Attach an original source ID and physical '
@@ -323,6 +374,7 @@ def prepare(root, candidate, cases, work, model):
             write(pending_file, {'status': 'source-read-awaiting-materials', 'case': case_id,
                   'candidate_sha256': identity, 'pending_materials': pending, 'draft': draft, 'reading': notes,
                   'reading_receipts': read_turns, 'intake_receipt': turn})
+            review_intake(pending_file, work, model)
             return 'source-read-awaiting-materials'
         if audits:
             evidence['private_numeric_audits'] = audits

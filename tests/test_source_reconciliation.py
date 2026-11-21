@@ -14,6 +14,7 @@ import collect_pmc_sources as pmc
 import queue_open_papers as queue
 import reconcile_paper_sources as reconcile
 import resolve_licensed_landings as landing
+import resolve_repository_files as repository
 
 
 class SourceInventoryTests(unittest.TestCase):
@@ -130,6 +131,15 @@ class OpenLocationTests(unittest.TestCase):
         self.assertEqual(len(queue.crossref_locations({'licenses': [lic], 'fulltext_candidates': [pdf]})), 1)
         for key, change in [('content-version', 'am'), ('URL', 'https://example.org/license'), ('start', {'date-time': '2999-01-01'})]:
             self.assertFalse(queue.crossref_locations({'licenses': [{**lic, key: change}], 'fulltext_candidates': [pdf]}))
+
+    def test_repository_dataset_and_documentation_do_not_become_primary(self):
+        files = [('primary paper.pdf', 'https://university.edu/paper'), ('online appendix.pdf', 'https://university.edu/appendix')]
+        self.assertEqual(repository.select_file(files, 'dataset')['status'], 'repository_non_article_record')
+        self.assertEqual(repository.select_file(files, 'journal contribution')['pdf_url'], 'https://university.edu/paper')
+        self.assertEqual(repository.select_file(files[1:])['status'], 'no_primary_pdf_attachment')
+        page = repository.UniversityPaperLinks()
+        page.feed('<a href="/papers/1234.pdf">Descarregar</a><a href="/generic/terms.pdf">Terms</a>')
+        self.assertEqual(page.links, {'/papers/1234.pdf'})
 
     def test_landing_discovery_uses_location_rights_and_advertised_links(self):
         source = dict(landing_page='https://host.org/article', pdf_url=None, license='cc-by', version='publishedVersion')
