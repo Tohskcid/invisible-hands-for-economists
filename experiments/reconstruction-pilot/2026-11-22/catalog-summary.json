@@ -1,0 +1,55 @@
+{
+  "provider": "Crossref",
+  "source_catalog_sha256": "9f9311c16f185d664923e7731cb7dc35de0bebc693356736c72b80abc1b82834",
+  "inventory_file": "catalog.tsv.gz",
+  "inventory_sha256": "0d2fb2f018d3ad28e6c6effc6d2686cde3e9a9b52f06794574514f9e853d7aa4",
+  "distinct_dois": 15168,
+  "journal_counts": {
+    "aer": 5532,
+    "econometrica": 3118,
+    "jpe": 2650,
+    "qje": 1747,
+    "restud": 2121
+  },
+  "finished_queries": 180,
+  "total_queries": 180,
+  "zero_result_queries": [
+    [
+      "aer",
+      "1990"
+    ],
+    [
+      "aer",
+      "1991"
+    ],
+    [
+      "aer",
+      "1992"
+    ],
+    [
+      "aer",
+      "1993"
+    ],
+    [
+      "aer",
+      "1994"
+    ],
+    [
+      "aer",
+      "1995"
+    ],
+    [
+      "aer",
+      "1996"
+    ],
+    [
+      "aer",
+      "1997"
+    ],
+    [
+      "aer",
+      "1998"
+    ]
+  ],
+  "coverage": "1990–2025 inclusive. Bibliographic discovery candidates. DOI counts include journal material still requiring publication type and full-text verification."
+}
