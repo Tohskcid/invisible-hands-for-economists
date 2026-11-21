@@ -41,7 +41,7 @@ Read [research_protocol.md](references/research_protocol.md), then exactly one a
 Load these only when triggered:
 
 - starting a new research question, including from one sentence: [topic_survey.md](references/topic_survey.md); run separate baseline and frontier discovery lanes without citation-count exclusion, use tool-acquired freshness-checked evidence, decompose the nearest work's field-changing move, and obtain the scope and contribution locks before method selection
-- testing reconstruction of an already-published paper: [historical benchmark protocol](experiments/new-topic-blind/PROTOCOL.md); freeze separate journal-publication and earliest-target-version dates before authoring, exclude later external work from historical novelty, and keep the target's own versions out of the author-visible corpus
+- curating or reconstructing published-paper benchmarks: [benchmark curation](references/benchmark_curation.md); read full texts, preserve task boundaries, separate answers, review leakage, and apply the linked historical protocol before author dispatch
 - material aggregation: [data_granularity_guide.md](references/data_granularity_guide.md)
 - selecting or reviewing an empirical design or estimator: [method_router.md](references/method_router.md); route from estimand and assignment mechanism before data shape or software
 - implementing an estimator or writing empirical code: [estimation_recipes.md](references/estimation_recipes.md); use modern heterogeneity-robust (CS, SA, BJS), SDiD, Bartik, or bias-corrected syntax across Stata, R, and Python with publication-ready output

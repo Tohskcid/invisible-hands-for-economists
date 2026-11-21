@@ -162,6 +162,17 @@ uvx --from skills-ref agentskills validate skills/econ-research-lab
 uv run --no-project --with 'mcp>=2,<3' python -m unittest tests.test_mcp_server
 ```
 
+## Benchmark paper collection
+
+Collect DOI-deduplicated metadata from five general economics journals without topic or citation-count filters:
+
+```bash
+python3 scripts/collect_papers.py --out output/paper-corpus discover \
+  --from-year 2024 --to-year 2024 --pages 1 --rows 100
+```
+
+Repeat to resume. Public PDFs can be acquired separately with `acquire --doi DOI --url URL`. See [paper collection and benchmark curation](references/benchmark_curation.md) for source checks, full-text reading, bounded answer-free tasks, and private answer records. The collector does not itself read papers or certify that tasks are free of answer leakage. Keep the collection outside author workspaces; no HPC credentials belong in this repository.
+
 ## Research roadmap
 
 See the [harness optimization research plan](docs/research/harness-optimization-plan.md) (Traditional Chinese) for the proposed implementation work packages, controlled evaluation, milestones, and acceptance criteria grounded in the reconstruction pilot.
